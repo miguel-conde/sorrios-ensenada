@@ -1,0 +1,13 @@
+schema_version: 1
+project_id: sorrios-ensenada-1752
+drive_root_id: REPLACE_WITH_DRIVE_ROOT_ID
+plugin: {name: sorrios-ensenada, version: 1.0.0}
+skill: {name: editar-catastro-sorrios, version: 1.0.0}
+phase: {current: edicion_paleografica, historical_study_enabled: false}
+authorities:
+ manuscript:
+  file_id: REPLACE_WITH_FILE_ID
+  path: 10_FUENTE_PRIMARIA/sorrios_ensenada_orden_lectura_calidad_original.pdf
+  sha256: d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24
+  size_bytes: 5038575
+  pages: 18

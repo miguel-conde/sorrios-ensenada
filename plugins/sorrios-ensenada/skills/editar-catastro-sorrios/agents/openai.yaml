@@ -1,0 +1,7 @@
+interface:
+  display_name: "Editar Catastro de Sorríos"
+  short_description: "Edición crítica y control del Catastro de Sorríos"
+  default_prompt: "Usa $editar-catastro-sorrios para continuar el proyecto desde su estado canónico."
+
+policy:
+  allow_implicit_invocation: true
