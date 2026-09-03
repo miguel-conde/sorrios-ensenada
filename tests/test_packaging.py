@@ -12,6 +12,7 @@ except ModuleNotFoundError:  # Python 3.10
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN_ROOT = ROOT.joinpath("plugins", "sorrios-ensenada")
 SCRIPTS = (
+    "materialize_drive_payload.py",
     "render_unit.py",
     "validate_operation.py",
     "validate_workspace.py",

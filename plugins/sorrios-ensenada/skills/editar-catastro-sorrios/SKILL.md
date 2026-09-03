@@ -32,6 +32,7 @@ Lee [task-modes.md](references/task-modes.md) para los límites de cada modo.
 
 - El PDF manda sobre la lectura material.
 - El Manual de Drive manda sobre el método.
+- Para materializar binarios de Drive, sigue [drive-materialization.md](references/drive-materialization.md); no abras referencias internas con el navegador ni construyas URLs de descarga.
 - La skill guía el trabajo; no duplica el Manual.
 - No uses una transcripción no validada como prueba histórica.
 - No avances si la unidad anterior no está cerrada.
@@ -46,6 +47,7 @@ Lee [workspace-contract.md](references/workspace-contract.md) para la autoridad 
 
 ## Ayudas
 
+- `scripts/materialize_drive_payload.py`: materializa y verifica un archivo Base64 limitado procedente de Drive.
 - `scripts/validate_workspace.py`: valida una copia local de la carpeta.
 - `scripts/render_unit.py`: extrae una unidad del PDF según `unidades.yaml`.
 - `scripts/validate_operation.py`: compara estados anterior y posterior.
@@ -56,6 +58,8 @@ filesystem.
 
 Antes de ejecutar estas ayudas, lee
 [local-execution.md](references/local-execution.md) para crear el entorno, instalar
-las dependencias y comprobar `pdftoppm` en Windows o WSL/Linux.
+las dependencias y comprobar `pdftoppm` en Windows o WSL/Linux. Si una ayuda
+necesita bytes de Drive, lee también
+[drive-materialization.md](references/drive-materialization.md).
 
 Las plantillas de `assets/templates/` sirven para crear o reparar archivos; nunca sustituyen a los documentos vivos de Drive.

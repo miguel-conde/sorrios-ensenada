@@ -14,6 +14,8 @@ Todo lo necesario para instalar y ejecutar las ayudas viaja dentro de ese root.
 - `Pillow` solo para `render_unit.py`.
 - `pdftoppm` disponible mediante `PATH` para renderizar.
 
+`materialize_drive_payload.py` usa únicamente la biblioteca estándar de Python.
+
 `pyproject.toml`, incluido en el plugin instalado, declara dos conjuntos de uso:
 
 - base: instala `PyYAML`;
@@ -69,3 +71,10 @@ distribución. No reutilices el entorno virtual creado en Windows.
 
 Una comprobación manual de render debe procesar una unidad real después de
 confirmar que el ejecutable aparece en `PATH`.
+
+## Materialización desde Drive
+
+Cuando Drive entregue una referencia interna sin ruta local, no la abras con el
+navegador. Sigue [drive-materialization.md](drive-materialization.md). El fallback
+Base64 tiene un límite de 8 MiB y exige validar tamaño y SHA-256 antes de usar la
+copia temporal.
