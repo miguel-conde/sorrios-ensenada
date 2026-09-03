@@ -50,4 +50,12 @@ Lee [workspace-contract.md](references/workspace-contract.md) para la autoridad 
 - `scripts/render_unit.py`: extrae una unidad del PDF según `unidades.yaml`.
 - `scripts/validate_operation.py`: compara estados anterior y posterior.
 
+Las rutas físicas se manejan con `pathlib.Path`. Las rutas lógicas guardadas en YAML
+se normalizan a formato POSIX antes de compararlas y nunca se resuelven contra el
+filesystem.
+
+Antes de ejecutar estas ayudas, lee
+[local-execution.md](references/local-execution.md) para crear el entorno, instalar
+las dependencias y comprobar `pdftoppm` en Windows o WSL/Linux.
+
 Las plantillas de `assets/templates/` sirven para crear o reparar archivos; nunca sustituyen a los documentos vivos de Drive.
