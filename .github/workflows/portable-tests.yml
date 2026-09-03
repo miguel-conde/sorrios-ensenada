@@ -28,17 +28,23 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          choco install poppler --version=22.11.0.20240421 --allow-downgrade --no-progress --yes
-          $chocolateyRoot = if ($env:ChocolateyInstall) {
-            $env:ChocolateyInstall
-          } else {
-            Join-Path $env:ProgramData "chocolatey"
+          $version = "26.02.0-0"
+          $archive = Join-Path $env:RUNNER_TEMP "poppler-$version.zip"
+          $destination = Join-Path $env:RUNNER_TEMP "poppler"
+          $url = "https://github.com/oschwartz10612/poppler-windows/releases/download/v$version/Release-$version.zip"
+          $expectedHash = "993e4a94376ed712fafc7058d724ea0b943d118bbd2305cd9ed55174eb85cda5"
+
+          Invoke-WebRequest -Uri $url -OutFile $archive
+
+          $actualHash = (Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($actualHash -ne $expectedHash) {
+            throw "Hash de Poppler incorrecto: $actualHash"
           }
 
-          $popplerTools = Join-Path $chocolateyRoot "lib\poppler\tools"
-          $executable = Get-ChildItem -LiteralPath $popplerTools -Filter pdftoppm.exe -Recurse -File -ErrorAction SilentlyContinue | Select-Object -First 1
+          Expand-Archive -LiteralPath $archive -DestinationPath $destination -Force
+          $executable = Get-ChildItem -LiteralPath $destination -Filter pdftoppm.exe -Recurse -File | Select-Object -First 1
           if ($null -eq $executable) {
-            throw "Chocolatey instaló Poppler, pero no se encontró pdftoppm.exe dentro de '$popplerTools'."
+            throw "No se encontró pdftoppm.exe en el paquete descargado."
           }
 
           $executable.Directory.FullName | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
@@ -54,10 +60,5 @@ jobs:
         run: |
           Get-Command pdftoppm -ErrorAction Stop
           pdftoppm -v
-          $versionExitCode = $LASTEXITCODE
-          if ($versionExitCode -notin @(0, 1)) {
-            throw "pdftoppm -v terminó con código $versionExitCode"
-          }
-          exit 0
       - run: python -m pip install -e "./plugins/sorrios-ensenada[test]"
       - run: python -m pytest
