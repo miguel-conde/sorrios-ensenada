@@ -29,19 +29,19 @@ jobs:
         shell: pwsh
         run: |
           choco install poppler --no-progress --yes
-          $executable = Get-Command pdftoppm -ErrorAction SilentlyContinue
-          if ($null -eq $executable) {
-            $executable = Get-ChildItem -LiteralPath $env:ChocolateyInstall -Filter pdftoppm.exe -Recurse | Select-Object -First 1
-          }
-          if ($null -eq $executable) {
-            throw "Chocolatey instaló Poppler pero no se encontró pdftoppm.exe"
-          }
-          $directory = if ($executable.Path) {
-            Split-Path -Parent $executable.Path
+          $chocolateyRoot = if ($env:ChocolateyInstall) {
+            $env:ChocolateyInstall
           } else {
-            $executable.Directory.FullName
+            Join-Path $env:ProgramData "chocolatey"
           }
-          $directory | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+          $popplerTools = Join-Path $chocolateyRoot "lib\poppler\tools"
+          $executable = Get-ChildItem -LiteralPath $popplerTools -Filter pdftoppm.exe -Recurse -File -ErrorAction SilentlyContinue | Select-Object -First 1
+          if ($null -eq $executable) {
+            throw "Chocolatey instaló Poppler, pero no se encontró pdftoppm.exe dentro de '$popplerTools'."
+          }
+
+          $executable.Directory.FullName | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
       - name: Verify pdftoppm on Ubuntu
         if: runner.os == 'Linux'
         shell: bash
