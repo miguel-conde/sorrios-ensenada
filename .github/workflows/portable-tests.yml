@@ -28,7 +28,7 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          choco install poppler --no-progress --yes
+          choco install poppler --version=22.11.0.20240421 --allow-downgrade --no-progress --yes
           $chocolateyRoot = if ($env:ChocolateyInstall) {
             $env:ChocolateyInstall
           } else {
