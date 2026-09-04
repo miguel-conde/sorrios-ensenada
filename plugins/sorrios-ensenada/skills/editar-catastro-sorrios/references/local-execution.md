@@ -14,7 +14,8 @@ Todo lo necesario para instalar y ejecutar las ayudas viaja dentro de ese root.
 - `Pillow` solo para `render_unit.py`.
 - `pdftoppm` disponible mediante `PATH` para renderizar.
 
-`materialize_drive_payload.py` usa únicamente la biblioteca estándar de Python.
+`materialize_drive_payload.py` y `materialize_drive_text.py` usan únicamente la
+biblioteca estándar de Python.
 
 `pyproject.toml`, incluido en el plugin instalado, declara dos conjuntos de uso:
 
@@ -77,4 +78,5 @@ confirmar que el ejecutable aparece en `PATH`.
 Cuando Drive entregue una referencia interna sin ruta local, no la abras con el
 navegador. Sigue [drive-materialization.md](drive-materialization.md). El fallback
 Base64 tiene un límite de 8 MiB y exige validar tamaño y SHA-256 antes de usar la
-copia temporal.
+copia temporal. Para texto UTF-8 autenticado usa `materialize_drive_text.py`, con
+un límite de 1 MiB y comprobación del tamaño exacto.
