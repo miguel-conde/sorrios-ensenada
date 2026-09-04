@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sorrios-ensenada-tools"
-version = "1.2.1"
+version = "1.2.2"
 description = "Portable validation and rendering helpers for the Sorríos Ensenada plugin"
 requires-python = ">=3.10"
 dependencies = [
