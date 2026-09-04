@@ -1,8 +1,8 @@
 schema_version: 1
 project_id: sorrios-ensenada-1752
 drive_root_id: REPLACE_WITH_DRIVE_ROOT_ID
-plugin: {name: sorrios-ensenada, version: 1.2.2}
-skill: {name: editar-catastro-sorrios, version: 1.2.2}
+plugin: {name: sorrios-ensenada, version: 1.2.3}
+skill: {name: editar-catastro-sorrios, version: 1.2.3}
 phase: {current: edicion_paleografica, historical_study_enabled: false}
 authorities:
  manuscript:

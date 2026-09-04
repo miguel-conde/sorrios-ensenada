@@ -32,7 +32,7 @@ Lee [task-modes.md](references/task-modes.md) para los límites de cada modo.
 
 - El PDF manda sobre la lectura material.
 - El Manual de Drive manda sobre el método.
-- Para materializar archivos de Drive, sigue [drive-materialization.md](references/drive-materialization.md); no abras referencias internas con el navegador ni construyas URLs de descarga.
+- Para materializar archivos binarios o textos auxiliares de Drive, lee y sigue [drive-materialization.md](references/drive-materialization.md); no abras referencias internas con el navegador ni construyas URLs de descarga.
 - La skill guía el trabajo; no duplica el Manual.
 - No uses una transcripción no validada como prueba histórica.
 - No avances si la unidad anterior no está cerrada.
