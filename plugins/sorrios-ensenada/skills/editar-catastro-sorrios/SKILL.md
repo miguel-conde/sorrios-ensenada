@@ -32,7 +32,7 @@ Lee [task-modes.md](references/task-modes.md) para los límites de cada modo.
 
 - El PDF manda sobre la lectura material.
 - El Manual de Drive manda sobre el método.
-- Para materializar binarios de Drive, sigue [drive-materialization.md](references/drive-materialization.md); no abras referencias internas con el navegador ni construyas URLs de descarga.
+- Para materializar archivos de Drive, sigue [drive-materialization.md](references/drive-materialization.md); no abras referencias internas con el navegador ni construyas URLs de descarga.
 - La skill guía el trabajo; no duplica el Manual.
 - No uses una transcripción no validada como prueba histórica.
 - No avances si la unidad anterior no está cerrada.
@@ -48,6 +48,7 @@ Lee [workspace-contract.md](references/workspace-contract.md) para la autoridad 
 ## Ayudas
 
 - `scripts/materialize_drive_payload.py`: materializa y verifica un archivo Base64 limitado procedente de Drive.
+- `scripts/materialize_drive_text.py`: materializa texto UTF-8 autenticado de Drive por la entrada estándar.
 - `scripts/validate_workspace.py`: valida una copia local de la carpeta.
 - `scripts/render_unit.py`: extrae una unidad del PDF según `unidades.yaml`.
 - `scripts/validate_operation.py`: compara estados anterior y posterior.

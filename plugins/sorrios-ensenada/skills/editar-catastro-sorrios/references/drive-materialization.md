@@ -60,9 +60,26 @@ y el SHA-256 esperado.
 
 ## Archivos de texto auxiliares
 
-Para `unidades.yaml` y otros archivos de texto, usa el contenido autenticado
-devuelto por Drive y escríbelo en el mismo directorio temporal. Confirma antes su
-ID y ruta lógica. No conviertas una referencia interna del PDF en texto.
+Para `unidades.yaml` y otros archivos de texto, confirma primero el ID, la ruta
+lógica, el MIME y el tamaño exacto que devuelve Drive. El límite es 1 MiB
+(1.048.576 bytes).
+
+Usa `scripts/materialize_drive_text.py` y entrega el texto UTF-8 autenticado por
+la entrada estándar:
+
+```bash
+python scripts/materialize_drive_text.py "$TEMP_DIR/unidades.yaml" \
+  --expected-size 4950
+```
+
+No uses `python -` como escritor, porque consume la misma entrada estándar que
+debe recibir el texto. No improvises otro proceso ni calcules un hash previo
+analizando la salida visible del terminal.
+
+La ayuda valida UTF-8, tamaño exacto y límite, no sobrescribe destinos y publica
+el archivo de forma atómica. También calcula el SHA-256 para el informe. Continúa
+solo si termina con código cero e informa `OK`. No conviertas una referencia
+interna del PDF en texto.
 
 ## Limpieza
 
