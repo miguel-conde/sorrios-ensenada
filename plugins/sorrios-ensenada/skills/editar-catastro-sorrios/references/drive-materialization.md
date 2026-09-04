@@ -21,29 +21,70 @@ expresa.
 ## Orden de materialización
 
 1. Lee los metadatos del archivo y comprueba ID, nombre, MIME y tamaño.
-2. Solicita la descarga completa sin Base64 para obtener una referencia de archivo.
-3. Si el entorno proporciona una ruta local materializada, úsala.
-4. Si proporciona una URL HTTPS temporal utilizable por el ejecutor local,
-   descárgala directamente a un directorio temporal nuevo.
-5. Si solo proporciona una referencia interna no materializable, solicita de nuevo
-   la descarga completa con Base64 y aplica el fallback autorizado.
+2. Solicita primero el archivo con `google_drive_fetch`, usando la URL canónica y:
+
+   - `download_raw_file=true`;
+   - `include_base64=false`.
+
+3. Si el conector entrega un `workspace_path` accesible al ejecutor local, úsalo
+   y valida su tamaño y SHA-256 antes de continuar.
+4. Si solo entrega una referencia interna `sediment://` que WSL no puede abrir,
+   aplica el fallback Base64 limitado.
 
 No abras referencias internas con el navegador. No uses una URL pública o
 construida a mano de Drive. No uses `curl` o `wget` con la URL canónica de Drive.
 
-## Fallback Base64
+## Fallback Base64 limitado
 
-Usa `scripts/materialize_drive_payload.py`. Inícialo con el nombre de salida,
-tamaño y SHA-256 declarados, y entrega el Base64 directamente por la entrada
-estándar del proceso:
+Usa `scripts/materialize_drive_payload.py` dentro de una única ejecución en modo
+código que coordine Drive y la terminal. Inicia la ayuda antes de solicitar el
+Base64. Mantén `b64_string` en una variable interna de esa ejecución: no lo
+muestres, registres, incluyas en órdenes ni guardes en un archivo auxiliar.
 
-```bash
-python scripts/materialize_drive_payload.py "$TEMP_DIR/manuscript.pdf" \
-  --expected-size 5038575 \
-  --expected-sha256 d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24
+### Windows a WSL
+
+Inicia la ayuda con `exec_command`, `tty=true` y esta única orden:
+
+```text
+wsl.exe -e bash -c 'stty -echo -icanon min 1 time 0 && exec <PYTHON> <SCRIPT> <DESTINO> --expected-size <TAMAÑO> --expected-sha256 <HASH>'
 ```
 
-No interpoles el Base64 en el comando ni lo guardes en el historial de la shell.
+El shell solo desactiva el eco y el modo canónico antes de reemplazarse por
+Python. No uses `bash -lc`, no añadas `exit` ni encadenes más órdenes.
+
+### Ejecutor dentro de WSL
+
+Usa la misma TTY y la misma orden, sin el prefijo `wsl.exe -e`:
+
+```text
+bash -c 'stty -echo -icanon min 1 time 0 && exec <PYTHON> <SCRIPT> <DESTINO> --expected-size <TAMAÑO> --expected-sha256 <HASH>'
+```
+
+Sustituye todos los marcadores `<...>` por valores ya comprobados antes de
+ejecutar la orden; no los uses de forma literal.
+
+### Coordinación de Drive y la TTY
+
+1. Exige que `exec_command` devuelva un `session_id` y que la ayuda siga activa.
+2. Solo entonces llama a `google_drive_fetch` con la URL canónica,
+   `download_raw_file=true` e `include_base64=true`.
+3. Antes de enviar datos, comprueba el ID, MIME y tamaño devueltos. Comprueba
+   también que la longitud de `b64_string` sin espacios ASCII, tabuladores ni
+   saltos de línea sea `4 × ceil(expected_size / 3)`.
+4. Envía `b64_string` al `session_id` mediante `write_stdin`, en bloques
+   consecutivos de 32.768 caracteres como máximo. No añadas saltos, EOF, Ctrl-D,
+   `exit` ni ningún otro contenido.
+5. Tras el último bloque, no escribas más en el canal. Espera el mensaje `OK` y
+   el fin autónomo del proceso.
+
+Detente antes de enviar el Base64 si no existe `session_id`, si no pueden
+desactivarse el eco y el modo canónico, o si no puede usarse `write_stdin`.
+
+Si falla la descarga, una comprobación o el envío después de abrir la TTY,
+termina el proceso mediante el control de la sesión del ejecutor, espera su
+cierre y elimina el destino y cualquier archivo parcial. No envíes `exit`,
+Ctrl-D ni otras órdenes por stdin para cerrarlo.
+
 Cuando se proporciona `--expected-size`, la ayuda calcula la longitud Base64
 estándar como `4 × ceil(expected_size / 3)`. Lee los bytes disponibles por bloques,
 ignorando únicamente espacios ASCII, tabuladores y saltos de línea, y termina en
@@ -52,10 +93,6 @@ anterior a esa longitud produce `ERROR` y no crea el destino. Si el bloque que
 completa la carga contiene caracteres Base64 adicionales, también se rechaza;
 solo se permiten espacios o saltos de línea tras el contenido esperado dentro de
 ese bloque.
-
-Cuando el ejecutor use una terminal interactiva, desactiva el eco antes de enviar
-el contenido. No cierres ni reutilices el canal hasta que la ayuda haya informado
-`OK` o `ERROR` y terminado.
 
 La ayuda:
 
@@ -66,7 +103,8 @@ La ayuda:
 - elimina el archivo parcial cuando falla.
 
 Continúa únicamente si termina con código cero e informa `OK`, el tamaño esperado
-y el SHA-256 esperado.
+y el SHA-256 esperado. Comprueba de nuevo el tamaño y el SHA-256 del archivo
+materializado antes de usarlo.
 
 ## Archivos de texto auxiliares
 

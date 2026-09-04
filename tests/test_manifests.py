@@ -28,7 +28,7 @@ def test_plugin_and_marketplace_identifiers_match():
     entry = marketplace["plugins"][0]
 
     assert plugin["name"] == PLUGIN_ROOT.name == entry["name"]
-    assert plugin["version"] == "1.2.2"
+    assert plugin["version"] == "1.2.3"
     assert plugin["skills"] == "./skills/"
     assert entry["source"]["path"] == "./plugins/sorrios-ensenada"
     install_source = ROOT.joinpath(
@@ -59,9 +59,9 @@ def test_versions_are_synchronized():
         )
     )
 
-    assert project["project"]["version"] == "1.2.2"
-    assert template["plugin"]["version"] == "1.2.2"
-    assert template["skill"]["version"] == "1.2.2"
+    assert project["project"]["version"] == "1.2.3"
+    assert template["plugin"]["version"] == "1.2.3"
+    assert template["skill"]["version"] == "1.2.3"
     assert project_file.is_file()
     assert not ROOT.joinpath("pyproject.toml").exists()
 
