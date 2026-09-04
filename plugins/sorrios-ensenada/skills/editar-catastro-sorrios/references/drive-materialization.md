@@ -44,8 +44,18 @@ python scripts/materialize_drive_payload.py "$TEMP_DIR/manuscript.pdf" \
 ```
 
 No interpoles el Base64 en el comando ni lo guardes en el historial de la shell.
+Cuando se proporciona `--expected-size`, la ayuda calcula la longitud Base64
+estándar como `4 × ceil(expected_size / 3)`. Lee los bytes disponibles por bloques,
+ignorando únicamente espacios ASCII, tabuladores y saltos de línea, y termina en
+cuanto recibe ese número de caracteres Base64: no necesita esperar a EOF. Un EOF
+anterior a esa longitud produce `ERROR` y no crea el destino. Si el bloque que
+completa la carga contiene caracteres Base64 adicionales, también se rechaza;
+solo se permiten espacios o saltos de línea tras el contenido esperado dentro de
+ese bloque.
+
 Cuando el ejecutor use una terminal interactiva, desactiva el eco antes de enviar
-el contenido y cierra la entrada estándar al terminar.
+el contenido. No cierres ni reutilices el canal hasta que la ayuda haya informado
+`OK` o `ERROR` y terminado.
 
 La ayuda:
 
