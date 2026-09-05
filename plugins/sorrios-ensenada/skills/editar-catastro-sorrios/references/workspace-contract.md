@@ -1,44 +1,50 @@
-# Contrato del espacio de trabajo
+# Contrato del workspace
+
+## Regla principal
+
+GitHub es el workspace canónico del proyecto. Google Drive conserva únicamente el PDF autoritativo y es de solo lectura en el flujo normal. La memoria de una conversación, una descarga o un checkout local no son estado canónico.
 
 ## Autoridades
 
 | Ámbito | Autoridad |
 |---|---|
-| Lectura y materialidad | PDF autoritativo |
-| Método | `Manual_Editorial.md` |
-| Identidad y ubicación | `proyecto.yaml` |
-| Estado | `estado.yaml` |
-| Secuencia material | `unidades.yaml` |
-| Texto y aparato | `Edicion_Critica.md` |
-| Dudas e incidencias | `Diario_Editorial.md` |
-| Datos derivados | Glosario e índices |
-| Historial | `CAMBIOS.md` y `OPERACIONES/` |
+| Lectura y materialidad | PDF declarado en `project/00_CONTROL/proyecto.yaml` |
+| Método | `project/00_CONTROL/Manual_Editorial.md` |
+| Identidad y configuración | `project/00_CONTROL/proyecto.yaml` |
+| Estado | `project/00_CONTROL/estado.yaml` |
+| Secuencia material | `project/00_CONTROL/unidades.yaml` |
+| Texto y aparato | `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md` |
+| Dudas e incidencias | `project/20_TRABAJO_EDITORIAL/Diario_Editorial.md` |
+| Datos derivados | Glosario e índices bajo `project/20_TRABAJO_EDITORIAL/` |
+| Operaciones | `project/00_CONTROL/OPERACIONES/` |
+| Historial técnico | Git |
+| Resultados | `project/30_RESULTADOS/` |
 
 ## Estructura
 
-- `00_CONTROL`: controles, Manual, cambios y operaciones.
-- `10_FUENTE_PRIMARIA`: solo el PDF.
-- `20_TRABAJO_EDITORIAL`: edición, Diario, Glosario e índices.
-- `30_RESULTADOS`: entregas.
-- `90_ARCHIVO`: copias sustituidas; no se cargan en el trabajo normal.
+- `project/00_CONTROL`: controles, Manual, cambios y operaciones.
+- `project/20_TRABAJO_EDITORIAL`: edición, Diario, Glosario e índices.
+- `project/30_RESULTADOS`: resultados.
+- `project/90_ARCHIVO`: históricos; no se cargan en el trabajo normal.
+- `plugins/sorrios-ensenada/skills/editar-catastro-sorrios/references`: método común.
+- `plugins/sorrios-ensenada/skills/editar-catastro-sorrios/assets/templates`: plantillas comunes.
+
+El PDF no reside en `project/` ni en ninguna otra ruta del repositorio.
+
+## Lectura
+
+Lee siempre desde una rama o commit explícito cuando la tarea no deba usar la rama canónica. Para el uso normal, `repository.canonical_branch` de `proyecto.yaml` fija la rama canónica.
 
 ## Conflictos
 
-1. Localiza por identificador.
-2. Si falta un archivo, detén el trabajo.
-3. Si estado y edición no concuerdan, audita.
-4. Si skill y Manual discrepan, aplica el Manual y propone corregir la skill.
-5. No escribas durante consultas.
+1. Si falta un archivo declarado, detén la operación afectada.
+2. Si `estado.yaml`, `unidades.yaml` y la edición no concuerdan, audita antes de editar.
+3. Si el método común y el Manual discrepan, prevalece el Manual y debe corregirse el método.
+4. Si la rama cambia tras fijar `base_sha`, no publiques: relee y reconcilia.
+5. No escribas durante consultas de solo lectura.
 
-## Operación de varios archivos
+## Escritura
 
-1. Lee revisiones y controles.
-2. Crea un registro `prepared`.
-3. Prepara cambios fuera de Drive.
-4. Valida.
-5. Escribe edición, derivados y Diario.
-6. Verifica cada escritura.
-7. Escribe `estado.yaml` en último lugar.
-8. Marca la operación `verified`.
+Un cambio aislado de un solo archivo puede usar la API de contenidos con el SHA previo del archivo.
 
-Si algo falla, no actualices el estado ni empieces otra unidad.
+Toda operación editorial que afecte a varios archivos se publica mediante un único commit Git atómico, siguiendo `github-operations.md`. No se usa `force=true` en operaciones normales.

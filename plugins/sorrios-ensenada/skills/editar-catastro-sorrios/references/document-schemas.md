@@ -1,25 +1,40 @@
 # Esquemas
 
-## proyecto.yaml
+## `project/00_CONTROL/proyecto.yaml`
 
-Debe incluir `schema_version`, `project_id`, `drive_root_id`, versiones de plugin y skill, fase, carpetas, autoridades y documentos. Cada archivo vivo debe tener `file_id` y `path`.
+Debe usar `schema_version: 2` e incluir:
 
-Los valores `path` persistidos son rutas lógicas relativas y usan `/` como forma
-canónica. No son rutas físicas y no se les aplica `Path.resolve()`. Los validadores
-aceptan también `\` por compatibilidad con datos existentes y normalizan antes de
-comparar.
+- `project_id` y `title`;
+- `repository.provider: github`, `full_name`, `canonical_branch` y `project_root`;
+- nombre, versión y ruta del plugin y de la skill;
+- fase actual y `historical_study_enabled`;
+- `authorities.manuscript` con `provider: google_drive`, `access: read_only`, `file_id`, nombre, SHA-256, tamaño y páginas;
+- `authorities.manual` con ruta GitHub y versión;
+- rutas GitHub de controles, documentos e histórico.
 
-## estado.yaml
+Los controles y documentos vivos no llevan IDs de Drive. Los valores `path` son rutas lógicas POSIX relativas a la raíz del repositorio.
+
+## `project/00_CONTROL/estado.yaml`
 
 Debe incluir fase, última unidad validada y cerrada, unidad actual y siguiente, ubicación, dudas, tareas y operación. `operation.status` admite `clean`, `prepared`, `failed` o `verified`.
 
-Los elementos de `allowed_changes` siguen siendo cadenas. Se interpretan como rutas
-lógicas relativas y se normalizan al formato POSIX canónico antes de compararlos.
+Si una operación usa `allowed_changes`, sus elementos son rutas lógicas relativas y se normalizan a POSIX antes de comparar.
 
-## unidades.yaml
+## `project/00_CONTROL/unidades.yaml`
 
-Debe declarar `unit_count: 35`. Cada unidad tiene id, etiqueta, orden, página, posición, anterior y siguiente. Posiciones: `complete`, `left` o `right`.
+Debe declarar `unit_count: 35`. Cada unidad tiene id, etiqueta, orden, página, posición, anterior y siguiente. Las posiciones válidas son `complete`, `left` y `right`.
 
 ## Edición
 
-Cada unidad contiene Imagen, Transcripción paleográfica, Observaciones editoriales, Notas paleográficas, Notas históricas y Referencias cruzadas.
+Cada unidad de `Edicion_Critica.md` contiene exactamente estas seis secciones:
+
+1. Imagen.
+2. Transcripción paleográfica.
+3. Observaciones editoriales.
+4. Notas paleográficas.
+5. Notas históricas.
+6. Referencias cruzadas.
+
+## Operaciones
+
+Los registros de `project/00_CONTROL/OPERACIONES/` documentan la operación editorial y el commit que la publica. Git es el historial técnico; el registro conserva el sentido editorial de la operación.

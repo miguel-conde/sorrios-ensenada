@@ -1,93 +1,89 @@
-schema_version: 1
+schema_version: 2
 project_id: sorrios-ensenada-1752
 title: "Catastro de Ensenada de Sorribas y Santibáñez de Ordás"
-drive_root_id: 1gS8ZUgCxdYuJmb3TCWAN-nYo_Rjds6tJ
+
+repository:
+  provider: github
+  full_name: miguel-conde/sorrios-ensenada
+  canonical_branch: main
+  project_root: project
 
 plugin:
   name: sorrios-ensenada
-  version: 1.0.0
+  version: "2.0.0"
+  path: plugins/sorrios-ensenada
 skill:
   name: editar-catastro-sorrios
-  version: 1.0.0
+  version: "2.0.0"
+  path: plugins/sorrios-ensenada/skills/editar-catastro-sorrios
 
 phase:
   current: edicion_paleografica
   historical_study_enabled: false
 
-folders:
-  control: 1ocktCDbBGjLEKCJM21x3FoXbGZXc-Gl4
-  operations: 1N-ej7B6nXh8ou91S88vrXxTaP9lMaIxP
-  primary_source: 16V6U9DbQFwYP9qUsarQe3Il4617TstHZ
-  editorial_work: 1wrQpiaLsvqGrA-UAWezV39374baI0bUn
-  indexes: 1-FL66f_G1t0HQby0NIPN53DK6CiDRO-v
-  results: 1GSz0zn4rFW0jLuv6gjuLT9lUCsEb4thu
-  paleographic_edition: 1k72x00KpLFhtb0zuOIJCCWBU1bfxHnWQ
-  historical_study: 18I6GWf3ALUplU_RT84hfPFlWVd1BN-DM
-  archive: 1Af_SbbUJ7BAhO_4lgdka99iQUM7QnfYO
-  premigration: 1ky8Y-MHFTEfeoLxt5zu1X05eWwi7XB3b
-  replaced_system: 12QgYwCZ3CG9gjicsfbVys1pM3Al3Kso5
-
 authorities:
   manuscript:
+    provider: google_drive
+    access: read_only
     file_id: 1GgBs68iTi53ue8-TbrYFABALxadhQe5u
-    path: 10_FUENTE_PRIMARIA/sorrios_ensenada_orden_lectura_calidad_original.pdf
+    name: sorrios_ensenada_orden_lectura_calidad_original.pdf
     sha256: d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24
     size_bytes: 5038575
     pages: 18
   manual:
-    file_id: 1_LJF6G41MPyWykEHYaPFiJXBbkFB6HB4
-    path: 00_CONTROL/Manual_Editorial.md
+    provider: github
+    path: project/00_CONTROL/Manual_Editorial.md
     version: "1.5"
 
 controls:
   project:
-    file_id: 1pvSR1unEjxIdl9uwvPscdrBlEe8czCsw
-    path: 00_CONTROL/proyecto.yaml
+    provider: github
+    path: project/00_CONTROL/proyecto.yaml
   state:
-    file_id: 1TIsW3S1QaC5PkBt9OCDk4ZnYUY9r2r9R
-    path: 00_CONTROL/estado.yaml
+    provider: github
+    path: project/00_CONTROL/estado.yaml
   units:
-    file_id: 1AbEoQ6Mea2fU1yuuZlYUUxhI3fiRxNe0
-    path: 00_CONTROL/unidades.yaml
-  instructions:
-    file_id: 1dwDRPUu671IDCMQtEyV3Qpsu-l6TMI-_
-    path: 00_CONTROL/INSTRUCCIONES_PROYECTO.md
-    version: "2.0"
+    provider: github
+    path: project/00_CONTROL/unidades.yaml
   changes:
-    file_id: 1tX4VK8395groVrrEMwElF4Xj4NpKhGgI
-    path: 00_CONTROL/CAMBIOS.md
-  migration_operation:
-    file_id: 1roo0ryJAnU2kPD9DPj0yvfd574CEY9QU
-    path: 00_CONTROL/OPERACIONES/MIGRACION-2026-09-01.md
+    provider: github
+    path: project/00_CONTROL/CAMBIOS.md
+  operations:
+    provider: github
+    path: project/00_CONTROL/OPERACIONES
 
 documents:
   edition:
-    file_id: 1Cd970KePxBVMMTXwoKIzQ-zkwwp66b96
-    path: 20_TRABAJO_EDITORIAL/Edicion_Critica.md
+    provider: github
+    path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
     version: "3.4"
   diary:
-    file_id: 1l3BnwqKocGC3oYpFjRRBQjOYhTR2A1ZP
-    path: 20_TRABAJO_EDITORIAL/Diario_Editorial.md
+    provider: github
+    path: project/20_TRABAJO_EDITORIAL/Diario_Editorial.md
   glossary:
-    file_id: 1eph7mP3RZSdeKXPYPBd7KYRJY5lkw_Ef
-    path: 20_TRABAJO_EDITORIAL/Glosario.md
+    provider: github
+    path: project/20_TRABAJO_EDITORIAL/Glosario.md
   indexes:
     people:
-      file_id: 1qHYyA4dR1ZQMbzRmiY0iEN53lNY0TVY_
-      path: 20_TRABAJO_EDITORIAL/INDICES/Indice_Personas.md
+      provider: github
+      path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Personas.md
     places:
-      file_id: 1mTexXji_qGtHlpkBeUzgT5zZI9X8RCEe
-      path: 20_TRABAJO_EDITORIAL/INDICES/Indice_Toponimos.md
+      provider: github
+      path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Toponimos.md
     institutions:
-      file_id: 1_k02KQo5hjOvJKAG-XrfDWmMfRjO5Xec
-      path: 20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md
+      provider: github
+      path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md
     measures:
-      file_id: 1YlN6Po0U1vpMXoB02G4PMTobyZ2vcYrf
-      path: 20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md
+      provider: github
+      path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md
     crafts:
-      file_id: 1WHhlKia2d-gqKzUmYGDuOn0BKGmgoyo_
-      path: 20_TRABAJO_EDITORIAL/INDICES/Indice_Oficios.md
+      provider: github
+      path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Oficios.md
   historical_study:
-    file_id: 1zysSlPuzeInIxkyo_IoFzeDE3qcP8J_4
-    path: 30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    provider: github
+    path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
     enabled: false
+
+archive:
+  provider: github
+  path: project/90_ARCHIVO
