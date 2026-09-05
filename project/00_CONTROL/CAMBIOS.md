@@ -1,5 +1,15 @@
 # Cambios
 
+## 5 de septiembre de 2026 — GitHub workspace v2 (preparación 2.0.0)
+
+- Construida la versión 2.0.0 en `migration/github-workspace-v2`.
+- Migrados a `project/` los documentos vivos e históricos de texto; no se ha subido ningún PDF.
+- `proyecto.yaml` pasa a schema 2 en la rama, con GitHub como workspace previsto tras el cutover; Drive queda reservado al PDF autoritativo en solo lectura.
+- Añadido `PROJECT.md` para Chat normal y refactorizada la skill autocontenida.
+- Retirada la materialización Base64/local; tools, tests y CI adaptados.
+- Estado editorial preservado: portada; ninguna unidad validada o cerrada; D-001 abierta.
+- `main` sigue sin cambios; cutover y limpieza de Drive pendientes de H3/H4/H6.
+
 ## 1 de septiembre de 2026 — Migración de arquitectura
 
 - Creada la copia completa `90_ARCHIVO/PREMIGRACION_2026-08-31`.

@@ -1,10 +1,18 @@
 # Plan de implementación — GitHub workspace v2
 ## Migración de Sorríos — Catastro de Ensenada desde 1.2.3
 
-**Estado:** propuesta para aprobación; no ejecutar todavía  
+**Estado:** H1 y H2 ejecutados en `migration/github-workspace-v2`; H3 pendiente  
 **Fecha:** 5 de septiembre de 2026  
 **Versión de partida:** 1.2.3  
-**Versión de destino recomendada:** 2.0.0
+**Versión de destino fijada:** 2.0.0
+
+## Estado de ejecución al cierre de H2
+
+- H1: completado; inventario, congelación, backup y rama creados.
+- H2: completado en la rama de migración; `project/`, `PROJECT.md`, schema 2, núcleo común, skill, tools, tests y CI ya están adaptados a 2.0.0.
+- `main` continúa en `cd683dd3a745c1f7bbabc154510885dbdad9dde8`.
+- No se ha hecho todavía el cutover ni se ha limpiado Drive.
+- El siguiente hito es H3: pruebas de CI y validación en Chat normal Web/Desktop y en una superficie compatible con la skill.
 
 ---
 
