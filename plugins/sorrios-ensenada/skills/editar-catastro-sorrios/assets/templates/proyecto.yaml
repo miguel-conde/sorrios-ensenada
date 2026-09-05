@@ -1,13 +1,62 @@
-schema_version: 1
+schema_version: 2
 project_id: sorrios-ensenada-1752
-drive_root_id: REPLACE_WITH_DRIVE_ROOT_ID
-plugin: {name: sorrios-ensenada, version: 1.2.3}
-skill: {name: editar-catastro-sorrios, version: 1.2.3}
-phase: {current: edicion_paleografica, historical_study_enabled: false}
+title: "Catastro de Ensenada de Sorribas y Santibáñez de Ordás"
+
+repository:
+  provider: github
+  full_name: miguel-conde/sorrios-ensenada
+  canonical_branch: main
+  project_root: project
+
+plugin:
+  name: sorrios-ensenada
+  version: "2.0.0"
+  path: plugins/sorrios-ensenada
+skill:
+  name: editar-catastro-sorrios
+  version: "2.0.0"
+  path: plugins/sorrios-ensenada/skills/editar-catastro-sorrios
+
+phase:
+  current: edicion_paleografica
+  historical_study_enabled: false
+
 authorities:
- manuscript:
-  file_id: REPLACE_WITH_FILE_ID
-  path: 10_FUENTE_PRIMARIA/sorrios_ensenada_orden_lectura_calidad_original.pdf
-  sha256: d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24
-  size_bytes: 5038575
-  pages: 18
+  manuscript:
+    provider: google_drive
+    access: read_only
+    file_id: 1GgBs68iTi53ue8-TbrYFABALxadhQe5u
+    name: sorrios_ensenada_orden_lectura_calidad_original.pdf
+    sha256: d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24
+    size_bytes: 5038575
+    pages: 18
+  manual:
+    provider: github
+    path: project/00_CONTROL/Manual_Editorial.md
+    version: "1.5"
+
+controls:
+  project: {provider: github, path: project/00_CONTROL/proyecto.yaml}
+  state: {provider: github, path: project/00_CONTROL/estado.yaml}
+  units: {provider: github, path: project/00_CONTROL/unidades.yaml}
+  changes: {provider: github, path: project/00_CONTROL/CAMBIOS.md}
+  operations: {provider: github, path: project/00_CONTROL/OPERACIONES}
+
+documents:
+  edition: {provider: github, path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md, version: "3.4"}
+  diary: {provider: github, path: project/20_TRABAJO_EDITORIAL/Diario_Editorial.md}
+  glossary: {provider: github, path: project/20_TRABAJO_EDITORIAL/Glosario.md}
+  indexes:
+    people: {provider: github, path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Personas.md}
+    places: {provider: github, path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Toponimos.md}
+    institutions: {provider: github, path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md}
+    measures: {provider: github, path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md}
+    crafts: {provider: github, path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Oficios.md}
+  historical_study:
+    provider: github
+    path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    enabled: false
+
+archive:
+  provider: github
+  path: project/90_ARCHIVO

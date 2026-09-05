@@ -1,70 +1,40 @@
-import os
 from pathlib import Path
+import json
+import re
 import shutil
-import subprocess
-import sys
-try:
-    import tomllib
-except ModuleNotFoundError:  # Python 3.10
-    import tomli as tomllib
+
+import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN_ROOT = ROOT.joinpath("plugins", "sorrios-ensenada")
-SCRIPTS = (
-    "materialize_drive_payload.py",
-    "materialize_drive_text.py",
-    "render_unit.py",
-    "validate_operation.py",
-    "validate_workspace.py",
-)
+PLUGIN_ROOT = ROOT / "plugins" / "sorrios-ensenada"
 
 
-def test_isolated_plugin_resolves_dependencies_and_script_help(tmp_path):
-    isolated_plugin = tmp_path.joinpath("sorrios-ensenada")
-    shutil.copytree(PLUGIN_ROOT, isolated_plugin)
+def test_isolated_plugin_is_self_contained(tmp_path):
+    isolated = tmp_path / "sorrios-ensenada"
+    shutil.copytree(PLUGIN_ROOT, isolated)
 
-    project_file = isolated_plugin.joinpath("pyproject.toml")
-    project = tomllib.loads(project_file.read_text(encoding="utf-8"))
-    assert project["project"]["dependencies"] == ["PyYAML>=6.0,<7"]
-    assert project["project"]["optional-dependencies"]["render"] == [
-        "Pillow>=10,<13"
-    ]
+    plugin = json.loads((isolated / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
+    skill_root = isolated / "skills" / "editar-catastro-sorrios"
+    skill_text = (skill_root / "SKILL.md").read_text(encoding="utf-8")
+    frontmatter = yaml.safe_load(skill_text.split("---", 2)[1])
 
-    environment = os.environ.copy()
-    environment.pop("PYTHONPATH", None)
-    environment["PYTHONDONTWRITEBYTECODE"] = "1"
-    resolution = subprocess.run(
-        [
-            sys.executable,
-            "-m",
-            "pip",
-            "install",
-            "--dry-run",
-            "--no-index",
-            "--no-build-isolation",
-            ".[render]",
-        ],
-        cwd=isolated_plugin,
-        env=environment,
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    assert resolution.returncode == 0, resolution.stdout + resolution.stderr
+    assert plugin["version"] == "2.0.0"
+    assert frontmatter["name"] == "editar-catastro-sorrios"
+    assert not (isolated / "PROJECT.md").exists()
 
-    script_root = isolated_plugin.joinpath(
-        "skills", "editar-catastro-sorrios", "scripts"
-    )
-    for script_name in SCRIPTS:
-        help_result = subprocess.run(
-            [sys.executable, script_root.joinpath(script_name), "--help"],
-            cwd=isolated_plugin,
-            env=environment,
-            check=False,
-            capture_output=True,
-            text=True,
-        )
-        assert help_result.returncode == 0, (
-            help_result.stdout + help_result.stderr
-        )
+    expected_references = {
+        "task-modes.md",
+        "workspace-contract.md",
+        "editorial-procedure.md",
+        "document-schemas.md",
+        "github-operations.md",
+        "pdf-access.md",
+    }
+    assert {path.name for path in (skill_root / "references").glob("*.md")} == expected_references
+    assert (skill_root / "assets" / "templates" / "proyecto.yaml").is_file()
+
+    targets = re.findall(r"\[[^\]]+\]\(([^)]+)\)", skill_text)
+    for target in targets:
+        assert not target.startswith("/")
+        assert (skill_root / target).resolve().is_file()
