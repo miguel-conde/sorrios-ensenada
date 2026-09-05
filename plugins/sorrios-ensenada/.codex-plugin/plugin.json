@@ -1,6 +1,6 @@
 {
   "name": "sorrios-ensenada",
-  "version": "1.2.3",
+  "version": "2.0.0",
   "description": "Consulta, audita y mantiene la edición crítica del Catastro de Ensenada de Sorribas y Santibáñez de Ordás.",
   "author": {
     "name": "Miguel Conde"
@@ -11,14 +11,14 @@
   "interface": {
     "displayName": "Catastro de Sorríos",
     "shortDescription": "Edición crítica del Catastro de Sorríos",
-    "longDescription": "Consulta, auditoría y edición controlada del expediente de 1752 mediante su carpeta canónica de Google Drive.",
+    "longDescription": "Consulta, auditoría y edición controlada del expediente de 1752 con GitHub como workspace canónico y Google Drive solo para el PDF autoritativo en lectura.",
     "developerName": "Miguel Conde",
     "category": "Productivity",
     "capabilities": ["Write"],
     "defaultPrompt": [
-      "Continúa la unidad editorial actual.",
-      "Audita el estado del proyecto.",
-      "Consulta el manuscrito sin cambiar archivos."
+      "Continúa la unidad editorial actual desde el estado canónico de GitHub.",
+      "Audita el estado del proyecto en GitHub.",
+      "Consulta el manuscrito de Drive sin cambiar archivos."
     ]
   }
 }
