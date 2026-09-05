@@ -1,0 +1,23 @@
+schema_version: 1
+updated_at: "2026-09-01T05:57:40Z"
+phase: edicion_paleografica
+last_validated_unit: null
+last_closed_unit: null
+current_unit: portada
+next_unit: reverso_portada
+current_location:
+  pdf_page: 1
+  position: complete
+open_issues:
+  - D-001
+pending_tasks:
+  - transcribir_portada
+  - revisar_portada
+  - resolver_signo_superior
+  - completar_aparato
+  - validar_portada
+  - actualizar_derivados
+  - cerrar_portada
+operation:
+  status: clean
+  id: null

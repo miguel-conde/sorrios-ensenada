@@ -1,0 +1,248 @@
+schema_version: 1
+unit_count: 35
+units:
+  - id: portada
+    label: "Portada"
+    order: 1
+    pdf_page: 1
+    position: complete
+    previous: null
+    next: reverso_portada
+  - id: reverso_portada
+    label: "Reverso de la portada"
+    order: 2
+    pdf_page: 2
+    position: left
+    previous: portada
+    next: folio_306r
+  - id: folio_306r
+    label: "Folio 306r"
+    order: 3
+    pdf_page: 2
+    position: right
+    previous: reverso_portada
+    next: folio_306v
+  - id: folio_306v
+    label: "Folio 306v"
+    order: 4
+    pdf_page: 3
+    position: left
+    previous: folio_306r
+    next: folio_307r
+  - id: folio_307r
+    label: "Folio 307r"
+    order: 5
+    pdf_page: 3
+    position: right
+    previous: folio_306v
+    next: folio_307v
+  - id: folio_307v
+    label: "Folio 307v"
+    order: 6
+    pdf_page: 4
+    position: left
+    previous: folio_307r
+    next: folio_308r
+  - id: folio_308r
+    label: "Folio 308r"
+    order: 7
+    pdf_page: 4
+    position: right
+    previous: folio_307v
+    next: folio_308v
+  - id: folio_308v
+    label: "Folio 308v"
+    order: 8
+    pdf_page: 5
+    position: left
+    previous: folio_308r
+    next: folio_309r
+  - id: folio_309r
+    label: "Folio 309r"
+    order: 9
+    pdf_page: 5
+    position: right
+    previous: folio_308v
+    next: folio_309v
+  - id: folio_309v
+    label: "Folio 309v"
+    order: 10
+    pdf_page: 6
+    position: left
+    previous: folio_309r
+    next: folio_310r
+  - id: folio_310r
+    label: "Folio 310r"
+    order: 11
+    pdf_page: 6
+    position: right
+    previous: folio_309v
+    next: folio_310v
+  - id: folio_310v
+    label: "Folio 310v"
+    order: 12
+    pdf_page: 7
+    position: left
+    previous: folio_310r
+    next: folio_311r
+  - id: folio_311r
+    label: "Folio 311r"
+    order: 13
+    pdf_page: 7
+    position: right
+    previous: folio_310v
+    next: folio_311v
+  - id: folio_311v
+    label: "Folio 311v"
+    order: 14
+    pdf_page: 8
+    position: left
+    previous: folio_311r
+    next: folio_312r
+  - id: folio_312r
+    label: "Folio 312r"
+    order: 15
+    pdf_page: 8
+    position: right
+    previous: folio_311v
+    next: folio_312v
+  - id: folio_312v
+    label: "Folio 312v"
+    order: 16
+    pdf_page: 9
+    position: left
+    previous: folio_312r
+    next: folio_313r
+  - id: folio_313r
+    label: "Folio 313r"
+    order: 17
+    pdf_page: 9
+    position: right
+    previous: folio_312v
+    next: folio_313v
+  - id: folio_313v
+    label: "Folio 313v"
+    order: 18
+    pdf_page: 10
+    position: left
+    previous: folio_313r
+    next: folio_314r
+  - id: folio_314r
+    label: "Folio 314r"
+    order: 19
+    pdf_page: 10
+    position: right
+    previous: folio_313v
+    next: folio_314v
+  - id: folio_314v
+    label: "Folio 314v"
+    order: 20
+    pdf_page: 11
+    position: left
+    previous: folio_314r
+    next: folio_315r
+  - id: folio_315r
+    label: "Folio 315r"
+    order: 21
+    pdf_page: 11
+    position: right
+    previous: folio_314v
+    next: folio_315v
+  - id: folio_315v
+    label: "Folio 315v"
+    order: 22
+    pdf_page: 12
+    position: left
+    previous: folio_315r
+    next: folio_316r
+  - id: folio_316r
+    label: "Folio 316r"
+    order: 23
+    pdf_page: 12
+    position: right
+    previous: folio_315v
+    next: folio_316v
+  - id: folio_316v
+    label: "Folio 316v"
+    order: 24
+    pdf_page: 13
+    position: left
+    previous: folio_316r
+    next: folio_317r
+  - id: folio_317r
+    label: "Folio 317r"
+    order: 25
+    pdf_page: 13
+    position: right
+    previous: folio_316v
+    next: folio_317v
+  - id: folio_317v
+    label: "Folio 317v"
+    order: 26
+    pdf_page: 14
+    position: left
+    previous: folio_317r
+    next: folio_318r
+  - id: folio_318r
+    label: "Folio 318r"
+    order: 27
+    pdf_page: 14
+    position: right
+    previous: folio_317v
+    next: folio_318v
+  - id: folio_318v
+    label: "Folio 318v"
+    order: 28
+    pdf_page: 15
+    position: left
+    previous: folio_318r
+    next: folio_319r
+  - id: folio_319r
+    label: "Folio 319r"
+    order: 29
+    pdf_page: 15
+    position: right
+    previous: folio_318v
+    next: folio_319v
+  - id: folio_319v
+    label: "Folio 319v"
+    order: 30
+    pdf_page: 16
+    position: left
+    previous: folio_319r
+    next: folio_320r
+  - id: folio_320r
+    label: "Folio 320r"
+    order: 31
+    pdf_page: 16
+    position: right
+    previous: folio_319v
+    next: folio_320v
+  - id: folio_320v
+    label: "Folio 320v"
+    order: 32
+    pdf_page: 17
+    position: left
+    previous: folio_320r
+    next: folio_321r
+  - id: folio_321r
+    label: "Folio 321r"
+    order: 33
+    pdf_page: 17
+    position: right
+    previous: folio_320v
+    next: folio_321v
+  - id: folio_321v
+    label: "Folio 321v"
+    order: 34
+    pdf_page: 18
+    position: left
+    previous: folio_321r
+    next: hoja_enfrentada_posterior
+  - id: hoja_enfrentada_posterior
+    label: "Hoja enfrentada posterior"
+    order: 35
+    pdf_page: 18
+    position: right
+    previous: folio_321v
+    next: null
