@@ -2,7 +2,7 @@
 
 **Fecha:** 5 de septiembre de 2026  
 **Rama:** `migration/github-workspace-v2`  
-**Resultado:** PARCIAL — pruebas automatizables PASS; Desktop y skill real pendientes
+**Resultado:** PARCIAL — Web/Desktop y pruebas automatizables PASS; skill real pendiente
 
 ## Matriz de aceptación ejecutada
 
@@ -10,7 +10,9 @@
 |---|---|---|
 | CI Windows/Ubuntu, Python 3.10/3.13 | PASS | Workflow `Portable Python tests`, run 37 sobre `9fff2e546f7fe2fd137a67ca375c217d1229f3dc`; cuatro jobs PASS. |
 | CI tras pruebas H3 | PASS | Workflow run 42 sobre `e8d596595a8808293bbfb7deb01ee69d465a5693`; cuatro jobs PASS. |
+| CI sobre registro H3 | PASS | Workflow run 43 sobre `29a3c662dc59cdd985cf9d412de4315a1def4328`; cuatro jobs PASS. |
 | Chat normal Web / `PROJECT.md` | PASS | `PROJECT.md` leído desde la rama y bootstrap reconstruido sin Work ni checkout local. |
+| ChatGPT Desktop / Chat normal / sin Work | PASS | Ejecución real reportada por el usuario: siguió `PROJECT.md` sobre `migration/github-workspace-v2`, devolvió exactamente `project_id: sorrios-ensenada-1752`, fase `edicion_paleografica`, `current_unit: portada`, página 1 `complete`, `operation.status: clean`, y confirmó que no modificó archivos. |
 | Schema 2 y estado | PASS | `project_id: sorrios-ensenada-1752`; fase `edicion_paleografica`; `current_unit: portada`; página 1 `complete`; `operation.status: clean`. |
 | Drive solo PDF | PASS | Se usó únicamente el file ID canónico `1GgBs68iTi53ue8-TbrYFABALxadhQe5u`. |
 | PDF sin Base64 | PASS | Drive entregó un archivo PDF real mediante referencia de archivo; `b64_string: null`. |
@@ -32,20 +34,29 @@
 
 Una tentativa de `create_file` mediante la API de contenidos fue detenida por una comprobación de seguridad del conector antes de ejecutar la escritura. No se produjo ningún cambio. La misma operación se ejecutó correctamente mediante el protocolo Git-data definido por la arquitectura (`blob` → `tree` → `commit` → relectura de HEAD → `update_ref(force=false)`). Esto no bloquea H3: la capacidad de lectura/escritura GitHub y el protocolo atómico canónico quedan demostrados.
 
-## Pruebas pendientes
+## Prueba pendiente
 
-### ChatGPT Desktop
+### Skill en superficie compatible
 
-Debe abrirse ChatGPT Desktop en Chat normal, sin Work, y ejecutar contra esta rama:
+Debe invocarse realmente `editar-catastro-sorrios` desde una superficie que soporte la skill y comprobar que, sin depender de `/PROJECT.md`, reconstruye el mismo estado desde GitHub y trata Drive solo como PDF de solo lectura.
+
+Prompt recomendado:
 
 ```text
-Trabaja con el proyecto Sorríos del repositorio miguel-conde/sorrios-ensenada.
-Usa la rama migration/github-workspace-v2.
-Carga PROJECT.md y sigue sus instrucciones.
+Usa $editar-catastro-sorrios en modo consulta puntual y solo lectura.
 
-Modo: consulta puntual.
-Informa project_id, fase, current_unit, current_location y operation.status.
-No modifiques ningún archivo.
+Trabaja contra el repositorio miguel-conde/sorrios-ensenada en la rama migration/github-workspace-v2.
+No uses PROJECT.md.
+
+Lee el estado canónico desde GitHub y responde únicamente con:
+- project_id
+- fase
+- current_unit
+- current_location.pdf_page
+- current_location.position
+- operation.status
+
+No modifiques ningún archivo y no escribas en Google Drive.
 ```
 
 Resultado esperado:
@@ -55,10 +66,7 @@ Resultado esperado:
 - `current_unit: portada`;
 - página 1, posición `complete`;
 - `operation.status: clean`;
-- ninguna escritura.
+- ninguna escritura;
+- ninguna dependencia de `/PROJECT.md`.
 
-### Skill en superficie compatible
-
-Debe invocarse realmente `editar-catastro-sorrios` desde una superficie que soporte la skill y comprobar que, sin depender de `/PROJECT.md`, reconstruye el mismo estado desde GitHub y trata Drive solo como PDF de solo lectura.
-
-Hasta que ambas pruebas sean PASS, no ejecutar H4 ni mover `main`.
+Hasta que esta prueba sea PASS, no ejecutar H4 ni mover `main`.

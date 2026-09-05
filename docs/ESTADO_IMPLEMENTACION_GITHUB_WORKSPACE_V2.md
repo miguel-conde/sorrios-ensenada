@@ -3,7 +3,7 @@
 **Fecha:** 5 de septiembre de 2026  
 **Rama:** `migration/github-workspace-v2`  
 **Versión preparada:** 2.0.0  
-**Estado:** H1 y H2 completados; H3 parcialmente validado
+**Estado:** H1 y H2 completados; H3 pendiente únicamente de invocación real de la skill
 
 La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está construida en la rama de migración. El plan detallado se mantiene en `PLAN_IMPLEMENTACION_GITHUB_WORKSPACE_V2.md` y los resultados de aceptación de H3 en `VALIDACION_H3_2026-09-05.md`.
 
@@ -11,6 +11,7 @@ La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está constru
 
 - CI en Windows y Ubuntu, Python 3.10 y 3.13: PASS.
 - Bootstrap de Chat normal Web desde `PROJECT.md`: PASS.
+- Bootstrap de ChatGPT Desktop, Chat normal y sin Work: PASS.
 - Reconstrucción de schema 2, estado y modos desde GitHub: PASS.
 - PDF de Drive como archivo real sin Base64: PASS.
 - Identidad, tamaño, SHA-256 y 18 páginas del PDF: PASS.
@@ -22,9 +23,8 @@ La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está constru
 
 ## H3 pendiente
 
-- Repetir el bootstrap v2 en ChatGPT Desktop, en Chat normal y sin Work.
-- Invocar realmente `editar-catastro-sorrios` en una superficie compatible con skills.
+- Invocar realmente `editar-catastro-sorrios` en una superficie compatible con skills, sin usar `/PROJECT.md`, y comprobar que reconstruye el mismo estado canónico desde GitHub.
 
-Hasta que esas dos pruebas sean PASS, H3 no se considera cerrado y no debe ejecutarse H4.
+Hasta que esa prueba sea PASS, H3 no se considera cerrado y no debe ejecutarse H4.
 
 Aún no se ha hecho el cutover. `main` continúa en `cd683dd3a745c1f7bbabc154510885dbdad9dde8` y Google Drive no se ha limpiado.
