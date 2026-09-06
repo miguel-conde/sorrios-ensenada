@@ -8,17 +8,31 @@ PROJECT = ROOT / "project"
 SECTIONS = ["### Imagen", "### Transcripción paleográfica", "### Observaciones editoriales", "### Notas paleográficas", "### Notas históricas", "### Referencias cruzadas"]
 
 
-def test_state_and_unit_sequence_are_preserved():
+def test_state_and_unit_sequence_are_coherent():
     state = yaml.safe_load((PROJECT / "00_CONTROL" / "estado.yaml").read_text(encoding="utf-8"))
     units = yaml.safe_load((PROJECT / "00_CONTROL" / "unidades.yaml").read_text(encoding="utf-8"))
-    assert state["current_unit"] == "portada"
-    assert state["current_location"] == {"pdf_page": 1, "position": "complete"}
-    assert state["operation"]["status"] == "clean"
-    assert state["last_validated_unit"] is None
-    assert state["last_closed_unit"] is None
+
     assert units["unit_count"] == 35
     assert len(units["units"]) == 35
     assert [row["order"] for row in units["units"]] == list(range(1, 36))
+
+    ids = [row["id"] for row in units["units"]]
+    current = state["current_unit"]
+    assert current in ids
+    current_index = ids.index(current)
+    current_row = units["units"][current_index]
+
+    assert state["current_location"] == {
+        "pdf_page": current_row["pdf_page"],
+        "position": current_row["position"],
+    }
+    assert state["operation"]["status"] == "clean"
+    assert state["last_validated_unit"] == state["last_closed_unit"]
+
+    expected_previous = None if current_index == 0 else ids[current_index - 1]
+    expected_next = None if current_index == len(ids) - 1 else ids[current_index + 1]
+    assert state["last_closed_unit"] == expected_previous
+    assert state["next_unit"] == expected_next
 
 
 def test_manual_and_edition_versions_and_structure_are_preserved():
