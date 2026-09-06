@@ -1,5 +1,20 @@
 # Cambios
 
+## 6 de septiembre de 2026 — H5 completado
+
+- Corregido `tests/test_editorial_invariants.py` para que compruebe coherencia dinámica del progreso editorial en lugar de fijar permanentemente la Portada como unidad actual.
+- Commit de preparación `53b7d17940e8d5a84728624237fdf8a2f2b030c6`; CI run 49: PASS en Windows/Ubuntu y Python 3.10/3.13.
+- Ejecutado el primer ciclo editorial real sobre `main` con la unidad Portada.
+- Leída visualmente la página 1 del PDF autoritativo desde Google Drive como archivo real, sin OCR y sin Base64.
+- Validada y cerrada la Portada; resuelta D-001 como cruz invocativa reconocible (`†`).
+- Actualizados únicamente la Edición crítica, Diario Editorial, Índice de topónimos, `estado.yaml` y el registro de operación correspondiente.
+- Publicación Git multiarchivo atómica sobre `base_sha` mediante `update_ref(..., force=false)` en `6bf596546ce3141d1cd2d13f236b5ec7af76383f` (`editorial: validate and close portada`).
+- CI run 50 sobre la operación editorial: PASS en Windows/Ubuntu y Python 3.10/3.13.
+- Estado editorial resultante: Portada validada y cerrada; `reverso_portada` como unidad actual, página 2 izquierda; sin dudas abiertas; operación `clean`.
+- Probada la continuidad desde otro ordenador mediante Chat normal y `PROJECT.md`, usando solo GitHub `main`: PASS.
+- El segundo ordenador reconstruyó exactamente el estado y la transcripción validada de la Portada sin checkout local, Git local, Python local, WSL, VS Code, Drive ni plugin del proyecto.
+- H5 queda cerrado en PASS; H6 (limpieza de Drive y retirada del legado) es el siguiente hito.
+
 ## 6 de septiembre de 2026 — Cutover GitHub workspace v2 (H4)
 
 - H3 cerrado con todas las pruebas de aceptación previas al cutover en PASS, incluida invocación real del complemento/skill en ChatGPT Desktop.
@@ -9,7 +24,7 @@
 - Revalidado el PDF autoritativo de Drive: mismo file ID, nombre, tamaño, 18 páginas y SHA-256; acceso como archivo real y sin Base64.
 - CI disparado sobre `main` tras el cutover: PASS.
 - Se conserva `backup/pre-github-workspace-v2` para rollback durante la aceptación.
-- H5 (ciclo editorial real y continuidad entre sesiones/ordenadores) y H6 (limpieza de Drive) siguen pendientes.
+- En ese momento H5 (ciclo editorial real y continuidad entre sesiones/ordenadores) y H6 (limpieza de Drive) quedaban pendientes.
 
 ## 5 de septiembre de 2026 — GitHub workspace v2 (preparación 2.0.0)
 
