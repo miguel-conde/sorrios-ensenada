@@ -3,6 +3,10 @@
 Este archivo es la entrada del proyecto para Chat normal en Web o Desktop.
 No presupone Work, checkout local, Python, Git local, WSL, VS Code ni una skill instalada.
 
+## Guía de uso para el operador
+
+`docs/GUIA_USO_PROCESO_EDITORIAL.md` explica cómo solicitar consultas, edición de unidades, auditorías, cambios metodológicos, revisión de unidades ya validadas y futura activación del Estudio Histórico. Es una guía informativa para el usuario: no sustituye ni modifica las fuentes normativas y de control del proyecto. No es necesario cargarla en cada tarea; consúltala cuando haya que explicar o elegir la dinámica de trabajo.
+
 ## Inicio obligatorio
 
 1. Trabaja con el repositorio privado `miguel-conde/sorrios-ensenada`.

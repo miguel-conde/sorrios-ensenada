@@ -1,5 +1,13 @@
 # Cambios
 
+## 6 de septiembre de 2026 — Guía de uso del proceso editorial
+
+- Añadida `docs/GUIA_USO_PROCESO_EDITORIAL.md` como guía práctica para el usuario del proyecto.
+- La guía explica cómo solicitar los cinco modos de tarea, el ciclo normal de edición de una unidad, revisión previa a publicación, tratamiento de dudas, auditorías, cambios metodológicos, revisión de unidades validadas y futura activación del Estudio Histórico.
+- Añadidas plantillas reutilizables de prompts para Chat normal y una referencia al uso equivalente desde entornos con la skill instalada.
+- `PROJECT.md` enlaza la guía como ayuda informativa para el operador y aclara que no es necesario cargarla en cada tarea.
+- La guía no es normativa y no modifica el Manual Editorial, la skill, los controles, el estado editorial ni el PDF autoritativo.
+
 ## 6 de septiembre de 2026 — H6 completado
 
 - Inventariada la carpeta canónica de Google Drive y contrastado su contenido con GitHub.
