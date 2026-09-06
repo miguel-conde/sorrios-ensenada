@@ -75,3 +75,12 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Unidades:** folio 306v.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `perito`.
+
+### Conde De Luna
+
+- **Nombre original:** `Ex[celentísi]mo S[eño]r Conde De Luna`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** titular señorial citado en la segunda respuesta.
+- **Unidades:** folio 307r.
+- **Identificación histórica:** no establecida nominalmente en la edición.
+- **Referencias cruzadas:** `Señorío`; `Concejo de Ordas`.

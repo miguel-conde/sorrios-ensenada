@@ -2,14 +2,14 @@
 
 ## Lugar de Sorribas y Santibáñez de Ordás (1752)
 
-**Versión:** 3.4  
+**Versión:** 3.5  
 **Estado:** documento principal vigente  
-**Manual aplicable:** Manual Editorial v1.5  
+**Manual aplicable:** Manual Editorial v1.6  
 **Fuente gráfica autoritativa:** `sorrios_ensenada_orden_lectura_calidad_original.pdf`
 
-> Proyecto de edición paleográfica semidiplomática. Documento principal de trabajo, conforme al Manual Editorial v1.5.
+> Proyecto de edición paleográfica semidiplomática. Documento principal de trabajo, conforme al Manual Editorial v1.6.
 
-> **Cambio de v3.3 a v3.4:** actualización de la referencia normativa al Manual v1.5 y al nuevo sistema de control; no se modifica ninguna transcripción ni la estructura de las 35 unidades.
+> **Cambio de v3.4 a v3.5:** actualización de la referencia normativa al Manual v1.6 para regular croquis, esquemas y elementos gráficos con texto documental propio; se incorpora el cierre ordinario de folio 307r sin alterar unidades ya validadas.
 
 ---
 
@@ -229,23 +229,68 @@ La unidad anterior es el folio 306r. La unidad siguiente es el folio 307r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+2. Ala segunda dijeron: que es
+De Señorío, y que este con[ce]jo
+pertenece al Ex[celentísi]mo S[eño]r Conde De Luna,
+y q[u]e p[o]r esta razon no pagan d[erech]os
+algunos.
+3. Ala tercera dijeron: que este ter-
+mino. tiene De circunferenz[i]a legua, y
+media, y setez[ienta]s ochenta, y siete baras,
+mas De Oriente à
+Poniente dos mill, y
+quinientas baras, y
+De Norte a Sur
+dos mill setez[ienta]s, y
+ocho: Linda al O[riente]
+con termino De el Lug[ar]
+De Tapia, y Rioseco, De Poniente term[ino]
+De el Lugar De Santa Maria, De el Sur
+
+[Croquis]
+[Rótulos del croquis, de arriba abajo y de izquierda a derecha:]
+[...] 1. leg[ua] 1/2 787 b[aras]
+De Oriente al P[oniente]
+2500 b[aras]
+De N[orte] a Sur
+2708 (baras)
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 307r, página digital 3 del PDF autoritativo, en posición derecha. La foliación archivística `307`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad contiene íntegramente la segunda respuesta y el comienzo de la tercera. La tercera respuesta continúa material y sintácticamente en folio 307v, donde prosigue la enumeración de linderos.
+
+Tras `algunos` aparece una serie de puntos que funciona como relleno gráfico de cierre y no se incorpora a la transcripción, conforme al criterio vigente para signos no verbales.
+
+En la tercera respuesta aparece un croquis del término con texto integrado en disposición no lineal. Su tratamiento se ajusta al Manual Editorial v1.6, § 11.1, criterio aprobado expresamente por el usuario durante esta operación. Se conserva el flujo verbal principal, se marca la presencia del croquis y sus rótulos se linealizan en un bloque separado mediante un orden editorial explícito y reproducible. No se intenta reproducir con caracteres la geometría del contorno.
+
+Uno de los rótulos métricos del croquis presenta un segmento inicial para el que no existe lectura responsable; se representa mediante `[...]`, conforme a los signos editoriales ya vigentes. Los numerales y abreviaturas que lo siguen sí son legibles y se conservan.
+
+La unidad anterior es el folio 306v. La unidad siguiente es el folio 307v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `con[ce]jo`, `Ex[celentísi]mo`, `S[eño]r`, `q[u]e`, `p[o]r` y `d[erech]os` desarrollan las abreviaturas visibles de la segunda respuesta.
+- `circunferenz[i]a`, `setez[ienta]s`, `O[riente]`, `Lug[ar]` y `term[ino]` desarrollan las abreviaturas visibles de la tercera respuesta.
+- Se conservan las grafías históricas `razon`, `baras`, `setezientas` y `mill`, así como la forma unida `Ala`.
+- Se conserva la división visible `ter-` / `mino`, incluido el guion de final de línea.
+- `leg[ua]`, `P[oniente]`, `b[aras]` y `N[orte]` desarrollan abreviaturas de los rótulos del croquis.
+- Los rótulos del croquis se presentan linealizados únicamente para la edición: en el manuscrito se distribuyen en relación espacial con el contorno y con las dos dimensiones principales del término. Las cifras `2500` y `2708` corresponden respectivamente a los ejes Oriente-Poniente y Norte-Sur expresados también en el tenor verbal.
+- El segmento `[...]` del primer rótulo no se fuerza porque no permite una propuesta responsable de lectura; esta representación no genera una duda abierta adicional.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 306v; folio 307v.
+- Índice de personas: `Conde De Luna`.
+- Índice de topónimos: `Tapia`; `Rioseco`; `Santa Maria`.
+- Índice de instituciones: `Concejo de Ordas`; `Señorío`.
+- Índice de medidas: `legua`; `baras`.
+- Glosario: `Señorío`.
 
 ---
 

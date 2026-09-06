@@ -35,3 +35,27 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Localización:** folio 306r lo identifica como el concejo al que pertenecen Sorribas y Santibañez.
 - **Unidades:** folio 306r.
 - **Referencias cruzadas:** `Sorribas`; `Santibañez De Ordas`; `Concejo de Ordas`.
+
+### Tapia
+
+- **Forma original:** `Tapia`
+- **Forma moderna:** no establecida en esta fase.
+- **Localización:** folio 307r lo cita entre los términos con los que linda por Oriente.
+- **Unidades:** folio 307r.
+- **Referencias cruzadas:** `Rioseco`; `Santa Maria`.
+
+### Rioseco
+
+- **Forma original:** `Rioseco`
+- **Forma moderna:** no establecida en esta fase.
+- **Localización:** folio 307r lo cita entre los términos con los que linda por Oriente; la enumeración de linderos continúa en folio 307v.
+- **Unidades:** folio 307r.
+- **Referencias cruzadas:** `Tapia`; `Santa Maria`; folio 307v.
+
+### Santa Maria
+
+- **Forma original:** `Santa Maria`
+- **Forma moderna:** no establecida en esta fase.
+- **Localización:** folio 307r lo cita como término de Poniente.
+- **Unidades:** folio 307r.
+- **Referencias cruzadas:** `Tapia`; `Rioseco`; folio 307v.

@@ -2,9 +2,9 @@
 
 ## Edición crítica del Catastro de Ensenada de Sorribas y Santibáñez de Ordás (1752)
 
-**Versión:** 1.5  
+**Versión:** 1.6  
 **Estado:** documento normativo vigente  
-**Entrada en vigor:** 1 de septiembre de 2026
+**Entrada en vigor:** 6 de septiembre de 2026
 
 ---
 
@@ -213,6 +213,19 @@ Los signos gráficos con posible función diplomática —cruces invocativas, r�
 - Cruz invocativa reconocible: `†` en línea independiente.
 - Rúbrica o signo de validación: descripción en nota paleográfica, salvo que forme parte inequívoca del tenor documental.
 - Signo de función incierta: no se interpreta en el texto; se describe en observaciones y se mantiene como duda abierta.
+
+## 11.1. Croquis, esquemas y elementos gráficos con texto
+
+Cuando una unidad contenga un croquis, esquema u otro elemento gráfico con contenido documental propio:
+
+- el cuerpo de la transcripción conservará todo el texto verbal legible;
+- la existencia del elemento gráfico se señalará mediante `[Croquis]` o una indicación editorial equivalente en línea independiente y se describirá en Observaciones editoriales;
+- los rótulos integrados en el gráfico se transcribirán identificándolos como tales y siguiendo un orden editorial explícito y reproducible, preferentemente de arriba abajo y de izquierda a derecha cuando resulte aplicable;
+- no se intentará reproducir mediante caracteres la geometría, el contorno o la escala del dibujo;
+- la relación espacial documentalmente relevante entre rótulos y gráfico se explicará en Nota paleográfica;
+- las lecturas dudosas o ilegibles de los rótulos se resolverán mediante los signos ya establecidos en §§ 6 y 15.
+
+La linealización editorial de los rótulos no implica que esa disposición lineal exista en el manuscrito: deberá quedar expresamente indicada como forma de representación del elemento gráfico.
 
 ---
 
@@ -520,6 +533,14 @@ Los nombres canónicos de los archivos no llevarán sufijos automáticos como `(
 - Protocolo de operaciones de varios archivos: preparar, validar, escribir, verificar y actualizar el estado en último lugar.
 - Uso de la skill `editar-catastro-sorrios` como guía operativa, subordinada a este Manual.
 - Conservación del PDF como única fuente primaria y del estudio histórico como fase desactivada.
+
+## v1.6 — 6 de septiembre de 2026
+
+- Regulación de croquis, esquemas y otros elementos gráficos con contenido documental propio.
+- Obligación de conservar el texto verbal legible y señalar editorialmente la existencia del elemento gráfico.
+- Linealización de rótulos mediante un orden explícito y reproducible, sin intentar reproducir la geometría mediante caracteres.
+- Documentación de la relación espacial relevante en nota paleográfica.
+- Aplicación de los signos editoriales ya vigentes a las porciones dudosas o ilegibles de los rótulos.
 
 ---
 

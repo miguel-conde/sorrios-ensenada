@@ -80,3 +80,11 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados los índices de personas, topónimos, instituciones y oficios; no se generan altas justificadas en el Glosario ni en el Índice de medidas.
 - Normalizados en Glosario e Índice de medidas los mensajes de vacío que afirmaban de forma obsoleta que no existían unidades validadas, sin añadir entradas.
 - La primera respuesta concluye en esta unidad y el estado avanza a `folio_307r` como unidad actual.
+- Aprobada por el usuario e incorporada al Manual Editorial v1.6 la regulación de croquis, esquemas y elementos gráficos con texto: se conserva el texto verbal, se marca el elemento gráfico, se linealizan sus rótulos mediante un orden explícito y reproducible y se documenta la relación espacial sin imitar la geometría mediante caracteres.
+- Promovida la Edición crítica a v3.5 para declarar el Manual Editorial v1.6 como norma vigente.
+- Validada y cerrada documentalmente la unidad folio 307r.
+- Transcritas la segunda respuesta y la parte de la tercera contenida en la unidad, con el régimen de `Señorío`, la referencia al `Conde De Luna`, la circunferencia y dimensiones del término y el comienzo de sus linderos.
+- El croquis del término se conserva mediante indicación editorial y sus rótulos verbales se transcriben separadamente en orden reproducible; un segmento gráfico sin lectura responsable se representa como `[...]` conforme a los signos ya vigentes.
+- Incorporados `Señorío` al Glosario, `Conde De Luna` al Índice de personas, `Tapia`, `Rioseco` y `Santa Maria` al Índice de topónimos, `Señorío` al Índice de instituciones y `legua` y `baras` al Índice de medidas; actualizado `Concejo de Ordas` con la nueva aparición.
+- No se generan altas justificadas en el Índice de oficios y no quedan dudas abiertas.
+- La tercera respuesta continúa materialmente en folio 307v y el estado avanza a `folio_307v` como unidad actual.

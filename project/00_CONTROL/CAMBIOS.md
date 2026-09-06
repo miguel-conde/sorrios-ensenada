@@ -1,5 +1,15 @@
 # Cambios
 
+## 6 de septiembre de 2026 — Manual v1.6 y cierre de folio 307r
+
+- Aprobado por el usuario un criterio nuevo para croquis, esquemas y otros elementos gráficos con texto documental propio.
+- Promovido el Manual Editorial de v1.5 a v1.6 e incorporado el apartado específico que exige conservar el texto verbal legible, señalar el elemento gráfico, linealizar sus rótulos mediante un orden explícito y reproducible y describir la relación espacial relevante sin intentar reproducir la geometría mediante caracteres.
+- Promovida la Edición crítica de v3.4 a v3.5 para declarar el Manual Editorial v1.6 como norma vigente.
+- Validada y cerrada documentalmente la unidad folio 307r, página 3 derecha del PDF autoritativo.
+- Transcritas la segunda respuesta y la parte de la tercera contenida en la unidad, incluido el croquis del término conforme al nuevo criterio aprobado.
+- Actualizados Diario Editorial, Glosario, índices de personas, topónimos, instituciones y medidas, `proyecto.yaml` y `estado.yaml`; no se modifica el Índice de oficios.
+- El estado editorial avanza a `folio_307v`, página 4 izquierda; no quedan dudas abiertas.
+
 ## 6 de septiembre de 2026 — Guía de uso: vías Web/Desktop y prompts abreviados
 
 - Revisada `docs/GUIA_USO_PROCESO_EDITORIAL.md` para distinguir explícitamente las dos vías de entrada al proyecto.

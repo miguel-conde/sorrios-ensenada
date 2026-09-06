@@ -33,7 +33,7 @@ authorities:
   manual:
     provider: github
     path: project/00_CONTROL/Manual_Editorial.md
-    version: "1.5"
+    version: "1.6"
 
 controls:
   project:
@@ -56,7 +56,7 @@ documents:
   edition:
     provider: github
     path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
-    version: "3.4"
+    version: "3.5"
   diary:
     provider: github
     path: project/20_TRABAJO_EDITORIAL/Diario_Editorial.md
