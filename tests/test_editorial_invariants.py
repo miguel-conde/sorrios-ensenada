@@ -36,10 +36,15 @@ def test_state_and_unit_sequence_are_coherent():
 
 
 def test_manual_and_edition_versions_and_structure_are_preserved():
+    project = yaml.safe_load((PROJECT / "00_CONTROL" / "proyecto.yaml").read_text(encoding="utf-8"))
     manual = (PROJECT / "00_CONTROL" / "Manual_Editorial.md").read_text(encoding="utf-8")
     edition = (PROJECT / "20_TRABAJO_EDITORIAL" / "Edicion_Critica.md").read_text(encoding="utf-8")
-    assert "**Versión:** 1.5" in manual
-    assert "**Versión:** 3.4" in edition
+
+    manual_version = project["authorities"]["manual"]["version"]
+    edition_version = project["documents"]["edition"]["version"]
+    assert f"**Versión:** {manual_version}" in manual
+    assert f"**Versión:** {edition_version}" in edition
+    assert f"**Manual aplicable:** Manual Editorial v{manual_version}" in edition
     for section in SECTIONS:
         assert edition.count(section) == 35
 
