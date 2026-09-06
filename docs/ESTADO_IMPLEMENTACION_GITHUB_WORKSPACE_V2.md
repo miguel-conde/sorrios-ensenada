@@ -1,9 +1,9 @@
 # Estado de implementación — GitHub workspace v2
 
-**Fecha:** 5 de septiembre de 2026  
+**Fecha:** 6 de septiembre de 2026  
 **Rama:** `migration/github-workspace-v2`  
 **Versión preparada:** 2.0.0  
-**Estado:** H1 y H2 completados; H3 pendiente únicamente de invocación real de la skill
+**Estado:** H1, H2 y H3 completados; preparado para H4
 
 La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está construida en la rama de migración. El plan detallado se mantiene en `PLAN_IMPLEMENTACION_GITHUB_WORKSPACE_V2.md` y los resultados de aceptación de H3 en `VALIDACION_H3_2026-09-05.md`.
 
@@ -20,11 +20,19 @@ La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está constru
 - Operación multiarchivo en un único commit atómico: PASS.
 - Detección de concurrencia por `base_sha`: PASS.
 - Plugin aislado autocontenido y skill estáticamente autocontenida: PASS mediante CI.
+- Instalación local Codex del plugin `sorrios-ensenada@personal` 2.0.0: PASS.
+- Invocación real del complemento `Catastro de Sorríos` en ChatGPT Desktop: PASS.
+- La skill real, sin `PROJECT.md` ni checkout local, leyó desde GitHub `project/00_CONTROL/proyecto.yaml` y `project/00_CONTROL/estado.yaml` sobre `migration/github-workspace-v2` y reconstruyó exactamente el estado canónico esperado: PASS.
 
-## H3 pendiente
+## H4
 
-- Invocar realmente `editar-catastro-sorrios` en una superficie compatible con skills, sin usar `/PROJECT.md`, y comprobar que reconstruye el mismo estado canónico desde GitHub.
+H3 está cerrado. Antes del cutover deben comprobarse de nuevo:
 
-Hasta que esa prueba sea PASS, H3 no se considera cerrado y no debe ejecutarse H4.
+1. que `main` siga exactamente en el SHA congelado `cd683dd3a745c1f7bbabc154510885dbdad9dde8`;
+2. que la rama `migration/github-workspace-v2` esté en el commit final validado de H3;
+3. que `main` sea ancestro de la rama de migración, sin divergencia;
+4. que el CI del commit final de H3 sea completamente verde.
 
-Aún no se ha hecho el cutover. `main` continúa en `cd683dd3a745c1f7bbabc154510885dbdad9dde8` y Google Drive no se ha limpiado.
+Solo entonces se podrá hacer fast-forward de `main` al HEAD validado mediante `update_ref(force=false)`, seguido de verificación de `main` y CI.
+
+Aún no se ha hecho el cutover. En la última comprobación previa al cierre documental de H3, `main` continuaba en `cd683dd3a745c1f7bbabc154510885dbdad9dde8`. Google Drive no se ha limpiado.
