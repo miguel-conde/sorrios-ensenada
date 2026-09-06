@@ -88,3 +88,10 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Incorporados `Señorío` al Glosario, `Conde De Luna` al Índice de personas, `Tapia`, `Rioseco` y `Santa Maria` al Índice de topónimos, `Señorío` al Índice de instituciones y `legua` y `baras` al Índice de medidas; actualizado `Concejo de Ordas` con la nueva aparición.
 - No se generan altas justificadas en el Índice de oficios y no quedan dudas abiertas.
 - La tercera respuesta continúa materialmente en folio 307v y el estado avanza a `folio_307v` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 307v.
+- Completada la tercera respuesta con el lindero meridional por `Otro Lugar De Rioseco`, el lindero septentrional por `Villapodambre` y la remisión `su figura la de el marg[e]n` al croquis ya tratado en folio 307r.
+- La remisión al croquis se resuelve mediante el criterio vigente del Manual Editorial v1.6, § 11.1; no aparece ningún criterio metodológico nuevo.
+- Iniciada la cuarta respuesta y transcritas las cinco primeras especies de tierras, incluidos `Ferrañales centenales De secano`, tierras linares de regadio y secano, tierras centenales de secano y prados cercados de regadio.
+- Los puntos y trazos de relleno al final de varios renglones se omiten como signos no verbales sin valor textual, conforme al criterio ya vigente.
+- Incorporados `Ferrañales` y `pelo` al Glosario; actualizado `Rioseco` y añadido `Villapodambre` al Índice de topónimos. No se generan cambios justificados en los índices de personas, instituciones, medidas u oficios.
+- La cuarta respuesta continúa en folio 308r con la sexta especie; no quedan dudas abiertas y el estado avanza a `folio_308r` como unidad actual.

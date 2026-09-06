@@ -1,21 +1,21 @@
 schema_version: 1
-updated_at: "2026-09-06T19:52:15Z"
+updated_at: "2026-09-06T20:44:05Z"
 phase: edicion_paleografica
-last_validated_unit: folio_307r
-last_closed_unit: folio_307r
-current_unit: folio_307v
-next_unit: folio_308r
+last_validated_unit: folio_307v
+last_closed_unit: folio_307v
+current_unit: folio_308r
+next_unit: folio_308v
 current_location:
   pdf_page: 4
-  position: left
+  position: right
 open_issues: []
 pending_tasks:
-  - transcribir_folio_307v
-  - revisar_folio_307v
+  - transcribir_folio_308r
+  - revisar_folio_308r
   - completar_aparato
-  - validar_folio_307v
+  - validar_folio_308r
   - actualizar_derivados
-  - cerrar_folio_307v
+  - cerrar_folio_308r
 operation:
   status: clean
   id: null

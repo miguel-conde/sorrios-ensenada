@@ -302,23 +302,54 @@ La unidad anterior es el folio 306v. La unidad siguiente es el folio 307v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+Con el de Otro Lugar De Rioseco, y
+al Norte con term[ino]. De el Lugar De
+Villapodambre: su figura la de el marg[e]n
+4ª Ala quarta dijeron: que en este
+term[ino]. ai las especies De tierras siguientes:/
+1ª Ferrañales centenales De secano, que
+producen sin intermision forraje.
+2ª Tierras linares De regadio, que
+producen sin descanso vn año lino, y
+otro Zevada.
+3ª Tierras linares De secano, que pro-
+ducen sin intermision vn año lino, y
+otro Centeno.
+4ª Tierras centenales De secano, que pro-
+ducen vn año, y descansan otro.
+5ª Prados cercados De regadio, que pro-
+ducen sin intermision pelo, y otoño.
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 307v, página digital 4 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `307v` deriva de la secuencia material y del folio 307r precedente.
+
+La unidad continúa y concluye la tercera respuesta. Completa el lindero meridional con `Otro Lugar De Rioseco`, fija `Villapodambre` como lindero del Norte y cierra la respuesta con `su figura la de el marg[e]n`. Esta remisión se refiere al croquis del término ya presente y transcrito en folio 307r; su tratamiento queda cubierto por el Manual Editorial v1.6, § 11.1, sin necesidad de introducir un criterio nuevo.
+
+La cuarta respuesta comienza en esta unidad y enumera sus cinco primeras especies de tierras. La inspección auxiliar del comienzo de folio 308r confirma que la enumeración continúa allí con una sexta especie; este cotejo se utiliza únicamente para delimitar la unidad y no valida por anticipado folio 308r.
+
+Los puntos y trazos de relleno que prolongan varios renglones después de `forraje`, `Zevada`, `Centeno`, `otro` y `otoño` carecen de valor verbal y no se incorporan a la transcripción, conforme al criterio ya vigente para signos no verbales.
+
+La unidad anterior es el folio 307r. La unidad siguiente es el folio 308r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `term[ino]` desarrolla la abreviatura visible `term.`; `marg[e]n` desarrolla la abreviatura del final de la tercera respuesta.
+- Se conservan la forma unida `Ala`, la grafía histórica `quarta`, `vn`, `Zevada`, `intermision` y `regadio`.
+- Se conserva la puntuación terminal `:/` tras `siguientes`.
+- Se conservan las divisiones visibles `pro-` / `ducen` de las especies tercera, cuarta y quinta, incluidos los guiones de final de línea.
+- `Ferrañales` se mantiene tal como aparece; el propio tenor los caracteriza como `centenales De secano` que producen `sin intermision forraje`.
+- La voz `pelo` se conserva sin interpretación dentro de la transcripción y se documenta de forma estrictamente contextual en el Glosario.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 307r; folio 308r.
+- Índice de topónimos: `Rioseco`; `Villapodambre`.
+- Glosario: `Ferrañales`; `pelo`.
 
 ---
 

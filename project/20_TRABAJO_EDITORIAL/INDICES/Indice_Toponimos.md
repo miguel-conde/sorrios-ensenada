@@ -48,9 +48,9 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 
 - **Forma original:** `Rioseco`
 - **Forma moderna:** no establecida en esta fase.
-- **Localización:** folio 307r lo cita entre los términos con los que linda por Oriente; la enumeración de linderos continúa en folio 307v.
-- **Unidades:** folio 307r.
-- **Referencias cruzadas:** `Tapia`; `Santa Maria`; folio 307v.
+- **Localización:** folio 307r lo cita entre los términos con los que linda por Oriente; folio 307v lo vuelve a citar al completar el lindero meridional, en la fórmula `Otro Lugar De Rioseco`.
+- **Unidades:** folio 307r; folio 307v.
+- **Referencias cruzadas:** `Tapia`; `Santa Maria`; `Villapodambre`.
 
 ### Santa Maria
 
@@ -59,3 +59,11 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Localización:** folio 307r lo cita como término de Poniente.
 - **Unidades:** folio 307r.
 - **Referencias cruzadas:** `Tapia`; `Rioseco`; folio 307v.
+
+### Villapodambre
+
+- **Forma original:** `Villapodambre`
+- **Forma moderna:** no establecida en esta fase.
+- **Localización:** folio 307v lo cita como término con el que linda por el Norte.
+- **Unidades:** folio 307v.
+- **Referencias cruzadas:** `Rioseco`; `Tapia`; `Santa Maria`.
