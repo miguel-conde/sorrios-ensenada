@@ -17,10 +17,10 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 ### Concejo de Ordas
 
 - **Forma original:** `Con[ce]jo de Ordas`.
-- **Variantes:** ninguna documentada.
+- **Variantes:** `Concejo`.
 - **Clase de institución:** concejo.
-- **Unidades:** folio 306r.
-- **Referencias cruzadas:** `Sorribas`; `Santibañez De Ordas`; `Ordas`.
+- **Unidades:** folio 306r; folio 306v.
+- **Referencias cruzadas:** `Sorribas`; `Santibañez De Ordas`; `Ordas`; `Dom[ing]o Diez`; `Fran[cis]co de Llorca`.
 
 ### R[eale]s Consejos
 

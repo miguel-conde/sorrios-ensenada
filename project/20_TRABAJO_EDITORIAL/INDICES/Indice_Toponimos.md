@@ -17,7 +17,7 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Forma original:** `Sorribas`
 - **Forma moderna:** Sorribas
 - **Localización:** en folio 306r se declara, junto con Santibañez, perteneciente al `Concejo de Ordas`.
-- **Unidades:** Portada; folio 306r.
+- **Unidades:** Portada; folio 306r; folio 306v.
 - **Referencias cruzadas:** `Santibañez De Ordas`; `Ordas`; `Concejo de Ordas`.
 
 ### Santibañez De Ordas
@@ -25,7 +25,7 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Forma original:** `Santibañez De Ordas`
 - **Forma moderna:** Santibáñez de Ordás
 - **Localización:** en folio 306r se declara, junto con Sorribas, perteneciente al `Concejo de Ordas`.
-- **Unidades:** Portada; folio 306r.
+- **Unidades:** Portada; folio 306r; folio 306v.
 - **Referencias cruzadas:** `Sorribas`; `Ordas`; `Concejo de Ordas`.
 
 ### Ordas

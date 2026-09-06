@@ -167,23 +167,57 @@ La unidad anterior es el Reverso de la portada. La unidad siguiente es el folio 
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+y vnicos oficiales De Justiz[i]a Dom[ing]o
+Diez, y Fran[cis]co de Llorca, peritos
+nombrados p[o]r este Concejo, y Dom[ing]o
+Vicarez perito nombrado De Oficio: De
+los quales a excepz[i]on De el cura parro-
+cho, p[o]r antemi el ss[criba]no tomó, y Recivió
+Juram[en]to que le hicieron p[o]r el n[omb]re
+De D[io]s n[uest]ro Señor, y vna señal De
+Cruz en forma De derecho, socargo
+De él ofrecieron decir verdad, De lo que
+supieren, y les fuere preguntado: y ha-
+viendolo sido p[o]r el thenor De las pre-
+guntas De el interrogatorio impreso
+De la Letra A. acada vna De
+sus preguntas dijeron lo siguiente
+1ª Ala primera dijeron, que esta
+poblaz[i]on se llama el Lugar De Sorribas,
+y Santibañez
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 306v, página digital 3 del PDF autoritativo, en posición izquierda. La cara no presenta número de folio independiente; su identificación como `306v` deriva de la secuencia material y del folio 306r precedente.
+
+El texto continúa directamente la frase final de folio 306r: `Juan Alv[are]z / y Remirio Rodriguez, vecinos / y vnicos oficiales De Justiz[i]a`. La unidad documenta además a `Dom[ing]o Diez` y `Fran[cis]co de Llorca` como peritos nombrados por el Concejo, y a `Dom[ing]o Vicarez` como perito nombrado de oficio.
+
+La serie de puntos situada tras `Santibañez` ocupa el resto del renglón como relleno gráfico sin valor verbal y no se incorpora a la transcripción. Este tratamiento aplica el criterio vigente del Manual Editorial v1.5 para signos no verbales y no introduce un criterio nuevo.
+
+La primera respuesta del interrogatorio concluye en esta unidad. El folio 307r comienza la segunda respuesta.
+
+La unidad anterior es el folio 306r. La unidad siguiente es el folio 307r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `Justiz[i]a`, `excepz[i]on` y `poblaz[i]on` desarrollan abreviaturas conservando la grafía histórica con `z`.
+- `Dom[ing]o`, `Fran[cis]co` y `p[o]r` desarrollan las abreviaturas visibles de nombres y preposición.
+- `ss[criba]no`, `Juram[en]to`, `n[omb]re`, `D[io]s` y `n[uest]ro` desarrollan las abreviaturas notariales visibles.
+- Se conservan las grafías históricas `vnicos`, `Justizia`, `excepzion`, `Recivió`, `thenor`, `acada`, `vna` y `poblazion`.
+- Se conservan las formas unidas `socargo` y `Ala`.
+- Se conservan las divisiones visibles `parro-` / `cho`, `ha-` / `viendolo` y `pre-` / `guntas`, incluidos los guiones de final de línea.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 306r; folio 307r.
+- Índice de topónimos: `Sorribas`; `Santibañez De Ordas`.
+- Índice de personas: `Manuel Ant[oni]o De Bega`; `Juan Alv[are]z`; `Remirio Rodriguez`; `Dom[ing]o Diez`; `Fran[cis]co de Llorca`; `Dom[ing]o Vicarez`.
+- Índice de instituciones: `Concejo de Ordas`.
+- Índice de oficios: `cura parrocho`; `oficial de Justiz[i]a`; `perito`; `escribano`.
 
 ---
 

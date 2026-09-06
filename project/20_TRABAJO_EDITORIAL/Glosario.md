@@ -14,4 +14,4 @@ No contendrá interpretación histórica extensa.
 
 ## Entradas
 
-*(Sin entradas: no existe todavía ninguna unidad validada.)*
+*(Sin entradas.)*

@@ -73,3 +73,10 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Incorporadas cuatro entradas al Índice de personas, dos al Índice de instituciones y tres al Índice de oficios; actualizado el Índice de topónimos con la nueva aparición de `Sorribas` y `Santibañez De Ordas` y con el alta de `Ordas`.
 - No se generan altas justificadas en el Glosario ni en el Índice de medidas y no quedan dudas abiertas.
 - El estado avanza a `folio_306v` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 306v.
+- Transcrita la continuación de la comparecencia, la recepción del juramento y la primera respuesta del interrogatorio, conservando grafías históricas, abreviaturas desarrolladas y divisiones de palabra visibles.
+- La continuidad con folio 306r permite identificar a `Juan Alv[are]z` y `Remirio Rodriguez` como `vnicos oficiales de Justiz[i]a`; se incorporan además `Dom[ing]o Diez`, `Fran[cis]co de Llorca` y `Dom[ing]o Vicarez` como peritos.
+- La serie de puntos tras `Santibañez` se trata como relleno gráfico sin valor verbal conforme al criterio vigente para signos no verbales; no se introduce ningún criterio editorial nuevo y no quedan dudas abiertas.
+- Actualizados los índices de personas, topónimos, instituciones y oficios; no se generan altas justificadas en el Glosario ni en el Índice de medidas.
+- Normalizados en Glosario e Índice de medidas los mensajes de vacío que afirmaban de forma obsoleta que no existían unidades validadas, sin añadir entradas.
+- La primera respuesta concluye en esta unidad y el estado avanza a `folio_307r` como unidad actual.
