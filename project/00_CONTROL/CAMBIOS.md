@@ -1,5 +1,16 @@
 # Cambios
 
+## 6 de septiembre de 2026 — Cutover GitHub workspace v2 (H4)
+
+- H3 cerrado con todas las pruebas de aceptación previas al cutover en PASS, incluida invocación real del complemento/skill en ChatGPT Desktop.
+- Verificado inmediatamente antes del cutover que `main` seguía en `cd683dd3a745c1f7bbabc154510885dbdad9dde8` y que `migration/github-workspace-v2` era un fast-forward puro hasta `eee9eddeaf7f1495c5cd48fb0bb12ff0ae0e009e`.
+- Ejecutado fast-forward de `main` mediante `update_ref(..., force=false)`; GitHub pasa a ser el workspace canónico del proyecto vivo.
+- Verificación post-cutover en `main`: schema 2; estado `portada` y `clean`; 35 unidades; Manual v1.5; Edición v3.4; Diario, Glosario, cinco índices e históricos preservados.
+- Revalidado el PDF autoritativo de Drive: mismo file ID, nombre, tamaño, 18 páginas y SHA-256; acceso como archivo real y sin Base64.
+- CI disparado sobre `main` tras el cutover: PASS.
+- Se conserva `backup/pre-github-workspace-v2` para rollback durante la aceptación.
+- H5 (ciclo editorial real y continuidad entre sesiones/ordenadores) y H6 (limpieza de Drive) siguen pendientes.
+
 ## 5 de septiembre de 2026 — GitHub workspace v2 (preparación 2.0.0)
 
 - Construida la versión 2.0.0 en `migration/github-workspace-v2`.
@@ -8,7 +19,7 @@
 - Añadido `PROJECT.md` para Chat normal y refactorizada la skill autocontenida.
 - Retirada la materialización Base64/local; tools, tests y CI adaptados.
 - Estado editorial preservado: portada; ninguna unidad validada o cerrada; D-001 abierta.
-- `main` sigue sin cambios; cutover y limpieza de Drive pendientes de H3/H4/H6.
+- `main` seguía sin cambios en ese momento; cutover y limpieza de Drive quedaban pendientes de H3/H4/H6.
 
 ## 1 de septiembre de 2026 — Migración de arquitectura
 
