@@ -72,23 +72,28 @@ La portada no tiene unidad anterior. La unidad siguiente es el Reverso de la por
 
 ### Transcripción paleográfica
 
-*(Pendiente de validación en su turno. Si se confirma la ausencia de escritura significativa, se consignará `[En blanco]`.)*
+[En blanco]
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al reverso de la portada, página digital 2 del PDF autoritativo, en posición izquierda. La lectura visual confirma que no contiene escritura significativa propia y se consigna `[En blanco]` conforme al Manual Editorial v1.5, § 12.
+
+En la mitad superior se perciben formas débiles procedentes de transparencia o traspaso de tinta de la portada. No constituyen texto propio de esta unidad y no se incorporan a la transcripción. No se observan foliación, signaturas ni otras marcas propias que requieran tratamiento adicional.
+
+La unidad anterior es la Portada. La unidad siguiente es el folio 306r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- La cara no presenta escritura significativa propia.
+- Las formas débiles visibles en la mitad superior corresponden a transparencia o traspaso de tinta de la portada y carecen de valor textual propio.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: Portada; folio 306r.
 
 ---
 

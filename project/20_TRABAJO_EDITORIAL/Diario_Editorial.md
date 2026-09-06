@@ -61,3 +61,8 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Resuelta D-001: el signo superior de la portada se identifica como cruz invocativa reconocible.
 - Incorporados al Índice de topónimos `Sorribas` y `Santibañez De Ordas`; no se generan altas justificadas en Glosario ni en los índices de personas, instituciones, medidas u oficios.
 - El estado avanza a `reverso_portada` como unidad actual.
+- Validada y cerrada documentalmente la unidad Reverso de la portada.
+- Confirmada la ausencia de escritura significativa propia; la transcripción se fija como `[En blanco]` conforme al Manual Editorial v1.5, § 12.
+- Las formas débiles visibles en la mitad superior se registran como transparencia o traspaso de tinta de la portada, sin valor textual propio y sin generar duda abierta.
+- La unidad no genera altas justificadas en Glosario ni en ninguno de los cinco índices.
+- El estado avanza a `folio_306r` como unidad actual.

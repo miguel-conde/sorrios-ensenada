@@ -1,22 +1,21 @@
 schema_version: 1
-updated_at: "2026-09-06T09:48:06Z"
+updated_at: "2026-09-06T14:04:42Z"
 phase: edicion_paleografica
-last_validated_unit: portada
-last_closed_unit: portada
-current_unit: reverso_portada
-next_unit: folio_306r
+last_validated_unit: reverso_portada
+last_closed_unit: reverso_portada
+current_unit: folio_306r
+next_unit: folio_306v
 current_location:
   pdf_page: 2
-  position: left
+  position: right
 open_issues: []
 pending_tasks:
-  - verificar_blanco_reverso_portada
-  - transcribir_reverso_portada
-  - revisar_reverso_portada
+  - transcribir_folio_306r
+  - revisar_folio_306r
   - completar_aparato
-  - validar_reverso_portada
+  - validar_folio_306r
   - actualizar_derivados
-  - cerrar_reverso_portada
+  - cerrar_folio_306r
 operation:
   status: clean
   id: null
