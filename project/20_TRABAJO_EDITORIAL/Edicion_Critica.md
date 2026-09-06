@@ -105,23 +105,57 @@ La unidad anterior es la Portada. La unidad siguiente es el folio 306r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+†
+Copia De las respuestas
+G[enera]les. De el Lugar De
+Sorribas, y Santibañez
+De Ordas.
+En el Lugar de Sorri-
+bas, y Santibañez, am[b]os De este Con[ce]jo
+de Ordas a diez, y siete dias De el mes De
+Septiembre De mil setez[iento]s cinq[uen]ta
+y dos años, ante el S[eño]r Liz[encia]do D[o]n Jo-
+achin Aguado abogado De los R[eale]s
+Consejos, Juez subdelegado para la
+operaz[i]on De este Lugar: Comparez[ier]on;
+D[o]n Manuel Ant[oni]o De Bega, cura
+parrocho De este Lugar, Juan Alv[are]z
+y Remirio Rodriguez, vecinos
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 306r, página digital 2 del PDF autoritativo, en posición derecha. La foliación archivística `306`, situada en el margen superior derecho, se usa como encabezado editorial y no se incorpora al cuerpo de la transcripción.
+
+La cruz aislada de la parte superior se identifica como cruz invocativa reconocible y se representa mediante `†`, conforme al Manual Editorial v1.5, § 11. Su forma coincide con la ya validada en la Portada, sin que esa comparación sustituya la lectura directa de esta unidad.
+
+Los trazos diagonales, el subrayado que enmarca `De Ordas.` y otros trazos ornamentales del encabezamiento carecen de valor verbal y no se transcriben. La gran inicial de `En`, aunque muy ornamentada, sí pertenece al tenor textual y se incorpora como tal.
+
+El texto termina en `vecinos` y continúa material y sintácticamente en el folio 306v. El cotejo visual de esa continuidad se utiliza solo como apoyo paleográfico y no valida por anticipado la unidad siguiente.
+
+La unidad anterior es el Reverso de la portada. La unidad siguiente es el folio 306v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `G[enera]les.` desarrolla la abreviatura visible de «Generales», ya documentada en la Portada.
+- `am[b]os` y `Con[ce]jo` desarrollan las contracciones visibles; la forma plena `Concejo` se comprueba paleográficamente en el folio 306v sin validar por anticipado esa unidad.
+- `setez[iento]s` y `cinq[uen]ta` desarrollan las abreviaturas del año; se conserva la grafía histórica `setezientos`.
+- `S[eño]r`, `Liz[encia]do`, `D[o]n` y `R[eale]s` desarrollan las abreviaturas visibles de tratamiento, grado y referencia institucional.
+- `operaz[i]on` y `Comparez[ier]on` conservan la grafía histórica con `z` y desarrollan únicamente las letras omitidas.
+- `Ant[oni]o` y `Alv[are]z` desarrollan las abreviaturas de los nombres `Antonio` y `Alvarez`.
+- Se conserva la división `Jo-` / `achin`, incluido el guion visible al final de línea.
+- La lectura `Remirio Rodriguez` se comprobó paleográficamente con su aparición final en la página 18; ese cotejo sirve solo para fijar la lectura del nombre y no valida la unidad posterior donde aparece.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: Reverso de la portada; folio 306v.
+- Índice de topónimos: `Sorribas`; `Santibañez De Ordas`; `Ordas`.
+- Índice de personas: `Joachin Aguado`; `Manuel Ant[oni]o De Bega`; `Juan Alv[are]z`; `Remirio Rodriguez`.
+- Índice de instituciones: `Concejo de Ordas`; `R[eale]s Consejos`.
+- Índice de oficios: `abogado`; `Juez subdelegado`; `cura parrocho`.
 
 ---
 

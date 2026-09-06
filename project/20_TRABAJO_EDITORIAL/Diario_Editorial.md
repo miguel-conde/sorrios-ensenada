@@ -66,3 +66,10 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Las formas débiles visibles en la mitad superior se registran como transparencia o traspaso de tinta de la portada, sin valor textual propio y sin generar duda abierta.
 - La unidad no genera altas justificadas en Glosario ni en ninguno de los cinco índices.
 - El estado avanza a `folio_306r` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 306r.
+- Transcrito el encabezamiento y el comienzo del acta de 17 de septiembre de 1752, conservando grafías, abreviaturas desarrolladas, saltos de línea y la división `Jo-` / `achin`.
+- La cruz superior se confirma como cruz invocativa reconocible conforme al criterio ya vigente; no se introduce ningún criterio editorial nuevo.
+- La lectura `Remirio Rodriguez` se comprueba paleográficamente con su aparición final en la página 18, sin validar por anticipado esa unidad.
+- Incorporadas cuatro entradas al Índice de personas, dos al Índice de instituciones y tres al Índice de oficios; actualizado el Índice de topónimos con la nueva aparición de `Sorribas` y `Santibañez De Ordas` y con el alta de `Ordas`.
+- No se generan altas justificadas en el Glosario ni en el Índice de medidas y no quedan dudas abiertas.
+- El estado avanza a `folio_306v` como unidad actual.

@@ -14,4 +14,18 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 
 ## Entradas
 
-*(Sin entradas: no existe todavía ninguna unidad validada.)*
+### Concejo de Ordas
+
+- **Forma original:** `Con[ce]jo de Ordas`.
+- **Variantes:** ninguna documentada.
+- **Clase de institución:** concejo.
+- **Unidades:** folio 306r.
+- **Referencias cruzadas:** `Sorribas`; `Santibañez De Ordas`; `Ordas`.
+
+### R[eale]s Consejos
+
+- **Forma original:** `R[eale]s Consejos`.
+- **Variantes:** ninguna documentada.
+- **Clase de institución:** órgano administrativo citado en la fórmula `abogado De los R[eale]s Consejos`.
+- **Unidades:** folio 306r.
+- **Referencias cruzadas:** `Joachin Aguado`; `abogado`.
