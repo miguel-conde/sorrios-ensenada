@@ -1,5 +1,14 @@
 # Cambios
 
+## 6 de septiembre de 2026 — Guía de uso: vías Web/Desktop y prompts abreviados
+
+- Revisada `docs/GUIA_USO_PROCESO_EDITORIAL.md` para distinguir explícitamente las dos vías de entrada al proyecto.
+- Vía universal: ChatGPT Web o Desktop mediante `PROJECT.md`, sin depender de complemento o instalación local.
+- Vía abreviada: `@Catastro de Sorríos` cuando el complemento/skill esté disponible en la superficie utilizada.
+- Eliminada la impresión de que los prompts largos sean necesarios: el usuario expresa intención y nivel de aprobación; el proyecto reconstruye internamente estado, procedimiento, derivados y protocolo Git.
+- Añadidos ejemplos mínimos equivalentes para consulta, edición, revisión previa, auditoría, cambio metodológico y continuación en un chat nuevo.
+- No se modifican Manual Editorial, skill, controles, estado editorial ni PDF autoritativo.
+
 ## 6 de septiembre de 2026 — Guía de uso del proceso editorial
 
 - Añadida `docs/GUIA_USO_PROCESO_EDITORIAL.md` como guía práctica para el usuario del proyecto.

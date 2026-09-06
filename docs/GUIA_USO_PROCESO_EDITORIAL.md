@@ -6,48 +6,96 @@
 **Carácter:** informativo y operativo; no normativo.  
 **Rama normal de trabajo:** `main`.
 
-> Esta guía explica cómo solicitar a ChatGPT las distintas operaciones del proyecto. No define criterios paleográficos ni sustituye a `PROJECT.md`, al Manual Editorial, a `task-modes.md`, a `editorial-procedure.md` ni a las demás referencias operativas. En caso de discrepancia, prevalecen siempre las fuentes normativas y de control del proyecto.
+> Esta guía explica cómo pedir a ChatGPT las distintas operaciones del proyecto. No define criterios paleográficos ni sustituye a `PROJECT.md`, al Manual Editorial, a `task-modes.md`, a `editorial-procedure.md` ni a las demás referencias operativas. En caso de discrepancia, prevalecen siempre las fuentes normativas y de control del proyecto.
 
 ---
 
-# 1. Modelo mental del proyecto
+# 1. Dos formas de entrar al proyecto
 
-El usuario no debe mantener manualmente el estado de la edición en el chat. El estado canónico se reconstruye en cada sesión desde GitHub.
+El proyecto está diseñado para funcionar por dos vías equivalentes.
+
+## 1.1. Vía universal: ChatGPT Web o Desktop con `PROJECT.md`
+
+Esta es la vía que debe funcionar siempre, incluso en un ordenador nuevo y sin ninguna instalación local del proyecto.
+
+Basta con indicar:
+
+```text
+Trabaja con miguel-conde/sorrios-ensenada en main.
+Carga PROJECT.md.
+[petición]
+```
+
+`PROJECT.md` se encarga de reconstruir el estado canónico, determinar el modo de tarea, cargar las referencias necesarias y aplicar el protocolo correcto.
+
+No hace falta repetir en cada prompt:
+
+- las rutas de `proyecto.yaml`, `estado.yaml` o `unidades.yaml`;
+- la ubicación del PDF;
+- los pasos del procedimiento editorial;
+- qué índices o documentos derivados pueden verse afectados;
+- cómo realizar el commit atómico.
+
+Todo eso pertenece al propio proyecto, no al prompt del usuario.
+
+## 1.2. Vía abreviada: complemento/skill cuando esté disponible
+
+En una superficie donde aparezca el complemento `Catastro de Sorríos`, puede invocarse directamente:
+
+```text
+@Catastro de Sorríos [petición]
+```
+
+La skill `editar-catastro-sorrios` es autocontenida y no necesita `PROJECT.md`.
+
+Ejemplo:
+
+```text
+@Catastro de Sorríos Trabaja la unidad actual, pero preséntame la propuesta completa antes de escribir nada.
+```
+
+Actualmente esta vía puede estar disponible en algunas superficies —por ejemplo ChatGPT Desktop— y no en otras. La ausencia del complemento no impide trabajar: se usa entonces la vía universal con `PROJECT.md`.
+
+**Regla práctica:**
+
+- si ves `@Catastro de Sorríos`, úsalo para abreviar;
+- si no lo ves, usa `PROJECT.md`;
+- ambas vías deben reconstruir el mismo estado desde GitHub `main`.
+
+---
+
+# 2. Modelo mental del proyecto
+
+El chat no es el estado del proyecto. Cada sesión debe reconstruirlo desde GitHub.
 
 ```text
 Usuario
   |
-  | petición
-  v
-ChatGPT
+  +-- Web/Desktop universal ------> PROJECT.md
   |
-  +-- PROJECT.md                         entrada para Chat normal
-  +-- proyecto.yaml                      identidad y autoridades
-  +-- estado.yaml                        estado operativo actual
-  +-- unidades.yaml                      secuencia editorial
-  +-- Manual_Editorial.md                método editorial
-  |
-  +-- GitHub main                        workspace vivo completo
-  |
-  `-- Google Drive
-       `-- PDF autoritativo              manuscrito, solo lectura
+  `-- superficie con plugin ------> editar-catastro-sorrios
+                                      |
+                                      v
+                                  GitHub main
+                                      |
+                         +------------+------------+
+                         |                         |
+                     project/                  Google Drive
+                 workspace vivo           PDF autoritativo
+                                            solo lectura
 ```
 
 En trabajo normal:
 
 - GitHub `main` contiene el workspace vivo;
-- `project/` es la raíz documental del proyecto;
+- `project/` contiene controles, edición y derivados;
 - Google Drive se usa únicamente para leer el PDF autoritativo;
-- el chat anterior no es una fuente de estado;
-- no es necesario disponer de checkout local, Git local, Python local, WSL, VS Code ni Work.
-
-En Chat normal Web/Desktop se usa `PROJECT.md` como entrada. En un entorno con la skill instalada puede invocarse `editar-catastro-sorrios`; ambas vías deben reconstruir el mismo estado canónico.
+- no se depende de conversaciones anteriores;
+- no se necesita Work, checkout local, Git local, Python local, WSL ni VS Code.
 
 ---
 
-# 2. Los cinco modos de trabajo
-
-El proyecto distingue cinco modos oficiales.
+# 3. Los cinco modos de trabajo
 
 | Modo | Para qué sirve | ¿Escribe? |
 |---|---|---|
@@ -57,462 +105,314 @@ El proyecto distingue cinco modos oficiales.
 | Cambio metodológico | Proponer o aprobar un criterio editorial nuevo | Solo tras aprobación expresa |
 | Estudio histórico | Elaborar el estudio cuando esté habilitado | Solo cuando `historical_study_enabled: true` |
 
-La primera decisión al comenzar una tarea debe ser identificar cuál de estos modos corresponde.
+El usuario normalmente solo necesita expresar el objetivo. El bootstrap o la skill deben determinar el modo cuando sea evidente.
 
 ---
 
-# 3. Edición normal de una unidad
+# 4. Edición normal de una unidad
 
-Una unidad editorial debe tratarse como una operación completa. No se debe comenzar la siguiente hasta cerrar documentalmente la actual.
+Una unidad editorial se trata como una operación completa. Internamente el sistema debe:
 
-El ciclo normal es:
+1. reconstruir estado y secuencia desde GitHub;
+2. comprobar que la operación esté `clean` y que la unidad anterior esté cerrada;
+3. localizar y leer visualmente la unidad en el PDF autoritativo;
+4. transcribir línea por línea;
+5. revisar la lectura contra la imagen;
+6. aplicar el Manual;
+7. completar aparato editorial;
+8. preparar las altas de Glosario e índices;
+9. registrar dudas sin forzar lecturas;
+10. superar control de calidad y validar;
+11. incorporar derivados justificados;
+12. actualizar Diario, registro de operación y estado;
+13. validar el conjunto;
+14. publicar en un único commit Git atómico;
+15. verificar el resultado.
 
-1. leer `proyecto.yaml`, `estado.yaml` y `unidades.yaml` desde el mismo estado de GitHub;
-2. comprobar que `operation.status` sea `clean`, que la unidad actual sea coherente y que la anterior esté cerrada;
-3. obtener el PDF autoritativo de Drive y localizar exactamente página y posición;
-4. leer visualmente la unidad completa;
-5. transcribir línea por línea;
-6. revisar la transcripción contra la imagen;
-7. aplicar el Manual vigente;
-8. completar Imagen, Transcripción paleográfica, Observaciones editoriales, Notas paleográficas, Notas históricas y Referencias cruzadas;
-9. preparar las posibles altas o cambios del Glosario y los índices;
-10. registrar las dudas que sigan abiertas sin forzar lecturas;
-11. superar el control de calidad y validar la unidad;
-12. incorporar únicamente los derivados justificados de la unidad validada;
-13. actualizar Diario, registro de operación y `estado.yaml`;
-14. validar el conjunto completo;
-15. comprobar que la rama objetivo no ha cambiado desde el `base_sha`;
-16. publicar todos los cambios mediante un único commit Git atómico;
-17. verificar el commit, los archivos afectados, el estado resultante y, cuando corresponda, el CI.
+El usuario no necesita enumerar estos pasos en el prompt.
 
-La unidad es, por tanto, la transacción editorial básica del proyecto.
-
----
-
-# 4. Prompt estándar de producción
-
-Para continuar normalmente la edición en un chat nuevo:
+## Con complemento
 
 ```text
-Trabaja con el proyecto Sorríos del repositorio privado
-miguel-conde/sorrios-ensenada.
-
-Usa la rama main.
-Carga PROJECT.md y sigue sus instrucciones.
-
-Modo: edición de unidad.
-
-Reconstruye primero el estado canónico y confirma:
-- operation.status;
-- last_validated_unit;
-- last_closed_unit;
-- current_unit;
-- next_unit;
-- current_location.
-
-Después trabaja únicamente la unidad actual indicada por estado.yaml.
-
-Realiza el ciclo editorial completo conforme al Manual vigente:
-1. lee visualmente la unidad completa en el PDF autoritativo;
-2. transcribe línea por línea;
-3. revisa la lectura contra la imagen;
-4. completa todo el aparato editorial;
-5. identifica y trata correctamente todas las dudas;
-6. prepara y aplica, tras la validación, únicamente los cambios justificados
-   en Glosario e índices;
-7. actualiza Diario, registro de operación y estado;
-8. valida el conjunto;
-9. publica mediante un único commit Git atómico;
-10. verifica el commit, el estado resultante y el CI.
-
-No fuerces ninguna lectura.
-No avances a la siguiente unidad.
-Si aparece una situación que exija un criterio metodológico nuevo,
-detente antes de publicar y preséntamela para decisión.
+@Catastro de Sorríos Edita y cierra la unidad actual. Si aparece un problema que requiera un criterio nuevo, detente y consúltamelo antes de publicar.
 ```
 
-Este es el prompt recomendado para la mayoría de las unidades.
+## Sin complemento
+
+```text
+Trabaja con miguel-conde/sorrios-ensenada en main.
+Carga PROJECT.md.
+Edita y cierra la unidad actual. Si aparece un problema que requiera un criterio nuevo, detente y consúltamelo antes de publicar.
+```
 
 ---
 
 # 5. Edición con revisión humana antes de publicar
 
-En una unidad difícil puede convenir separar análisis y escritura.
+Esta modalidad es recomendable para unidades difíciles.
 
-Primera petición:
-
-```text
-Trabaja con el proyecto Sorríos del repositorio
-miguel-conde/sorrios-ensenada.
-
-Usa main, carga PROJECT.md y sigue sus instrucciones.
-
-Modo: edición de unidad.
-
-Trabaja únicamente la unidad actual.
-Realiza todo el análisis editorial y prepara la operación completa,
-pero NO modifiques todavía ningún archivo de GitHub.
-
-Preséntame para revisión:
-- lectura de la unidad;
-- transcripción paleográfica;
-- observaciones editoriales;
-- notas paleográficas;
-- notas históricas;
-- referencias cruzadas;
-- dudas;
-- cambios propuestos en Glosario e índices;
-- cambios propuestos en Diario y estado.
-
-Espera mi aprobación antes de publicar.
-```
-
-Tras aprobar la propuesta:
+## Con complemento
 
 ```text
-Aprobado.
-
-Publica exactamente la operación propuesta siguiendo el protocolo Git
-atómico del proyecto. Antes de escribir, relee el HEAD de main y comprueba
-que no ha cambiado; si ha cambiado, detente y reconcilia.
-
-Después verifica el commit, el estado resultante y el CI.
+@Catastro de Sorríos Trabaja la unidad actual, pero preséntame la propuesta completa antes de escribir nada.
 ```
 
-Este modo de trabajo es recomendable cuando existen lecturas difíciles, varias dudas o decisiones editoriales delicadas.
+## Sin complemento
+
+```text
+Trabaja con miguel-conde/sorrios-ensenada en main.
+Carga PROJECT.md.
+Trabaja la unidad actual, pero preséntame la propuesta completa antes de escribir nada.
+```
+
+La propuesta debe incluir transcripción, aparato editorial, dudas y cambios derivados. Después de revisarla basta con responder:
+
+```text
+Aprobado. Publica la operación propuesta y verifica el resultado.
+```
+
+Antes de publicar, el sistema debe volver a comprobar que `main` no ha cambiado respecto del `base_sha` usado para preparar la operación.
 
 ---
 
-# 6. Lecturas dudosas
+# 6. Consulta puntual y solo lectura
 
-Las dudas paleográficas forman parte del flujo normal y no constituyen por sí mismas un cambio metodológico.
-
-El Manual exige, cuando sea útil:
-
-1. comparar con otras apariciones;
-2. comparar con firmas;
-3. comparar con documentos paralelos;
-4. si persiste la duda, conservar una lectura responsable marcada con `[?]`;
-5. si no existe una lectura responsable, utilizar `[...]`.
-
-Nunca se debe inventar ni forzar una lectura.
-
-Petición útil:
-
-```text
-Trabaja la unidad actual en modo edición.
-
-Presta especial atención a las lecturas dudosas.
-Intenta resolverlas paleográficamente utilizando las comparaciones permitidas
-por el Manual, pero no fuerces ninguna.
-
-Si persiste alguna duda, márcala correctamente y consérvala como duda abierta
-en los documentos de control que correspondan.
-```
-
----
-
-# 7. Consulta puntual y solo lectura
-
-Se usa para preguntas concretas sobre el proyecto, por ejemplo:
+Ejemplos:
 
 - cuál es la unidad actual;
-- qué dudas están abiertas;
+- qué dudas siguen abiertas;
 - cómo quedó transcrita una unidad;
 - si aparece una persona, topónimo, institución, medida u oficio;
-- qué dice un archivo determinado.
+- qué dice un archivo concreto.
 
-Plantilla:
+## Con complemento
 
 ```text
-Trabaja con el proyecto Sorríos del repositorio
-miguel-conde/sorrios-ensenada.
-
-Usa main y carga PROJECT.md.
-
-Modo: consulta puntual y solo lectura.
-
-[MI PREGUNTA]
-
-No modifiques ningún archivo.
+@Catastro de Sorríos ¿Cuál es el estado actual del proyecto y qué unidad toca ahora?
 ```
 
-En este modo deben leerse solo los controles y la fuente concreta necesaria. No hace falta abrir el Manual ni Drive salvo que la pregunta dependa de un criterio editorial o de la imagen del manuscrito.
-
-Si la consulta exige comprobar el manuscrito:
+## Sin complemento
 
 ```text
-Para responder necesitas comprobar directamente el PDF autoritativo.
-Léelo visualmente, pero mantén la operación en solo lectura.
+Trabaja con miguel-conde/sorrios-ensenada en main.
+Carga PROJECT.md.
+Consulta puntual y solo lectura: ¿cuál es el estado actual del proyecto y qué unidad toca ahora?
+```
+
+No hace falta abrir el Manual ni Drive salvo que la respuesta dependa de un criterio editorial o de la imagen del manuscrito.
+
+Si hay que mirar el manuscrito, puede añadirse simplemente:
+
+```text
+Compruébalo visualmente en el PDF autoritativo. No modifiques nada.
+```
+
+---
+
+# 7. Lecturas dudosas
+
+Las dudas paleográficas forman parte del flujo normal. No constituyen por sí mismas un cambio metodológico.
+
+El sistema debe intentar resolverlas mediante las comparaciones permitidas por el Manual y, si persisten, conservarlas con la notación adecuada. Nunca debe inventar ni forzar una lectura.
+
+Petición suficiente:
+
+```text
+Presta especial atención a las lecturas dudosas. Intenta resolverlas según el Manual, pero no fuerces ninguna.
 ```
 
 ---
 
 # 8. Auditoría
 
-La auditoría sirve para comprobar el proyecto sin editar una unidad.
+La auditoría comprueba el proyecto sin editar la unidad actual.
 
-Plantilla:
+## Con complemento
 
 ```text
-Trabaja con el proyecto Sorríos del repositorio
-miguel-conde/sorrios-ensenada.
-
-Usa main y carga PROJECT.md.
-
-Modo: auditoría.
-
-Audita el workspace canónico completo según las reglas del proyecto:
-estructura, controles, versiones, secuencia, estado, 35 unidades,
-secciones obligatorias, operaciones, derivados, autoridades y ausencia
-del PDF en GitHub.
-
-Informa de todos los problemas encontrados.
-No corrijas nada todavía.
+@Catastro de Sorríos Audita el estado del proyecto. No corrijas nada todavía.
 ```
 
-Si la auditoría detecta problemas objetivos, la corrección debe solicitarse después de conocer el diagnóstico:
+## Sin complemento
 
 ```text
-Corrige todos los problemas objetivos encontrados en la auditoría.
-No cambies ningún criterio editorial.
-Usa operaciones Git atómicas y verifica el resultado.
+Trabaja con miguel-conde/sorrios-ensenada en main.
+Carga PROJECT.md.
+Audita el estado del proyecto. No corrijas nada todavía.
+```
+
+Si el diagnóstico confirma problemas objetivos:
+
+```text
+Corrige los problemas objetivos encontrados, sin cambiar criterios editoriales, y verifica el resultado.
 ```
 
 ---
 
 # 9. Cambio metodológico
 
-Un cambio metodológico es necesario cuando aparece una situación que el Manual vigente no resuelve o cuando se desea alterar conscientemente un criterio existente.
+Se usa cuando aparece un caso que el Manual no resuelve o cuando se desea cambiar conscientemente un criterio vigente.
 
-Nunca debe introducirse un criterio nuevo de forma implícita durante la edición de una unidad.
+Nunca debe introducirse un criterio nuevo de forma implícita durante una edición ordinaria.
 
-Plantilla:
+## Con complemento
 
 ```text
-Trabaja con el proyecto Sorríos usando main.
-Carga PROJECT.md.
-
-Modo: cambio metodológico.
-
-Ha aparecido este problema:
-
-[DESCRIPCIÓN]
-
-Comprueba primero si el Manual vigente ya contiene un criterio aplicable.
-
-Si lo contiene, indícame cuál y no modifiques el Manual.
-
-Si no lo contiene, prepara una propuesta de criterio nuevo:
-- problema;
-- alternativas;
-- criterio recomendado;
-- justificación;
-- cambios exactos necesarios en el Manual;
-- efectos sobre unidades ya validadas, si los hubiera.
-
-No publiques ningún cambio hasta que yo lo apruebe.
+@Catastro de Sorríos Tenemos este caso no previsto: [DESCRIPCIÓN]. Comprueba si el Manual ya lo resuelve; si no, propón un criterio nuevo y espera mi aprobación.
 ```
 
-Tras la aprobación:
+## Sin complemento
 
 ```text
-Apruebo el nuevo criterio.
+Trabaja con miguel-conde/sorrios-ensenada en main.
+Carga PROJECT.md.
+Cambio metodológico: tenemos este caso no previsto: [DESCRIPCIÓN]. Comprueba si el Manual ya lo resuelve; si no, propón un criterio nuevo y espera mi aprobación.
+```
 
-Incorpóralo al Manual, actualiza los documentos de trazabilidad necesarios
-y aplica únicamente los efectos derivados que hayamos aprobado.
+Tras aprobar:
 
-Publica la operación de forma atómica y verifica el resultado.
+```text
+Apruebo el criterio. Incorpóralo con la trazabilidad necesaria, aplica solo los efectos aprobados y verifica el resultado.
 ```
 
 ---
 
 # 10. Revisión de una unidad ya validada
 
-Una unidad validada no debe reabrirse como si fuera la unidad corriente. El Manual solo justifica modificarla cuando aparezca una imagen mejor, una lectura demostrablemente superior o un error objetivo.
+Una unidad validada no debe reabrirse como si fuera la unidad corriente. Primero se audita en solo lectura.
 
-Primero debe auditarse la unidad en solo lectura:
+Petición:
 
 ```text
-Modo: auditoría y solo lectura.
-
-Revisa la unidad [UNIDAD] ya validada porque sospecho este problema:
-
-[PROBLEMA]
-
-Compara la edición con el PDF autoritativo y con el Manual.
-Determina si existe realmente:
-- un error objetivo;
-- una lectura demostrablemente superior;
-- o ninguna razón suficiente para modificar la unidad.
-
-No modifiques nada.
+Revisa la unidad [UNIDAD] ya validada porque sospecho este problema: [PROBLEMA]. Compara la edición con el PDF y el Manual. No modifiques nada.
 ```
 
-Si la corrección está justificada:
+Solo si se confirma una causa suficiente —imagen mejor, lectura demostrablemente superior o error objetivo— se autoriza la corrección:
 
 ```text
-Corrige la unidad validada [UNIDAD] conforme al resultado de la auditoría.
-
-No cambies la secuencia editorial ni current_unit.
-Registra expresamente la corrección en Diario Editorial y CAMBIOS.md,
-actualiza cualquier derivado afectado y publica todo mediante una única
-operación Git atómica.
-
-Verifica después el resultado.
+Corrige la unidad validada conforme a la auditoría. No cambies la secuencia editorial. Registra la corrección y actualiza los derivados afectados.
 ```
 
 ---
 
-# 11. Consultas e investigación histórica durante la edición
+# 11. Investigación histórica durante la edición
 
-Durante la edición pueden utilizarse fuentes externas para comprobar identificaciones, equivalencias o contexto auxiliar cuando el Manual lo permita.
+Pueden consultarse fuentes externas para identificaciones, equivalencias o contexto auxiliar cuando el Manual lo permita.
 
-Debe distinguirse siempre:
+Debe distinguirse siempre entre:
 
 - lo que afirma el manuscrito;
 - lo que procede de fuentes externas;
-- cualquier inferencia o hipótesis.
-
-Las fuentes externas no convierten sus contenidos en hechos del expediente ni constituyen por sí mismas base documental autónoma del Estudio Histórico.
+- lo que sea inferencia o hipótesis.
 
 Petición útil:
 
 ```text
-Durante la edición de esta unidad, investiga externamente únicamente las
-identificaciones históricas necesarias para notas, Glosario o índices.
-
-Distingue claramente:
-- lo que afirma el manuscrito;
-- lo que procede de fuentes externas;
-- y cualquier inferencia.
-
-Cita las fuentes externas utilizadas.
+Investiga externamente solo lo necesario para identificar o contextualizar esta unidad. Distingue manuscrito, fuente externa e inferencia, y cita las fuentes.
 ```
 
 ---
 
 # 12. Estudio histórico
 
-El modo Estudio histórico solo puede escribir cuando `historical_study_enabled` sea `true` en el control canónico del proyecto.
+Solo puede escribirse cuando `historical_study_enabled` sea `true`.
 
-Mientras permanezca desactivado pueden hacerse consultas o preparar un plan, pero no debe escribirse el Estudio Histórico como resultado vivo del proyecto.
-
-Para estudiar su futura activación:
+Mientras esté desactivado puede prepararse un plan o comprobar si procede activarlo:
 
 ```text
-Modo: cambio metodológico.
-
-Quiero estudiar si procede activar la fase de Estudio Histórico.
-
-Revisa el estado de la edición y las condiciones del Manual.
-No actives nada todavía.
-
-Explícame qué condiciones se cumplen, cuáles faltan y qué cambios de control
-serían necesarios para establecer historical_study_enabled: true.
+Estudia si procede activar el Estudio Histórico. Revisa estado y Manual, pero no actives nada todavía.
 ```
 
-Cuando se habilite, la base documental sobre el expediente será exclusivamente la edición paleográfica validada, salvo que el Manual se modifique expresamente.
+Cuando se habilite, la base documental sobre el expediente será la edición paleográfica validada, salvo cambio metodológico expreso.
 
 ---
 
 # 13. Cómo continuar en un chat nuevo
 
-No debe dependerse de frases como «continúa donde lo dejamos» si el chat no contiene el contexto suficiente.
+No hace falta recordar manualmente la última unidad.
 
-La forma robusta es:
+## Con complemento
 
 ```text
-Trabaja con el proyecto Sorríos del repositorio
-miguel-conde/sorrios-ensenada.
-
-Usa main.
-Carga PROJECT.md y reconstruye el estado canónico.
-
-Modo: edición de unidad.
-Continúa el trabajo con la unidad actual indicada por estado.yaml.
+@Catastro de Sorríos Continúa con la unidad actual.
 ```
 
-El repositorio, no la conversación anterior, determina dónde continúa el trabajo.
+## Sin complemento
+
+```text
+Trabaja con miguel-conde/sorrios-ensenada en main.
+Carga PROJECT.md.
+Continúa con la unidad actual.
+```
+
+GitHub, no la conversación anterior, determina dónde continúa el trabajo.
 
 ---
 
 # 14. Cuándo indicar una unidad concreta
 
-En edición normal es preferible decir:
+En edición normal conviene pedir simplemente «la unidad actual».
 
-```text
-trabaja la unidad actual indicada por estado.yaml
-```
+Indica una unidad concreta cuando quieras:
 
-No es necesario recordar manualmente qué folio sigue.
-
-Conviene indicar una unidad concreta cuando se quiera:
-
-- hacer una consulta específica;
+- consultarla;
 - auditarla;
 - revisar una lectura ya validada;
-- comparar dos unidades;
+- compararla con otra;
 - investigar una duda localizada.
 
 ---
 
 # 15. Una unidad cada vez
 
-No se recomienda pedir varias unidades como una sola operación editorial. Cada unidad debe completar su propio ciclo de lectura, transcripción, control de calidad, validación, derivados, cierre y verificación antes de comenzar la siguiente.
+No se recomienda pedir varias unidades como una única operación editorial. Cada unidad debe completar su ciclo de lectura, validación, derivados, cierre y verificación antes de empezar la siguiente.
 
-Una vez cerrada una unidad, dentro del mismo chat puede bastar:
+Después de cerrar una unidad, puede bastar:
 
 ```text
 Adelante con la siguiente unidad.
-Relee antes el estado canónico y sigue el procedimiento completo.
 ```
 
-El sistema deberá volver a consultar el estado antes de comenzar la nueva unidad.
+El sistema debe releer el estado canónico antes de empezar.
 
 ---
 
-# 16. Uso desde un entorno con skill
+# 16. Referencia rápida
 
-Si el entorno permite invocar la skill instalada, puede sustituirse el arranque mediante `PROJECT.md` por una invocación explícita de `editar-catastro-sorrios`.
+| Situación | Petición mínima |
+|---|---|
+| Saber algo | `Consulta puntual y solo lectura: [pregunta]` |
+| Continuar la edición | `Edita y cierra la unidad actual` |
+| Revisar antes de escribir | `Trabaja la unidad actual, pero preséntame la propuesta antes de escribir` |
+| Auditar | `Audita el estado del proyecto. No corrijas todavía` |
+| Cambiar una regla | `Comprueba si el Manual cubre este caso; si no, propón un criterio y espera aprobación` |
+| Revisar una unidad cerrada | `Audita primero la unidad [X]; no modifiques nada` |
+| Investigar una identificación | `Distingue manuscrito, fuente externa e inferencia` |
+| Continuar en otro chat | `Continúa con la unidad actual` |
 
-Ejemplo conceptual:
+Si se usa ChatGPT Web o Desktop sin complemento, antepón:
 
 ```text
-Usa explícitamente la skill editar-catastro-sorrios.
-Modo: edición de unidad.
-Trabaja sobre la rama canónica y la unidad actual.
-[resto de la petición]
+Trabaja con miguel-conde/sorrios-ensenada en main.
+Carga PROJECT.md.
 ```
 
-La skill es autocontenida; no debe depender de `PROJECT.md`. El resultado operativo debe ser equivalente porque ambas vías usan las mismas autoridades canónicas bajo `project/`.
+Si el complemento está disponible, puede sustituirse todo ese arranque por:
+
+```text
+@Catastro de Sorríos
+```
 
 ---
 
-# 17. Referencia rápida
+# 17. Regla práctica final
 
-| Situación | Petición recomendada |
-|---|---|
-| Quiero saber algo | `Modo: consulta puntual y solo lectura` |
-| Quiero continuar la edición | `Modo: edición de unidad. Trabaja la unidad actual y cierra el ciclo completo` |
-| Quiero revisar antes de escribir | `Modo: edición de unidad. Prepara todo pero no publiques hasta mi aprobación` |
-| Sospecho un problema general | `Modo: auditoría. Informa; no corrijas todavía` |
-| Falta una regla editorial | `Modo: cambio metodológico. Prepara propuesta y espera mi aprobación` |
-| Sospecho un error en una unidad validada | `Audita primero esa unidad; corrígela solo tras confirmar que existe causa suficiente` |
-| Quiero investigar una identificación | `Consulta o edición, distinguiendo manuscrito, fuente externa e inferencia` |
-| Quiero iniciar el Estudio Histórico | `Cambio metodológico para comprobar si procede activarlo` |
+La complejidad debe estar en el proyecto, no en los prompts.
 
----
+El usuario solo necesita expresar:
 
-# 18. Regla práctica final
+1. **cómo entra:** `@Catastro de Sorríos` si está disponible, o `PROJECT.md` si no;
+2. **qué quiere hacer:** consultar, editar, auditar, cambiar método o estudiar historia;
+3. **si autoriza publicar** o quiere revisar antes.
 
-En caso de duda sobre cómo formular una petición, basta con indicar:
-
-1. el repositorio `miguel-conde/sorrios-ensenada`;
-2. la rama `main`;
-3. que se cargue `PROJECT.md` en Chat normal;
-4. el modo de tarea;
-5. el objetivo concreto;
-6. si se autoriza publicar o se desea revisión previa.
-
-Todo lo demás —archivos necesarios, unidad actual, página del PDF, derivados afectados, estado resultante y protocolo Git— debe reconstruirse desde las fuentes canónicas del propio proyecto.
+Todo lo demás —archivos necesarios, unidad actual, página del PDF, procedimiento, derivados afectados, control de concurrencia, estado resultante y protocolo Git— debe reconstruirse desde las fuentes canónicas del proyecto.
