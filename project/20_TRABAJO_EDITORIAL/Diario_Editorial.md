@@ -12,11 +12,15 @@ Este Diario conserva dudas, incidencias, hipótesis y decisiones. No gobierna la
 
 ## Dudas abiertas
 
+*(Sin dudas abiertas.)*
+
+## Dudas resueltas
+
 ### D-001 — Signo superior de la portada
 
-En la parte superior de la portada (`sorrios_ensenada_orden_lectura_calidad_original.pdf`, página 1) aparece un signo aislado cuya función todavía debe determinarse. Debe establecerse si se trata de una cruz invocativa reconocible o de un signo de función incierta conforme al Manual Editorial v1.5, § 11.
+Resuelta el 6 de septiembre de 2026 al validar la Portada. El signo aislado situado en la parte superior se identifica como cruz invocativa reconocible y se representa mediante `†`, conforme al Manual Editorial v1.5, § 11.
 
-El criterio adoptado para este signo no se extrapolará automáticamente a los signos superiores de unidades posteriores, que se examinarán cuando corresponda validar cada unidad.
+La identificación se apoya en la forma gráfica del propio signo y, como comprobación paleográfica auxiliar, en un signo análogo visible al comienzo del folio 306r. Esta comparación no supone validar por anticipado el signo de esa unidad ni establece un criterio automático para signos superiores posteriores, que deberán examinarse cuando llegue su turno.
 
 ## Historial de cambios documentales
 
@@ -41,7 +45,6 @@ El criterio adoptado para este signo no se extrapolará automáticamente a los s
 - Promovida la edición v3.3 como documento principal vigente; el cambio respecto de v3.2 es únicamente normativo y no altera transcripciones ni unidades.
 - Actualizados los cinco índices para referirse a unidades editoriales, de modo que puedan registrar también la Portada y otras unidades no foliadas.
 
-
 ### 1 de septiembre de 2026
 
 - Implantada la arquitectura de trabajo basada en Drive, una skill y archivos de control.
@@ -50,3 +53,11 @@ El criterio adoptado para este signo no se extrapolará automáticamente a los s
 - Promovida la Edición crítica v3.4 sin alterar ninguna transcripción.
 - Trasladado el estado operativo a `estado.yaml`.
 - Conservados la portada como unidad actual, ninguna unidad validada o cerrada y D-001 como única duda abierta.
+
+### 6 de septiembre de 2026
+
+- Validada y cerrada documentalmente la unidad Portada como primer ciclo editorial real sobre el workspace canónico de GitHub v2.
+- Incorporada la transcripción paleográfica y completado su aparato editorial.
+- Resuelta D-001: el signo superior de la portada se identifica como cruz invocativa reconocible.
+- Incorporados al Índice de topónimos `Sorribas` y `Santibañez De Ordas`; no se generan altas justificadas en Glosario ni en los índices de personas, instituciones, medidas u oficios.
+- El estado avanza a `reverso_portada` como unidad actual.

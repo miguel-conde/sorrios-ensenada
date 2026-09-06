@@ -31,23 +31,36 @@ Véase el Manual Editorial vigente.
 
 ### Transcripción paleográfica
 
-*(Pendiente de transcripción)*
+†
+Copia De las resp[ues]tas. G[enera]les. De
+el Lugar De Sorribas,
+y Santibañez De Ordas..
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente a la portada, página digital 1 del PDF autoritativo, en posición completa. No se incorpora al texto ninguna foliación archivística.
+
+El signo aislado de la parte superior se identifica como cruz invocativa reconocible y se representa mediante `†`, conforme al Manual Editorial v1.5, § 11. Con ello queda resuelta la duda D-001. La comparación con un signo análogo al comienzo del folio 306r sirve únicamente como apoyo paleográfico y no prejuzga la validación de signos de unidades posteriores.
+
+El subrayado y el trazo curvo final bajo la tercera línea se consideran recursos gráficos de énfasis sin valor verbal y no se incorporan a la transcripción.
+
+La portada no tiene unidad anterior. La unidad siguiente es el Reverso de la portada.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `resp[ues]tas.` desarrolla la abreviatura visible de «respuestas».
+- `G[enera]les.` desarrolla la abreviatura visible de «Generales».
+- Se conservan las mayúsculas, el salto de línea, la coma tras `Sorribas` y los dos puntos finales visibles tras `Ordas`.
+- La cruz invocativa se dispone en línea independiente conforme al Manual Editorial.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Índice de topónimos: `Sorribas`; `Santibañez De Ordas`.
+- Continuidad material: Reverso de la portada.
 
 ---
 

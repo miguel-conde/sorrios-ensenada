@@ -12,4 +12,18 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 
 ## Entradas
 
-*(Sin entradas: no existe todavía ninguna unidad validada.)*
+### Sorribas
+
+- **Forma original:** `Sorribas`
+- **Forma moderna:** Sorribas
+- **Localización:** no precisada en la Portada.
+- **Unidades:** Portada.
+- **Referencias cruzadas:** `Santibañez De Ordas`.
+
+### Santibañez De Ordas
+
+- **Forma original:** `Santibañez De Ordas`
+- **Forma moderna:** Santibáñez de Ordás
+- **Localización:** no precisada en la Portada.
+- **Unidades:** Portada.
+- **Referencias cruzadas:** `Sorribas`.
