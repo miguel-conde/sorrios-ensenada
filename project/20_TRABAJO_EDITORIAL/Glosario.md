@@ -33,7 +33,15 @@ No contendrá interpretación histórica extensa.
 ### pelo
 
 - **Término documentado:** `pelo`.
-- **Definición:** voz empleada para una de las producciones de los `Prados cercados De regadio`, en la expresión `producen sin intermision pelo, y otoño`.
+- **Definición:** voz empleada para una de las producciones de distintas especies de prados; aparece en folio 307v y vuelve a documentarse en folio 308r.
 - **Primera unidad:** folio 307v.
-- **Referencias:** folio 307v.
-- **Notas:** el alcance técnico de la voz no se amplía más allá de lo que documenta esta unidad.
+- **Referencias:** folio 307v; folio 308r.
+- **Notas:** el alcance técnico de la voz no se amplía más allá de lo que documentan las unidades validadas.
+
+### entreparedes
+
+- **Término documentado:** `entreparedes`.
+- **Definición:** calificativo aplicado en la cuarta respuesta a `Prados entreparedes`, de los que se declara que `producen vn año, y descansan otro`.
+- **Primera unidad:** folio 308r.
+- **Referencias:** folio 308r.
+- **Notas:** se conserva la forma unida documentada en la unidad, sin fijar una equivalencia agronómica externa al expediente.

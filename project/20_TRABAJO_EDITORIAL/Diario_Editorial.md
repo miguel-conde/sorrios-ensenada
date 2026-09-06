@@ -95,3 +95,10 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Los puntos y trazos de relleno al final de varios renglones se omiten como signos no verbales sin valor textual, conforme al criterio ya vigente.
 - Incorporados `Ferrañales` y `pelo` al Glosario; actualizado `Rioseco` y añadido `Villapodambre` al Índice de topónimos. No se generan cambios justificados en los índices de personas, instituciones, medidas u oficios.
 - La cuarta respuesta continúa en folio 308r con la sexta especie; no quedan dudas abiertas y el estado avanza a `folio_308r` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 308r.
+- Continuada la cuarta respuesta con las especies sexta a duodécima: prados cercados y abiertos de secano y regadio, `Prados entreparedes`, tierras matorrales, `Eras o sitios` y montes de robles altos y bajos.
+- La lectura `Prados entreparedes` se confirmó paleográficamente mediante la aparición auxiliar `prados De entre paredes` en folio 309r; el cotejo se utilizó solo para fijar la lectura de 308r y no valida por anticipado 309r.
+- La inspección auxiliar de folio 308v confirma que la duodécima especie continúa con `reparar los puentes de el Rio`; esta comprobación delimita la unidad sin validar por anticipado 308v.
+- Los puntos y trazos de relleno al final de las especies se omiten como signos no verbales sin valor textual, conforme al criterio ya vigente; no aparece ningún criterio metodológico nuevo.
+- Actualizado `pelo` y añadido `entreparedes` al Glosario; no se generan cambios justificados en los índices de personas, topónimos, instituciones, medidas u oficios.
+- No quedan dudas abiertas y el estado avanza a `folio_308v` como unidad actual.

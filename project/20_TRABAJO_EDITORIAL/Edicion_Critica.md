@@ -361,23 +361,54 @@ La unidad anterior es el folio 307r. La unidad siguiente es el folio 308r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+6ª Prados cercados De secano, que produ-
+cen sin intermision pelo, y otoño.
+7ª Prados abiertos De regadio, que pro-
+ducen sin descanso solo vn pelo.
+8ª Prados abiertos de secano, que pro-
+ducen sin descanso solo vn pelo, y el
+otoño se pasta De comun.
+9ª Prados entreparedes, que producen vn
+año, y descansan otro.
+10ª Tierras matorrales, que no se
+labran, p[o]r las muchas matas, y su
+mala calidad.
+11ª Eras o sitios, que sirven De pas-
+to a los ganados de el Comun, y resguar-
+dar el pan.
+12ª Montes De Robles altos, y ba-
+xos, que sirven De pasto para los ganados
+de el comun, y su leña para quemar, y
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 308r, página digital 4 del PDF autoritativo, en posición derecha. La foliación archivística `308`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa la cuarta respuesta iniciada en folio 307v y contiene las especies sexta a duodécima. La duodécima especie queda abierta al final de la cara y continúa material y sintácticamente en folio 308v con `reparar los puentes de el Rio`; este cotejo se utiliza únicamente para delimitar 308r y no valida por anticipado 308v.
+
+La lectura `Prados entreparedes` se comprueba paleográficamente mediante la aparición auxiliar `prados De entre paredes` en folio 309r. La comparación sirve solo para fijar la lectura de esta unidad y no valida por anticipado 309r; se conserva en 308r la forma unida efectivamente escrita.
+
+Las series de puntos y trazos que prolongan diversos renglones después de las especies carecen de valor verbal y no se incorporan a la transcripción, conforme al criterio vigente para signos no verbales.
+
+La unidad anterior es el folio 307v. La unidad siguiente es el folio 308v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `p[o]r` desarrolla la abreviatura visible de la preposición en la décima especie.
+- Se conservan las grafías históricas `vn`, `intermision`, `regadio`, `entreparedes` y `comun`.
+- Se conservan las divisiones visibles `produ-` / `cen`, `pro-` / `ducen`, `pas-` / `to`, `resguar-` / `dar` y `ba-` / `xos`, incluidos los guiones de final de línea.
+- `pelo`, ya documentado en folio 307v, vuelve a aparecer en las especies sexta, séptima y octava.
+- `Eras o sitios` se conserva como aparece en el manuscrito; la aparición auxiliar `Sitios, y Eras` en folio 309r confirma la lectura sin validar por anticipado esa unidad.
+- La especie duodécima termina en esta cara con la conjunción `y`; la continuación `reparar los puentes de el Rio` pertenece materialmente a folio 308v.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 307v; folio 308v.
+- Glosario: `pelo`; `entreparedes`.
 
 ---
 
