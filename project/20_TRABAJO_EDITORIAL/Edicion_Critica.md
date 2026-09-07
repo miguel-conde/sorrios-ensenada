@@ -479,23 +479,56 @@ La unidad anterior es el folio 308r. La unidad siguiente es el folio 309r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+prim[er]a Calidad: En los prados abier-
+tos De regadio de primera, segun-
+da, y terz[er]a: En los prados abiertos de
+secano De segunda, y terz[er]a: En los
+prados De entre paredes De segunda, y
+terz[er]a Calidad: En las tierras mator-
+rales De terz[er]a, y vnica calidad: En los
+Sitios, y Eras De segunda, y terz[er]a.
+En los montes, De terz[er]a, y prim[er]a cali-
+dad: Y en los Sotos De terz[er]a, y prim[er]a
+Calidad.
+6ª. Ala sexta dijeron: que aunque
+en las tierras, que llevan declaradas
+ai algunos arboles frutales; p[o]r no llegar
+el caso de madurar su fruta perfec-
+tam[en]te, y ser esta de mala calidad, con-
+sideran no producir esto utilidad asus
+dueños.
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 309r, página digital 5 del PDF autoritativo, en posición derecha. La foliación archivística `309`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa y concluye la quinta respuesta iniciada en folio 308v. Completa la clasificación por calidad de los prados cercados de secano y recorre después los prados abiertos de regadio y secano, los `prados De entre paredes`, las tierras matorrales, los `Sitios, y Eras`, los montes y los sotos.
+
+La forma separada `entre paredes` queda documentada en esta unidad para la misma categoría que en folio 308r aparece como `Prados entreparedes`; se conserva cada forma tal como está escrita y se actualiza el Glosario con la variante ahora validada.
+
+La sexta respuesta comienza y concluye en esta misma cara. Declara que, aunque existen algunos árboles frutales en las tierras ya mencionadas, la fruta no llega a madurar perfectamente y es de mala calidad, por lo que no produce utilidad a sus dueños. La inspección auxiliar del comienzo de folio 309v confirma que allí empieza la séptima respuesta; este cotejo se usa únicamente para delimitar 309r y no valida por anticipado 309v.
+
+Las series de puntos que prolongan los renglones tras `Calidad.` y `dueños.` funcionan como relleno gráfico sin valor verbal y no se incorporan a la transcripción, conforme al criterio vigente para signos no verbales.
+
+La unidad anterior es el folio 308v. La unidad siguiente es el folio 309v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `prim[er]a` y `terz[er]a` desarrollan las abreviaturas visibles `prim.a` y `terz.a`; en la segunda se conserva la grafía histórica con `z`.
+- `p[o]r` desarrolla la abreviatura visible de la preposición y `tam[en]te` la abreviatura de `tamente` en `perfec-` / `tam[en]te`.
+- Se conservan las grafías `vnica`, `ai`, `regadio` y la forma unida `asus`.
+- Se conservan las divisiones visibles `abier-` / `tos`, `segun-` / `da`, `mator-` / `rales`, `cali-` / `dad`, `perfec-` / `tam[en]te` y `con-` / `sideran`, incluidos los guiones de final de línea.
+- `prados De entre paredes` se conserva como forma separada efectivamente escrita; constituye una variante documental de `Prados entreparedes` de folio 308r.
+- Se conserva el punto visible tras el ordinal `6ª.`.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 308v; folio 309v.
+- Glosario: `entreparedes` / `entre paredes`.
 
 ---
 

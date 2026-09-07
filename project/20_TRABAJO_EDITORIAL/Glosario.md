@@ -40,11 +40,11 @@ No contendrá interpretación histórica extensa.
 
 ### entreparedes
 
-- **Término documentado:** `entreparedes`.
-- **Definición:** calificativo aplicado en la cuarta respuesta a `Prados entreparedes`, de los que se declara que `producen vn año, y descansan otro`.
+- **Término documentado:** `entreparedes`; variante documentada `entre paredes`.
+- **Definición:** calificativo aplicado en la cuarta respuesta a `Prados entreparedes`, de los que se declara que `producen vn año, y descansan otro`; en la quinta respuesta reaparece como `prados De entre paredes` al clasificarlos por calidad.
 - **Primera unidad:** folio 308r.
-- **Referencias:** folio 308r.
-- **Notas:** se conserva la forma unida documentada en la unidad, sin fijar una equivalencia agronómica externa al expediente.
+- **Referencias:** folio 308r; folio 309r.
+- **Notas:** se conserva la forma unida documentada en folio 308r y la forma separada documentada en folio 309r, sin fijar una equivalencia agronómica externa al expediente.
 
 ### negrillos
 

@@ -112,3 +112,11 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Las series de puntos que cierran el tramo de la respuesta cuarta se omiten como relleno gráfico sin valor verbal conforme al criterio ya vigente; no aparece ningún criterio metodológico nuevo.
 - Añadido `negrillos` al Glosario con definición estrictamente contextual y sin identificación botánica moderna; no se generan cambios justificados en ninguno de los cinco índices.
 - No quedan dudas abiertas y el estado avanza a `folio_309r` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 309r.
+- Completada la quinta respuesta con la clasificación por calidad de prados abiertos de regadio y secano, `prados De entre paredes`, tierras matorrales, `Sitios, y Eras`, montes y sotos.
+- Las abreviaturas `prim.a` y `terz.a` se desarrollan como `prim[er]a` y `terz[er]a`, conservando la `z` del manuscrito; se mantienen las divisiones visibles de línea y las grafías históricas.
+- La forma separada `entre paredes` queda validada como variante documental de `entreparedes` y se incorpora a su entrada del Glosario.
+- La sexta respuesta se contiene íntegramente en la unidad: declara que, aunque existen algunos árboles frutales, la fruta no llega a madurar perfectamente y es de mala calidad, por lo que no produce utilidad a sus dueños.
+- Las series de puntos que cierran las respuestas quinta y sexta se omiten como relleno gráfico sin valor verbal conforme al criterio vigente; no aparece ningún criterio metodológico nuevo.
+- No se generan cambios justificados en los índices de personas, topónimos, instituciones, medidas u oficios y no quedan dudas abiertas.
+- El estado avanza a `folio_309v` como unidad actual.
