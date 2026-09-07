@@ -45,3 +45,11 @@ No contendrá interpretación histórica extensa.
 - **Primera unidad:** folio 308r.
 - **Referencias:** folio 308r.
 - **Notas:** se conserva la forma unida documentada en la unidad, sin fijar una equivalencia agronómica externa al expediente.
+
+### negrillos
+
+- **Término documentado:** `negrillos`.
+- **Definición:** especie arbórea mencionada en la cuarta respuesta dentro de `Soto De negrillos alisos, y fresnos`.
+- **Primera unidad:** folio 308v.
+- **Referencias:** folio 308v.
+- **Notas:** definición estrictamente contextual; no se fija aquí una identificación botánica moderna.

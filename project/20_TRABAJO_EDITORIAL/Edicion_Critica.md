@@ -420,23 +420,54 @@ La unidad anterior es el folio 307v. La unidad siguiente es el folio 308v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+reparar los puentes de el Rio
+13ª. Soto De negrillos alisos, y fres-
+nos, que sirve para pasto, y su leña.
+para reparar los puentes, y Puertas
+de el Rio De este Lugar
+5ª. Ala quinta dijeron: que en
+las especies De tierras, que llevan decla-
+radas, ay De las calidades, que se espli-
+can: En los Ferrañales centenales
+cercados de primera, segunda, y tercera:
+En las tierras linares de regadio,
+de primera, segunda, y tercera Calidad:
+En las Linares De secano De segunda,
+y tercera: En las tierras centenales
+de primera, segunda, y tercera: En
+los prados cercados De regadio, De
+primera, y segunda calidad: En los
+prados cercados De secano De segunda, y
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 308v, página digital 5 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `308v` deriva de la secuencia material y del folio 308r precedente.
+
+La unidad comienza con la continuación sintáctica de la especie duodécima de la cuarta respuesta: `de el comun, y su leña para quemar, y / reparar los puentes de el Rio`. A continuación se documenta la especie decimotercera, `Soto De negrillos alisos, y fres- / nos`, con aprovechamiento para pasto y leña. Con ella concluye la cuarta respuesta.
+
+La quinta respuesta comienza en esta unidad y clasifica por calidades varias de las especies de tierras ya declaradas. Queda abierta al final de la cara en `prados cercados De secano De segunda, y`; la inspección auxiliar del comienzo de folio 309r confirma la continuidad inmediata de la frase y se utiliza únicamente para delimitar 308v, sin validar por anticipado 309r.
+
+Las series de puntos que prolongan los renglones tras `Rio` y `Lugar` al cierre de la cuarta respuesta funcionan como relleno gráfico sin valor verbal y no se incorporan a la transcripción, conforme al criterio vigente para signos no verbales.
+
+La unidad anterior es el folio 308r. La unidad siguiente es el folio 309r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- Se conservan los puntos visibles tras los ordinales `13ª.` y `5ª.`.
+- Se conservan las grafías históricas `Ala`, `ay`, `esplican` y `regadio`.
+- Se conservan las divisiones visibles `fres-` / `nos`, `decla-` / `radas` y `espli-` / `can`, incluidos los guiones de final de línea.
+- `negrillos`, `alisos` y `fresnos` se conservan tal como aparecen; no se fija en esta fase una identificación botánica moderna de `negrillos`.
+- `Ferrañales` mantiene la forma ya documentada en folio 307v.
+- La quinta respuesta continúa materialmente en folio 309r; el cotejo de ese comienzo se usa solo para comprobar la continuidad y no valida su transcripción.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 308r; folio 309r.
+- Glosario: `Ferrañales`; `negrillos`.
 
 ---
 

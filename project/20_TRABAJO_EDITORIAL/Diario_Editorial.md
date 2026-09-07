@@ -102,3 +102,13 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Los puntos y trazos de relleno al final de las especies se omiten como signos no verbales sin valor textual, conforme al criterio ya vigente; no aparece ningún criterio metodológico nuevo.
 - Actualizado `pelo` y añadido `entreparedes` al Glosario; no se generan cambios justificados en los índices de personas, topónimos, instituciones, medidas u oficios.
 - No quedan dudas abiertas y el estado avanza a `folio_308v` como unidad actual.
+
+### 7 de septiembre de 2026
+
+- Validada y cerrada documentalmente la unidad folio 308v.
+- Completada la cuarta respuesta con la continuación de los montes de robles y la especie 13.ª, `Soto De negrillos alisos, y fresnos`, destinada a pasto y aprovechamiento de leña para reparar los puentes y puertas del río del lugar.
+- Iniciada la quinta respuesta, que clasifica por primera, segunda y tercera calidad varias de las especies de tierras ya declaradas; la respuesta continúa materialmente en folio 309r.
+- Se conservan las divisiones visibles `fres-` / `nos`, `decla-` / `radas` y `espli-` / `can`, así como las grafías `Ala`, `ay`, `esplican` y `regadio`.
+- Las series de puntos que cierran el tramo de la respuesta cuarta se omiten como relleno gráfico sin valor verbal conforme al criterio ya vigente; no aparece ningún criterio metodológico nuevo.
+- Añadido `negrillos` al Glosario con definición estrictamente contextual y sin identificación botánica moderna; no se generan cambios justificados en ninguno de los cinco índices.
+- No quedan dudas abiertas y el estado avanza a `folio_309r` como unidad actual.
