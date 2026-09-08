@@ -20,7 +20,6 @@ def test_plugin_and_marketplace_identifiers_match():
     entry = marketplace["plugins"][0]
 
     assert plugin["name"] == PLUGIN_ROOT.name == entry["name"]
-    assert plugin["version"] == "2.0.0"
     assert plugin["skills"] == "./skills/"
     assert plugin["interface"]["capabilities"] == ["Write"]
     assert "GitHub" in plugin["interface"]["longDescription"]
@@ -38,16 +37,21 @@ def test_plugin_contains_exactly_one_valid_skill():
 
 
 def test_versions_and_project_template_are_synchronized():
+    plugin = json.loads((PLUGIN_ROOT / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
     pyproject = tomllib.loads((PLUGIN_ROOT / "pyproject.toml").read_text(encoding="utf-8"))
     project = yaml.safe_load((ROOT / "project" / "00_CONTROL" / "proyecto.yaml").read_text(encoding="utf-8"))
     template = yaml.safe_load((SKILL_ROOT / "assets" / "templates" / "proyecto.yaml").read_text(encoding="utf-8"))
 
-    assert pyproject["project"]["version"] == "2.0.0"
-    assert project["plugin"]["version"] == "2.0.0"
-    assert project["skill"]["version"] == "2.0.0"
+    versions = {
+        plugin["version"],
+        pyproject["project"]["version"],
+        project["plugin"]["version"],
+        project["skill"]["version"],
+        template["plugin"]["version"],
+        template["skill"]["version"],
+    }
+    assert len(versions) == 1
     assert template["schema_version"] == 2
-    assert template["plugin"]["version"] == "2.0.0"
-    assert template["skill"]["version"] == "2.0.0"
     assert template["repository"] == project["repository"]
     assert "drive_root_id" not in template
 

@@ -18,8 +18,9 @@ def test_isolated_plugin_is_self_contained(tmp_path):
     skill_root = isolated / "skills" / "editar-catastro-sorrios"
     skill_text = (skill_root / "SKILL.md").read_text(encoding="utf-8")
     frontmatter = yaml.safe_load(skill_text.split("---", 2)[1])
+    template = yaml.safe_load((skill_root / "assets" / "templates" / "proyecto.yaml").read_text(encoding="utf-8"))
 
-    assert plugin["version"] == "2.0.0"
+    assert plugin["version"] == template["plugin"]["version"] == template["skill"]["version"]
     assert frontmatter["name"] == "editar-catastro-sorrios"
     assert not (isolated / "PROJECT.md").exists()
 
