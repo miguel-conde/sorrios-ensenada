@@ -39,5 +39,5 @@ No contendrá interpretación histórica extensa.
 - **Variantes:** `quartales`.
 - **Clase de medida:** capacidad de grano usada como referencia para expresar la cabida o sembradura de las tierras.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 309v.
-- **Notas y referencias cruzadas:** la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. No se fija una equivalencia métrica ni de capacidad fuera de lo que afirma la unidad; véase también `baras`.
+- **Unidades:** folio 309v; folio 310r.
+- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. No se fija una equivalencia métrica ni de capacidad fuera de lo que afirma la edición; véase también `baras`.

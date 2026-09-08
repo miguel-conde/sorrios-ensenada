@@ -604,23 +604,53 @@ La unidad anterior es el folio 309r. La unidad siguiente es el folio 310r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+ofrece alguna renta, ó fruto p[o]r cuia
+raz[o]n: el quartal De tierra Ferrañal cerca-
+do el de primera calidad centenal se
+siembra con otro quartal, el De segunda
+con otro, y el de terz[er]a con otro: El quar-
+tal De tierra linar de regadio, quando se
+siembra De Linaza, el de primera
+Calidad se siembra con vno: y quando
+este mismo quartal se siembra de Zevada
+Cada vno De el de las d[ic]has. tres calida-
+des se siembra con medio: El quartal
+de tierra Linar De secano, el de segunda
+Calidad se siembra con otro quartal De
+Linaza, y el De tercera con otro: Y qu-
+ando este mismo quartal se siembra
+De Centeno, cada vno de las d[ic]has.
+dos calidades se siembra con medio: El
+quartal de tierra centenal: el de primera
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 310r, página digital 6 del PDF autoritativo, en posición derecha. La foliación archivística `310`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al cuerpo de la transcripción.
+
+La unidad continúa directamente la novena respuesta iniciada en folio 309v: `á Juicio De Peritos, siempre, que se- / ofrece alguna renta, ó fruto p[o]r cuia / raz[o]n`. La respuesta explica a continuación la cantidad de simiente expresada en `quartal` para distintas clases y calidades de tierra.
+
+Para el `Ferrañal` cercado se consignan cantidades de siembra por calidad; para la tierra linar de regadio se distinguen la siembra de `Linaza` y de `Zevada`; y para la tierra linar de secano se distinguen `Linaza` y `Centeno`. La unidad inicia al final el tratamiento de la tierra centenal y queda abierta en `el de primera`.
+
+La inspección auxiliar del comienzo de folio 310v confirma que la frase continúa `Calidad se siembra con vn quartal...`; este cotejo se utiliza únicamente para delimitar folio 310r y no valida por anticipado folio 310v.
+
+La unidad anterior es el folio 309v. La unidad siguiente es el folio 310v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `p[o]r`, `raz[o]n`, `terz[er]a` y `d[ic]has.` desarrollan las abreviaturas visibles.
+- Se conservan las grafías y formas documentales `cuia`, `quartal`, `Ferrañal`, `regadio`, `Linaza`, `Zevada`, `Centeno` y `vno`.
+- Se conservan las divisiones visibles `cerca-` / `do`, `quar-` / `tal`, `calida-` / `des` y `qu-` / `ando`, incluidos los guiones de final de línea.
+- El final `el de primera` continúa sintácticamente en folio 310v con `Calidad...`; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 309v; folio 310v.
+- Glosario: `Ferrañales` / `Ferrañal`.
+- Índice de medidas: `quartal`.
 
 ---
 

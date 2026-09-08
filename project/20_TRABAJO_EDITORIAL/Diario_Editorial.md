@@ -133,3 +133,11 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizado `pan` en el Glosario; actualizado `baras` y añadido `quartal` en el Índice de medidas, sin fijar equivalencias modernas.
 - No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_310r` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 310r.
+- Continuada la novena respuesta desde `se-` / `ofrece`; la unidad explica la cantidad de simiente expresada en `quartal` para el `Ferrañal` cercado, la tierra linar de regadio y la tierra linar de secano, distinguiendo calidades y los cultivos de `Linaza`, `Zevada` y `Centeno` según el tenor documental.
+- La cara termina en `el de primera`; la inspección auxiliar del comienzo de folio 310v confirma `Calidad se siembra con vn quartal...`, únicamente para delimitar 310r y sin validar por anticipado la unidad siguiente.
+- Se desarrollan las abreviaturas `p[o]r`, `raz[o]n`, `terz[er]a` y `d[ic]has.`; se conservan las grafías `cuia`, `quartal`, `Ferrañal`, `regadio`, `Linaza`, `Zevada`, `Centeno` y `vno`, así como las divisiones `cerca-` / `do`, `quar-` / `tal`, `calida-` / `des` y `qu-` / `ando`.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: los nombres de cultivos y descriptores agrarios quedan en A; `Ferrañal` y `quartal` quedan en B; no aparecen candidatos C; las relaciones entre cantidad de simiente, cultivo y calidad de la tierra quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizada la entrada `Ferrañales` del Glosario con la variante singular `Ferrañal` y folio 310r; actualizado `quartal` en el Índice de medidas con esta nueva aparición y su uso para cantidades de simiente, sin fijar equivalencia moderna.
+- No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_310v` como unidad actual.

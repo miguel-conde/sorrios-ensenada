@@ -24,11 +24,11 @@ No contendrá interpretación histórica extensa.
 
 ### Ferrañales
 
-- **Término documentado:** `Ferrañales`.
+- **Término documentado:** `Ferrañales`; variante singular `Ferrañal`.
 - **Definición:** tierras destinadas a cereal para forraje; en el expediente se describen como `centenales De secano` que producen `sin intermision forraje`.
 - **Primera unidad:** folio 307v.
-- **Referencias:** folio 307v; folio 308v.
-- **Notas:** la equivalencia se apoya en el propio tenor documental y en un paralelo léxico agrario del oeste peninsular que define los ferrenales como parcelas destinadas a producir cereal en verde para el ganado. Fuente externa: Ministerio de Agricultura, *Elementos constitutivos del patrimonio paisajístico*, <https://www.mapa.gob.es/en/ministerio/servicios/informacion/Parte7_tcm38-102783.pdf>. No se amplía aquí la interpretación del sistema agrario.
+- **Referencias:** folio 307v; folio 308v; folio 310r.
+- **Notas:** la equivalencia se apoya en el propio tenor documental y en un paralelo léxico agrario del oeste peninsular que define los ferrenales como parcelas destinadas a producir cereal en verde para el ganado. En folio 310r aparece la forma singular `Ferrañal` al expresar la sembradura por `quartal`. Fuente externa: Ministerio de Agricultura, *Elementos constitutivos del patrimonio paisajístico*, <https://www.mapa.gob.es/en/ministerio/servicios/informacion/Parte7_tcm38-102783.pdf>. No se amplía aquí la interpretación del sistema agrario.
 
 ### pelo
 
