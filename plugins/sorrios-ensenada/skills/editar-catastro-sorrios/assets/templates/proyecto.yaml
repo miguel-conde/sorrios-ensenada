@@ -10,11 +10,11 @@ repository:
 
 plugin:
   name: sorrios-ensenada
-  version: "2.0.0"
+  version: "2.0.1"
   path: plugins/sorrios-ensenada
 skill:
   name: editar-catastro-sorrios
-  version: "2.0.0"
+  version: "2.0.1"
   path: plugins/sorrios-ensenada/skills/editar-catastro-sorrios
 
 phase:
@@ -33,7 +33,7 @@ authorities:
   manual:
     provider: github
     path: project/00_CONTROL/Manual_Editorial.md
-    version: "1.5"
+    version: "1.6"
 
 controls:
   project: {provider: github, path: project/00_CONTROL/proyecto.yaml}
@@ -43,7 +43,7 @@ controls:
   operations: {provider: github, path: project/00_CONTROL/OPERACIONES}
 
 documents:
-  edition: {provider: github, path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md, version: "3.4"}
+  edition: {provider: github, path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md, version: "3.5"}
   diary: {provider: github, path: project/20_TRABAJO_EDITORIAL/Diario_Editorial.md}
   glossary: {provider: github, path: project/20_TRABAJO_EDITORIAL/Glosario.md}
   indexes:

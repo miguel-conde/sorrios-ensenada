@@ -1,9 +1,9 @@
 # Estado de implementación — GitHub workspace v2
 
-**Fecha:** 6 de septiembre de 2026  
+**Fecha:** 8 de septiembre de 2026  
 **Rama canónica:** `main`  
-**Versión activa:** 2.0.0  
-**Estado:** H1, H2, H3, H4, H5 y H6 completados
+**Versión activa:** 2.0.1  
+**Estado:** H1, H2, H3, H4, H5 y H6 completados; mantenimiento 2.0.1 preparado tras auditoría de Notas históricas
 
 La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está activa en `main`. GitHub es el workspace canónico del proyecto vivo. Google Drive queda reservado al PDF autoritativo en solo lectura.
 
@@ -23,7 +23,7 @@ La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está activa 
 
 - Primer ciclo editorial real sobre `main`: Portada validada y cerrada.
 - D-001 resuelta como cruz invocativa reconocible (`†`).
-- Estado resultante: `reverso_portada`, página 2 `left`, sin dudas abiertas, `operation.status: clean`.
+- Estado resultante entonces: `reverso_portada`, página 2 `left`, sin dudas abiertas, `operation.status: clean`.
 - Continuidad desde otro ordenador mediante Chat normal + `PROJECT.md` + GitHub `main`: PASS.
 
 ## H6 completado
@@ -35,7 +35,18 @@ La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está activa 
 - Como alternativa segura y reversible, las siete carpetas antiguas fueron retiradas de la carpeta canónica y agrupadas en la carpeta hermana `Sorrios - legado Drive retirado 2026-09-06` (ID `1cdycMdPbmP_-AXJgn2UnxiCrc_TZeUSh`).
 - La carpeta canónica `Sorrios - Catastro Ensenada` (ID `1gS8ZUgCxdYuJmb3TCWAN-nYo_Rjds6tJ`) contiene exactamente un elemento: el PDF autoritativo.
 - Acceso posterior al PDF: archivo real, sin Base64, mismo tamaño y hash.
-- GitHub conserva intacto el estado editorial posterior a H5.
+- En el cierre de H6 se conservó intacto el estado editorial existente en ese momento.
+
+## Mantenimiento posterior — versión 2.0.1
+
+- Cerrada la reparación retrospectiva de Notas históricas hasta `folio_309r` contra el plan aprobado.
+- Confirmadas cuatro Notas históricas puntuales en tres unidades: `Sorribas`/Sorrios en Portada; `Concejo de Ordas` y `abogado De los R[eale]s Consejos` en folio 306r; identificación del `Conde De Luna` en folio 307r.
+- Confirmados los derivados B en Glosario e índices; `legua` y `baras` permanecen sin equivalencia métrica fijada por falta de seguridad suficiente.
+- `editorial-procedure.md` incorpora el checkpoint obligatorio A/B/C/D y la decisión positiva sobre si una unidad necesita Nota histórica o puede quedar justificadamente sin ella.
+- Plugin y skill promovidos a 2.0.1; validador, manifiesto, paquete de herramientas y plantilla de proyecto quedan alineados con esa versión.
+- La plantilla de `proyecto.yaml` queda además alineada con Manual Editorial 1.6 y Edición crítica 3.5.
+- Estado editorial preservado: `last_closed_unit: folio_309r`, `current_unit: folio_309v`, `operation.status: clean`.
+- El Estudio Histórico continúa desactivado y el PDF permanece fuera de GitHub y en solo lectura en Drive.
 
 ## Resultado final de la migración
 

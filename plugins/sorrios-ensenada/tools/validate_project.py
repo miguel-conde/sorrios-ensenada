@@ -121,10 +121,10 @@ def validate_project(repo_root: Path) -> list[str]:
         if repository.get(key) != expected:
             errors.append(f"repository.{key} inválido")
 
-    if project.get("plugin", {}).get("version") != "2.0.0":
-        errors.append("Versión de plugin distinta de 2.0.0")
-    if project.get("skill", {}).get("version") != "2.0.0":
-        errors.append("Versión de skill distinta de 2.0.0")
+    if project.get("plugin", {}).get("version") != "2.0.1":
+        errors.append("Versión de plugin distinta de 2.0.1")
+    if project.get("skill", {}).get("version") != "2.0.1":
+        errors.append("Versión de skill distinta de 2.0.1")
 
     manuscript = project.get("authorities", {}).get("manuscript", {})
     if manuscript.get("provider") != "google_drive":

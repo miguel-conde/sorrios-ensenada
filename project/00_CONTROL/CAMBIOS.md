@@ -1,5 +1,17 @@
 # Cambios
 
+## 8 de septiembre de 2026 — Plugin/skill v2.0.1 y cierre de la auditoría de Notas históricas
+
+- Verificada contra el plan aprobado la reparación retrospectiva de las unidades cerradas desde Portada hasta `folio_309r`, sin reabrir el diagnóstico histórico.
+- Confirmadas las cuatro Notas históricas puntuales previstas: `Sorribas`/Sorrios en Portada; `Concejo de Ordas` y `abogado De los R[eale]s Consejos` en folio 306r; identificación del `Conde De Luna` con Francisco Alfonso Pimentel, XV conde de Luna, en folio 307r.
+- Confirmados los derivados B previstos en Glosario e índices, incluidos `Ferrañales`, `pelo`, `negrillos` y `pan`; `entreparedes` no requiere reparación sustantiva.
+- Confirmado que `legua` y `baras` permanecen con equivalencia no fijada por falta de seguridad suficiente para Ordás en 1752.
+- El procedimiento editorial ya incorpora la clasificación obligatoria A/B/C/D, la investigación externa mínima para candidatos C y la decisión positiva sobre si las Notas históricas deben contener una nota o pueden quedar justificadamente vacías.
+- Promovidos plugin y skill de 2.0.0 a 2.0.1; alineados el manifiesto, `proyecto.yaml`, `pyproject.toml`, el validador y la plantilla de proyecto.
+- Corregida en la plantilla `proyecto.yaml` la referencia obsoleta a Manual 1.5 / Edición 3.4; queda alineada con Manual 1.6 / Edición 3.5.
+- No se modifican transcripciones paleográficas, Manual Editorial, Edición crítica, Diario Editorial, `estado.yaml`, `unidades.yaml` ni PDF autoritativo.
+- Estado editorial preservado: última unidad cerrada `folio_309r`; unidad actual `folio_309v`; `operation.status: clean`; Estudio Histórico desactivado.
+
 ## 6 de septiembre de 2026 — Manual v1.6 y cierre de folio 307r
 
 - Aprobado por el usuario un criterio nuevo para croquis, esquemas y otros elementos gráficos con texto documental propio.

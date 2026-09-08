@@ -10,11 +10,11 @@ repository:
 
 plugin:
   name: sorrios-ensenada
-  version: "2.0.0"
+  version: "2.0.1"
   path: plugins/sorrios-ensenada
 skill:
   name: editar-catastro-sorrios
-  version: "2.0.0"
+  version: "2.0.1"
   path: plugins/sorrios-ensenada/skills/editar-catastro-sorrios
 
 phase:
