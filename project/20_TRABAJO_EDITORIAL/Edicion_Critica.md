@@ -55,7 +55,7 @@ La portada no tiene unidad anterior. La unidad siguiente es el Reverso de la por
 
 ### Notas históricas
 
-*(Sin notas históricas.)*
+- `Sorribas` es la forma del manuscrito. PARES documenta en 1715 el lugar de `Santibáñez de Sorribos` (Archivo de la Real Chancillería de Valladolid, `PL CIVILES,ALONSO RODRÍGUEZ (OLV),CAJA 654,2`), y el Ayuntamiento de Santa María de Ordás identifica hoy Sorrios como barrio de Santibáñez de Ordás. La correspondencia entre el `Sorribas` del expediente y el actual Sorrios se adopta como identificación editorial de seguridad alta, apoyada en la asociación con Santibáñez y en la variante histórica `Sorribos`; no se altera por ello la forma paleográfica. Fuentes: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/12805146>; <https://www.aytosantamariadeordas.es/los-pueblos/santibanez-de-ordas/>.
 
 ### Referencias cruzadas
 
@@ -147,7 +147,8 @@ La unidad anterior es el Reverso de la portada. La unidad siguiente es el folio 
 
 ### Notas históricas
 
-*(Sin notas históricas.)*
+- `Concejo de Ordas` designa aquí una circunscripción histórica. PARES documenta en 1751 a un vecino de `Santibáñez, concejo de Ordás`; en 1808 documenta `Villarrodrigo, en la jurisdicción de Santa María de Ordás` y padrones de Santa María, Callejo, Adrados, Villarrodrigo y Santibáñez. Estas fuentes permiten relacionar el concejo de 1752 con el territorio histórico de Ordás y con la posterior denominación `Santa María de Ordás`, pero no equipararlo sin más al municipio contemporáneo. Fuentes: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/478437>; <https://pares.mcu.es/ParesBusquedas20/catalogo/description/480016>.
+- `abogado De los R[eale]s Consejos` es un título profesional, no la prueba de empleo estable en un órgano concreto. La serie `Expedición del título de Abogado de los Reales Consejos` del Archivo Histórico Nacional explica que el título, expedido por el Consejo de Castilla, habilitaba para ejercer como abogado en los consejos y demás tribunales y juzgados de los reinos. El manuscrito permite afirmar que Joachin Aguado poseía ese título, no que sirviese de forma permanente a un consejo determinado. Fuente: <https://censoarchivos.cultura.gob.es/CensoGuia/fondoDetail.htm?archivoId=9&eventDescendiente=descendienteDetail&id=1248343>.
 
 ### Referencias cruzadas
 
@@ -281,7 +282,7 @@ La unidad anterior es el folio 306v. La unidad siguiente es el folio 307v.
 
 ### Notas históricas
 
-*(Sin notas históricas.)*
+- El manuscrito afirma que el concejo es de `Señorío` y pertenece al `Conde De Luna`, pero no da el nombre del titular. PARES conserva correspondencia dirigida a `[Francisco Alfonso Pimentel, XV] conde de Luna` fechada entre 1742 y 1753, intervalo que comprende 1752. Se identifica por ello al titular citado en esta unidad con Francisco Alfonso Pimentel, XV conde de Luna, con grado de seguridad alto; la identificación nominal procede de la fuente externa, no del tenor del manuscrito. Fuente: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/3925721>.
 
 ### Referencias cruzadas
 
@@ -339,7 +340,7 @@ La unidad anterior es el folio 307r. La unidad siguiente es el folio 308r.
 - Se conserva la puntuación terminal `:/` tras `siguientes`.
 - Se conservan las divisiones visibles `pro-` / `ducen` de las especies tercera, cuarta y quinta, incluidos los guiones de final de línea.
 - `Ferrañales` se mantiene tal como aparece; el propio tenor los caracteriza como `centenales De secano` que producen `sin intermision forraje`.
-- La voz `pelo` se conserva sin interpretación dentro de la transcripción y se documenta de forma estrictamente contextual en el Glosario.
+- La voz `pelo` se conserva sin modernizar dentro de la transcripción; su sentido histórico y sus límites de interpretación se documentan en el Glosario.
 
 ### Notas históricas
 
@@ -408,7 +409,7 @@ La unidad anterior es el folio 307v. La unidad siguiente es el folio 308v.
 ### Referencias cruzadas
 
 - Continuidad material: folio 307v; folio 308v.
-- Glosario: `pelo`; `entreparedes`.
+- Glosario: `pelo`; `entreparedes`; `pan`.
 
 ---
 
@@ -456,7 +457,7 @@ La unidad anterior es el folio 308r. La unidad siguiente es el folio 309r.
 - Se conservan los puntos visibles tras los ordinales `13ª.` y `5ª.`.
 - Se conservan las grafías históricas `Ala`, `ay`, `esplican` y `regadio`.
 - Se conservan las divisiones visibles `fres-` / `nos`, `decla-` / `radas` y `espli-` / `can`, incluidos los guiones de final de línea.
-- `negrillos`, `alisos` y `fresnos` se conservan tal como aparecen; no se fija en esta fase una identificación botánica moderna de `negrillos`.
+- `negrillos`, `alisos` y `fresnos` se conservan tal como aparecen; la equivalencia léxica de `negrillos` se registra en el Glosario sin determinar una especie botánica más precisa.
 - `Ferrañales` mantiene la forma ya documentada en folio 307v.
 - La quinta respuesta continúa materialmente en folio 309r; el cotejo de ese comienzo se usa solo para comprobar la continuidad y no valida su transcripción.
 

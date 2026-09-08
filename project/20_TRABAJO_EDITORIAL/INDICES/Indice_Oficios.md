@@ -22,7 +22,7 @@ No contendrá biografías ni interpretación histórica extensa.
 - **Forma normalizada:** abogado.
 - **Personas o instituciones relacionadas:** `Joachin Aguado`; `R[eale]s Consejos`.
 - **Unidades:** folio 306r.
-- **Notas:** el texto presenta a Joachin Aguado como `abogado De los R[eale]s Consejos`.
+- **Notas:** el texto presenta a Joachin Aguado como `abogado De los R[eale]s Consejos`. La serie `Expedición del título de Abogado de los Reales Consejos` del Archivo Histórico Nacional explica que se trataba de un título expedido por el Consejo de Castilla que habilitaba para ejercer en consejos, tribunales y juzgados; la fórmula no prueba empleo permanente de Joachin Aguado en un consejo concreto: <https://censoarchivos.cultura.gob.es/CensoGuia/fondoDetail.htm?archivoId=9&eventDescendiente=descendienteDetail&id=1248343>.
 
 ### Juez subdelegado
 

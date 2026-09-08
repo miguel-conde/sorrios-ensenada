@@ -25,18 +25,18 @@ No contendrá interpretación histórica extensa.
 ### Ferrañales
 
 - **Término documentado:** `Ferrañales`.
-- **Definición:** primera especie de tierra enumerada en la cuarta respuesta, descrita en el propio texto como `centenales De secano` que producen `sin intermision forraje`.
+- **Definición:** tierras destinadas a cereal para forraje; en el expediente se describen como `centenales De secano` que producen `sin intermision forraje`.
 - **Primera unidad:** folio 307v.
-- **Referencias:** folio 307v.
-- **Notas:** definición estrictamente contextual, sin fijar una equivalencia agronómica externa al expediente.
+- **Referencias:** folio 307v; folio 308v.
+- **Notas:** la equivalencia se apoya en el propio tenor documental y en un paralelo léxico agrario del oeste peninsular que define los ferrenales como parcelas destinadas a producir cereal en verde para el ganado. Fuente externa: Ministerio de Agricultura, *Elementos constitutivos del patrimonio paisajístico*, <https://www.mapa.gob.es/en/ministerio/servicios/informacion/Parte7_tcm38-102783.pdf>. No se amplía aquí la interpretación del sistema agrario.
 
 ### pelo
 
 - **Término documentado:** `pelo`.
-- **Definición:** voz empleada para una de las producciones de distintas especies de prados; aparece en folio 307v y vuelve a documentarse en folio 308r.
+- **Definición:** aprovechamiento de hierba expresado por número de cortes o producciones; `un pelo` designa un único corte o producción de hierba.
 - **Primera unidad:** folio 307v.
 - **Referencias:** folio 307v; folio 308r.
-- **Notas:** el alcance técnico de la voz no se amplía más allá de lo que documentan las unidades validadas.
+- **Notas:** fuentes agrarias leonesas distinguen prados `de un pelo` y `de pelo y otoño`, con uno o más aprovechamientos anuales. El expediente debe leerse según su propio tenor: en folio 308r los prados abiertos de secano producen `solo vn pelo, y el otoño se pasta De comun`, de modo que aquí no se identifica automáticamente el `otoño` con un segundo corte. Fuente externa: Ministerio de Agricultura, *Elementos constitutivos del patrimonio paisajístico*, <https://www.mapa.gob.es/en/ministerio/servicios/informacion/Parte7_tcm38-102783.pdf>.
 
 ### entreparedes
 
@@ -49,7 +49,15 @@ No contendrá interpretación histórica extensa.
 ### negrillos
 
 - **Término documentado:** `negrillos`.
-- **Definición:** especie arbórea mencionada en la cuarta respuesta dentro de `Soto De negrillos alisos, y fresnos`.
+- **Definición:** olmos; especie arbórea mencionada en la cuarta respuesta dentro de `Soto De negrillos alisos, y fresnos`.
 - **Primera unidad:** folio 308v.
 - **Referencias:** folio 308v.
-- **Notas:** definición estrictamente contextual; no se fija aquí una identificación botánica moderna.
+- **Notas:** el Diccionario de la lengua española registra `negrillo` con el sentido de `olmo`: <https://dle.rae.es/negrillo>. Se adopta esta equivalencia léxica sin determinar una especie botánica más precisa.
+
+### pan
+
+- **Término documentado:** `pan`.
+- **Definición:** cereal o mies desde su nacimiento hasta la siega.
+- **Primera unidad:** folio 308r.
+- **Referencias:** folio 308r.
+- **Notas:** aparece en `Eras o sitios, que sirven De pasto a los ganados de el Comun, y resguardar el pan`. El Diccionario de la lengua española recoge este sentido de `pan` como cereal antes de la siega: <https://dle.rae.es/pan>.
