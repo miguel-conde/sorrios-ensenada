@@ -59,5 +59,5 @@ No contendrá interpretación histórica extensa.
 - **Término documentado:** `pan`.
 - **Definición:** cereal o mies desde su nacimiento hasta la siega.
 - **Primera unidad:** folio 308r.
-- **Referencias:** folio 308r.
-- **Notas:** aparece en `Eras o sitios, que sirven De pasto a los ganados de el Comun, y resguardar el pan`. El Diccionario de la lengua española recoge este sentido de `pan` como cereal antes de la siega: <https://dle.rae.es/pan>.
+- **Referencias:** folio 308r; folio 309v.
+- **Notas:** aparece en folio 308r en `Eras o sitios, que sirven De pasto a los ganados de el Comun, y resguardar el pan` y en folio 309v en `tierras De pan llevar`. El Diccionario de la lengua española recoge este sentido de `pan` como cereal antes de la siega: <https://dle.rae.es/pan>.

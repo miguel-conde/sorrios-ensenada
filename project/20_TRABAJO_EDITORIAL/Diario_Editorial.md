@@ -120,3 +120,16 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Las series de puntos que cierran las respuestas quinta y sexta se omiten como relleno gráfico sin valor verbal conforme al criterio vigente; no aparece ningún criterio metodológico nuevo.
 - No se generan cambios justificados en los índices de personas, topónimos, instituciones, medidas u oficios y no quedan dudas abiertas.
 - El estado avanza a `folio_309v` como unidad actual.
+
+### 8 de septiembre de 2026
+
+- Validada y cerrada documentalmente la unidad folio 309v.
+- La séptima respuesta remite a lo declarado en la pregunta antecedente y la octava a lo que resulta de la sexta pregunta; ambas se contienen íntegramente en la unidad.
+- Iniciada la novena respuesta: declara que no se usa una medida cierta de tierra reducible a `baras castellanas`, que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura; las restantes especies mencionadas se consideran a juicio de peritos.
+- Un breve tramo materialmente oculto por interferencia de tinta se representa mediante `[...]` sin forzar lectura, conforme al signo editorial ya vigente.
+- La novena respuesta continúa en folio 310r: la cara termina en `siempre, que se-` y la inspección auxiliar del comienzo de 310r confirma `ofrece...`; el cotejo se usa solo para delimitar folio 309v y no valida por anticipado folio 310r.
+- Se conservan las grafías y divisiones visibles, incluidas `octaba`, `nobena`, `baras`, `quartal`, `quartales`, `caver`, `cuias`, `cavida`, `re-` / `miten`, `pre-` / `gunta`, `en-` / `tienden`, `pue-` / `de`, `Mon-` / `tes` y `se-` / `ofrece`.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: las remisiones de las respuestas séptima y octava quedan en A; `baras castellanas`, `quartal`/`quartales` y `pan` quedan en B; no aparecen candidatos C ni D. La sección queda justificadamente sin notas históricas.
+- Actualizado `pan` en el Glosario; actualizado `baras` y añadido `quartal` en el Índice de medidas, sin fijar equivalencias modernas.
+- No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_310r` como unidad actual.

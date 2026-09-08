@@ -541,23 +541,58 @@ La unidad anterior es el folio 308v. La unidad siguiente es el folio 309v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+7ª Ala septima dijeron se re-
+miten alo que dicen d[ic]ho. en la pre-
+gunta antecedente.
+8ª Ala octaba dijeron: se refieren
+á lo q[u]e resulta De d[ic]ha. pregunta sexta
+9ª Ala nobena dijeron: que en este
+Pueblo [...] medida De tierra, y no
+De otra cierta, que pueda Reducirse
+a baras castellanas, p[o]r que solo se en-
+tienden, p[o]r el quartal De grano, que pue-
+de caver. en las tierras De pan llevar:
+Y los prados De guadaña los Regulan
+p[o]r la misma medida de quartales, que
+pudieren llevar en sembradura: Y De
+el mismo modo consideran la cavida De las tierras
+De matorrales, Eras, Sitios, Mon-
+tes, y Sotos: De cuias medidas usan
+á Juicio De Peritos, siempre, que se-
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 309v, página digital 6 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `309v` deriva de la secuencia material y del folio 309r precedente.
+
+La unidad contiene íntegramente las respuestas séptima y octava. La séptima remite a lo declarado en la pregunta antecedente y la octava a lo que resulta de la sexta pregunta.
+
+La novena respuesta comienza en esta unidad. Declara que no se usa una medida cierta de tierra reducible a `baras castellanas`; las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas, y los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. Para las tierras de matorral, eras, sitios, montes y sotos se remite al juicio de peritos.
+
+Un breve tramo de la segunda línea de la novena respuesta queda materialmente oculto por interferencia de tinta. Al no existir una propuesta responsable para todo el segmento, se representa mediante `[...]`, conforme al signo editorial ya vigente; no se fuerza una lectura.
+
+La novena respuesta queda abierta al final de la cara en `siempre, que se-`. La inspección auxiliar del comienzo de folio 310r confirma la continuación `ofrece...`; este cotejo se utiliza únicamente para delimitar folio 309v y no valida por anticipado folio 310r.
+
+La serie de puntos que prolonga el renglón tras `pregunta antecedente` funciona como relleno gráfico sin valor verbal y no se incorpora a la transcripción, conforme al criterio vigente para signos no verbales.
+
+La unidad anterior es el folio 309r. La unidad siguiente es el folio 310r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `d[ic]ho.`, `q[u]e`, `d[ic]ha.` y `p[o]r` desarrollan las abreviaturas visibles.
+- Se conservan las grafías históricas `Ala`, `septima`, `octaba`, `nobena`, `baras`, `quartal`, `quartales`, `caver`, `cuias` y `cavida`.
+- Se conserva la forma unida `alo` en la séptima respuesta.
+- Se conservan las divisiones visibles `re-` / `miten`, `pre-` / `gunta`, `en-` / `tienden`, `pue-` / `de`, `Mon-` / `tes` y `se-` / `ofrece`, incluidos los guiones de final de línea. La última división continúa en folio 310r y su cotejo no valida por anticipado esa unidad.
+- El segmento `[...]` de la segunda línea de la novena respuesta no se fuerza porque la interferencia de tinta impide una lectura responsable completa; esta representación no genera una duda abierta adicional.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 309r; folio 310r.
+- Índice de medidas: `baras`; `quartal`.
+- Glosario: `pan`.
 
 ---
 
