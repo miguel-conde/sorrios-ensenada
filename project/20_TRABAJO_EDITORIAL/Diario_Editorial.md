@@ -192,3 +192,13 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizado `Ferrañales` en el Glosario; actualizado `quartal` y añadida `libras` al Índice de medidas, sin fijar equivalencias modernas.
 - No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_313r` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 313r.
+- Continuada la duodécima respuesta: se completa el rendimiento de la tierra linar de regadio y se desarrollan los rendimientos de la tierra linar de secano, tanto sembrada de linaza como de centeno.
+- Cuando la tierra linar de regadio se siembra de `cevada`, la primera calidad produce cinco `quartales`, la segunda cuatro y la tercera tres.
+- En la tierra linar de secano sembrada de linaza se documentan `ocho libras De lino` para la segunda calidad y `seis libras De lino` para la tercera; sembrada de `Centeno`, segunda y tercera calidad producen tres `quartales` cada una.
+- La cara inicia al final la tierra centenal y termina en `el De primera`; la inspección auxiliar del comienzo de folio 313v confirma `Calidad produce quatro quartales de cente- / no...`, únicamente para delimitar 313r y sin validar por anticipado 313v.
+- Se conserva la grafía `cevada`, se desarrollan las abreviaturas `terz[er]a` y se mantiene la división visible `quar-` / `tales`.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: cultivos, calidades y alternancia productiva quedan en A; `quartal` / `quartales` y `libras` quedan en B; no aparecen candidatos C; los rendimientos por cultivo y calidad y la comparación entre regadio y secano quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados `quartal` / `quartales` y `libras` en el Índice de medidas con la nueva aparición de folio 313r, sin fijar equivalencias modernas.
+- No se generan cambios justificados en Glosario ni en los índices de personas, topónimos, instituciones u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_313v` como unidad actual.

@@ -954,23 +954,52 @@ La unidad anterior es el folio 312r. La unidad siguiente es el folio 313r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+quartal De linaza, y ocho libras De lino:
+Y quando este mismo quartal se siembra
+de cevada, el de primera calidad produce
+cinco quartales, El de segunda quatro,
+y el de terz[er]a tres: El quartal De tierra
+Linar De secano, que produce sin descanso
+vn año lino, y otro Centeno: El De
+segunda calidad, quando se siembra De
+linaza produce el mismo quartal De esta
+especie, y ocho libras De lino: Y el De
+terz[er]a calidad el mismo quartal De linaza,
+y seis libras De lino: Y quando este
+mismo quartal se siembra De Centeno,
+el De segunda calidad produce tres quar-
+tales De esta especie, y el De terz[er]a otros tres:
+El quartal De tierra centenal, que produ-
+ce vn año, y descansa otro, el De primera
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 313r, página digital 9 del PDF autoritativo, en posición derecha. La foliación archivística `313`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa directamente la duodécima respuesta desde el final de folio 312v: `y el de terz[er]a calidad produce el mismo / quartal De linaza, y ocho libras De lino`. Con ello se completa el rendimiento de la tercera calidad de la tierra linar de regadio sembrada de linaza.
+
+A continuación se declara el rendimiento cuando ese mismo `quartal` se siembra de `cevada`: primera calidad, cinco `quartales`; segunda, cuatro; tercera, tres. Después se trata la tierra linar de secano, que produce alternativamente lino y centeno. Sembrada de linaza, la segunda calidad produce el mismo quartal de linaza y ocho libras de lino, y la tercera el mismo quartal y seis libras; sembrada de `Centeno`, segunda y tercera calidad producen tres quartales cada una.
+
+La unidad inicia finalmente el rendimiento de la tierra centenal y termina en `el De primera`. La inspección auxiliar del comienzo de folio 313v confirma la continuación `Calidad produce quatro quartales de cente- / no...`; este cotejo se utiliza únicamente para delimitar folio 313r y no valida por anticipado folio 313v.
+
+La unidad anterior es el folio 312v. La unidad siguiente es el folio 313v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `terz[er]a` desarrolla las abreviaturas visibles `terz.a`, conservando la grafía histórica con `z`.
+- Se conservan las grafías y formas documentales `quartal`, `quartales`, `linaza`, `libras`, `cevada`, `Centeno` y `vn`.
+- Se conserva la división visible `quar-` / `tales`, incluido el guion de final de línea.
+- La alternancia de mayúsculas y minúsculas en `de cevada`, `Centeno`, `De` y `calidad` se conserva según el manuscrito.
+- El final `el De primera` continúa sintácticamente en folio 313v con `Calidad produce quatro quartales...`; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 312v; folio 313v.
+- Índice de medidas: `quartal`; `quartales`; `libras`.
 
 ---
 

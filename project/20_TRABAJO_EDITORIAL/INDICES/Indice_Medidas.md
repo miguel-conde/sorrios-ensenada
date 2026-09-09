@@ -39,8 +39,8 @@ No contendrá interpretación histórica extensa.
 - **Variantes:** `quartales`.
 - **Clase de medida:** capacidad de grano usada como referencia para expresar la cabida o sembradura de las tierras y, en la duodécima respuesta, cantidades de fruto producido.
 - **Equivalencia histórica o moderna:** el propio expediente declara en folio 310v que `Cada quatro quartales componen vna fanega`; no se fija equivalencia moderna.
-- **Unidades:** folio 309v; folio 310r; folio 310v; folio 312v.
-- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. En folio 312v la duodécima respuesta expresa mediante `quartal` y `quartales` el fruto producido por determinadas tierras y calidades. Véanse también `baras`, `fanega` y `libras`.
+- **Unidades:** folio 309v; folio 310r; folio 310v; folio 312v; folio 313r.
+- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. En folio 312v y folio 313r la duodécima respuesta expresa mediante `quartal` y `quartales` el fruto producido por determinadas tierras, cultivos y calidades. Véanse también `baras`, `fanega` y `libras`.
 
 ### fanega
 
@@ -64,7 +64,7 @@ No contendrá interpretación histórica extensa.
 
 - **Forma original:** `libras`.
 - **Variantes:** ninguna documentada en esta fase.
-- **Clase de medida:** peso, aplicada en esta unidad a la cantidad de `lino` producida.
+- **Clase de medida:** peso, aplicada a la cantidad de `lino` producida.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 312v.
-- **Notas y referencias cruzadas:** la duodécima respuesta expresa en `libras De lino` parte del rendimiento de las tierras linares de regadio sembradas de linaza; se documentan `doce libras De lino` para la primera calidad y `diez libras De lino` para la segunda. No se infiere equivalencia moderna. Véase también `quartal`.
+- **Unidades:** folio 312v; folio 313r.
+- **Notas y referencias cruzadas:** la duodécima respuesta expresa en `libras De lino` parte del rendimiento de las tierras linares sembradas de linaza. En folio 312v se documentan `doce libras De lino` para la primera calidad y `diez libras De lino` para la segunda de la tierra linar de regadio; folio 313r continúa con `ocho libras De lino` para la tercera calidad de esa tierra y documenta además `ocho` y `seis libras De lino` para las calidades segunda y tercera de la tierra linar de secano. No se infiere equivalencia moderna. Véase también `quartal`.
