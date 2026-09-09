@@ -37,10 +37,10 @@ No contendrá interpretación histórica extensa.
 
 - **Forma original:** `quartal`.
 - **Variantes:** `quartales`.
-- **Clase de medida:** capacidad de grano usada como referencia para expresar la cabida o sembradura de las tierras.
+- **Clase de medida:** capacidad de grano usada como referencia para expresar la cabida o sembradura de las tierras y, en la duodécima respuesta, cantidades de fruto producido.
 - **Equivalencia histórica o moderna:** el propio expediente declara en folio 310v que `Cada quatro quartales componen vna fanega`; no se fija equivalencia moderna.
-- **Unidades:** folio 309v; folio 310r; folio 310v.
-- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. Véanse también `baras` y `fanega`.
+- **Unidades:** folio 309v; folio 310r; folio 310v; folio 312v.
+- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. En folio 312v la duodécima respuesta expresa mediante `quartal` y `quartales` el fruto producido por determinadas tierras y calidades. Véanse también `baras`, `fanega` y `libras`.
 
 ### fanega
 
@@ -59,3 +59,12 @@ No contendrá interpretación histórica extensa.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
 - **Unidades:** folio 310v; folio 311r; folio 311v.
 - **Notas y referencias cruzadas:** aparece en folio 310v en el total `tresmill ochoz[iento]s veinte, y tres, y vn celemin`. En folio 311r reaparece en singular y plural al expresar fracciones o complementos de las cantidades asignadas a distintas calidades de tierra, por ejemplo `dos celemines, y medio` y `vn celemin`. En folio 311v vuelve a emplearse en singular y plural dentro del desglose cuantitativo de las tierras y prados. El expediente no establece todavía en estas unidades una relación explícita entre `celemin`, `quartal` y `fanega`, por lo que no se infiere ninguna equivalencia. Véanse `quartal` y `fanega`.
+
+### libras
+
+- **Forma original:** `libras`.
+- **Variantes:** ninguna documentada en esta fase.
+- **Clase de medida:** peso, aplicada en esta unidad a la cantidad de `lino` producida.
+- **Equivalencia histórica o moderna:** no fijada en esta fase.
+- **Unidades:** folio 312v.
+- **Notas y referencias cruzadas:** la duodécima respuesta expresa en `libras De lino` parte del rendimiento de las tierras linares de regadio sembradas de linaza; se documentan `doce libras De lino` para la primera calidad y `diez libras De lino` para la segunda. No se infiere equivalencia moderna. Véase también `quartal`.

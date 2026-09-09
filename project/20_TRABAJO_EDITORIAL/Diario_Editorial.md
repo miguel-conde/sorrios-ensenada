@@ -182,3 +182,13 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Evaluadas expresamente las Notas históricas mediante A/B/C/D: categorías agrarias y cultivos quedan en A; `entreparedes` / `entre paredes` / `entre pares` y `negrillos` quedan en B; no aparecen candidatos C; el cierre del reparto de cabida y la relación de especies productivas quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
 - No se generan cambios justificados en los índices de personas, topónimos, instituciones, medidas u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_312v` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 312v.
+- Continuada la duodécima respuesta: cada medida de tierra se valora por una cultura ordinaria y por la regulación de un quinquenio; comienza el detalle del fruto producido por especie y calidad.
+- Para el `ferrañal centenal cercado` se declaran cinco `quartales` en primera calidad, cuatro en segunda y tres en tercera; para la tierra linar de regadio sembrada de linaza se expresan conjuntamente `quartal` y `libras De lino`.
+- En la primera calidad de la tierra linar de regadio se transcribe `cinco quartal De esta especie, y doce libras De lino`; en la segunda, `el mismo quartal De linaza, y diez libras De lino`; la tercera calidad queda abierta al final de la cara.
+- La cara termina en `y el de terz[er]a calidad produce el mismo`; la inspección auxiliar del comienzo de folio 313r confirma `quartal De linaza, y ocho libras De lino...`, únicamente para delimitar 312v y sin validar por anticipado 313r.
+- Se desarrollan `regulaz[i]on.`, `p[o]r`, `sig[uien]te.` y `terz[er]a`; se conservan `vna`, `vnos`, `vn`, `ferrañal`, `forrage`, `regadio`, `linaza`, `quartal`, `quartales` y `libras`, así como las divisiones `can-` / `tidad` y `produ-` / `ce`.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: la formulación del quinquenio, cultivos y calidades queda en A; `Ferrañal`, `quartal` / `quartales` y `libras` quedan en B; no aparecen candidatos C; los rendimientos declarados por especie y calidad y su combinación de unidades quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizado `Ferrañales` en el Glosario; actualizado `quartal` y añadida `libras` al Índice de medidas, sin fijar equivalencias modernas.
+- No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_313r` como unidad actual.

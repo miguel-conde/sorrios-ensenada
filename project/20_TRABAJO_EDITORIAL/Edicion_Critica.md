@@ -894,23 +894,55 @@ La unidad anterior es el folio 311v. La unidad siguiente es el folio 312v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+medida De tierra De las De este termino
+con vna ordinaria cultura produce
+vnos años con otros en cada vno hacen
+la regulaz[i]on. p[o]r vn quinquenio la can-
+tidad De frutos sig[uien]te. El quartal De tierra
+ferrañal centenal cercado, que produce
+sin intermision forrage: El de primera
+Calidad produce cinco quartales: El
+de segunda quatro, y el De terz[er]a tres:
+El quartal De tierra linar De regadio,
+que produce sin intermision vn año
+lino, y otro cebada: quando se siembra
+de linaza: El de primera Calidad produ-
+ce cinco quartal De esta especie, y doce
+libras De lino: El de segunda el mismo
+quartal De linaza, y diez libras De lino:
+y el de terz[er]a calidad produce el mismo
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 312v, página digital 9 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `312v` deriva de la secuencia material y del folio 312r precedente.
+
+La unidad continúa directamente la duodécima respuesta desde `Ala duodecima dijeron: que cada / medida De tierra De las De este termino`. Los declarantes indican que, con una cultura ordinaria y tomando como regulación un quinquenio, estiman la cantidad de frutos producidos por las distintas especies y calidades de tierra.
+
+Para el `ferrañal centenal cercado` se declaran cinco `quartales` en primera calidad, cuatro en segunda y tres en tercera. A continuación se inicia la tierra linar de regadio, que produce alternativamente lino y cebada; cuando se siembra de linaza, la primera calidad produce `cinco quartal De esta especie, y doce libras De lino` y la segunda `el mismo quartal De linaza, y diez libras De lino`.
+
+La unidad termina en `y el de terz[er]a calidad produce el mismo`. La inspección auxiliar del comienzo de folio 313r confirma la continuación `quartal De linaza, y ocho libras De lino...`; este cotejo se utiliza únicamente para delimitar folio 312v y no valida por anticipado folio 313r.
+
+El trazo horizontal que prolonga gráficamente el final de `mismo` carece de valor verbal y no se incorpora a la transcripción, conforme al criterio ya vigente para signos no verbales.
+
+La unidad anterior es el folio 312r. La unidad siguiente es el folio 313r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `regulaz[i]on.`, `p[o]r`, `sig[uien]te.` y `terz[er]a` desarrollan las abreviaturas visibles; en `regulaz[i]on.` y `terz[er]a` se conserva la grafía histórica con `z`.
+- Se conservan las grafías y formas documentales `vna`, `vnos`, `vn`, `ferrañal`, `forrage`, `regadio`, `linaza`, `quartal`, `quartales` y `libras`.
+- Se conservan las divisiones visibles `can-` / `tidad` y `produ-` / `ce`, incluidos los guiones de final de línea.
+- `cinco quartal De esta especie` se conserva literalmente como aparece, sin regularizar el singular tras `cinco`.
+- El final `el mismo` continúa sintácticamente en folio 313r con `quartal De linaza...`; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 312r; folio 313r.
+- Glosario: `Ferrañales` / `Ferrañal`.
+- Índice de medidas: `quartal`; `quartales`; `libras`.
 
 ---
 
