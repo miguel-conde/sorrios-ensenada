@@ -778,23 +778,53 @@ La unidad anterior es el folio 310v. La unidad siguiente es el folio 311v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+de segunda mill cinquenta, y cinco, y
+medio celemin: Y de terz[er]a mill doz[iento]s
+veinte, y dos: De Prados cercados De re-
+gadio, que producen sin intermision
+pelo, y otoño; De primera Calidad Cin-
+quenta, y siete y dos celemines, y medio,
+y De segunda veinte: De Prados cercados
+de secano, que producen sin intermisi-
+on pelo, y otoño: De segunda, y vnica
+calidad diez y nueve, y medio celemin:
+De Prados abiertos De regadio, que
+producen sin intermision solo vn pelo:
+De primera calidad once, y media:
+De segunda nobenta, y tres; y De terz[er]a
+once: De Prados abiertos de secano
+De vn pelo De segunda calidad, por
+no haverla De primera ciento siete, y
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 311v, página digital 8 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `311v` deriva de la secuencia material y del folio 311r precedente.
+
+La unidad continúa directamente la décima respuesta: completa las cantidades correspondientes a la segunda y tercera calidad de las tierras centenales de secano y prosigue el desglose por categorías de prados.
+
+Se registran prados cercados de regadio que producen `pelo, y otoño`, prados cercados de secano también caracterizados por `pelo, y otoño`, prados abiertos de regadio que producen `solo vn pelo` y el comienzo de los prados abiertos de secano `De vn pelo`. Las cantidades se expresan por calidad y vuelven a emplear `celemin` y `celemines` como parte de los cómputos.
+
+La unidad termina en `no haverla De primera ciento siete, y`. La inspección auxiliar del comienzo de folio 312r confirma la continuación `medio, y de terz[er]a cinquenta...`; este cotejo se utiliza únicamente para delimitar folio 311v y no valida por anticipado folio 312r.
+
+La unidad anterior es el folio 311r. La unidad siguiente es el folio 312r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `terz[er]a` desarrolla las abreviaturas visibles `terz.a`; se conserva la grafía histórica con `z`.
+- `doz[iento]s` desarrolla la abreviatura visible de `doz.s`, manteniendo la grafía histórica con `z`.
+- Se conservan las grafías y formas documentales `mill`, `cinquenta`, `regadio`, `vnica`, `nobenta`, `vn`, `celemin` y `celemines`.
+- Se conservan las divisiones visibles `re-` / `gadio`, `Cin-` / `quenta` e `intermisi-` / `on`, incluidos los guiones de final de línea.
+- El final `ciento siete, y` continúa sintácticamente en folio 312r con `medio...`; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 311r; folio 312r.
+- Glosario: `pelo`.
+- Índice de medidas: `celemin`; `celemines`.
 
 ---
 

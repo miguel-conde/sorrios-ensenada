@@ -164,3 +164,12 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizado `celemin` en el Índice de medidas con la variante plural `celemines` y la nueva aparición en folio 311r; no se generan cambios justificados en Glosario ni en los índices de personas, topónimos, instituciones u oficios.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_311v` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 311v.
+- Continuada la décima respuesta con las cantidades de segunda y tercera calidad de las tierras centenales de secano y con el desglose de prados cercados y abiertos, de regadio y secano.
+- En los prados se documentan nuevamente los regímenes `pelo, y otoño` y `solo vn pelo`; la nueva aparición de `pelo` se incorpora al Glosario sin ampliar la interpretación más allá del expediente.
+- `celemin` y `celemines` vuelven a aparecer dentro de los cómputos y se actualiza su entrada del Índice de medidas sin inferir equivalencias no declaradas.
+- Se desarrollan `terz[er]a` y `doz[iento]s`; se conservan `mill`, `cinquenta`, `regadio`, `vnica`, `nobenta`, `vn` y las divisiones `re-` / `gadio`, `Cin-` / `quenta` e `intermisi-` / `on`.
+- La cara termina en `no haverla De primera ciento siete, y`; la inspección auxiliar del comienzo de folio 312r confirma `medio, y de terz[er]a cinquenta...`, únicamente para delimitar 311v y sin validar por anticipado la unidad siguiente.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: categorías de prados, calidades y regímenes productivos quedan en A; `pelo` y `celemin` / `celemines` quedan en B; no aparecen candidatos C; el reparto cuantitativo por categoría y calidad y su asociación con regímenes de aprovechamiento queda en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_312r` como unidad actual.
