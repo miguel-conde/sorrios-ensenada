@@ -141,3 +141,16 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizada la entrada `Ferrañales` del Glosario con la variante singular `Ferrañal` y folio 310r; actualizado `quartal` en el Índice de medidas con esta nueva aparición y su uso para cantidades de simiente, sin fijar equivalencia moderna.
 - No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_310v` como unidad actual.
+
+### 9 de septiembre de 2026
+
+- Validada y cerrada documentalmente la unidad folio 310v.
+- Completada la novena respuesta: las calidades primera, segunda y tercera de la tierra centenal se siembran con un `quartal`, y el manuscrito aclara que el `quartal de sembradura` puede ocupar más o menos terreno según la calidad de la tierra.
+- Declarada expresamente la relación interna `Cada quatro quartales componen vna fanega`; se incorpora al Índice de medidas sin inferir equivalencias modernas.
+- Iniciada la décima respuesta: a partir del `Reconocim[ien]to`, la `inspec[ci]on`, las `relaz[ion]es` dadas por los dueños y las `anotaz[ion]es` marginales, se declara una cabida total de `tresmill ochoz[iento]s veinte, y tres, y vn celemin` y comienza su desglose por `tierras Ferrañales cercadas centenales De secano`.
+- La unidad termina en `que prod[uc]en`; la inspección auxiliar del comienzo de folio 311r confirma `sin intermision forrage...`, únicamente para delimitar 310v y sin validar por anticipado la unidad siguiente.
+- Se conservan las grafías y divisiones visibles, incluidas `vn`, `vna`, `quatro`, `quartal`, `quartales`, `fanega`, `echo`, `cavida`, `tresmill`, `celemin`, `Ferrañales`, `siem-` / `bra`, `compo-` / `nen`, `ano-` / `taz[ion]es` y `cer-` / `cadas`; la serie de puntos tras `fanega` se omite como relleno gráfico sin valor verbal.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: reconocimiento, inspección, relaciones, anotaciones y calidades quedan en A; `quartal`, `fanega`, `celemin` y `Ferrañales` quedan en B; no aparecen candidatos C; la relación entre sembradura y calidad, la cabida total y su desglose quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizado `Ferrañales` en el Glosario; actualizado `quartal` y añadidos `fanega` y `celemin` en el Índice de medidas, registrando únicamente la equivalencia interna `4 quartales = 1 fanega`.
+- No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_311r` como unidad actual.

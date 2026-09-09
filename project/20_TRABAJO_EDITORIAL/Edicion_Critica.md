@@ -662,23 +662,54 @@ La unidad anterior es el folio 309v. La unidad siguiente es el folio 310v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+Calidad se siembra con vn quartal: El
+de segunda con otro, y el de tercera con
+otro: pues p[o]r entenderse otras medidas
+p[o]r el quartal de sembradura, que llevan,
+este ocupa mas, ô menos terreno, segun
+la calidad De la tierra, en que se siem-
+bra: Cada quatro quartales compo-
+nen vna fanega.
+10ª Ala decima dijeron: que segun
+el Reconocim[ien]to. que tienen echo De las
+heredades De este term[ino]. y inspec[ci]on. De
+las relaz[ion]es dadas p[o]r sus dueños, y ano-
+taz[ion]es puestas al margen De su cavida,
+y calidad hallan aver en él tresmill
+ochoz[iento]s veinte, y tres, y vn celemin en
+esta forma, de tierras Ferrañales cer-
+cadas centenales De secano, que prod[uc]en
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 310v, página digital 7 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `310v` deriva de la secuencia material y del folio 310r precedente.
+
+La unidad continúa y concluye la novena respuesta iniciada en folio 309v y continuada en folio 310r. Retoma `el de primera / Calidad se siembra con vn quartal`, completa las cantidades correspondientes a las calidades primera, segunda y tercera de la tierra centenal y explica que el `quartal de sembradura` ocupa más o menos terreno según la calidad de la tierra.
+
+La novena respuesta termina declarando expresamente `Cada quatro quartales componen vna fanega`. La serie de puntos que prolonga el renglón tras `fanega` funciona como relleno gráfico sin valor verbal y no se incorpora a la transcripción, conforme al criterio ya vigente para signos no verbales.
+
+La décima respuesta comienza en esta unidad. Declara que, según el `Reconocim[ien]to`, la `inspec[ci]on`, las `relaz[ion]es` dadas por los dueños y las `anotaz[ion]es` puestas al margen, hallan una cabida total de `tresmill ochoz[iento]s veinte, y tres, y vn celemin` y comienza su desglose por `tierras Ferrañales cercadas centenales De secano`.
+
+La unidad termina en `que prod[uc]en`. La inspección auxiliar del comienzo de folio 311r confirma la continuación `sin intermision forrage...`; este cotejo se utiliza únicamente para delimitar folio 310v y no valida por anticipado folio 311r.
+
+La unidad anterior es el folio 310r. La unidad siguiente es el folio 311r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `p[o]r`, `Reconocim[ien]to.`, `term[ino].`, `inspec[ci]on.`, `relaz[ion]es`, `anotaz[ion]es`, `ochoz[iento]s` y `prod[uc]en` desarrollan las abreviaturas visibles.
+- Se conservan las grafías y formas documentales `vn`, `vna`, `quatro`, `quartal`, `quartales`, `fanega`, `echo`, `cavida`, `tresmill`, `celemin` y `Ferrañales`, así como la conjunción `ô` en `mas, ô menos`.
+- Se conservan las divisiones visibles `siem-` / `bra`, `compo-` / `nen`, `ano-` / `taz[ion]es` y `cer-` / `cadas`, incluidos los guiones de final de línea.
+- `prod[uc]en` es una abreviatura al final de la cara, no una palabra partida; folio 311r continúa sintácticamente con `sin intermision forrage...`.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 310r; folio 311r.
+- Glosario: `Ferrañales` / `Ferrañal`.
+- Índice de medidas: `quartal`; `fanega`; `celemin`.
 
 ---
 

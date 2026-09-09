@@ -38,6 +38,24 @@ No contendrá interpretación histórica extensa.
 - **Forma original:** `quartal`.
 - **Variantes:** `quartales`.
 - **Clase de medida:** capacidad de grano usada como referencia para expresar la cabida o sembradura de las tierras.
+- **Equivalencia histórica o moderna:** el propio expediente declara en folio 310v que `Cada quatro quartales componen vna fanega`; no se fija equivalencia moderna.
+- **Unidades:** folio 309v; folio 310r; folio 310v.
+- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. Véanse también `baras` y `fanega`.
+
+### fanega
+
+- **Forma original:** `fanega`.
+- **Variantes:** ninguna documentada en esta fase.
+- **Clase de medida:** medida agraria de cabida o sembradura compuesta por `quartales` según el expediente.
+- **Equivalencia histórica o moderna:** 4 `quartales` = 1 `fanega`, relación declarada expresamente en folio 310v; no se fija equivalencia moderna.
+- **Unidades:** folio 310v.
+- **Notas y referencias cruzadas:** aparece al concluir la novena respuesta en `Cada quatro quartales componen vna fanega`. La equivalencia consignada es exclusivamente la relación interna documentada en el expediente; véase `quartal`.
+
+### celemin
+
+- **Forma original:** `celemin`.
+- **Variantes:** ninguna documentada en esta fase.
+- **Clase de medida:** subunidad empleada en el cómputo de la cabida total declarado en la décima respuesta.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 309v; folio 310r.
-- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. No se fija una equivalencia métrica ni de capacidad fuera de lo que afirma la edición; véase también `baras`.
+- **Unidades:** folio 310v.
+- **Notas y referencias cruzadas:** aparece en el total `tresmill ochoz[iento]s veinte, y tres, y vn celemin`. La unidad no establece en este punto una relación explícita entre `celemin`, `quartal` y `fanega`, por lo que no se infiere ninguna equivalencia. Véanse `quartal` y `fanega`.
