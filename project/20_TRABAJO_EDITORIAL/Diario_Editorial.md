@@ -202,3 +202,14 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados `quartal` / `quartales` y `libras` en el Índice de medidas con la nueva aparición de folio 313r, sin fijar equivalencias modernas.
 - No se generan cambios justificados en Glosario ni en los índices de personas, topónimos, instituciones u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_313v` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 313v.
+- Continuada la duodécima respuesta: se completa la tierra centenal y se expresan los rendimientos de prados cercados y abiertos, de regadio y secano, por calidad.
+- Para el prado cercado de regadio que produce `pelo, y otoño`, la primera calidad produce `dos montones, y medio De yerba en ambos pelos` y la segunda dos montones.
+- Para el prado cercado de secano, de segunda y única calidad, se declara `monton, y medio De yerba`; para el prado abierto de regadio, de `solo vn pelo`, se declaran dos, uno y medio y un montón según calidad.
+- La cara termina en `El quartal De prado secano abierto, que produce`; la inspección auxiliar del comienzo de folio 314r confirma `sin descanso solo vn pelo...`, únicamente para delimitar 313v y sin validar por anticipado 314r.
+- Se desarrolla `terz[er]a`; se conservan `quatro`, `quartal`, `quartales`, `Regadio`, `vnica`, `vno`, `monton`, `montones`, `pelo` y `otoño`, así como las divisiones `cente-` / `no` y `quar-` / `tal`.
+- Los breves trazos horizontales tras `calidad` y `yerba` se omiten como relleno gráfico sin valor verbal conforme al criterio vigente; no aparece ningún criterio metodológico nuevo.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: categorías, calidades y regímenes productivos quedan en A; `pelo`, `quartal` / `quartales` y `monton` / `montones` quedan en B; no aparecen candidatos C; los rendimientos y la expresión `en ambos pelos` quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizado `pelo` en el Glosario; actualizado `quartal` y añadido `monton` / `montones` al Índice de medidas, sin fijar equivalencias modernas.
+- No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no quedan dudas abiertas.
+- El estado avanza a `folio_314r` como unidad actual.

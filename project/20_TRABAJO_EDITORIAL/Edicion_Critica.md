@@ -1011,23 +1011,56 @@ La unidad anterior es el folio 312v. La unidad siguiente es el folio 313v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+Calidad produce quatro quartales de cente-
+no, El de segunda tres, y el De terz[er]a dos,
+y medio: El quartal De prado cercado De
+Regadio, que produce sin intermision
+pelo, y otoño, El de primera calidad
+produce dos montones, y medio De yerba
+en ambos pelos, Y el De segunda dos,
+montones: El quartal De prado cercado
+De secano, que produce sin descanso
+pelo, y otoño, El de segunda, y vnica
+Calidad produce monton, y medio De
+yerba: El quartal De prado abierto De
+Regadio, que produce sin intermision
+solo vn pelo, El de primera calidad
+produce dos montones, El de segunda
+vno, y medio, y el De terz[er]a vno: El quar-
+tal De prado secano abierto, que produce
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 313v, página digital 10 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `313v` deriva de la secuencia material y del folio 313r precedente.
+
+La unidad continúa directamente la duodécima respuesta desde `El quartal De tierra centenal, que produ- / ce vn año, y descansa otro, el De primera / Calidad produce quatro quartales de cente- / no`. Completa el rendimiento de la tierra centenal: cuatro `quartales` de centeno en primera calidad, tres en segunda y dos y medio en tercera.
+
+A continuación se declaran los rendimientos de varios prados. El prado cercado de regadio que produce `pelo, y otoño` rinde en primera calidad `dos montones, y medio De yerba en ambos pelos` y en segunda dos montones. El prado cercado de secano que produce `pelo, y otoño`, de segunda y única calidad, rinde `monton, y medio De yerba`. El prado abierto de regadio que produce `solo vn pelo` rinde dos montones en primera calidad, uno y medio en segunda y uno en tercera.
+
+La unidad inicia finalmente el prado de secano abierto y termina en `El quartal De prado secano abierto, que produce`. La inspección auxiliar del comienzo de folio 314r confirma la continuación `sin descanso solo vn pelo...`; este cotejo se utiliza únicamente para delimitar folio 313v y no valida por anticipado folio 314r.
+
+Los breves trazos horizontales visibles al final de los renglones tras `calidad` y `yerba` no dividen palabras ni tienen función verbal; se omiten como trazos de relleno conforme al criterio ya vigente para signos no verbales.
+
+La unidad anterior es el folio 313r. La unidad siguiente es el folio 314r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `terz[er]a` desarrolla las dos abreviaturas visibles `terz.a`, conservando la grafía histórica con `z`.
+- Se conservan las grafías y formas documentales `quatro`, `quartal`, `quartales`, `Regadio`, `vnica`, `vno`, `monton`, `montones`, `pelo` y `otoño`.
+- Se conservan las divisiones visibles `cente-` / `no` y `quar-` / `tal`, incluidos los guiones de final de línea.
+- La expresión `en ambos pelos` se conserva literalmente; aparece referida al rendimiento del prado cercado de regadio previamente descrito como productor de `pelo, y otoño`.
+- Los trazos tras `calidad` y `yerba` se omiten por carecer de valor verbal y no se confunden con guiones de división de palabra.
+- El final `que produce` continúa sintácticamente en folio 314r con `sin descanso solo vn pelo...`; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 313r; folio 314r.
+- Glosario: `pelo`.
+- Índice de medidas: `quartal`; `quartales`; `monton`; `montones`.
 
 ---
 

@@ -35,8 +35,8 @@ No contendrá interpretación histórica extensa.
 - **Término documentado:** `pelo`.
 - **Definición:** aprovechamiento de hierba expresado por número de cortes o producciones; `un pelo` designa un único corte o producción de hierba.
 - **Primera unidad:** folio 307v.
-- **Referencias:** folio 307v; folio 308r; folio 311v.
-- **Notas:** fuentes agrarias leonesas distinguen prados `de un pelo` y `de pelo y otoño`, con uno o más aprovechamientos anuales. El expediente debe leerse según su propio tenor: en folio 308r los prados abiertos de secano producen `solo vn pelo, y el otoño se pasta De comun`; en folio 311v se distinguen de nuevo prados que producen `pelo, y otoño` y prados que producen `solo vn pelo`. Por ello no se identifica automáticamente el `otoño` con un segundo corte. Fuente externa: Ministerio de Agricultura, *Elementos constitutivos del patrimonio paisajístico*, <https://www.mapa.gob.es/en/ministerio/servicios/informacion/Parte7_tcm38-102783.pdf>.
+- **Referencias:** folio 307v; folio 308r; folio 311v; folio 313v.
+- **Notas:** fuentes agrarias leonesas distinguen prados `de un pelo` y `de pelo y otoño`, con uno o más aprovechamientos anuales. El expediente debe leerse según su propio tenor: en folio 308r los prados abiertos de secano producen `solo vn pelo, y el otoño se pasta De comun`; en folio 311v se distinguen de nuevo prados que producen `pelo, y otoño` y prados que producen `solo vn pelo`. En folio 313v, para los prados cercados de regadio caracterizados por `pelo, y otoño`, el rendimiento de la primera calidad se expresa `en ambos pelos`; esta formulación permite tratar esos dos aprovechamientos como dos `pelos` en ese contexto concreto, sin generalizar automáticamente la equivalencia a todas las apariciones. Fuente externa: Ministerio de Agricultura, *Elementos constitutivos del patrimonio paisajístico*, <https://www.mapa.gob.es/en/ministerio/servicios/informacion/Parte7_tcm38-102783.pdf>.
 
 ### entreparedes
 
