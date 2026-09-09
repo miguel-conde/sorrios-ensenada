@@ -39,8 +39,8 @@ No contendrá interpretación histórica extensa.
 - **Variantes:** `quartales`.
 - **Clase de medida:** capacidad de grano usada como referencia para expresar la cabida o sembradura de las tierras y, en la duodécima respuesta, cantidades de fruto producido.
 - **Equivalencia histórica o moderna:** el propio expediente declara en folio 310v que `Cada quatro quartales componen vna fanega`; no se fija equivalencia moderna.
-- **Unidades:** folio 309v; folio 310r; folio 310v; folio 312v; folio 313r; folio 313v.
-- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. En folios 312v, 313r y 313v la duodécima respuesta expresa mediante `quartal` y `quartales` el fruto producido por determinadas tierras, cultivos y calidades, y usa `El quartal De prado...` como base para declarar rendimientos de yerba. Véanse también `baras`, `fanega`, `libras` y `monton`.
+- **Unidades:** folio 309v; folio 310r; folio 310v; folio 312v; folio 313r; folio 313v; folio 314r.
+- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. En folios 312v, 313r, 313v y 314r la duodécima respuesta expresa mediante `quartal` y `quartales` el fruto producido por determinadas tierras, cultivos y calidades, y usa `El quartal De prado...` como base para declarar rendimientos de yerba. Véanse también `baras`, `fanega`, `libras`, `monton` y `carro`.
 
 ### fanega
 
@@ -74,6 +74,15 @@ No contendrá interpretación histórica extensa.
 - **Forma original:** `monton`.
 - **Variantes:** `montones`.
 - **Clase de medida:** unidad de cantidad empleada para expresar el rendimiento de `yerba` de los prados.
-- **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 313v.
-- **Notas y referencias cruzadas:** en folio 313v la duodécima respuesta expresa el rendimiento de varios tipos y calidades de prado mediante `monton` y `montones`: `dos montones, y medio De yerba`, `dos montones`, `monton, y medio De yerba`, `dos montones`, `vno, y medio` y `vno`. No se infiere una equivalencia moderna ni una relación con otras unidades mientras no aparezca explícitamente en una unidad validada. Véase también `quartal`.
+- **Equivalencia histórica o moderna:** 4 `montones` = 1 `carro`, relación declarada expresamente en folio 314r; no se fija equivalencia moderna.
+- **Unidades:** folio 313v; folio 314r.
+- **Notas y referencias cruzadas:** en folio 313v la duodécima respuesta expresa el rendimiento de varios tipos y calidades de prado mediante `monton` y `montones`: `dos montones, y medio De yerba`, `dos montones`, `monton, y medio De yerba`, `dos montones`, `vno, y medio` y `vno`. En folio 314r continúa el cálculo con `vn monton De yerba` y declara explícitamente `quatro montones componen vn carro`. La equivalencia consignada es exclusivamente la relación interna documentada en el expediente. Véanse también `quartal` y `carro`.
+
+### carro
+
+- **Forma original:** `carro`.
+- **Variantes:** ninguna documentada en esta fase.
+- **Clase de medida:** unidad de cantidad empleada para expresar el rendimiento de `yerba`, compuesta por `montones` según el expediente.
+- **Equivalencia histórica o moderna:** 4 `montones` = 1 `carro`, relación declarada expresamente en folio 314r; no se fija equivalencia moderna.
+- **Unidades:** folio 314r.
+- **Notas y referencias cruzadas:** aparece en la duodécima respuesta en la declaración `quatro montones componen vn carro`. La relación se registra únicamente como equivalencia interna del expediente, sin atribuir una capacidad o peso moderno. Véase `monton`.

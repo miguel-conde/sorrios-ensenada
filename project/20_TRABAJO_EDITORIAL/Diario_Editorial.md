@@ -213,3 +213,15 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizado `pelo` en el Glosario; actualizado `quartal` y añadido `monton` / `montones` al Índice de medidas, sin fijar equivalencias modernas.
 - No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no quedan dudas abiertas.
 - El estado avanza a `folio_314r` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 314r.
+- Completada la duodécima respuesta con el rendimiento del prado secano abierto y del `prado entre pares`; en ambos casos se conservan los valores por calidad tal como aparecen.
+- El manuscrito declara expresamente `quatro montones componen vn carro`; la relación interna se incorpora al Índice de medidas y se añade `carro`, sin fijar equivalencia moderna.
+- No se regula utilidad a las tierras matorrales, eras, sitios, montes y soto por servir solo para pasto de los ganados del común.
+- La respuesta 13.ª remite a lo declarado en la pregunta sexta; la respuesta 14.ª comienza la valoración ordinaria anual de los frutos.
+- La cara termina en `los Regulan en cada vn año`; la inspección auxiliar del comienzo de folio 314v confirma `vnos con otros en vn quinquenio en / la forma siguiente...`, únicamente para delimitar 314r y sin validar por anticipado 314v.
+- Se desarrollan `terz[er]a`, `p[o]r` y `term[ino].`; se conservan `vn`, `monton`, `montones`, `carro`, `entre pares`, `Ala`, `tercia`, `quarta`, `alo`, `alas`, `comun` y las divisiones `ca-` / `lidad`, `com-` / `ponen`, `re-` / `miten` y `pre-` / `gunta`.
+- Las series de puntos tras `comun` y `pregunta sexta` se omiten como relleno gráfico sin valor verbal conforme al criterio vigente; no aparece ningún criterio metodológico nuevo.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: categorías, calidades, remisión de la respuesta 13.ª y comienzo general de la valoración quedan en A; `pelo`, `entreparedes` / `entre pares`, `quartal`, `monton` / `montones` y `carro` quedan en B; no aparecen candidatos C; los rendimientos, la relación `4 montones = 1 carro`, la ausencia de utilidad atribuida a determinadas tierras de aprovechamiento común y el comienzo de la valoración de frutos quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados `pelo` y `entreparedes` / `entre pares` en el Glosario; actualizado `quartal` y `monton` / `montones` y añadido `carro` al Índice de medidas.
+- No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no quedan dudas abiertas.
+- El estado avanza a `folio_314v` como unidad actual.

@@ -1072,23 +1072,59 @@ La unidad anterior es el folio 313r. La unidad siguiente es el folio 314r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+sin descanso solo vn pelo: El De
+segunda calidad da vn monton De
+yerba, y el De terz[er]a medio: El quartal
+de prado entre pares, que produce vn
+año, y descansa otro: El de segunda ca-
+lidad produce vn monton De yerba, y el
+de terz[er]a medio, y quatro montones com-
+ponen vn carro; Y no Regulan utilidad
+alas tierras matorrales, Eras, Sitios,
+Montes, y Soto p[o]r servir solo para
+pasto De los ganados De el comun
+13. Ala decima tercia dijeron: se re-
+miten alo que tienen declarado ala pre-
+gunta sexta
+14. Ala decima quarta dijeron, que
+el valor, que tienen ordinariamente los
+frutos, que producen las tierras De este
+term[ino]. los Regulan en cada vn año
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 314r, página digital 10 del PDF autoritativo, en posición derecha. La foliación archivística `314`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa directamente la duodécima respuesta desde el final de folio 313v: `El quar- / tal De prado secano abierto, que produce / sin descanso solo vn pelo`. Completa el rendimiento de ese prado: la segunda calidad produce `vn monton De yerba` y la tercera medio.
+
+A continuación se trata el `prado entre pares`, que produce un año y descansa otro. La segunda calidad produce `vn monton De yerba` y la tercera medio. El propio expediente declara inmediatamente la relación interna `quatro montones componen vn carro`.
+
+La duodécima respuesta concluye declarando que no se regula utilidad a `las tierras matorrales, Eras, Sitios, / Montes, y Soto` por servir solo para pasto de los ganados del común. La respuesta 13.ª se contiene íntegramente en esta cara y remite a lo declarado en la pregunta sexta. La respuesta 14.ª comienza la valoración ordinaria de los frutos y queda abierta al final de la unidad.
+
+La unidad termina en `los Regulan en cada vn año`. La inspección auxiliar del comienzo de folio 314v confirma la continuación `vnos con otros en vn quinquenio en / la forma siguiente...`; este cotejo se utiliza únicamente para delimitar folio 314r y no valida por anticipado folio 314v.
+
+Las series de puntos que prolongan los renglones tras `comun` y `pregunta sexta` funcionan como relleno gráfico sin valor verbal y no se incorporan a la transcripción, conforme al criterio ya vigente para signos no verbales.
+
+La unidad anterior es el folio 313v. La unidad siguiente es el folio 314v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `terz[er]a`, `p[o]r` y `term[ino].` desarrollan las abreviaturas visibles conforme al criterio vigente; en `terz[er]a` se conserva la grafía histórica con `z`.
+- Se conservan las grafías y formas documentales `vn`, `monton`, `montones`, `carro`, `entre pares`, `Ala`, `tercia`, `quarta`, `alo`, `alas` y `comun`.
+- Se conservan las divisiones visibles `ca-` / `lidad`, `com-` / `ponen`, `re-` / `miten` y `pre-` / `gunta`, incluidos los guiones de final de línea.
+- `prado entre pares` se conserva exactamente como está escrito y corresponde a la misma categoría agraria ya documentada como `entreparedes`, `entre paredes` y `entre pares`; no se normaliza la transcripción.
+- `quatro montones componen vn carro` se conserva literalmente y permite registrar una relación interna en el Índice de medidas sin fijar equivalencia moderna.
+- El final `los Regulan en cada vn año` continúa sintácticamente en folio 314v con `vnos con otros en vn quinquenio...`; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 313v; folio 314v.
+- Glosario: `pelo`; `entreparedes` / `entre pares`.
+- Índice de medidas: `quartal`; `monton`; `montones`; `carro`.
 
 ---
 
