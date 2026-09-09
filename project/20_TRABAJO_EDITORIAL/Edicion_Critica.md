@@ -721,23 +721,52 @@ La unidad anterior es el folio 310r. La unidad siguiente es el folio 311r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+sin intermision forrage De primera
+Calidad veinte, y tres, dos celemines,
+y medio, De segunda siete, y vn celemin,
+y de terz[er]a quatro: De tierras linares
+De regadio, que producen sin inter-
+mision vn año lino, y otro zevada, De
+primera calidad ciento, y vna, De se-
+gunda quarenta y cinco, y media, y
+de tercera tres: De tierras linares De
+secano, que producen sin intermision
+vn año lino, y otro centeno De se-
+gunda calidad por no haverla De
+primera diez, y siete, y media, y De
+terz[er]a dos: De tierras centenales
+De secano, que producen vn año,
+y descansan otro De primera calidad
+quatroz[ienta]s setenta, y tres, y media
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 311r, página digital 7 del PDF autoritativo, en posición derecha. La foliación archivística `311`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa directamente la décima respuesta iniciada en folio 310v: `tierras Ferrañales cer- / cadas centenales De secano, que prod[uc]en / sin intermision forrage De primera...`. Prosigue el desglose cuantitativo por especie y calidad de tierra.
+
+Tras completar las cantidades correspondientes a los Ferrañales de primera, segunda y tercera calidad, la respuesta recorre las tierras linares de regadio, las tierras linares de secano y las tierras centenales de secano. En los Ferrañales aparecen de forma expresa `dos celemines, y medio` y `vn celemin`.
+
+La unidad termina con la cantidad de la primera calidad de las tierras centenales de secano, `quatroz[ienta]s setenta, y tres, y media`. La inspección auxiliar del comienzo de folio 311v confirma la continuación `de segunda mill cinquenta, y cinco, y medio celemin...`; este cotejo se utiliza únicamente para delimitar folio 311r y no valida por anticipado folio 311v.
+
+La unidad anterior es el folio 310v. La unidad siguiente es el folio 311v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `terz[er]a` desarrolla las abreviaturas visibles de `terz.a`; se conserva la grafía histórica con `z`.
+- `quatroz[ienta]s` desarrolla la abreviatura visible de `quatroz.as`, manteniendo la grafía histórica con `z`.
+- Se conservan las grafías y formas documentales `forrage`, `regadio`, `vn`, `vna`, `zevada`, `centeno`, `haverla`, `celemin` y `celemines`.
+- Se conservan las divisiones visibles `inter-` / `mision` y `se-` / `gunda`, incluidos los guiones de final de línea.
+- El final `quatroz[ienta]s setenta, y tres, y media` continúa sintácticamente en folio 311v con `de segunda...`; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 310v; folio 311v.
+- Índice de medidas: `celemin`; `celemines`.
 
 ---
 

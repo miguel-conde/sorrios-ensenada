@@ -54,8 +54,8 @@ No contendrá interpretación histórica extensa.
 ### celemin
 
 - **Forma original:** `celemin`.
-- **Variantes:** ninguna documentada en esta fase.
+- **Variantes:** `celemines`.
 - **Clase de medida:** subunidad empleada en el cómputo de la cabida total declarado en la décima respuesta.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 310v.
-- **Notas y referencias cruzadas:** aparece en el total `tresmill ochoz[iento]s veinte, y tres, y vn celemin`. La unidad no establece en este punto una relación explícita entre `celemin`, `quartal` y `fanega`, por lo que no se infiere ninguna equivalencia. Véanse `quartal` y `fanega`.
+- **Unidades:** folio 310v; folio 311r.
+- **Notas y referencias cruzadas:** aparece en folio 310v en el total `tresmill ochoz[iento]s veinte, y tres, y vn celemin`. En folio 311r reaparece en singular y plural al expresar fracciones o complementos de las cantidades asignadas a distintas calidades de tierra, por ejemplo `dos celemines, y medio` y `vn celemin`. El expediente no establece todavía en estas unidades una relación explícita entre `celemin`, `quartal` y `fanega`, por lo que no se infiere ninguna equivalencia. Véanse `quartal` y `fanega`.

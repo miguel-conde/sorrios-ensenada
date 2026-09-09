@@ -154,3 +154,13 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizado `Ferrañales` en el Glosario; actualizado `quartal` y añadidos `fanega` y `celemin` en el Índice de medidas, registrando únicamente la equivalencia interna `4 quartales = 1 fanega`.
 - No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_311r` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 311r.
+- Continuada la décima respuesta con el desglose cuantitativo de los Ferrañales cercados centenales de secano, las tierras linares de regadio, las tierras linares de secano y las tierras centenales de secano, distinguiendo calidades y regímenes de producción.
+- En los Ferrañales aparecen expresamente `dos celemines, y medio` y `vn celemin`; la variante plural `celemines` se incorpora al Índice de medidas, sin inferir equivalencias no declaradas.
+- Se conservan las grafías y formas documentales `forrage`, `regadio`, `vn`, `vna`, `zevada`, `centeno`, `haverla`, `celemin` y `celemines`; `terz[er]a` y `quatroz[ienta]s` desarrollan abreviaturas visibles conforme al criterio vigente.
+- Se conservan las divisiones `inter-` / `mision` y `se-` / `gunda`, incluidos los guiones de final de línea.
+- La cara termina en `quatroz[ienta]s setenta, y tres, y media`; la inspección auxiliar del comienzo de folio 311v confirma `de segunda mill cinquenta, y cinco, y medio celemin...`, únicamente para delimitar 311r y sin validar por anticipado la unidad siguiente.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: especies, cultivos y calidades quedan en A; `celemin` / `celemines` queda en B; no aparecen candidatos C; el reparto cuantitativo de la cabida por especie y calidad queda en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizado `celemin` en el Índice de medidas con la variante plural `celemines` y la nueva aparición en folio 311r; no se generan cambios justificados en Glosario ni en los índices de personas, topónimos, instituciones u oficios.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_311v` como unidad actual.
