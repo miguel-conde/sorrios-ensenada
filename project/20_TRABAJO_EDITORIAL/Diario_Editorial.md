@@ -173,3 +173,12 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Evaluadas expresamente las Notas históricas mediante A/B/C/D: categorías de prados, calidades y regímenes productivos quedan en A; `pelo` y `celemin` / `celemines` quedan en B; no aparecen candidatos C; el reparto cuantitativo por categoría y calidad y su asociación con regímenes de aprovechamiento queda en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_312r` como unidad actual.
+- Validada y cerrada documentalmente la unidad folio 312r.
+- Completada la décima respuesta con los prados `De entre pares`, las tierras matorrales, las `Eras, ô sitios` y los `Sotos De Ne- / grillos, y alisos`, con sus cantidades y calidades correspondientes.
+- Se conserva `De entre pares` exactamente como está escrito y se incorpora al Glosario como variante documental de `entreparedes` por su posición en la misma serie agraria; `negrillos` se actualiza con su nueva aparición.
+- La undécima respuesta se contiene íntegramente en la unidad y declara como especies de frutos `centeno, Cebada, lino, Linaza, y yerba`.
+- Iniciada la duodécima respuesta; la cara termina en `Ala duodecima dijeron: que cada` y la inspección auxiliar del comienzo de folio 312v confirma `medida De tierra De las De este termino...`, solo para delimitar 312r y sin validar por anticipado 312v.
+- Se desarrollan `terz[er]a`, `doz[iento]s`, `term[ino].` y `tt[ierr]as.` conforme al criterio vigente de abreviaturas; se conserva la división `Ne-` / `grillos`, y los rellenos de puntos tras `tt.as` y `yerba` se omiten como signos no verbales sin valor textual.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: categorías agrarias y cultivos quedan en A; `entreparedes` / `entre paredes` / `entre pares` y `negrillos` quedan en B; no aparecen candidatos C; el cierre del reparto de cabida y la relación de especies productivas quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- No se generan cambios justificados en los índices de personas, topónimos, instituciones, medidas u oficios; no aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_312v` como unidad actual.

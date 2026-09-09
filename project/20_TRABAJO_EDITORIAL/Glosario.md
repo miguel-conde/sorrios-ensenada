@@ -40,19 +40,19 @@ No contendrá interpretación histórica extensa.
 
 ### entreparedes
 
-- **Término documentado:** `entreparedes`; variante documentada `entre paredes`.
-- **Definición:** calificativo aplicado en la cuarta respuesta a `Prados entreparedes`, de los que se declara que `producen vn año, y descansan otro`; en la quinta respuesta reaparece como `prados De entre paredes` al clasificarlos por calidad.
+- **Término documentado:** `entreparedes`; variantes documentadas `entre paredes` y `entre pares`.
+- **Definición:** calificativo aplicado en la cuarta respuesta a `Prados entreparedes`, de los que se declara que `producen vn año, y descansan otro`; en la quinta respuesta reaparece como `prados De entre paredes` al clasificarlos por calidad, y en la décima como `prados De entre pares` dentro del desglose de cabida.
 - **Primera unidad:** folio 308r.
-- **Referencias:** folio 308r; folio 309r.
-- **Notas:** se conserva la forma unida documentada en folio 308r y la forma separada documentada en folio 309r, sin fijar una equivalencia agronómica externa al expediente.
+- **Referencias:** folio 308r; folio 309r; folio 312r.
+- **Notas:** se conservan la forma unida `entreparedes`, la forma separada `entre paredes` y la variante `entre pares` tal como están documentadas. La adscripción de `entre pares` a la misma categoría se apoya en su posición exacta dentro de la serie agraria del expediente; no se moderniza ni se fija una equivalencia agronómica externa.
 
 ### negrillos
 
 - **Término documentado:** `negrillos`.
 - **Definición:** olmos; especie arbórea mencionada en la cuarta respuesta dentro de `Soto De negrillos alisos, y fresnos`.
 - **Primera unidad:** folio 308v.
-- **Referencias:** folio 308v.
-- **Notas:** el Diccionario de la lengua española registra `negrillo` con el sentido de `olmo`: <https://dle.rae.es/negrillo>. Se adopta esta equivalencia léxica sin determinar una especie botánica más precisa.
+- **Referencias:** folio 308v; folio 312r.
+- **Notas:** el Diccionario de la lengua española registra `negrillo` con el sentido de `olmo`: <https://dle.rae.es/negrillo>. Se adopta esta equivalencia léxica sin determinar una especie botánica más precisa. En folio 312r reaparece en `Sotos De Ne- / grillos, y alisos`.
 
 ### pan
 

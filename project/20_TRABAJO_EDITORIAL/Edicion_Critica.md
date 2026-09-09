@@ -836,23 +836,53 @@ La unidad anterior es el folio 311r. La unidad siguiente es el folio 312r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+medio, y de terz[er]a cinquenta: De prados
+De entre pares, que producen vn año,
+y descansan otro De segunda calidad nueve,
+y media, y de tercera seis: De tierras
+matorrales, que sirven De pasto a los
+ganados De el comun: De terz[er]a, y vnica
+calidad doz[iento]s treinta, y tres, y media: De
+Eras, ô sitios, que sirven De pasto: De
+segunda calidad veinte, y quatro, y De
+terz[er]a ciento, y veinte: De Sotos De Ne-
+grillos, y alisos: De terz[er]a, y vnica calidad
+nobenta, y seis medidas De tt[ierr]as.
+11ª Ala vn decima dijeron:
+que las especies De frutos, que se cogen
+en este term[ino]. se reducen a centeno,
+Cebada, lino, Linaza, y yerba.
+12. Ala duodecima dijeron: que cada
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 312r, página digital 8 del PDF autoritativo, en posición derecha. La foliación archivística `312`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa directamente la décima respuesta desde folio 311v: `De Prados abiertos de secano / De vn pelo De segunda calidad, por / no haverla De primera ciento siete, y / medio, y de terz[er]a cinquenta...`. Completa el desglose de cabida con los prados `De entre pares`, las tierras matorrales, las `Eras, ô sitios` y los `Sotos De Ne- / grillos, y alisos`.
+
+La décima respuesta concluye en `nobenta, y seis medidas De tt[ierr]as.`. La undécima respuesta se contiene íntegramente en esta cara y declara como especies de frutos `centeno, Cebada, lino, Linaza, y yerba`. A continuación comienza la duodécima respuesta.
+
+La unidad termina en `Ala duodecima dijeron: que cada`. La inspección auxiliar del comienzo de folio 312v confirma la continuación `medida De tierra De las De este termino...`; este cotejo se utiliza únicamente para delimitar folio 312r y no valida por anticipado folio 312v.
+
+La unidad anterior es el folio 311v. La unidad siguiente es el folio 312v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `terz[er]a`, `doz[iento]s`, `term[ino].` y `tt[ierr]as.` desarrollan las abreviaturas visibles conforme al criterio vigente; en `terz[er]a` y `doz[iento]s` se conserva la grafía histórica con `z`.
+- Se conservan las grafías y formas documentales `vn`, `vnica`, `nobenta`, `quatro`, `centeno`, `Cebada`, `lino`, `Linaza`, `yerba` y `comun`.
+- `De entre pares` se conserva exactamente como está escrito; por su posición en la misma serie agraria se registra en el Glosario como variante documental de `entreparedes`, sin normalizar la transcripción.
+- Se conserva la división visible `Ne-` / `grillos`, incluido el guion de final de línea.
+- Las series de puntos que prolongan los renglones tras la abreviatura de `tt[ierr]as.` y tras `yerba` se omiten como relleno gráfico sin valor verbal, conforme al criterio ya vigente.
+- El final `que cada` continúa sintácticamente en folio 312v con `medida De tierra...`; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 311v; folio 312v.
+- Glosario: `entreparedes` / `entre paredes` / `entre pares`; `negrillos`.
 
 ---
 
