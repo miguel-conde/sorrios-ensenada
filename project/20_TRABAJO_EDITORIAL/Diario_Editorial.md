@@ -225,3 +225,16 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados `pelo` y `entreparedes` / `entre pares` en el Glosario; actualizado `quartal` y `monton` / `montones` y añadido `carro` al Índice de medidas.
 - No se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios; no quedan dudas abiertas.
 - El estado avanza a `folio_314v` como unidad actual.
+
+### 10 de septiembre de 2026
+
+- Validada y cerrada documentalmente la unidad folio 314v.
+- Completada la decimocuarta respuesta con la valoración ordinaria, regulada por quinquenio, del quartal de centeno, cebada, linaza y trigo, de la libra de lino y del carro de yerba, expresada en reales y maravedís.
+- La decimoquinta respuesta se contiene íntegramente en la unidad y declara impuestos sobre las tierras del término los derechos de `diezmos, primicia, y boto`.
+- Los diezmos se atribuyen por entero a `D[o]n Manuel Ant[oni]o De Vega, Cura De este Lugar`; `De Vega` se registra como variante documental de `D[o]n Manuel Ant[oni]o De Bega`, ya documentado como cura párroco. La `primicia` corresponde a la `Yglesia De él` y el `boto` a la `fabrica De el Apostol Santiago`.
+- Se desarrollan `term[ino].`, `p[o]r`, `D[o]n`, `Ant[oni]o`, `mi[ci]a.` y `m[a]r[avedí]s.` conforme al criterio vigente; se conservan las grafías históricas y las divisiones `cin-` / `co`, `qua-` / `tro` y `pri-` / `mi[ci]a.`.
+- La unidad concluye en `Santiago./`; la inspección auxiliar del comienzo de folio 315r confirma que allí comienza la respuesta 16.ª, únicamente para delimitar 314v y sin validar por anticipado 315r.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: la valoración general y la identificación funcional del cura quedan en A; `diezmos`, `primicia`, `boto`, las medidas monetarias y agrarias, la variante `De Vega`, `Cura` y las instituciones receptoras quedan en B; la identificación puntual de `boto` con el Voto de Santiago queda en C y se apoya en documentación archivística externa; la tabla de precios y la distribución local de prestaciones quedan en D como material para el futuro Estudio Histórico.
+- Actualizados el Glosario, los índices de medidas, personas, instituciones y oficios; no se generan cambios justificados en el Índice de topónimos.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_315r` como unidad actual.

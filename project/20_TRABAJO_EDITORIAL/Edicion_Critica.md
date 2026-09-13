@@ -1136,23 +1136,59 @@ La unidad anterior es el folio 313v. La unidad siguiente es el folio 314v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+vnos con otros en vn quinquenio en
+la forma siguiente: El quartal De
+Centeno en dos Reales, y veinte, y cin-
+co m[a]r[avedí]s. El De cevada en dos Reales:
+El quartal de linaza en quatro Reales:
+La libra De lino en vn real, y
+seis m[a]r[avedí]s. El quartal De trigo en qua-
+tro reales: Y el carro De yerba en
+quince Reales.
+15. Ala decima quinta dijeron: que
+sobre las tierras De el term[ino]. se hallan
+impuestos los derechos De diezmos,
+primicia, y boto: Y los diezmos los
+percive p[o]r entero D[o]n Manuel Ant[oni]o
+De Vega, Cura De este Lugar: La pri-
+mi[ci]a. corresponde ala Yglesia De él:
+Y el boto ala fabrica De el Apostol
+Santiago./
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 314v, página digital 11 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `314v` deriva de la secuencia material y del folio 314r precedente.
+
+La unidad continúa y concluye la respuesta 14.ª desde `los Regulan en cada vn año / vnos con otros en vn quinquenio en`. Se fija el valor ordinario de varios frutos y unidades: el quartal de centeno en `dos Reales, y veinte, y cinco m[a]r[avedí]s.`, el de cebada en dos reales, el quartal de linaza en cuatro reales, la libra de lino en `vn real, y seis m[a]r[avedí]s.`, el quartal de trigo en cuatro reales y el carro de yerba en quince reales.
+
+La respuesta 15.ª se contiene íntegramente en esta cara. Declara impuestos sobre las tierras del término los derechos de `diezmos, primicia, y boto`. Los diezmos los percibe por entero `D[o]n Manuel Ant[oni]o De Vega, Cura De este Lugar`; la forma `De Vega` se registra como variante documental de la persona ya documentada como `D[o]n Manuel Ant[oni]o De Bega`, coincidente además en nombre y oficio. La primicia corresponde a la `Yglesia De él` y el boto a la `fabrica De el Apostol Santiago`.
+
+La unidad concluye en `Santiago./`. La inspección auxiliar del comienzo de folio 315r confirma que allí comienza la respuesta 16.ª; este cotejo se utiliza únicamente para delimitar folio 314v y no valida por anticipado folio 315r.
+
+Los puntos y trazos que prolongan el renglón tras `quince Reales` funcionan como relleno gráfico sin valor verbal y no se incorporan a la transcripción, conforme al criterio ya vigente. La puntuación `Santiago./` sí se conserva por formar parte del cierre visible de la respuesta.
+
+La unidad anterior es el folio 314r. La unidad siguiente es el folio 315r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `term[ino].`, `p[o]r`, `D[o]n`, `Ant[oni]o`, `mi[ci]a.` y `m[a]r[avedí]s.` desarrollan las abreviaturas visibles conforme al criterio general vigente; `mrs.` se desarrolla como `m[a]r[avedí]s.`.
+- Se conservan las grafías y formas documentales `vn`, `Reales`, `real`, `reales`, `cevada`, `quatro`, `percive`, `boto`, `Yglesia`, `fabrica`, `Apostol` y la forma unida `ala`.
+- Se conservan las divisiones visibles `cin-` / `co`, `qua-` / `tro` y `pri-` / `mi[ci]a.`, incluidos los guiones de final de línea.
+- `D[o]n Manuel Ant[oni]o De Vega` se conserva exactamente como aparece en esta unidad; la variante respecto de `De Bega` se registra en el Índice de personas sin alterar ninguna de las dos lecturas.
+- La respuesta 15.ª termina en esta cara; folio 315r comienza la 16.ª y no se valida por anticipado.
 
 ### Notas históricas
 
-*(Pendiente)*
+- El `boto` de la respuesta 15.ª se identifica con el **Voto de Santiago** por la atribución expresa del manuscrito a la `fabrica De el Apostol Santiago`. Como apoyo externo, el Archivo Histórico Provincial de Granada conserva una copia de 1727 de documentación relativa al `Voto de Santiago`, descrita por la Junta de Andalucía. La identificación permite contextualizar la naturaleza de la prestación, pero no autoriza a precisar en esta unidad una administración receptora distinta de la que declara el expediente. Fuente: <https://www.juntadeandalucia.es/organismos/culturapatrimoniohistoricoydeporte/areas/cultura/archivos/archivos-consejeria/archivo-historico-provincial-granada/ahpg-recomienda/paginas/documento-ahpg-sep-2012.html>.
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 314r; folio 315r.
+- Índice de personas: `Manuel Ant[oni]o De Bega` / `Manuel Ant[oni]o De Vega`.
+- Índice de instituciones: `Yglesia De él`; `fabrica De el Apostol Santiago`.
+- Índice de oficios: `cura parrocho` / `Cura`.
+- Índice de medidas: `quartal`; `libra` / `libras`; `carro`; `real` / `Reales`; `maravedís`.
+- Glosario: `diezmos`; `primicia`; `boto`.
 
 ---
 

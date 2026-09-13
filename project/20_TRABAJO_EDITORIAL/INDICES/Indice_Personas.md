@@ -25,11 +25,11 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 ### Manuel Ant[oni]o De Bega
 
 - **Nombre original:** `D[o]n Manuel Ant[oni]o De Bega`.
-- **Variantes:** ninguna documentada.
-- **Cargo u oficio:** `cura parrocho` de este Lugar.
-- **Unidades:** folio 306r; folio 306v.
+- **Variantes:** `D[o]n Manuel Ant[oni]o De Vega` en folio 314v.
+- **Cargo u oficio:** `cura parrocho` / `Cura` de este Lugar.
+- **Unidades:** folio 306r; folio 306v; folio 314v.
 - **Identificación histórica:** no establecida.
-- **Referencias cruzadas:** `cura parrocho`.
+- **Referencias cruzadas:** `cura parrocho`; `Yglesia De él`.
 
 ### Juan Alv[are]z
 

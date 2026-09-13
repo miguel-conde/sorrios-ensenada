@@ -39,3 +39,21 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Clase de institución:** señorío.
 - **Unidades:** folio 307r.
 - **Referencias cruzadas:** `Conde De Luna`; `Concejo de Ordas`.
+
+### Yglesia De él
+
+- **Forma original:** `Yglesia De él`.
+- **Variantes:** ninguna documentada en esta fase.
+- **Clase de institución:** iglesia local del Lugar, destinataria de la `primicia` según la respuesta 15.ª.
+- **Unidades:** folio 314v.
+- **Identificación histórica:** el manuscrito no consigna en esta unidad una advocación ni permite identificar con mayor precisión el templo; se mantiene por ello una descripción estrictamente documental.
+- **Referencias cruzadas:** `Manuel Ant[oni]o De Bega`; `primicia`.
+
+### fabrica De el Apostol Santiago
+
+- **Forma original:** `fabrica De el Apostol Santiago`.
+- **Variantes:** ninguna documentada en esta fase.
+- **Clase de institución:** fábrica eclesiástica mencionada como destinataria del `boto` en la respuesta 15.ª.
+- **Unidades:** folio 314v.
+- **Identificación histórica:** la mención se relaciona con el Voto de Santiago por el propio tenor `boto ala fabrica De el Apostol Santiago`; no se identifica aquí una administración receptora más precisa de la que declara el manuscrito.
+- **Referencias cruzadas:** `boto`.

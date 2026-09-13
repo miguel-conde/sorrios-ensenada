@@ -39,8 +39,8 @@ No contendrá interpretación histórica extensa.
 - **Variantes:** `quartales`.
 - **Clase de medida:** capacidad de grano usada como referencia para expresar la cabida o sembradura de las tierras y, en la duodécima respuesta, cantidades de fruto producido.
 - **Equivalencia histórica o moderna:** el propio expediente declara en folio 310v que `Cada quatro quartales componen vna fanega`; no se fija equivalencia moderna.
-- **Unidades:** folio 309v; folio 310r; folio 310v; folio 312v; folio 313r; folio 313v; folio 314r.
-- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. En folios 312v, 313r, 313v y 314r la duodécima respuesta expresa mediante `quartal` y `quartales` el fruto producido por determinadas tierras, cultivos y calidades, y usa `El quartal De prado...` como base para declarar rendimientos de yerba. Véanse también `baras`, `fanega`, `libras`, `monton` y `carro`.
+- **Unidades:** folio 309v; folio 310r; folio 310v; folio 312v; folio 313r; folio 313v; folio 314r; folio 314v.
+- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. En folios 312v, 313r, 313v y 314r la duodécima respuesta expresa mediante `quartal` y `quartales` el fruto producido por determinadas tierras, cultivos y calidades, y usa `El quartal De prado...` como base para declarar rendimientos de yerba. En folio 314v la respuesta 14.ª fija valores monetarios para un quartal de centeno, linaza y trigo. Véanse también `baras`, `fanega`, `libras`, `monton`, `carro`, `real` y `maravedís`.
 
 ### fanega
 
@@ -63,11 +63,11 @@ No contendrá interpretación histórica extensa.
 ### libras
 
 - **Forma original:** `libras`.
-- **Variantes:** ninguna documentada en esta fase.
-- **Clase de medida:** peso, aplicada a la cantidad de `lino` producida.
+- **Variantes:** `libra`.
+- **Clase de medida:** peso, aplicado a la cantidad de `lino` producida y valorada.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 312v; folio 313r.
-- **Notas y referencias cruzadas:** la duodécima respuesta expresa en `libras De lino` parte del rendimiento de las tierras linares sembradas de linaza. En folio 312v se documentan `doce libras De lino` para la primera calidad y `diez libras De lino` para la segunda de la tierra linar de regadio; folio 313r continúa con `ocho libras De lino` para la tercera calidad de esa tierra y documenta además `ocho` y `seis libras De lino` para las calidades segunda y tercera de la tierra linar de secano. No se infiere equivalencia moderna. Véase también `quartal`.
+- **Unidades:** folio 312v; folio 313r; folio 314v.
+- **Notas y referencias cruzadas:** la duodécima respuesta expresa en `libras De lino` parte del rendimiento de las tierras linares sembradas de linaza. En folio 312v se documentan `doce libras De lino` para la primera calidad y `diez libras De lino` para la segunda de la tierra linar de regadio; folio 313r continúa con `ocho libras De lino` para la tercera calidad de esa tierra y documenta además `ocho` y `seis libras De lino` para las calidades segunda y tercera de la tierra linar de secano. En folio 314v aparece el singular `La libra De lino` al fijar su valor monetario. No se infiere equivalencia moderna. Véanse también `quartal`, `real` y `maravedís`.
 
 ### monton
 
@@ -84,5 +84,23 @@ No contendrá interpretación histórica extensa.
 - **Variantes:** ninguna documentada en esta fase.
 - **Clase de medida:** unidad de cantidad empleada para expresar el rendimiento de `yerba`, compuesta por `montones` según el expediente.
 - **Equivalencia histórica o moderna:** 4 `montones` = 1 `carro`, relación declarada expresamente en folio 314r; no se fija equivalencia moderna.
-- **Unidades:** folio 314r.
-- **Notas y referencias cruzadas:** aparece en la duodécima respuesta en la declaración `quatro montones componen vn carro`. La relación se registra únicamente como equivalencia interna del expediente, sin atribuir una capacidad o peso moderno. Véase `monton`.
+- **Unidades:** folio 314r; folio 314v.
+- **Notas y referencias cruzadas:** aparece en la duodécima respuesta en la declaración `quatro montones componen vn carro`. En folio 314v la respuesta 14.ª valora `el carro De yerba` en quince reales. La relación se registra únicamente como equivalencia interna del expediente, sin atribuir una capacidad o peso moderno. Véanse `monton` y `real`.
+
+### real
+
+- **Forma original:** `Reales`; `real`.
+- **Variantes:** alternancia de mayúscula y minúscula según el manuscrito.
+- **Clase de medida:** unidad monetaria empleada para expresar el valor ordinario de frutos.
+- **Equivalencia histórica o moderna:** no fijada en esta fase.
+- **Unidades:** folio 314v.
+- **Notas y referencias cruzadas:** la respuesta 14.ª valora en reales el quartal de centeno, cebada, linaza y trigo, la libra de lino y el carro de yerba. En dos casos combina reales con `m[aravedí]s.`; el expediente no declara en esta unidad una relación de conversión y no se infiere aquí. Véase `maravedís`.
+
+### maravedís
+
+- **Forma original:** `m[aravedí]s.` a partir de la abreviatura visible `mrs.`.
+- **Variantes:** ninguna documentada en esta fase.
+- **Clase de medida:** unidad monetaria empleada como fracción adicional en la valoración de frutos.
+- **Equivalencia histórica o moderna:** no fijada en esta fase.
+- **Unidades:** folio 314v.
+- **Notas y referencias cruzadas:** aparece en `dos Reales, y veinte, y cinco m[aravedí]s.` para el quartal de centeno y en `vn real, y seis m[aravedí]s.` para la libra de lino. La abreviatura `mrs.` se desarrolla como `maravedís` conforme a la regla general del Manual Editorial para desarrollar abreviaturas; no se fija relación de conversión con `real` porque la unidad no la declara. Véase `real`.

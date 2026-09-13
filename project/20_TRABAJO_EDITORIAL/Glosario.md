@@ -61,3 +61,27 @@ No contendrá interpretación histórica extensa.
 - **Primera unidad:** folio 308r.
 - **Referencias:** folio 308r; folio 309v.
 - **Notas:** aparece en folio 308r en `Eras o sitios, que sirven De pasto a los ganados de el Comun, y resguardar el pan` y en folio 309v en `tierras De pan llevar`. El Diccionario de la lengua española recoge este sentido de `pan` como cereal antes de la siega: <https://dle.rae.es/pan>.
+
+### diezmos
+
+- **Término documentado:** `diezmos`.
+- **Definición:** derecho eclesiástico impuesto sobre las tierras del término según la respuesta 15.ª; el expediente declara que en este lugar lo percibe por entero el cura.
+- **Primera unidad:** folio 314v.
+- **Referencias:** `Manuel Ant[oni]o De Bega` / `Manuel Ant[oni]o De Vega`; `cura parrocho`.
+- **Notas:** se registra únicamente el régimen expresamente declarado en la unidad, sin generalizar su cuantía o distribución fuera del expediente.
+
+### primicia
+
+- **Término documentado:** `primicia`; segunda aparición abreviada `pri-` / `mi[ci]a.`.
+- **Definición:** derecho eclesiástico que la respuesta 15.ª declara impuesto sobre las tierras del término y correspondiente a la `Yglesia De él`.
+- **Primera unidad:** folio 314v.
+- **Referencias:** `Yglesia De él`.
+- **Notas:** la definición se limita al tenor de la unidad y no fija aquí cuantía ni régimen general de la prestación.
+
+### boto
+
+- **Término documentado:** `boto`.
+- **Definición:** prestación eclesiástica que la respuesta 15.ª atribuye a la `fabrica De el Apostol Santiago`.
+- **Primera unidad:** folio 314v.
+- **Referencias:** `fabrica De el Apostol Santiago`.
+- **Notas:** la forma `boto` se conserva en la transcripción. La identificación con el Voto de Santiago se apoya en la atribución interna al Apóstol Santiago y en documentación archivística de la prestación. El Archivo Histórico Provincial de Granada, en una ficha de la Junta de Andalucía sobre un documento de 1727, la denomina expresamente `Voto de Santiago`: <https://www.juntadeandalucia.es/organismos/culturapatrimoniohistoricoydeporte/areas/cultura/archivos/archivos-consejeria/archivo-historico-provincial-granada/ahpg-recomienda/paginas/documento-ahpg-sep-2012.html>. No se determina aquí una administración receptora más precisa que la indicada por el manuscrito.
