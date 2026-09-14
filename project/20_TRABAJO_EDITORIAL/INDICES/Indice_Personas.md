@@ -25,11 +25,11 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 ### Manuel Ant[oni]o De Bega
 
 - **Nombre original:** `D[o]n Manuel Ant[oni]o De Bega`.
-- **Variantes:** `D[o]n Manuel Ant[oni]o De Vega` en folio 314v.
-- **Cargo u oficio:** `cura parrocho` / `Cura` de este Lugar.
-- **Unidades:** folio 306r; folio 306v; folio 314v.
+- **Variantes:** `D[o]n Manuel Ant[oni]o De Vega` en folio 314v; `D[o]n Manuel Ant[oni]o` en folio 315v, sin apellido expreso en esa unidad.
+- **Cargo u oficio:** `cura parrocho` / `Cura` / `cura` de este Lugar.
+- **Unidades:** folio 306r; folio 306v; folio 314v; folio 315v.
 - **Identificación histórica:** no establecida.
-- **Referencias cruzadas:** `cura parrocho`; `Yglesia De él`.
+- **Referencias cruzadas:** `cura parrocho`; `Yglesia De él`; propietario de una rueda de molino en folio 315v.
 
 ### Juan Alv[are]z
 
@@ -85,3 +85,84 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Identificación histórica:** Francisco Alfonso Pimentel, XV conde de Luna. PARES conserva correspondencia dirigida a `[Francisco Alfonso Pimentel, XV] conde de Luna` fechada entre 1742 y 1753, intervalo que comprende el expediente de 1752: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/3925721>.
 - **Grado de seguridad:** alto. El manuscrito aporta el título, no el nombre; la identificación nominal procede de la fuente externa para el titular documentado en 1752.
 - **Referencias cruzadas:** `Señorío`; `Concejo de Ordas`.
+
+### Manuel
+
+- **Nombre original:** `manuel`.
+- **Variantes:** `Manuel` en la recapitulación material del comienzo de folio 316r, usada solo para continuidad.
+- **Cargo u oficio:** propietario, junto con `Fran[cis]co F[ernande]z`, de una rueda de molino.
+- **Unidades:** folio 315v.
+- **Identificación histórica:** no establecida; el manuscrito no expresa apellido en la unidad validada y no se le atribuye por inferencia el de su copropietario.
+- **Referencias cruzadas:** `Fran[cis]co F[ernande]z`; Glosario: `molino venturero`.
+
+### Fran[cis]co F[ernande]z
+
+- **Nombre original:** `Fran[cis]co F[ernande]z`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** copropietario de una rueda de molino.
+- **Unidades:** folio 315v.
+- **Identificación histórica:** no establecida.
+- **Referencias cruzadas:** `Manuel`; Glosario: `molino venturero`.
+
+### Manuel G[onzale]z
+
+- **Nombre original:** `Manuel G[onzale]z`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** copropietario de una rueda de molino.
+- **Unidades:** folio 315v.
+- **Identificación histórica:** no establecida.
+- **Referencias cruzadas:** `Fran[cis]co Diez`.
+
+### Fran[cis]co Diez
+
+- **Nombre original:** `Fran[cis]co Diez`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** copropietario de una rueda de molino.
+- **Unidades:** folio 315v.
+- **Identificación histórica:** no establecida.
+- **Referencias cruzadas:** `Manuel G[onzale]z`.
+
+### Manuel G[arci]a
+
+- **Nombre original:** `Manuel G[arci]a`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** propietario de participación en un molino de dos ruedas; aparece acompañado de `c[onsor]tes`.
+- **Unidades:** folio 315v.
+- **Identificación histórica:** no establecida.
+- **Referencias cruzadas:** `Margarita G[arci]a`; `Bartholome F[ernande]z`.
+
+### Margarita G[arci]a
+
+- **Nombre original:** `Margarita G[arci]a`.
+- **Variantes:** `Margarita` en la recapitulación de propietarios dentro de la misma unidad.
+- **Cargo u oficio:** copropietaria de una rueda de molino.
+- **Unidades:** folio 315v.
+- **Identificación histórica:** no establecida.
+- **Referencias cruzadas:** `Manuel G[arci]a`; `Bartholome F[ernande]z`.
+
+### Bartholome F[ernande]z
+
+- **Nombre original:** `Bartholome F[ernande]z`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** copropietario de una rueda de molino.
+- **Unidades:** folio 315v.
+- **Identificación histórica:** no establecida.
+- **Referencias cruzadas:** `Margarita G[arci]a`; `Manuel G[arci]a`.
+
+### Andres Suarez
+
+- **Nombre original:** `Andres Suarez`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** propietario de un molino de dos ruedas.
+- **Unidades:** folio 315v.
+- **Identificación histórica:** no establecida.
+- **Referencias cruzadas:** `Marcos Suarez`.
+
+### Marcos Suarez
+
+- **Nombre original:** `Marcos Suarez`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** propietario de un molino de una rueda.
+- **Unidades:** folio 315v.
+- **Identificación histórica:** no establecida.
+- **Referencias cruzadas:** `Andres Suarez`.

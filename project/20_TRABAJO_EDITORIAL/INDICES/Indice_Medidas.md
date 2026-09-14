@@ -64,10 +64,10 @@ No contendrá interpretación histórica extensa.
 
 - **Forma original:** `cargas`.
 - **Variantes:** ninguna singular documentada en esta fase.
-- **Clase de medida:** capacidad o cantidad de grano empleada en la regulación de los diezmos.
+- **Clase de medida:** capacidad o cantidad de grano empleada en la regulación de diezmos y en la valoración de utilidad de ruedas de molino.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 315r.
-- **Notas y referencias cruzadas:** la respuesta 16.ª expresa `treinta cargas De centeno`. El expediente no declara aquí su relación con `fanega` o `quartal`, por lo que no se infiere ninguna equivalencia. Véanse `fanega` y `quartal`.
+- **Unidades:** folio 315r; folio 315v.
+- **Notas y referencias cruzadas:** la respuesta 16.ª expresa `treinta cargas De centeno`. En folio 315v, dentro de la respuesta 17.ª, se regula para determinadas ruedas de molino una utilidad de `quatro cargas De centeno`. El expediente no declara en estas unidades su relación con `fanega` o `quartal`, por lo que no se infiere ninguna equivalencia. Véanse `fanega` y `quartal`.
 
 ### libras
 

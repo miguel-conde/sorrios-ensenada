@@ -1259,23 +1259,57 @@ La unidad anterior es el folio 314v. La unidad siguiente es el folio 315v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+Manuel Ant[oni]o cura De este Lugar:
+Otra De manuel, y Fran[cis]co F[ernande]z:
+Y la otra De Manuel G[onzale]z, y Fran[cis]co
+Diez: Otro De dos ruedas la vna
+De Manuel G[arci]a, y c[onsor]tes, y la
+otra De Margarita G[arci]a, y Bartho-
+lome F[ernande]z. Otro De dos ruedas, pro-
+pio De Andres Suarez; Otro De vna
+rueda propio De Marcos Suarez;
+Y otro molino venturero, que solo
+muele algunos meses en el invier-
+no con la agua, que lleva, y acada
+vna De las ruedas propias respec-
+tivam[en]te De los d[ic]hos Marcos, y An-
+dres Suarez, Margarita, y Manu-
+el G[arci]a, y Bartholome F[ernande]z re-
+gulan De utilidad para sus Dueños
+quatro cargas De centeno, y acada vna
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 315v, página digital 12 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `315v` deriva de la secuencia material y del folio 315r precedente.
+
+La unidad continúa directamente la respuesta 17.ª desde `el vno De tres ruedas, propia la vna De D[o]n / Manuel Ant[oni]o cura De este Lugar`. La primera casa de molino, de tres ruedas, queda distribuida entre `D[o]n Manuel Ant[oni]o`, `manuel, y Fran[cis]co F[ernande]z` y `Manuel G[onzale]z, y Fran[cis]co Diez`.
+
+A continuación se documenta otro molino de dos ruedas, con una de ellas atribuida a `Manuel G[arci]a, y c[onsor]tes` y la otra a `Margarita G[arci]a, y Bartholome F[ernande]z`; siguen otro molino de dos ruedas propio de `Andres Suarez`, otro de una rueda propio de `Marcos Suarez` y un `molino venturero` que solo muele algunos meses en invierno con el agua disponible.
+
+Para las ruedas propias de Marcos y Andres Suarez, Margarita, Manuel García y Bartholome Fernández se declara una utilidad de `quatro cargas De centeno`. La unidad termina en `y acada vna`; la inspección auxiliar del comienzo de folio 316r confirma la continuación `De las ruedas propias De los d[ic]hos D[o]n...`, únicamente para delimitar folio 315v y sin validar por anticipado folio 316r.
+
+La unidad anterior es el folio 315r. La unidad siguiente es el folio 316r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `Ant[oni]o`, `Fran[cis]co`, `F[ernande]z`, `G[onzale]z`, `G[arci]a`, `c[onsor]tes`, `respectivam[en]te` y `d[ic]hos` desarrollan las abreviaturas visibles conforme al criterio general vigente.
+- Se conserva `manuel` con minúscula en su primera aparición, así como las grafías y formas documentales `Bartholome`, `Andres`, `Marcos`, `venturero`, `vna`, `acada`, `Dueños` y `quatro`.
+- Se conservan las divisiones visibles `Bartho-` / `lome`, `pro-` / `pio`, `invier-` / `no`, `respec-` / `tivam[en]te`, `An-` / `dres`, `Manu-` / `el` y `re-` / `gulan`, incluidos los guiones de final de línea.
+- El `D[o]n` que precede a `Manuel Ant[oni]o` pertenece materialmente al final de folio 315r; la continuidad identifica al mismo cura ya documentado, sin añadir en esta cara un apellido que el manuscrito no repite.
+- La lectura `c[onsor]tes` desarrolla la abreviatura visible en la atribución de una de las ruedas; no se individualizan personas no nombradas.
+- El final `y acada vna` continúa sintácticamente en folio 316r; el cotejo del comienzo de esa cara no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 315r; folio 316r.
+- Glosario: `molino venturero`.
+- Índice de personas: `Manuel Ant[oni]o De Bega` / `De Vega`; `Manuel`; `Fran[cis]co F[ernande]z`; `Manuel G[onzale]z`; `Fran[cis]co Diez`; `Manuel G[arci]a`; `Margarita G[arci]a`; `Bartholome F[ernande]z`; `Andres Suarez`; `Marcos Suarez`.
+- Índice de oficios: `cura parrocho` / `Cura` / `cura`.
+- Índice de medidas: `carga` / `cargas`.
 
 ---
 

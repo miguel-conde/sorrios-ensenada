@@ -93,3 +93,11 @@ No contendrá interpretación histórica extensa.
 - **Primera unidad:** folio 315r.
 - **Referencias:** folio 315r; Índice de medidas: `libras`.
 - **Notas:** se conserva la forma documental `fejes` y se registra únicamente la relación interna de cuatro libras por cada uno, sin fijar una equivalencia moderna ni generalizarla fuera del expediente.
+
+### molino venturero
+
+- **Término documentado:** `molino venturero`.
+- **Definición:** molino que, según la respuesta 17.ª, `solo muele algunos meses en el invierno con la agua, que lleva`.
+- **Primera unidad:** folio 315v.
+- **Referencias:** folio 315v; respuesta 17.ª; Índice de personas: `Andres Suarez`; `Marcos Suarez`; `Margarita G[arci]a`; `Manuel G[arci]a`; `Bartholome F[ernande]z`.
+- **Notas:** la entrada se limita a la caracterización interna del expediente: funcionamiento estacional condicionado por el agua disponible. No se fija una tipología molinera externa ni se generaliza el término fuera del documento.

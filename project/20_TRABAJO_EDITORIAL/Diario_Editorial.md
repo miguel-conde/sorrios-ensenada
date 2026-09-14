@@ -251,3 +251,13 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados el Glosario y el Índice de medidas; no se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_315v` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad folio 315v.
+- Continuada la respuesta 17.ª con la distribución de las ruedas de los molinos entre `D[o]n Manuel Ant[oni]o`, `manuel` y `Fran[cis]co F[ernande]z`, `Manuel G[onzale]z` y `Fran[cis]co Diez`, `Manuel G[arci]a` y `c[onsor]tes`, `Margarita G[arci]a` y `Bartholome F[ernande]z`, `Andres Suarez` y `Marcos Suarez`.
+- Documentado además un `molino venturero` que solo muele algunos meses en invierno con el agua disponible.
+- Para determinadas ruedas se regula una utilidad de `quatro cargas De centeno`; la frase continúa materialmente en folio 316r.
+- Se desarrollan las abreviaturas personales conforme al criterio vigente y se conservan las grafías y divisiones visibles; no aparece ningún criterio metodológico nuevo.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: disposición material y uso hidráulico quedan en A; `molino venturero`, propietarios, `cura` y `carga` / `cargas` quedan en B; no aparecen candidatos C; la copropiedad, estacionalidad y utilidad por rueda quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados Glosario e índices de personas, medidas y oficios; no se generan cambios justificados en los índices de topónimos o instituciones.
+- No quedan dudas abiertas.
+- El estado avanza a `folio_316r` como unidad actual.

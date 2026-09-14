@@ -36,11 +36,11 @@ No contendrá biografías ni interpretación histórica extensa.
 ### cura parrocho
 
 - **Forma original:** `cura parrocho`.
-- **Variantes:** `Cura` en folio 314v.
+- **Variantes:** `Cura` en folio 314v; `cura` en folio 315v.
 - **Forma normalizada:** cura párroco.
 - **Personas o instituciones relacionadas:** `Manuel Ant[oni]o De Bega` / `Manuel Ant[oni]o De Vega`; `Yglesia De él`.
-- **Unidades:** folio 306r; folio 306v; folio 314v.
-- **Notas:** folio 306r lo identifica como `cura parrocho De este Lugar`; folio 306v lo exceptúa del juramento recibido a los demás comparecientes; folio 314v lo denomina `Cura De este Lugar` y declara que percibe por entero los diezmos.
+- **Unidades:** folio 306r; folio 306v; folio 314v; folio 315v.
+- **Notas:** folio 306r lo identifica como `cura parrocho De este Lugar`; folio 306v lo exceptúa del juramento recibido a los demás comparecientes; folio 314v lo denomina `Cura De este Lugar` y declara que percibe por entero los diezmos; folio 315v vuelve a identificarlo como `cura De este Lugar` al declarar la propiedad de una rueda de molino.
 
 ### oficial de Justiz[i]a
 
