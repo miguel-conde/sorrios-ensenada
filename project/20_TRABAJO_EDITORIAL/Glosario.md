@@ -64,24 +64,32 @@ No contendrá interpretación histórica extensa.
 
 ### diezmos
 
-- **Término documentado:** `diezmos`.
-- **Definición:** derecho eclesiástico impuesto sobre las tierras del término según la respuesta 15.ª; el expediente declara que en este lugar lo percibe por entero el cura.
+- **Término documentado:** `diezmos`; en folio 315r aparece además `diezmos menudos`.
+- **Definición:** derecho eclesiástico impuesto sobre las tierras del término según la respuesta 15.ª; el expediente declara que en este lugar lo percibe por entero el cura. La respuesta 16.ª cuantifica su rendimiento anual mediante una regulación por quinquenio y distingue además `diezmos menudos`.
 - **Primera unidad:** folio 314v.
-- **Referencias:** `Manuel Ant[oni]o De Bega` / `Manuel Ant[oni]o De Vega`; `cura parrocho`.
-- **Notas:** se registra únicamente el régimen expresamente declarado en la unidad, sin generalizar su cuantía o distribución fuera del expediente.
+- **Referencias:** folio 314v; folio 315r; `Manuel Ant[oni]o De Bega` / `Manuel Ant[oni]o De Vega`; `cura parrocho`.
+- **Notas:** se registran únicamente el régimen y las cantidades expresamente declarados en el expediente, sin generalizar su cuantía o distribución fuera de estas unidades.
 
 ### primicia
 
-- **Término documentado:** `primicia`; segunda aparición abreviada `pri-` / `mi[ci]a.`.
+- **Término documentado:** `primicia`; segunda aparición abreviada `pri-` / `mi[ci]a.`; en folio 315r aparece abreviada `prim[ici]a.`.
 - **Definición:** derecho eclesiástico que la respuesta 15.ª declara impuesto sobre las tierras del término y correspondiente a la `Yglesia De él`.
 - **Primera unidad:** folio 314v.
-- **Referencias:** `Yglesia De él`.
-- **Notas:** la definición se limita al tenor de la unidad y no fija aquí cuantía ni régimen general de la prestación.
+- **Referencias:** folio 314v; folio 315r; `Yglesia De él`.
+- **Notas:** la definición se limita al tenor del expediente. En folio 315r la respuesta 16.ª cuantifica la primicia en `veinte, y seis quartales De centeno`; no se extrapola un régimen general de la prestación.
 
 ### boto
 
 - **Término documentado:** `boto`.
 - **Definición:** prestación eclesiástica que la respuesta 15.ª atribuye a la `fabrica De el Apostol Santiago`.
 - **Primera unidad:** folio 314v.
-- **Referencias:** `fabrica De el Apostol Santiago`.
-- **Notas:** la forma `boto` se conserva en la transcripción. La identificación con el Voto de Santiago se apoya en la atribución interna al Apóstol Santiago y en documentación archivística de la prestación. El Archivo Histórico Provincial de Granada, en una ficha de la Junta de Andalucía sobre un documento de 1727, la denomina expresamente `Voto de Santiago`: <https://www.juntadeandalucia.es/organismos/culturapatrimoniohistoricoydeporte/areas/cultura/archivos/archivos-consejeria/archivo-historico-provincial-granada/ahpg-recomienda/paginas/documento-ahpg-sep-2012.html>. No se determina aquí una administración receptora más precisa que la indicada por el manuscrito.
+- **Referencias:** folio 314v; folio 315r; `fabrica De el Apostol Santiago`.
+- **Notas:** la forma `boto` se conserva en la transcripción. La identificación con el Voto de Santiago se apoya en la atribución interna al Apóstol Santiago y en documentación archivística de la prestación. El Archivo Histórico Provincial de Granada, en una ficha de la Junta de Andalucía sobre un documento de 1727, la denomina expresamente `Voto de Santiago`: <https://www.juntadeandalucia.es/organismos/culturapatrimoniohistoricoydeporte/areas/cultura/archivos/archivos-consejeria/archivo-historico-provincial-granada/ahpg-recomienda/paginas/documento-ahpg-sep-2012.html>. En folio 315r se declara `a veinte, y quatro el boto` dentro de la misma serie cuantitativa que la primicia; al no repetirse explícitamente la unidad tras la cifra, no se añade una equivalencia que el manuscrito no formule. No se determina aquí una administración receptora más precisa que la indicada por el manuscrito.
+
+### fejes
+
+- **Término documentado:** `fejes`.
+- **Definición:** unidades en que se cuenta el lino en la respuesta 16.ª; el manuscrito declara `Quarenta fejes De lino De aquatro libras / cada vno`.
+- **Primera unidad:** folio 315r.
+- **Referencias:** folio 315r; Índice de medidas: `libras`.
+- **Notas:** se conserva la forma documental `fejes` y se registra únicamente la relación interna de cuatro libras por cada uno, sin fijar una equivalencia moderna ni generalizarla fuera del expediente.

@@ -1200,23 +1200,54 @@ La unidad anterior es el folio 314r. La unidad siguiente es el folio 315r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+16. Ala diez, y seis dijeron: que
+los referidos diezmos ascienden en
+cada vn año, haciendo regulaz[i]on
+p[o]r vn quinquenio a treinta cargas
+De centeno: Dos De cevada: y cinco
+fanegas De trigo De algunos vecinos,
+que siembran fuera De el term[ino]. Qua-
+renta fejes De lino De aquatro libras
+cada vno: Y los diezmos menudos
+De Lana, crias mulares, y demas a ci-
+ento, y quarenta Reales: La prim[ici]a.
+a veinte, y seis quartales De centeno,
+y a veinte, y quatro el boto.
+17. Ala decima septima dijeron:
+que en el term[ino]. De este Lugar: ai
+quatro casas De molinos arineros,
+que muelen con la agua De el Rio:
+el vno De tres ruedas, propia la vna De D[o]n
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 315r, página digital 11 del PDF autoritativo, en posición derecha. La foliación archivística `315`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La respuesta 16.ª se contiene íntegramente en esta cara y cuantifica los diezmos mediante una regulación por quinquenio: treinta cargas de centeno, dos de cebada, cinco fanegas de trigo de algunos vecinos que siembran fuera del término y cuarenta `fejes De lino` de cuatro libras cada uno. Los `diezmos menudos` de lana, crías mulares y demás se regulan `a ci- / ento, y quarenta Reales`. También se expresa la primicia en veintiséis quartales de centeno y el boto en veinticuatro dentro de la misma serie cuantitativa.
+
+La respuesta 17.ª comienza en esta unidad y declara cuatro casas de molinos `arineros` que muelen con el agua del río. La descripción del primero, de tres ruedas, queda abierta al final de la cara.
+
+La unidad termina en `propia la vna De D[o]n`. La inspección auxiliar del comienzo de folio 315v confirma la continuación inmediata del nombre y de la propiedad; este cotejo se utiliza únicamente para delimitar folio 315r y no valida por anticipado folio 315v.
+
+La unidad anterior es el folio 314v. La unidad siguiente es el folio 315v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `regulaz[i]on`, `p[o]r`, `term[ino].`, `prim[ici]a.` y `D[o]n` desarrollan las abreviaturas visibles conforme al criterio general vigente; en `regulaz[i]on` se conserva la grafía histórica con `z`.
+- Se conservan las grafías y formas documentales `vn`, `cevada`, `fanegas`, `fejes`, `aquatro`, `Lana`, `crias mulares`, `Reales`, `quartales`, `boto`, `ai` y `arineros`.
+- Se conservan las divisiones visibles `Qua-` / `renta` y `ci-` / `ento`, incluidos los guiones de final de línea. La forma `a ci- / ento` se conserva literalmente y no se moderniza la disposición lineal.
+- La serie de puntos que prolonga el renglón tras `boto` se omite como relleno gráfico sin valor verbal conforme al criterio ya vigente.
+- El final `De D[o]n` continúa sintácticamente en folio 315v; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 314v; folio 315v.
+- Glosario: `diezmos`; `diezmos menudos`; `primicia`; `boto`; `fejes`.
+- Índice de medidas: `cargas`; `fanega` / `fanegas`; `libra` / `libras`; `quartal` / `quartales`; `real` / `Reales`.
 
 ---
 

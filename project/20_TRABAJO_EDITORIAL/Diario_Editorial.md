@@ -238,3 +238,16 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados el Glosario, los índices de medidas, personas, instituciones y oficios; no se generan cambios justificados en el Índice de topónimos.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_315r` como unidad actual.
+
+### 14 de septiembre de 2026
+
+- Validada y cerrada documentalmente la unidad folio 315r.
+- La respuesta 16.ª se contiene íntegramente en la unidad y regula por quinquenio la cuantía anual de los diezmos: treinta cargas de centeno, dos de cebada, cinco fanegas de trigo, cuarenta `fejes De lino` de cuatro libras cada uno y `a ci- / ento, y quarenta Reales` para los diezmos menudos de lana, crías mulares y demás.
+- La primicia se expresa en veintiséis quartales de centeno y el boto en veinticuatro dentro de la misma serie cuantitativa.
+- La respuesta 17.ª comienza declarando cuatro casas de molinos `arineros` que muelen con el agua del río; la descripción del primer molino, de tres ruedas, queda abierta al final de la cara.
+- La unidad termina en `propia la vna De D[o]n`; la inspección auxiliar del comienzo de folio 315v confirma la continuación inmediata del nombre y la propiedad, únicamente para delimitar 315r y sin validar por anticipado 315v.
+- Se desarrollan `regulaz[i]on`, `p[o]r`, `term[ino].`, `prim[ici]a.` y `D[o]n`; se conservan las formas documentales y las divisiones `Qua-` / `renta` y `ci-` / `ento`, y el relleno de puntos tras `boto` se omite conforme al criterio vigente.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: cultivos, formulación general del quinquenio y molinos quedan en A; `diezmos` / `diezmos menudos`, `primicia`, `boto`, `fejes` y las medidas documentadas quedan en B; no aparecen candidatos C; la cuantificación fiscal y la estructura hidráulica molinera quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados el Glosario y el Índice de medidas; no se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_315v` como unidad actual.
