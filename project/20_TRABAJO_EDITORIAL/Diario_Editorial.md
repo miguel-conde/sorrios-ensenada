@@ -330,3 +330,15 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados Glosario e índices de instituciones, topónimos y medidas; no se generan cambios justificados en los índices de personas u oficios.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_319r` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad folio 319r.
+- Completada la respuesta 25.ª: las cantidades que el común debe satisfacer y que no cubre con recursos propios se pagan `por repartimi- / ento entre los vecinos`.
+- La respuesta 26.ª se contiene íntegramente en la unidad y declara que el común no tiene `cargo alguno De Justicia`.
+- La respuesta 27.ª se contiene íntegramente y declara que no está cargado de `servicio ordina- / rio, ni extraordinario`.
+- La respuesta 28.ª comienza declarando que las `alcavalas De este Lugar estan enajenadas afavor De el Ex[celentísi]mo S[eño]r Conde De Luna`; los declarantes no saben si la enajenación fue `por servicio pecunia- / rio, ô otro motivo`, y señalan que los vecinos pagan anualmente por este derecho.
+- La cara termina en `seiscientos tre-`; la inspección auxiliar del comienzo de folio 319v confirma `inta, y tres Reales.`, únicamente para delimitar 319r y sin validar por anticipado 319v.
+- Se desarrollan `Ex[celentísi]mo`, `S[eño]r` y `jenaz[i]on.` conforme al criterio vigente; se conservan `Ala`, `comun`, `esta`, `alcavalas`, `afavor`, `saven`, `razon`, `vn`, `seiscientos` y las divisiones `repartimi-` / `ento`, `ordina-` / `rio`, `ena-` / `jenaz[i]on.`, `pecunia-` / `rio` y `tre-` / `inta`. Los rellenos gráficos se omiten conforme al criterio vigente.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: formulación ordinaria de respuestas y ausencia de cargo de Justicia quedan en A; `servicio ordinario y extraordinario`, `alcavalas` y `Conde De Luna` quedan en B; no aparecen candidatos C; el repartimiento, la ausencia de servicio ordinario y extraordinario, la enajenación de alcabalas, la incertidumbre sobre su título y el pago anual quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Añadidos `alcavalas` y `servicio ordinario y extraordinario` al Glosario; actualizado `Conde De Luna` en el Índice de personas. No se generan cambios justificados en los índices de topónimos, instituciones, medidas u oficios.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_319v` como unidad actual.

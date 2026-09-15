@@ -149,3 +149,19 @@ No contendrá interpretación histórica extensa.
 - **Primera unidad:** folio 316v.
 - **Referencias:** folio 316v; respuesta 19.ª; Índice de personas: `Agustin G[arci]a Ordas`; `Fran[cis]co Diez`; `Manuel G[arci]a`; `Juan F[ernande]z`; `Margarita G[arci]a`.
 - **Notas:** el expediente declara dieciocho `p[ie]s. De abejas` y regula para cada uno una utilidad anual de `dos Reales vellon`. Se registra únicamente la función de cómputo que tiene la expresión en el documento; no se fija equivalencia moderna ni se reconstruye aquí una tipología apícola externa.
+
+### alcavalas
+
+- **Término documentado:** `alcavalas`.
+- **Definición:** derecho fiscal mencionado en la respuesta 28.ª; el expediente declara que las del lugar están `enajenadas afavor De el Ex[celentísi]mo S[eño]r Conde De Luna` y que los vecinos realizan por este derecho un pago anual.
+- **Primera unidad:** folio 319r.
+- **Referencias:** folio 319r; respuesta 28.ª; Índice de personas: `Conde De Luna`.
+- **Notas:** los declarantes afirman expresamente que no saben si la `enajenaz[i]on.` fue por servicio pecuniario u otro motivo. La cuantía anual queda materialmente partida al final de folio 319r y continúa en folio 319v; no se anticipa aquí su cierre hasta validar esa unidad.
+
+### servicio ordinario y extraordinario
+
+- **Término documentado:** `servicio ordina-` / `rio, ni extraordinario`.
+- **Definición:** carga o servicio fiscal mencionado en la respuesta 27.ª; el expediente declara que el común no está cargado de servicio ordinario ni extraordinario.
+- **Primera unidad:** folio 319r.
+- **Referencias:** folio 319r; respuesta 27.ª.
+- **Notas:** se registra únicamente la formulación y condición declarada en el expediente, sin reconstruir en esta fase el régimen fiscal general de este servicio.

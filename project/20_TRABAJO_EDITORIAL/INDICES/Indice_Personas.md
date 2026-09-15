@@ -80,11 +80,11 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 
 - **Nombre original:** `Ex[celentísi]mo S[eño]r Conde De Luna`.
 - **Variantes:** ninguna documentada.
-- **Cargo u oficio:** titular señorial citado en la segunda respuesta.
-- **Unidades:** folio 307r.
+- **Cargo u oficio:** titular señorial citado en la segunda respuesta; en la respuesta 28.ª figura como beneficiario de las `alcavalas` enajenadas del lugar.
+- **Unidades:** folio 307r; folio 319r.
 - **Identificación histórica:** Francisco Alfonso Pimentel, XV conde de Luna. PARES conserva correspondencia dirigida a `[Francisco Alfonso Pimentel, XV] conde de Luna` fechada entre 1742 y 1753, intervalo que comprende el expediente de 1752: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/3925721>.
 - **Grado de seguridad:** alto. El manuscrito aporta el título, no el nombre; la identificación nominal procede de la fuente externa para el titular documentado en 1752.
-- **Referencias cruzadas:** `Señorío`; `Concejo de Ordas`.
+- **Referencias cruzadas:** `Señorío`; `Concejo de Ordas`; Glosario: `alcavalas`.
 
 ### Manuel
 

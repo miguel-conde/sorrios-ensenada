@@ -1697,23 +1697,56 @@ La unidad anterior es el folio 318r. La unidad siguiente es el folio 319r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+propias las pagan por repartimi-
+ento entre los vecinos
+26. Ala veinte, y seis dijeron: que
+este comun no tiene cargo alguno De
+Justicia
+27. Ala veinte, y siete dijeron:
+que no esta cargado De servicio ordina-
+rio, ni extraordinario
+28. Ala veinte, y ocho dijeron:
+que las alcavalas De este Lugar estan
+enajenadas afavor De el Ex[celentísi]mo S[eño]r
+Conde De Luna: no saven si su ena-
+jenaz[i]on. fue por servicio pecunia-
+rio, ô otro motivo, y que por razon
+De este derecho le pagan en cada
+vn año sus vecinos seiscientos tre-
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 319r, página digital 15 del PDF autoritativo, en posición derecha. La foliación archivística `319`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa y concluye la respuesta 25.ª desde el final de folio 318v: `y / mas, y otras Cantidades, por no tener / propias las pagan por repartimi- / ento entre los vecinos`. Con ello se cierra la relación de gastos del común indicando que, al no tener recursos propios para esas cantidades, se pagan por repartimiento entre los vecinos.
+
+La respuesta 26.ª se contiene íntegramente en esta cara y declara que el común no tiene `cargo alguno De / Justicia`. La respuesta 27.ª se contiene también íntegramente y declara que no está cargado `De servicio ordina- / rio, ni extraordinario`.
+
+La respuesta 28.ª comienza en esta unidad. Declara que `las alcavalas De este Lugar estan / enajenadas afavor De el Ex[celentísi]mo S[eño]r / Conde De Luna`; los declarantes añaden que no saben si la enajenación fue `por servicio pecunia- / rio, ô otro motivo` y que, por razón de este derecho, los vecinos realizan un pago anual.
+
+La unidad termina en `vn año sus vecinos seiscientos tre-`. La inspección auxiliar del comienzo de folio 319v confirma la continuación `inta, y tres Reales.`; este cotejo se utiliza únicamente para delimitar folio 319r y no valida por anticipado folio 319v.
+
+Las series de puntos que prolongan los renglones tras `vecinos`, `Justicia` y `extraordinario` se omiten como relleno gráfico sin valor verbal conforme al criterio ya vigente.
+
+La unidad anterior es el folio 318v. La unidad siguiente es el folio 319v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `Ex[celentísi]mo` y `S[eño]r` desarrollan las abreviaturas visibles conforme al criterio ya documentado en folio 307r; `jenaz[i]on.` desarrolla la abreviatura visible en la forma partida `ena-` / `jenaz[i]on.`.
+- Se conservan las grafías y formas documentales `Ala`, `comun`, `esta`, `alcavalas`, `afavor`, `saven`, `razon`, `vn` y `seiscientos`.
+- Se conservan las divisiones visibles `repartimi-` / `ento`, `ordina-` / `rio`, `ena-` / `jenaz[i]on.`, `pecunia-` / `rio` y `tre-` / `inta`, incluidos los guiones de final de línea. La última división continúa materialmente en folio 319v.
+- Los puntos y trazos terminales de relleno tras palabras completas se omiten por carecer de valor verbal.
+- El final `seiscientos tre-` continúa sintácticamente en folio 319v con `inta, y tres Reales.`; el cotejo de ese comienzo no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 318v; folio 319v.
+- Glosario: `propios`; `alcavalas`; `servicio ordinario y extraordinario`.
+- Índice de personas: `Conde De Luna`.
 
 ---
 
