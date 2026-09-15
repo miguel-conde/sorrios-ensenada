@@ -69,14 +69,23 @@ No contendrá interpretación histórica extensa.
 - **Unidades:** folio 315r; folio 315v; folio 316r.
 - **Notas y referencias cruzadas:** la respuesta 16.ª expresa `treinta cargas De centeno`. En folio 315v, dentro de la respuesta 17.ª, se regula para determinadas ruedas de molino una utilidad de `quatro cargas De centeno`. En folio 316r se asignan `Dos cargas De centeno` a cada una de las ruedas propias de los otros propietarios enumerados en la continuidad de la respuesta 17.ª. El expediente no declara en estas unidades su relación con `fanega` o `quartal`, por lo que no se infiere ninguna equivalencia. Véanse `fanega` y `quartal`.
 
+### quartaron
+
+- **Forma original:** `quartaron`.
+- **Variantes:** ninguna documentada en esta fase.
+- **Clase de medida:** unidad de cantidad aplicada al `añino`.
+- **Equivalencia histórica o moderna:** no fijada en esta fase.
+- **Unidades:** folio 317v.
+- **Notas y referencias cruzadas:** la respuesta 20.ª declara que `Cada cordero da vn quartaron De añino`, valorado en `ocho m[a]r[avedí]s.`. El expediente no establece su relación con otras medidas; no se infiere ninguna equivalencia. Véanse `maravedís` y Glosario: `añino`.
+
 ### libras
 
 - **Forma original:** `libras`.
 - **Variantes:** `libra`.
-- **Clase de medida:** peso, aplicado a la cantidad de `lino` producida, valorada o contabilizada.
+- **Clase de medida:** peso, aplicado a cantidades de `lino` y `lana` producidas o valoradas.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 312v; folio 313r; folio 314v; folio 315r.
-- **Notas y referencias cruzadas:** la duodécima respuesta expresa en `libras De lino` parte del rendimiento de las tierras linares sembradas de linaza. En folio 312v se documentan `doce libras De lino` para la primera calidad y `diez libras De lino` para la segunda de la tierra linar de regadio; folio 313r continúa con `ocho libras De lino` para la tercera calidad de esa tierra y documenta además `ocho` y `seis libras De lino` para las calidades segunda y tercera de la tierra linar de secano. En folio 314v aparece el singular `La libra De lino` al fijar su valor monetario. En folio 315r se declaran `Quarenta fejes De lino De aquatro libras cada vno`. No se infiere equivalencia moderna. Véanse también `quartal`, `real`, `maravedís` y Glosario: `fejes`.
+- **Unidades:** folio 312v; folio 313r; folio 314v; folio 315r; folio 317v.
+- **Notas y referencias cruzadas:** la duodécima respuesta expresa en `libras De lino` parte del rendimiento de las tierras linares sembradas de linaza. En folio 312v se documentan `doce libras De lino` para la primera calidad y `diez libras De lino` para la segunda de la tierra linar de regadio; folio 313r continúa con `ocho libras De lino` para la tercera calidad de esa tierra y documenta además `ocho` y `seis libras De lino` para las calidades segunda y tercera de la tierra linar de secano. En folio 314v aparece el singular `La libra De lino` al fijar su valor monetario. En folio 315r se declaran `Quarenta fejes De lino De aquatro libras cada vno`. En folio 317v cada oveja da `vna libra De lana` y cada `carnero, ô borrego` da `dos libras De lana`; el manuscrito valora cada libra de lana en un real. No se infiere equivalencia moderna. Véanse también `quartal`, `real`, `maravedís` y Glosario: `fejes`.
 
 ### monton
 
@@ -102,14 +111,14 @@ No contendrá interpretación histórica extensa.
 - **Variantes:** alternancia de mayúscula y minúscula según el manuscrito; `Reales vellon` en folio 316v.
 - **Clase de medida:** unidad monetaria empleada para expresar el valor ordinario de frutos y otras cuantías monetarias del expediente.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 314v; folio 315r; folio 316v; folio 317r.
-- **Notas y referencias cruzadas:** la respuesta 14.ª valora en reales el quartal de centeno, cebada, linaza y trigo, la libra de lino y el carro de yerba. En dos casos combina reales con `m[aravedí]s.`; el expediente no declara en esa unidad una relación de conversión y no se infiere aquí. En folio 315r los `diezmos menudos` de lana, crías mulares y demás se regulan `a ci- / ento, y quarenta Reales`. En folio 316v la respuesta 19.ª regula la utilidad anual de cada `p[ie] De abejas` en `dos Reales vellon`. En folio 317r la respuesta 20.ª usa reales para valorar las crías y regular el `esquilmo annual` de vacas y yeguas, además de iniciar la valoración de los cerdos. No se fija conversión moderna. Véase `maravedís`.
+- **Unidades:** folio 314v; folio 315r; folio 316v; folio 317r; folio 317v.
+- **Notas y referencias cruzadas:** la respuesta 14.ª valora en reales el quartal de centeno, cebada, linaza y trigo, la libra de lino y el carro de yerba. En dos casos combina reales con `m[aravedí]s.`; el expediente no declara en esa unidad una relación de conversión y no se infiere aquí. En folio 315r los `diezmos menudos` de lana, crías mulares y demás se regulan `a ci- / ento, y quarenta Reales`. En folio 316v la respuesta 19.ª regula la utilidad anual de cada `p[ie] De abejas` en `dos Reales vellon`. En folio 317r la respuesta 20.ª usa reales para valorar las crías y regular el `esquilmo annual` de vacas y yeguas, además de iniciar la valoración de los cerdos. En folio 317v completa en dieciséis reales el esquilmo anual de la cerda, valora la lana de ovejas y carneros a un real por libra, regula el esquilmo anual de la oveja en cinco reales y el del carnero o borrego en dos, y valora el buey de labranza en ciento cincuenta reales. No se fija conversión moderna. Véase `maravedís`.
 
 ### maravedís
 
 - **Forma original:** `m[aravedí]s.` a partir de la abreviatura visible `mrs.`.
 - **Variantes:** ninguna documentada en esta fase.
-- **Clase de medida:** unidad monetaria empleada como fracción adicional en la valoración de frutos.
+- **Clase de medida:** unidad monetaria empleada como fracción adicional en la valoración de frutos y otros productos.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 314v.
-- **Notas y referencias cruzadas:** aparece en `dos Reales, y veinte, y cinco m[aravedí]s.` para el quartal de centeno y en `vn real, y seis m[aravedí]s.` para la libra de lino. La abreviatura `mrs.` se desarrolla como `maravedís` conforme a la regla general del Manual Editorial para desarrollar abreviaturas; no se fija relación de conversión con `real` porque la unidad no la declara. Véase `real`.
+- **Unidades:** folio 314v; folio 317v.
+- **Notas y referencias cruzadas:** aparece en `dos Reales, y veinte, y cinco m[aravedí]s.` para el quartal de centeno y en `vn real, y seis m[aravedí]s.` para la libra de lino. En folio 317v se valora `vn quartaron De añino` en `ocho m[a]r[avedí]s.`. La abreviatura `mrs.` se desarrolla como `maravedís` conforme a la regla general del Manual Editorial para desarrollar abreviaturas; no se fija relación de conversión con `real` porque el expediente no la declara. Véanse `real` y `quartaron`.

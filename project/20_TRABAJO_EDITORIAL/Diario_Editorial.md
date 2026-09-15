@@ -296,3 +296,14 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados Glosario e Índice de medidas; no se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios.
 - No quedan dudas abiertas.
 - El estado avanza a `folio_317v` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad folio 317v.
+- Continuada la respuesta 20.ª: se completa en `diez, y seis Reales` el `esquilmo annual` de cada cerda de cría.
+- Para cada `oveja` se declara `vna libra De lana` valorada en un real y se modera a cuatro reales el valor de la cría por la contingencia expresada en el manuscrito; el `esquilmo annual` se regula en cinco reales.
+- Cada `cordero` da `vn quartaron De añino`, valorado en `ocho m[a]r[avedí]s.`, y cada `carnero, ô borrego` da dos libras de lana, con un `esquilmo annual` de dos reales.
+- Iniciada la valoración de los animales de labor: cada `buey De labranza` se valora en ciento cincuenta reales; la frase queda abierta en `y la baca para` y continúa materialmente en folio 318r.
+- Se desarrollan `p[o]r` y `m[a]r[avedí]s.`; se conservan `annual`, `bacias`, `malparir`, `quartaron`, `añino`, `buey`, `baca` y las divisiones `annu-` / `al`, `cin-` / `co` y `bor-` / `rego`. Los trazos terminales tras palabras completas se omiten como relleno gráfico conforme al criterio vigente.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: categorías y formulación ordinaria quedan en A; `esquilmo`, `añino`, `quartaron`, `libra` / `libras`, `real` / `Reales` y `maravedís` quedan en B; no aparecen candidatos C; la estructura de la valoración pecuaria, la reproducción y el rendimiento por cabeza queda en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados Glosario e Índice de medidas; no se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_318r` como unidad actual.

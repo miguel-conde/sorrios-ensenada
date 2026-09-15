@@ -1505,23 +1505,58 @@ La unidad anterior es el folio 316v. La unidad siguiente es el folio 317v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+Cada vno es su esquilmo annu-
+al diez, y seis Reales: Cada oveja
+De vna libra De lana, que vale
+vn Real, y cada cordero vale cin-
+co Reales, y p[o]r la contingencia
+De no parir todas todos los años,
+p[o]r quedar bacias vnas, y malparir
+otras, moderan su precio en quatro
+Reales, p[o]r lo que es su esquilmo
+annual cinco Reales: Cada cordero
+da vn quartaron De añino, que
+vale ocho m[a]r[avedí]s. Cada carnero, ô bor-
+rego da dos libras De lana, que al
+mismo respecto De vn real libra,
+es su esquilmo annual dos Reales:
+Cada buey De labranza vale ciento,
+y cinquenta Reales: y la baca para
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 317v, página digital 14 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `317v` deriva de la secuencia material y del folio 317r precedente.
+
+La unidad continúa directamente la respuesta 20.ª desde el final de folio 317r: `Cada cerda De cria regulan parir / quatro cerdos, que aquatro Reales / Cada vno es su esquilmo annu- / al diez, y seis Reales`. Con ello se completa en dieciséis reales el `esquilmo annual` atribuido a cada cerda de cría.
+
+Para cada `oveja` se declara `vna libra De lana`, valorada en un real, y cada cordero se valora en cinco reales; por la contingencia de `De no parir todas todos los años`, quedar `bacias` unas y malparir otras, el valor de la cría se modera a cuatro reales y el `esquilmo annual` de la oveja se regula en cinco reales.
+
+A continuación se declara que cada `cordero da vn quartaron De añino`, valorado en ocho maravedís, y que cada `carnero, ô borrego` da dos libras de lana; a razón de un real por libra, su `esquilmo annual` se regula en dos reales.
+
+La unidad inicia después la valoración de los animales de labor: `Cada buey De labranza vale ciento, / y cinquenta Reales: y la baca para`. La inspección auxiliar del comienzo de folio 318r confirma la continuación `El mismo ministerio ciento...`; este cotejo se utiliza únicamente para delimitar folio 317v y no valida por anticipado folio 318r.
+
+Los breves trazos horizontales que prolongan algunos renglones tras palabras completas, entre ellas `quatro` y `esquilmo`, no dividen palabras y se omiten como relleno gráfico sin valor verbal conforme al criterio ya vigente.
+
+La unidad anterior es el folio 317r. La unidad siguiente es el folio 318r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `p[o]r` y `m[a]r[avedí]s.` desarrollan las abreviaturas visibles conforme al criterio general vigente; `mrs.` se desarrolla como `m[a]r[avedí]s.`.
+- Se conservan las grafías y formas documentales `vn`, `vna`, `vnas`, `annual`, `bacias`, `malparir`, `quatro`, `quartaron`, `añino`, `carnero`, `borrego`, `buey` y `baca`.
+- Se conservan las divisiones visibles `annu-` / `al`, `cin-` / `co` y `bor-` / `rego`, incluidos los guiones de final de línea.
+- Se conserva literalmente `De no parir todas todos los años`, sin regularizar su construcción.
+- Los breves trazos al final de renglón tras palabras completas se omiten por carecer de valor verbal y no se confunden con los guiones de división de palabra.
+- El final `y la baca para` continúa sintácticamente en folio 318r; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 317r; folio 318r.
+- Glosario: `esquilmo` / `esquilmos`; `añino`.
+- Índice de medidas: `quartaron`; `libra` / `libras`; `real` / `Reales`; `maravedís`.
 
 ---
 

@@ -107,8 +107,16 @@ No contendrá interpretación histórica extensa.
 - **Término documentado:** `esquilmo`; plural `esquilmos`.
 - **Definición:** producto o rendimiento del ganado que la respuesta 18.ª menciona en relación con el esquileo y con `el demas, que produce todo el ganado`; la respuesta 20.ª regula ese rendimiento por especie y cabeza.
 - **Primera unidad:** folio 316r.
-- **Referencias:** folio 316r; folio 316v; folio 317r; respuestas 18.ª y 20.ª.
-- **Notas:** en folio 316r el expediente declara que el `esquilmo` y los demás productos del ganado serán regulados en la respuesta a la pregunta veinte. En folio 316v comienza efectivamente esa respuesta y se anuncia la regulación de `los esquilmos, que cada especie produce p[o]r cavezas`. En folio 317r se concreta la regulación para vacas y yeguas mediante el valor de sus crías y la cadencia reproductiva, y se declara que a la vaca no se le regula `esquilmo De leche`. La definición se mantiene dentro de ese contexto documental y no fija una acepción más amplia fuera del expediente.
+- **Referencias:** folio 316r; folio 316v; folio 317r; folio 317v; respuestas 18.ª y 20.ª.
+- **Notas:** en folio 316r el expediente declara que el `esquilmo` y los demás productos del ganado serán regulados en la respuesta a la pregunta veinte. En folio 316v comienza efectivamente esa respuesta y se anuncia la regulación de `los esquilmos, que cada especie produce p[o]r cavezas`. En folio 317r se concreta la regulación para vacas y yeguas mediante el valor de sus crías y la cadencia reproductiva, y se declara que a la vaca no se le regula `esquilmo De leche`. En folio 317v continúa la regulación: se completa en dieciséis reales el `esquilmo annual` de cada cerda de cría; para la oveja se regula en cinco reales, para el cordero se declara `vn quartaron De añino` valorado en ocho maravedís y para cada `carnero, ô borrego` en dos reales por dos libras de lana. La definición se mantiene dentro de ese contexto documental y no fija una acepción más amplia fuera del expediente.
+
+### añino
+
+- **Término documentado:** `añino`.
+- **Definición:** producto atribuido al cordero en la respuesta 20.ª; el expediente declara que cada cordero da `vn quartaron De añino`.
+- **Primera unidad:** folio 317v.
+- **Referencias:** folio 317v; Índice de medidas: `quartaron`; `maravedís`; Glosario: `esquilmo`.
+- **Notas:** la unidad valora ese `quartaron De añino` en `ocho m[a]r[avedí]s.`. Se registra únicamente el uso y la relación interna documentados; no se fija en esta fase una equivalencia léxica más amplia que el manuscrito no formule.
 
 ### pies de abejas
 
