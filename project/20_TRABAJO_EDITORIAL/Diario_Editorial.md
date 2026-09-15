@@ -159,7 +159,7 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - En los Ferrañales aparecen expresamente `dos celemines, y medio` y `vn celemin`; la variante plural `celemines` se incorpora al Índice de medidas, sin inferir equivalencias no declaradas.
 - Se conservan las grafías y formas documentales `forrage`, `regadio`, `vn`, `vna`, `zevada`, `centeno`, `haverla`, `celemin` y `celemines`; `terz[er]a` y `quatroz[ienta]s` desarrollan abreviaturas visibles conforme al criterio vigente.
 - Se conservan las divisiones `inter-` / `mision` y `se-` / `gunda`, incluidos los guiones de final de línea.
-- La cara termina en `quatroz[ienta]s setenta, y tres, y media`; la inspección auxiliar del comienzo de folio 311v confirma `de segunda mill cinquenta, y cinco, y medio celemin...`, únicamente para delimitar 311r y sin validar por anticipado la unidad siguiente.
+- La cara termina en `quatroz[ienta]s setenta, y tres, y media`; la inspección auxiliar del comienzo de folio 311v confirma `de segunda mill cinquenta, y cinco, y medio celemin...`, únicamente para delimitar 311r y sin validar por anticipado folio 311v.
 - Evaluadas expresamente las Notas históricas mediante A/B/C/D: especies, cultivos y calidades quedan en A; `celemin` / `celemines` queda en B; no aparecen candidatos C; el reparto cuantitativo de la cabida por especie y calidad queda en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
 - Actualizado `celemin` en el Índice de medidas con la variante plural `celemines` y la nueva aparición en folio 311r; no se generan cambios justificados en Glosario ni en los índices de personas, topónimos, instituciones u oficios.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
@@ -307,3 +307,14 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados Glosario e Índice de medidas; no se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_318r` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad folio 318r.
+- Continuada y concluida la respuesta 20.ª: la vaca para el mismo ministerio se valora en ciento; el buey `dado arenta` se valora en cinco `quartales De Centeno` y la vaca en cuatro, con variación según `suj[e]to.` y `prezio.`.
+- La respuesta 21.ª se contiene íntegramente en la unidad: dieciocho vecinos y ocho medios vecinos, incluidas dos viudas, componen veintiséis `avitadores`; se declaran además ocho residentes que no son considerados vecinos porque no contribuyen con los `tributos reales`, y no hay casa de campo ni alquería.
+- La respuesta 22.ª comienza declarando cuarenta casas `avitab[le]s.`, dos arruinadas y quince pajares separados de ellas para encerrar paja y ganado; la cara termina tras declarar que, aunque es de `Señorio`, no pagan al `S[eño]r` cosa alguna.
+- El comienzo de folio 318v se consulta únicamente para confirmar la continuidad material de la frase final y no se valida por anticipado.
+- Se desarrollan `suj[e]to.`, `p[o]r`, `avitab[le]s.` y `S[eño]r`; se conservan `arenta`, `baca`, `quartales`, `Ala`, `vna`, `ai`, `biudas`, `avitadores`, `contribuien`, `alqueria`, `quarenta`, `quinze`, `Señorio` y las divisiones visibles `Cen-` / `teno`, `con-` / `tribuien` y `sepa-` / `rados`. Las series de puntos y trazos terminales tras palabras completas se omiten como relleno gráfico conforme al criterio vigente.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: categorías ordinarias de ganado, casas y pajares quedan en A; `medio vecino`, `quartal` / `quartales` y `Señorío` / `Señorio` quedan en B; no aparecen candidatos C; la renta y valoración del ganado de labor, la composición vecinal y fiscal y la estructura del caserío quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados Glosario, Índice de medidas e Índice de instituciones; no se generan cambios justificados en los índices de personas, topónimos u oficios.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_318v` como unidad actual.

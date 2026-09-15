@@ -1568,23 +1568,60 @@ La unidad anterior es el folio 317r. La unidad siguiente es el folio 318r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+El mismo ministerio ciento: cada buey
+dado arenta vale cinco quartales De Cen-
+teno, y cada baca quatro, todo ello poco
+mas, ô menos segun su suj[e]to. y prezio.
+21. Ala veinte, y vna dijeron: ai diez,
+y ocho vecinos, y ocho medios vecinos,
+inclusas dos biudas, que componen veinte
+y seis avitadores, y ocho residentes, que no
+se consideran p[o]r vecinos, p[o]r que no con-
+tribuien con los tributos reales: y que
+no ai casa De campo, ni alqueria
+22. Ala veinte, y dos dijeron: que en
+este pueblo ay quarenta casas avitab[le]s.
+y dos arruinadas, y quinze pajares sepa-
+rados De ellas, que sirven para encerrar
+paja, y ganado, y que aunque es De
+Señorio, no pagan al S[eño]r cosa alguna
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 318r, página digital 14 del PDF autoritativo, en posición derecha. La foliación archivística `318`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa y concluye la respuesta 20.ª desde el final de folio 317v: `y la baca para / El mismo ministerio ciento`. Se completa así la valoración de la vaca destinada al mismo ministerio de labranza. A continuación el manuscrito declara que cada buey `dado arenta` vale cinco `quartales De Centeno` y cada vaca cuatro, `todo ello poco / mas, ô menos segun su suj[e]to. y prezio.`.
+
+La respuesta 21.ª se contiene íntegramente en esta cara. Declara dieciocho vecinos y ocho medios vecinos, incluidas dos viudas, que componen veintiséis `avitadores`; declara además ocho residentes a los que no se considera vecinos porque no contribuyen con los `tributos reales`, y afirma que no hay casa de campo ni alquería.
+
+La respuesta 22.ª comienza en esta unidad. Declara cuarenta casas `avitab[le]s.`, dos arruinadas y quince pajares separados de ellas, destinados a encerrar paja y ganado. Añade que, aunque es de `Señorio`, no pagan al `S[eño]r` cosa alguna. La frase queda abierta al final de la cara.
+
+La inspección auxiliar del comienzo de folio 318v confirma la continuidad material inmediata de esa frase; se utiliza únicamente para delimitar folio 318r y no valida por anticipado folio 318v.
+
+Las series de puntos que prolongan los renglones tras `prezio.` y `alqueria`, así como el breve trazo terminal tras `veinte`, se omiten como relleno gráfico sin valor verbal conforme al criterio ya vigente. Los numerales marginales `21.` y `22.` se incorporan al tenor en su posición correspondiente, del mismo modo que las numeraciones de respuestas ya validadas.
+
+La unidad anterior es el folio 317v. La unidad siguiente es el folio 318v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `suj[e]to.`, `p[o]r`, `avitab[le]s.` y `S[eño]r` desarrollan las abreviaturas visibles conforme al criterio general vigente. En `suj[e]to.` se conserva la terminación elevada visible y se desarrolla la letra omitida.
+- `prezio.` se conserva con la grafía histórica y la terminación elevada visible; no se moderniza a `precio`.
+- Se conservan las grafías y formas documentales `arenta`, `baca`, `quartales`, `Ala`, `vna`, `ai`, `biudas`, `avitadores`, `contribuien`, `alqueria`, `quarenta`, `quinze` y `Señorio`.
+- Se conservan las divisiones visibles `Cen-` / `teno`, `con-` / `tribuien` y `sepa-` / `rados`, incluidos los guiones de final de línea.
+- `dado arenta` se conserva como aparece, sin separar ni normalizar la forma documental.
+- Los puntos y trazos terminales de relleno se omiten por carecer de valor verbal y no se confunden con los puntos de abreviatura conservados en `suj[e]to.`, `prezio.` y `avitab[le]s.`.
+- El final `no pagan al S[eño]r cosa alguna` continúa sintácticamente en folio 318v; el cotejo de ese comienzo no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 317v; folio 318v.
+- Glosario: `medio vecino`; `Señorío` / `Señorio`.
+- Índice de instituciones: `Señorío` / `Señorio`.
+- Índice de medidas: `quartal` / `quartales`.
 
 ---
 

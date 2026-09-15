@@ -35,10 +35,10 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 ### Señorío
 
 - **Forma original:** `Señorío`.
-- **Variantes:** ninguna documentada.
+- **Variantes:** `Señorio`.
 - **Clase de institución:** señorío.
-- **Unidades:** folio 307r.
-- **Referencias cruzadas:** `Conde De Luna`; `Concejo de Ordas`.
+- **Unidades:** folio 307r; folio 318r.
+- **Referencias cruzadas:** `Conde De Luna`; `Concejo de Ordas`; Glosario: `Señorío`.
 
 ### Yglesia De él
 

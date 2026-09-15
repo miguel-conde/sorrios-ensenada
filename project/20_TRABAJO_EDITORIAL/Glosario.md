@@ -16,11 +16,19 @@ No contendrá interpretación histórica extensa.
 
 ### Señorío
 
-- **Término documentado:** `Señorío`.
+- **Término documentado:** `Señorío`; variante `Señorio`.
 - **Definición:** condición jurisdiccional que los declarantes atribuyen al lugar o concejo en la segunda respuesta, indicando que pertenece al `Conde De Luna`.
 - **Primera unidad:** folio 307r.
-- **Referencias:** `Conde De Luna`; `Concejo de Ordas`.
-- **Notas:** la entrada describe únicamente lo declarado en la unidad y no identifica ni reconstruye aquí el régimen señorial fuera del expediente.
+- **Referencias:** folio 307r; folio 318r; `Conde De Luna`; `Concejo de Ordas`.
+- **Notas:** la entrada describe únicamente lo declarado en las unidades y no identifica ni reconstruye aquí el régimen señorial fuera del expediente. En folio 318r reaparece la forma `Señorio` al comienzo de la respuesta 22.ª; su frase continúa materialmente en folio 318v, por lo que no se anticipa aquí la interpretación de esa continuación.
+
+### medio vecino
+
+- **Término documentado:** `medios vecinos`.
+- **Definición:** categoría vecinal usada en la respuesta 21.ª junto a `vecinos`; el expediente cuenta dieciocho vecinos y ocho medios vecinos —incluidas dos viudas— como veintiséis `avitadores`, y distingue además ocho `residentes` a los que no considera vecinos porque no contribuyen con los `tributos reales`.
+- **Primera unidad:** folio 318r.
+- **Referencias:** folio 318r; respuesta 21.ª.
+- **Notas:** se registra únicamente la distinción interna del expediente. No se fija aquí una definición fiscal o jurídica general de `medio vecino` fuera de esta respuesta.
 
 ### Ferrañales
 
