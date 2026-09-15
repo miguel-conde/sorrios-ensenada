@@ -37,10 +37,10 @@ No contendrá interpretación histórica extensa.
 
 - **Forma original:** `quartal`.
 - **Variantes:** `quartales`.
-- **Clase de medida:** capacidad de grano usada como referencia para expresar la cabida o sembradura de las tierras y, en respuestas posteriores, cantidades de fruto o prestaciones.
+- **Clase de medida:** capacidad de grano usada como referencia para expresar la cabida o sembradura de las tierras y, en respuestas posteriores, cantidades de fruto, prestaciones o utilidades.
 - **Equivalencia histórica o moderna:** el propio expediente declara en folio 310v que `Cada quatro quartales componen vna fanega`; no se fija equivalencia moderna.
-- **Unidades:** folio 309v; folio 310r; folio 310v; folio 312v; folio 313r; folio 313v; folio 314r; folio 314v; folio 315r.
-- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. En folios 312v, 313r, 313v y 314r la duodécima respuesta expresa mediante `quartal` y `quartales` el fruto producido por determinadas tierras, cultivos y calidades, y usa `El quartal De prado...` como base para declarar rendimientos de yerba. En folio 314v la respuesta 14.ª fija valores monetarios para un quartal de centeno, linaza y trigo. En folio 315r la respuesta 16.ª expresa la primicia en `veinte, y seis quartales De centeno`. Véanse también `baras`, `fanega`, `libras`, `monton`, `carro`, `real` y `maravedís`.
+- **Unidades:** folio 309v; folio 310r; folio 310v; folio 312v; folio 313r; folio 313v; folio 314r; folio 314v; folio 315r; folio 316r.
+- **Notas y referencias cruzadas:** en folio 309v la novena respuesta declara que las tierras de pan llevar se entienden por el `quartal De grano` que puede caber en ellas y que los prados de guadaña se regulan por los `quartales` que pudieren llevar en sembradura. En folio 310r el `quartal` se usa además para expresar la cantidad de simiente empleada según especie, cultivo y calidad de la tierra, incluyendo fracciones de medio quartal. En folio 310v se explicita su relación interna con la `fanega`. En folios 312v, 313r, 313v y 314r la duodécima respuesta expresa mediante `quartal` y `quartales` el fruto producido por determinadas tierras, cultivos y calidades, y usa `El quartal De prado...` como base para declarar rendimientos de yerba. En folio 314v la respuesta 14.ª fija valores monetarios para un quartal de centeno, linaza y trigo. En folio 315r la respuesta 16.ª expresa la primicia en `veinte, y seis quartales De centeno`. En folio 316r la respuesta 17.ª regula para el último molino una utilidad anual de `quatro quartales De centeno`. Véanse también `baras`, `fanega`, `libras`, `monton`, `carro`, `carga`, `real` y `maravedís`.
 
 ### fanega
 
@@ -66,8 +66,8 @@ No contendrá interpretación histórica extensa.
 - **Variantes:** ninguna singular documentada en esta fase.
 - **Clase de medida:** capacidad o cantidad de grano empleada en la regulación de diezmos y en la valoración de utilidad de ruedas de molino.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 315r; folio 315v.
-- **Notas y referencias cruzadas:** la respuesta 16.ª expresa `treinta cargas De centeno`. En folio 315v, dentro de la respuesta 17.ª, se regula para determinadas ruedas de molino una utilidad de `quatro cargas De centeno`. El expediente no declara en estas unidades su relación con `fanega` o `quartal`, por lo que no se infiere ninguna equivalencia. Véanse `fanega` y `quartal`.
+- **Unidades:** folio 315r; folio 315v; folio 316r.
+- **Notas y referencias cruzadas:** la respuesta 16.ª expresa `treinta cargas De centeno`. En folio 315v, dentro de la respuesta 17.ª, se regula para determinadas ruedas de molino una utilidad de `quatro cargas De centeno`. En folio 316r se asignan `Dos cargas De centeno` a cada una de las ruedas propias de los otros propietarios enumerados en la continuidad de la respuesta 17.ª. El expediente no declara en estas unidades su relación con `fanega` o `quartal`, por lo que no se infiere ninguna equivalencia. Véanse `fanega` y `quartal`.
 
 ### libras
 

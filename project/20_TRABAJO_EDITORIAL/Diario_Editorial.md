@@ -261,3 +261,15 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados Glosario e índices de personas, medidas y oficios; no se generan cambios justificados en los índices de topónimos o instituciones.
 - No quedan dudas abiertas.
 - El estado avanza a `folio_316r` como unidad actual.
+
+### 15 de septiembre de 2026
+
+- Validada y cerrada documentalmente la unidad folio 316r.
+- Completada la respuesta 17.ª: a las ruedas de `D[o]n Manuel Ant[oni]o`, `Manuel` y `Fran[cis]co F[ernande]z`, y `Manuel G[onzale]z` y `Fran[cis]co Diez` se regulan `Dos cargas De centeno` por llevar el río los puentes y moler solo la mitad del año; al último molino, `propio De otro D[o]n Manuel`, se regulan `quatro quartales De centeno` por la misma causa.
+- La respuesta 18.ª se contiene íntegramente en la unidad: no hay casa destinada al esquileo del ganado lanar, cada uno esquila el suyo en su habitación y el `esquilmo`, junto con lo demás que produce el ganado, se remitirá a la regulación de la respuesta a la pregunta veinte.
+- La inspección auxiliar del comienzo de folio 316v confirma que allí comienza la respuesta 19.ª, únicamente para delimitar 316r y sin validar por anticipado 316v.
+- Se desarrollan las abreviaturas conforme al criterio vigente y se conservan las grafías y divisiones visibles; los rellenos gráficos se omiten conforme al criterio ya aprobado. No aparece ningún criterio metodológico nuevo.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: formulación de respuestas e identificación ordinaria de ruedas quedan en A; propietarios, `carga` / `cargas`, `quartal` / `quartales`, `molino venturero` y `esquilmo` quedan en B; no aparecen candidatos C; la estacionalidad hidráulica, pérdida de puentes, utilidad molinera y organización doméstica del esquileo quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados Glosario e índices de personas y medidas; no se generan cambios justificados en los índices de topónimos, instituciones u oficios.
+- No quedan dudas abiertas.
+- El estado avanza a `folio_316v` como unidad actual.

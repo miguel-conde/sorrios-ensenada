@@ -1321,23 +1321,59 @@ La unidad anterior es el folio 315r. La unidad siguiente es el folio 316r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+De las ruedas propias De los otros D[o]n
+Manuel Ant[oni]o Manuel, y Fran[cis]co
+F[ernande]z Manuel G[onzale]z, y Fran[cis]co
+Diez: Dos cargas De centeno, a causa
+De llevar el rio los Puentes, y moler
+solo la mitad De el año: y al ul-
+timo propio De otro D[o]n Manu-
+el p[o]r la causa referida le regulan
+solo De utilidad al año quatro qu-
+artales De centeno
+18. Ala decima octaba dijeron:
+que en el term[ino]. De este Lugar no ai
+casa alguna destinada, para esquileo
+De ganado lanar, p[o]rque cada vno esquila
+el suyo en la De su habitaz[i]on: cuio
+esquilmo con el demas, que produce
+todo el ganado en resp[ues]ta. De preg[un]ta. veinte
+ira regulado
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 316r, página digital 12 del PDF autoritativo, en posición derecha. La foliación archivística `316`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa directamente la respuesta 17.ª desde el final de folio 315v: `quatro cargas De centeno, y acada vna / De las ruedas propias De los otros D[o]n...`. A cada una de las ruedas propias de `D[o]n Manuel Ant[oni]o`, `Manuel, y Fran[cis]co F[ernande]z` y `Manuel G[onzale]z, y Fran[cis]co Diez` se regulan `Dos cargas De centeno`, a causa de llevar el río los puentes y moler solo la mitad del año.
+
+El `ultimo`, identificado por continuidad material con el molino venturero descrito al final de folio 315v, aparece como `propio De otro D[o]n Manuel`; por la misma causa se le regulan `quatro quartales De centeno` de utilidad anual. El manuscrito distingue expresamente este `otro D[o]n Manuel`, por lo que no se identifica con los otros homónimos sin evidencia adicional.
+
+La respuesta 18.ª se contiene íntegramente en esta cara. Declara que no existe casa destinada al esquileo de ganado lanar, que cada uno esquila el suyo en su habitación y que el `esquilmo`, junto con lo demás que produce el ganado, será regulado en la respuesta a la pregunta veinte.
+
+La unidad termina en `ira regulado`. La inspección auxiliar del comienzo de folio 316v confirma que allí comienza la respuesta 19.ª; este cotejo se utiliza únicamente para delimitar folio 316r y no valida por anticipado folio 316v.
+
+La unidad anterior es el folio 315v. La unidad siguiente es el folio 316v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `D[o]n`, `Ant[oni]o`, `Fran[cis]co`, `F[ernande]z`, `G[onzale]z`, `p[o]r`, `term[ino].`, `habitaz[i]on`, `resp[ues]ta.` y `preg[un]ta.` desarrollan las abreviaturas visibles conforme al criterio general vigente.
+- Se conservan las grafías y formas documentales `vn`, `ai`, `octaba`, `esquileo`, `cuio`, `esquilmo` e `ira`.
+- Se conservan las divisiones visibles `ul-` / `timo`, `Manu-` / `el` y `qu-` / `artales`, incluidos los guiones de final de línea.
+- No se añade puntuación entre `Ant[oni]o` y `Manuel` ni entre `F[ernande]z` y `Manuel G[onzale]z`, porque no se observa en el manuscrito.
+- `otro D[o]n Manuel` se conserva literalmente y se mantiene separado en el Índice de personas de otros homónimos.
+- Las series de puntos tras `centeno` y los trazos finales de relleno se omiten como signos no verbales sin valor textual conforme al criterio vigente.
+- El comienzo de folio 316v se consulta solo para confirmar que allí se inicia la respuesta 19.ª.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 315v; folio 316v.
+- Glosario: `molino venturero`; `esquilmo`.
+- Índice de personas: `Manuel Ant[oni]o De Bega` / `De Vega`; `Manuel`; `Fran[cis]co F[ernande]z`; `Manuel G[onzale]z`; `Fran[cis]co Diez`; `D[o]n Manuel`.
+- Índice de medidas: `carga` / `cargas`; `quartal` / `quartales`.
 
 ---
 

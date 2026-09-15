@@ -25,11 +25,11 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 ### Manuel Ant[oni]o De Bega
 
 - **Nombre original:** `D[o]n Manuel Ant[oni]o De Bega`.
-- **Variantes:** `D[o]n Manuel Ant[oni]o De Vega` en folio 314v; `D[o]n Manuel Ant[oni]o` en folio 315v, sin apellido expreso en esa unidad.
+- **Variantes:** `D[o]n Manuel Ant[oni]o De Vega` en folio 314v; `D[o]n Manuel Ant[oni]o` en folios 315v y 316r, sin apellido expreso en esas unidades.
 - **Cargo u oficio:** `cura parrocho` / `Cura` / `cura` de este Lugar.
-- **Unidades:** folio 306r; folio 306v; folio 314v; folio 315v.
+- **Unidades:** folio 306r; folio 306v; folio 314v; folio 315v; folio 316r.
 - **Identificación histórica:** no establecida.
-- **Referencias cruzadas:** `cura parrocho`; `Yglesia De él`; propietario de una rueda de molino en folio 315v.
+- **Referencias cruzadas:** `cura parrocho`; `Yglesia De él`; propietario de una rueda de molino en folios 315v-316r.
 
 ### Juan Alv[are]z
 
@@ -89,10 +89,10 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 ### Manuel
 
 - **Nombre original:** `manuel`.
-- **Variantes:** `Manuel` en la recapitulación material del comienzo de folio 316r, usada solo para continuidad.
+- **Variantes:** `Manuel` en folio 316r.
 - **Cargo u oficio:** propietario, junto con `Fran[cis]co F[ernande]z`, de una rueda de molino.
-- **Unidades:** folio 315v.
-- **Identificación histórica:** no establecida; el manuscrito no expresa apellido en la unidad validada y no se le atribuye por inferencia el de su copropietario.
+- **Unidades:** folio 315v; folio 316r.
+- **Identificación histórica:** no establecida; el manuscrito no expresa apellido y no se le atribuye por inferencia el de su copropietario.
 - **Referencias cruzadas:** `Fran[cis]co F[ernande]z`; Glosario: `molino venturero`.
 
 ### Fran[cis]co F[ernande]z
@@ -100,7 +100,7 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Nombre original:** `Fran[cis]co F[ernande]z`.
 - **Variantes:** ninguna documentada.
 - **Cargo u oficio:** copropietario de una rueda de molino.
-- **Unidades:** folio 315v.
+- **Unidades:** folio 315v; folio 316r.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `Manuel`; Glosario: `molino venturero`.
 
@@ -109,7 +109,7 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Nombre original:** `Manuel G[onzale]z`.
 - **Variantes:** ninguna documentada.
 - **Cargo u oficio:** copropietario de una rueda de molino.
-- **Unidades:** folio 315v.
+- **Unidades:** folio 315v; folio 316r.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `Fran[cis]co Diez`.
 
@@ -118,7 +118,7 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Nombre original:** `Fran[cis]co Diez`.
 - **Variantes:** ninguna documentada.
 - **Cargo u oficio:** copropietario de una rueda de molino.
-- **Unidades:** folio 315v.
+- **Unidades:** folio 315v; folio 316r.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `Manuel G[onzale]z`.
 
@@ -166,3 +166,12 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Unidades:** folio 315v.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `Andres Suarez`.
+
+### D[o]n Manuel
+
+- **Nombre original:** `otro D[o]n Manuel`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** propietario del último molino descrito en la respuesta 17.ª, identificado por continuidad con el `molino venturero` de folio 315v.
+- **Unidades:** folio 316r.
+- **Identificación histórica:** no establecida; no se identifica con `D[o]n Manuel Ant[oni]o` ni con el propietario `Manuel` sin apellido, porque el manuscrito lo presenta expresamente como `otro D[o]n Manuel`.
+- **Referencias cruzadas:** Glosario: `molino venturero`; Índice de medidas: `quartal` / `quartales`.

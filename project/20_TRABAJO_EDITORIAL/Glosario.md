@@ -99,5 +99,13 @@ No contendrá interpretación histórica extensa.
 - **Término documentado:** `molino venturero`.
 - **Definición:** molino que, según la respuesta 17.ª, `solo muele algunos meses en el invierno con la agua, que lleva`.
 - **Primera unidad:** folio 315v.
-- **Referencias:** folio 315v; respuesta 17.ª; Índice de personas: `Andres Suarez`; `Marcos Suarez`; `Margarita G[arci]a`; `Manuel G[arci]a`; `Bartholome F[ernande]z`.
-- **Notas:** la entrada se limita a la caracterización interna del expediente: funcionamiento estacional condicionado por el agua disponible. No se fija una tipología molinera externa ni se generaliza el término fuera del documento.
+- **Referencias:** folio 315v; folio 316r; respuesta 17.ª; Índice de personas: `D[o]n Manuel`.
+- **Notas:** la entrada se limita a la caracterización interna del expediente: funcionamiento estacional condicionado por el agua disponible. En folio 316r la continuidad material identifica el `ultimo` molino con el venturero descrito en folio 315v, lo declara `propio De otro D[o]n Manuel` y le regula por la causa referida una utilidad anual de `quatro quartales De centeno`. No se fija una tipología molinera externa ni se generaliza el término fuera del documento.
+
+### esquilmo
+
+- **Término documentado:** `esquilmo`.
+- **Definición:** producto o rendimiento del ganado que la respuesta 18.ª menciona en relación con el esquileo y con `el demas, que produce todo el ganado`.
+- **Primera unidad:** folio 316r.
+- **Referencias:** folio 316r; respuesta 18.ª.
+- **Notas:** el expediente declara que el `esquilmo` y los demás productos del ganado serán regulados en la respuesta a la pregunta veinte. La definición se mantiene dentro de ese contexto documental y no fija una acepción más amplia fuera del expediente.
