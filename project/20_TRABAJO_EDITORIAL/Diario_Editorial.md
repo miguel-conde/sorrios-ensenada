@@ -284,3 +284,15 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados Glosario e índices de personas, oficios y medidas; no se generan cambios justificados en los índices de topónimos o instituciones.
 - No quedan dudas abiertas.
 - El estado avanza a `folio_317r` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad folio 317r.
+- Continuada la respuesta 20.ª con la regulación del `esquilmo` por cabeza para vacas, yeguas y el comienzo de las cerdas.
+- Para cada `baca`, el `ternero, ô ternera` se valora en `veinte, y dos Reales`; al considerarse regular `parir vn año, y descansar otro`, el `esquilmo annual` se regula en once reales, sin regular `esquilmo De leche` `p[o]r no vacarse alguna`.
+- Para cada `yegua De vientre`, el macho o mula se valora en `doz[iento]s. Reales` y el potro o potra en cincuenta reales; la alternancia entre `al contrario` y `al natural` produce un `esquilmo annual` de ciento veinticinco reales.
+- Para cada `cerda De cria` se regulan cuatro cerdos a cuatro reales cada uno; la frase continúa materialmente en folio 317v.
+- La cara termina en `quatro cerdos, que aquatro Reales`; solo se consulta el comienzo de folio 317v para confirmar la continuidad y no se valida por anticipado.
+- Se desarrollan `p[o]r`, `q[u]e` y `doz[iento]s.`; se conservan `baca`, `vacarse`, `annual`, `aquatro` y las divisiones visibles. No aparece criterio metodológico nuevo.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: categorías y formulación ordinaria quedan en A; `esquilmo` y `real` / `Reales` quedan en B; no aparecen candidatos C; las valoraciones pecuarias y su anualización quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados Glosario e Índice de medidas; no se generan cambios justificados en los índices de personas, topónimos, instituciones u oficios.
+- No quedan dudas abiertas.
+- El estado avanza a `folio_317v` como unidad actual.

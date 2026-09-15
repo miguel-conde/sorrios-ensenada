@@ -102,8 +102,8 @@ No contendrá interpretación histórica extensa.
 - **Variantes:** alternancia de mayúscula y minúscula según el manuscrito; `Reales vellon` en folio 316v.
 - **Clase de medida:** unidad monetaria empleada para expresar el valor ordinario de frutos y otras cuantías monetarias del expediente.
 - **Equivalencia histórica o moderna:** no fijada en esta fase.
-- **Unidades:** folio 314v; folio 315r; folio 316v.
-- **Notas y referencias cruzadas:** la respuesta 14.ª valora en reales el quartal de centeno, cebada, linaza y trigo, la libra de lino y el carro de yerba. En dos casos combina reales con `m[aravedí]s.`; el expediente no declara en esa unidad una relación de conversión y no se infiere aquí. En folio 315r los `diezmos menudos` de lana, crías mulares y demás se regulan `a ci- / ento, y quarenta Reales`. En folio 316v la respuesta 19.ª regula la utilidad anual de cada `p[ie] De abejas` en `dos Reales vellon`; se conserva esa expresión documental sin fijar conversión moderna. Véase `maravedís`.
+- **Unidades:** folio 314v; folio 315r; folio 316v; folio 317r.
+- **Notas y referencias cruzadas:** la respuesta 14.ª valora en reales el quartal de centeno, cebada, linaza y trigo, la libra de lino y el carro de yerba. En dos casos combina reales con `m[aravedí]s.`; el expediente no declara en esa unidad una relación de conversión y no se infiere aquí. En folio 315r los `diezmos menudos` de lana, crías mulares y demás se regulan `a ci- / ento, y quarenta Reales`. En folio 316v la respuesta 19.ª regula la utilidad anual de cada `p[ie] De abejas` en `dos Reales vellon`. En folio 317r la respuesta 20.ª usa reales para valorar las crías y regular el `esquilmo annual` de vacas y yeguas, además de iniciar la valoración de los cerdos. No se fija conversión moderna. Véase `maravedís`.
 
 ### maravedís
 

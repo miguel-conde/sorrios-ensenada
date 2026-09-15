@@ -1446,23 +1446,54 @@ La unidad anterior es el folio 316r. La unidad siguiente es el folio 317r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+ternero, ô ternera regulan el valor
+De este bueno con malo en veinte,
+y dos Reales: Y p[o]r ser regular el
+parir vn año, y descansar otro, De
+su esquilmo annual once Reales, y
+no la regulan esquilmo De leche
+p[o]r no vacarse alguna: El De cada yegua
+De vientre, q[u]e consideran parir sin
+descanso, Regulan el valor De el macho,
+ô mula en doz[iento]s. Reales: y el De potro,
+ô potra bueno con malo en cinquen-
+ta Reales: y p[o]r ser regular ad-
+ministrarse vnos años al contrario, y
+otros al natural, es el esquilmo an-
+nual ciento, y veinte, y cinco Reales:
+Cada cerda De cria regulan parir
+quatro cerdos, que aquatro Reales
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 317r, página digital 13 del PDF autoritativo, en posición derecha. La foliación archivística `317`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa directamente la respuesta 20.ª desde el final de folio 316v: `en esta forma: El De cada baca por el / ternero, ô ternera...`. Para cada `baca`, el valor del ternero o ternera se regula en `veinte, y dos Reales`; al considerar regular `parir vn año, y descansar otro`, el `esquilmo annual` queda en once reales. El manuscrito añade que no se regula `esquilmo De leche` `p[o]r no vacarse alguna`.
+
+Para cada `yegua De vientre`, que consideran parir sin descanso, se regula el valor del macho o mula en `doz[iento]s. Reales` y el del potro o potra en cincuenta reales. Al declararse regular administrarse unos años `al contrario` y otros `al natural`, el `esquilmo annual` se fija en ciento veinticinco reales. La relación aritmética interna entre 200, 50 y 125 apoya la lectura de la abreviatura `doz[iento]s.` sin introducir una equivalencia externa.
+
+Al final comienza la regulación de cada `cerda De cria`, a la que se atribuyen cuatro cerdos valorados `aquatro Reales`. La unidad termina en `quatro cerdos, que aquatro Reales`. La inspección auxiliar del comienzo de folio 317v confirma la continuación `Cada vno es su esquilmo annu-...`; este cotejo se utiliza únicamente para delimitar folio 317r y no valida por anticipado folio 317v.
+
+La unidad anterior es el folio 316v. La unidad siguiente es el folio 317v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `p[o]r`, `q[u]e` y `doz[iento]s.` desarrollan las abreviaturas visibles conforme al criterio general vigente; `doz[iento]s.` desarrolla la forma abreviada `doz.s`.
+- Se conservan las grafías y formas documentales `baca`, `vacarse`, `annual`, `esquilmo`, `yegua De vientre`, `potro`, `potra`, `administrarse`, `cria` y `aquatro`.
+- Se conservan las divisiones visibles `cinquen-` / `ta`, `ad-` / `ministrarse` y `an-` / `nual`, incluidos los guiones de final de línea.
+- `p[o]r no vacarse alguna` se conserva literalmente tal como aparece; no se normaliza ni se fuerza aquí una interpretación léxica adicional.
+- La lectura `doz[iento]s. Reales` queda además apoyada por la propia regulación manuscrita: junto con los cincuenta reales del potro o potra, la alternancia declarada produce el valor anual de ciento veinticinco reales.
+- El comienzo de folio 317v se consulta únicamente para confirmar la continuidad de la frase final y no se valida por anticipado.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 316v; folio 317v.
+- Glosario: `esquilmo` / `esquilmos`.
+- Índice de medidas: `real` / `Reales`.
 
 ---
 
