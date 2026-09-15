@@ -318,3 +318,15 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados Glosario, Índice de medidas e Índice de instituciones; no se generan cambios justificados en los índices de personas, topónimos u oficios.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_318v` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad folio 318v.
+- Completada la respuesta 22.ª con `por el establecim[ien]to. De el suelo.`.
+- La respuesta 23.ª se contiene íntegramente en la unidad y declara que el común no tiene `propios`.
+- La respuesta 24.ª se contiene íntegramente en la unidad y declara que el común no disfruta `arbitrio, ni renta alguna`.
+- La respuesta 25.ª comienza declarando que el común debe satisfacer `dozientos Reales` cada año y desglosa gastos en la festividad del Corpus, ocho reales para limpiar las fuentes, quince reales pagados al `hospital De Ynocentes De la ciudad De Valladolid` y diez reales por el `derecho De Mesta en la ciudad De León`, además de otras cantidades.
+- La cara termina en `por no tener`; la inspección auxiliar del comienzo de folio 319r confirma `propias las pagan por repartimi- / ento entre los vecinos`, únicamente para delimitar 318v y sin validar por anticipado 319r.
+- Se desarrollan `establecim[ien]to.` y `p[o]r`; se conservan `Ala`, `quatro`, `comun`, `deve`, `vn`, `dozientos`, `Reales`, `Ynocentes`, `Mesta`, `Cantidades` y las divisiones `quin-` / `ce` y `Val-` / `ladolid`. Los rellenos gráficos se omiten conforme al criterio vigente.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: formulaciones ordinarias, festividad del Corpus y limpieza de fuentes quedan en A; `propios`, `arbitrio`, `Hospital De Ynocentes`, `Mesta`, `Valladolid`, `León` y `real` / `Reales` quedan en B; no aparecen candidatos C; la estructura del gasto comunal, los pagos, la ausencia de propios y arbitrios y el repartimiento por falta de recursos propios quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados Glosario e índices de instituciones, topónimos y medidas; no se generan cambios justificados en los índices de personas u oficios.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_319r` como unidad actual.

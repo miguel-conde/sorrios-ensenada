@@ -83,3 +83,23 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Fuente de identificación:** el Ayuntamiento de Santa María de Ordás incluye Villapodambre entre los núcleos actuales del municipio: <https://www.aytosantamariadeordas.es/municipio/>.
 - **Grado de seguridad:** muy alto por identidad de forma y contexto territorial.
 - **Referencias cruzadas:** `Rioseco`; `Tapia`; `Santa Maria`.
+
+### Valladolid
+
+- **Forma original:** `Val-` / `ladolid`.
+- **Forma moderna:** Valladolid.
+- **Localización:** la respuesta 25.ª sitúa allí el `hospital De Ynocentes` al que el común declara pagar quince reales.
+- **Unidades:** folio 318v.
+- **Fuente de identificación:** identidad formal y contextual del topónimo; no requiere propuesta de equivalencia.
+- **Grado de seguridad:** muy alto.
+- **Referencias cruzadas:** `Hospital De Ynocentes`.
+
+### León
+
+- **Forma original:** `León`.
+- **Forma moderna:** León.
+- **Localización:** la respuesta 25.ª sitúa allí el pago del `derecho De Mesta`.
+- **Unidades:** folio 318v.
+- **Fuente de identificación:** identidad formal y contextual del topónimo; no requiere propuesta de equivalencia.
+- **Grado de seguridad:** muy alto.
+- **Referencias cruzadas:** `Mesta`.

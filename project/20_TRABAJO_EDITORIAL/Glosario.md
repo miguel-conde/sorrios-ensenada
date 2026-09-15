@@ -30,6 +30,22 @@ No contendrá interpretación histórica extensa.
 - **Referencias:** folio 318r; respuesta 21.ª.
 - **Notas:** se registra únicamente la distinción interna del expediente. No se fija aquí una definición fiscal o jurídica general de `medio vecino` fuera de esta respuesta.
 
+### propios
+
+- **Término documentado:** `propios`.
+- **Definición:** categoría de recursos del común mencionada en la respuesta 23.ª; el expediente declara que `este comun no tiene propios algunos`.
+- **Primera unidad:** folio 318v.
+- **Referencias:** folio 318v; respuesta 23.ª; Glosario: `arbitrio`.
+- **Notas:** se registra únicamente la categoría tal como funciona en el expediente; no se reconstruye aquí un régimen general de bienes o rentas de propios.
+
+### arbitrio
+
+- **Término documentado:** `arbitrio`.
+- **Definición:** categoría de recurso o ingreso del común mencionada en la respuesta 24.ª; el expediente declara que `el comun no disfruta arbitrio, ni renta alguna`.
+- **Primera unidad:** folio 318v.
+- **Referencias:** folio 318v; respuesta 24.ª; Glosario: `propios`.
+- **Notas:** se conserva el uso documental sin fijar en esta fase una definición fiscal más amplia fuera del expediente.
+
 ### Ferrañales
 
 - **Término documentado:** `Ferrañales`; variante singular `Ferrañal`.

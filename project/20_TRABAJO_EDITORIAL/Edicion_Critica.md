@@ -1633,23 +1633,59 @@ La unidad anterior es el folio 317v. La unidad siguiente es el folio 318v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+por el establecim[ien]to. De el suelo.
+23. Ala veinte, y tres dijeron:
+que este comun no tiene propios
+algunos.
+24. Ala veinte, y quatro dijeron:
+que el comun no disfruta arbitrio, ni
+renta alguna.
+25. Ala veinte, y cinco dijeron:
+que este comun deve satisfacer en cada
+vn año dozientos Reales, que se gastan
+en la festividad De el Corpus: Ocho
+reales en limpiar las fuentes, quin-
+ce reales, que pagan al hospital
+De Ynocentes De la ciudad De Val-
+ladolid, y diez Reales p[o]r el derecho De
+Mesta en la ciudad De León, y
+mas, y otras Cantidades, por no tener
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 318v, página digital 15 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `318v` deriva de la secuencia material y del folio 318r precedente.
+
+La unidad continúa y concluye la respuesta 22.ª desde el final de folio 318r: `aunque es De / Señorio, no pagan al S[eño]r cosa alguna / por el establecim[ien]to. De el suelo.`.
+
+La respuesta 23.ª se contiene íntegramente en esta cara y declara que el común no tiene `propios`. La respuesta 24.ª se contiene también íntegramente y declara que el común no disfruta `arbitrio, ni / renta alguna`.
+
+La respuesta 25.ª comienza en esta unidad. Declara que el común debe satisfacer cada año `dozientos Reales` y comienza a desglosar los gastos: la festividad del Corpus, ocho reales para limpiar las fuentes, quince reales pagados al `hospital / De Ynocentes De la ciudad De Val- / ladolid` y diez reales por el `derecho De / Mesta en la ciudad De León`, además de otras cantidades.
+
+La unidad termina en `por no tener`. La inspección auxiliar del comienzo de folio 319r confirma la continuación `propias las pagan por repartimi- / ento entre los vecinos`; este cotejo se utiliza únicamente para delimitar folio 318v y no valida por anticipado folio 319r.
+
+Las series de puntos que prolongan los renglones tras `suelo.`, `algunos.` y `renta alguna.` y los breves trazos terminales tras palabras completas se omiten como relleno gráfico sin valor verbal conforme al criterio ya vigente.
+
+La unidad anterior es el folio 318r. La unidad siguiente es el folio 319r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `establecim[ien]to.` y `p[o]r` desarrollan las abreviaturas visibles conforme al criterio general vigente.
+- Se conservan las grafías y formas documentales `Ala`, `quatro`, `comun`, `deve`, `vn`, `dozientos`, `Reales`, `Ynocentes`, `Mesta` y `Cantidades`.
+- Se conservan las divisiones visibles `quin-` / `ce` y `Val-` / `ladolid`, incluidos los guiones de final de línea.
+- El trazo terminal tras `ni` no divide palabra y se omite como relleno gráfico sin valor verbal.
+- El final `por no tener` continúa sintácticamente en folio 319r con `propias las pagan por repartimi- / ento entre los vecinos`; el cotejo de ese comienzo no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 318r; folio 319r.
+- Glosario: `propios`; `arbitrio`.
+- Índice de instituciones: `Hospital De Ynocentes`; `Mesta`.
+- Índice de topónimos: `Valladolid`; `León`.
+- Índice de medidas: `real` / `Reales`.
 
 ---
 

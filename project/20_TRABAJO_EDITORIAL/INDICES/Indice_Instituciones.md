@@ -57,3 +57,21 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Unidades:** folio 314v.
 - **Identificación histórica:** la mención se relaciona con el Voto de Santiago por el propio tenor `boto ala fabrica De el Apostol Santiago`; no se identifica aquí una administración receptora más precisa de la que declara el manuscrito.
 - **Referencias cruzadas:** `boto`.
+
+### Hospital De Ynocentes
+
+- **Forma original:** `hospital De Ynocentes`.
+- **Variantes:** ninguna documentada en esta fase.
+- **Clase de institución:** hospital mencionado como destinatario de una cantidad anual del común.
+- **Unidades:** folio 318v.
+- **Identificación histórica:** el manuscrito lo sitúa en `la ciudad De Valladolid`; no se precisa en esta fase una identificación institucional externa más allá del tenor documental.
+- **Referencias cruzadas:** `Valladolid`; Índice de medidas: `real` / `Reales`.
+
+### Mesta
+
+- **Forma original:** `Mesta`.
+- **Variantes:** ninguna documentada en esta fase.
+- **Clase de institución:** referencia institucional asociada al `derecho De Mesta` pagado por el común.
+- **Unidades:** folio 318v.
+- **Identificación histórica:** el expediente declara un pago de diez reales por el `derecho De Mesta en la ciudad De León`; no se amplía aquí la identificación institucional fuera de esa mención.
+- **Referencias cruzadas:** `León`; Índice de medidas: `real` / `Reales`.
