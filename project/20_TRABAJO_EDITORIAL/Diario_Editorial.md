@@ -342,3 +342,14 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Añadidos `alcavalas` y `servicio ordinario y extraordinario` al Glosario; actualizado `Conde De Luna` en el Índice de personas. No se generan cambios justificados en los índices de topónimos, instituciones, medidas u oficios.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_319v` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad folio 319v.
+- Completada la respuesta 28.ª con `inta, y tres Reales.`, quedando el pago anual por las `alcavalas` en `seiscientos treinta, y tres Reales`.
+- La respuesta 29.ª se contiene íntegramente: hay una taberna que, por no haber quien la arriende desde hace mucho tiempo, anda `por vecera entre los vecinos` y no rinde utilidad al común ni a particular; se declara además un `pozo De pesca`, propio del `Ex[celentísi]mo Señor Conde De Luna`, arrendado al presente en nueve reales.
+- Se conserva literalmente la repetición `De` / `De` entre renglones consecutivos y se desarrollan `Ex[celentísi]mo`, `q[u]e`, `hosp[ita]l` y `preg[un]ta.` conforme al criterio vigente; los rellenos gráficos se omiten. No aparece ningún criterio metodológico nuevo.
+- La respuesta 30.ª declara que no hay hospital alguno; la 31.ª declara que no hay cosa alguna de las que contiene la pregunta correspondiente; la 32.ª comienza y queda abierta en `Ala treinta, y dos dijeron: que`.
+- La inspección auxiliar del comienzo de folio 320r confirma `no ai cosa alguna De las que contiene / la pregunta`, únicamente para delimitar 319v y sin validar por anticipado 320r.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: formulaciones negativas ordinarias y ausencia de hospital quedan en A; `alcavalas`, `vecera`, `Conde De Luna` y `real` / `Reales` quedan en B; no aparecen candidatos C; el importe de las alcabalas, el funcionamiento rotatorio de la taberna, la ausencia de utilidad y el `pozo De pesca` señorial arrendado quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados Glosario, Índice de personas e Índice de medidas; no se generan cambios justificados en los índices de topónimos, instituciones u oficios.
+- No quedan dudas abiertas.
+- El estado avanza a `folio_320r` como unidad actual.

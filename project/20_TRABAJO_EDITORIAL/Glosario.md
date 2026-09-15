@@ -153,10 +153,18 @@ No contendrá interpretación histórica extensa.
 ### alcavalas
 
 - **Término documentado:** `alcavalas`.
-- **Definición:** derecho fiscal mencionado en la respuesta 28.ª; el expediente declara que las del lugar están `enajenadas afavor De el Ex[celentísi]mo S[eño]r Conde De Luna` y que los vecinos realizan por este derecho un pago anual.
+- **Definición:** derecho fiscal mencionado en la respuesta 28.ª; el expediente declara que las del lugar están `enajenadas afavor De el Ex[celentísi]mo S[eño]r Conde De Luna` y que los vecinos pagan anualmente por este derecho `seiscientos tre-` / `inta, y tres Reales.`.
 - **Primera unidad:** folio 319r.
-- **Referencias:** folio 319r; respuesta 28.ª; Índice de personas: `Conde De Luna`.
-- **Notas:** los declarantes afirman expresamente que no saben si la `enajenaz[i]on.` fue por servicio pecuniario u otro motivo. La cuantía anual queda materialmente partida al final de folio 319r y continúa en folio 319v; no se anticipa aquí su cierre hasta validar esa unidad.
+- **Referencias:** folio 319r; folio 319v; respuesta 28.ª; Índice de personas: `Conde De Luna`; Índice de medidas: `real` / `Reales`.
+- **Notas:** los declarantes afirman expresamente que no saben si la `enajenaz[i]on.` fue por servicio pecuniario u otro motivo. La cuantía anual se completa materialmente en folio 319v en seiscientos treinta y tres reales. Se registra únicamente lo declarado en el expediente y no se reconstruye aquí el régimen general de las alcabalas.
+
+### vecera
+
+- **Término documentado:** `vecera`.
+- **Definición:** turno o rotación entre los vecinos por el que, según la respuesta 29.ª, funciona la taberna cuando no hay quien la arriende.
+- **Primera unidad:** folio 319v.
+- **Referencias:** folio 319v; respuesta 29.ª.
+- **Notas:** el expediente declara que la taberna `anda por vecera entre los vecinos` y que por esa razón no rinde utilidad al común ni a particular. La definición se limita a esta función contextual y no fija una acepción general fuera del expediente.
 
 ### servicio ordinario y extraordinario
 

@@ -1758,23 +1758,61 @@ La unidad anterior es el folio 318v. La unidad siguiente es el folio 319v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+inta, y tres Reales.
+29. Ala veinte, y nueve dijeron: que
+en este pueblo ay vna taberna, que
+por no haver quien la arriende De
+De mucho tiempo a esta parte
+anda por vecera entre los vecinos:
+por cuia razon no rinden utilidad
+alguna al comun, ni a particular;
+y que ay vn pozo De pesca, propio
+De el Ex[celentísi]mo Señor Conde De Luna
+en el rio De el que al presente esta
+arrendado en nueve reales, que es la
+utilidad, que le produce
+30. Ala treinta dijeron: q[u]e no ay hosp[ita]l alguno./
+31. Ala treinta, y vna dijeron, que no ay
+cosa alguna De las q[u]e contiene la preg[un]ta.
+32. Ala treinta, y dos dijeron: que
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 319v, página digital 16 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `319v` deriva de la secuencia material y del folio 319r precedente.
+
+La unidad continúa y concluye la respuesta 28.ª desde el final de folio 319r: `vn año sus vecinos seiscientos tre- / inta, y tres Reales.`. Queda así fijado en `seiscientos treinta, y tres Reales` el pago anual declarado por los vecinos por razón de las `alcavalas` enajenadas.
+
+La respuesta 29.ª se contiene íntegramente en esta cara. Declara que hay una taberna que, `por no haver quien la arriende De / De mucho tiempo a esta parte`, anda `por vecera entre los vecinos`; por esa razón no rinde utilidad al común ni a particular. Declara además un `pozo De pesca`, propio del `Ex[celentísi]mo Señor Conde De Luna`, en el río, arrendado al presente en nueve reales, cantidad que se declara como su utilidad.
+
+La repetición `De` al final de un renglón y al comienzo del siguiente se conserva porque ambas formas son visibles en el manuscrito; no se normaliza la dittografía.
+
+La respuesta 30.ª se contiene íntegramente y declara que no hay hospital alguno. La respuesta 31.ª se contiene íntegramente y declara que no hay cosa alguna de las que contiene la pregunta correspondiente. La respuesta 32.ª comienza en esta unidad y queda abierta tras `Ala treinta, y dos dijeron: que`.
+
+La inspección auxiliar del comienzo de folio 320r confirma la continuación `no ai cosa alguna De las que contiene / la pregunta`; este cotejo se utiliza únicamente para delimitar folio 319v y no valida por anticipado folio 320r.
+
+Las series de puntos que prolongan los renglones tras `Reales.` y `produce` se omiten como relleno gráfico sin valor verbal conforme al criterio vigente. La puntuación `alguno./` al final de la respuesta 30.ª se conserva por formar parte del cierre visible.
+
+La unidad anterior es el folio 319r. La unidad siguiente es el folio 320r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `Ex[celentísi]mo`, `q[u]e`, `hosp[ita]l` y `preg[un]ta.` desarrollan las abreviaturas visibles conforme al criterio general vigente. `Señor` aparece escrito de forma plena en esta unidad y se conserva sin desarrollo editorial.
+- Se conservan las grafías y formas documentales `Ala`, `vna`, `haver`, `vecera`, `cuia`, `comun`, `vn`, `rio`, `Reales`, `reales` y `ay`.
+- La forma `vecera` se lee con seguridad en el manuscrito y se conserva sin modernizar; su función contextual se registra en el Glosario.
+- Se conserva literalmente la repetición `De` / `De` entre dos renglones consecutivos de la respuesta 29.ª.
+- La división `tre-` / `inta` atraviesa el límite material entre folios 319r y 319v y se conserva en la continuidad editorial de ambas unidades.
+- El comienzo de folio 320r se consulta solo para confirmar la continuidad de la respuesta 32.ª y no se valida por anticipado.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 319r; folio 320r.
+- Glosario: `alcavalas`; `vecera`.
+- Índice de personas: `Conde De Luna`.
+- Índice de medidas: `real` / `Reales`.
 
 ---
 
