@@ -104,8 +104,16 @@ No contendrá interpretación histórica extensa.
 
 ### esquilmo
 
-- **Término documentado:** `esquilmo`.
-- **Definición:** producto o rendimiento del ganado que la respuesta 18.ª menciona en relación con el esquileo y con `el demas, que produce todo el ganado`.
+- **Término documentado:** `esquilmo`; plural `esquilmos`.
+- **Definición:** producto o rendimiento del ganado que la respuesta 18.ª menciona en relación con el esquileo y con `el demas, que produce todo el ganado`; la respuesta 20.ª comienza su regulación por especie y cabeza.
 - **Primera unidad:** folio 316r.
-- **Referencias:** folio 316r; respuesta 18.ª.
-- **Notas:** el expediente declara que el `esquilmo` y los demás productos del ganado serán regulados en la respuesta a la pregunta veinte. La definición se mantiene dentro de ese contexto documental y no fija una acepción más amplia fuera del expediente.
+- **Referencias:** folio 316r; folio 316v; respuestas 18.ª y 20.ª.
+- **Notas:** en folio 316r el expediente declara que el `esquilmo` y los demás productos del ganado serán regulados en la respuesta a la pregunta veinte. En folio 316v comienza efectivamente esa respuesta y se anuncia la regulación de `los esquilmos, que cada especie produce p[o]r cavezas`. La definición se mantiene dentro de ese contexto documental y no fija una acepción más amplia fuera del expediente.
+
+### pies de abejas
+
+- **Término documentado:** `p[ie]s. De abejas`.
+- **Definición:** expresión de cómputo utilizada en la respuesta 19.ª para contar las abejas declaradas y distribuirlas entre sus propietarios.
+- **Primera unidad:** folio 316v.
+- **Referencias:** folio 316v; respuesta 19.ª; Índice de personas: `Agustin G[arci]a Ordas`; `Fran[cis]co Diez`; `Manuel G[arci]a`; `Juan F[ernande]z`; `Margarita G[arci]a`.
+- **Notas:** el expediente declara dieciocho `p[ie]s. De abejas` y regula para cada uno una utilidad anual de `dos Reales vellon`. Se registra únicamente la función de cómputo que tiene la expresión en el documento; no se fija equivalencia moderna ni se reconstruye aquí una tipología apícola externa.

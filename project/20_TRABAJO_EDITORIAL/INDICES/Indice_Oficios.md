@@ -68,3 +68,12 @@ No contendrá biografías ni interpretación histórica extensa.
 - **Personas o instituciones relacionadas:** ninguna identificada en esta unidad.
 - **Unidades:** folio 306v.
 - **Notas:** aparece en la fórmula `p[o]r antemi el ss[criba]no`.
+
+### Presbitero
+
+- **Forma original:** `Presbitero`.
+- **Variantes:** ninguna documentada.
+- **Forma normalizada:** presbítero.
+- **Personas o instituciones relacionadas:** `Agustin G[arci]a Ordas`.
+- **Unidades:** folio 316v.
+- **Notas:** la respuesta 19.ª presenta a `D[o]n Agustin G[arci]a Ordas Presbitero` entre los propietarios de `p[ie]s. De abejas`; no se amplía aquí su identificación biográfica.

@@ -1385,23 +1385,56 @@ La unidad anterior es el folio 315v. La unidad siguiente es el folio 316v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+19ª Ala decima nobena dijeron; que
+en el term[ino]. De este Lugar ai diez, y ocho
+p[ie]s. De abejas: las siete propias De
+D[o]n Agustin G[arci]a Ordas Presbitero:
+Seis De Fran[cis]co Diez: Tres De Ma-
+nuel G[arci]a, vna De Juan F[ernande]z
+y otra De Margarita G[arci]a todos
+vez[ino]s. De este Lugar: Regulan De
+utilidad annual De cada vna en
+dos Reales vellon
+20ª Ala veinte dijeron: que en este pu-
+eblo, y su term[ino]. ai las especies De gana-
+dos, que se esplican: Bacuno: Lanar:
+De Zerda: Yeguas, y crias mulares:
+Y en quanto a los esquilmos, que cada
+especie produce p[o]r cavezas, lo regulan
+en esta forma: El De cada baca por el
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 316v, página digital 13 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `316v` deriva de la secuencia material y del folio 316r precedente.
+
+La respuesta 19.ª se contiene íntegramente en esta cara. Declara `diez, y ocho p[ie]s. De abejas`: siete propios de `D[o]n Agustin G[arci]a Ordas Presbitero`, seis de `Fran[cis]co Diez`, tres de `Manuel G[arci]a`, uno de `Juan F[ernande]z` y otro de `Margarita G[arci]a`, todos vecinos del lugar. Para cada uno se regula una utilidad anual de `dos Reales vellon`.
+
+La respuesta 20.ª comienza en esta unidad y enumera las especies de ganado `Bacuno`, `Lanar`, `De Zerda`, `Yeguas, y crias mulares`. A continuación anuncia la regulación de `los esquilmos, que cada especie produce p[o]r cavezas`.
+
+La unidad termina en `en esta forma: El De cada baca por el`. La inspección auxiliar del comienzo de folio 317r confirma la continuidad inmediata de la valoración; este cotejo se utiliza únicamente para delimitar folio 316v y no valida por anticipado folio 317r.
+
+La unidad anterior es el folio 316r. La unidad siguiente es el folio 317r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `term[ino].`, `p[ie]s.`, `D[o]n`, `G[arci]a`, `Fran[cis]co`, `F[ernande]z`, `vez[ino]s.` y `p[o]r` desarrollan las abreviaturas visibles conforme al criterio general vigente.
+- `Juan F[ernande]z` desarrolla la misma abreviatura de apellido ya documentada como `F[ernande]z` en unidades anteriores; no se identifica por ello a esta persona con ningún homónimo.
+- Se conservan las grafías y formas documentales `nobena`, `annual`, `vellon`, `Bacuno`, `Lanar`, `De Zerda`, `Yeguas`, `crias mulares`, `esquilmos`, `cavezas` y `baca`.
+- Se conservan las divisiones visibles `Ma-` / `nuel`, `pu-` / `eblo` y `gana-` / `dos`, incluidos los guiones de final de línea.
+- Los rellenos gráficos que prolongan el cierre de la respuesta 19.ª se omiten como signos no verbales sin valor textual conforme al criterio vigente.
+- El comienzo de folio 317r se consulta únicamente para confirmar la continuidad de la frase final y no se valida por anticipado.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 316r; folio 317r.
+- Glosario: `pies de abejas`; `esquilmo` / `esquilmos`.
+- Índice de personas: `Agustin G[arci]a Ordas`; `Fran[cis]co Diez`; `Manuel G[arci]a`; `Juan F[ernande]z`; `Margarita G[arci]a`.
+- Índice de oficios: `Presbitero`.
+- Índice de medidas: `real` / `Reales`; `Reales vellon`.
 
 ---
 

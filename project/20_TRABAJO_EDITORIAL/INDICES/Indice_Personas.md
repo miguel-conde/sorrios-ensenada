@@ -117,28 +117,28 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 
 - **Nombre original:** `Fran[cis]co Diez`.
 - **Variantes:** ninguna documentada.
-- **Cargo u oficio:** copropietario de una rueda de molino.
-- **Unidades:** folio 315v; folio 316r.
+- **Cargo u oficio:** copropietario de una rueda de molino; propietario de seis `p[ie]s. De abejas`.
+- **Unidades:** folio 315v; folio 316r; folio 316v.
 - **Identificación histórica:** no establecida.
-- **Referencias cruzadas:** `Manuel G[onzale]z`.
+- **Referencias cruzadas:** `Manuel G[onzale]z`; Glosario: `pies de abejas`.
 
 ### Manuel G[arci]a
 
 - **Nombre original:** `Manuel G[arci]a`.
 - **Variantes:** ninguna documentada.
-- **Cargo u oficio:** propietario de participación en un molino de dos ruedas; aparece acompañado de `c[onsor]tes`.
-- **Unidades:** folio 315v.
+- **Cargo u oficio:** propietario de participación en un molino de dos ruedas; aparece acompañado de `c[onsor]tes`; propietario de tres `p[ie]s. De abejas`.
+- **Unidades:** folio 315v; folio 316v.
 - **Identificación histórica:** no establecida.
-- **Referencias cruzadas:** `Margarita G[arci]a`; `Bartholome F[ernande]z`.
+- **Referencias cruzadas:** `Margarita G[arci]a`; `Bartholome F[ernande]z`; Glosario: `pies de abejas`.
 
 ### Margarita G[arci]a
 
 - **Nombre original:** `Margarita G[arci]a`.
-- **Variantes:** `Margarita` en la recapitulación de propietarios dentro de la misma unidad.
-- **Cargo u oficio:** copropietaria de una rueda de molino.
-- **Unidades:** folio 315v.
+- **Variantes:** `Margarita` en la recapitulación de propietarios dentro de folio 315v.
+- **Cargo u oficio:** copropietaria de una rueda de molino; propietaria de un `p[ie] De abejas`.
+- **Unidades:** folio 315v; folio 316v.
 - **Identificación histórica:** no establecida.
-- **Referencias cruzadas:** `Manuel G[arci]a`; `Bartholome F[ernande]z`.
+- **Referencias cruzadas:** `Manuel G[arci]a`; `Bartholome F[ernande]z`; Glosario: `pies de abejas`.
 
 ### Bartholome F[ernande]z
 
@@ -175,3 +175,21 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Unidades:** folio 316r.
 - **Identificación histórica:** no establecida; no se identifica con `D[o]n Manuel Ant[oni]o` ni con el propietario `Manuel` sin apellido, porque el manuscrito lo presenta expresamente como `otro D[o]n Manuel`.
 - **Referencias cruzadas:** Glosario: `molino venturero`; Índice de medidas: `quartal` / `quartales`.
+
+### Agustin G[arci]a Ordas
+
+- **Nombre original:** `D[o]n Agustin G[arci]a Ordas`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** `Presbitero`; propietario de siete `p[ie]s. De abejas`.
+- **Unidades:** folio 316v.
+- **Identificación histórica:** no establecida.
+- **Referencias cruzadas:** Índice de oficios: `Presbitero`; Glosario: `pies de abejas`.
+
+### Juan F[ernande]z
+
+- **Nombre original:** `Juan F[ernande]z`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** propietario de un `p[ie] De abejas`; vecino del lugar.
+- **Unidades:** folio 316v.
+- **Identificación histórica:** no establecida; no se identifica por inferencia con otras personas de apellido Fernández documentadas en el expediente.
+- **Referencias cruzadas:** Glosario: `pies de abejas`.

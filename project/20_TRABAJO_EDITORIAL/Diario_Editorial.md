@@ -273,3 +273,14 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados Glosario e índices de personas y medidas; no se generan cambios justificados en los índices de topónimos, instituciones u oficios.
 - No quedan dudas abiertas.
 - El estado avanza a `folio_316v` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad folio 316v.
+- La respuesta 19.ª se contiene íntegramente en la unidad: se declaran dieciocho `p[ie]s. De abejas`, distribuidos entre `D[o]n Agustin G[arci]a Ordas Presbitero`, `Fran[cis]co Diez`, `Manuel G[arci]a`, `Juan F[ernande]z` y `Margarita G[arci]a`, todos vecinos del lugar.
+- Cada `p[ie] De abejas` se regula en una utilidad anual de `dos Reales vellon`.
+- La respuesta 20.ª comienza enumerando las especies de ganado `Bacuno`, `Lanar`, `De Zerda`, `Yeguas, y crias mulares` y abre la regulación de `los esquilmos, que cada especie produce p[o]r cavezas`.
+- La cara termina en `en esta forma: El De cada baca por el`; la inspección auxiliar del comienzo de folio 317r se utiliza únicamente para confirmar la continuidad y no valida por anticipado esa unidad.
+- Se desarrollan las abreviaturas conforme al criterio vigente y se conservan las grafías y divisiones visibles; los rellenos gráficos se omiten conforme al criterio ya aprobado. No aparece ningún criterio metodológico nuevo.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: formulación de respuestas y enumeración ordinaria de especies ganaderas quedan en A; `p[ie]s. De abejas`, propietarios, `Presbitero`, `Reales vellon` y `esquilmo` / `esquilmos` quedan en B; no aparecen candidatos C; la distribución de los pies de abejas, su utilidad anual y el comienzo de la regulación pecuaria por especie y cabeza quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados Glosario e índices de personas, oficios y medidas; no se generan cambios justificados en los índices de topónimos o instituciones.
+- No quedan dudas abiertas.
+- El estado avanza a `folio_317r` como unidad actual.
