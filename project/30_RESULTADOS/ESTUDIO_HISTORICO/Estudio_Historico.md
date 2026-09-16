@@ -12,6 +12,8 @@
 
 Este Estudio Histórico constituye la segunda obra del proyecto y es independiente de la edición paleográfica semidiplomática. Su base documental sobre Sorribas y Santibáñez de Ordás son exclusivamente las 35 unidades validadas y cerradas de la Edición Crítica.
 
+La base documental del Estudio Histórico es exclusivamente la edición paleográfica validada.
+
 Esta primera versión no incorpora un corpus externo autónomo. El Glosario, los índices y el Diario Editorial se usan solo como instrumentos auxiliares de localización y control. Las afirmaciones sobre la localidad se remiten a folios de la edición; los cálculos sencillos y las inferencias se señalan como tales.
 
 Las Respuestas Generales no son una descripción neutral de todos los aspectos de la vida local. Responden a un interrogatorio fiscal y administrativo y contienen declaraciones, estimaciones, regulaciones por quinquenio y juicios de peritos. Por ello, las cifras deben leerse según su función documental. En especial:
