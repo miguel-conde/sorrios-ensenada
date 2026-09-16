@@ -18,8 +18,8 @@ skill:
   path: plugins/sorrios-ensenada/skills/editar-catastro-sorrios
 
 phase:
-  current: edicion_paleografica
-  historical_study_enabled: false
+  current: estudio_historico
+  historical_study_enabled: true
 
 authorities:
   manuscript:
@@ -82,7 +82,7 @@ documents:
   historical_study:
     provider: github
     path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
-    enabled: false
+    enabled: true
 
 archive:
   provider: github

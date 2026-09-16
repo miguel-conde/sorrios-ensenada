@@ -15,6 +15,11 @@ def test_schema_2_has_github_paths_and_pdf_metadata():
         "canonical_branch": "main",
         "project_root": "project",
     }
+    assert project["phase"] == {
+        "current": "estudio_historico",
+        "historical_study_enabled": True,
+    }
+    assert project["documents"]["historical_study"]["enabled"] is True
     manuscript = project["authorities"]["manuscript"]
     assert manuscript["provider"] == "google_drive"
     assert manuscript["access"] == "read_only"

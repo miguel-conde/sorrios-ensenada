@@ -48,6 +48,7 @@ SECTIONS = [
 
 ALLOWED_POSITIONS = {"complete", "left", "right"}
 ALLOWED_OPERATION_STATUS = {"clean", "prepared", "failed", "verified"}
+ALLOWED_PHASES = {"edicion_paleografica", "estudio_historico"}
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 
 
@@ -125,6 +126,27 @@ def validate_project(repo_root: Path) -> list[str]:
         errors.append("Versión de plugin distinta de 2.0.1")
     if project.get("skill", {}).get("version") != "2.0.1":
         errors.append("Versión de skill distinta de 2.0.1")
+
+    phase = project.get("phase", {})
+    phase_current = phase.get("current")
+    historical_enabled = phase.get("historical_study_enabled")
+    historical_document = project.get("documents", {}).get("historical_study", {})
+
+    if phase_current not in ALLOWED_PHASES:
+        errors.append("Fase del proyecto inválida")
+    if state.get("phase") != phase_current:
+        errors.append("estado.yaml.phase no coincide con proyecto.yaml phase.current")
+
+    if phase_current == "edicion_paleografica":
+        if historical_enabled is not False:
+            errors.append("El Estudio Histórico no puede estar habilitado durante edicion_paleografica")
+        if historical_document.get("enabled") is not False:
+            errors.append("documents.historical_study.enabled debe ser false durante edicion_paleografica")
+    elif phase_current == "estudio_historico":
+        if historical_enabled is not True:
+            errors.append("historical_study_enabled debe ser true durante estudio_historico")
+        if historical_document.get("enabled") is not True:
+            errors.append("documents.historical_study.enabled debe ser true durante estudio_historico")
 
     manuscript = project.get("authorities", {}).get("manuscript", {})
     if manuscript.get("provider") != "google_drive":
@@ -205,6 +227,19 @@ def validate_project(repo_root: Path) -> list[str]:
                 errors.append("La última unidad cerrada no precede a la unidad actual")
             if state.get("next_unit") != expected_next:
                 errors.append("La unidad siguiente no coincide con unidades.yaml")
+
+        if phase_current == "estudio_historico":
+            final_id = ids[-1]
+            if state.get("last_closed_unit") != final_id or state.get("last_validated_unit") != final_id:
+                errors.append("No puede activarse el Estudio Histórico antes de cerrar las 35 unidades")
+            if state.get("current_unit") is not None or state.get("next_unit") is not None or state.get("current_location") is not None:
+                errors.append("El Estudio Histórico exige estado terminal de la edición paleográfica")
+            if state.get("open_issues") != []:
+                errors.append("El Estudio Histórico no puede activarse con dudas abiertas")
+            if state.get("pending_tasks") != []:
+                errors.append("El Estudio Histórico no puede activarse con tareas pendientes")
+            if state.get("operation", {}).get("status") != "clean":
+                errors.append("El Estudio Histórico no puede activarse con una operación incompleta")
 
     if state.get("last_closed_unit") != state.get("last_validated_unit"):
         errors.append("La última unidad validada y cerrada no coincide")

@@ -41,6 +41,22 @@ def test_state_and_unit_sequence_are_coherent():
         assert state["next_unit"] == expected_next
 
 
+def test_historical_study_phase_is_active_and_coherent():
+    project = yaml.safe_load((PROJECT / "00_CONTROL" / "proyecto.yaml").read_text(encoding="utf-8"))
+    state = yaml.safe_load((PROJECT / "00_CONTROL" / "estado.yaml").read_text(encoding="utf-8"))
+    study = (PROJECT / "30_RESULTADOS" / "ESTUDIO_HISTORICO" / "Estudio_Historico.md").read_text(encoding="utf-8")
+
+    assert project["phase"]["current"] == "estudio_historico"
+    assert project["phase"]["historical_study_enabled"] is True
+    assert project["documents"]["historical_study"]["enabled"] is True
+    assert state["phase"] == "estudio_historico"
+    assert state["current_unit"] is None
+    assert state["open_issues"] == []
+    assert state["pending_tasks"] == []
+    assert "**Estado:** activo" in study
+    assert "base documental del Estudio Histórico es exclusivamente la edición paleográfica validada" in study
+
+
 def test_manual_and_edition_versions_and_structure_are_preserved():
     project = yaml.safe_load((PROJECT / "00_CONTROL" / "proyecto.yaml").read_text(encoding="utf-8"))
     manual = (PROJECT / "00_CONTROL" / "Manual_Editorial.md").read_text(encoding="utf-8")
