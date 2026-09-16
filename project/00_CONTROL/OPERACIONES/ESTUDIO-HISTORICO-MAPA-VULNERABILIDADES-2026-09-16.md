@@ -4,7 +4,7 @@
 **Proyecto:** `sorrios-ensenada-1752`  
 **Fase:** `estudio_historico`  
 **Base:** `main@a612df60e5e4f079f6d9aa9a97f810e86805fcca`  
-**Estado de preparación:** `prepared`
+**Estado:** prepared
 
 ## 1. Objeto
 
