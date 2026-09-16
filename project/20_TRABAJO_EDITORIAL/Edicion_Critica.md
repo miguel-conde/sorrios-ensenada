@@ -369,7 +369,7 @@ cen sin intermision pelo, y otoño.
 ducen sin descanso solo vn pelo.
 8ª Prados abiertos de secano, que pro-
 ducen sin descanso solo vn pelo, y el
-otono se pasta De comun.
+otoño se pasta De comun.
 9ª Prados entreparedes, que producen vn
 año, y descansan otro.
 10ª Tierras matorrales, que no se
