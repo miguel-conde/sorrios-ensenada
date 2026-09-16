@@ -47,10 +47,10 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Nombre original:** `Remirio Rodriguez`.
 - **Variantes:** ninguna documentada.
 - **Cargo u oficio:** vecino; `vnico oficial de Justiz[i]a`.
-- **Unidades:** folio 306r; folio 306v; folio 321r.
+- **Unidades:** folio 306r; folio 306v; folio 321r; folio 321v.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `Juan Alv[are]z`; `oficial de Justiz[i]a`.
-- **Notas:** folio 321r declara que es de `sesenta, y nueve` años, poco más o menos.
+- **Notas:** folio 321r declara que es de `sesenta, y nueve` años, poco más o menos; su nombre figura nuevamente en el cierre continuado en folio 321v como `Remirio Rodriguez=`.
 
 ### Dom[ing]o Diez
 
@@ -77,10 +77,10 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Nombre original:** `Dom[ing]o Suarez`.
 - **Variantes:** ninguna documentada.
 - **Cargo u oficio:** `perito nombrado De Oficio`.
-- **Unidades:** folio 306v; folio 321r.
+- **Unidades:** folio 306v; folio 321r; folio 321v.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `perito`.
-- **Notas:** la lectura de folio 306v queda corregida de la anterior `Dom[ing]o Vicarez` a `Dom[ing]o Suarez` tras cotejo directo del PDF con la declaración de edad de folio 321r y la firma que continúa materialmente en folio 321v. Folio 321r declara que es de `Cinquenta, y nueve` años, poco más o menos.
+- **Notas:** la lectura de folio 306v queda corregida de la anterior `Dom[ing]o Vicarez` a `Dom[ing]o Suarez` tras cotejo directo del PDF con la declaración de edad de folio 321r y la firma repartida entre folios 321r-321v. Folio 321r declara que es de `Cinquenta, y nueve` años, poco más o menos; folio 321v completa `Dom[ing]o / Suarez:`.
 
 ### Conde De Luna
 
@@ -199,3 +199,13 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Unidades:** folio 316v.
 - **Identificación histórica:** no establecida; no se identifica por inferencia con otras personas de apellido Fernández documentadas en el expediente.
 - **Referencias cruzadas:** Glosario: `pies de abejas`.
+
+### Manuel Ant[oni]o Alonso
+
+- **Nombre original:** `Manuel Ant[oni]o Alonso`.
+- **Variantes:** ninguna documentada.
+- **Cargo u oficio:** escribano, identificado funcionalmente por la fórmula `ante mi` en el cierre.
+- **Unidades:** folio 321v.
+- **Identificación histórica:** no establecida.
+- **Referencias cruzadas:** Índice de oficios: `escribano`.
+- **Notas:** aparece en la fórmula final `an- / te mi Manuel Ant[oni]o Alonso==`; no se amplía su identificación más allá de la función documental expresada por el manuscrito.

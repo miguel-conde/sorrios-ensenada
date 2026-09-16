@@ -390,3 +390,12 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados el Índice de personas y el Índice de oficios; no se generan cambios justificados en Glosario ni en los índices de topónimos, instituciones o medidas.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_321v` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad folio 321v.
+- Completado el cierre textual de las respuestas generales con `Suarez: Remirio Rodriguez= an- / te mi Manuel Ant[oni]o Alonso==`, que continúa directamente el último `Dom[ing]o` de folio 321r.
+- `Ant[oni]o` desarrolla la abreviatura visible `Antº`; se conserva la división `an-` / `te` y los signos `=`, `==` y los dos puntos visibles.
+- Bajo la fórmula lineal aparecen dos firmas o rúbricas autógrafas de validación; se describen paleográficamente sin forzar una transcripción lineal de sus trazos, conforme al Manual Editorial v1.6, § 11. Las formas débiles de la mitad inferior se tratan como transparencia o traspaso sin valor textual propio.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: la fórmula de cierre y las rúbricas quedan en A; `Dom[ing]o Suarez`, `Remirio Rodriguez`, `Manuel Ant[oni]o Alonso` y `escribano` quedan en B; no aparecen candidatos C; la práctica de firma, validación y cierre notarial queda en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados el Índice de personas y el Índice de oficios; no se generan cambios justificados en Glosario ni en los índices de topónimos, instituciones o medidas.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas en esta unidad.
+- El estado avanza a `hoja_enfrentada_posterior` como unidad actual.

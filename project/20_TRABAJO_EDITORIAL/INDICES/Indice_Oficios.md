@@ -63,11 +63,11 @@ No contendrá biografías ni interpretación histórica extensa.
 ### escribano
 
 - **Forma original:** `ss[criba]no`.
-- **Variantes:** ninguna documentada.
+- **Variantes:** fórmula `ante mi` en folio 321v.
 - **Forma normalizada:** escribano.
-- **Personas o instituciones relacionadas:** ninguna identificada en esta unidad.
-- **Unidades:** folio 306v.
-- **Notas:** aparece en la fórmula `p[o]r antemi el ss[criba]no`.
+- **Personas o instituciones relacionadas:** `Manuel Ant[oni]o Alonso`.
+- **Unidades:** folio 306v; folio 321v.
+- **Notas:** en folio 306v aparece la fórmula `p[o]r antemi el ss[criba]no` sin nombre expreso; en folio 321v la fórmula final `an- / te mi Manuel Ant[oni]o Alonso==` permite identificar nominalmente a Manuel Antonio Alonso en función de escribano.
 
 ### Presbitero
 

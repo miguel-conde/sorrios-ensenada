@@ -369,7 +369,7 @@ cen sin intermision pelo, y otoño.
 ducen sin descanso solo vn pelo.
 8ª Prados abiertos de secano, que pro-
 ducen sin descanso solo vn pelo, y el
-otoño se pasta De comun.
+otono se pasta De comun.
 9ª Prados entreparedes, que producen vn
 año, y descansan otro.
 10ª Tierras matorrales, que no se
@@ -2018,23 +2018,40 @@ Los puntos y trazos que prolongan el renglón tras `alguno` se omiten como relle
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+Suarez: Remirio Rodriguez= an-
+te mi Manuel Ant[oni]o Alonso==
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 321v, página digital 18 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `321v` deriva de la secuencia material y del folio 321r precedente.
+
+La unidad continúa directamente el último `Dom[ing]o` de folio 321r: `Dom[ing]o / Suarez: Remirio Rodriguez= an- / te mi Manuel Ant[oni]o Alonso==`. Con esta fórmula queda completado el cierre textual de las Respuestas generales.
+
+La fórmula `an- / te mi Manuel Ant[oni]o Alonso==` identifica nominalmente a Manuel Antonio Alonso en la función documental de escribano, en coherencia con la fórmula ya documentada en folio 306v `p[o]r antemi el ss[criba]no`.
+
+Bajo el texto lineal se observan dos firmas o rúbricas autógrafas de validación. Conforme al Manual Editorial v1.6, § 11, se describen como elementos gráficos de validación y no se fuerza una transcripción lineal de sus trazos internos.
+
+En la mitad inferior se perciben formas débiles procedentes de transparencia o traspaso de tinta. No constituyen texto propio de esta unidad y no se incorporan a la transcripción.
+
+La unidad anterior es el folio 321r. La unidad siguiente es la Hoja enfrentada posterior.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `Ant[oni]o` desarrolla la abreviatura visible `Antº` conforme al criterio general vigente.
+- Se conservan literalmente `Suarez:`, `Rodriguez=`, `Alonso==` y la división visible `an-` / `te`, incluido el guion de final de línea.
+- `Suarez:` completa materialmente el `Dom[ing]o` con que termina folio 321r; con ello queda confirmada la firma `Dom[ing]o Suarez`.
+- Las dos firmas o rúbricas autógrafas inferiores se describen, pero no se convierten en texto lineal ni se fuerzan sus grafías internas, conforme al criterio vigente para signos y elementos de validación.
+- Las formas débiles de la mitad inferior se tratan como transparencia o traspaso y carecen de valor textual propio.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 321r; Hoja enfrentada posterior.
+- Índice de personas: `Dom[ing]o Suarez`; `Remirio Rodriguez`; `Manuel Ant[oni]o Alonso`.
+- Índice de oficios: `escribano`.
 
 ---
 
