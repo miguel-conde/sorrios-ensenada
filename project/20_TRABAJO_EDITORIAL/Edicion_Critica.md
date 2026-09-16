@@ -1824,23 +1824,60 @@ La unidad anterior es el folio 319r. La unidad siguiente es el folio 320r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+no ai cosa alguna De las que contiene
+la pregunta.
+33. Ala treinta, y tres dijeron, que
+los artes, que espresa la pregunta
+ai solo vn herrero, a quien p[o]r ocupar-
+se la mayor parte De el año en el
+exercicio De labrador le consideran solo
+De ganancia diaria, p[o]r el oficio De tal
+herrero medio real, ademas De el que
+gana como labrador.
+34. Ala treinta, y quatro dijeron: que
+no ai cosa alguna De las que contiene
+la pregunta.
+35. Ala treinta, y cinco dijeron; que
+ai diez, y ocho jornaleros, los catorce
+hijos De familia, que estan en comp[añí]a.
+De sus padres, tres criados servi[ent]es.
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 320r, página digital 16 del PDF autoritativo, en posición derecha. La foliación archivística `320`, visible en el margen superior derecho, se usa como encabezado editorial y no se incorpora al tenor de la transcripción.
+
+La unidad continúa y concluye la respuesta 32.ª desde el final de folio 319v: `Ala treinta, y dos dijeron: que / no ai cosa alguna De las que contiene / la pregunta.`.
+
+La respuesta 33.ª se contiene íntegramente en esta cara. Declara que entre los `artes` expresados en la pregunta hay solo `vn herrero`; como ocupa la mayor parte del año en el `exercicio De labrador`, se le considera únicamente `medio real` de ganancia diaria por el oficio de herrero, además de lo que gana como labrador.
+
+La respuesta 34.ª se contiene íntegramente y declara que no hay cosa alguna de las que contiene la pregunta correspondiente.
+
+La respuesta 35.ª comienza en esta unidad. Declara `diez, y ocho jornaleros`, de los cuales catorce son `hijos De familia` que están en compañía de sus padres y tres son `criados servi[ent]es.`. La respuesta continúa materialmente en folio 320v.
+
+La inspección auxiliar del comienzo de folio 320v confirma únicamente la continuidad de la respuesta 35.ª y la prosecución del cómputo laboral; este cotejo se utiliza para delimitar folio 320r y no valida por anticipado la unidad siguiente.
+
+Las series de puntos que prolongan los renglones tras `pregunta` y `labrador` se omiten como relleno gráfico sin valor verbal conforme al criterio ya vigente.
+
+La unidad anterior es el folio 319v. La unidad siguiente es el folio 320v.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `p[o]r`, `comp[añí]a.` y `servi[ent]es.` desarrollan las abreviaturas visibles conforme al criterio general vigente.
+- Se conservan las grafías y formas documentales `ai`, `Ala`, `espresa`, `vn`, `herrero`, `exercicio`, `labrador`, `real`, `quatro`, `jornaleros` y `hijos De familia`.
+- Se conserva la división visible `ocupar-` / `se`, incluido el guion de final de línea.
+- La forma abreviada `comp[añí]a.` se conserva dentro de la expresión `hijos De familia, que estan en comp[añí]a. / De sus padres`; no se moderniza la disposición.
+- La respuesta 35.ª continúa materialmente en folio 320v; el cotejo de ese comienzo se limita a la delimitación de la unidad y no valida por anticipado la siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 319v; folio 320v.
+- Glosario: `hijo de familia`.
+- Índice de oficios: `herrero`; `labrador`; `jornalero`; `criado sirviente`.
+- Índice de medidas: `real` / `Reales`.
 
 ---
 

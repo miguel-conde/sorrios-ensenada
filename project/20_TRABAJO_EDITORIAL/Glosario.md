@@ -173,3 +173,11 @@ No contendrá interpretación histórica extensa.
 - **Primera unidad:** folio 319r.
 - **Referencias:** folio 319r; respuesta 27.ª.
 - **Notas:** se registra únicamente la formulación y condición declarada en el expediente, sin reconstruir en esta fase el régimen fiscal general de este servicio.
+
+### hijo de familia
+
+- **Término documentado:** `hijos De familia`.
+- **Definición:** categoría usada en la respuesta 35.ª para catorce de los dieciocho jornaleros declarados, a quienes el expediente identifica como hijos que están en compañía de sus padres.
+- **Primera unidad:** folio 320r.
+- **Referencias:** folio 320r; respuesta 35.ª; Índice de oficios: `jornalero`.
+- **Notas:** se registra únicamente la función de la expresión dentro del expediente; no se fija aquí una definición jurídica o fiscal general fuera de esta respuesta.

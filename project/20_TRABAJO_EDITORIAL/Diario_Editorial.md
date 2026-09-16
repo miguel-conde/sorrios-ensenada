@@ -353,3 +353,17 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados Glosario, Índice de personas e Índice de medidas; no se generan cambios justificados en los índices de topónimos, instituciones u oficios.
 - No quedan dudas abiertas.
 - El estado avanza a `folio_320r` como unidad actual.
+
+### 16 de septiembre de 2026
+
+- Comprobados los dos extremos pendientes del cierre anterior: el workflow `Portable Python tests` del commit `07255c64351fc85946ae97bf08cbd274ee6b5f60` concluyó con `success` y el árbol recursivo de ese commit no contiene el PDF autoritativo.
+- Validada y cerrada documentalmente la unidad folio 320r.
+- Completada la respuesta 32.ª con `no ai cosa alguna De las que contiene / la pregunta.`.
+- La respuesta 33.ª se contiene íntegramente: declara un solo `herrero`, que ocupa la mayor parte del año en el `exercicio De labrador`; por el oficio de herrero se le considera `medio real` de ganancia diaria, además de lo que gana como labrador.
+- La respuesta 34.ª se contiene íntegramente y declara que no hay cosa alguna de las que contiene la pregunta correspondiente.
+- La respuesta 35.ª comienza declarando dieciocho `jornaleros`: catorce `hijos De familia` que están en compañía de sus padres y tres `criados servi[ent]es.`; la respuesta continúa materialmente en folio 320v.
+- Se desarrollan `p[o]r`, `comp[añí]a.` y `servi[ent]es.`; se conserva `ocupar-` / `se` y los rellenos gráficos se omiten conforme al criterio vigente. No aparece ningún criterio metodológico nuevo.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: las fórmulas negativas de las respuestas 32.ª y 34.ª y la formulación general quedan en A; `hijo de familia`, `herrero`, `labrador`, `jornalero`, `criado sirviente` y `real` quedan en B; no aparecen candidatos C; la combinación ocupacional herrero/labrador, la ganancia diaria y la estructura del trabajo jornalero quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados Glosario, Índice de oficios e Índice de medidas; no se generan cambios justificados en los índices de personas, topónimos o instituciones.
+- No quedan dudas abiertas.
+- El estado avanza a `folio_320v` como unidad actual.

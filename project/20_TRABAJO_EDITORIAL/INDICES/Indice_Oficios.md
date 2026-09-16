@@ -77,3 +77,39 @@ No contendrá biografías ni interpretación histórica extensa.
 - **Personas o instituciones relacionadas:** `Agustin G[arci]a Ordas`.
 - **Unidades:** folio 316v.
 - **Notas:** la respuesta 19.ª presenta a `D[o]n Agustin G[arci]a Ordas Presbitero` entre los propietarios de `p[ie]s. De abejas`; no se amplía aquí su identificación biográfica.
+
+### herrero
+
+- **Forma original:** `herrero`.
+- **Variantes:** ninguna documentada.
+- **Forma normalizada:** herrero.
+- **Personas o instituciones relacionadas:** ninguna identificada nominalmente.
+- **Unidades:** folio 320r.
+- **Notas:** la respuesta 33.ª declara un solo herrero; como ocupa la mayor parte del año en el `exercicio De labrador`, le consideran `medio real` de ganancia diaria por el oficio de herrero, además de lo que gana como labrador.
+
+### labrador
+
+- **Forma original:** `labrador`.
+- **Variantes:** ninguna validada en esta fase.
+- **Forma normalizada:** labrador.
+- **Personas o instituciones relacionadas:** herrero no identificado nominalmente en folio 320r.
+- **Unidades:** folio 320r.
+- **Notas:** en la respuesta 33.ª el único herrero ocupa la mayor parte del año en el `exercicio De labrador`; no se anticipan las apariciones de la unidad siguiente.
+
+### jornalero
+
+- **Forma original:** `jornaleros`.
+- **Variantes:** ninguna validada en esta fase.
+- **Forma normalizada:** jornalero.
+- **Personas o instituciones relacionadas:** ninguna identificada nominalmente.
+- **Unidades:** folio 320r.
+- **Notas:** la respuesta 35.ª comienza declarando dieciocho jornaleros; el desglose continúa materialmente en folio 320v, que no se valida por anticipado.
+
+### criado sirviente
+
+- **Forma original:** `criados servi[ent]es.`.
+- **Variantes:** ninguna documentada.
+- **Forma normalizada:** criado sirviente.
+- **Personas o instituciones relacionadas:** ninguna identificada nominalmente.
+- **Unidades:** folio 320r.
+- **Notas:** la respuesta 35.ª incluye tres criados sirvientes dentro del cómputo de dieciocho jornaleros.
