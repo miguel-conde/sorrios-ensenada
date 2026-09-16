@@ -399,3 +399,13 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados el Índice de personas y el Índice de oficios; no se generan cambios justificados en Glosario ni en los índices de topónimos, instituciones o medidas.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas en esta unidad.
 - El estado avanza a `hoja_enfrentada_posterior` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad final `hoja_enfrentada_posterior`.
+- La lectura visual de la página 18, mitad derecha, confirma que no contiene escritura significativa propia: solo se perciben formas muy débiles compatibles con transparencia o traspaso de tinta y alguna mota, sin valor textual ni función documental identificable.
+- La transcripción se fija como `[En blanco]` conforme al Manual Editorial v1.6, § 12. No se observan foliación, signaturas ni otras marcas propias que requieran tratamiento adicional.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: la condición material de cara en blanco y las huellas sin valor textual quedan en A; no aparecen elementos B, candidatos C ni materiales D. La sección queda justificadamente sin notas históricas.
+- No se generan altas ni cambios justificados en Glosario ni en los índices de personas, topónimos, instituciones, medidas u oficios.
+- Aplicado el criterio terminal aprobado para el cierre de la unidad 35: `last_validated_unit` y `last_closed_unit` pasan a `hoja_enfrentada_posterior`; `current_unit`, `next_unit` y `current_location` quedan en `null`; `pending_tasks` queda vacío y `operation.status` permanece `clean`.
+- La finalización de las 35 unidades no cambia automáticamente la fase: se mantienen `phase: edicion_paleografica` y `historical_study_enabled: false`.
+- Adaptados el esquema documental, el validador y el test de invariantes para reconocer de forma explícita el estado terminal, sin modificar el Manual Editorial.
+- Las 35 unidades de la secuencia quedan validadas y cerradas, sin dudas abiertas.

@@ -2063,23 +2063,28 @@ La unidad anterior es el folio 321r. La unidad siguiente es la Hoja enfrentada p
 
 ### Transcripción paleográfica
 
-*(Pendiente de validación en su turno. Si se confirma la ausencia de escritura significativa, se consignará `[En blanco]`.)*
+[En blanco]
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente a la hoja enfrentada posterior, página digital 18 del PDF autoritativo, en posición derecha. La lectura visual confirma que no contiene escritura significativa propia y se consigna `[En blanco]` conforme al Manual Editorial v1.6, § 12.
+
+Se perciben formas muy débiles compatibles con transparencia o traspaso de tinta y alguna mota. No constituyen texto propio de esta unidad y no se incorporan a la transcripción. No se observan foliación, signaturas ni otras marcas propias que requieran tratamiento adicional.
+
+La unidad anterior es el folio 321v. Esta es la última unidad de la secuencia material y no existe una unidad posterior.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- La cara no presenta escritura significativa propia.
+- Las formas muy débiles visibles corresponden a transparencia o traspaso de tinta y carecen de valor textual propio; las motas tampoco tienen función documental identificable.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 321v.
 
 ---
 

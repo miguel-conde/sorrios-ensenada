@@ -18,6 +18,10 @@ Los controles y documentos vivos no llevan IDs de Drive. Los valores `path` son 
 
 Debe incluir fase, última unidad validada y cerrada, unidad actual y siguiente, ubicación, dudas, tareas y operación. `operation.status` admite `clean`, `prepared`, `failed` o `verified`.
 
+Mientras queden unidades por cerrar, `current_unit` debe identificar una unidad de `unidades.yaml`, `current_location` debe coincidir con ella, `last_closed_unit` y `last_validated_unit` deben identificar la unidad inmediatamente anterior y `next_unit` debe coincidir con la unidad siguiente.
+
+Cuando estén cerradas las 35 unidades se usa el estado terminal: `last_validated_unit` y `last_closed_unit` identifican la última unidad de `unidades.yaml`; `current_unit`, `next_unit` y `current_location` son `null`; `pending_tasks` es una lista vacía. El cierre de la secuencia no cambia por sí solo la fase ni activa el Estudio Histórico.
+
 Si una operación usa `allowed_changes`, sus elementos son rutas lógicas relativas y se normalizan a POSIX antes de comparar.
 
 ## `project/00_CONTROL/unidades.yaml`

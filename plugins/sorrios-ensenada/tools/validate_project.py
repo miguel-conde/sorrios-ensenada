@@ -181,13 +181,30 @@ def validate_project(repo_root: Path) -> list[str]:
                 errors.append(f"Cadena previous/next inválida en unidad {unit.get('id')}")
 
         current = state.get("current_unit")
-        if current not in ids:
+        if current is None:
+            final_id = ids[-1]
+            if state.get("last_closed_unit") != final_id or state.get("last_validated_unit") != final_id:
+                errors.append("El estado terminal no cierra la última unidad")
+            if state.get("next_unit") is not None:
+                errors.append("El estado terminal no puede tener unidad siguiente")
+            if state.get("current_location") is not None:
+                errors.append("El estado terminal no puede tener ubicación actual")
+            if state.get("pending_tasks") != []:
+                errors.append("El estado terminal no puede tener tareas pendientes")
+        elif current not in ids:
             errors.append("La unidad actual no existe")
         else:
+            current_index = ids.index(current)
             unit = rows[ids.index(current)]
             location = state.get("current_location", {})
             if location.get("pdf_page") != unit.get("pdf_page") or location.get("position") != unit.get("position"):
                 errors.append("La ubicación actual no coincide con unidades.yaml")
+            expected_previous = None if current_index == 0 else ids[current_index - 1]
+            expected_next = None if current_index == len(ids) - 1 else ids[current_index + 1]
+            if state.get("last_closed_unit") != expected_previous or state.get("last_validated_unit") != expected_previous:
+                errors.append("La última unidad cerrada no precede a la unidad actual")
+            if state.get("next_unit") != expected_next:
+                errors.append("La unidad siguiente no coincide con unidades.yaml")
 
     if state.get("last_closed_unit") != state.get("last_validated_unit"):
         errors.append("La última unidad validada y cerrada no coincide")
