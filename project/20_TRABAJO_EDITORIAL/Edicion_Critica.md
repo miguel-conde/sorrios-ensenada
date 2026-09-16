@@ -369,7 +369,7 @@ cen sin intermision pelo, y otoño.
 ducen sin descanso solo vn pelo.
 8ª Prados abiertos de secano, que pro-
 ducen sin descanso solo vn pelo, y el
-otono se pasta De comun.
+otoño se pasta De comun.
 9ª Prados entreparedes, que producen vn
 año, y descansan otro.
 10ª Tierras matorrales, que no se
@@ -1236,7 +1236,7 @@ La unidad anterior es el folio 314v. La unidad siguiente es el folio 315v.
 
 - `regulaz[i]on`, `p[o]r`, `term[ino].`, `prim[ici]a.` y `D[o]n` desarrollan las abreviaturas visibles conforme al criterio general vigente; en `regulaz[i]on` se conserva la grafía histórica con `z`.
 - Se conservan las grafías y formas documentales `vn`, `cevada`, `fanegas`, `fejes`, `aquatro`, `Lana`, `crias mulares`, `Reales`, `quartales`, `boto`, `ai` y `arineros`.
-- Se conservan las divisiones visibles `Qua-` / `renta` y `ci-` / `ento`, incluidos los guiones de final de línea. La forma `a ci- / ento` se conserva literalmente y no se moderniza la disposición lineal.
+- Se conservan las divisiones visibles `Qua-` / `renta` y `ci-` / `ento`, incluidos los guiones de final de línea. La forma `a ci- / `ento` se conserva literalmente y no se moderniza la disposición lineal.
 - La serie de puntos que prolonga el renglón tras `boto` se omite como relleno gráfico sin valor verbal conforme al criterio ya vigente.
 - El final `De D[o]n` continúa sintácticamente en folio 315v; el cotejo de esa continuidad no valida por anticipado la unidad siguiente.
 
