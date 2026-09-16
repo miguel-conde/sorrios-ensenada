@@ -18,9 +18,10 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Nombre original:** `D[o]n Joachin Aguado`.
 - **Variantes:** ninguna documentada.
 - **Cargo u oficio:** abogado de los `R[eale]s Consejos`; `Juez subdelegado`.
-- **Unidades:** folio 306r.
+- **Unidades:** folio 306r; folio 321r.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `R[eale]s Consejos`; `abogado`; `Juez subdelegado`.
+- **Notas:** en folio 321r firma el cierre de las respuestas generales como `Liz[encia]do D[o]n Joachin Aguado`.
 
 ### Manuel Ant[oni]o De Bega
 
@@ -34,47 +35,52 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 ### Juan Alv[are]z
 
 - **Nombre original:** `Juan Alv[are]z`.
-- **Variantes:** ninguna documentada.
+- **Variantes:** `Juan Alvarez` en folio 321r.
 - **Cargo u oficio:** vecino; `vnico oficial de Justiz[i]a`.
-- **Unidades:** folio 306r; folio 306v.
+- **Unidades:** folio 306r; folio 306v; folio 321r.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `Remirio Rodriguez`; `oficial de Justiz[i]a`.
+- **Notas:** folio 321r declara que es de `quarenta, y nueve` años, poco más o menos.
 
 ### Remirio Rodriguez
 
 - **Nombre original:** `Remirio Rodriguez`.
 - **Variantes:** ninguna documentada.
 - **Cargo u oficio:** vecino; `vnico oficial de Justiz[i]a`.
-- **Unidades:** folio 306r; folio 306v.
+- **Unidades:** folio 306r; folio 306v; folio 321r.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `Juan Alv[are]z`; `oficial de Justiz[i]a`.
+- **Notas:** folio 321r declara que es de `sesenta, y nueve` años, poco más o menos.
 
 ### Dom[ing]o Diez
 
 - **Nombre original:** `Dom[ing]o Diez`.
 - **Variantes:** ninguna documentada.
 - **Cargo u oficio:** `perito` nombrado `p[o]r este Concejo`.
-- **Unidades:** folio 306v.
+- **Unidades:** folio 306v; folio 321r.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `Concejo de Ordas`; `perito`.
+- **Notas:** folio 321r declara que es de `quarenta, y quatro años poco mas, ô menos` y conserva su firma como `Dom[ing]o Diez`.
 
 ### Fran[cis]co de Llorca
 
 - **Nombre original:** `Fran[cis]co de Llorca`.
-- **Variantes:** ninguna documentada.
+- **Variantes:** `Fran[cis]co De Llorca` en folio 321r.
 - **Cargo u oficio:** `perito` nombrado `p[o]r este Concejo`.
-- **Unidades:** folio 306v.
+- **Unidades:** folio 306v; folio 321r.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `Concejo de Ordas`; `perito`.
+- **Notas:** folio 321r declara que es de `Cinquenta, y dos` años, poco más o menos.
 
-### Dom[ing]o Vicarez
+### Dom[ing]o Suarez
 
-- **Nombre original:** `Dom[ing]o Vicarez`.
+- **Nombre original:** `Dom[ing]o Suarez`.
 - **Variantes:** ninguna documentada.
-- **Cargo u oficio:** `perito nombrado de Oficio`.
-- **Unidades:** folio 306v.
+- **Cargo u oficio:** `perito nombrado De Oficio`.
+- **Unidades:** folio 306v; folio 321r.
 - **Identificación histórica:** no establecida.
 - **Referencias cruzadas:** `perito`.
+- **Notas:** la lectura de folio 306v queda corregida de la anterior `Dom[ing]o Vicarez` a `Dom[ing]o Suarez` tras cotejo directo del PDF con la declaración de edad de folio 321r y la firma que continúa materialmente en folio 321v. Folio 321r declara que es de `Cinquenta, y nueve` años, poco más o menos.
 
 ### Conde De Luna
 

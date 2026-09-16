@@ -378,3 +378,15 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados Glosario, Índice de oficios e Índice de medidas; no se generan cambios justificados en los índices de personas, topónimos o instituciones.
 - No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
 - El estado avanza a `folio_321r` como unidad actual.
+
+- Completadas las dos verificaciones pospublicación pendientes del cierre de folio 320v: el workflow `Portable Python tests`, run 123, del commit `15366a8a8cd5ab09f7240906e2a08d51ce254b4a` concluyó con `success`, y el árbol recursivo del mismo commit no contiene el PDF autoritativo.
+- Validada y cerrada documentalmente la unidad folio 321r.
+- Completada la respuesta 39.ª con `no ai convento alguno.` y transcrita íntegramente la respuesta 40.ª, que declara que no hay `venta, ni finca alguna` de las comprendidas en la pregunta.
+- Transcrito el cierre de las respuestas generales: los declarantes afirman y ratifican lo dicho bajo juramento y se consignan sus edades aproximadas: Remirio Rodriguez, 69; Juan Alvarez, 49; `Dom[ing]o Suarez`, 59; `Fran[cis]co De Llorca`, 52; `Dom[ing]o Diez`, 44 años.
+- La fórmula final declara que firmaron `los que supieron Junto con su m[erce]d.`; en folio 321r se leen `Liz[encia]do D[o]n Joachin Aguado= Dom[ing]o Diez= Dom[ing]o`, y el comienzo de folio 321v confirma que el último nombre continúa `Suarez:`. Este cotejo delimita la unidad y no valida por anticipado 321v.
+- La relectura directa de folio 306v, unida a la declaración de edad de 321r y a la firma `Dom[ing]o` / `Suarez:` entre 321r-321v, obliga a rectificar la lectura anterior `Dom[ing]o Vicarez` por `Dom[ing]o Suarez` en los documentos vivos. La corrección aplica el criterio ya vigente del Manual § 15 de comparar otras apariciones y firmas y no introduce un criterio nuevo.
+- Se desarrollan `Juram[en]to.`, `d[ic]hos.`, `Dom[ing]o`, `Fran[cis]co`, `m[erce]d.`, `Liz[encia]do` y `D[o]n`; se conservan `ai`, `ay`, `socargo`, `hedad`, `echo`, `quarenta`, `fé` y las divisiones visibles `Jura-` / `m[en]to.`, `afirma-` / `ron`, `sesen-` / `ta`, `qua-` / `renta`, `Cin-` / `quenta`, `su-` / `pieron` y `Joac-` / `hin`. Los rellenos gráficos se omiten conforme al criterio vigente.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: las respuestas negativas 39.ª y 40.ª y la fórmula ordinaria de cierre quedan en A; las personas, edades y la rectificación de `Dom[ing]o Suarez` quedan en B; no aparecen candidatos C; el perfil de edades, la práctica de firma de `los que supieron` y la forma de cierre y ratificación quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados el Índice de personas y el Índice de oficios; no se generan cambios justificados en Glosario ni en los índices de topónimos, instituciones o medidas.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_321v` como unidad actual.

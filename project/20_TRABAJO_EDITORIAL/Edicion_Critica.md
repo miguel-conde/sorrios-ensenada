@@ -171,7 +171,7 @@ La unidad anterior es el Reverso de la portada. La unidad siguiente es el folio 
 y vnicos oficiales De Justiz[i]a Dom[ing]o
 Diez, y Fran[cis]co de Llorca, peritos
 nombrados p[o]r este Concejo, y Dom[ing]o
-Vicarez perito nombrado De Oficio: De
+Suarez perito nombrado De Oficio: De
 los quales a excepz[i]on De el cura parro-
 cho, p[o]r antemi el ss[criba]no tomó, y Recivió
 Juram[en]to que le hicieron p[o]r el n[omb]re
@@ -191,7 +191,7 @@ y Santibañez
 
 Unidad material correspondiente al folio 306v, página digital 3 del PDF autoritativo, en posición izquierda. La cara no presenta número de folio independiente; su identificación como `306v` deriva de la secuencia material y del folio 306r precedente.
 
-El texto continúa directamente la frase final de folio 306r: `Juan Alv[are]z / y Remirio Rodriguez, vecinos / y vnicos oficiales De Justiz[i]a`. La unidad documenta además a `Dom[ing]o Diez` y `Fran[cis]co de Llorca` como peritos nombrados por el Concejo, y a `Dom[ing]o Vicarez` como perito nombrado de oficio.
+El texto continúa directamente la frase final de folio 306r: `Juan Alv[are]z / y Remirio Rodriguez, vecinos / y vnicos oficiales De Justiz[i]a`. La unidad documenta además a `Dom[ing]o Diez` y `Fran[cis]co de Llorca` como peritos nombrados por el Concejo, y a `Dom[ing]o Suarez` como perito nombrado de oficio.
 
 La serie de puntos situada tras `Santibañez` ocupa el resto del renglón como relleno gráfico sin valor verbal y no se incorpora a la transcripción. Este tratamiento aplica el criterio vigente del Manual Editorial v1.5 para signos no verbales y no introduce un criterio nuevo.
 
@@ -207,6 +207,7 @@ La unidad anterior es el folio 306r. La unidad siguiente es el folio 307r.
 - Se conservan las grafías históricas `vnicos`, `Justizia`, `excepzion`, `Recivió`, `thenor`, `acada`, `vna` y `poblazion`.
 - Se conservan las formas unidas `socargo` y `Ala`.
 - Se conservan las divisiones visibles `parro-` / `cho`, `ha-` / `viendolo` y `pre-` / `guntas`, incluidos los guiones de final de línea.
+- La lectura `Dom[ing]o Suarez` queda confirmada por la relectura directa de esta unidad, por su declaración de edad en folio 321r y por la firma que continúa materialmente en folio 321v; este cotejo corrige la lectura anterior `Dom[ing]o Vicarez` aplicando el criterio ya vigente de comparación con otras apariciones y firmas.
 
 ### Notas históricas
 
@@ -216,7 +217,7 @@ La unidad anterior es el folio 306r. La unidad siguiente es el folio 307r.
 
 - Continuidad material: folio 306r; folio 307r.
 - Índice de topónimos: `Sorribas`; `Santibañez De Ordas`.
-- Índice de personas: `Manuel Ant[oni]o De Bega`; `Juan Alv[are]z`; `Remirio Rodriguez`; `Dom[ing]o Diez`; `Fran[cis]co de Llorca`; `Dom[ing]o Vicarez`.
+- Índice de personas: `Manuel Ant[oni]o De Bega`; `Juan Alv[are]z`; `Remirio Rodriguez`; `Dom[ing]o Diez`; `Fran[cis]co de Llorca`; `Dom[ing]o Suarez`.
 - Índice de instituciones: `Concejo de Ordas`.
 - Índice de oficios: `cura parrocho`; `oficial de Justiz[i]a`; `perito`; `escribano`.
 
@@ -1953,23 +1954,59 @@ La unidad anterior es el folio 320r. La unidad siguiente es el folio 321r.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+no ai convento alguno.
+40. Ala quarenta dijeron: que no
+ay venta, ni finca alguna De las, que
+contiene la pregunta:= Todo lo qual
+dijeron ser la verdad, socargo De Jura-
+m[en]to. que llevan echo, en que se afirma-
+ron, ratificaron, declararon ser De hedad
+los d[ic]hos. Remirio Rodriguez De sesen-
+ta, y nueve: Juan Alvarez De qua-
+renta, y nueve: Dom[ing]o Suarez De Cin-
+quenta, y nueve: Fran[cis]co De Llorca De
+Cinquenta, y dos: Y Dom[ing]o Diez
+De quarenta, y quatro años poco mas,
+ô menos: Y lo firmaron los que su-
+pieron Junto con su m[erce]d. y en
+fé De ello lo firmé= Liz[encia]do D[o]n Joac-
+hin Aguado= Dom[ing]o Diez= Dom[ing]o
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 321r, página digital 17 del PDF autoritativo, en posición derecha. Su identificación como `321r` deriva de la secuencia material fijada en `unidades.yaml`; la unidad anterior es folio 320v y la siguiente folio 321v.
+
+La unidad continúa y concluye la respuesta 39.ª iniciada en folio 320v: `Ala treinta, y nueve dijeron: que / no ai convento alguno.`.
+
+La respuesta 40.ª se contiene íntegramente en esta cara y declara que no hay `venta, ni finca alguna` de las comprendidas en la pregunta. A continuación comienza el cierre formal de las respuestas generales: los declarantes afirman que lo dicho es verdad bajo el juramento ya prestado, se afirman y ratifican, y declaran sus edades.
+
+Las edades consignadas son: `Remirio Rodriguez`, sesenta y nueve años; `Juan Alvarez`, cuarenta y nueve; `Dom[ing]o Suarez`, cincuenta y nueve; `Fran[cis]co De Llorca`, cincuenta y dos; y `Dom[ing]o Diez`, cuarenta y cuatro años, `poco mas, ô menos`.
+
+El cierre declara que firmaron `los que supieron Junto con su m[erce]d.`. En esta cara quedan las firmas `Liz[encia]do D[o]n Joachin Aguado` y `Dom[ing]o Diez`; el último `Dom[ing]o` de la cara continúa materialmente al comienzo de folio 321v con `Suarez:`. La inspección de ese comienzo se utiliza únicamente para delimitar la firma y no valida por anticipado folio 321v.
+
+La reaparición de `Dom[ing]o Suarez` en la declaración de edad y en la firma, unida a la relectura directa de folio 306v, permite rectificar la lectura anterior `Dom[ing]o Vicarez` de aquella unidad por `Dom[ing]o Suarez`. La rectificación aplica el criterio ya vigente de comparación con otras apariciones y firmas y no introduce un criterio editorial nuevo.
+
+Los puntos y trazos que prolongan el renglón tras `alguno` se omiten como relleno gráfico sin valor verbal conforme al criterio vigente.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `Juram[en]to.`, `d[ic]hos.`, `Dom[ing]o`, `Fran[cis]co`, `m[erce]d.`, `Liz[encia]do` y `D[o]n` desarrollan las abreviaturas visibles conforme al criterio general vigente.
+- Se conservan las grafías y formas documentales `ai`, `ay`, `socargo`, `hedad`, `echo`, `quarenta` y `fé`, así como las mayúsculas y minúsculas del manuscrito.
+- Se conservan las divisiones visibles `Jura-` / `m[en]to.`, `afirma-` / `ron`, `sesen-` / `ta`, `qua-` / `renta`, `Cin-` / `quenta`, `su-` / `pieron` y `Joac-` / `hin`, incluidos los guiones de final de línea.
+- `Juan Alvarez` aparece escrito de forma plena en esta unidad y se conserva como variante de la forma abreviada `Juan Alv[are]z` de unidades anteriores.
+- `Fran[cis]co De Llorca` conserva la mayúscula `De` visible en esta unidad, frente a `Fran[cis]co de Llorca` de folio 306v.
+- La lectura `Dom[ing]o Suarez` se comprueba por tres evidencias internas concordantes: relectura de folio 306v, declaración de edad en esta unidad y firma repartida entre el final de 321r y el comienzo de 321v.
+- El último `Dom[ing]o` continúa materialmente en folio 321v con `Suarez:`; el cotejo se limita a la continuidad y no valida por anticipado la unidad siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 320v; folio 321v.
+- Índice de personas: `Joachin Aguado`; `Remirio Rodriguez`; `Juan Alv[are]z` / `Juan Alvarez`; `Dom[ing]o Suarez`; `Fran[cis]co de Llorca` / `Fran[cis]co De Llorca`; `Dom[ing]o Diez`.
+- Índice de oficios: `perito`.
 
 ---
 

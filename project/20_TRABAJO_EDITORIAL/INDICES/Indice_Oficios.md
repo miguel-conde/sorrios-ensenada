@@ -56,9 +56,9 @@ No contendrá biografías ni interpretación histórica extensa.
 - **Forma original:** `peritos`; `perito`.
 - **Variantes:** ninguna documentada.
 - **Forma normalizada:** perito.
-- **Personas o instituciones relacionadas:** `Dom[ing]o Diez`; `Fran[cis]co de Llorca`; `Dom[ing]o Vicarez`; `Concejo de Ordas`.
+- **Personas o instituciones relacionadas:** `Dom[ing]o Diez`; `Fran[cis]co de Llorca`; `Dom[ing]o Suarez`; `Concejo de Ordas`.
 - **Unidades:** folio 306v.
-- **Notas:** Domingo Diez y Francisco de Llorca aparecen como `peritos nombrados p[o]r este Concejo`; Domingo Vicarez como `perito nombrado de Oficio`.
+- **Notas:** Domingo Diez y Francisco de Llorca aparecen como `peritos nombrados p[o]r este Concejo`; Domingo Suarez como `perito nombrado De Oficio`. La lectura anterior `Dom[ing]o Vicarez` queda corregida por cotejo directo de folio 306v con la declaración de edad de folio 321r y la firma que continúa en folio 321v.
 
 ### escribano
 
