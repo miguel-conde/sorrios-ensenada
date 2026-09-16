@@ -367,3 +367,14 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Actualizados Glosario, Índice de oficios e Índice de medidas; no se generan cambios justificados en los índices de personas, topónimos o instituciones.
 - No quedan dudas abiertas.
 - El estado avanza a `folio_320v` como unidad actual.
+
+- Validada y cerrada documentalmente la unidad folio 320v.
+- Completada la respuesta 35.ª: de los dieciocho jornaleros, tras los catorce hijos de familia y tres criados sirvientes ya declarados en 320r, se añade `y vno que solo, vive ocupado en el exerci[ci]o. / De tal jornalero`; se declaran además `veinte, y / quatro labradores`.
+- La respuesta 35.ª regula para los jornaleros `dos reales, y medio` por día trabajado y para los labradores `tres Reales`, incluida la comida de unos y otros, que se regula en `vn real, y medio`.
+- La respuesta 36.ª se contiene íntegramente y declara `cinco pobres De solemnidad`; la 37.ª declara que `no ai individuo alguno, que tengan / lo que espresa la pregunta`; la 38.ª declara `el cura parrocho, / y dos capellanes`.
+- La respuesta 39.ª comienza en esta cara y queda abierta en `Ala treinta, y nueve dijeron: que`; la inspección auxiliar del comienzo de folio 321r confirma `no ai convento alguno.`, únicamente para delimitar 320v y sin validar por anticipado 321r.
+- Se desarrolla `exerci[ci]o.` conforme al criterio general; se conservan `vno`, `ai`, `quatro`, `alos`, `Jornaleros`, `Reales`, `vnos`, `vn`, `Ala`, `espresa`, `parrocho`, la construcción `que tengan` y las divisiones `co-` / `mida` y `Re-` / `gulan`. La secuencia `vive ocupado` presenta una fuerte sobrecarga de tinta, pero la inspección visual ampliada permite una lectura responsable sin introducir signo ni criterio nuevo. Los rellenos gráficos se omiten conforme al criterio vigente.
+- Evaluadas expresamente las Notas históricas mediante A/B/C/D: fórmulas ordinarias y negativas quedan en A; `pobre de solemnidad`, `jornalero`, `labrador`, `cura parrocho`, `capellán` y `real` / `Reales` quedan en B; no aparecen candidatos C; la composición laboral, los jornales, la valoración de la comida, los cinco pobres de solemnidad y la dotación clerical quedan en D como material para el futuro Estudio Histórico. La sección queda justificadamente sin notas históricas.
+- Actualizados Glosario, Índice de oficios e Índice de medidas; no se generan cambios justificados en los índices de personas, topónimos o instituciones.
+- No aparece ningún criterio metodológico nuevo y no quedan dudas abiertas.
+- El estado avanza a `folio_321r` como unidad actual.

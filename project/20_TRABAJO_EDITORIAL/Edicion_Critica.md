@@ -1889,23 +1889,59 @@ La unidad anterior es el folio 319v. La unidad siguiente es el folio 320v.
 
 ### Transcripción paleográfica
 
-*(Pendiente)*
+y vno que solo, vive ocupado en el exerci[ci]o.
+De tal jornalero, y que ai veinte, y
+quatro labradores, y que alos Jornaleros
+les regulan De utilidad el dia, que
+trabajan dos reales, y medio, y à los
+labradores tres Reales inclusa la co-
+mida De vnos, y otros, que la Re-
+gulan en vn real, y medio.
+36. Ala treinta, y seis dijeron: que
+ai cinco pobres De solemnidad.
+37. Ala treinta, y siete dijeron: que
+no ai individuo alguno, que tengan
+lo que espresa la pregunta.
+38. Ala treinta, y ocho dijeron: que
+en este pueblo ai el cura parrocho,
+y dos capellanes.
+39. Ala treinta, y nueve dijeron: que
 
 ### Observaciones editoriales
 
-*(Pendiente)*
+Unidad material correspondiente al folio 320v, página digital 17 del PDF autoritativo, en posición izquierda. La cara no presenta foliación archivística independiente; su identificación como `320v` deriva de la secuencia material y del folio 320r precedente.
+
+La unidad continúa y concluye la respuesta 35.ª desde el final de folio 320r: `ai diez, y ocho jornaleros, los catorce / hijos De familia, que estan en comp[añí]a. / De sus padres, tres criados servi[ent]es. / y vno que solo, vive ocupado en el exerci[ci]o. / De tal jornalero`. Con ello se completa el cómputo de los dieciocho jornaleros declarado en la respuesta.
+
+La misma respuesta declara `veinte, y / quatro labradores`. Para los jornaleros se regula `De utilidad el dia, que / trabajan dos reales, y medio`; para los labradores, `tres Reales`, incluida la comida de unos y otros, que se regula en `vn real, y medio`.
+
+La respuesta 36.ª se contiene íntegramente en esta cara y declara cinco `pobres De solemnidad`. La respuesta 37.ª se contiene íntegramente y declara `no ai individuo alguno, que tengan / lo que espresa la pregunta`. La respuesta 38.ª se contiene íntegramente y declara que en el pueblo hay `el cura parrocho, / y dos capellanes`.
+
+La respuesta 39.ª comienza en esta unidad y queda abierta en `Ala treinta, y nueve dijeron: que`. La inspección auxiliar del comienzo de folio 321r confirma la continuación `no ai convento alguno.`; este cotejo se utiliza únicamente para delimitar folio 320v y no valida por anticipado folio 321r.
+
+Las series de puntos y trazos que prolongan los renglones tras `medio`, `solemnidad`, `pregunta` y `capellanes` se omiten como relleno gráfico sin valor verbal conforme al criterio ya vigente.
+
+La unidad anterior es el folio 320r. La unidad siguiente es el folio 321r.
 
 ### Notas paleográficas
 
-*(Pendiente)*
+- `exerci[ci]o.` desarrolla la abreviatura visible al final del primer renglón conforme al criterio general vigente.
+- Se conservan las grafías y formas documentales `vno`, `ai`, `quatro`, `alos`, `Jornaleros`, `Reales`, `vnos`, `vn`, `Ala`, `espresa` y `parrocho`.
+- Se conservan las divisiones visibles `co-` / `mida` y `Re-` / `gulan`, incluidos los guiones de final de línea.
+- La secuencia `vive ocupado` presenta una sobrecarga de tinta notable; la inspección visual ampliada permite una lectura responsable de ambas palabras, por lo que se conservan sin introducir un signo editorial nuevo.
+- Se conserva literalmente `que tengan` en la respuesta 37.ª, sin regularizar la concordancia.
+- La respuesta 39.ª continúa materialmente en folio 321r con `no ai convento alguno.`; el cotejo de ese comienzo se limita a la delimitación de la unidad y no valida por anticipado la siguiente.
 
 ### Notas históricas
 
-*(Pendiente)*
+*(Sin notas históricas.)*
 
 ### Referencias cruzadas
 
-*(Pendiente)*
+- Continuidad material: folio 320r; folio 321r.
+- Glosario: `pobre de solemnidad`.
+- Índice de oficios: `jornalero`; `labrador`; `cura parrocho`; `capellán`.
+- Índice de medidas: `real` / `Reales`.
 
 ---
 

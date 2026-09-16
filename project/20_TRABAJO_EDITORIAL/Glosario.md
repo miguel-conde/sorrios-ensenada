@@ -181,3 +181,11 @@ No contendrá interpretación histórica extensa.
 - **Primera unidad:** folio 320r.
 - **Referencias:** folio 320r; respuesta 35.ª; Índice de oficios: `jornalero`.
 - **Notas:** se registra únicamente la función de la expresión dentro del expediente; no se fija aquí una definición jurídica o fiscal general fuera de esta respuesta.
+
+### pobre de solemnidad
+
+- **Término documentado:** `pobres De solemnidad`.
+- **Definición:** categoría aplicada en la respuesta 36.ª a cinco personas que los declarantes identifican como pobres de solemnidad.
+- **Primera unidad:** folio 320v.
+- **Referencias:** folio 320v; respuesta 36.ª.
+- **Notas:** se registra únicamente la categoría tal como aparece en el expediente; no se fija aquí una definición jurídica o asistencial general fuera de esta respuesta.

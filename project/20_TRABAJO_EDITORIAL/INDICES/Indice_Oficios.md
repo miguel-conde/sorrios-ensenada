@@ -39,8 +39,8 @@ No contendrá biografías ni interpretación histórica extensa.
 - **Variantes:** `Cura` en folio 314v; `cura` en folio 315v.
 - **Forma normalizada:** cura párroco.
 - **Personas o instituciones relacionadas:** `Manuel Ant[oni]o De Bega` / `Manuel Ant[oni]o De Vega`; `Yglesia De él`.
-- **Unidades:** folio 306r; folio 306v; folio 314v; folio 315v.
-- **Notas:** folio 306r lo identifica como `cura parrocho De este Lugar`; folio 306v lo exceptúa del juramento recibido a los demás comparecientes; folio 314v lo denomina `Cura De este Lugar` y declara que percibe por entero los diezmos; folio 315v vuelve a identificarlo como `cura De este Lugar` al declarar la propiedad de una rueda de molino.
+- **Unidades:** folio 306r; folio 306v; folio 314v; folio 315v; folio 320v.
+- **Notas:** folio 306r lo identifica como `cura parrocho De este Lugar`; folio 306v lo exceptúa del juramento recibido a los demás comparecientes; folio 314v lo denomina `Cura De este Lugar` y declara que percibe por entero los diezmos; folio 315v vuelve a identificarlo como `cura De este Lugar` al declarar la propiedad de una rueda de molino. En folio 320v la respuesta 38.ª declara que en el pueblo hay `el cura parrocho, y dos capellanes`, sin individualizar de nuevo al cura por su nombre.
 
 ### oficial de Justiz[i]a
 
@@ -90,20 +90,20 @@ No contendrá biografías ni interpretación histórica extensa.
 ### labrador
 
 - **Forma original:** `labrador`.
-- **Variantes:** ninguna validada en esta fase.
+- **Variantes:** `labradores` en folio 320v.
 - **Forma normalizada:** labrador.
 - **Personas o instituciones relacionadas:** herrero no identificado nominalmente en folio 320r.
-- **Unidades:** folio 320r.
-- **Notas:** en la respuesta 33.ª el único herrero ocupa la mayor parte del año en el `exercicio De labrador`; no se anticipan las apariciones de la unidad siguiente.
+- **Unidades:** folio 320r; folio 320v.
+- **Notas:** en la respuesta 33.ª el único herrero ocupa la mayor parte del año en el `exercicio De labrador`. En folio 320v la respuesta 35.ª declara `veinte, y quatro labradores` y les regula `tres Reales` de utilidad diaria, incluida la comida.
 
 ### jornalero
 
 - **Forma original:** `jornaleros`.
-- **Variantes:** ninguna validada en esta fase.
+- **Variantes:** `jornalero` y `Jornaleros` en folio 320v.
 - **Forma normalizada:** jornalero.
 - **Personas o instituciones relacionadas:** ninguna identificada nominalmente.
-- **Unidades:** folio 320r.
-- **Notas:** la respuesta 35.ª comienza declarando dieciocho jornaleros; el desglose continúa materialmente en folio 320v, que no se valida por anticipado.
+- **Unidades:** folio 320r; folio 320v.
+- **Notas:** la respuesta 35.ª comienza en folio 320r declarando dieciocho jornaleros y se completa en folio 320v: catorce hijos de familia, tres criados sirvientes y uno que `solo, vive ocupado en el exerci[ci]o. De tal jornalero`. A los jornaleros se les regulan `dos reales, y medio` por día trabajado.
 
 ### criado sirviente
 
@@ -113,3 +113,12 @@ No contendrá biografías ni interpretación histórica extensa.
 - **Personas o instituciones relacionadas:** ninguna identificada nominalmente.
 - **Unidades:** folio 320r.
 - **Notas:** la respuesta 35.ª incluye tres criados sirvientes dentro del cómputo de dieciocho jornaleros.
+
+### capellán
+
+- **Forma original:** `capellanes`.
+- **Variantes:** ninguna documentada.
+- **Forma normalizada:** capellán.
+- **Personas o instituciones relacionadas:** ninguna identificada nominalmente.
+- **Unidades:** folio 320v.
+- **Notas:** la respuesta 38.ª declara que en el pueblo hay `el cura parrocho, y dos capellanes`; no se individualizan sus nombres en esta unidad.
