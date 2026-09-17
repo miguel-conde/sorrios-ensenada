@@ -2,7 +2,7 @@
 
 ## Versión canónica 1.0
 
-**Estado:** estudio histórico canónico  
+**Estado:** activo  
 **Versión:** 1.0  
 **Fecha:** 17 de septiembre de 2026  
 **Base documental exclusiva:** `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md`, versión 3.5  
