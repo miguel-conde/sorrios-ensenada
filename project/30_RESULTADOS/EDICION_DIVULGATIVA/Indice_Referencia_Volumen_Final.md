@@ -1,7 +1,7 @@
 # Índice de referencia para el futuro volumen
 
 **Título provisional:** *Sorribas y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*  
-**Versión del esquema:** 1.0  
+**Versión del esquema:** 1.1  
 **Fecha:** 17 de septiembre de 2026  
 **Estado:** referencia de trabajo aprobada para la futura preparación del volumen  
 **Naturaleza:** esquema editorial; no constituye todavía el volumen compuesto
@@ -21,17 +21,67 @@ La secuencia general será:
 
 El volumen incluirá dieciséis capítulos. Los glosarios, concordancias, índices, fuentes y tablas de versiones se situarán después de los capítulos como aparatos de consulta. Las auditorías, validaciones y registros de operaciones permanecerán fuera del cuerpo principal como dossier editorial complementario.
 
+
+## 2. Incorporaciones acordadas para la versión 1.1
+
+### 2.1. Cartografía
+
+El volumen incluirá una lámina cartográfica a doble página situada después de la cronología y antes de la Parte I. Tendrá dos paneles principales:
+
+1. mapa de situación: España, provincia de León, entorno de Ordás y localización de Sorribas y Santibáñez de Ordás;
+2. mapa local: los dos núcleos, hidrografía y relieve principales, poblaciones próximas, caminos y referencias territoriales útiles.
+
+Cuando la evidencia lo permita, se añadirá un recuadro titulado «Esquema del término descrito en 1752», basado en la respuesta 3 y en otros elementos documentados. Este recuadro se presentará como reconstrucción esquemática, no como delimitación catastral exacta.
+
+La cartografía deberá:
+
+- usar una base vectorial verificable;
+- diferenciar información actual, información documentada e inferencia editorial;
+- incluir escala, norte, leyenda, fuentes, fecha y atribución;
+- conservar los topónimos históricos y separar sus identificaciones modernas;
+- ser legible en color y en escala de grises;
+- enlazarse con el índice de lugares y topónimos;
+- evitar que límites o caminos actuales se presenten como si fueran necesariamente los de 1752.
+
+Las fuentes cartográficas y sus licencias se verificarán antes de la composición. Se considerarán prioritariamente recursos oficiales del IGN/CNIG y, cuando sea necesario, cartografía con licencia compatible y atribución expresa.
+
+### 2.2. Portada y cubierta
+
+La portada definitiva se resolverá al final de la composición, cuando se conozcan la extensión, el lomo y las condiciones de impresión. La muestra de diseño podrá incluir una portada provisional para fijar el lenguaje visual.
+
+La dirección preferente será documental y sobria:
+
+- detalle auténtico del manuscrito;
+- trazado cartográfico tenue;
+- composición tipográfica clara;
+- paleta compatible con el interior;
+- ausencia de reconstrucciones pictóricas inventadas del pueblo en 1752;
+- legibilidad tanto a tamaño de impresión como en miniatura.
+
+La cubierta exterior no deberá confundirse con la reproducción de la portada histórica del expediente, que seguirá apareciendo dentro del facsímil y de las ediciones textuales.
+
+### 2.3. Denominación de los índices
+
+Se adoptan las denominaciones «Índice onomástico» e «Índice de materias»:
+
+- el Índice onomástico sustituye al rótulo «Índice de personas» y conserva las variantes documentales, funciones y referencias;
+- el Índice de materias sustituye al rótulo «Índice analítico general» y funciona como acceso temático al conjunto del volumen.
+
+Este cambio no aumenta el número de índices: el volumen mantiene nueve.
+
 # Preliminares
 
-- Portada.
+- Cubierta exterior, resuelta definitivamente al cierre de la composición.
+- Portada interior.
 - Créditos y responsabilidades editoriales.
 - Presentación.
 - Nota al lector.
 - Cómo utilizar el volumen.
 - Convenciones, signos editoriales y abreviaturas.
 - Cronología esencial.
+- Lámina cartográfica a doble página.
 - Índice general.
-- Índice de reproducciones documentales.
+- Índice de mapas y reproducciones documentales.
 - Lista de cuadros y tablas.
 
 # Parte I. El Catastro y su documento
@@ -260,18 +310,31 @@ Glosario alfabético de términos históricos, fiscales, agrarios, jurídicos y 
 
 Los índices constituirán una parte autónoma del volumen. Sus referencias definitivas se adaptarán a la paginación final y conectarán, cuando proceda, las cuatro capas del volumen: facsímil, transcripción paleográfica, edición modernizada y estudio histórico.
 
-## Índice de personas
+La serie definitiva estará formada por:
 
-Partirá del índice vivo del proyecto e incluirá:
+1. Índice onomástico.
+2. Índice de lugares y topónimos.
+3. Índice de instituciones, autoridades y jurisdicciones.
+4. Índice de oficios, ocupaciones y condiciones sociales.
+5. Índice de medidas, monedas y unidades de cuenta.
+6. Índice de productos, cultivos, ganados y recursos.
+7. Índice de cargas, derechos, rentas y fiscalidad.
+8. Índice de preguntas y respuestas.
+9. Índice de materias.
+
+## Índice onomástico
+
+Sustituirá al rótulo «Índice de personas» y partirá del índice vivo del proyecto. Incluirá:
 
 - forma normalizada del nombre;
-- variantes documentales;
-- condición, oficio o función;
-- folios en que aparece;
+- forma o formas documentales;
+- variantes ortográficas;
+- condición, cargo, parentesco, oficio o función;
+- folios y unidades en que aparece;
 - respuestas relacionadas;
-- páginas correspondientes del volumen.
+- páginas correspondientes del facsímil, la transcripción, la edición modernizada y el estudio.
 
-Las variantes no se fusionarán silenciosamente. Casos como Bega/Vega llevarán remisiones cruzadas.
+Las variantes no se fusionarán silenciosamente. Casos como Bega/Vega llevarán remisiones cruzadas. Se incluirán las personas mencionadas de forma sustantiva en la fuente, la introducción y el estudio; no se incorporarán automáticamente los autores citados solo en la bibliografía.
 
 ## Índice de lugares y topónimos
 
@@ -345,9 +408,11 @@ Relacionará:
 - edición modernizada;
 - capítulos históricos asociados.
 
-## Índice analítico general
+## Índice de materias
 
-Reunirá conceptos interpretativos y materias que no encajen en los índices anteriores, distinguiendo entre expresión documental y categoría analítica moderna.
+Sustituirá al rótulo «Índice analítico general» y será el principal acceso temático al volumen. Incluirá materias documentales y categorías analíticas con tratamiento sustantivo, entre ellas agricultura, barbecho, bienes comunales, cereal, ganadería, hogares, molinos, monetización, población fiscal, señorío, trabajo familiar, vecera, vulnerabilidad y vivienda.
+
+Las entradas podrán organizarse mediante subentradas. No se indexará cada aparición mecánica de una palabra, sino los pasajes relevantes. Se usarán remisiones de «véase» y «véase también» hacia los índices especializados para evitar duplicaciones.
 
 # Parte VIII. Fuentes y arquitectura editorial
 
@@ -356,9 +421,11 @@ Reunirá conceptos interpretativos y materias que no encajen en los índices ant
 - Fuente manuscrita.
 - Interrogatorio de 1749.
 - Fuentes institucionales.
+- Fuentes cartográficas verificadas.
 - Bibliografía histórica.
 - Documentos internos utilizados.
 - Procedencia de las reproducciones.
+- Licencias y atribuciones de la cartografía.
 
 ## Apéndice E. Tabla de versiones y productos
 
@@ -398,7 +465,27 @@ El futuro volumen se construirá, como mínimo, a partir de:
 - Estudio Histórico, versión canónica 1.0;
 - glosario histórico;
 - índices vivos de personas, topónimos, instituciones, medidas y oficios;
+- fuentes cartográficas verificadas y brief cartográfico, cuando se preparen;
 - cuadros, concordancias y documentos analíticos validados;
 - PDF autoritativo de dieciocho páginas, utilizado exclusivamente como fuente del facsímil.
 
 Cualquier cambio posterior en esta estructura deberá registrarse expresamente antes de componer el volumen.
+
+# Historial de la referencia
+
+## Versión 1.0 — 17 de septiembre de 2026
+
+- Fijación de la estructura general.
+- Dieciséis capítulos.
+- Incorporación de facsímil, transcripción paleográfica, edición modernizada, estudio, aparatos e índices.
+
+## Versión 1.1 — 17 de septiembre de 2026
+
+- Incorporación de una lámina cartográfica a doble página.
+- Distinción entre cartografía actual y reconstrucción histórica.
+- Inclusión de fuentes, licencias y atribuciones cartográficas.
+- Fijación de una dirección provisional para la portada y aplazamiento de la cubierta definitiva.
+- Sustitución de «Índice de personas» por «Índice onomástico».
+- Sustitución de «Índice analítico general» por «Índice de materias».
+- Confirmación de nueve índices y dieciséis capítulos.
+
