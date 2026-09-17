@@ -12,7 +12,7 @@
 
 ## 0. Método, evidencia y alcance
 
-Este estudio reconstruye la organización socioeconómica que permiten observar las Respuestas Generales de 1752 para el lugar de Sorribas y Santibáñez de Ordás. La única fuente histórica empleada es la Edición Crítica v3.5. Los análisis 0.1–0.6 han servido para formular preguntas y localizar cálculos, pero carecen de autoridad documental autónoma.
+Este estudio reconstruye la organización socioeconómica que permiten observar las Respuestas Generales de 1752 para el lugar de Sorribas y Santibáñez de Ordás. La base documental del Estudio Histórico es exclusivamente la edición paleográfica validada, publicada como Edición Crítica v3.5. Los análisis 0.1–0.6 han servido para formular preguntas y localizar cálculos, pero carecen de autoridad documental autónoma.
 
 La trazabilidad se expresa mediante cuatro niveles:
 
