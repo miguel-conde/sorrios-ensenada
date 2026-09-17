@@ -1,5 +1,7 @@
 # Validación de la introducción y del interrogatorio
 
+> **Alcance histórico:** este informe validó la versión 1.0. La introducción vigente 1.1 y su correspondencia con la edición modernizada se validan en `Aceptacion_Conjunta_Introduccion_Edicion_Modernizada_v1_1.md`.
+
 **Documentos validados:**
 
 - Verificacion_Interrogatorio_40_Preguntas.md

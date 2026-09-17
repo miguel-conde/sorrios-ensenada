@@ -1,11 +1,17 @@
 # Introducción al Catastro de Ensenada de Sorribas y Santibáñez de Ordás
 
-## Versión 1.0
+## Versión 1.1
 
 **Fecha:** 17 de septiembre de 2026  
 **Expediente:** Sorribas y Santibáñez de Ordás, 1752  
 **Finalidad:** guía histórica y editorial para lectores no especializados  
-**Documentos relacionados:** Edición Crítica v3.5, Estudio Histórico 1.0 y edición modernizada 1.0
+**Documentos relacionados:**
+
+- [Edición modernizada 1.1](./Catastro_Sorrios_1752_Version_Modernizada.md)
+- [Verificación externa del interrogatorio](./Verificacion_Interrogatorio_40_Preguntas.md)
+- [Criterios de la edición modernizada](./Criterios_Edicion_Modernizada.md)
+- [Edición Crítica v3.5](../../20_TRABAJO_EDITORIAL/Edicion_Critica.md)
+- [Estudio Histórico 1.0](../ESTUDIO_HISTORICO/Estudio_Historico.md)
 
 ## 1. Qué fue el Catastro de Ensenada
 
@@ -25,50 +31,50 @@ Las respuestas deben leerse como una declaración fiscal colectiva, elaborada si
 
 ## 3. El interrogatorio de cuarenta preguntas
 
-La siguiente versión moderniza ortografía y puntuación a partir de la [versión en grafía actual de PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=31b). Mantiene las categorías históricas y no transforma las preguntas en conceptos actuales.
+La siguiente versión reproduce íntegramente el contenido de las cuarenta preguntas a partir de la [versión en grafía actual de PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=31b). Se modernizan grafía, puntuación y construcciones transparentes, sin resumir materias ni introducir explicaciones dentro de los enunciados. Es exactamente la misma versión que encabeza las respuestas de la edición modernizada 1.1.
 
 La pregunta 29 se ofrece completa. La página de PARES en grafía actual termina su texto tras «hay en la población», pero una [publicación oficial de la Dirección General del Catastro dedicada a Vera](https://www.catastro.hacienda.gob.es/documentos/publicaciones/catalogoensenada_1752_vera.pdf) conserva también la referencia al término, a la titularidad y a la utilidad anual. Esa formulación completa concuerda con la respuesta dada en Sorribas.
 
 1. ¿Cómo se llama la población?
-2. ¿Es de realengo o de señorío? ¿A quién pertenece, qué derechos percibe su titular y cuánto producen?
-3. ¿Qué extensión ocupa el término de levante a poniente y de norte a sur, cuál es su circunferencia, cuáles son sus linderos y qué figura tiene?
-4. ¿Qué especies de tierra existen en el término —de regadío o secano; huertas, sembraduras, viñas, pastos, bosques, matorrales o montes— y con qué frecuencia producen o descansan?
-5. ¿Cuántas calidades se distinguen dentro de cada especie de tierra: buena, mediana e inferior?
-6. ¿Hay plantíos de árboles, como frutales, moreras, olivos, higueras, almendros, parras o algarrobos?
-7. ¿En qué tierras están plantados esos árboles?
-8. ¿Cómo están dispuestos los plantíos: extendidos por toda la tierra, en los márgenes o en una o varias hileras?
-9. ¿Qué medidas de tierra se usan, a cuántos pasos o varas castellanas en cuadro equivalen y qué cantidad de cada grano se siembra en ellas?
-10. ¿Cuántas medidas de tierra hay de cada especie y calidad, distinguiendo las de mejor, mediana e inferior calidad?
+2. ¿Es de realengo o de señorío, a quién pertenece, qué derechos percibe y cuánto produce?
+3. ¿Qué territorio ocupa el término, cuánto de levante a poniente y del norte al sur, y cuánto de circunferencia, por horas y leguas; qué linderos o confrontaciones; y qué figura tiene, poniéndola al margen?
+4. ¿Qué especies de tierra se hallan en el término; si son de regadío y de secano, distinguiendo si son de hortaliza, sembradura, viñas, pastos, bosques, matorrales, montes y demás que pudiera haber; explicando si hay algunas que produzcan más de una cosecha al año, las que fructificaren solo una y las que necesitan de un año intermedio de descanso?
+5. ¿De cuántas calidades de tierra hay en cada una de las especies declaradas, si son de buena, mediana e inferior?
+6. ¿Hay algún plantío de árboles en las tierras declaradas, como frutales, moreras, olivos, higueras, almendros, parras, algarrobos, etc.?
+7. ¿En cuáles de las tierras están plantados los árboles declarados?
+8. ¿En qué conformidad están hechos los plantíos, si extendidos en toda la tierra o en los márgenes, en una, dos o tres hileras, o en la forma en que estuvieren?
+9. ¿Qué medidas de tierra se usan en aquel pueblo; de cuántos pasos o varas castellanas en cuadro se compone cada una; y qué cantidad de cada especie de granos de los que se recogen en el término se siembra en cada una?
+10. ¿Qué número de medidas de tierra hay en el término, distinguiendo las de cada especie y calidad; por ejemplo, tantas fanegas, o del nombre que tuviese la medida de tierra de sembradura de la mejor calidad, tantas de mediana bondad y tantas de inferior; y lo propio en las demás especies declaradas?
 11. ¿Qué especies de frutos se recogen en el término?
-12. ¿Qué cantidad de cada fruto produce ordinariamente una medida de tierra de cada especie y calidad, calculada unos años con otros y sin incluir los árboles?
-13. ¿Qué producto dan por medida de tierra los árboles de cada especie, según la disposición del plantío?
-14. ¿Qué valor ordinario tienen, unos años con otros, los frutos producidos por las tierras del término?
-15. ¿Qué derechos gravan las tierras —diezmo, primicia, tercio-diezmo u otros— y a quién pertenecen?
-16. ¿A qué cantidad de frutos ascienden esos derechos o por qué precio se arriendan, unos años con otros?
-17. ¿Hay minas, salinas, molinos harineros o de papel, batanes u otros artefactos? ¿De qué clase son, quiénes son sus dueños y qué utilidad anual produce cada uno?
-18. ¿Hay algún esquilmo o establecimiento de esquileo? ¿A quién pertenece, cuánto ganado acude y qué utilidad anual produce?
-19. ¿Hay colmenas en el término, cuántas son y a quién pertenecen?
-20. ¿Qué especies de ganado hay? ¿Tiene algún vecino una cabaña o yeguada que paste fuera del término, con cuántas cabezas y a nombre de qué dueño?
-21. ¿De cuántos vecinos se compone la población y cuántos viven en casas de campo o alquerías?
-22. ¿Cuántas casas hay, cuántas son inhabitables o están arruinadas y, si el lugar es de señorío, qué carga paga cada propietario por el establecimiento del suelo?
-23. ¿Qué bienes propios posee el común y a cuánto asciende su producto anual?
-24. ¿Disfruta el común de algún arbitrio, sisa u otro recurso? ¿Con qué autorización, finalidad, duración y producto?
-25. ¿Qué gastos debe satisfacer el común —salarios de justicia y regidores, fiestas, empedrado, fuentes, sirvientes u otros— y cuál es su detalle?
-26. ¿Qué cargas de justicia tiene el común, como censos u otras obligaciones, cuál es su importe, su causa y su destinatario?
-27. ¿Está cargado de servicio ordinario y extraordinario u otros servicios, y en qué cuantía?
-28. ¿Hay empleos, alcabalas u otras rentas enajenadas? ¿A favor de quién, por qué motivo, por qué cantidad y con qué producto anual?
-29. ¿Cuántas tabernas, mesones, tiendas, panaderías, carnicerías, puentes, barcas, mercados, ferias u otros servicios hay en la población y su término, a quién pertenecen y qué utilidad anual produce cada uno?
-30. ¿Hay hospitales, de qué clase son, qué renta poseen y cómo se mantienen?
-31. ¿Hay cambistas, mercaderes al por mayor o personas que empleen capital por medio de corredores con lucro e interés, y qué utilidad anual obtiene cada una?
-32. ¿Hay tenderos de paños, tejidos o especias, médicos, cirujanos, boticarios, escribanos, arrieros u otras ocupaciones semejantes, y qué ganancia anual corresponde a cada uno?
-33. ¿Qué artes mecánicas existen —albañiles, canteros, albéitares, herreros, sogueros, zapateros, sastres, pelaires, tejedores, sombrereros, manguiteros, guanteros u otras—, cuántos maestros, oficiales y aprendices hay, y qué utilidad diaria obtiene cada uno trabajando en su oficio?
-34. ¿Hay artesanos con capital que almacenen materiales para venderlos, practiquen otro comercio o participen en arrendamientos, y qué utilidad anual obtiene cada uno?
-35. ¿Cuántos jornaleros hay y cuánto se paga diariamente a cada uno?
-36. ¿Cuántos pobres de solemnidad hay?
-37. ¿Hay personas con embarcaciones de transporte o pesca en el mar o en los ríos, cuántas son, a quién pertenecen y qué utilidad anual produce cada una?
-38. ¿Cuántos clérigos hay?
-39. ¿Hay conventos, de qué religión y sexo, y cuántos individuos alberga cada uno?
-40. ¿Posee el rey en el término alguna finca o renta distinta de las rentas generales y provinciales que debían extinguirse? ¿Cuál es, cómo se administra y cuánto produce?
+12. ¿Qué cantidad de frutos de cada género, unos años con otros, produce con un cultivo ordinario una medida de tierra de cada especie y calidad de las que hay en el término, sin incluir el producto de los árboles?
+13. ¿Qué producto se calcula que darán por medida de tierra los árboles de cada especie, según la forma en que esté hecho el plantío?
+14. ¿Qué valor tienen ordinariamente, unos años con otros, los frutos que producen las tierras del término, cada calidad de ellos?
+15. ¿Qué derechos están impuestos sobre las tierras del término, como diezmo, primicia, tercio-diezmo u otros, y a quién pertenecen?
+16. ¿A qué cantidad de frutos suelen ascender los referidos derechos de cada especie o por qué precio suelen arrendarse, unos años con otros?
+17. ¿Hay minas, salinas, molinos harineros o de papel, batanes u otros artefactos en el término, distinguiendo de qué metales y de qué uso, explicando sus dueños y qué utilidad anual se calcula que produce cada uno?
+18. ¿Hay algún esquilmo en el término, a quién pertenece, qué número de ganado acude a él para el esquileo y qué utilidad anual se calcula que da a su dueño?
+19. ¿Hay colmenas en el término, cuántas y a quién pertenecen?
+20. ¿Qué especies de ganado hay en el pueblo y término, excluyendo las mulas de coche y los caballos de regalo; y tiene algún vecino cabaña o yeguada que paste fuera del término, dónde y con qué número de cabezas, explicando el nombre del dueño?
+21. ¿De qué número de vecinos se compone la población y cuántos viven en las casas de campo o alquerías?
+22. ¿Cuántas casas hay en el pueblo, cuántas son inhabitables y cuántas están arruinadas; y, si es de señorío, tiene cada una alguna carga que pague el dueño por el establecimiento del suelo y de cuánto es?
+23. ¿Qué propios tiene el común y a cuánto asciende su producto anual, de lo cual deberá pedirse justificación?
+24. ¿Disfruta el común de algún arbitrio, sisa u otra cosa, de cuya concesión deberá pedirse copia para acompañar estas diligencias; qué cantidad produce cada uno al año, con qué fin se concedió, sobre qué especies, si es temporal o perpetuo y si su producto cubre o excede su aplicación?
+25. ¿Qué gastos debe satisfacer el común, como salarios de justicia y regidores, fiestas del Corpus u otras, empedrado, fuentes, sirvientes, etc., de los cuales deberá pedirse relación individual?
+26. ¿Qué cargas de justicia tiene el común, como censos que pague u otras, cuál es su importe, por qué motivo y a quién, de lo cual deberá pedirse noticia puntual?
+27. ¿Está cargado de servicio ordinario y extraordinario u otros, de los cuales también deberá pedirse relación individual?
+28. ¿Hay algún empleo, alcabala u otras rentas enajenadas; a quién, si fue por servicio pecuniario u otro motivo, por qué cantidad y cuánto produce cada una al año, debiendo pedirse los títulos y conservarse copia?
+29. ¿Cuántas tabernas, mesones, tiendas, panaderías, carnicerías, puentes, barcas sobre ríos, mercados, ferias, etc. hay en la población y término; a quién pertenecen y qué utilidad anual se calcula que puede dar cada uno?
+30. ¿Hay hospitales, de qué clase, qué renta tienen y de qué se mantienen?
+31. ¿Hay algún cambista, mercader al por mayor o quien beneficie su caudal por medio de corredor u otra persona, con lucro e interés; y qué utilidad anual se considera que puede resultar a cada uno?
+32. ¿Hay en el pueblo algún tendero de paños, ropas de oro, plata y seda, lienzos, especiería u otras mercaderías; médicos, cirujanos, boticarios, escribanos, arrieros, etc.; y qué ganancia anual se calcula que puede tener cada uno?
+33. ¿Qué ocupaciones de artes mecánicas hay en el pueblo, como albañiles, canteros, albéitares, herreros, sogueros, zapateros, sastres, pelaires, tejedores, sombrereros, manguiteros y guanteros, etc.; cuántos maestros, oficiales y aprendices hay en cada oficio y qué utilidad puede resultar a cada uno al día trabajando únicamente en él?
+34. ¿Hay entre los artesanos alguno que, teniendo caudal, haga acopio de materiales de su propio oficio o de otros para venderlos, practique algún otro comercio o participe en arrendamientos; quiénes son y qué utilidad anual se considera que puede quedar a cada uno?
+35. ¿Qué número de jornaleros hay en el pueblo y cuánto se paga de jornal diario a cada uno?
+36. ¿Cuántos pobres de solemnidad hay en la población?
+37. ¿Hay personas que tengan embarcaciones que naveguen en el mar o los ríos, su porte o para pescar; cuántas, a quién pertenecen y qué utilidad anual se considera que da cada una a su dueño?
+38. ¿Cuántos clérigos hay en el pueblo?
+39. ¿Hay conventos, de qué religiones y sexo, y qué número de individuos tiene cada uno?
+40. ¿Tiene el rey en el término o pueblo alguna finca o renta que no corresponda a las generales ni a las provinciales que debían extinguirse; cuáles son, cómo se administran y cuánto producen?
 
 ## 4. Cómo se realizaba la averiguación
 
@@ -90,7 +96,7 @@ El documento estudiado se titula «Copia de las respuestas generales del lugar d
 
 Presidió la operación el licenciado **don Joaquín Aguado**, abogado de los Reales Consejos y juez subdelegado. Comparecieron:
 
-- **don Manuel Antonio de Bega**, cura párroco;
+- **don Manuel Antonio de Bega**, cura párroco —el apellido aparece como **Vega** en la respuesta 15—;
 - **Juan Álvarez** y **Remirio Rodríguez**, vecinos y únicos oficiales de justicia;
 - **Domingo Díez** y **Francisco de Llorca**, peritos nombrados por el concejo;
 - **Domingo Suárez**, perito nombrado de oficio;
@@ -157,17 +163,17 @@ El estudio histórico reúne los resultados socioeconómicos del expediente y di
 
 Su base documental local es exclusivamente la Edición Crítica v3.5. No convierte medidas históricas ni presenta hipótesis como hechos.
 
-### 7.6. Edición modernizada 1.0
+### 7.6. Edición modernizada 1.1
 
 La edición modernizada ofrece el texto completo con ortografía, acentuación y puntuación actuales. Conserva nombres, cantidades, medidas, monedas e instituciones, y explica términos como ferrañal, cuartal, pelo, propios, arbitrio, esquilmo o vecera.
 
-El interrogatorio no se añadió entonces al texto porque requería una verificación externa independiente. Esa verificación se documenta ahora en **Verificacion_Interrogatorio_40_Preguntas.md**.
+La versión 1.1 incorpora antes de cada respuesta el enunciado íntegro y verificado de la pregunta correspondiente. Pregunta y respuesta aparecen separadas para que el formulario externo no se confunda con el texto material del manuscrito local. La verificación se documenta en [Verificacion_Interrogatorio_40_Preguntas.md](./Verificacion_Interrogatorio_40_Preguntas.md).
 
 ## 8. Cómo utilizar los documentos
 
 | Necesidad | Documento recomendado |
 |---|---|
-| Leer el contenido de principio a fin | Edición modernizada 1.0 |
+| Leer el contenido de principio a fin | Edición modernizada 1.1 |
 | Comprobar la grafía, una abreviatura o una duda | Edición Crítica v3.5 |
 | Conocer qué preguntaba el formulario | Esta introducción |
 | Comprender la economía y sociedad documentadas | Estudio Histórico 1.0 |
@@ -176,7 +182,7 @@ El interrogatorio no se añadió entonces al texto porque requería una verifica
 
 ## 9. Cautelas para la lectura
 
-1. **Vecino no significa habitante.** Es una categoría local y fiscal; el expediente distingue vecinos, medios vecinos, residentes y habitantes.
+1. **Vecino no significa habitante.** Es una categoría local y fiscal; el expediente distingue vecinos, medios vecinos, «avitadores» y residentes. La forma documental «avitadores» no se convierte en una cifra de población total.
 2. **Una medida agraria no equivale necesariamente a una superficie fija.** En Sorribas se relaciona con la cantidad de simiente y varía según la calidad de la tierra.
 3. **Utilidad es una valoración fiscal.** No siempre equivale a beneficio contable o renta efectiva.
 4. **Las respuestas son colectivas y juradas, pero no infalibles.** Pueden contener omisiones, aproximaciones y discrepancias.
@@ -203,7 +209,7 @@ El interrogatorio no se añadió entonces al texto porque requería una verifica
 - Manual Editorial 1.6.
 - Glosario e índices validados.
 - Estudio Histórico 1.0.
-- Edición modernizada 1.0.
+- Edición modernizada 1.1.
 - Verificación externa del interrogatorio de cuarenta preguntas.
 
 ## 11. Alcance de esta introducción

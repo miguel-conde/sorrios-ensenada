@@ -1,5 +1,7 @@
 # Validación de la edición modernizada
 
+> **Alcance histórico:** este informe validó la versión 1.0. La versión vigente 1.1 se valida conjuntamente con la introducción en `Aceptacion_Conjunta_Introduccion_Edicion_Modernizada_v1_1.md`.
+
 **Documento validado:** Catastro_Sorrios_1752_Version_Modernizada.md  
 **Versión:** 1.0  
 **Fecha:** 17 de septiembre de 2026  
