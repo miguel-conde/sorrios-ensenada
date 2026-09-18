@@ -1,7 +1,7 @@
 # Índice de referencia para el futuro volumen
 
 **Título provisional:** *Sorribos y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*  
-**Versión del esquema:** 1.2  
+**Versión del esquema:** 1.3  
 **Fecha:** 18 de septiembre de 2026  
 **Estado:** referencia de trabajo aprobada para la futura preparación del volumen  
 **Naturaleza:** esquema editorial; no constituye todavía el volumen compuesto
@@ -22,13 +22,13 @@ La secuencia general será:
 El volumen incluirá dieciséis capítulos. Los glosarios, concordancias, índices, fuentes y tablas de versiones se situarán después de los capítulos como aparatos de consulta. Las auditorías, validaciones y registros de operaciones permanecerán fuera del cuerpo principal como dossier editorial complementario.
 
 
-## 2. Incorporaciones acordadas para la versión 1.1
+## 2. Incorporaciones acumuladas desde la versión 1.1
 
 ### 2.1. Cartografía
 
 El volumen incluirá una lámina cartográfica a doble página situada después de la cronología y antes de la Parte I. Tendrá dos paneles principales:
 
-1. mapa de situación: España, provincia de León, entorno de Ordás y localización de Sorribos y Santibáñez de Ordás;
+1. mapa de situación: España, provincia de León, entorno de Ordás y localización de Sorribos —forma histórica del actual Sorrios— y Santibáñez de Ordás;
 2. mapa local: los dos núcleos, hidrografía y relieve principales, poblaciones próximas, caminos y referencias territoriales útiles.
 
 Cuando la evidencia lo permita, se añadirá un recuadro titulado «Esquema del término descrito en 1752», basado en la respuesta 3 y en otros elementos documentados. Este recuadro se presentará como reconstrucción esquemática, no como delimitación catastral exacta.
@@ -39,6 +39,9 @@ La cartografía deberá:
 - diferenciar información actual, información documentada e inferencia editorial;
 - incluir escala, norte, leyenda, fuentes, fecha y atribución;
 - conservar los topónimos históricos y separar sus identificaciones modernas;
+- aplicar para el núcleo la convención `Sorribos (1752) / Sorrios (actual)`, sin presentar `Sorribas` como variante histórica;
+- emplear marcadores de contorno transparente y tamaño contenido, evitando círculos opacos que oculten la base cartográfica;
+- dar al mapa local un acercamiento suficiente para leer la relación con Rioseco, Villapodambre, Tapia y los demás lugares documentados;
 - ser legible en color y en escala de grises;
 - enlazarse con el índice de lugares y topónimos;
 - evitar que límites o caminos actuales se presenten como si fueran necesariamente los de 1752.
@@ -113,6 +116,9 @@ Los enunciados completos volverán a aparecer en la edición modernizada con una
 - Juramento y desarrollo de la declaración.
 - Ratificación, edades y firmas.
 - Variantes nominales, incluida Bega/Vega.
+- Nota histórica sobre la denominación del lugar: formas documentadas `Sorribios`/`Sorribos` y continuidad hasta el actual `Sorrios`.
+- Rectificación paleográfica de la lectura anterior `Sorribas`, que se explicará como error editorial y no como variante histórica.
+- Límite de la interpretación: la identificación del lugar es segura, pero no se afirmará una secuencia fonética completa que las fuentes no permitan demostrar.
 - Contenido y singularidades del expediente.
 
 ## Capítulo 4. Del manuscrito al volumen actual
@@ -352,6 +358,8 @@ Incluirá:
 
 Se distinguirá el topónimo documentado de su identificación moderna cuando esta sea segura.
 
+La entrada principal será `Sorribos`, con remisión a `Sorrios` como forma actual. `Sorrios` remitirá a la entrada histórica y a las páginas del mapa, la nota toponímica y el estudio. `Sorribas` no figurará como variante histórica; si se indexa por aparecer en la explicación editorial, quedará rotulado únicamente como lectura anterior descartada.
+
 ## Índice de instituciones, autoridades y jurisdicciones
 
 Incluirá, entre otras categorías:
@@ -495,3 +503,9 @@ Cualquier cambio posterior en esta estructura deberá registrarse expresamente a
 
 - Rectificación del topónimo manuscrito `Sorribas` → `Sorribos` en títulos, rótulos y referencias del futuro volumen.
 - Alineación con Edición Crítica v3.6, edición modernizada 1.2 y Estudio Histórico 1.1.
+
+## Versión 1.3 — 18 de septiembre de 2026
+
+- Incorporación expresa de la nota histórica sobre la continuidad `Sorribos` → `Sorrios` y de sus límites interpretativos.
+- Fijación de la convención cartográfica `Sorribos (1752) / Sorrios (actual)`, con marcador de contorno transparente y mapa local más próximo.
+- Coordinación de la nota con el capítulo 3 y con el índice de lugares y topónimos.

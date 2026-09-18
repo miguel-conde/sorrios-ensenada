@@ -1,5 +1,11 @@
 # Cambios
 
+## 18 de septiembre de 2026 — Referencias del volumen alineadas con `Sorribos` y `Sorrios`
+
+- Auditados los documentos vivos: `Sorribos` es la forma paleográfica canónica de 1752 y `Sorrios` la identificación moderna segura; los restos de `Sorribas` se conservan únicamente cuando explican la lectura editorial descartada o forman parte del historial.
+- Elevado a 1.3 el índice de referencia del volumen para incorporar la nota histórica del topónimo, su límite interpretativo y su coordinación con cartografía e índices.
+- Publicado el plan de composición 0.3, que preserva 0.2 como antecedente e integra las decisiones aceptadas sobre cronología, marcadores cartográficos, zoom local, facsímil real, respuesta 4, glosario alfabético e índice de materias.
+- No se modifican el manuscrito, la Edición Crítica v3.6, la introducción 1.2, la edición modernizada 1.2, el Estudio Histórico 1.1, `estado.yaml`, `unidades.yaml` ni el PDF autoritativo.
 ## 18 de septiembre de 2026 — Rectificación paleográfica `Sorribos` y plugin/skill v2.0.2
 
 - Releídas visualmente las cuatro apariciones del topónimo en Portada, folio 306r y folio 306v; todas leen `Sorribos`, con confirmación especialmente clara en la división `Sorri-` / `bos` de folio 306r.
