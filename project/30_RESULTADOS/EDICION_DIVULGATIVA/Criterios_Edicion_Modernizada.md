@@ -44,4 +44,4 @@ Cada bloque distingue tres niveles: título temático editorial, pregunta extern
 
 ## 7. Límites
 
-Esta es una modernización lingüística, no una traducción libre ni una reconstrucción histórica. Para verificar una cita, una grafía o una abreviatura debe consultarse la Edición Crítica v3.5. Las explicaciones históricas se limitan a lo necesario para la lectura y proceden del glosario y los índices ya validados del proyecto. Los enunciados del interrogatorio proceden de fuentes institucionales externas documentadas en Verificacion_Interrogatorio_40_Preguntas.md.
+Esta es una modernización lingüística, no una traducción libre ni una reconstrucción histórica. Para verificar una cita, una grafía o una abreviatura debe consultarse la Edición Crítica v3.6. Las explicaciones históricas se limitan a lo necesario para la lectura y proceden del glosario y los índices ya validados del proyecto. Los enunciados del interrogatorio proceden de fuentes institucionales externas documentadas en Verificacion_Interrogatorio_40_Preguntas.md.

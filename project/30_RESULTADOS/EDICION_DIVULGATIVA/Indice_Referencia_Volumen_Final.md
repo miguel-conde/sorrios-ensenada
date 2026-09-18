@@ -121,7 +121,7 @@ Los enunciados completos volverán a aparecer en la edición modernizada con una
 - Orden de las imágenes y reconstrucción de la secuencia material.
 - Las 35 unidades documentales.
 - Elaboración de la transcripción paleográfica.
-- Preparación de la Edición Crítica v3.5.
+- Preparación de la Edición Crítica v3.6.
 - Criterios de modernización.
 - Diferencias entre facsímil, transcripción paleográfica, edición crítica y versión modernizada.
 - Sistema de folios, notas y concordancias.
@@ -434,9 +434,9 @@ Explicará la relación entre:
 - manuscrito original;
 - facsímil;
 - transcripción paleográfica;
-- Edición Crítica v3.5;
-- edición modernizada 1.1;
-- Estudio Histórico 1.0;
+- Edición Crítica v3.6;
+- edición modernizada 1.2;
+- Estudio Histórico 1.1;
 - glosario e índices;
 - volumen final.
 
@@ -459,10 +459,10 @@ Quedarán fuera del cuerpo principal, pero enlazados como documentación de resp
 
 El futuro volumen se construirá, como mínimo, a partir de:
 
-- Edición Crítica v3.5;
-- Introducción al Catastro, versión 1.1;
-- edición modernizada, versión 1.1;
-- Estudio Histórico, versión canónica 1.0;
+- Edición Crítica v3.6;
+- Introducción al Catastro, versión 1.2;
+- edición modernizada, versión 1.2;
+- Estudio Histórico, versión canónica 1.1;
 - glosario histórico;
 - índices vivos de personas, topónimos, instituciones, medidas y oficios;
 - fuentes cartográficas verificadas y brief cartográfico, cuando se preparen;

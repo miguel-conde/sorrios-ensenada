@@ -12,7 +12,7 @@
 
 ## 0. Método, evidencia y alcance
 
-Este estudio reconstruye la organización socioeconómica que permiten observar las Respuestas Generales de 1752 para el lugar de Sorribos y Santibáñez de Ordás. La base documental del Estudio Histórico es exclusivamente la edición paleográfica validada, publicada como Edición Crítica v3.5. Los análisis 0.1–0.6 han servido para formular preguntas y localizar cálculos, pero carecen de autoridad documental autónoma.
+Este estudio reconstruye la organización socioeconómica que permiten observar las Respuestas Generales de 1752 para el lugar de Sorribos y Santibáñez de Ordás. La base documental del Estudio Histórico es exclusivamente la edición paleográfica validada, publicada como Edición Crítica v3.6. Los análisis 0.1–0.6 han servido para formular preguntas y localizar cálculos, pero carecen de autoridad documental autónoma.
 
 La trazabilidad se expresa mediante cuatro niveles:
 
@@ -424,5 +424,5 @@ El índice normativo de trazabilidad es `project/30_RESULTADOS/ESTUDIO_HISTORICO
 | 0.6 — síntesis integral | Base de redacción reestructurada y corregida. |
 | Auditoría 0.1–0.6 | Memoria de problemas y prueba de regresión. |
 
-La versión 1.1 sustituye a 1.0 como texto canónico tras la rectificación paleográfica e histórica del topónimo `Sorribos`. Los documentos 0.2–0.6 permanecen como análisis derivados e historial intelectual, no como autoridades históricas. Los documentos 0.2–0.6 permanecen como análisis derivados e historial intelectual, no como autoridades históricas.
+La versión 1.1 sustituye a 1.0 como texto canónico tras la rectificación paleográfica e histórica del topónimo `Sorribos`. Los documentos 0.2–0.6 permanecen como análisis derivados e historial intelectual, no como autoridades históricas.
 

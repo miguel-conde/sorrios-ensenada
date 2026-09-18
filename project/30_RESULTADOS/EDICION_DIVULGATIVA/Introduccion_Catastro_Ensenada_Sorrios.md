@@ -31,7 +31,7 @@ Las respuestas deben leerse como una declaración fiscal colectiva, elaborada si
 
 ## 3. El interrogatorio de cuarenta preguntas
 
-La siguiente versión reproduce íntegramente el contenido de las cuarenta preguntas a partir de la [versión en grafía actual de PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=31b). Se modernizan grafía, puntuación y construcciones transparentes, sin resumir materias ni introducir explicaciones dentro de los enunciados. Es exactamente la misma versión que encabeza las respuestas de la edición modernizada 1.1.
+La siguiente versión reproduce íntegramente el contenido de las cuarenta preguntas a partir de la [versión en grafía actual de PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=31b). Se modernizan grafía, puntuación y construcciones transparentes, sin resumir materias ni introducir explicaciones dentro de los enunciados. Es exactamente la misma versión que encabeza las respuestas de la edición modernizada 1.2.
 
 La pregunta 29 se ofrece completa. La página de PARES en grafía actual termina su texto tras «hay en la población», pero una [publicación oficial de la Dirección General del Catastro dedicada a Vera](https://www.catastro.hacienda.gob.es/documentos/publicaciones/catalogoensenada_1752_vera.pdf) conserva también la referencia al término, a la titularidad y a la utilidad anual. Esa formulación completa concuerda con la respuesta dada en Sorribos.
 
@@ -135,7 +135,7 @@ El proyecto identificó como manuscrito autoritativo el PDF denominado **sorrios
 
 Las dieciocho páginas digitales se ordenaron y describieron como treinta y cinco unidades. Cada unidad tiene una posición determinada dentro de la secuencia: portada, reverso, recto o vuelto de folio y hoja posterior.
 
-### 7.3. Edición Crítica v3.5
+### 7.3. Edición Crítica v3.6
 
 La Edición Crítica contiene para cada unidad:
 
@@ -152,7 +152,7 @@ Mantiene grafías históricas, desarrolla abreviaturas mediante convenciones exp
 
 Se elaboraron un diario editorial, un glosario histórico e índices de personas, lugares, instituciones, medidas y oficios. Estos instrumentos ayudan a localizar variantes y términos sin sustituir el contexto de cada aparición.
 
-### 7.5. Estudio Histórico 1.0
+### 7.5. Estudio Histórico 1.1
 
 El estudio histórico reúne los resultados socioeconómicos del expediente y distingue:
 
@@ -161,22 +161,22 @@ El estudio histórico reúne los resultados socioeconómicos del expediente y di
 - **I:** interpretación;
 - **L:** límite o discrepancia.
 
-Su base documental local es exclusivamente la Edición Crítica v3.5. No convierte medidas históricas ni presenta hipótesis como hechos.
+Su base documental local es exclusivamente la Edición Crítica v3.6. No convierte medidas históricas ni presenta hipótesis como hechos.
 
-### 7.6. Edición modernizada 1.1
+### 7.6. Edición modernizada 1.2
 
 La edición modernizada ofrece el texto completo con ortografía, acentuación y puntuación actuales. Conserva nombres, cantidades, medidas, monedas e instituciones, y explica términos como ferrañal, cuartal, pelo, propios, arbitrio, esquilmo o vecera.
 
-La versión 1.1 incorpora antes de cada respuesta el enunciado íntegro y verificado de la pregunta correspondiente. Pregunta y respuesta aparecen separadas para que el formulario externo no se confunda con el texto material del manuscrito local. La verificación se documenta en [Verificacion_Interrogatorio_40_Preguntas.md](./Verificacion_Interrogatorio_40_Preguntas.md).
+La versión 1.2 incorpora antes de cada respuesta el enunciado íntegro y verificado de la pregunta correspondiente. Pregunta y respuesta aparecen separadas para que el formulario externo no se confunda con el texto material del manuscrito local. La verificación se documenta en [Verificacion_Interrogatorio_40_Preguntas.md](./Verificacion_Interrogatorio_40_Preguntas.md).
 
 ## 8. Cómo utilizar los documentos
 
 | Necesidad | Documento recomendado |
 |---|---|
-| Leer el contenido de principio a fin | Edición modernizada 1.1 |
-| Comprobar la grafía, una abreviatura o una duda | Edición Crítica v3.5 |
+| Leer el contenido de principio a fin | Edición modernizada 1.2 |
+| Comprobar la grafía, una abreviatura o una duda | Edición Crítica v3.6 |
 | Conocer qué preguntaba el formulario | Esta introducción |
-| Comprender la economía y sociedad documentadas | Estudio Histórico 1.0 |
+| Comprender la economía y sociedad documentadas | Estudio Histórico 1.1 |
 | Localizar una persona, lugar, medida u oficio | Índices y glosario |
 | Revisar la procedencia del interrogatorio | Verificación externa de las cuarenta preguntas |
 
@@ -205,11 +205,11 @@ La versión 1.1 incorpora antes de cada respuesta el enunciado íntegro y verifi
 
 ### Fuentes internas del proyecto
 
-- Edición Crítica v3.5.
+- Edición Crítica v3.6.
 - Manual Editorial 1.6.
 - Glosario e índices validados.
-- Estudio Histórico 1.0.
-- Edición modernizada 1.1.
+- Estudio Histórico 1.1.
+- Edición modernizada 1.2.
 - Verificación externa del interrogatorio de cuarenta preguntas.
 
 ## 11. Alcance de esta introducción

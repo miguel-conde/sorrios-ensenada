@@ -2,11 +2,11 @@
 
 ## Sorribos y Santibáñez de Ordás en 1752
 
-**Versión:** 1.0  
-**Fecha:** 17 de septiembre de 2026  
+**Versión:** 1.1  
+**Fecha:** 18 de septiembre de 2026  
 **Naturaleza:** instrumento de control previo; no sustituye al `Estudio_Historico.md` canónico  
-**Base documental exclusiva:** `Edicion_Critica_v3_5.md`  
-**Revisión de base:** `main@e3c103664ea58a20051024a428456dfc29de401a`  
+**Base documental exclusiva:** `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md`, versión 3.6  
+**Revisión de base:** `main@e34a470ac35a1085c1606898c65733fe896b4ce1`  
 **Control previo:** `Auditoria_Coherencia_0_1_0_6.md`  
 
 ## 1. Función del registro
