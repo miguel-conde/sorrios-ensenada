@@ -21,7 +21,7 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 - **Clase de institución:** circunscripción concejil histórica.
 - **Unidades:** folio 306r; folio 306v; folio 307r.
 - **Identificación histórica:** PARES documenta en 1751 a un vecino de `Santibáñez, concejo de Ordás`: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/478437>. En 1808 documenta `Villarrodrigo, en la jurisdicción de Santa María de Ordás` y padrones de Santa María, Callejo, Adrados, Villarrodrigo y Santibáñez: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/480016>. Estas fuentes permiten relacionar la circunscripción histórica con el territorio de Ordás, pero no identificarla sin más con el municipio contemporáneo de Santa María de Ordás.
-- **Referencias cruzadas:** `Sorribas`; `Santibañez De Ordas`; `Ordas`; `Dom[ing]o Diez`; `Fran[cis]co de Llorca`; `Conde De Luna`; `Señorío`.
+- **Referencias cruzadas:** `Sorribos`; `Santibañez De Ordas`; `Ordas`; `Dom[ing]o Diez`; `Fran[cis]co de Llorca`; `Conde De Luna`; `Señorío`.
 
 ### R[eale]s Consejos
 

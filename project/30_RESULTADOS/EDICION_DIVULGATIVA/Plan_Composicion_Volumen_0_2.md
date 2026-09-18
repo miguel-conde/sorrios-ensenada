@@ -5,9 +5,9 @@
 **Fecha:** 18 de septiembre de 2026  
 **Estado:** plan operativo vigente  
 **Índice rector:** [Índice de referencia para el futuro volumen](./Indice_Referencia_Volumen_Final.md)  
-**Título provisional:** *Sorribas y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*
+**Título provisional:** *Sorribos y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*
 
-> Este plan actualiza la versión 0.1 con la cartografía, la portada y la serie completa de índices definida por el índice rector 1.1. Establece la arquitectura de composición, las dos salidas PDF, los controles y las fases de aceptación. No inicia todavía la composición del volumen ni modifica las fuentes editoriales.
+> Este plan actualiza la versión 0.1 con la cartografía, la portada y la serie completa de índices definida por el índice rector 1.2. Establece la arquitectura de composición, las dos salidas PDF, los controles y las fases de aceptación. No inicia todavía la composición del volumen ni modifica las fuentes editoriales.
 
 # 1. Objetivo
 
@@ -80,14 +80,14 @@ Durante la producción:
 Antes de maquetar se fijará un único commit de GitHub como base de composición. La primera congelación deberá incluir:
 
 - PDF autoritativo: `sorrios_ensenada_orden_lectura_calidad_original.pdf`;
-- Edición Crítica v3.5;
-- Introducción al Catastro, versión 1.1;
-- edición modernizada, versión 1.1;
-- Estudio Histórico, versión canónica 1.0;
+- Edición Crítica v3.6;
+- Introducción al Catastro, versión 1.2;
+- edición modernizada, versión 1.2;
+- Estudio Histórico, versión canónica 1.1;
 - glosario histórico;
 - índices vivos de personas, topónimos, instituciones, medidas y oficios;
 - cuadros y documentos analíticos validados;
-- índice de referencia del futuro volumen, versión 1.1;
+- índice de referencia del futuro volumen, versión 1.2;
 - fuentes cartográficas, licencias y memoria de elaboración del mapa.
 
 La identidad del PDF se comprobará mediante:
@@ -233,7 +233,7 @@ Cada bloque conservará:
 
 1. título temático;
 2. pregunta completa;
-3. rótulo «Respuesta de Sorribas y Santibáñez»;
+3. rótulo «Respuesta de Sorribos y Santibáñez»;
 4. folio de procedencia;
 5. texto modernizado;
 6. notas.
@@ -372,7 +372,7 @@ Las variantes históricas se conservarán con remisiones de «véase» y «véas
 Se incorporará una lámina cartográfica a doble página en los preliminares, después de la cronología y antes de la parte I. Deberá combinar:
 
 - un mapa de situación regional;
-- un mapa local de Sorribas y Santibáñez de Ordás y su entorno inmediato;
+- un mapa local de Sorribos y Santibáñez de Ordás y su entorno inmediato;
 - si la evidencia lo permite, un esquema interpretativo claramente rotulado de elementos mencionados en 1752.
 
 ## 14.2. Fuentes y estatuto de la información
@@ -646,4 +646,4 @@ El siguiente producto será la **muestra de diseño 0.2**, no el volumen complet
 | Versión | Fecha | Cambio principal |
 |---|---|---|
 | 0.1 | 17 de septiembre de 2026 | Plan operativo inicial para un volumen y dos salidas PDF |
-| 0.2 | 18 de septiembre de 2026 | Integración de portada, cartografía, índice onomástico, índice de materias y controles conjuntos |
+| 0.2 | 18 de septiembre de 2026 | Integración de portada, cartografía, índice onomástico, índice de materias y controles conjuntos; rectificación paleográfica del topónimo `Sorribos` y alineación con las fuentes 3.6/1.2/1.1 |

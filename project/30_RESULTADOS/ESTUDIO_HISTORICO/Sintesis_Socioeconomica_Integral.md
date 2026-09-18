@@ -1,6 +1,6 @@
 # Síntesis socioeconómica integral
 
-## Sorribas y Santibáñez de Ordás en 1752
+## Sorribos y Santibáñez de Ordás en 1752
 
 **Estado:** análisis derivado activo  
 **Versión:** 0.6 — síntesis histórica consolidada  
@@ -39,7 +39,7 @@ Se mantienen todas las restricciones metodológicas vigentes:
 9. no se estiman renta total, producto total, autoconsumo, comercio neto, riqueza individual ni nivel de vida por hogar;
 10. no se convierten dependencias estructurales en crisis históricas ocurridas si el expediente no las documenta.
 
-El objetivo es responder a una pregunta de conjunto: **¿qué tipo de comunidad socioeconómica permiten reconstruir las Respuestas Generales de 1752 para Sorribas y Santibáñez de Ordás?**
+El objetivo es responder a una pregunta de conjunto: **¿qué tipo de comunidad socioeconómica permiten reconstruir las Respuestas Generales de 1752 para Sorribos y Santibáñez de Ordás?**
 
 ---
 
@@ -64,7 +64,7 @@ Esta tesis puede descomponerse en diez proposiciones:
 
 # 2. Escala local, jurisdicción y producción de la información
 
-El expediente denomina a la unidad `Lugar De Sorribas, y Santibañez` y la integra en el `Concejo de Ordas`. La operación se celebró el 17 de septiembre de 1752 ante el licenciado Joachin Aguado, juez subdelegado. Comparecieron el cura Manuel Antonio de Bega/Vega; Juan Alvarez y Remirio Rodriguez, presentados como vecinos y únicos oficiales de justicia; Domingo Diez y Francisco de Llorca, peritos nombrados por el concejo; y Domingo Suarez, perito nombrado de oficio. (Folios 306r–306v y 321r–321v.) [D]
+El expediente denomina a la unidad `Lugar De Sorribos, y Santibañez` y la integra en el `Concejo de Ordas`. La operación se celebró el 17 de septiembre de 1752 ante el licenciado Joachin Aguado, juez subdelegado. Comparecieron el cura Manuel Antonio de Bega/Vega; Juan Alvarez y Remirio Rodriguez, presentados como vecinos y únicos oficiales de justicia; Domingo Diez y Francisco de Llorca, peritos nombrados por el concejo; y Domingo Suarez, perito nombrado de oficio. (Folios 306r–306v y 321r–321v.) [D]
 
 La comunidad es de señorío y pertenece al Conde de Luna. La afirmación de la respuesta 2 de que no pagan `derechos algunos` por esa razón no significa ausencia de cargas señoriales o fiscales: otras respuestas documentan 633 reales anuales de alcabalas enajenadas a favor del Conde, un pozo de pesca de su propiedad arrendado por nueve reales y, a la vez, ausencia de pago por `establecimiento del suelo`. (Folios 307r, 318v–319v.) [D]
 
@@ -567,7 +567,7 @@ Por ello, la existencia de pobres de solemnidad, cargas fiscales o tierra de ter
 
 # 22. Retrato socioeconómico consolidado
 
-En septiembre de 1752, Sorribas y Santibáñez de Ordás aparecen ante el Catastro como una comunidad pequeña cuyo funcionamiento económico descansa principalmente en hogares agrarios insertos en una red de recursos privados, comunales e institucionales. [I]
+En septiembre de 1752, Sorribos y Santibáñez de Ordás aparecen ante el Catastro como una comunidad pequeña cuyo funcionamiento económico descansa principalmente en hogares agrarios insertos en una red de recursos privados, comunales e institucionales. [I]
 
 El centeno organiza gran parte del paisaje cultivado y de los flujos en especie. El barbecho bienal introduce un ritmo productivo que impide identificar cabida total con superficie cosechada anual. Junto a él, el lino y la linaza forman una especialización de menor escala pero mayor intensidad; la cebada ocupa un papel complementario y los prados sostienen una ganadería diversa. [D+C+I]
 
@@ -589,7 +589,7 @@ La mejor síntesis, por tanto, no es una cifra única de riqueza o pobreza, sino
 
 Sin incorporar todavía bibliografía comparativa ni nuevas fuentes, el corpus permite sostener con alta confianza interna las siguientes conclusiones:
 
-1. Sorribas y Santibáñez forman una unidad local conjunta dentro del Concejo de Ordás. [D]
+1. Sorribos y Santibáñez forman una unidad local conjunta dentro del Concejo de Ordás. [D]
 2. El concejo es de señorío del Conde de Luna, pero los derechos concretos deben distinguirse entre sí. [D]
 3. La estructura productiva es inequívocamente agraria y el centeno constituye su principal base territorial documentada. [D+C]
 4. Lino, prados, ganadería, molinos y apicultura introducen diversificación productiva. [D]

@@ -1,6 +1,6 @@
 # Diario Editorial
 
-## Catastro de Ensenada de Sorribas y Santibáñez de Ordás (1752)
+## Catastro de Ensenada de Sorribos y Santibáñez de Ordás (1752)
 
 > Documento de trabajo interno. No forma parte de la edición crítica.
 
@@ -23,6 +23,15 @@ Resuelta el 6 de septiembre de 2026 al validar la Portada. El signo aislado situ
 La identificación se apoya en la forma gráfica del propio signo y, como comprobación paleográfica auxiliar, en un signo análogo visible al comienzo del folio 306r. Esta comparación no supone validar por anticipado el signo de esa unidad ni establece un criterio automático para signos superiores posteriores, que deberán examinarse cuando llegue su turno.
 
 ## Historial de cambios documentales
+
+### 18 de septiembre de 2026 — rectificación paleográfica del topónimo
+
+- Releídas visualmente las cuatro apariciones materiales del topónimo en Portada, folio 306r y folio 306v.
+- Se fija `Sorribos` como lectura manuscrita; la división `Sorri-` / `bos` de folio 306r confirma la lectura.
+- La forma `Sorribas`, usada en fases anteriores del proyecto, queda rectificada como error paleográfico editorial y no como variante histórica del lugar de Ordás.
+- El contraste externo documenta `Santibáñez de Sorribos` en 1715, formas medievales `Sorribios`/`Sorribos`, pervivencia de `Sorribos` en el siglo XIX y la forma moderna `Sorrios`.
+- Se corrigen los documentos vivos y derivados; los archivos históricos de `90_ARCHIVO` se conservan sin reescritura y quedan cubiertos por una errata expresa.
+
 
 ### 2 de agosto de 2026
 
@@ -59,7 +68,7 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Validada y cerrada documentalmente la unidad Portada como primer ciclo editorial real sobre el workspace canónico de GitHub v2.
 - Incorporada la transcripción paleográfica y completado su aparato editorial.
 - Resuelta D-001: el signo superior de la portada se identifica como cruz invocativa reconocible.
-- Incorporados al Índice de topónimos `Sorribas` y `Santibañez De Ordas`; no se generan altas justificadas en Glosario ni en los índices de personas, instituciones, medidas u oficios.
+- Incorporados al Índice de topónimos `Sorribos` y `Santibañez De Ordas`; no se generan altas justificadas en Glosario ni en los índices de personas, instituciones, medidas u oficios.
 - El estado avanza a `reverso_portada` como unidad actual.
 - Validada y cerrada documentalmente la unidad Reverso de la portada.
 - Confirmada la ausencia de escritura significativa propia; la transcripción se fija como `[En blanco]` conforme al Manual Editorial v1.5, § 12.
@@ -70,7 +79,7 @@ La identificación se apoya en la forma gráfica del propio signo y, como compro
 - Transcrito el encabezamiento y el comienzo del acta de 17 de septiembre de 1752, conservando grafías, abreviaturas desarrolladas, saltos de línea y la división `Jo-` / `achin`.
 - La cruz superior se confirma como cruz invocativa reconocible conforme al criterio ya vigente; no se introduce ningún criterio editorial nuevo.
 - La lectura `Remirio Rodriguez` se comprueba paleográficamente con su aparición final en la página 18, sin validar por anticipado esa unidad.
-- Incorporadas cuatro entradas al Índice de personas, dos al Índice de instituciones y tres al Índice de oficios; actualizado el Índice de topónimos con la nueva aparición de `Sorribas` y `Santibañez De Ordas` y con el alta de `Ordas`.
+- Incorporadas cuatro entradas al Índice de personas, dos al Índice de instituciones y tres al Índice de oficios; actualizado el Índice de topónimos con la nueva aparición de `Sorribos` y `Santibañez De Ordas` y con el alta de `Ordas`.
 - No se generan altas justificadas en el Glosario ni en el Índice de medidas y no quedan dudas abiertas.
 - El estado avanza a `folio_306v` como unidad actual.
 - Validada y cerrada documentalmente la unidad folio 306v.

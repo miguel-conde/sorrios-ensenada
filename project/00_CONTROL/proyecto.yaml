@@ -1,6 +1,6 @@
 schema_version: 2
 project_id: sorrios-ensenada-1752
-title: "Catastro de Ensenada de Sorribas y Santibáñez de Ordás"
+title: "Catastro de Ensenada de Sorribos y Santibáñez de Ordás"
 
 repository:
   provider: github
@@ -10,11 +10,11 @@ repository:
 
 plugin:
   name: sorrios-ensenada
-  version: "2.0.1"
+  version: "2.0.2"
   path: plugins/sorrios-ensenada
 skill:
   name: editar-catastro-sorrios
-  version: "2.0.1"
+  version: "2.0.2"
   path: plugins/sorrios-ensenada/skills/editar-catastro-sorrios
 
 phase:
@@ -56,7 +56,7 @@ documents:
   edition:
     provider: github
     path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
-    version: "3.5"
+    version: "3.6"
   diary:
     provider: github
     path: project/20_TRABAJO_EDITORIAL/Diario_Editorial.md

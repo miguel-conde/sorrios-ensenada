@@ -1,6 +1,6 @@
 # Auditoría final de coherencia del Estudio Histórico 0.1–0.6
 
-## Sorribas y Santibáñez de Ordás (1752)
+## Sorribos y Santibáñez de Ordás (1752)
 
 **Tipo:** auditoría documental, cuantitativa, interpretativa y de trazabilidad  
 **Fecha:** 17 de septiembre de 2026  

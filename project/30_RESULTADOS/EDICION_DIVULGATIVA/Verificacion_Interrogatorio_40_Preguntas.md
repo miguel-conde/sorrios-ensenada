@@ -1,15 +1,17 @@
 # Verificación externa del interrogatorio de cuarenta preguntas
 
-**Expediente de aplicación:** Catastro de Sorribas y Santibáñez de Ordás (1752)  
+> **Actualización 18 de septiembre de 2026:** todas las referencias locales al topónimo se alinean con la rectificación paleográfica `Sorribos` de la Edición Crítica v3.6. La verificación externa del interrogatorio no cambia.
+
+**Expediente de aplicación:** Catastro de Sorribos y Santibáñez de Ordás (1752)  
 **Fecha de verificación:** 17 de septiembre de 2026  
 **Resultado:** verificado con una incidencia de transmisión documentada  
-**Uso previsto:** fuente contextual para la introducción; no sustituye a la Edición Crítica v3.5
+**Uso previsto:** fuente contextual para la introducción; no sustituye a la Edición Crítica v3.6
 
 ## 1. Objeto
 
-El expediente de Sorribas declara que los comparecientes fueron preguntados por el «interrogatorio impreso de la letra A». Como ese impreso no forma parte de las dieciocho páginas del PDF autoritativo del proyecto, sus enunciados no pueden reconstruirse únicamente a partir de las respuestas locales.
+El expediente de Sorribos declara que los comparecientes fueron preguntados por el «interrogatorio impreso de la letra A». Como ese impreso no forma parte de las dieciocho páginas del PDF autoritativo del proyecto, sus enunciados no pueden reconstruirse únicamente a partir de las respuestas locales.
 
-Esta verificación determina qué formulario contestaron los declarantes, acredita que constaba de cuarenta preguntas y fija una versión modernizada de sus enunciados para incorporarla a un documento introductorio. El interrogatorio actúa como fuente externa de contexto; el texto de las respuestas continúa dependiendo exclusivamente de la Edición Crítica v3.5.
+Esta verificación determina qué formulario contestaron los declarantes, acredita que constaba de cuarenta preguntas y fija una versión modernizada de sus enunciados para incorporarla a un documento introductorio. El interrogatorio actúa como fuente externa de contexto; el texto de las respuestas continúa dependiendo exclusivamente de la Edición Crítica v3.6.
 
 ## 2. Fuentes consultadas y jerarquía
 
@@ -54,10 +56,10 @@ Se verifican los siguientes extremos:
 1. El formulario es el denominado **Interrogatorio de la letra A**.
 2. Fue publicado como parte del dispositivo normativo asociado al Real Decreto de 10 de octubre de 1749.
 3. Consta de **cuarenta preguntas numeradas**.
-4. Su secuencia temática coincide con las cuarenta respuestas del expediente de Sorribas.
+4. Su secuencia temática coincide con las cuarenta respuestas del expediente de Sorribos.
 5. Las respuestas 7, 8 y 13 remiten a la 6 porque las cuatro preguntas pertenecen al bloque de arbolado.
 6. Las respuestas negativas 31, 32, 34 y 37 son inteligibles al restituir los enunciados del formulario.
-7. La respuesta 29 de Sorribas —taberna por vecera y pozo de pesca, con titularidad y utilidad— exige el enunciado completo de la pregunta 29.
+7. La respuesta 29 de Sorribos —taberna por vecera y pozo de pesca, con titularidad y utilidad— exige el enunciado completo de la pregunta 29.
 8. La respuesta 40 corresponde a rentas o fincas del rey distintas de las generales y provinciales; la forma documental local «venta» se conserva como lectura del manuscrito y no debe usarse para alterar el formulario general.
 
 ## 4. Incidencia de la pregunta 29
@@ -66,7 +68,7 @@ La página de PARES en grafía actual termina la pregunta 29 después de «hay e
 
 - la formulación completa aparece en publicaciones oficiales de la Dirección General del Catastro;
 - las respuestas históricas de numerosas localidades contestan expresamente sobre titularidad y utilidad;
-- la propia respuesta de Sorribas informa quién posee el pozo de pesca y qué renta produce.
+- la propia respuesta de Sorribos informa quién posee el pozo de pesca y qué renta produce.
 
 Por tanto, para la introducción se adopta la formulación completa:
 
@@ -87,7 +89,7 @@ La introducción presenta las preguntas con:
 
 La versión resultante es una edición de lectura del formulario, no una transcripción paleográfica del impreso de 1749.
 
-## 6. Concordancia con el expediente de Sorribas
+## 6. Concordancia con el expediente de Sorribos
 
 | Preguntas | Materia | Respuestas locales |
 |---|---|---|
@@ -104,7 +106,7 @@ La versión resultante es una edición de lectura del formulario, no una transcr
 
 ## 7. Límites
 
-- No se afirma que el ejemplar impreso materialmente utilizado en Sorribas sea el mismo ejemplar digital mostrado por PARES; se verifica el formulario normativo común al que remite el expediente.
+- No se afirma que el ejemplar impreso materialmente utilizado en Sorribos sea el mismo ejemplar digital mostrado por PARES; se verifica el formulario normativo común al que remite el expediente.
 - No se incorporan al texto de las preguntas particularidades de las respuestas locales.
 - No se usa el interrogatorio para resolver lecturas paleográficas dudosas del manuscrito.
 - Las explicaciones históricas de la introducción se citan por separado y no adquieren autoridad sobre el texto local.

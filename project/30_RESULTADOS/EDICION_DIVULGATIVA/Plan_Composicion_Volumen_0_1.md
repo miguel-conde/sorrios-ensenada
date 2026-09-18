@@ -5,7 +5,7 @@
 **Fecha:** 17 de septiembre de 2026  
 **Estado:** plan operativo inicial  
 **Índice rector:** [Índice de referencia para el futuro volumen](./Indice_Referencia_Volumen_Final.md)  
-**Título provisional:** *Sorribas y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*
+**Título provisional:** *Sorribos y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*
 
 > Este plan define la arquitectura de composición, las dos salidas PDF, los controles y las fases de aceptación. No inicia todavía la composición del volumen ni modifica las fuentes editoriales.
 
@@ -209,7 +209,7 @@ Cada bloque conservará:
 
 1. título temático;
 2. pregunta completa;
-3. rótulo «Respuesta de Sorribas y Santibáñez»;
+3. rótulo «Respuesta de Sorribos y Santibáñez»;
 4. folio de procedencia;
 5. texto modernizado;
 6. notas.

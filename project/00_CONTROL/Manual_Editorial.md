@@ -1,6 +1,6 @@
 # Manual Editorial de Referencia
 
-## Edición crítica del Catastro de Ensenada de Sorribas y Santibáñez de Ordás (1752)
+## Edición crítica del Catastro de Ensenada de Sorribos y Santibáñez de Ordás (1752)
 
 **Versión:** 1.6  
 **Estado:** documento normativo vigente  
@@ -414,7 +414,7 @@ El estudio histórico nunca modificará la transcripción.
 
 Durante la primera fase permanecerá prácticamente vacío. Las hipótesis que dependan de unidades aún no transcritas se registrarán en el Diario Editorial.
 
-La **base documental del Estudio Histórico será exclusivamente la edición paleográfica validada**. Sus afirmaciones sobre Sorribas y Santibáñez de Ordás deberán poder remitirse a una o más unidades de la edición.
+La **base documental del Estudio Histórico será exclusivamente la edición paleográfica validada**. Sus afirmaciones sobre Sorribos y Santibáñez de Ordás deberán poder remitirse a una o más unidades de la edición.
 
 Fuentes externas podrán utilizarse en notas de la edición, índices o Glosario para comprobar una identificación, una equivalencia o un dato auxiliar cuando el Manual lo permita y la fuente quede citada. Esas fuentes no se convertirán por ello en base documental autónoma del Estudio Histórico ni se usarán para añadir hechos sobre el expediente que la edición no sustente.
 

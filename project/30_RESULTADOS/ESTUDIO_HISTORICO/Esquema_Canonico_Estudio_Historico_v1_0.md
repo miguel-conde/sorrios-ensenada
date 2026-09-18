@@ -1,6 +1,6 @@
 # Esquema detallado de la futura versión canónica 1.0
 
-## Estudio histórico de Sorribas y Santibáñez de Ordás en 1752
+## Estudio histórico de Sorribos y Santibáñez de Ordás en 1752
 
 **Versión del esquema:** 1.0  
 **Fecha:** 17 de septiembre de 2026  

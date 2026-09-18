@@ -1,6 +1,6 @@
 # Registro de afirmaciones y cálculos para la versión canónica
 
-## Sorribas y Santibáñez de Ordás en 1752
+## Sorribos y Santibáñez de Ordás en 1752
 
 **Versión:** 1.0  
 **Fecha:** 17 de septiembre de 2026  
@@ -41,7 +41,10 @@ Estados:
 
 | ID | Afirmación canónica | Nivel | Evidencia | Estado y cautela |
 |---|---|---:|---|---|
-| JUR-001 | El expediente se refiere al lugar de Sorribas y Santibáñez de Ordás. | D | Portada; `portada` | Admitida. |
+| JUR-001 | El expediente se refiere al lugar de Sorribos y Santibáñez de Ordás. | D | Portada; `portada` | Admitida. |
+| TOP-001 | El manuscrito de 1752 escribe `Sorribos` en cuatro apariciones distribuidas entre Portada, folio 306r y folio 306v; una de ellas presenta la división `Sorri-` / `bos`. | D | Portada; ff. 306r–306v | Admitida; la lectura anterior `Sorribas` queda rectificada como error paleográfico del proyecto. |
+| TOP-002 | El `Sorribos` de 1752 corresponde al actual Sorrios, barrio de Santibáñez de Ordás. | I | Manuscrito; PARES 1715; Álvarez-Balbuena; Gaceta de Madrid 1831/1864; Ayuntamiento actual | Admitida con seguridad muy alta; la continuidad de identificación no implica fijar una evolución fonética completa. |
+| TOP-003 | `Sorribas` no se trata como variante histórica del núcleo de Ordás. | L/I | Búsqueda externa y contraste territorial | Mantener cautela: existe otro Sorribas leonés, hoy en Toral de los Vados; no se ha localizado una fuente de Ordás que documente esa forma para este núcleo. |
 | JUR-002 | Los declarantes comparecen en el marco del Concejo de Ordás. | D | Preámbulo, ff. 306r–306v; `folio_306r`, `folio_306v` | Admitida; no equiparar sin más con el municipio contemporáneo. |
 | JUR-003 | Juan Álvarez y Remirio Rodríguez son vecinos y únicos oficiales de justicia. | D | Preámbulo, ff. 306r–306v | Admitida. |
 | JUR-004 | Domingo Díez y Francisco de Llorca fueron nombrados peritos por el Concejo; Domingo Suárez, de oficio. | D | Preámbulo, f. 306v | Admitida. |

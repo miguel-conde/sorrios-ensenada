@@ -1,8 +1,8 @@
 # Índice de referencia para el futuro volumen
 
-**Título provisional:** *Sorribas y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*  
-**Versión del esquema:** 1.1  
-**Fecha:** 17 de septiembre de 2026  
+**Título provisional:** *Sorribos y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*  
+**Versión del esquema:** 1.2  
+**Fecha:** 18 de septiembre de 2026  
 **Estado:** referencia de trabajo aprobada para la futura preparación del volumen  
 **Naturaleza:** esquema editorial; no constituye todavía el volumen compuesto
 
@@ -28,7 +28,7 @@ El volumen incluirá dieciséis capítulos. Los glosarios, concordancias, índic
 
 El volumen incluirá una lámina cartográfica a doble página situada después de la cronología y antes de la Parte I. Tendrá dos paneles principales:
 
-1. mapa de situación: España, provincia de León, entorno de Ordás y localización de Sorribas y Santibáñez de Ordás;
+1. mapa de situación: España, provincia de León, entorno de Ordás y localización de Sorribos y Santibáñez de Ordás;
 2. mapa local: los dos núcleos, hidrografía y relieve principales, poblaciones próximas, caminos y referencias territoriales útiles.
 
 Cuando la evidencia lo permita, se añadirá un recuadro titulado «Esquema del término descrito en 1752», basado en la respuesta 3 y en otros elementos documentados. Este recuadro se presentará como reconstrucción esquemática, no como delimitación catastral exacta.
@@ -105,7 +105,7 @@ Este cambio no aumenta el número de índices: el volumen mantiene nueve.
 
 Los enunciados completos volverán a aparecer en la edición modernizada con una función distinta: aquí se presentan como formulario institucional; allí acompañan directamente a cada respuesta local.
 
-## Capítulo 3. El expediente de Sorribas y Santibáñez de Ordás
+## Capítulo 3. El expediente de Sorribos y Santibáñez de Ordás
 
 - Fecha y lugar de la comparecencia.
 - El juez subdelegado.
@@ -128,7 +128,7 @@ Los enunciados completos volverán a aparecer en la edición modernizada con una
 - Principios de trazabilidad.
 - Límites de la intervención editorial.
 
-# Parte II. Sorribas y Santibáñez en 1752
+# Parte II. Sorribos y Santibáñez en 1752
 
 ## Capítulo 5. Un lugar de señorío en el concejo de Ordás
 
@@ -275,7 +275,7 @@ Cada respuesta conservará:
 
 - título temático editorial;
 - pregunta completa del interrogatorio de 1749;
-- respuesta de Sorribas y Santibáñez;
+- respuesta de Sorribos y Santibáñez;
 - folio de procedencia;
 - notas explicativas.
 
@@ -489,3 +489,9 @@ Cualquier cambio posterior en esta estructura deberá registrarse expresamente a
 - Sustitución de «Índice analítico general» por «Índice de materias».
 - Confirmación de nueve índices y dieciséis capítulos.
 
+
+
+## Versión 1.2 — 18 de septiembre de 2026
+
+- Rectificación del topónimo manuscrito `Sorribas` → `Sorribos` en títulos, rótulos y referencias del futuro volumen.
+- Alineación con Edición Crítica v3.6, edición modernizada 1.2 y Estudio Histórico 1.1.

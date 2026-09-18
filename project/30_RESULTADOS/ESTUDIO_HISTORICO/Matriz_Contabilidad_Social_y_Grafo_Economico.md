@@ -1,6 +1,6 @@
 # Matriz de contabilidad social histórica y grafo económico
 
-## Sorribas y Santibáñez de Ordás en 1752
+## Sorribos y Santibáñez de Ordás en 1752
 
 **Estado:** análisis derivado activo  
 **Versión:** 0.4 — formalización de cuentas y red económica  
@@ -511,7 +511,7 @@ Responder a estas preguntas requeriría ampliar el corpus y, por tanto, aprobar 
 
 # 13. Resultado interpretativo
 
-La formalización confirma que Sorribas y Santibáñez no pueden describirse adecuadamente como una suma de explotaciones privadas independientes ni como una economía monetaria simple.
+La formalización confirma que Sorribos y Santibáñez no pueden describirse adecuadamente como una suma de explotaciones privadas independientes ni como una economía monetaria simple.
 
 El **hogar agrario** concentra trabajo, producción, consumo, propiedad de activos y obligaciones. A su alrededor operan tres capas que modifican profundamente esa economía doméstica:
 

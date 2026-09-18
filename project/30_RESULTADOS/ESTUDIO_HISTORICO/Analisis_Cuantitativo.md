@@ -1,6 +1,6 @@
 # Análisis cuantitativo sistemático
 
-## Catastro de Ensenada de Sorribas y Santibáñez de Ordás (1752)
+## Catastro de Ensenada de Sorribos y Santibáñez de Ordás (1752)
 
 **Estado:** análisis derivado activo  
 **Versión:** 0.2  
@@ -29,7 +29,7 @@ Este documento desarrolla el análisis cuantitativo pedido para el Estudio Hist�
 
 | Resp. | Folios | Dato principal | Magnitudes | Interpretación controlada |
 |---:|---|---|---|---|
-| 1 | 306v | Nombre de la población: Sorribas y Santibáñez | — | Unidad local conjunta a efectos del interrogatorio. |
+| 1 | 306v | Nombre de la población: Sorribos y Santibáñez | — | Unidad local conjunta a efectos del interrogatorio. |
 | 2 | 307r | Concejo de señorío del Conde de Luna; por esta razón declaran no pagar derechos | 0 derechos en esta formulación | No equivale a ausencia de otras cargas: las respuestas 22, 28 y 29 distinguen suelo, alcabalas y bienes del señor. |
 | 3 | 307r–307v | Dimensiones y linderos del término | circunferencia 1,5 leguas + 787 varas; E–O 2.500 varas; N–S 2.708 varas | Descripción geométrica local; no se transforma en superficie. |
 | 4 | 307v–308v | Trece clases de tierras y usos | 13 categorías | El sistema agrario combina cultivo, prado, monte, soto, matorral, eras y usos comunales. |

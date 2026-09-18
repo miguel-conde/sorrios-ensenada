@@ -1,9 +1,9 @@
 # Estado de implementación — GitHub workspace v2
 
-**Fecha:** 8 de septiembre de 2026  
+**Fecha:** 18 de septiembre de 2026  
 **Rama canónica:** `main`  
-**Versión activa:** 2.0.1  
-**Estado:** H1, H2, H3, H4, H5 y H6 completados; mantenimiento 2.0.1 preparado tras auditoría de Notas históricas
+**Versión activa:** 2.0.2  
+**Estado:** H1, H2, H3, H4, H5 y H6 completados; mantenimiento 2.0.2 tras rectificación paleográfica del topónimo
 
 La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está activa en `main`. GitHub es el workspace canónico del proyecto vivo. Google Drive queda reservado al PDF autoritativo en solo lectura.
 
@@ -47,6 +47,16 @@ La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está activa 
 - La plantilla de `proyecto.yaml` queda además alineada con Manual Editorial 1.6 y Edición crítica 3.5.
 - Estado editorial preservado: `last_closed_unit: folio_309r`, `current_unit: folio_309v`, `operation.status: clean`.
 - El Estudio Histórico continúa desactivado y el PDF permanece fuera de GitHub y en solo lectura en Drive.
+
+
+## Mantenimiento posterior — versión 2.0.2
+
+- Releídas visualmente las cuatro apariciones del topónimo en Portada, folio 306r y folio 306v; se fija `Sorribos` como lectura manuscrita.
+- La lectura anterior `Sorribas` queda rectificada como error paleográfico del proyecto; los documentos de archivo se preservan con errata explícita.
+- Edición Crítica promovida a v3.6; Estudio Histórico a v1.1; introducción, criterios y edición modernizada a v1.2.
+- Índice de topónimos ampliado con PARES 1715, estudio toponímico de Álvarez-Balbuena, Gaceta de Madrid y forma moderna Sorrios.
+- Plugin y skill promovidos a 2.0.2; manifiesto, `proyecto.yaml`, `pyproject.toml`, validador y plantilla alineados.
+- El estado editorial terminal y `operation.status: clean` no cambian; el PDF autoritativo permanece fuera de GitHub y sin modificación en Drive.
 
 ## Resultado final de la migración
 

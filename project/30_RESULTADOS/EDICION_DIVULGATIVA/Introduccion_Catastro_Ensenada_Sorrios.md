@@ -1,17 +1,17 @@
-# Introducción al Catastro de Ensenada de Sorribas y Santibáñez de Ordás
+# Introducción al Catastro de Ensenada de Sorribos y Santibáñez de Ordás
 
-## Versión 1.1
+## Versión 1.2
 
-**Fecha:** 17 de septiembre de 2026  
-**Expediente:** Sorribas y Santibáñez de Ordás, 1752  
+**Fecha:** 18 de septiembre de 2026  
+**Expediente:** Sorribos y Santibáñez de Ordás, 1752  
 **Finalidad:** guía histórica y editorial para lectores no especializados  
 **Documentos relacionados:**
 
-- [Edición modernizada 1.1](./Catastro_Sorrios_1752_Version_Modernizada.md)
+- [Edición modernizada 1.2](./Catastro_Sorrios_1752_Version_Modernizada.md)
 - [Verificación externa del interrogatorio](./Verificacion_Interrogatorio_40_Preguntas.md)
 - [Criterios de la edición modernizada](./Criterios_Edicion_Modernizada.md)
-- [Edición Crítica v3.5](../../20_TRABAJO_EDITORIAL/Edicion_Critica.md)
-- [Estudio Histórico 1.0](../ESTUDIO_HISTORICO/Estudio_Historico.md)
+- [Edición Crítica v3.6](../../20_TRABAJO_EDITORIAL/Edicion_Critica.md)
+- [Estudio Histórico 1.1](../ESTUDIO_HISTORICO/Estudio_Historico.md)
 
 ## 1. Qué fue el Catastro de Ensenada
 
@@ -33,7 +33,7 @@ Las respuestas deben leerse como una declaración fiscal colectiva, elaborada si
 
 La siguiente versión reproduce íntegramente el contenido de las cuarenta preguntas a partir de la [versión en grafía actual de PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=31b). Se modernizan grafía, puntuación y construcciones transparentes, sin resumir materias ni introducir explicaciones dentro de los enunciados. Es exactamente la misma versión que encabeza las respuestas de la edición modernizada 1.1.
 
-La pregunta 29 se ofrece completa. La página de PARES en grafía actual termina su texto tras «hay en la población», pero una [publicación oficial de la Dirección General del Catastro dedicada a Vera](https://www.catastro.hacienda.gob.es/documentos/publicaciones/catalogoensenada_1752_vera.pdf) conserva también la referencia al término, a la titularidad y a la utilidad anual. Esa formulación completa concuerda con la respuesta dada en Sorribas.
+La pregunta 29 se ofrece completa. La página de PARES en grafía actual termina su texto tras «hay en la población», pero una [publicación oficial de la Dirección General del Catastro dedicada a Vera](https://www.catastro.hacienda.gob.es/documentos/publicaciones/catalogoensenada_1752_vera.pdf) conserva también la referencia al término, a la titularidad y a la utilidad anual. Esa formulación completa concuerda con la respuesta dada en Sorribos.
 
 1. ¿Cómo se llama la población?
 2. ¿Es de realengo o de señorío, a quién pertenece, qué derechos percibe y cuánto produce?
@@ -90,9 +90,9 @@ El procedimiento estaba regulado y producía varias clases de documentos. De man
 
 Las Respuestas Generales son, por tanto, una pieza importante pero no aislada. El [Portal de Archivos Españoles](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=33) explica que los originales quedaron ligados a las contadurías y más tarde a los archivos históricos provinciales, mientras que el Archivo General de Simancas conserva la gran serie de copias compulsadas.
 
-## 5. El expediente de Sorribas y Santibáñez de Ordás
+## 5. El expediente de Sorribos y Santibáñez de Ordás
 
-El documento estudiado se titula «Copia de las respuestas generales del lugar de Sorribas y Santibáñez de Ordás». La comparecencia tuvo lugar el **17 de septiembre de 1752**. El propio texto sitúa ambos lugares dentro del **Concejo de Ordás**.
+El documento estudiado se titula «Copia de las respuestas generales del lugar de Sorribos y Santibáñez de Ordás». La comparecencia tuvo lugar el **17 de septiembre de 1752**. El propio texto sitúa ambos lugares dentro del **Concejo de Ordás**.
 
 Presidió la operación el licenciado **don Joaquín Aguado**, abogado de los Reales Consejos y juez subdelegado. Comparecieron:
 
@@ -183,7 +183,7 @@ La versión 1.1 incorpora antes de cada respuesta el enunciado íntegro y verifi
 ## 9. Cautelas para la lectura
 
 1. **Vecino no significa habitante.** Es una categoría local y fiscal; el expediente distingue vecinos, medios vecinos, «avitadores» y residentes. La forma documental «avitadores» no se convierte en una cifra de población total.
-2. **Una medida agraria no equivale necesariamente a una superficie fija.** En Sorribas se relaciona con la cantidad de simiente y varía según la calidad de la tierra.
+2. **Una medida agraria no equivale necesariamente a una superficie fija.** En Sorribos se relaciona con la cantidad de simiente y varía según la calidad de la tierra.
 3. **Utilidad es una valoración fiscal.** No siempre equivale a beneficio contable o renta efectiva.
 4. **Las respuestas son colectivas y juradas, pero no infalibles.** Pueden contener omisiones, aproximaciones y discrepancias.
 5. **Las negativas dependen de la pregunta.** «No hay cosa alguna» solo se entiende al consultar el interrogatorio.

@@ -1,10 +1,10 @@
-# Catastro de Sorribas y Santibáñez de Ordás (1752)
+# Catastro de Sorribos y Santibáñez de Ordás (1752)
 
 ## Versión modernizada para lectura
 
-**Versión:** 1.1  
-**Fecha editorial:** 17 de septiembre de 2026  
-**Fuente textual:** Edición Crítica v3.5  
+**Versión:** 1.2  
+**Fecha editorial:** 18 de septiembre de 2026  
+**Fuente textual:** Edición Crítica v3.6  
 **Naturaleza:** versión íntegra de lectura con ortografía y puntuación modernizadas
 
 > Esta versión hace legible el texto histórico sin convertir sus medidas, monedas ni categorías a equivalentes actuales. Cada respuesta incorpora el enunciado completo del interrogatorio de 1749 en grafía modernizada, procedente de una fuente externa verificada y separado del texto local. Los títulos temáticos son ayudas editoriales. Las referencias entre paréntesis remiten a los folios de la Edición Crítica.
@@ -14,8 +14,8 @@
 - [Introducción al Catastro y preguntas verificadas](./Introduccion_Catastro_Ensenada_Sorrios.md)
 - [Criterios de esta edición](./Criterios_Edicion_Modernizada.md)
 - [Verificación externa del interrogatorio](./Verificacion_Interrogatorio_40_Preguntas.md)
-- [Edición Crítica v3.5](../../20_TRABAJO_EDITORIAL/Edicion_Critica.md)
-- [Estudio Histórico 1.0](../ESTUDIO_HISTORICO/Estudio_Historico.md)
+- [Edición Crítica v3.6](../../20_TRABAJO_EDITORIAL/Edicion_Critica.md)
+- [Estudio Histórico 1.1](../ESTUDIO_HISTORICO/Estudio_Historico.md)
 
 ## Portada
 
@@ -23,7 +23,7 @@
 
 †
 
-Copia de las respuestas generales del lugar de Sorribas y Santibáñez de Ordás.
+Copia de las respuestas generales del lugar de Sorribos y Santibáñez de Ordás.
 
 *(El reverso de la portada está en blanco.)*
 
@@ -33,9 +33,9 @@ Copia de las respuestas generales del lugar de Sorribas y Santibáñez de Ordás
 
 †
 
-Copia de las respuestas generales del lugar de Sorribas y Santibáñez de Ordás.
+Copia de las respuestas generales del lugar de Sorribos y Santibáñez de Ordás.
 
-En el lugar de Sorribas y Santibáñez, ambos de este concejo de Ordás, a diecisiete días del mes de septiembre de mil setecientos cincuenta y dos años, ante el señor licenciado don Joaquín Aguado, abogado de los Reales Consejos y juez subdelegado para la operación de este lugar, comparecieron don Manuel Antonio de Bega,[^bega-vega] cura párroco de este lugar; Juan Álvarez y Remirio Rodríguez, vecinos y únicos oficiales de justicia; Domingo Díez y Francisco de Llorca, peritos nombrados por este concejo; y Domingo Suárez, perito nombrado de oficio.
+En el lugar de Sorribos y Santibáñez, ambos de este concejo de Ordás, a diecisiete días del mes de septiembre de mil setecientos cincuenta y dos años, ante el señor licenciado don Joaquín Aguado, abogado de los Reales Consejos y juez subdelegado para la operación de este lugar, comparecieron don Manuel Antonio de Bega,[^bega-vega] cura párroco de este lugar; Juan Álvarez y Remirio Rodríguez, vecinos y únicos oficiales de justicia; Domingo Díez y Francisco de Llorca, peritos nombrados por este concejo; y Domingo Suárez, perito nombrado de oficio.
 
 A todos ellos, excepto al cura párroco, el escribano que da fe les tomó y recibió juramento. Lo hicieron por el nombre de Dios Nuestro Señor y una señal de cruz, en forma de derecho. Bajo ese juramento ofrecieron decir verdad de cuanto supieran y les fuera preguntado. Preguntados según el tenor de las preguntas del interrogatorio impreso de la letra A, a cada una respondieron lo siguiente.
 
@@ -45,11 +45,11 @@ A todos ellos, excepto al cura párroco, el escribano que da fe les tomó y reci
 
 ¿Cómo se llama la población?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 306v)*
 
-A la primera dijeron que esta población se llama el lugar de Sorribas y Santibáñez.
+A la primera dijeron que esta población se llama el lugar de Sorribos y Santibáñez.
 
 ## Respuesta 2. Jurisdicción
 
@@ -57,7 +57,7 @@ A la primera dijeron que esta población se llama el lugar de Sorribas y Santib�
 
 ¿Es de realengo o de señorío, a quién pertenece, qué derechos percibe y cuánto produce?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 307r)*
 
@@ -69,7 +69,7 @@ A la segunda dijeron que es de señorío[^1], que este concejo pertenece al exce
 
 ¿Qué territorio ocupa el término, cuánto de levante a poniente y del norte al sur, y cuánto de circunferencia, por horas y leguas; qué linderos o confrontaciones; y qué figura tiene, poniéndola al margen?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 307r–307v)*
 
@@ -85,7 +85,7 @@ Linda al oriente con término de los lugares de Tapia y Rioseco; a poniente, con
 
 ¿Qué especies de tierra se hallan en el término; si son de regadío y de secano, distinguiendo si son de hortaliza, sembradura, viñas, pastos, bosques, matorrales, montes y demás que pudiera haber; explicando si hay algunas que produzcan más de una cosecha al año, las que fructificaren solo una y las que necesitan de un año intermedio de descanso?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 307v–308v)*
 
@@ -111,7 +111,7 @@ A la cuarta dijeron que en este término hay las especies de tierras siguientes:
 
 ¿De cuántas calidades de tierra hay en cada una de las especies declaradas, si son de buena, mediana e inferior?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 308v–309r)*
 
@@ -137,7 +137,7 @@ A la quinta dijeron que en las especies de tierras ya declaradas hay las siguien
 
 ¿Hay algún plantío de árboles en las tierras declaradas, como frutales, moreras, olivos, higueras, almendros, parras, algarrobos, etc.?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 309r)*
 
@@ -149,7 +149,7 @@ A la sexta dijeron que, aunque en las tierras ya declaradas hay algunos árboles
 
 ¿En cuáles de las tierras están plantados los árboles declarados?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 309v)*
 
@@ -161,7 +161,7 @@ A la séptima dijeron que se remiten a lo dicho en la pregunta anterior.
 
 ¿En qué conformidad están hechos los plantíos, si extendidos en toda la tierra o en los márgenes, en una, dos o tres hileras, o en la forma en que estuvieren?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 309v)*
 
@@ -173,7 +173,7 @@ A la octava dijeron que se refieren a lo que resulta de la sexta pregunta.
 
 ¿Qué medidas de tierra se usan en aquel pueblo; de cuántos pasos o varas castellanas en cuadro se compone cada una; y qué cantidad de cada especie de granos de los que se recogen en el término se siembra en cada una?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 309v–310v)*
 
@@ -194,7 +194,7 @@ Como las tierras se miden por el cuartal de sembradura que admiten, este ocupa m
 
 ¿Qué número de medidas de tierra hay en el término, distinguiendo las de cada especie y calidad; por ejemplo, tantas fanegas, o del nombre que tuviese la medida de tierra de sembradura de la mejor calidad, tantas de mediana bondad y tantas de inferior; y lo propio en las demás especies declaradas?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 310v–312r)*
 
@@ -219,7 +219,7 @@ A la décima dijeron que, según el reconocimiento realizado de las heredades de
 
 ¿Qué especies de frutos se recogen en el término?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 312r)*
 
@@ -231,7 +231,7 @@ A la undécima dijeron que las especies de frutos que se recogen en este términ
 
 ¿Qué cantidad de frutos de cada género, unos años con otros, produce con un cultivo ordinario una medida de tierra de cada especie y calidad de las que hay en el término, sin incluir el producto de los árboles?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 312r–314r)*
 
@@ -255,7 +255,7 @@ Cuatro montones componen un carro. No regulan utilidad a las tierras matorrales,
 
 ¿Qué producto se calcula que darán por medida de tierra los árboles de cada especie, según la forma en que esté hecho el plantío?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 314r)*
 
@@ -267,7 +267,7 @@ A la decimotercera dijeron que se remiten a lo declarado en la sexta pregunta.
 
 ¿Qué valor tienen ordinariamente, unos años con otros, los frutos que producen las tierras del término, cada calidad de ellos?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 314r–314v)*
 
@@ -286,7 +286,7 @@ A la decimocuarta dijeron que el valor ordinario de los frutos producidos por la
 
 ¿Qué derechos están impuestos sobre las tierras del término, como diezmo, primicia, tercio-diezmo u otros, y a quién pertenecen?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 314v)*
 
@@ -298,7 +298,7 @@ A la decimoquinta dijeron que sobre las tierras del término están impuestos lo
 
 ¿A qué cantidad de frutos suelen ascender los referidos derechos de cada especie o por qué precio suelen arrendarse, unos años con otros?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 315r)*
 
@@ -310,7 +310,7 @@ A la decimosexta dijeron que los referidos diezmos ascienden cada año, regulado
 
 ¿Hay minas, salinas, molinos harineros o de papel, batanes u otros artefactos en el término, distinguiendo de qué metales y de qué uso, explicando sus dueños y qué utilidad anual se calcula que produce cada uno?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 315r–316r)*
 
@@ -330,7 +330,7 @@ A cada una de las ruedas pertenecientes, respectivamente, a Marcos Suárez; Andr
 
 ¿Hay algún esquilmo en el término, a quién pertenece, qué número de ganado acude a él para el esquileo y qué utilidad anual se calcula que da a su dueño?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 316r)*
 
@@ -342,7 +342,7 @@ A la decimoctava dijeron que en el término de este lugar no hay casa alguna des
 
 ¿Hay colmenas en el término, cuántas y a quién pertenecen?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 316v)*
 
@@ -354,7 +354,7 @@ A la decimonovena dijeron que en el término de este lugar hay dieciocho pies de
 
 ¿Qué especies de ganado hay en el pueblo y término, excluyendo las mulas de coche y los caballos de regalo; y tiene algún vecino cabaña o yeguada que paste fuera del término, dónde y con qué número de cabezas, explicando el nombre del dueño?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 316v–318r)*
 
@@ -375,7 +375,7 @@ A la vigésima dijeron que en este pueblo y su término hay ganado vacuno, lanar
 
 ¿De qué número de vecinos se compone la población y cuántos viven en las casas de campo o alquerías?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 318r)*
 
@@ -387,7 +387,7 @@ A la vigesimoprimera dijeron que hay dieciocho vecinos y ocho medios vecinos,[^2
 
 ¿Cuántas casas hay en el pueblo, cuántas son inhabitables y cuántas están arruinadas; y, si es de señorío, tiene cada una alguna carga que pague el dueño por el establecimiento del suelo y de cuánto es?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 318r–318v)*
 
@@ -399,7 +399,7 @@ A la vigesimosegunda dijeron que en este pueblo hay cuarenta casas habitables, d
 
 ¿Qué propios tiene el común y a cuánto asciende su producto anual, de lo cual deberá pedirse justificación?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 318v)*
 
@@ -411,7 +411,7 @@ A la vigesimotercera dijeron que este común no tiene propios.[^28]
 
 ¿Disfruta el común de algún arbitrio, sisa u otra cosa, de cuya concesión deberá pedirse copia para acompañar estas diligencias; qué cantidad produce cada uno al año, con qué fin se concedió, sobre qué especies, si es temporal o perpetuo y si su producto cubre o excede su aplicación?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 318v)*
 
@@ -423,7 +423,7 @@ A la vigesimocuarta dijeron que el común no disfruta de arbitrio[^29] ni renta 
 
 ¿Qué gastos debe satisfacer el común, como salarios de justicia y regidores, fiestas del Corpus u otras, empedrado, fuentes, sirvientes, etc., de los cuales deberá pedirse relación individual?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 318v–319r)*
 
@@ -435,7 +435,7 @@ A la vigesimoquinta dijeron que este común debe satisfacer cada año doscientos
 
 ¿Qué cargas de justicia tiene el común, como censos que pague u otras, cuál es su importe, por qué motivo y a quién, de lo cual deberá pedirse noticia puntual?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 319r)*
 
@@ -447,7 +447,7 @@ A la vigesimosexta dijeron que este común no tiene cargo alguno de justicia.
 
 ¿Está cargado de servicio ordinario y extraordinario u otros, de los cuales también deberá pedirse relación individual?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 319r)*
 
@@ -459,7 +459,7 @@ A la vigesimoséptima dijeron que no está cargado de servicio ordinario ni extr
 
 ¿Hay algún empleo, alcabala u otras rentas enajenadas; a quién, si fue por servicio pecuniario u otro motivo, por qué cantidad y cuánto produce cada una al año, debiendo pedirse los títulos y conservarse copia?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 319r–319v)*
 
@@ -471,7 +471,7 @@ A la vigesimoctava dijeron que las alcabalas[^32] de este lugar están enajenada
 
 ¿Cuántas tabernas, mesones, tiendas, panaderías, carnicerías, puentes, barcas sobre ríos, mercados, ferias, etc. hay en la población y término; a quién pertenecen y qué utilidad anual se calcula que puede dar cada uno?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 319v)*
 
@@ -485,7 +485,7 @@ Hay también en el río un pozo de pesca, propio del excelentísimo señor conde
 
 ¿Hay hospitales, de qué clase, qué renta tienen y de qué se mantienen?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 319v)*
 
@@ -497,7 +497,7 @@ A la trigésima dijeron que no hay hospital alguno.
 
 ¿Hay algún cambista, mercader al por mayor o quien beneficie su caudal por medio de corredor u otra persona, con lucro e interés; y qué utilidad anual se considera que puede resultar a cada uno?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 319v)*
 
@@ -509,7 +509,7 @@ A la trigesimoprimera dijeron que no hay cosa alguna de las que contiene la preg
 
 ¿Hay en el pueblo algún tendero de paños, ropas de oro, plata y seda, lienzos, especiería u otras mercaderías; médicos, cirujanos, boticarios, escribanos, arrieros, etc.; y qué ganancia anual se calcula que puede tener cada uno?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 319v–320r)*
 
@@ -521,7 +521,7 @@ A la trigesimosegunda dijeron que no hay cosa alguna de las que contiene la preg
 
 ¿Qué ocupaciones de artes mecánicas hay en el pueblo, como albañiles, canteros, albéitares, herreros, sogueros, zapateros, sastres, pelaires, tejedores, sombrereros, manguiteros y guanteros, etc.; cuántos maestros, oficiales y aprendices hay en cada oficio y qué utilidad puede resultar a cada uno al día trabajando únicamente en él?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 320r)*
 
@@ -533,7 +533,7 @@ A la trigesimotercera dijeron que, entre los oficios mencionados en la pregunta,
 
 ¿Hay entre los artesanos alguno que, teniendo caudal, haga acopio de materiales de su propio oficio o de otros para venderlos, practique algún otro comercio o participe en arrendamientos; quiénes son y qué utilidad anual se considera que puede quedar a cada uno?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 320r)*
 
@@ -545,7 +545,7 @@ A la trigesimocuarta dijeron que no hay cosa alguna de las que contiene la pregu
 
 ¿Qué número de jornaleros hay en el pueblo y cuánto se paga de jornal diario a cada uno?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 320r–320v)*
 
@@ -559,7 +559,7 @@ A los jornaleros les regulan una utilidad de dos reales y medio por cada día tr
 
 ¿Cuántos pobres de solemnidad hay en la población?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 320v)*
 
@@ -571,7 +571,7 @@ A la trigesimosexta dijeron que hay cinco pobres de solemnidad.[^35]
 
 ¿Hay personas que tengan embarcaciones que naveguen en el mar o los ríos, su porte o para pescar; cuántas, a quién pertenecen y qué utilidad anual se considera que da cada una a su dueño?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 320v)*
 
@@ -583,7 +583,7 @@ A la trigesimoséptima dijeron que no hay individuo alguno que tenga lo que expr
 
 ¿Cuántos clérigos hay en el pueblo?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 320v)*
 
@@ -595,7 +595,7 @@ A la trigesimoctava dijeron que en este pueblo hay un cura párroco y dos capell
 
 ¿Hay conventos, de qué religiones y sexo, y qué número de individuos tiene cada uno?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folios 320v–321r)*
 
@@ -607,7 +607,7 @@ A la trigesimonovena dijeron que no hay convento alguno.
 
 ¿Tiene el rey en el término o pueblo alguna finca o renta que no corresponda a las generales ni a las provinciales que debían extinguirse; cuáles son, cómo se administran y cuánto producen?
 
-**Respuesta de Sorribas y Santibáñez**
+**Respuesta de Sorribos y Santibáñez**
 
 *(Folio 321r)*
 
@@ -715,4 +715,4 @@ Ante mí, Manuel Antonio Alonso.
 
 ## Nota de uso
 
-Para citar la forma exacta del manuscrito, sus abreviaturas o la disposición por renglones, debe emplearse la Edición Crítica v3.5. Esta versión está destinada a la lectura continua y conserva, mediante preguntas verificadas, folios y notas, el camino de vuelta al formulario general y a la edición local.
+Para citar la forma exacta del manuscrito, sus abreviaturas o la disposición por renglones, debe emplearse la Edición Crítica v3.6. Esta versión está destinada a la lectura continua y conserva, mediante preguntas verificadas, folios y notas, el camino de vuelta al formulario general y a la edición local.

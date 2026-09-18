@@ -1,5 +1,19 @@
 # Cambios
 
+## 18 de septiembre de 2026 — Rectificación paleográfica `Sorribos` y plugin/skill v2.0.2
+
+- Releídas visualmente las cuatro apariciones del topónimo en Portada, folio 306r y folio 306v; todas leen `Sorribos`, con confirmación especialmente clara en la división `Sorri-` / `bos` de folio 306r.
+- La lectura anterior `Sorribas` queda rectificada como error paleográfico del proyecto y no como variante histórica del núcleo de Ordás.
+- Contrastada la identificación con fuentes externas: PARES documenta `Santibáñez de Sorribos` en 1715; Álvarez-Balbuena documenta formas medievales `Sorribios`/`Sorribos` y pervivencia de `Sorribos` en el siglo XIX; la Gaceta de Madrid recoge un `Barrio de Sorribos` en una escritura de 1831; el Ayuntamiento identifica hoy Sorrios como barrio de Santibáñez de Ordás.
+- Promovida la Edición Crítica a v3.6 y corregidas Portada, folio 306r y folio 306v, incluida la división de renglón.
+- Ampliado el Índice de topónimos y corregidas las referencias cruzadas vivas.
+- Promovido el Estudio Histórico a v1.1 e incorporada una sección específica sobre el nombre de Sorribos y su continuidad histórica; actualizado el registro de afirmaciones.
+- Promovidas a v1.2 la introducción, la edición modernizada y sus criterios; actualizado el índice de referencia del futuro volumen y los planes de composición afectados.
+- Los registros históricos de operaciones no se reescriben en silencio: reciben errata posterior; `project/90_ARCHIVO/` se conserva intacto y queda cubierto por un aviso común de errata.
+- Promovidos plugin y skill a v2.0.2; alineados manifiesto, `proyecto.yaml`, `pyproject.toml`, validador y plantilla.
+- El Manual Editorial conserva la versión 1.6 porque no cambia ningún criterio normativo; solo se corrige el nombre del expediente.
+- `estado.yaml` y `unidades.yaml` no cambian; `operation.status` permanece `clean`; el PDF autoritativo no se modifica.
+
 ## 8 de septiembre de 2026 — Plugin/skill v2.0.1 y cierre de la auditoría de Notas históricas
 
 - Verificada contra el plan aprobado la reparación retrospectiva de las unidades cerradas desde Portada hasta `folio_309r`, sin reabrir el diagnóstico histórico.

@@ -1,6 +1,6 @@
 # Mapa de vulnerabilidades económicas
 
-## Sorribas y Santibáñez de Ordás en 1752
+## Sorribos y Santibáñez de Ordás en 1752
 
 **Estado:** análisis derivado activo  
 **Versión:** 0.5 — vulnerabilidades, dependencias y mecanismos de propagación  
@@ -14,7 +14,7 @@
 
 ## 0. Objeto y límites
 
-Este documento identifica las **dependencias económicas**, los **puntos de fallo** y los **mecanismos de propagación** que pueden reconstruirse a partir del Catastro de Ensenada de Sorribas y Santibáñez de Ordás de 1752.
+Este documento identifica las **dependencias económicas**, los **puntos de fallo** y los **mecanismos de propagación** que pueden reconstruirse a partir del Catastro de Ensenada de Sorribos y Santibáñez de Ordás de 1752.
 
 No es una reconstrucción de crisis efectivamente ocurridas salvo cuando el propio expediente describe una perturbación concreta. Tampoco atribuye probabilidades históricas no documentadas. Su objeto es distinguir:
 
@@ -754,7 +754,7 @@ Si en una fase posterior se incorporasen otros expedientes equivalentes con apro
 11. número de conexiones exteriores documentadas;
 12. número de perturbaciones físicas efectivamente descritas.
 
-En el corpus actual estos indicadores solo describen Sorribas y Santibáñez; no deben convertirse todavía en rankings territoriales.
+En el corpus actual estos indicadores solo describen Sorribos y Santibáñez; no deben convertirse todavía en rankings territoriales.
 
 ---
 

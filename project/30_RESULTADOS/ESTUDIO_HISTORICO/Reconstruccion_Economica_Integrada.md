@@ -1,6 +1,6 @@
 # Reconstrucción económica integrada
 
-## Sorribas y Santibáñez de Ordás en 1752
+## Sorribos y Santibáñez de Ordás en 1752
 
 **Estado:** análisis derivado activo  
 **Versión:** 0.3 — reconstrucción económica integrada  
@@ -38,7 +38,7 @@ Se mantienen los límites ya establecidos:
 
 # 1. Síntesis de la economía local
 
-La economía de Sorribas y Santibáñez en 1752 puede reconstruirse como un **sistema agrario doméstico e institucionalmente encuadrado** con siete componentes conectados:
+La economía de Sorribos y Santibáñez en 1752 puede reconstruirse como un **sistema agrario doméstico e institucionalmente encuadrado** con siete componentes conectados:
 
 1. **Base cerealista dominante.** Las tierras centenales de secano constituyen el gran bloque de la cabida cuantificada. Dentro de las medidas principales explícitas de tierras de cultivo, representan aproximadamente el 93,13%. Su explotación alterna un año de cosecha y otro de descanso.
 2. **Producciones intensivas complementarias.** Los linares, especialmente los de regadío, alternan lino/linaza y cebada sin descanso; los ferrañales producen forraje de manera continua.
@@ -669,7 +669,7 @@ La ausencia de propios y arbitrios no significa ausencia de economía colectiva.
 
 ---
 
-# 19. Resultado: modelo histórico de la economía de Sorribas y Santibáñez
+# 19. Resultado: modelo histórico de la economía de Sorribos y Santibáñez
 
 La reconstrucción más sólida que admite el expediente es la de una **economía rural mixta, cerealista en su base territorial, ganadera en su funcionamiento material y plural en sus mecanismos de apropiación y redistribución**.
 

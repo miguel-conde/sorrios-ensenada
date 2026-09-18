@@ -59,3 +59,8 @@ No se modifican `proyecto.yaml`, `unidades.yaml`, el Manual, el Glosario ni los 
 ## Criterio de verificación
 
 La operación solo se publica si `main` continúa exactamente en el Base SHA indicado. Tras publicar se verifican el padre del commit, la lista exacta de archivos afectados, los contenidos críticos, la coherencia de `estado.yaml` con `unidades.yaml`, la ausencia de PDF en GitHub y el CI completo.
+
+
+## Errata posterior — 18 de septiembre de 2026
+
+La lectura paleográfica `Sorribas` utilizada en este registro queda rectificada a `Sorribos` tras la relectura visual completa del manuscrito. La división `Sorri-` / `bos` de folio 306r confirma la lectura. Este registro se conserva como testimonio de la operación original; la rectificación canónica consta en Edición Crítica v3.6 y en la operación `RECTIFICACION-TOPONIMO-SORRIBOS-2026-09-18`.

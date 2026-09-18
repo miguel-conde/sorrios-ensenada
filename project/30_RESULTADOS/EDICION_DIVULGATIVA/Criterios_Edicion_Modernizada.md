@@ -1,9 +1,9 @@
 # Criterios de la edición modernizada
 
-**Documento:** Catastro de Sorribas y Santibáñez de Ordás (1752)  
-**Versión:** 1.1  
-**Fecha editorial:** 17 de septiembre de 2026  
-**Texto de partida exclusivo:** Edición Crítica v3.5  
+**Documento:** Catastro de Sorribos y Santibáñez de Ordás (1752)  
+**Versión:** 1.2  
+**Fecha editorial:** 18 de septiembre de 2026  
+**Texto de partida exclusivo:** Edición Crítica v3.6  
 **Carácter:** edición de lectura derivada, no sustitutiva de la edición crítica
 
 ## 1. Finalidad
@@ -24,7 +24,7 @@ Esta edición permite leer el documento completo en español actual sin exigir c
 - Se conservan los nombres de personas y lugares en la forma documental consolidada por la Edición Crítica.
 - Se mantienen las instituciones, categorías fiscales y términos históricos: ferrañal, propios, arbitrios, vecera, esquilmo, entreparedes, entre otros.
 - Se conservan las cantidades y las unidades históricas —cuartales, celemines, fanegas, cargas, reales, maravedís, libras, montones y carros— sin convertirlas a unidades actuales.
-- Cada respuesta incorpora el enunciado completo del interrogatorio de 1749 en grafía modernizada, tomado de la verificación externa del proyecto. La pregunta se separa tipográficamente de la respuesta local y no se presenta como parte material del manuscrito de Sorribas.
+- Cada respuesta incorpora el enunciado completo del interrogatorio de 1749 en grafía modernizada, tomado de la verificación externa del proyecto. La pregunta se separa tipográficamente de la respuesta local y no se presenta como parte material del manuscrito de Sorribos.
 - No se corrigen en silencio incoherencias internas, lagunas ni identificaciones dudosas del manuscrito.
 
 ## 4. Tratamiento de dudas y anomalías
@@ -40,7 +40,7 @@ Cada bloque distingue tres niveles: título temático editorial, pregunta extern
 - Los títulos temáticos son añadidos editoriales y no sustituyen el enunciado completo de la pregunta.
 - Las notas al pie se aplican en la primera aparición significativa del término.
 - «Concejo» designa en el texto la entidad local histórica, no una administración municipal moderna.
-- Las formas «Sorribas» y «Santibáñez de Ordás» se mantienen como aparecen consolidadas en la edición de partida.
+- Las formas «Sorribos» y «Santibáñez de Ordás» se mantienen como aparecen consolidadas en la Edición Crítica v3.6. La lectura anterior «Sorribas» queda descartada como error paleográfico del proyecto.
 
 ## 7. Límites
 

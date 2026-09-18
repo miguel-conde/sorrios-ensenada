@@ -1,5 +1,7 @@
 # Validación de la introducción y del interrogatorio
 
+> **Errata posterior (18 de septiembre de 2026):** la lectura paleográfica `Sorribas` usada en la validación original queda sustituida por `Sorribos` conforme a la Edición Crítica v3.6. El resto de la validación permanece válido; la versión divulgativa vigente es 1.2.
+
 > **Alcance histórico:** este informe validó la versión 1.0. La introducción vigente 1.1 y su correspondencia con la edición modernizada se validan en `Aceptacion_Conjunta_Introduccion_Edicion_Modernizada_v1_1.md`.
 
 **Documentos validados:**
@@ -8,7 +10,7 @@
 - Introduccion_Catastro_Ensenada_Sorrios.md
 
 **Fecha:** 17 de septiembre de 2026  
-**Base local:** Edición Crítica v3.5  
+**Base local:** Edición Crítica v3.6  
 **Base contextual:** fuentes institucionales del Ministerio de Cultura y de la Dirección General del Catastro  
 **Resultado:** APTO PARA PUBLICACIÓN
 
@@ -23,7 +25,7 @@
 | Formulación en español actual | Cumple | Sección 3 de la introducción |
 | Categorías históricas conservadas | Cumple | realengo, señorío, esquilmo, propios, sisa, arbitrio, etc. |
 | Pregunta 29 cotejada externamente | Cumple | Publicación oficial sobre Vera; incidencia documentada |
-| Concordancia temática con las respuestas de Sorribas | Cumple | Tabla por bloques y cotejo de ff. 306v–321r |
+| Concordancia temática con las respuestas de Sorribos | Cumple | Tabla por bloques y cotejo de ff. 306v–321r |
 | Contexto general separado del expediente local | Cumple | Secciones 1–4 frente a 5–9 |
 | Participantes locales identificados desde la Edición Crítica | Cumple | Sección 5 |
 | Descripción del trabajo editorial completa | Cumple | Sección 7 |
@@ -49,7 +51,7 @@
 
 ## 3. Verificación documental local
 
-La información específica de Sorribas se cotejó con los siguientes bloques de la Edición Crítica v3.5:
+La información específica de Sorribos se cotejó con los siguientes bloques de la Edición Crítica v3.6:
 
 | Información | Fuente local |
 |---|---|
@@ -75,7 +77,7 @@ La formulación adoptada se comparó con la enumeración institucional de PARES.
 
 ### Incidencia Q29
 
-| Elemento | PARES, grafía actual | Dirección General del Catastro | Expediente de Sorribas |
+| Elemento | PARES, grafía actual | Dirección General del Catastro | Expediente de Sorribos |
 |---|---|---|---|
 | Existencia de servicios | Presente | Presente | Taberna y pozo de pesca |
 | Ámbito «población y término» | Truncado tras «población» | Presente | Responde sobre pueblo y río |

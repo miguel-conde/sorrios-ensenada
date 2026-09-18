@@ -129,3 +129,8 @@ La operación se considera correcta solo si, tras publicar:
 - la edición mantiene las 35 unidades y las seis secciones obligatorias por unidad;
 - el PDF sigue ausente del repositorio;
 - la rama publicada tiene como padre el Base SHA indicado y la lista de archivos cambiados coincide exactamente con la declarada.
+
+
+## Errata posterior — 18 de septiembre de 2026
+
+La sección «Portada — `Sorribas`» y las referencias derivadas de esta operación partían de una lectura paleográfica incorrecta. La relectura completa del manuscrito fija `Sorribos` en las cuatro apariciones de Portada, folio 306r y folio 306v; una de ellas presenta la división inequívoca `Sorri-` / `bos`. La documentación externa confirma además `Santibáñez de Sorribos` en 1715 y la continuidad histórica hacia el actual Sorrios. No se reescribe el cuerpo de este registro: queda preservado como historial de la operación de 8 de septiembre. La rectificación canónica se publica en Edición Crítica v3.6, Índice de topónimos, Estudio Histórico 1.1 y la operación `RECTIFICACION-TOPONIMO-SORRIBOS-2026-09-18`.

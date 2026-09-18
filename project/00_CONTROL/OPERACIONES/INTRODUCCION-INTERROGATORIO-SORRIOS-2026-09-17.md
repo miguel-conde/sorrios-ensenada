@@ -41,3 +41,8 @@ Verificar externamente el interrogatorio de cuarenta preguntas y redactar una in
 ## Resultado
 
 Interrogatorio verificado e introducción 1.0 preparada, validada y publicada como resultado divulgativo trazable.
+
+
+## Errata posterior — 18 de septiembre de 2026
+
+La lectura paleográfica `Sorribas` utilizada en este registro queda rectificada a `Sorribos` tras la relectura visual completa del manuscrito. La división `Sorri-` / `bos` de folio 306r confirma la lectura. Este registro se conserva como testimonio de la operación original; la rectificación canónica consta en Edición Crítica v3.6 y en la operación `RECTIFICACION-TOPONIMO-SORRIBOS-2026-09-18`.

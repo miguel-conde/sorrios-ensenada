@@ -1,18 +1,18 @@
-# Estudio histórico de Sorribas y Santibáñez de Ordás en 1752
+# Estudio histórico de Sorribos y Santibáñez de Ordás en 1752
 
-## Versión canónica 1.0
+## Versión canónica 1.1
 
 **Estado:** activo  
-**Versión:** 1.0  
-**Fecha:** 17 de septiembre de 2026  
-**Base documental exclusiva:** `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md`, versión 3.5  
+**Versión:** 1.1  
+**Fecha:** 18 de septiembre de 2026  
+**Base documental exclusiva:** `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md`, versión 3.6  
 **Registro de control:** `Registro_Afirmaciones_Calculos_v1.md`  
 **Auditoría de origen:** `Auditoria_Coherencia_0_1_0_6.md`  
-**Base de redacción:** `main@d6f119659526e93e7e971d66218b74cbd937ac50`  
+**Base de redacción:** `main@bd1034a25e70caacae633fe8d54c7b79917db27a`  
 
 ## 0. Método, evidencia y alcance
 
-Este estudio reconstruye la organización socioeconómica que permiten observar las Respuestas Generales de 1752 para el lugar de Sorribas y Santibáñez de Ordás. La base documental del Estudio Histórico es exclusivamente la edición paleográfica validada, publicada como Edición Crítica v3.5. Los análisis 0.1–0.6 han servido para formular preguntas y localizar cálculos, pero carecen de autoridad documental autónoma.
+Este estudio reconstruye la organización socioeconómica que permiten observar las Respuestas Generales de 1752 para el lugar de Sorribos y Santibáñez de Ordás. La base documental del Estudio Histórico es exclusivamente la edición paleográfica validada, publicada como Edición Crítica v3.5. Los análisis 0.1–0.6 han servido para formular preguntas y localizar cálculos, pero carecen de autoridad documental autónoma.
 
 La trazabilidad se expresa mediante cuatro niveles:
 
@@ -40,7 +40,7 @@ La respuesta 10 declara una cabida total de 3.823 medidas y un celemín, mientra
 
 ## 1. Tesis de conjunto
 
-Sorribas y Santibáñez aparecen como una comunidad rural de señorío articulada alrededor de hogares agrarios, con una base territorial marcadamente cerealista —especialmente centenaria— y una economía mixta en la que participan lino, cebada, prados, ganadería, aprovechamientos de uso común documentado, molinos hidráulicos, apicultura, oficios y servicios. La circulación de recursos combina dinero, especie, trabajo y prestaciones, y conecta a vecinos, común del lugar, Concejo de Ordás, instituciones eclesiásticas y señorío. [I: INT-001, INT-002, INT-007]
+Sorribos y Santibáñez aparecen como una comunidad rural de señorío articulada alrededor de hogares agrarios, con una base territorial marcadamente cerealista —especialmente centenaria— y una economía mixta en la que participan lino, cebada, prados, ganadería, aprovechamientos de uso común documentado, molinos hidráulicos, apicultura, oficios y servicios. La circulación de recursos combina dinero, especie, trabajo y prestaciones, y conecta a vecinos, común del lugar, Concejo de Ordás, instituciones eclesiásticas y señorío. [I: INT-001, INT-002, INT-007]
 
 El centeno domina la cabida cultivada comparable, pero no agota el sistema. El lino y la linaza aportan una rama complementaria; los prados y los espacios de uso común sostienen ganado y materiales; los molinos transforman cereal mediante energía hidráulica; la apicultura y el oficio de herrero amplían el repertorio productivo. [D/C/I: AGR-001–AGR-010; GAN-001–GAN-007; HID-001–HID-007; TRA-004]
 
@@ -48,7 +48,17 @@ La misma arquitectura contiene amortiguadores y vulnerabilidades. La diversidad 
 
 ## 2. El lugar, la jurisdicción y la producción de la información
 
-El expediente se refiere al `Lugar De Sorribas, y Santibañez` y sitúa la comparecencia en el Concejo de Ordás. Juan Álvarez y Remirio Rodríguez aparecen como vecinos y únicos oficiales de justicia; Domingo Díez y Francisco de Llorca fueron nombrados peritos por el Concejo, y Domingo Suárez lo fue de oficio. La declaración se produjo ante el juez subdelegado y concluyó con las firmas o signos registrados por la edición. [D: JUR-001–JUR-004; preámbulo, ff. 306r–306v; cierre, ff. 321r–321v]
+El expediente se refiere al `Lugar De Sorribos, y Santibañez` y sitúa la comparecencia en el Concejo de Ordás. Juan Álvarez y Remirio Rodríguez aparecen como vecinos y únicos oficiales de justicia; Domingo Díez y Francisco de Llorca fueron nombrados peritos por el Concejo, y Domingo Suárez lo fue de oficio. La declaración se produjo ante el juez subdelegado y concluyó con las firmas o signos registrados por la edición. [D: JUR-001–JUR-004; preámbulo, ff. 306r–306v; cierre, ff. 321r–321v]
+
+### 2.1. El nombre de Sorribos y su continuidad histórica
+
+El expediente de 1752 denomina al núcleo `Sorribos`. El topónimo aparece cuatro veces en tres unidades materiales: una en la Portada, dos en el folio 306r y una en el folio 306v. Todas ofrecen la misma lectura; una de las apariciones del folio 306r resulta especialmente concluyente al dividir el nombre entre líneas como `Sorri-` / `bos`. La forma `Sorribas`, utilizada en versiones anteriores de este proyecto, se rectifica por tanto como error de lectura paleográfica y no como variante del manuscrito. [D: JUR-001, TOP-001]
+
+La documentación externa muestra continuidad histórica antes y después de 1752. Fernando Álvarez-Balbuena recoge para el actual Sorrios de Ordás varias formas medievales, entre ellas `Sorribios` y `Sorribos`, y documenta la pervivencia de `Sorribos` en el siglo XIX. PARES registra en 1715 el `lugar de Santibáñez de Sorribos`. Una escritura de 1831 publicada en la `Gaceta de Madrid` menciona el `Barrio de Sorribos` en relación con un vecino de Santibáñez. El Ayuntamiento de Santa María de Ordás denomina hoy `Sorrios` al barrio integrado en Santibáñez de Ordás. [I: TOP-002]
+
+La identificación histórica adoptada es de seguridad muy alta: el `Sorribos` del expediente de 1752 corresponde al actual Sorrios. `Sorribas` no se incorpora a esta serie: no se ha localizado una fuente de Ordás que documente esa forma para este núcleo y existe, además, otra localidad leonesa llamada Sorribas en el actual municipio de Toral de los Vados. La documentación permite fijar la continuidad de identificación, pero no basta por sí sola para establecer una secuencia fonética exacta entre todas las formas medievales y la forma moderna. [I/L: TOP-002, TOP-003]
+
+Fuentes externas: PARES, <https://pares.mcu.es/ParesBusquedas20/catalogo/description/12805146>; Fernando Álvarez-Balbuena García, «Estudiu histórico-etimolóxicu de la toponimia mayor del términu municipal d’Ordás (Llión)», <https://revistas.unileon.es/index.php/anada/article/view/6165>; `Gaceta de Madrid`, 7 de septiembre de 1864, <https://www.boe.es/gazeta/dias/1864/09/07/pdfs/GMD-1864-251.pdf>; Ayuntamiento de Santa María de Ordás, <https://www.aytosantamariadeordas.es/los-pueblos/santibanez-de-ordas/>.
 
 `Lugar`, `común del lugar`, `vecinos` y `Concejo de Ordás` designan sujetos o escalas diferentes. El Concejo es el marco jurisdiccional mencionado en la comparecencia; el común es el sujeto al que las respuestas 23–27 atribuyen o niegan rentas y cargas; los vecinos son quienes contribuyen mediante repartimiento o pagan las alcabalas declaradas. El estudio no fusiona esas entidades. [D/I: JUR-002; FIS-005–FIS-008]
 
@@ -414,5 +424,5 @@ El índice normativo de trazabilidad es `project/30_RESULTADOS/ESTUDIO_HISTORICO
 | 0.6 — síntesis integral | Base de redacción reestructurada y corregida. |
 | Auditoría 0.1–0.6 | Memoria de problemas y prueba de regresión. |
 
-La versión 1.0 sustituye a 0.1 como texto canónico. Los documentos 0.2–0.6 permanecen como análisis derivados e historial intelectual, no como autoridades históricas.
+La versión 1.1 sustituye a 1.0 como texto canónico tras la rectificación paleográfica e histórica del topónimo `Sorribos`. Los documentos 0.2–0.6 permanecen como análisis derivados e historial intelectual, no como autoridades históricas. Los documentos 0.2–0.6 permanecen como análisis derivados e historial intelectual, no como autoridades históricas.
 

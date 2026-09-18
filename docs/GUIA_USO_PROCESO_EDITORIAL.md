@@ -1,6 +1,6 @@
 # Guía de uso del proceso editorial
 
-## Catastro de Ensenada de Sorribas y Santibáñez de Ordás (1752)
+## Catastro de Ensenada de Sorribos y Santibáñez de Ordás (1752)
 
 **Finalidad:** guía práctica para el usuario del proyecto.  
 **Carácter:** informativo y operativo; no normativo.  

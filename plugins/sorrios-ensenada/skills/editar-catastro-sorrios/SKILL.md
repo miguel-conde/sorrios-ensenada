@@ -1,6 +1,6 @@
 ---
 name: editar-catastro-sorrios
-description: Gestiona, consulta, audita y edita la edición crítica del Catastro de Ensenada de Sorribas y Santibáñez de Ordás de 1752. Úsala para cualquier tarea de este expediente; no la uses para otros catastros.
+description: Gestiona, consulta, audita y edita la edición crítica del Catastro de Ensenada de Sorribos y Santibáñez de Ordás de 1752. Úsala para cualquier tarea de este expediente; no la uses para otros catastros.
 ---
 
 # Editar el Catastro de Sorríos

@@ -14,35 +14,35 @@ Las referencias usarán el identificador editorial de la unidad (`Portada`, `fol
 
 ## Entradas
 
-### Sorribas
+### Sorribos
 
-- **Forma original:** `Sorribas`.
+- **Forma original:** `Sorribos`.
 - **Forma moderna:** Sorrios, barrio de Santibáñez de Ordás.
 - **Localización:** en folio 306r se declara, junto con Santibañez, perteneciente al `Concejo de Ordas`.
 - **Unidades:** Portada; folio 306r; folio 306v.
-- **Fuente de identificación:** PARES documenta en 1715 la forma `Santibáñez de Sorribos` (Archivo de la Real Chancillería de Valladolid, `PL CIVILES,ALONSO RODRÍGUEZ (OLV),CAJA 654,2`): <https://pares.mcu.es/ParesBusquedas20/catalogo/description/12805146>. El Ayuntamiento de Santa María de Ordás identifica hoy Sorrios como barrio de Santibáñez de Ordás: <https://www.aytosantamariadeordas.es/los-pueblos/santibanez-de-ordas/>.
-- **Grado de seguridad:** alto. La correspondencia `Sorribas` → `Sorrios` es una identificación editorial apoyada en la asociación con Santibáñez y en la variante histórica `Sorribos`; no implica modernizar la forma manuscrita.
+- **Fuente de identificación:** PARES documenta en 1715 el `lugar de Santibáñez de Sorribos` (Archivo de la Real Chancillería de Valladolid, `PL CIVILES,ALONSO RODRÍGUEZ (OLV),CAJA 654,2`): <https://pares.mcu.es/ParesBusquedas20/catalogo/description/12805146>. Fernando Álvarez-Balbuena, en su estudio histórico-etimológico de la toponimia mayor de Ordás, documenta para el actual Sorrios formas medievales como `Sorribios` y `Sorribos` y la pervivencia de `Sorribos` en el siglo XIX: <https://revistas.unileon.es/index.php/anada/article/view/6165>. Una escritura de 1831 publicada en la Gaceta de Madrid menciona el `Barrio de Sorribos`: <https://www.boe.es/gazeta/dias/1864/09/07/pdfs/GMD-1864-251.pdf>. El Ayuntamiento de Santa María de Ordás identifica hoy Sorrios como barrio de Santibáñez de Ordás: <https://www.aytosantamariadeordas.es/los-pueblos/santibanez-de-ordas/>.
+- **Grado de seguridad:** muy alto. Las cuatro apariciones del manuscrito de 1752 leen `Sorribos`, incluida la división `Sorri-` / `bos` de folio 306r. La continuidad documental externa `Sorribos` → `Sorrios` es fuerte. La lectura anterior `Sorribas` se descarta como error paleográfico del proyecto, no como variante documentada de este núcleo de Ordás.
 - **Referencias cruzadas:** `Santibañez De Ordas`; `Ordas`; `Concejo de Ordas`.
 
 ### Santibañez De Ordas
 
 - **Forma original:** `Santibañez De Ordas`.
 - **Forma moderna:** Santibáñez de Ordás.
-- **Localización:** en folio 306r se declara, junto con Sorribas, perteneciente al `Concejo de Ordas`.
+- **Localización:** en folio 306r se declara, junto con Sorribos, perteneciente al `Concejo de Ordas`.
 - **Unidades:** Portada; folio 306r; folio 306v.
 - **Fuente de identificación:** PARES documenta `Santibáñez, concejo de Ordás` en 1751: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/478437>. El Ayuntamiento de Santa María de Ordás mantiene la localidad con la forma moderna: <https://www.aytosantamariadeordas.es/los-pueblos/santibanez-de-ordas/>.
 - **Grado de seguridad:** muy alto.
-- **Referencias cruzadas:** `Sorribas`; `Ordas`; `Concejo de Ordas`.
+- **Referencias cruzadas:** `Sorribos`; `Ordas`; `Concejo de Ordas`.
 
 ### Ordas
 
 - **Forma original:** `Ordas`.
 - **Forma moderna:** Ordás; denominación territorial histórica que no se equipara por sí sola al municipio actual de Santa María de Ordás.
-- **Localización:** folio 306r lo identifica como el concejo al que pertenecen Sorribas y Santibañez.
+- **Localización:** folio 306r lo identifica como el concejo al que pertenecen Sorribos y Santibañez.
 - **Unidades:** folio 306r.
 - **Fuente de identificación:** PARES documenta `Santibáñez, concejo de Ordás` en 1751: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/478437>; en 1808 documenta `Villarrodrigo, en la jurisdicción de Santa María de Ordás`, con padrones de Santa María, Callejo, Adrados, Villarrodrigo y Santibáñez: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/480016>. El municipio actual de Santa María de Ordás incluye Santibáñez, Santa María y Villapodambre, entre otras localidades: <https://www.aytosantamariadeordas.es/municipio/>.
 - **Grado de seguridad:** alto para la identificación territorial; no se fija identidad administrativa entre el concejo de 1752 y el municipio actual.
-- **Referencias cruzadas:** `Sorribas`; `Santibañez De Ordas`; `Concejo de Ordas`.
+- **Referencias cruzadas:** `Sorribos`; `Santibañez De Ordas`; `Concejo de Ordas`.
 
 ### Tapia
 

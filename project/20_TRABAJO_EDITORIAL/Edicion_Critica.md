@@ -1,15 +1,15 @@
 # Edición crítica del Catastro de Ensenada
 
-## Lugar de Sorribas y Santibáñez de Ordás (1752)
+## Lugar de Sorribos y Santibáñez de Ordás (1752)
 
-**Versión:** 3.5  
+**Versión:** 3.6  
 **Estado:** documento principal vigente  
 **Manual aplicable:** Manual Editorial v1.6  
 **Fuente gráfica autoritativa:** `sorrios_ensenada_orden_lectura_calidad_original.pdf`
 
 > Proyecto de edición paleográfica semidiplomática. Documento principal de trabajo, conforme al Manual Editorial v1.6.
 
-> **Cambio de v3.4 a v3.5:** actualización de la referencia normativa al Manual v1.6 para regular croquis, esquemas y elementos gráficos con texto documental propio; se incorpora el cierre ordinario de folio 307r sin alterar unidades ya validadas.
+> **Cambio de v3.5 a v3.6:** rectificación paleográfica del topónimo `Sorribos` en Portada, folio 306r y folio 306v, tras relectura visual completa y contraste histórico externo. La lectura anterior `Sorribas` queda descartada como error editorial; no cambia ningún otro pasaje paleográfico.
 
 ---
 
@@ -33,7 +33,7 @@ Véase el Manual Editorial vigente.
 
 †
 Copia De las resp[ues]tas. G[enera]les. De
-el Lugar De Sorribas,
+el Lugar De Sorribos,
 y Santibañez De Ordas..
 
 ### Observaciones editoriales
@@ -50,16 +50,16 @@ La portada no tiene unidad anterior. La unidad siguiente es el Reverso de la por
 
 - `resp[ues]tas.` desarrolla la abreviatura visible de «respuestas».
 - `G[enera]les.` desarrolla la abreviatura visible de «Generales».
-- Se conservan las mayúsculas, el salto de línea, la coma tras `Sorribas` y los dos puntos finales visibles tras `Ordas`.
+- Se conservan las mayúsculas, el salto de línea, la coma tras `Sorribos` y los dos puntos finales visibles tras `Ordas`.
 - La cruz invocativa se dispone en línea independiente conforme al Manual Editorial.
 
 ### Notas históricas
 
-- `Sorribas` es la forma del manuscrito. PARES documenta en 1715 el lugar de `Santibáñez de Sorribos` (Archivo de la Real Chancillería de Valladolid, `PL CIVILES,ALONSO RODRÍGUEZ (OLV),CAJA 654,2`), y el Ayuntamiento de Santa María de Ordás identifica hoy Sorrios como barrio de Santibáñez de Ordás. La correspondencia entre el `Sorribas` del expediente y el actual Sorrios se adopta como identificación editorial de seguridad alta, apoyada en la asociación con Santibáñez y en la variante histórica `Sorribos`; no se altera por ello la forma paleográfica. Fuentes: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/12805146>; <https://www.aytosantamariadeordas.es/los-pueblos/santibanez-de-ordas/>.
+- `Sorribos` es la forma del manuscrito. El topónimo aparece cuatro veces en tres unidades materiales: una en la Portada, dos en folio 306r y una en folio 306v; la forma partida `Sorri-` / `bos` de folio 306r confirma de manera especialmente clara la vocal final. La lectura anterior `Sorribas` se rectifica como error paleográfico del proyecto. PARES documenta en 1715 el `lugar de Santibáñez de Sorribos`; Fernando Álvarez-Balbuena documenta para el actual Sorrios de Ordás formas medievales como `Sorribios` y `Sorribos` y la pervivencia de `Sorribos` en el siglo XIX; una escritura de 1831 publicada en la Gaceta de Madrid menciona el `Barrio de Sorribos`; el Ayuntamiento de Santa María de Ordás identifica hoy Sorrios como barrio de Santibáñez de Ordás. La correspondencia `Sorribos` → `Sorrios` se adopta con seguridad muy alta. Fuentes: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/12805146>; <https://revistas.unileon.es/index.php/anada/article/view/6165>; <https://www.boe.es/gazeta/dias/1864/09/07/pdfs/GMD-1864-251.pdf>; <https://www.aytosantamariadeordas.es/los-pueblos/santibanez-de-ordas/>.
 
 ### Referencias cruzadas
 
-- Índice de topónimos: `Sorribas`; `Santibañez De Ordas`.
+- Índice de topónimos: `Sorribos`; `Santibañez De Ordas`.
 - Continuidad material: Reverso de la portada.
 
 ---
@@ -108,10 +108,10 @@ La unidad anterior es la Portada. La unidad siguiente es el folio 306r.
 †
 Copia De las respuestas
 G[enera]les. De el Lugar De
-Sorribas, y Santibañez
+Sorribos, y Santibañez
 De Ordas.
 En el Lugar de Sorri-
-bas, y Santibañez, am[b]os De este Con[ce]jo
+bos, y Santibañez, am[b]os De este Con[ce]jo
 de Ordas a diez, y siete dias De el mes De
 Septiembre De mil setez[iento]s cinq[uen]ta
 y dos años, ante el S[eño]r Liz[encia]do D[o]n Jo-
@@ -153,7 +153,7 @@ La unidad anterior es el Reverso de la portada. La unidad siguiente es el folio 
 ### Referencias cruzadas
 
 - Continuidad material: Reverso de la portada; folio 306v.
-- Índice de topónimos: `Sorribas`; `Santibañez De Ordas`; `Ordas`.
+- Índice de topónimos: `Sorribos`; `Santibañez De Ordas`; `Ordas`.
 - Índice de personas: `Joachin Aguado`; `Manuel Ant[oni]o De Bega`; `Juan Alv[are]z`; `Remirio Rodriguez`.
 - Índice de instituciones: `Concejo de Ordas`; `R[eale]s Consejos`.
 - Índice de oficios: `abogado`; `Juez subdelegado`; `cura parrocho`.
@@ -184,7 +184,7 @@ guntas De el interrogatorio impreso
 De la Letra A. acada vna De
 sus preguntas dijeron lo siguiente
 1ª Ala primera dijeron, que esta
-poblaz[i]on se llama el Lugar De Sorribas,
+poblaz[i]on se llama el Lugar De Sorribos,
 y Santibañez
 
 ### Observaciones editoriales
@@ -216,7 +216,7 @@ La unidad anterior es el folio 306r. La unidad siguiente es el folio 307r.
 ### Referencias cruzadas
 
 - Continuidad material: folio 306r; folio 307r.
-- Índice de topónimos: `Sorribas`; `Santibañez De Ordas`.
+- Índice de topónimos: `Sorribos`; `Santibañez De Ordas`.
 - Índice de personas: `Manuel Ant[oni]o De Bega`; `Juan Alv[are]z`; `Remirio Rodriguez`; `Dom[ing]o Diez`; `Fran[cis]co de Llorca`; `Dom[ing]o Suarez`.
 - Índice de instituciones: `Concejo de Ordas`.
 - Índice de oficios: `cura parrocho`; `oficial de Justiz[i]a`; `perito`; `escribano`.
