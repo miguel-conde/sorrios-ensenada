@@ -13,4 +13,4 @@ Los archivos históricos no se reescriben, porque preservan estados anteriores d
 - forma moderna: `Sorrios`;
 - `Sorribas`: lectura paleográfica errónea introducida por el proyecto, no variante documentada de este núcleo de Ordás.
 
-La formulación canónica vigente consta en la Edición Crítica v3.6, el Índice de topónimos y el Estudio Histórico v1.1.
+La formulación canónica vigente consta en la Edición Crítica v3.6, el Índice de topónimos y el Estudio Histórico v1.2.

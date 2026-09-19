@@ -58,6 +58,13 @@ La arquitectura definida en `ARQUITECTURA_CHATGPT_GITHUB_DRIVE.md` está activa 
 - Plugin y skill promovidos a 2.0.2; manifiesto, `proyecto.yaml`, `pyproject.toml`, validador y plantilla alineados.
 - El estado editorial terminal y `operation.status: clean` no cambian; el PDF autoritativo permanece fuera de GitHub y sin modificación en Drive.
 
+## Mantenimiento posterior — validación histórica de 19 de septiembre de 2026
+
+- Estudio Histórico 1.2 auditado fuente por fuente y validado; 17 entradas PASS, ocho PASS condicionadas y ninguna retirada.
+- Corregida la atribución bibliográfica del testimonio de 1215; normalizados enlaces institucionales sin cambiar el contenido histórico.
+- Introducción y edición modernizada promovidas a 1.3; índice rector a 1.4; creado Plan de composición 0.4.
+- Edición Crítica v3.6, Manual Editorial 1.6, estado terminal, unidades y PDF autoritativo permanecen sin cambios.
+
 ## Resultado final de la migración
 
 H1-H6: **PASS**.

@@ -1,17 +1,17 @@
 # Introducción al Catastro de Ensenada de Sorribos y Santibáñez de Ordás
 
-## Versión 1.2
+## Versión 1.3
 
-**Fecha:** 18 de septiembre de 2026  
+**Fecha:** 19 de septiembre de 2026  
 **Expediente:** Sorribos y Santibáñez de Ordás, 1752  
 **Finalidad:** guía histórica y editorial para lectores no especializados  
 **Documentos relacionados:**
 
-- [Edición modernizada 1.2](./Catastro_Sorrios_1752_Version_Modernizada.md)
+- [Edición modernizada 1.3](./Catastro_Sorrios_1752_Version_Modernizada.md)
 - [Verificación externa del interrogatorio](./Verificacion_Interrogatorio_40_Preguntas.md)
 - [Criterios de la edición modernizada](./Criterios_Edicion_Modernizada.md)
 - [Edición Crítica v3.6](../../20_TRABAJO_EDITORIAL/Edicion_Critica.md)
-- [Estudio Histórico 1.1](../ESTUDIO_HISTORICO/Estudio_Historico.md)
+- [Estudio Histórico 1.2](../ESTUDIO_HISTORICO/Estudio_Historico.md)
 
 ## 1. Qué fue el Catastro de Ensenada
 
@@ -152,16 +152,17 @@ Mantiene grafías históricas, desarrolla abreviaturas mediante convenciones exp
 
 Se elaboraron un diario editorial, un glosario histórico e índices de personas, lugares, instituciones, medidas y oficios. Estos instrumentos ayudan a localizar variantes y términos sin sustituir el contexto de cada aparición.
 
-### 7.5. Estudio Histórico 1.1
+### 7.5. Estudio Histórico 1.2
 
 El estudio histórico reúne los resultados socioeconómicos del expediente y distingue:
 
 - **D:** dato expresamente documentado;
 - **C:** cálculo reproducible;
 - **I:** interpretación;
+- **E:** contexto externo comprobado;
 - **L:** límite o discrepancia.
 
-Su base documental local es exclusivamente la Edición Crítica v3.6. No convierte medidas históricas ni presenta hipótesis como hechos.
+Su base documental local es exclusivamente la Edición Crítica v3.6. El contexto externo se registra por separado y no corrige el dato local. La versión 1.2 amplía los bloques A–F —territorio, jurisdicción, población, sistema agrario, molinos y hacienda del común— y mantiene abiertas las cuestiones cuyo fundamento concreto no se ha documentado. No convierte medidas históricas ni presenta hipótesis como hechos.
 
 ### 7.6. Edición modernizada 1.2
 
@@ -176,7 +177,7 @@ La versión 1.2 incorpora antes de cada respuesta el enunciado íntegro y verifi
 | Leer el contenido de principio a fin | Edición modernizada 1.2 |
 | Comprobar la grafía, una abreviatura o una duda | Edición Crítica v3.6 |
 | Conocer qué preguntaba el formulario | Esta introducción |
-| Comprender la economía y sociedad documentadas | Estudio Histórico 1.1 |
+| Comprender la economía, la sociedad y el contexto externo comprobado | Estudio Histórico 1.2 |
 | Localizar una persona, lugar, medida u oficio | Índices y glosario |
 | Revisar la procedencia del interrogatorio | Verificación externa de las cuarenta preguntas |
 
@@ -208,7 +209,7 @@ La versión 1.2 incorpora antes de cada respuesta el enunciado íntegro y verifi
 - Edición Crítica v3.6.
 - Manual Editorial 1.6.
 - Glosario e índices validados.
-- Estudio Histórico 1.1.
+- Estudio Histórico 1.2.
 - Edición modernizada 1.2.
 - Verificación externa del interrogatorio de cuarenta preguntas.
 

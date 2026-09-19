@@ -1,8 +1,8 @@
 # Índice de referencia para el futuro volumen
 
 **Título provisional:** *Sorribos y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*  
-**Versión del esquema:** 1.3  
-**Fecha:** 18 de septiembre de 2026  
+**Versión del esquema:** 1.4  
+**Fecha:** 19 de septiembre de 2026  
 **Estado:** referencia de trabajo aprobada para la futura preparación del volumen  
 **Naturaleza:** esquema editorial; no constituye todavía el volumen compuesto
 
@@ -443,8 +443,8 @@ Explicará la relación entre:
 - facsímil;
 - transcripción paleográfica;
 - Edición Crítica v3.6;
-- edición modernizada 1.2;
-- Estudio Histórico 1.1;
+- edición modernizada 1.3;
+- Estudio Histórico 1.2;
 - glosario e índices;
 - volumen final.
 
@@ -468,9 +468,9 @@ Quedarán fuera del cuerpo principal, pero enlazados como documentación de resp
 El futuro volumen se construirá, como mínimo, a partir de:
 
 - Edición Crítica v3.6;
-- Introducción al Catastro, versión 1.2;
-- edición modernizada, versión 1.2;
-- Estudio Histórico, versión canónica 1.1;
+- Introducción al Catastro, versión 1.3;
+- edición modernizada, versión 1.3;
+- Estudio Histórico, versión canónica 1.2;
 - glosario histórico;
 - índices vivos de personas, topónimos, instituciones, medidas y oficios;
 - fuentes cartográficas verificadas y brief cartográfico, cuando se preparen;
@@ -509,3 +509,9 @@ Cualquier cambio posterior en esta estructura deberá registrarse expresamente a
 - Incorporación expresa de la nota histórica sobre la continuidad `Sorribos` → `Sorrios` y de sus límites interpretativos.
 - Fijación de la convención cartográfica `Sorribos (1752) / Sorrios (actual)`, con marcador de contorno transparente y mapa local más próximo.
 - Coordinación de la nota con el capítulo 3 y con el índice de lugares y topónimos.
+
+## Versión 1.4 — 19 de septiembre de 2026
+
+- Alineación de los documentos vivos con el Estudio Histórico 1.2 validado.
+- Promoción de la introducción y la edición modernizada a 1.3 por actualización de referencias controladas, sin alterar la Edición Crítica v3.6.
+- Incorporación del Plan de composición 0.4 y de la aceptación conjunta 1.3.

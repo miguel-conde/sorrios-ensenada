@@ -84,5 +84,6 @@ Se incorporan las fuentes enlazadas en `Estudio_Historico.md` y en las entradas 
 - 25 entradas contextuales E y tres límites nuevos: PASS.
 - Las tres cuestiones abiertas figuran en texto y registro: PASS.
 - `estado.yaml` conserva `operation.status: clean`: PASS.
-- El conjunto de publicación contiene exactamente los cuatro archivos declarados: pendiente de verificación tras mover el ref.
-- Commit, padre, rutas y contenido: pendiente de verificación tras mover el ref.
+- El conjunto inicial de publicación contiene exactamente los cuatro archivos declarados: PASS en `6d3079b488a165db2e5b640424144f098905e567`.
+- Commit, padre, rutas y contenido: PASS; corrección posterior de invariante textual en `23cb7cc8595c925d10a8513092e9c2f8e3308719`.
+- GitHub Actions: PASS, ejecución `35431056229`.

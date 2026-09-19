@@ -1,3 +1,13 @@
+## 19 de septiembre de 2026 — Validación del Estudio Histórico 1.2 y propagación documental
+
+- Auditadas las 25 entradas de contexto externo: 17 PASS, ocho PASS condicionadas y ninguna retirada.
+- Corregida la atribución del testimonio de 1215 a Cristina Jular Pérez-Alfaro y normalizados enlaces institucionales.
+- Creada la validación específica del Estudio Histórico 1.2.
+- Promovidos a 1.3 la introducción y la edición modernizada; aceptadas conjuntamente sin cambios en las cuarenta respuestas.
+- Promovido el índice rector a 1.4 y creado el Plan de composición 0.4; las versiones históricas se conservan.
+- Resueltas las verificaciones pendientes de la operación A–F.
+- No cambian la Edición Crítica v3.6, el Manual Editorial 1.6, el estado, las unidades ni el PDF autoritativo.
+
 # Cambios
 
 ## 19 de septiembre de 2026 — Estudio Histórico v1.2: ampliación externa A–F

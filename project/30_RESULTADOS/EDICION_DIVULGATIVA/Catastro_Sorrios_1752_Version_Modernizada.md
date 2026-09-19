@@ -2,8 +2,8 @@
 
 ## Versión modernizada para lectura
 
-**Versión:** 1.2  
-**Fecha editorial:** 18 de septiembre de 2026  
+**Versión:** 1.3  
+**Fecha editorial:** 19 de septiembre de 2026  
 **Fuente textual:** Edición Crítica v3.6  
 **Naturaleza:** versión íntegra de lectura con ortografía y puntuación modernizadas
 
@@ -15,7 +15,7 @@
 - [Criterios de esta edición](./Criterios_Edicion_Modernizada.md)
 - [Verificación externa del interrogatorio](./Verificacion_Interrogatorio_40_Preguntas.md)
 - [Edición Crítica v3.6](../../20_TRABAJO_EDITORIAL/Edicion_Critica.md)
-- [Estudio Histórico 1.1](../ESTUDIO_HISTORICO/Estudio_Historico.md)
+- [Estudio Histórico 1.2](../ESTUDIO_HISTORICO/Estudio_Historico.md)
 
 ## Portada
 
