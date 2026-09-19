@@ -1,7 +1,7 @@
 # Índice de referencia para el futuro volumen
 
 **Título provisional:** *Sorribos y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*  
-**Versión del esquema:** 1.4  
+**Versión del esquema:** 1.5  
 **Fecha:** 19 de septiembre de 2026  
 **Estado:** referencia de trabajo aprobada para la futura preparación del volumen  
 **Naturaleza:** esquema editorial; no constituye todavía el volumen compuesto
@@ -72,6 +72,28 @@ Se adoptan las denominaciones «Índice onomástico» e «Índice de materias»:
 
 Este cambio no aumenta el número de índices: el volumen mantiene nueve.
 
+### 2.4. Integración de la ampliación documental del Estudio Histórico 1.2
+
+El volumen incorporará el contexto externo validado sin confundirlo con el dato local. Se mantendrán cinco niveles de evidencia:
+
+- **D:** dato de la Edición Crítica v3.6;
+- **C:** cálculo reproducible a partir de datos;
+- **I:** interpretación histórica;
+- **E:** contexto externo comprobado;
+- **L:** límite, cautela o cuestión abierta.
+
+La narración no mostrará estas letras en cada párrafo, pero cada capítulo deberá conservar su trazabilidad mediante notas, cuadros o una matriz final. Las fuentes externas explicarán instituciones, vocabulario y contexto regional; no corregirán el manuscrito, no crearán cifras locales nuevas ni cerrarán lagunas por analogía.
+
+Se incorporarán al diseño:
+
+- una guía breve de niveles de evidencia;
+- recuadros de contexto claramente diferenciados del texto local;
+- una cronología toponímica y administrativa;
+- una matriz de evidencia y fuentes externas;
+- una relación final de cuestiones abiertas.
+
+La historia del nombre se presentará de forma positiva —`Sorribios` en 1215 y 1267, `Sorribos` en la Edad Moderna y los siglos XVIII-XIX, `Sorrios` en la actualidad—. La rectificación interna de una lectura anterior no se convertirá en una polémica ni en una página autónoma para el lector.
+
 # Preliminares
 
 - Cubierta exterior, resuelta definitivamente al cierre de la composición.
@@ -81,7 +103,8 @@ Este cambio no aumenta el número de índices: el volumen mantiene nueve.
 - Nota al lector.
 - Cómo utilizar el volumen.
 - Convenciones, signos editoriales y abreviaturas.
-- Cronología esencial.
+- Guía de niveles de evidencia D/C/I/E/L.
+- Cronología esencial, incluida la serie histórica del topónimo y los principales cambios administrativos.
 - Lámina cartográfica a doble página.
 - Índice general.
 - Índice de mapas y reproducciones documentales.
@@ -96,6 +119,8 @@ Este cambio no aumenta el número de índices: el volumen mantiene nueve.
 - La averiguación catastral.
 - Autoridades, concejos, peritos y declarantes.
 - Alcance y límites históricos del Catastro.
+- Naturaleza fiscal y pericial de las respuestas.
+- Jerarquía de fuentes y separación entre dato local y contexto externo.
 
 ## Capítulo 2. Las Respuestas Generales y el interrogatorio de cuarenta preguntas
 
@@ -116,10 +141,13 @@ Los enunciados completos volverán a aparecer en la edición modernizada con una
 - Juramento y desarrollo de la declaración.
 - Ratificación, edades y firmas.
 - Variantes nominales, incluida Bega/Vega.
-- Nota histórica sobre la denominación del lugar: formas documentadas `Sorribios`/`Sorribos` y continuidad hasta el actual `Sorrios`.
-- Rectificación paleográfica de la lectura anterior `Sorribas`, que se explicará como error editorial y no como variante histórica.
+- Historia documentada del nombre: `Sorribios` en 1215 y 1267; `Sorribos` desde la Edad Moderna hasta el siglo XIX; `Sorrios` en el uso actual.
+- La venta de 1267 y sus límites como antecedente patrimonial: documenta bienes y adscripción a Ordás, pero no continuidad económica automática hasta 1752.
+- Relación histórica entre Sorribos y Santibáñez.
 - Límite de la interpretación: la identificación del lugar es segura, pero no se afirmará una secuencia fonética completa que las fuentes no permitan demostrar.
 - Contenido y singularidades del expediente.
+
+La historia del topónimo se explicará como información histórica útil. La historia interna de lecturas descartadas quedará en la tabla de versiones o en el dossier editorial, no en una página independiente del cuerpo.
 
 ## Capítulo 4. Del manuscrito al volumen actual
 
@@ -132,87 +160,113 @@ Los enunciados completos volverán a aparecer en la edición modernizada con una
 - Diferencias entre facsímil, transcripción paleográfica, edición crítica y versión modernizada.
 - Sistema de folios, notas y concordancias.
 - Principios de trazabilidad.
+- Niveles D/C/I/E/L y reglas de uso de fuentes externas.
+- Validación de afirmaciones, cálculos y límites.
 - Límites de la intervención editorial.
 
 # Parte II. Sorribos y Santibáñez en 1752
 
-## Capítulo 5. Un lugar de señorío en el concejo de Ordás
+La parte histórica integrará el expediente y el contexto externo validado. Los datos locales seguirán procediendo exclusivamente de la Edición Crítica v3.6. Los paralelos externos se identificarán mediante notas o recuadros y nunca se utilizarán para completar cifras, convertir medidas o atribuir a Sorribos rasgos no documentados.
 
-- Identidad del lugar.
+## Capítulo 5. Un lugar de señorío en el Concejo de Ordás
+
+- Identidad del lugar y relación entre Sorribos y Santibáñez.
+- El Concejo de Ordás como marco jurisdiccional de 1752.
+- Diferencias entre lugar, común, vecinos, concejo histórico y municipio posterior.
+- Composición del Concejo en 1768 y 1789.
+- Reorganización municipal de 1836 y descripción de 1848.
 - Jurisdicción y señorío.
-- El conde de Luna.
+- El conde de Luna en el manuscrito y la identificación externa del XV conde.
 - Límites y configuración del término.
 - Territorio, comunidad y administración.
 
 ## Capítulo 6. Vecinos, hogares, viviendas y trabajo
 
 - Vecinos, medios vecinos, «avitadores» y residentes.
-- Diferencia entre población fiscal y población total.
+- Cabezas de casa, familias y categorías personales en la práctica catastral.
+- Diferencia entre población fiscal, hogares y población total.
+- El dato parroquial de 1768 como comparación controlada, nunca como estimación de 1752.
 - Casas y pajares.
 - Hogares agrarios y trabajo familiar.
-- Labradores, jornaleros y artesanos.
+- Labradores, jornaleros, criados y artesanos.
+- Pluriactividad del herrero.
 - Pobres de solemnidad y eclesiásticos.
-- Límites para reconstruir la estructura social.
+- Límites para reconstruir población, estructura social e ingresos.
 
 ## Capítulo 7. La tierra y el sistema agrario
 
-- Medidas locales.
+- Medidas locales y medición por sembradura.
+- Variabilidad regional y prohibición de conversiones modernas inseguras.
 - Especies y calidades de tierra.
-- Cabida declarada y discordancias internas.
+- Cabida declarada, suma de partidas y discordancias internas.
 - Predominio del centeno.
 - Barbecho y rotación.
 - Cebada, lino y ferrañales.
-- Prados, huertos, sotos y frutales.
-- Rendimientos y precios.
+- El lino en su contexto regional, sin atribuir circuitos concretos a la producción local.
+- Prados de uno y dos pelos; riego, cerramiento y ciclos.
+- Huertos, sotos y frutales.
+- Rendimientos y precios como regulaciones, no cosechas observadas.
 
 ## Capítulo 8. Ganadería, montes y aprovechamientos comunales
 
 - Especies ganaderas.
 - Productos y valoraciones.
+- Ganado «arenta» y contexto leonés de renta o aparcería.
+- Límites para reconstruir contratos, censos de cabezas o patrimonios.
 - Pastos y montes.
 - Leña, sotos y recursos complementarios.
-- Dependencia de los bienes comunales.
+- Funciones documentadas de los espacios comunes sin presumir un título uniforme de propiedad.
 - Organización colectiva y vecera.
 - Complementariedad entre agricultura y ganadería.
 
 ## Capítulo 9. Río, molinos y otros recursos productivos
 
-- El río como recurso.
+- El río como recurso y condicionante.
 - Molinos, ruedas, propietarios y copropietarios.
-- Capacidad de transformación del cereal.
-- Estacionalidad hidráulica.
+- Capacidad regulada de transformación del cereal.
+- Estacionalidad hidráulica y molino venturero.
 - Puentes, crecidas y daños documentados.
-- Pozo de pesca.
+- Contexto provincial del molino hidráulico, sin extrapolar capacidad ni paralización.
+- Pozo de pesca y cuestión abierta sobre el título jurídico del derecho.
 - Colmenas y pequeños activos.
 
 ## Capítulo 10. Iglesia, señorío y fiscalidad
 
 - Diezmos, primicia y voto.
+- El Voto de Santiago como contexto institucional; cuantía local preservada.
 - Beneficiarios de las cargas.
 - Derechos señoriales.
+- Alcabalas y pozo de pesca del conde de Luna.
+- Distinción entre derechos señoriales y ausencia de pago por establecimiento del suelo.
 - Servicio ordinario y extraordinario.
 - Rentas y derechos enajenados.
 - Circulación de pagos en dinero y en especie.
+- Pregunta abierta sobre el título concreto de alcabalas y pozo en Ordás.
 
 ## Capítulo 11. Hacienda concejil y servicios colectivos
 
-- Propios, arbitrios y sisas.
-- Gastos del común.
+- Ausencia declarada de propios, arbitrios y rentas del común.
+- Repartimiento entre vecinos.
+- Gastos del común y subtotal documentado.
+- Corpus, limpieza de fuentes y otros servicios.
+- Hospital de Inocentes de Valladolid: identificación institucional y origen local no resuelto.
+- Derecho de Mesta en León: institución identificada y naturaleza concreta del pago no resuelta.
 - Justicia y administración.
-- Taberna.
-- Servicios colectivos.
-- Ausencia de hospitales y conventos.
-- Capacidad financiera de la comunidad.
+- Taberna por vecera y comparación con ordenanzas leonesas.
+- Ausencia de hospital local y conventos.
+- Capacidad financiera y límites de la documentación concejil.
 
 ## Capítulo 12. Dinero, oficios y conexiones exteriores
 
 - Precios y valoraciones monetarias.
 - Oficios y artes mecánicas.
-- Jornales.
+- Jornales y prohibición de convertirlos en ingresos anuales.
 - Comercio, transporte y arriería.
 - Pagos y rentas exteriores.
+- Valladolid, León y Santiago como destinos institucionales documentados.
 - Relaciones con propietarios e instituciones.
-- Grado de monetización de la economía local.
+- Mínimos monetarios y denominadores explícitos.
+- Grado de monetización: indicios observables y límites para calcular mercado, balanza o autosuficiencia.
 
 ## Capítulo 13. Una economía rural integrada: vulnerabilidades, resiliencia y límites
 
@@ -220,12 +274,25 @@ Los enunciados completos volverán a aparecer en la edición modernizada con una
 - Articulación de agricultura, ganadería, comunes y molinos.
 - Producción, transformación y circulación.
 - Dependencias estructurales.
-- Vulnerabilidades observadas.
+- Vulnerabilidades observadas y vulnerabilidades latentes.
 - Mecanismos de propagación.
 - Amortiguadores y formas de resiliencia.
 - Síntesis socioeconómica.
 - Qué permite saber el expediente.
 - Qué no puede reconstruirse con seguridad.
+- Agenda de preguntas abiertas: títulos señoriales, Hospital de Inocentes y derecho de Mesta.
+- Qué aportan las fuentes externas y qué no pueden aportar.
+
+## Recuadros y cuadros de contexto previstos para la Parte II
+
+1. Serie documental del nombre, 1215-actualidad.
+2. Concejo de Ordás y municipio posterior.
+3. Cómo leer vecino, medio vecino, «avitador» y residente.
+4. Medición agraria por sembradura.
+5. Lino, prados y ferrañales en contexto leonés.
+6. Ganado «arenta» y molinos hidráulicos.
+7. Hospital de Inocentes, Mesta, propios, arbitrios y vecera.
+8. Cuestiones abiertas y límites de la reconstrucción.
 
 # Parte III. El manuscrito original
 
@@ -287,7 +354,7 @@ Cada respuesta conservará:
 
 La versión modernizada permitirá la lectura continua en español actual, pero no sustituirá a la transcripción paleográfica ni al facsímil.
 
-# Parte VI. Aparatos documentales y cuantitativos
+# Parte VI. Aparatos documentales, cuantitativos y de evidencia
 
 ## Apéndice A. Glosario histórico
 
@@ -301,7 +368,8 @@ Glosario alfabético de términos históricos, fiscales, agrarios, jurídicos y 
 - Ganadería.
 - Molinos y activos productivos.
 - Derechos y cargas.
-- Distinción entre dato, cálculo e interpretación.
+- Denominador y regla de cálculo de cada cifra derivada.
+- Distinción entre dato, cálculo, interpretación, contexto externo y límite.
 
 ## Apéndice C. Concordancia general
 
@@ -311,6 +379,33 @@ Glosario alfabético de términos históricos, fiscales, agrarios, jurídicos y 
 - Folio ↔ pregunta y respuesta.
 - Pregunta y respuesta ↔ edición modernizada.
 - Evidencia documental ↔ capítulo del estudio histórico.
+- Entrada del registro ↔ capítulo, cuadro, recuadro o nota del volumen.
+
+## Apéndice D. Matriz de evidencia y fuentes externas
+
+La matriz permitirá comprobar la procedencia de las afirmaciones históricas sin sobrecargar el texto. Incluirá:
+
+- identificador del registro;
+- nivel D/C/I/E/L;
+- afirmación o cálculo;
+- fuente local o externa;
+- grado de validación;
+- capítulo, recuadro, cuadro o nota de destino;
+- cautela aplicable.
+
+Las 25 entradas externas validadas del Estudio Histórico 1.2 se resolverán en esta matriz. Las ocho entradas condicionadas conservarán explícitamente su cautela.
+
+## Apéndice E. Cuestiones abiertas y agenda de investigación
+
+Reunirá las preguntas que el volumen no debe cerrar artificialmente:
+
+- título jurídico concreto de las alcabalas y del pozo de pesca del conde de Luna;
+- origen de la obligación de quince reales al Hospital de Inocentes;
+- naturaleza precisa de los diez reales por derecho de Mesta en León;
+- equivalencias modernas no seguras de medidas locales;
+- población total, ingresos familiares, producto, comercio neto y desigualdad no reconstruibles con el corpus actual.
+
+Este apéndice distinguirá una limitación documental de una hipótesis de investigación.
 
 # Parte VII. Índices
 
@@ -358,7 +453,7 @@ Incluirá:
 
 Se distinguirá el topónimo documentado de su identificación moderna cuando esta sea segura.
 
-La entrada principal será `Sorribos`, con remisión a `Sorrios` como forma actual. `Sorrios` remitirá a la entrada histórica y a las páginas del mapa, la nota toponímica y el estudio. `Sorribas` no figurará como variante histórica; si se indexa por aparecer en la explicación editorial, quedará rotulado únicamente como lectura anterior descartada.
+La entrada principal será `Sorribos`, con remisión a `Sorrios` como forma actual. `Sorrios` remitirá a la entrada histórica y a las páginas del mapa, la cronología toponímica y el estudio. `Sorribios` remitirá a la serie medieval. Una lectura editorial descartada no se tratará como variante histórica ni ocupará una entrada temática del cuerpo; solo podrá constar en la tabla técnica de versiones.
 
 ## Índice de instituciones, autoridades y jurisdicciones
 
@@ -424,18 +519,21 @@ Las entradas podrán organizarse mediante subentradas. No se indexará cada apar
 
 # Parte VIII. Fuentes y arquitectura editorial
 
-## Apéndice D. Fuentes y bibliografía
+## Apéndice F. Fuentes y bibliografía
 
 - Fuente manuscrita.
 - Interrogatorio de 1749.
+- Fuentes externas primarias medievales, modernas y contemporáneas.
 - Fuentes institucionales.
+- Bibliografía histórica, metrológica y económica.
 - Fuentes cartográficas verificadas.
-- Bibliografía histórica.
 - Documentos internos utilizados.
 - Procedencia de las reproducciones.
 - Licencias y atribuciones de la cartografía.
 
-## Apéndice E. Tabla de versiones y productos
+Las fuentes externas se agruparán por función y se vincularán con los identificadores de la matriz de evidencia. La bibliografía no ocultará la diferencia entre edición de fuente, catálogo institucional, estudio académico y comparación contextual.
+
+## Apéndice G. Tabla de versiones y productos
 
 Explicará la relación entre:
 
@@ -445,12 +543,15 @@ Explicará la relación entre:
 - Edición Crítica v3.6;
 - edición modernizada 1.3;
 - Estudio Histórico 1.2;
+- registro de afirmaciones y validación del estudio;
 - glosario e índices;
 - volumen final.
 
-## Apéndice F. Criterios de citación
+La tabla registrará las rectificaciones editoriales necesarias sin convertirlas en una polémica narrativa dentro del volumen.
 
-Ofrecerá modelos para citar el volumen completo, una reproducción facsimilar, un folio, una respuesta, la transcripción paleográfica, la edición modernizada y un capítulo del estudio.
+## Apéndice H. Criterios de citación
+
+Ofrecerá modelos para citar el volumen completo, una reproducción facsimilar, un folio, una respuesta, la transcripción paleográfica, la edición modernizada, un capítulo del estudio, una entrada de la matriz de evidencia y una fuente externa.
 
 # Dossier editorial complementario
 
@@ -471,6 +572,8 @@ El futuro volumen se construirá, como mínimo, a partir de:
 - Introducción al Catastro, versión 1.3;
 - edición modernizada, versión 1.3;
 - Estudio Histórico, versión canónica 1.2;
+- Registro de afirmaciones y cálculos, versión 1.2;
+- Validación del Estudio Histórico 1.2;
 - glosario histórico;
 - índices vivos de personas, topónimos, instituciones, medidas y oficios;
 - fuentes cartográficas verificadas y brief cartográfico, cuando se preparen;
@@ -515,3 +618,13 @@ Cualquier cambio posterior en esta estructura deberá registrarse expresamente a
 - Alineación de los documentos vivos con el Estudio Histórico 1.2 validado.
 - Promoción de la introducción y la edición modernizada a 1.3 por actualización de referencias controladas, sin alterar la Edición Crítica v3.6.
 - Incorporación del Plan de composición 0.4 y de la aceptación conjunta 1.3.
+
+
+## Versión 1.5 — 19 de septiembre de 2026
+
+- Reestructuración de los contenidos de la Parte II para trasladar de forma explícita la ampliación externa validada del Estudio Histórico 1.2.
+- Incorporación de los niveles D/C/I/E/L, ocho recuadros de contexto, una matriz de evidencia y un apéndice de cuestiones abiertas.
+- Desarrollo de la serie histórica del topónimo, del Concejo de Ordás, de las categorías demográficas, de la medición por sembradura y de los contextos agrarios, ganaderos, hidráulicos e institucionales.
+- Supresión de una página narrativa autónoma sobre una lectura editorial descartada; la rectificación queda limitada a la arquitectura de versiones y al dossier.
+- Renumeración de los apéndices de fuentes, versiones y citación como F-H.
+- Alineación con el futuro Plan de composición 0.5.

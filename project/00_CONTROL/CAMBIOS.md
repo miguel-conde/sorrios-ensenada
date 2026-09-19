@@ -1,3 +1,13 @@
+## 19 de septiembre de 2026 — Contenidos del futuro volumen 1.5 y plan de composición 0.5
+
+- Cruzados el índice rector 1.4 y el plan 0.4 con el Estudio Histórico 1.2, su Registro de afirmaciones y cálculos y su validación.
+- Promovido el índice rector a 1.5 sin aumentar los dieciséis capítulos.
+- Redistribuida la ampliación externa entre los capítulos 3 y 5–13; incorporados ocho recuadros previstos, una matriz D/C/I/E/L y un apéndice de cuestiones abiertas.
+- Fijada una narración positiva de la serie `Sorribios` → `Sorribos` → `Sorrios`; la historia de una lectura editorial descartada queda fuera del cuerpo narrativo y se reserva a versiones y dossier.
+- Creado el Plan de composición 0.5; el plan 0.4 se conserva como antecedente.
+- Fijado que los mapas regional y local deberán tener funciones y encuadres distintos.
+- No se modifican Edición Crítica v3.6, Introducción 1.3, edición modernizada 1.3, Estudio Histórico 1.2, Registro 1.2, validación, estado, unidades ni PDF autoritativo.
+
 ## 19 de septiembre de 2026 — Validación del Estudio Histórico 1.2 y propagación documental
 
 - Auditadas las 25 entradas de contexto externo: 17 PASS, ocho PASS condicionadas y ninguna retirada.
