@@ -164,17 +164,17 @@ El estudio histórico reúne los resultados socioeconómicos del expediente y di
 
 Su base documental local es exclusivamente la Edición Crítica v3.6. El contexto externo se registra por separado y no corrige el dato local. La versión 1.2 amplía los bloques A–F —territorio, jurisdicción, población, sistema agrario, molinos y hacienda del común— y mantiene abiertas las cuestiones cuyo fundamento concreto no se ha documentado. No convierte medidas históricas ni presenta hipótesis como hechos.
 
-### 7.6. Edición modernizada 1.2
+### 7.6. Edición modernizada 1.3
 
 La edición modernizada ofrece el texto completo con ortografía, acentuación y puntuación actuales. Conserva nombres, cantidades, medidas, monedas e instituciones, y explica términos como ferrañal, cuartal, pelo, propios, arbitrio, esquilmo o vecera.
 
-La versión 1.2 incorpora antes de cada respuesta el enunciado íntegro y verificado de la pregunta correspondiente. Pregunta y respuesta aparecen separadas para que el formulario externo no se confunda con el texto material del manuscrito local. La verificación se documenta en [Verificacion_Interrogatorio_40_Preguntas.md](./Verificacion_Interrogatorio_40_Preguntas.md).
+La versión 1.2 incorporó antes de cada respuesta el enunciado íntegro y verificado de la pregunta correspondiente. Pregunta y respuesta aparecen separadas para que el formulario externo no se confunda con el texto material del manuscrito local. La versión 1.3 no modifica preguntas ni respuestas: actualiza la referencia al Estudio Histórico 1.2. La verificación se documenta en [Verificacion_Interrogatorio_40_Preguntas.md](./Verificacion_Interrogatorio_40_Preguntas.md).
 
 ## 8. Cómo utilizar los documentos
 
 | Necesidad | Documento recomendado |
 |---|---|
-| Leer el contenido de principio a fin | Edición modernizada 1.2 |
+| Leer el contenido de principio a fin | Edición modernizada 1.3 |
 | Comprobar la grafía, una abreviatura o una duda | Edición Crítica v3.6 |
 | Conocer qué preguntaba el formulario | Esta introducción |
 | Comprender la economía, la sociedad y el contexto externo comprobado | Estudio Histórico 1.2 |
@@ -210,7 +210,7 @@ La versión 1.2 incorpora antes de cada respuesta el enunciado íntegro y verifi
 - Manual Editorial 1.6.
 - Glosario e índices validados.
 - Estudio Histórico 1.2.
-- Edición modernizada 1.2.
+- Edición modernizada 1.3.
 - Verificación externa del interrogatorio de cuarenta preguntas.
 
 ## 11. Alcance de esta introducción

@@ -7,7 +7,7 @@
 **Índice rector:** [Índice de referencia para el futuro volumen](./Indice_Referencia_Volumen_Final.md)  
 **Título provisional:** *Sorribos y Santibáñez de Ordás en 1752. El Catastro de Ensenada: estudio histórico, facsímil, transcripción paleográfica y edición modernizada*
 
-> Este plan sucede a la versión 0.2 e incorpora la rectificación paleográfica `Sorribos`, la continuidad histórica hasta el actual `Sorrios` y las decisiones de diseño ya aceptadas para cronología, mapas, facsímil, respuestas, glosario e índices. Se rige por el índice rector 1.3. No inicia todavía la recomposición de la muestra ni modifica las fuentes editoriales.
+> Este plan sucede a la versión 0.3 e incorpora la rectificación paleográfica `Sorribos`, la continuidad histórica hasta el actual `Sorrios` y las decisiones de diseño ya aceptadas para cronología, mapas, facsímil, respuestas, glosario e índices. Se rige por el índice rector 1.4. No inicia todavía la recomposición de la muestra ni modifica las fuentes editoriales.
 
 # 1. Objetivo
 
