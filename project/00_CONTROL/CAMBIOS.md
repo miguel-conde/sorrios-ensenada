@@ -1,3 +1,14 @@
+## 19 de septiembre de 2026 — Muestra de diseño revisada 0.4
+
+- Generadas las variantes de alta calidad y lectura de la muestra 0.4 a partir de una composición única de veinte páginas.
+- Aplicados el índice rector 1.5 y el Plan de composición 0.5.
+- Incorporadas guía D/C/I/E/L, cronología histórica, páginas de los capítulos 5 y 11, preguntas abiertas e índice de instituciones.
+- Conservados dos mapas complementarios: situación regional y detalle local; marcadores de contorno transparente.
+- Reformulada la historia del nombre como serie positiva `Sorribios` → `Sorribos` → `Sorrios`; no aparece `Sorribas`.
+- Verificado el PDF autoritativo por nombre, tamaño, 18 páginas y SHA-256.
+- Renderizadas e inspeccionadas las veinte páginas de ambas salidas; validación técnica y visual en PASS.
+- Los PDF se conservan fuera de GitHub y Drive; no cambian las fuentes editoriales, el estado ni las unidades.
+
 ## 19 de septiembre de 2026 — Contenidos del futuro volumen 1.5 y plan de composición 0.5
 
 - Cruzados el índice rector 1.4 y el plan 0.4 con el Estudio Histórico 1.2, su Registro de afirmaciones y cálculos y su validación.
