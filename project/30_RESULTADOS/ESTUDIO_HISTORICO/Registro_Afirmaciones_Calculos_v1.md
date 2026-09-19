@@ -2,22 +2,24 @@
 
 ## Sorribos y Santibáñez de Ordás en 1752
 
-**Versión:** 1.1  
-**Fecha:** 18 de septiembre de 2026  
+**Versión:** 1.2  
+**Fecha:** 19 de septiembre de 2026  
 **Naturaleza:** instrumento de control previo; no sustituye al `Estudio_Historico.md` canónico  
-**Base documental exclusiva:** `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md`, versión 3.6  
-**Revisión de base:** `main@e34a470ac35a1085c1606898c65733fe896b4ce1`  
+**Base documental primaria:** `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md`, versión 3.6  
+**Capa contextual:** fuentes externas identificadas en las entradas de nivel E  
+**Revisión de base:** `main@19eca221b173427f2ec5d9d2be771219ec7563bc`  
 **Control previo:** `Auditoria_Coherencia_0_1_0_6.md`  
 
 ## 1. Función del registro
 
-Este documento fija un vocabulario controlado de afirmaciones admisibles para una futura versión canónica del estudio. Cada afirmación lleva un identificador estable, un nivel epistemológico y una localización en la Edición Crítica. Los análisis 0.1–0.6 sirven para localizar problemas y formular preguntas, pero no tienen autoridad documental propia.
+Este documento fija un vocabulario controlado de afirmaciones admisibles para la versión canónica del estudio. Cada afirmación lleva un identificador estable, un nivel epistemológico y una fuente. La Edición Crítica conserva autoridad exclusiva sobre lo que dice el expediente; las entradas E aportan contexto externo y nunca corrigen por sí solas el dato local. Los análisis 0.1–0.6 sirven para localizar problemas y formular preguntas, pero no tienen autoridad documental propia.
 
 Niveles:
 
 - **D — dato:** declaración o cifra presente en el expediente.
 - **C — cálculo:** operación reproducible cuyos operandos proceden de datos registrados.
 - **I — interpretación:** lectura histórica compatible con los datos, formulada con cautela y sin convertirse en hecho documental.
+- **E — contexto externo:** dato de otra fuente primaria o de bibliografía identificada, usado para situar una institución, término, antecedente o continuidad.
 - **L — límite:** ausencia, discrepancia o imposibilidad de cálculo que debe conservarse.
 
 Estados:
@@ -34,6 +36,8 @@ Estados:
 4. Para el cura se usará **Manuel Antonio de Bega (var. Vega)**, conforme a las variantes documentales registradas.
 5. Se hablará de **ocho ruedas descritas en cuatro casas de molinos**. El número de ruedas del molino venturero no está declarado.
 6. «Redundancia», «centralidad», «dependencia» y «vulnerabilidad» son categorías analíticas; nunca sustituyen la descripción documental.
+7. Toda entrada E distinguirá el dato externo de la afirmación del manuscrito y de la inferencia editorial.
+8. Ninguna comparación regional autoriza una conversión metrológica, una cifra local, un circuito comercial o una condición contractual no documentados en Sorribos.
 
 ## 3. Registro de afirmaciones documentales
 
@@ -136,6 +140,53 @@ Estados:
 | FIS-011 | Esos 25 reales equivalen al 10,73 % de los 233 reales explícitos de R25 y al 2,49 % del mínimo monetario de 1.006 reales. | C | R16, R25, R28; CAL-016 y CAL-017 | Condicionada por sus respectivos denominadores. |
 | FIS-012 | El pozo de pesca del conde de Luna está arrendado en nueve reales, declarados como utilidad. | D | R29, f. 319v | Admitida. |
 
+### 3.8. Contexto externo incorporado en la versión 1.2
+
+#### Topónimo y continuidad territorial
+
+| ID | Afirmación contextual | Nivel | Evidencia externa | Estado y cautela |
+|---|---|---:|---|---|
+| TOP-004 | En 1215 una pesquisa patrimonial de Alfonso IX distingue `in Ordas, in Sorribios, in Tapia, in Carozera` entre heredades reconocidas a la Iglesia de León. | E | María José Pérez/Jular, doc. 1848 de la Catedral de León: <https://www.historiaagraria.com/FILE/articulos/HA13_jular.pdf> | Admitida como primera mención comprobada de esta serie; no equiparar sin más el régimen patrimonial de 1215 con el de 1752. |
+| TOP-005 | El 1 de julio de 1267 Miasol y Teresa Pérez vendieron por 80 maravedís a Ruy Fernández su heredamiento en `Sorribios de Ordás e en sos términos`, con casas, solares, tierras, huertos, prados, pastos, palomares, molinos, sotos, montes, fuentes y aguas. | E | Edición moderna con remisión a `AHN, Clero, carp. 828, núm. 11`: <https://gredos.usal.es/bitstream/handle/10366/151409/SANTANO%20VALBUENA%2C%20FERNANDO%20-%20TFG.pdf?isAllowed=y&sequence=1> | Admitida; documenta una venta y un heredamiento complejo, no la pervivencia intacta de esa estructura hasta 1752. |
+| TOP-006 | Un estudio genealógico relaciona a Gómez de Sorribos con «Santibáñez y Sorribos de Ordás» en la ascendencia de litigantes de 1601. | E | *Nobiliario de la Montaña leonesa*: <https://dialnet.unirioja.es/descarga/libro/770795.pdf> | Condicionada: fuente secundaria; no se ha visto el expediente original. |
+| TOP-007 | En 1715 litigaron el concejo y vecinos del lugar de Santibáñez de Sorribos por daños de ganados. | E | PARES, `PL CIVILES, ALONSO RODRÍGUEZ (OLV), CAJA 654,2`: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/12805146> | Admitida; documenta topónimo y sujeto colectivo, no la organización completa del concejo. |
+| TOP-008 | La relación parroquial de 1768 incluye `Santibáñez de Sorribos (San Juan de)` dentro del Concejo de Ordás. | E | Relación enviada por el obispo de Oviedo al Consejo de Castilla, fuente `B.R.A.H.M., leg. 9/6257`: <https://scrinia.org/wp-content/uploads/2021/12/Memoria-Ecclesiae-28.pdf> | Admitida para denominación y encaje parroquial. |
+| TOP-009 | Una escritura de 1831 publicada en 1864 registra una casa en el `Barrio de Sorribos` y un prado, vinculados a un comprador vecino de Santibáñez. | E | `Gaceta de Madrid`, 7-9-1864: <https://www.boe.es/gazeta/dias/1864/09/07/pdfs/GMD-1864-251.pdf> | Admitida; refuerza la relación barrio–Santibáñez. |
+| TOP-010 | El arreglo municipal de 1836 y Madoz en 1848 incluyen `Sorribos` entre los lugares del Ayuntamiento de Santa María de Ordás. | E | Álvarez-Balbuena: <https://revpubli.unileon.es/index.php/anada/article/download/6165/4782/26186> | Admitida; no proyectar la composición municipal decimonónica sobre 1752. |
+| TOP-011 | El Ayuntamiento identifica hoy Sorrios como barrio de Santibáñez de Ordás. | E | <https://www.aytosantamariadeordas.es/los-pueblos/santibanez-de-ordas/> | Admitida como identificación actual. |
+
+#### Jurisdicción, población y categorías sociales
+
+| ID | Afirmación contextual | Nivel | Evidencia externa | Estado y cautela |
+|---|---|---:|---|---|
+| JUR-007 | En 1768 y 1789 el Concejo de Ordás comprendía un núcleo de cinco lugares; el municipio posterior reunió además lugares de otras jurisdicciones históricas. | E/I | Relación de 1768 y Álvarez-Balbuena: <https://revpubli.unileon.es/index.php/anada/article/download/6165/4782/26186> | Admitida; distinguir concejo histórico y municipio contemporáneo. |
+| JUR-008 | Ordás figura entre las jurisdicciones del conde de Luna y PARES identifica a Francisco Alfonso Pimentel como XV conde de Luna en correspondencia de 1742–1753. | E/I | <https://fh.mdp.edu.ar/revistas/index.php/magallanica/article/view/6817/7022>; <https://pares.mcu.es/ParesBusquedas20/catalogo/description/3925721> | Admitida para identificar al titular en 1752; el manuscrito solo dice `Conde de Luna`. |
+| JUR-009 | `Abogado de los Reales Consejos` era un título o habilitación profesional obtenido mediante examen y expedición, no prueba de empleo permanente en un consejo. | E/I | PARES, expedientes de examen y título: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/1547060> | Admitida para explicar el título de Joaquín Aguado; no atribuirle un puesto no documentado. |
+| DEM-005 | Los libros personales del Catastro se articulaban en torno a cabezas de casa y familias, con cónyuges, hijos, criados y otros convivientes; en diversos lugares las viudas podían computarse como medio vecino. | E/I | Estudio general del Catastro: <https://www.researchgate.net/publication/28109852_El_Catastro_de_Ensenada_1749-1759_diez_anos_de_intenso_trabajo_y_80000_volumenes_manuscritos> | Admitida para explicar categorías; no convertir automáticamente `vecino`, `medio vecino` o `residente` en individuos u hogares equivalentes. |
+| DEM-006 | La relación parroquial de 1768 atribuye 137 habitantes a Santibáñez de Sorribos. | E/L | <https://scrinia.org/wp-content/uploads/2021/12/Memoria-Ecclesiae-28.pdf> | Condicionada: dato posterior y de otra unidad; prohibido usarlo como coeficiente o estimación de Sorribos en 1752. |
+
+#### Sistema agrario, ganado y molinos
+
+| ID | Afirmación contextual | Nivel | Evidencia externa | Estado y cautela |
+|---|---|---:|---|---|
+| TER-011 | En localidades leonesas la cabida agraria podía expresarse por la cantidad de semilla admitida, variable según terreno y calidad. | E/I | <https://www.e-medida.es/numero-12/meros-apuntes-metrologicos-provenientes-de-la-medicion-de-la-tierra-agraria-repoblacion-y-repartimientos-desde-la-edad-media-al-siglo-xvi/> | Admitida para explicar la lógica de R9; no convertir el quartal de Sorribos a superficie moderna. |
+| AGR-011 | En el siglo XVIII las riberas septentrionales de León, incluida Luna, producían lino y abastecían de hilo e hilaza el mercado leonés, conectado con Castilla. | E/I | Juan Manuel Bartolomé: <https://gredos.usal.es/handle/10366/70337> | Admitida como contexto regional; no afirmar que el lino de Sorribos siguiera esos circuitos. |
+| AGR-012 | Estudios regionales distinguen prados de uno y dos pelos y señalan el peso de los de un pelo en la ribera del Luna. | E/I | <https://www.modernalia.es/items/show/2587> | Admitida para explicar `pelo` y `otoño`; no transferir rendimientos regionales. |
+| AGR-013 | El léxico histórico leonés documenta `ferrenales`, `ferrainales` o `ferrañales` para cercados destinados a cereal verde de alimento ganadero. | E/I | Estudio de la Valduerna: <https://idus.us.es/server/api/core/bitstreams/f727d611-1345-4de8-84ed-a60f90ab56fe/content> | Admitida como apoyo léxico; no imponer a Sorribos todos los detalles de la Valduerna. |
+| GAN-008 | La bibliografía sobre León documenta bueyes y vacas dados a renta o aparcería a cambio de pagos. | E/I | <https://reunido.uniovi.es/index.php/RCG/article/download/894/824> | Admitida para interpretar `arenta`; las prestaciones concretas de Sorribos proceden solo de R20. |
+| HID-008 | El molino hidráulico tuvo amplia presencia en el Catastro leonés y la molienda estacional por falta de caudal aparece en otros territorios del siglo XVIII. | E/I | <https://uvadoc.uva.es/handle/10324/22081>; <https://www.researchgate.net/publication/330029888_Recursos_naturales_y_molienda_a_mediados_del_siglo_XVIII_la_Tierra_de_Campos> | Admitida como contexto; no cuantificar capacidad, caudal ni meses de trabajo de Sorribos fuera de R17. |
+| TRA-006 | Ordenanzas concejiles leonesas usan `andar por vecera` para servicios que pasan por turno entre vecinos cuando nadie los arrienda. | E/I | <https://www.cuadrosleon.com/old/el%20concejo.htm> | Admitida para explicar la taberna de R29; no generalizar el turno a otras actividades. |
+
+#### Derechos y hacienda del común
+
+| ID | Afirmación contextual | Nivel | Evidencia externa | Estado y cautela |
+|---|---|---:|---|---|
+| FIS-013 | El Voto de Santiago fue una renta eclesiástica de origen medieval, con variantes locales y extensión desigual en León. | E/I | Ofelia Rey Castelao: <https://dialnet.unirioja.es/descarga/articulo/246923.pdf> | Admitida para contextualizar el `boto`; no sustituir la cuantía local ni completar el producto elidido. |
+| FIS-014 | El Hospital de Inocentes de Valladolid fue fundado en 1489 por Sancho Velázquez de Cuéllar para atender a personas privadas de juicio y seguía activo a mediados del XVIII. | E | <https://uvadoc.uva.es/bitstream/handle/10324/21203/Investigaciones-1982-03-Pobreza-Hospitalidad-Publica-Ciudad-Valladolid.pdf> | Admitida para identificar al receptor; se desconoce el origen de la obligación local. |
+| FIS-015 | El Honrado Concejo de la Mesta tenía ámbito ganadero leonés y una gran cañada leonesa. | E | PARES: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/172318> | Admitida para identificar la institución; no resuelve la naturaleza del pago de diez reales. |
+| FIS-016 | Propios y arbitrios eran bases de la hacienda local y su control se reforzó en 1760 con la Contaduría General de Propios y Arbitrios. | E/I | <https://dialnet.unirioja.es/descarga/articulo/785131.pdf> | Admitida para situar R23–R25; no convertir su ausencia en pobreza absoluta. |
+| FIS-017 | La pregunta 25 recogía gastos del común y otros pueblos leoneses consignan Corpus junto con caminos, puentes y otras partidas. | E/I | <https://caboalles.wordpress.com/2008/09/29/catastro-de-ensenada-ano-1752/> | Admitida como comparación tipológica; no comparar importes sin tamaños y presupuestos equivalentes. |
+
 ## 4. Interpretaciones autorizables
 
 | ID | Formulación admisible | Apoyo | Estado y condición |
@@ -165,6 +216,9 @@ Estados:
 | LIM-008 | No puede medirse desigualdad general con la distribución parcial de colmenas o ruedas. | Esos activos no representan el patrimonio total de los hogares. |
 | LIM-009 | No se documenta comercio neto ni destino predominante de la producción. | Evitar «autoconsumo» o «mercado» como explicación total. |
 | LIM-010 | No consta el número de ruedas del molino venturero. | HID-005. |
+| LIM-011 | No consta el título jurídico concreto de las alcabalas enajenadas ni del pozo de pesca del conde de Luna en Ordás. | R28–R29 acreditan los derechos y sus importes, no su origen documental. |
+| LIM-012 | No consta el origen jurídico de los quince reales pagados al Hospital de Inocentes de Valladolid. | R25 identifica receptor e importe; FIS-014 solo identifica la institución. |
+| LIM-013 | No consta la naturaleza precisa de los diez reales llamados `derecho de Mesta en León`. | R25 identifica concepto e importe; FIS-015 solo sitúa la institución. |
 
 ## 6. Registro de cálculos reproducibles
 
@@ -218,8 +272,8 @@ Estados:
 5. Los escenarios de vulnerabilidad usarán la secuencia **dato → mecanismo inferido → posible efecto → amortiguador**, sin asignar probabilidad ni historicidad al escenario.
 6. Las referencias mínimas serán respuesta, folio y, cuando sea útil para control interno, unidad lógica.
 7. Las versiones 0.1–0.6 no se citarán como evidencia histórica; solo como antecedentes analíticos.
+8. Toda afirmación de nivel E citará la fuente externa y conservará su cautela; nunca se presentará como contenido del expediente.
 
 ## 9. Criterio de cierre
 
-El registro queda apto como puerta de entrada para la futura redacción canónica. Antes de publicar esa redacción deberá comprobarse que toda afirmación sustantiva corresponde a una entrada admitida o que cualquier nueva entrada se añade aquí con evidencia, nivel y cautela explícitos.
-
+El registro queda actualizado para controlar la versión canónica 1.2. Antes de publicar cualquier revisión deberá comprobarse que toda afirmación sustantiva corresponde a una entrada admitida o que cualquier nueva entrada se añade aquí con evidencia, nivel y cautela explícitos.

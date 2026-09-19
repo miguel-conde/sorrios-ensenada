@@ -1,5 +1,16 @@
 # Cambios
 
+## 19 de septiembre de 2026 — Estudio Histórico v1.2: ampliación externa A–F
+
+- Promovido el Estudio Histórico de v1.1 a v1.2 sin alterar la Edición Crítica v3.6.
+- Ampliada la sección 2.1 con la serie documental completa conocida: `Sorribios` en 1215 y 1267; `Sorribos` entre la Edad Moderna y el siglo XIX; `Sorrios` actual.
+- Incorporado el contexto íntegro de la venta de 1267: partes, precio, comprador y relación de bienes, con cautela expresa frente a cualquier continuidad automática hasta 1752.
+- Añadidas subsecciones sobre el Concejo de Ordás, su diferencia respecto del municipio posterior, el señorío del conde de Luna y el sentido profesional de `abogado de los Reales Consejos`.
+- Ampliados población y categorías vecinales; sistema de medida por sembradura; lino, prados y ferrañales; ganado `arenta`; molinos; taberna por vecera; Voto de Santiago; Hospital de Inocentes; Mesta; propios, arbitrios, repartimiento y Corpus.
+- Conservadas como preguntas abiertas el título jurídico concreto de las alcabalas y el pozo de pesca, el origen del pago al Hospital de Inocentes y la naturaleza precisa del `derecho de Mesta en León`.
+- Promovido el Registro de afirmaciones y cálculos de v1.1 a v1.2; añadido el nivel E para contexto externo y creadas 28 entradas de control, incluidas 25 contextuales y tres límites nuevos.
+- No se modifican Edición Crítica, Manual Editorial, `proyecto.yaml`, `estado.yaml`, `unidades.yaml`, Diario, Glosario, índices ni PDF autoritativo; `operation.status` permanece `clean`.
+
 ## 18 de septiembre de 2026 — Referencias del volumen alineadas con `Sorribos` y `Sorrios`
 
 - Auditados los documentos vivos: `Sorribos` es la forma paleográfica canónica de 1752 y `Sorrios` la identificación moderna segura; los restos de `Sorribas` se conservan únicamente cuando explican la lectura editorial descartada o forman parte del historial.

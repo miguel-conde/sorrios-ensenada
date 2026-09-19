@@ -1,24 +1,25 @@
 # Estudio histórico de Sorribos y Santibáñez de Ordás en 1752
 
-## Versión canónica 1.1
+## Versión canónica 1.2
 
 **Estado:** activo  
-**Versión:** 1.1  
-**Fecha:** 18 de septiembre de 2026  
-**Base documental exclusiva:** `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md`, versión 3.6  
+**Versión:** 1.2  
+**Fecha:** 19 de septiembre de 2026  
+**Base documental primaria:** `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md`, versión 3.6  
 **Registro de control:** `Registro_Afirmaciones_Calculos_v1.md`  
 **Auditoría de origen:** `Auditoria_Coherencia_0_1_0_6.md`  
-**Base de redacción:** `main@bd1034a25e70caacae633fe8d54c7b79917db27a`  
+**Base de ampliación:** `main@19eca221b173427f2ec5d9d2be771219ec7563bc`  
 
 ## 0. Método, evidencia y alcance
 
-Este estudio reconstruye la organización socioeconómica que permiten observar las Respuestas Generales de 1752 para el lugar de Sorribos y Santibáñez de Ordás. La base documental del Estudio Histórico es exclusivamente la edición paleográfica validada, publicada como Edición Crítica v3.6. Los análisis 0.1–0.6 han servido para formular preguntas y localizar cálculos, pero carecen de autoridad documental autónoma.
+Este estudio reconstruye, hasta donde lo permiten las Respuestas Generales de 1752, la organización socioeconómica del lugar de Sorribos y Santibáñez de Ordás. La fuente primaria para toda afirmación sobre el expediente es la edición paleográfica validada, publicada como Edición Crítica v3.6. Una segunda capa, siempre marcada como contexto externo, permite identificar instituciones, términos y antecedentes o continuidades que el manuscrito no explica. Esa bibliografía no corrige el dato local ni autoriza a trasladar a Sorribos rasgos no documentados. Los análisis 0.1–0.6 han servido para formular preguntas y localizar cálculos, pero carecen de autoridad documental autónoma.
 
-La trazabilidad se expresa mediante cuatro niveles:
+La trazabilidad se expresa mediante cinco niveles:
 
 - **D — dato:** contenido explícito de la Edición Crítica;
 - **C — cálculo:** operación reproducible realizada con datos y equivalencias internas del expediente;
 - **I — interpretación:** lectura histórica compatible con los datos, pero no formulada literalmente por la fuente;
+- **E — contexto externo:** información procedente de otra fuente primaria o de bibliografía identificada, útil para situar el dato local;
 - **L — límite:** ausencia, discrepancia o imposibilidad de cálculo que debe permanecer visible.
 
 Las referencias entre corchetes remiten al `Registro_Afirmaciones_Calculos_v1.md`. Ese registro fija la formulación admitida, la respuesta, el folio y, para las magnitudes derivadas, la operación `CAL-*` correspondiente.
@@ -50,21 +51,43 @@ La misma arquitectura contiene amortiguadores y vulnerabilidades. La diversidad 
 
 El expediente se refiere al `Lugar De Sorribos, y Santibañez` y sitúa la comparecencia en el Concejo de Ordás. Juan Álvarez y Remirio Rodríguez aparecen como vecinos y únicos oficiales de justicia; Domingo Díez y Francisco de Llorca fueron nombrados peritos por el Concejo, y Domingo Suárez lo fue de oficio. La declaración se produjo ante el juez subdelegado y concluyó con las firmas o signos registrados por la edición. [D: JUR-001–JUR-004; preámbulo, ff. 306r–306v; cierre, ff. 321r–321v]
 
-### 2.1. El nombre de Sorribos y su continuidad histórica
+### 2.1. El nombre de Sorribos: serie documental de 1215 a la actualidad
 
 El expediente de 1752 denomina al núcleo `Sorribos`. El topónimo aparece cuatro veces en tres unidades materiales: una en la Portada, dos en el folio 306r y una en el folio 306v. Todas ofrecen la misma lectura; una de las apariciones del folio 306r resulta especialmente concluyente al dividir el nombre entre líneas como `Sorri-` / `bos`. La forma `Sorribas`, utilizada en versiones anteriores de este proyecto, se rectifica por tanto como error de lectura paleográfica y no como variante del manuscrito. [D: JUR-001, TOP-001]
 
-La documentación externa muestra continuidad histórica antes y después de 1752. Fernando Álvarez-Balbuena recoge para el actual Sorrios de Ordás varias formas medievales, entre ellas `Sorribios` y `Sorribos`, y documenta la pervivencia de `Sorribos` en el siglo XIX. PARES registra en 1715 el `lugar de Santibáñez de Sorribos`. Una escritura de 1831 publicada en la `Gaceta de Madrid` menciona el `Barrio de Sorribos` en relación con un vecino de Santibáñez. El Ayuntamiento de Santa María de Ordás denomina hoy `Sorrios` al barrio integrado en Santibáñez de Ordás. [I: TOP-002]
+La primera mención comprobada de esta serie se remonta a 1215. Alfonso IX reconoció entonces, tras una pesquisa, que varias heredades que había tomado por suyas pertenecían a la Iglesia de León. La relación distingue `in Ordas, in Sorribios, in Tapia, in Carozera`. El pasaje no es una lista toponímica aislada: forma parte de una aclaración patrimonial entre la Corona y la Iglesia y muestra que `Sorribios` se nombraba separadamente dentro del marco de Ordás. La edición moderna remite al documento 1848 de la Catedral de León. [E: TOP-004]
 
-La identificación histórica adoptada es de seguridad muy alta: el `Sorribos` del expediente de 1752 corresponde al actual Sorrios. `Sorribas` no se incorpora a esta serie: no se ha localizado una fuente de Ordás que documente esa forma para este núcleo y existe, además, otra localidad leonesa llamada Sorribas en el actual municipio de Toral de los Vados. La documentación permite fijar la continuidad de identificación, pero no basta por sí sola para establecer una secuencia fonética exacta entre todas las formas medievales y la forma moderna. [I/L: TOP-002, TOP-003]
+El 1 de julio de 1267, Miasol y su hija Teresa Pérez, naturales de Ordás y residentes en León, vendieron por 80 maravedís a Ruy Fernández, juez de León, todo su heredamiento en `Sorribios de Ordás e en sos términos`. La fórmula enumera casas, solares, tierras labradas y por labrar, huertos, prados, pastos, palomares, molinos, sotos, montes, fuentes y aguas. Este documento acredita el nombre, su adscripción a Ordás, una transmisión patrimonial concreta y la variedad de componentes que podían integrar un heredamiento rural del siglo XIII. No prueba que la organización descrita en 1267 siguiera intacta en 1752. La edición consultada remite al original del Archivo Histórico Nacional, Clero, carpeta 828, número 11. [E/L: TOP-005]
 
-Fuentes externas: PARES, <https://pares.mcu.es/ParesBusquedas20/catalogo/description/12805146>; Fernando Álvarez-Balbuena García, «Estudiu histórico-etimolóxicu de la toponimia mayor del términu municipal d’Ordás (Llión)», <https://revistas.unileon.es/index.php/anada/article/view/6165>; `Gaceta de Madrid`, 7 de septiembre de 1864, <https://www.boe.es/gazeta/dias/1864/09/07/pdfs/GMD-1864-251.pdf>; Ayuntamiento de Santa María de Ordás, <https://www.aytosantamariadeordas.es/los-pueblos/santibanez-de-ordas/>.
+La secuencia continúa en la Edad Moderna. Un estudio genealógico recoge a Gómez de Sorribos, procedente de «Santibáñez y Sorribos de Ordás», como antepasado de litigantes de 1601. En 1715, la Real Chancillería de Valladolid registró un pleito del `concejo y vecinos del lugar de Santibáñez de Sorribos` contra el fiscal del adelantamiento de León por daños causados por ganados. Este segundo testimonio es cercano al Catastro y, además del topónimo, documenta un sujeto colectivo capaz de litigar. [E: TOP-006, TOP-007]
+
+El expediente de 1752 ocupa el centro de la serie. Poco después, la relación enviada en 1768 por el obispo de Oviedo al Consejo de Castilla incluyó, dentro del Concejo de Ordás, la parroquia de `Santibáñez de Sorribos (San Juan de)` y le atribuyó 137 habitantes. La cifra pertenece a otra operación y a una unidad parroquial que no debe identificarse sin más con el lugar catastral; sirve para confirmar la denominación y su encaje territorial, no para calcular la población de Sorribos en 1752. [D/E/L: TOP-001, TOP-008, DEM-006]
+
+En 1831, una escritura que más tarde publicó la `Gaceta de Madrid` registró la compra de una casa en el `Barrio de Sorribos` y un prado por Domingo Suárez, vecino de Santibáñez, a Francisco Arias e Isabel Gómez, vecinos de León. El término `barrio` y la vecindad del comprador permiten identificar con especial claridad la relación entre Sorribos y Santibáñez. El arreglo municipal de 1836 y el diccionario de Madoz de 1848 volvieron a incluir `Sorribos` entre los lugares del Ayuntamiento de Santa María de Ordás. En la actualidad, el Ayuntamiento llama `Sorrios` al barrio de Santibáñez de Ordás. [E: TOP-009–TOP-011]
+
+La serie admisible queda así: **`Sorribios` en 1215 y 1267; `Sorribos` al menos desde la Edad Moderna y durante los siglos XVIII y XIX; `Sorrios` en el uso actual**. La identificación histórica es de seguridad muy alta. `Sorribas` no se incorpora a ella: no se ha localizado una fuente de Ordás que documente esa forma para este núcleo y existe otra localidad leonesa llamada Sorribas en el actual municipio de Toral de los Vados. La documentación fija la continuidad de identificación, pero no basta para reconstruir todos los cambios fonéticos ni sus fechas. [I/L: TOP-002, TOP-003]
+
+Fuentes externas: María José Pérez/Jular, «El dominio de la Catedral de León en la Edad Media», <https://www.historiaagraria.com/FILE/articulos/HA13_jular.pdf>; edición del documento de 1267 con referencia a `AHN, Clero, carp. 828, núm. 11`, <https://gredos.usal.es/bitstream/handle/10366/151409/SANTANO%20VALBUENA%2C%20FERNANDO%20-%20TFG.pdf?isAllowed=y&sequence=1>; *Nobiliario de la Montaña leonesa*, <https://dialnet.unirioja.es/descarga/libro/770795.pdf>; PARES, pleito de 1715, <https://pares.mcu.es/ParesBusquedas20/catalogo/description/12805146>; relación parroquial de 1768, <https://scrinia.org/wp-content/uploads/2021/12/Memoria-Ecclesiae-28.pdf>; `Gaceta de Madrid`, 7 de septiembre de 1864, <https://www.boe.es/gazeta/dias/1864/09/07/pdfs/GMD-1864-251.pdf>; Fernando Álvarez-Balbuena García, «Estudiu histórico-etimolóxicu de la toponimia mayor del términu municipal d’Ordás (Llión)», <https://revpubli.unileon.es/index.php/anada/article/download/6165/4782/26186>; Ayuntamiento de Santa María de Ordás, <https://www.aytosantamariadeordas.es/los-pueblos/santibanez-de-ordas/>.
+
+### 2.2. El Concejo de Ordás y la geografía administrativa
 
 `Lugar`, `común del lugar`, `vecinos` y `Concejo de Ordás` designan sujetos o escalas diferentes. El Concejo es el marco jurisdiccional mencionado en la comparecencia; el común es el sujeto al que las respuestas 23–27 atribuyen o niegan rentas y cargas; los vecinos son quienes contribuyen mediante repartimiento o pagan las alcabalas declaradas. El estudio no fusiona esas entidades. [D/I: JUR-002; FIS-005–FIS-008]
 
-El lugar es de señorío. La respuesta 22 declara que, aunque lo sea, no paga cosa alguna al señor en el concepto allí tratado. Esta afirmación no equivale a ausencia general de derechos señoriales: la respuesta 28 documenta alcabalas enajenadas a favor del conde de Luna y la respuesta 29 un pozo de pesca de su propiedad. [D: JUR-005–JUR-006; FIS-012; R22, ff. 318r–318v; R28–R29, ff. 319r–319v]
+La geografía administrativa actual no debe proyectarse hacia atrás. La relación parroquial de 1768 sitúa en el Concejo de Ordás a Adrados, Callejo, Ordás, Santibáñez de Sorribos y Villarrodrigo. Una relación de 1789 conserva ese núcleo de cinco lugares. El municipio de Santa María de Ordás adquirió después una composición más amplia: el arreglo de 1836 y Madoz incluyen otros lugares que en el siglo XVIII pertenecían a jurisdicciones distintas. Sorribos figura ya entonces entre los lugares del ayuntamiento. Esta evolución explica la relación histórica sin hacer equivalentes el Concejo de Ordás de 1752 y el municipio contemporáneo. [E/I: JUR-007]
 
-La fuente es una declaración fiscal y pericial. Sus magnitudes son cabidas, rendimientos, precios o utilidades reguladas según el interrogatorio, no una contabilidad exhaustiva de producción, población o riqueza. Esta naturaleza explica tanto su capacidad descriptiva como sus silencios. [I/L: TER-010; LIM-001–LIM-010]
+Fuente externa: Fernando Álvarez-Balbuena García, estudio histórico y toponímico de Ordás, <https://revpubli.unileon.es/index.php/anada/article/download/6165/4782/26186>.
+
+### 2.3. Señorío, titular y agentes de la pesquisa
+
+El lugar es de señorío. Un estudio de las jurisdicciones leonesas del siglo XVIII incluye Ordás entre las del conde de Luna y calcula 563 habitantes para esa jurisdicción a partir del Catastro. PARES conserva correspondencia dirigida entre 1742 y 1753 a Francisco Alfonso Pimentel como XV conde de Luna. Es lícito identificar así al titular del condado en 1752, pero deben mantenerse separados los dos pasos: el manuscrito dice `Conde de Luna`; la fuente externa permite proponer el nombre del titular. [D/E/I: JUR-005, JUR-008]
+
+La respuesta 22 declara que, aunque el lugar sea de señorío, no paga cosa alguna al señor en el concepto allí tratado. Esta afirmación no equivale a ausencia general de derechos señoriales: la respuesta 28 documenta alcabalas enajenadas a favor del conde de Luna y la respuesta 29 un pozo de pesca de su propiedad. No se ha hallado aún documentación de la Casa de Luna que aclare el título jurídico concreto de esos dos derechos en Ordás. [D/L: JUR-005–JUR-006; FIS-012; LIM-011]
+
+La expresión `abogado de los Reales Consejos`, aplicada al juez subdelegado Joaquín Aguado, designa una habilitación profesional. Los fondos del Consejo de Castilla conservan expedientes de titulados universitarios que solicitaban examen y expedición del título. La expresión no demuestra que Aguado fuera empleado permanente de un consejo concreto. [D/E/I: JUR-009]
+
+Fuentes externas: estudio sobre juzgados y señoríos leoneses del siglo XVIII, <https://fh.mdp.edu.ar/revistas/index.php/magallanica/article/view/6817/7022>; PARES, correspondencia de Francisco Alfonso Pimentel, XV conde de Luna, <https://pares.mcu.es/ParesBusquedas20/catalogo/description/3925721>; PARES, expediente de título de abogado de los Reales Consejos, <https://pares.mcu.es/ParesBusquedas20/catalogo/description/1547060>.
+
+La fuente es una declaración fiscal y pericial. Sus magnitudes son cabidas, rendimientos, precios o utilidades reguladas según el interrogatorio, no una contabilidad exhaustiva de producción, población o riqueza. Esta naturaleza explica tanto su capacidad descriptiva como sus silencios. [I/L: TER-010; LIM-001–LIM-013]
 
 ## 3. Población fiscal, residencia y vivienda
 
@@ -78,6 +101,10 @@ La respuesta 21 declara 18 vecinos y ocho medios vecinos —incluidas dos viudas
 | Residentes no considerados vecinos | 8 | No contribuyen con los tributos reales según la respuesta. |
 
 Los 26 `avitadores` no constituyen una cifra de población individual, y los ocho residentes no deben sumarse como si todas las categorías representaran personas u hogares equivalentes. El expediente no ofrece tamaño familiar, edades ni número total de habitantes. [L: LIM-001]
+
+La cautela tiene apoyo en el modo de formación del Catastro. Los libros personales se ordenaban en torno a cabezas de casa y familias e incluían cónyuges, hijos, criados y otros convivientes; en varios lugares las viudas podían computarse como medio vecino. Por ello, `vecino` no equivale a individuo, `medio vecino` expresa una categoría fiscal o vecinal y `residente` puede designar a quien vive en el lugar sin la misma condición contributiva. Los hijos de familia o criados pueden aparecer, además, bajo categorías laborales. Este marco aclara el vocabulario del expediente, pero no permite reconstruir una población total. [E/I: DEM-005; LIM-001]
+
+El dato de 137 habitantes atribuido en 1768 a la parroquia de Santibáñez de Sorribos constituye una observación posterior y de distinta escala. No se usa como coeficiente vecinos→habitantes ni como estimación de Sorribos en 1752. [E/L: DEM-006]
 
 La respuesta 22 registra 40 casas habitables, dos arruinadas y quince pajares separados destinados a paja y ganado. Vivienda, hogar y condición vecinal no son variables intercambiables: las 40 casas no permiten inferir 40 unidades domésticas independientes ni calcular ocupación media. [D/I: DEM-003; R22, ff. 318r–318v]
 
@@ -113,6 +140,10 @@ La respuesta 5 distribuye calidades de forma distinta según la clase. No existe
 La respuesta 9 declara que no se usa una medida superficial cierta reducible a varas castellanas. Las tierras de pan llevar se entienden por el quartal de grano que cabe en ellas; los prados de guadaña se regulan por quartales de sembradura y otras clases quedan al juicio de peritos. La única relación metrológica interna expresamente declarada es cuatro quartales por fanega. No consta relación entre el celemín de la respuesta 10 y ese sistema. [D/L: TER-003–TER-005; LIM-004; R9, ff. 309v–310r]
 
 La medida de cabida es, por tanto, una convención agraria local relacionada con sembradura, calidad y uso, no una superficie homogénea. [I: INT-003]
+
+La bibliografía metrológica leonesa documenta sistemas en los que la extensión agraria se expresa por la cantidad de semilla que admite, variable según terreno y calidad, y no por una superficie geométrica constante. La comparación explica la lógica de la respuesta 9, pero no aporta una conversión moderna para el quartal de Sorribos. [E/I/L: TER-011; LIM-004]
+
+Fuente externa: estudio metrológico sobre la medición de la tierra agraria, <https://www.e-medida.es/numero-12/meros-apuntes-metrologicos-provenientes-de-la-medicion-de-la-tierra-agraria-repoblacion-y-repartimientos-desde-la-edad-media-al-siglo-xvi/>.
 
 ## 6. Cabida, calidades y discordancias internas
 
@@ -158,6 +189,8 @@ Las partidas de R10 suman 149,5 medidas principales de linares de regadío y 19,
 
 La respuesta 16 incluye 40 fejes de lino de cuatro libras en la regulación decimal. La multiplicación interna da 160 libras; no representa la producción total de lino. [D/C: AGR-009; CAL-009; R16, f. 315r]
 
+El lino encaja en un marco regional más amplio. Un estudio del mercado leonés del siglo XVIII identifica las riberas septentrionales, incluida Luna, como áreas productoras que abastecían de hilo e hilaza a León y enlazaban con mercados castellanos. El dato ayuda a entender que los linares de Sorribos forman parte de una actividad regional conocida. No demuestra que su producción concreta siguiera esos circuitos ni permite estimar una cuota comercial. [E/I/L: AGR-011; LIM-009]
+
 Los prados se distinguen por cerramiento, riego y ciclo. Unos producen `pelo, y otoño`; otros un solo pelo; los prados entre pares producen un año y descansan otro. La respuesta 12 declara además que cuatro montones de yerba componen un carro. [D: AGR-010; R4, ff. 307v–308r; R12, ff. 313v–314r]
 
 | Tipo de prado | 1.ª calidad | 2.ª calidad | 3.ª calidad | Ciclo declarado |
@@ -169,6 +202,10 @@ Los prados se distinguen por cerramiento, riego y ciclo. Unos producen `pelo, y 
 | Entre pares | — | 1 | 0,5 | produce un año y descansa otro |
 
 La combinación de cereal, lino, cebada, prados y yerba muestra diversidad interna sin negar el predominio centenario. [I: INT-002, INT-003]
+
+La distinción documental entre prados de uno y dos `pelos` tiene paralelo en estudios de las riberas septentrionales de León, donde los prados de un pelo tenían especial peso en la ribera del Luna. Del mismo modo, el léxico histórico leonés documenta `ferrañal` y formas afines para cercados o parcelas dedicados a cereal verde destinado al ganado. Estas comparaciones aclaran los términos `pelo`, `otoño` y `ferrañal`, pero no trasladan a Sorribos todos los rasgos observados en otras comarcas. [E/I: AGR-012, AGR-013]
+
+Fuentes externas: Juan Manuel Bartolomé, estudio sobre lino e hilaza en León, <https://gredos.usal.es/handle/10366/70337>; estudio de prados en las riberas del norte de León, <https://www.modernalia.es/items/show/2587>; léxico histórico de la Valduerna, <https://idus.us.es/server/api/core/bitstreams/f727d611-1345-4de8-84ed-a60f90ab56fe/content>.
 
 ## 9. Ganadería y aprovechamientos de uso común documentado
 
@@ -190,11 +227,15 @@ La respuesta 20 regula utilidades y valores para vacuno, yeguas, ganado de cerda
 | Buey dado `arenta` | 5 quartales de centeno |
 | Vaca dada `arenta` | 4 quartales de centeno |
 
+La expresión `arenta` puede situarse con mayor seguridad gracias a estudios sobre la ganadería leonesa del Catastro, que documentan bueyes y vacas cedidos a renta o aparcería a cambio de pagos. En Sorribos, la fuente local fija las prestaciones concretas en cinco quartales de centeno por buey y cuatro por vaca; el contexto regional ayuda a interpretar el régimen, pero no completa las condiciones del contrato ni identifica a sus partes. [D/E/I/L: GAN-001, GAN-008]
+
 Matorrales, eras, sitios, montes y soto no reciben utilidad en la respuesta 12 porque sirven para pasto de los ganados del común. Otras respuestas atribuyen a algunas de esas clases resguardo del cereal, leña o madera para puentes y puertas del río. Esos pasajes documentan funciones y uso común; no prueban por sí solos un título de propiedad ni una administración común de todos los espacios. [D/I: GAN-002, INT-004; R4, ff. 307v–308v; R12, f. 314r]
 
 Los aprovechamientos de uso común documentado forman así parte del soporte material de la economía: conectan ganado, combustible, cereal e infraestructura. Esta función no debe confundirse con renta monetaria ni con propiedad acreditada. [I: INT-004]
 
 El esquileo doméstico integra la ganadería en el espacio residencial. Tampoco hay base para afirmar que toda la producción ganadera se destinara al consumo doméstico o al mercado. [D/L: GAN-007; LIM-009]
+
+Fuente externa: estudio sobre ganado dado a renta o aparcería en León a partir del Catastro, <https://reunido.uniovi.es/index.php/RCG/article/download/894/824>.
 
 ## 10. Río, molinos y capacidad de transformación
 
@@ -217,6 +258,10 @@ La propiedad o participación en las ruedas aparece repartida entre varios titul
 
 El expediente atribuye la regulación reducida de determinadas ruedas a que el río lleva los puentes y a que muelen solo la mitad del año; el venturero funciona algunos meses de invierno con el agua disponible. Estos hechos documentan dependencia hidráulica. No permiten afirmar que la pérdida de puentes paralizara necesariamente todas las ruedas ni reconstruir una crisis concreta. [D/I: HID-005–HID-007; INT-009]
 
+La bibliografía provincial confirma la amplia presencia del molino hidráulico en el Catastro leonés, y la comparación con otros territorios muestra que la falta estacional de caudal limitaba con frecuencia la molienda. Ese marco hace inteligible el carácter parcial o venturero de la actividad, pero no cuantifica la capacidad de Sorribos ni prueba que todas sus ruedas padecieran la misma limitación. [E/I: HID-008]
+
+Fuentes externas: Pablo José Zapico, inventario de molinos leoneses en el Catastro de Ensenada, <https://uvadoc.uva.es/handle/10324/22081>; estudio comparado sobre recursos naturales y molienda en el siglo XVIII, <https://www.researchgate.net/publication/330029888_Recursos_naturales_y_molienda_a_mediados_del_siglo_XVIII_la_Tierra_de_Campos>.
+
 ## 11. Apicultura y pequeños activos productivos
 
 La respuesta 19 declara 18 pies de abejas distribuidos entre cinco titulares. La suma 7 + 6 + 3 + 1 + 1 verifica el total. [D/C: GAN-003, GAN-004; CAL-020; R19, f. 316v]
@@ -238,6 +283,8 @@ La coincidencia de algunos nombres en molinos y colmenas permite observar combin
 
 La respuesta 15 declara diezmos, primicia y `boto`. Los diezmos corresponden al cura Manuel Antonio de Bega —`Vega` es variante documental—; la primicia, a la iglesia del lugar; y el boto, a la fábrica del Apóstol Santiago. La identificación contextual con el Voto de Santiago no modifica el término ni el receptor declarados. [D: FIS-001, FIS-002; R15, f. 314v]
 
+El `boto` se entiende mejor dentro de la historia del Voto de Santiago en León. La institución fue una renta eclesiástica de origen medieval cuyo beneficiario era Santiago, pero su aplicación conoció variantes locales y una extensión desigual por tierras leonesas. El contexto permite identificar la institución; no autoriza a sustituir los 24 quartales declarados por Sorribos por una regla teórica general ni a completar el producto elidido. [E/I/L: FIS-013; LIM-005]
+
 | Concepto | Cuantía regulada | Perceptor |
 |---|---|---|
 | Diezmo de centeno | 30 cargas | Cura Manuel Antonio de Bega (var. Vega) |
@@ -254,6 +301,8 @@ Las alcabalas están enajenadas a favor del conde de Luna y los vecinos pagan 63
 
 El expediente combina, por tanto, activos productivos distribuidos entre varios particulares con derechos institucionales de percepción asignados a receptores definidos. Esta diferencia de naturaleza impide reducir la estructura económica a una sola dimensión de propiedad. [I: INT-002, INT-007]
 
+Fuente externa: Ofelia Rey Castelao, estudio del Voto de Santiago en León, <https://dialnet.unirioja.es/descarga/articulo/246923.pdf>.
+
 ## 13. Hacienda del común y servicios colectivos
 
 Las respuestas 23 y 24 declaran que el común no tiene propios, arbitrios ni renta alguna. La respuesta 25 indica que debe satisfacer 200 reales anuales por la festividad del Corpus, ocho por limpiar las fuentes, quince al Hospital de Inocentes de Valladolid y diez por derecho de Mesta en León, además de otras cantidades sin cuantificar. [D: FIS-005, FIS-006; R23–R25, ff. 318v–319r]
@@ -269,11 +318,23 @@ Las respuestas 23 y 24 declaran que el común no tiene propios, arbitrios ni ren
 
 Los 233 reales son un subtotal explícito, no un presupuesto exhaustivo. Al carecer de propios para esas cantidades, el común las paga por repartimiento entre los vecinos. [D/C: FIS-006, FIS-007]
 
+El Hospital de Inocentes de Valladolid, receptor de quince reales, fue fundado en 1489 por Sancho Velázquez de Cuéllar, oidor de la Chancillería, para atender a personas privadas de juicio. Seguía activo a mediados del siglo XVIII y el propio Catastro documenta su patrimonio vallisoletano. El contexto identifica la institución, pero no explica el origen jurídico de la obligación concreta de Sorribos. [E/L: FIS-014; LIM-012]
+
+El `derecho de Mesta en León` remite al Honrado Concejo de la Mesta, cuya documentación conserva PARES. León formaba parte de su ámbito ganadero desde el origen y daba nombre a una de las grandes cañadas. Sin una fuente adicional no puede precisarse si los diez reales de Sorribos corresponden a una tasa, servicio, reparto u otro concepto local. [E/L: FIS-015; LIM-013]
+
+La falta de propios, arbitrios y renta merece una lectura institucional. Propios y arbitrios eran piezas centrales de las haciendas locales, y su control se reforzó pocos años después con la creación en 1760 de la Contaduría General de Propios y Arbitrios. La declaración de Sorribos explica por qué los gastos enumerados recaen mediante repartimiento; no prueba pobreza absoluta ni ausencia de cualquier recurso fuera del alcance del interrogatorio. [D/E/I: FIS-005, FIS-007, FIS-016; INT-006]
+
+La partida de 200 reales para la festividad del Corpus tampoco es una anomalía aislada. La pregunta 25 del Catastro estaba diseñada para recoger gastos del común, y otras respuestas leonesas consignan Corpus junto con caminos, puentes u otras atenciones. La comparación explica el tipo de partida, pero no permite juzgar su peso relativo sin presupuestos completos y localidades comparables. [D/E/I/L: FIS-006, FIS-017]
+
 El común declara además no tener cargo de justicia ni estar cargado de servicio ordinario o extraordinario. Estas ausencias se conservan en su alcance literal y no cancelan los gastos de R25. [D: FIS-008]
 
 La taberna funciona por vecera entre los vecinos porque no encuentra arrendatario y no produce utilidad al común ni a particular. Es un servicio rotatorio documentado, pero no una prueba suficiente para generalizar una forma de gobierno económico a todas las actividades. [D/I: TRA-005; R29, f. 319v]
 
+Ordenanzas concejiles leonesas conservan fórmulas según las cuales, cuando nadie toma en arriendo taberna, carnicería, panadería o mesón, el servicio `anda por vecera`: pasa por turno entre vecinos. El paralelo confirma el sentido institucional del término empleado en Sorribos, sin extender el turno a servicios que el expediente no menciona. [E/I: TRA-006]
+
 La secuencia `necesidad colectiva → gasto → repartimiento → vecinos` resume una dependencia explícita. La ausencia de propios, arbitrios y rentas hace visible esa dependencia, aunque no autoriza a afirmar insolvencia o falta de otros recursos no preguntados. [D/I: INT-006]
+
+Fuentes externas: Hospital de Inocentes de Valladolid, <https://uvadoc.uva.es/bitstream/handle/10324/21203/Investigaciones-1982-03-Pobreza-Hospitalidad-Publica-Ciudad-Valladolid.pdf>; PARES, Honrado Concejo de la Mesta, <https://pares.mcu.es/ParesBusquedas20/catalogo/description/172318>; estudio sobre propios y arbitrios, <https://dialnet.unirioja.es/descarga/articulo/785131.pdf>; ordenanzas concejiles leonesas sobre servicios por vecera, <https://www.cuadrosleon.com/old/el%20concejo.htm>; ejemplo leonés de gastos de Corpus en respuestas catastrales, <https://caboalles.wordpress.com/2008/09/29/catastro-de-ensenada-ano-1752/>.
 
 ## 14. Monetización y conexiones exteriores
 
@@ -345,9 +406,12 @@ El corpus no permite reconstruir con rigor:
 - equivalencia entre celemín y unidad principal de cabida;
 - equivalencia entre carga, fanega y quartal para las partidas de R16–R17;
 - equivalencia interna entre real y maravedí;
-- número de ruedas del molino venturero.
+- número de ruedas del molino venturero;
+- fundamento jurídico concreto de las alcabalas enajenadas y del pozo de pesca del conde de Luna en Ordás;
+- origen de la obligación de quince reales al Hospital de Inocentes de Valladolid;
+- naturaleza precisa de los diez reales llamados `derecho de Mesta en León`.
 
-Estos límites no son defectos que deban rellenarse con supuestos. Definen la frontera entre lo que la fuente sostiene y lo que requeriría bibliografía comparativa, nuevas fuentes o un criterio metodológico adicional. [L/I: LIM-001–LIM-010; INT-010]
+Estos límites no son defectos que deban rellenarse con supuestos. Definen la frontera entre lo que la fuente sostiene y lo que requeriría bibliografía comparativa, nuevas fuentes o un criterio metodológico adicional. [L/I: LIM-001–LIM-013; INT-010]
 
 ## 18. Conclusión
 
@@ -358,6 +422,8 @@ El trabajo se integra en hogares, servicios y pluriactividad; los gastos del com
 Las vulnerabilidades más claras proceden del predominio cerealista, los ciclos de descanso, la dependencia hidráulica y la falta de rentas propias del común. Sus posibles amortiguadores son la diversidad de actividades, la pluralidad de unidades productivas y los aprovechamientos compartidos. Son relaciones estructurales, no prueba de crisis concretas. [I: INT-003–INT-006, INT-009]
 
 El resultado canónico es, por tanto, una explicación trazable de cómo se conectan producción, trabajo, recursos y derechos en 1752, acompañada de una declaración explícita de aquello que no puede medirse. [I: INT-010]
+
+La documentación externa amplía esta imagen sin sustituirla: sitúa el nombre del lugar en una serie que arranca en 1215; muestra una venta patrimonial detallada en 1267; precisa el marco del Concejo de Ordás y del condado de Luna; y da sentido regional a medidas de sembradura, lino, prados, ganado a renta, molinos, vecera y cargas institucionales. Allí donde esa documentación no alcanza —título de algunos derechos señoriales, pago al Hospital de Inocentes y derecho de Mesta— el estudio conserva abierta la pregunta. [E/I/L: TOP-004–TOP-011; JUR-007–JUR-009; TER-011; AGR-011–AGR-013; GAN-008; HID-008; TRA-006; FIS-013–FIS-017; LIM-011–LIM-013]
 
 ---
 
@@ -424,5 +490,4 @@ El índice normativo de trazabilidad es `project/30_RESULTADOS/ESTUDIO_HISTORICO
 | 0.6 — síntesis integral | Base de redacción reestructurada y corregida. |
 | Auditoría 0.1–0.6 | Memoria de problemas y prueba de regresión. |
 
-La versión 1.1 sustituye a 1.0 como texto canónico tras la rectificación paleográfica e histórica del topónimo `Sorribos`. Los documentos 0.2–0.6 permanecen como análisis derivados e historial intelectual, no como autoridades históricas.
-
+La versión 1.2 sustituye a 1.1 como texto canónico tras incorporar la investigación externa A–F y ampliar el registro de afirmaciones. La Edición Crítica v3.6 no cambia. Los documentos 0.2–0.6 permanecen como análisis derivados e historial intelectual, no como autoridades históricas.
