@@ -733,6 +733,4 @@ Conservará la portada provisional y la representación de todos los tipos de p�
 | 0.2 | 18 de septiembre de 2026 | Integración de portada, cartografía, índice onomástico, índice de materias y controles conjuntos; rectificación paleográfica del topónimo `Sorribos` y alineación con las fuentes 3.6/1.2/1.1 |
 | 0.3 | 18 de septiembre de 2026 | Propagación de la continuidad `Sorribos` → `Sorrios` y fijación de las correcciones aceptadas para cronología, mapas, facsímil, respuesta 4, glosario e índice de materias |
 | 0.4 | 19 de septiembre de 2026 | Alineación con Introducción 1.3, edición modernizada 1.3, Estudio Histórico 1.2 e índice rector 1.4; incorporación de la capa E y preservación expresa de los límites L |
-
-
 | 0.5 | 19 de septiembre de 2026 | Revisión sustantiva de contenidos conforme al índice rector 1.5: matriz D/C/I/E/L, transferencia de las 25 entradas externas validadas, recuadros de contexto, agenda de cuestiones abiertas, mapas no redundantes y retirada de una página polémica autónoma sobre la lectura descartada |
