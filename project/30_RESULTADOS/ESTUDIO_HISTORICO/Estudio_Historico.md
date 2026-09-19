@@ -12,7 +12,7 @@
 
 ## 0. Método, evidencia y alcance
 
-Este estudio reconstruye, hasta donde lo permiten las Respuestas Generales de 1752, la organización socioeconómica del lugar de Sorribos y Santibáñez de Ordás. La fuente primaria para toda afirmación sobre el expediente es la edición paleográfica validada, publicada como Edición Crítica v3.6. Una segunda capa, siempre marcada como contexto externo, permite identificar instituciones, términos y antecedentes o continuidades que el manuscrito no explica. Esa bibliografía no corrige el dato local ni autoriza a trasladar a Sorribos rasgos no documentados. Los análisis 0.1–0.6 han servido para formular preguntas y localizar cálculos, pero carecen de autoridad documental autónoma.
+Este estudio reconstruye, hasta donde lo permiten las Respuestas Generales de 1752, la organización socioeconómica del lugar de Sorribos y Santibáñez de Ordás. La base documental del Estudio Histórico es exclusivamente la edición paleográfica validada para toda afirmación sobre el expediente, publicada como Edición Crítica v3.6. Una segunda capa, siempre marcada como contexto externo, permite identificar instituciones, términos y antecedentes o continuidades que el manuscrito no explica. Esa bibliografía no corrige el dato local ni autoriza a trasladar a Sorribos rasgos no documentados. Los análisis 0.1–0.6 han servido para formular preguntas y localizar cálculos, pero carecen de autoridad documental autónoma.
 
 La trazabilidad se expresa mediante cinco niveles:
 
