@@ -19,31 +19,45 @@ repositorio ningún PDF fuente, PDF de referencia ni derivado facsimilar.
 
 - Quarto;
 - una versión compatible de Python 3;
+- PyYAML y Pillow, ya declarados por el plugin para el render de unidades;
+- Poppler (`pdftoppm` y `pdfinfo`);
 - una distribución LaTeX con LuaLaTeX para generar el PDF.
 
-No se deben instalar dependencias desde los scripts. Si falta Quarto o LaTeX,
-hay que diagnosticar el componente ausente y obtener autorización antes de
-instalarlo.
+No se deben instalar dependencias desde los scripts. Si falta alguna, hay que
+diagnosticar el componente ausente y obtener autorización antes de instalarlo.
+
+## Entrada temporal del manuscrito
+
+La Fase 2B exige una copia temporal verificada del PDF autoritativo fuera del
+repositorio. Su ruta se entrega solo mediante la variable de entorno:
+
+```sh
+export SORRIOS_MANUSCRIPT_PDF="<PDF_TEMPORAL_VERIFICADO>"
+```
+
+`prepare.py` comprueba tamaño, SHA-256 y 18 páginas antes de generar la página
+12, el recorte `folio_315v` y las páginas Quarto del prototipo. No descarga
+Drive, no escribe en `project/` y reconstruye por completo `generated/`.
 
 ## Comandos desde la raíz del repositorio
 
 ```sh
+publication/scripts/prepare.py
+publication/scripts/prepare.py
+python publication/scripts/validate_publication.py
 quarto check
 quarto preview publication
 quarto render publication --to html
 quarto render publication --to pdf
 ```
 
-La salida se escribe en `publication/_book/`. El script de pre-render
-`publication/scripts/prepare.py` comprueba el manifiesto y crea
-`publication/generated/` cuando es necesario.
+La salida se escribe en `publication/_book/`. Si falla el HTML, se debe revisar
+primero `quarto check`, el manifiesto y la preparación. Si falla el PDF, se
+debe comprobar LuaLaTeX sin cambiar fuentes canónicas.
 
-Si falla el HTML, se debe revisar primero la salida de `quarto check` y las
-rutas declaradas en `meta/publication.yml`. Si falla el PDF, se debe comprobar
-la disponibilidad de LuaLaTeX y de la distribución LaTeX sin cambiar las
-fuentes canónicas. La descarga PDF del HTML solo es utilizable después de un
-render PDF correcto; no se debe publicar una salida HTML que apunte a un PDF
-ausente.
+La página facsimilar y el recorte son derivados temporales: deben permanecer
+bajo `publication/generated/`, no se versionan y se eliminan junto con la copia
+temporal del manuscrito después de la validación.
 
 La arquitectura estable se documenta en el
 [plan maestro](../docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md) y la única tarea

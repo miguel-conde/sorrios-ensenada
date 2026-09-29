@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
-"""Validate the Phase 2A snapshot and prepare generated publication output."""
+"""Validate the Phase 2B snapshot and prepare generated publication output."""
 
 from __future__ import annotations
 
+import os
 import re
 import sys
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 
+from build_vertical_prototype import PrototypeBuildError, build_vertical_prototype
+
 
 EXPECTED_SOURCE_COUNT = 4
 VERSION_PATTERN = re.compile(r"^\*\*Versión:\*\*\s*(?P<version>\S+)", re.MULTILINE)
+MANUSCRIPT_ENV = "SORRIOS_MANUSCRIPT_PDF"
 
 
 class PreparationError(RuntimeError):
@@ -110,7 +114,7 @@ def _validate_sources(repository_root: Path, sources: tuple[Source, ...]) -> Non
             )
 
 
-def prepare() -> None:
+def prepare() -> tuple[Path, ...]:
     script_path = Path(__file__).resolve()
     publication_root = script_path.parent.parent
     repository_root = publication_root.parent
@@ -125,19 +129,28 @@ def prepare() -> None:
     manifest_path = publication_root / "meta" / "publication.yml"
     sources = _manifest_sources(manifest_path)
     _validate_sources(repository_root, sources)
-
-    generated = publication_root / "generated"
-    generated.mkdir(exist_ok=True)
+    manuscript_value = os.environ.get(MANUSCRIPT_ENV)
+    if not manuscript_value:
+        raise PreparationError(
+            f"Define {MANUSCRIPT_ENV} con la ruta de la copia temporal verificada "
+            "del PDF autoritativo."
+        )
+    outputs = build_vertical_prototype(
+        repository_root,
+        publication_root,
+        Path(manuscript_value),
+    )
     print(
         "Preparación completada: 4 fuentes y versiones verificadas; "
-        f"directorio regenerable disponible en {generated}"
+        f"{len(outputs)} derivados del prototipo regenerados."
     )
+    return outputs
 
 
 def main() -> int:
     try:
         prepare()
-    except (OSError, UnicodeError, PreparationError) as error:
+    except (OSError, UnicodeError, PreparationError, PrototypeBuildError) as error:
         print(f"Error de preparación: {error}", file=sys.stderr)
         return 1
     return 0

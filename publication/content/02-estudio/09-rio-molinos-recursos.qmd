@@ -1,0 +1,78 @@
+---
+title: "Río, molinos y otros recursos productivos"
+chapter-id: rio-molinos-recursos
+publication-status: prototype
+sources:
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    locator: "sección 10"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
+    locator: "HID-001–HID-008; CAL-012–CAL-013; INT-005; LIM-005; LIM-010"
+  - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
+    locator: "folios 315r–316r"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
+    locator: "respuesta 17"
+evidence:
+  D: [HID-001, HID-003, HID-005, HID-006]
+  C: [HID-002, HID-004, CAL-012, CAL-013]
+  I: [HID-007, INT-005]
+  E: [HID-008]
+  L: [LIM-005, LIM-010]
+---
+
+Este capítulo es un prototipo editorial limitado. Reúne una sola muestra del
+sistema molinero para probar la relación entre relato histórico, documento,
+cálculo y cautela; no anticipa la redacción completa de la Parte II.
+
+## Agua y capacidad de transformación
+
+La respuesta 17 sitúa la molienda harinera en el agua del río. La formulación
+que conserva a la vez el recuento y su límite es: «ocho ruedas descritas en
+cuatro casas de molinos; además existe un molino venturero cuyo número de ruedas
+no consta». El recuento de las ruedas descritas es (3 + 2 + 2 + 1 = 8); no
+incluye una rueda supuesta para el venturero. [D/C/L: HID-001, HID-002, HID-005,
+CAL-012, LIM-010]
+
+La enumeración distribuye ruedas y derechos entre personas nombradas y
+consortes. Esa pluralidad de titulares no autoriza a reconstruir como
+copropiedad cada casa ni garantiza que unas unidades pudieran sustituir a otras.
+El [cuadro del prototipo](../../generated/aparato-molinos.qmd#cuadro-molinos)
+mantiene cada atribución en el nivel que permite la fuente. [D/I: HID-003,
+INT-005]
+
+## Utilidades sin falsa equivalencia
+
+Las ocho ruedas descritas reúnen una utilidad regulada de 26 cargas de centeno:
+tres ruedas a dos cargas y cinco ruedas a cuatro. El molino venturero queda
+separado con cuatro quartales de centeno, porque el expediente no ofrece una
+equivalencia que permita agregar cargas y quartales. [C/L: HID-004, CAL-013,
+LIM-005]
+
+La cifra expresa una regulación declarada, no una medición moderna de caudal,
+producción efectiva o rentabilidad comparable. Tampoco permite completar el
+número de ruedas del venturero.
+
+## Dependencia hidráulica y límites de la inferencia
+
+El expediente relaciona la regulación menor de determinadas ruedas con dos
+circunstancias: el río lleva los puentes y esas ruedas muelen solo la mitad del
+año. El venturero trabaja algunos meses de invierno con el agua disponible.
+Estos datos documentan una dependencia hidráulica compartida, pero no demuestran
+que la pérdida de puentes paralizara todos los molinos ni que existiera
+continuidad operativa garantizada. [D/I: HID-005, HID-006, HID-007, INT-005]
+
+El contexto aprobado en el Registro sitúa la amplia presencia del molino
+hidráulico en el Catastro leonés y la estacionalidad de la molienda en otros
+territorios del siglo XVIII. Sirve para hacer inteligible el caso, no para
+asignar a Sorribos caudales, meses de trabajo o capacidades que la respuesta 17
+no declara. [E: HID-008]
+
+## Cuatro accesos a la muestra
+
+- [Página digital 12 completa](../../generated/14-facsimil-prototipo.qmd#pagina-digital-12).
+- [Folio 315v: imagen, transcripción y aparato](../../generated/15-transcripcion-prototipo.qmd#folio-315v).
+- [Respuesta 17 modernizada](../../generated/16-modernizada-prototipo.qmd#respuesta-17).
+- [Cuadro y matriz D/C/I/E/L](../../generated/aparato-molinos.qmd#matriz-molinera).
+
+Las cuatro vistas se mantienen separadas: el facsímil conserva la materialidad,
+la paleografía conserva la lectura validada, la modernización facilita el
+acceso y el aparato hace visibles cálculos, interpretaciones y límites.

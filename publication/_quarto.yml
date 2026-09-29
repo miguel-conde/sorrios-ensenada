@@ -10,6 +10,11 @@ book:
   chapters:
     - index.qmd
     - content/00-preliminares/00-prueba-tecnica.qmd
+    - content/02-estudio/09-rio-molinos-recursos.qmd
+    - generated/14-facsimil-prototipo.qmd
+    - generated/15-transcripcion-prototipo.qmd
+    - generated/16-modernizada-prototipo.qmd
+    - generated/aparato-molinos.qmd
   search: true
   downloads:
     - pdf

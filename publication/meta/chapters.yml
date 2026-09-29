@@ -1,5 +1,5 @@
 schema_version: 1
-purpose: "Orden mínimo de capítulos para la prueba técnica de la Fase 2A."
+purpose: "Orden limitado de capítulos y vistas para el prototipo vertical de la Fase 2B."
 chapters:
   - chapter_id: portada
     path: index.qmd
@@ -7,3 +7,22 @@ chapters:
   - chapter_id: prueba-tecnica
     path: content/00-preliminares/00-prueba-tecnica.qmd
     publication_status: development
+  - chapter_id: rio-molinos-recursos
+    path: content/02-estudio/09-rio-molinos-recursos.qmd
+    publication_status: prototype
+  - chapter_id: facsimil-pagina-12
+    path: generated/14-facsimil-prototipo.qmd
+    publication_status: prototype
+    generated: true
+  - chapter_id: transcripcion-folio-315v
+    path: generated/15-transcripcion-prototipo.qmd
+    publication_status: prototype
+    generated: true
+  - chapter_id: modernizada-respuesta-17
+    path: generated/16-modernizada-prototipo.qmd
+    publication_status: prototype
+    generated: true
+  - chapter_id: aparato-molinos
+    path: generated/aparato-molinos.qmd
+    publication_status: prototype
+    generated: true

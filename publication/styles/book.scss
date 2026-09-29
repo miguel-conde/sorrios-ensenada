@@ -12,3 +12,25 @@ $link-color: #6b3f20;
 table {
   font-variant-numeric: tabular-nums;
 }
+
+.prototype-facsimile,
+.prototype-unit {
+  margin-block: 1.5rem;
+  text-align: center;
+}
+
+.prototype-facsimile img {
+  max-height: 78vh;
+  width: auto;
+  cursor: zoom-in;
+}
+
+.prototype-unit img {
+  max-height: 82vh;
+  width: auto;
+  cursor: zoom-in;
+}
+
+#matriz-molinera + table {
+  font-size: 0.9rem;
+}

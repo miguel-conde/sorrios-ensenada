@@ -1,3 +1,32 @@
 schema_version: 1
 purpose: "Procedencia y transformaciones de los recursos de publicación."
-assets: []
+assets:
+  - asset_id: manuscript-page-12
+    source:
+      provider: google_drive
+      file_id: "1GgBs68iTi53ue8-TbrYFABALxadhQe5u"
+      name: sorrios_ensenada_orden_lectura_calidad_original.pdf
+      sha256: "d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24"
+      page: 12
+    transformation:
+      kind: rasterize_complete_page
+      dpi: 180
+      format: png
+    destination: generated/assets/manuscript-page-12.png
+    versioned: false
+  - asset_id: folio-315v
+    source:
+      provider: google_drive
+      file_id: "1GgBs68iTi53ue8-TbrYFABALxadhQe5u"
+      name: sorrios_ensenada_orden_lectura_calidad_original.pdf
+      sha256: "d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24"
+      page: 12
+      unit_id: folio_315v
+      position: left
+    transformation:
+      kind: render_unit
+      implementation: plugins/sorrios-ensenada/tools/render_unit.py
+      dpi: 180
+      format: png
+    destination: generated/assets/folio-315v.png
+    versioned: false

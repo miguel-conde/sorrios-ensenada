@@ -24,3 +24,18 @@ manuscript:
   file_id: "1GgBs68iTi53ue8-TbrYFABALxadhQe5u"
   sha256: "d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24"
   pages: 18
+
+prototype:
+  phase: "2B"
+  chapter_id: rio-molinos-recursos
+  manuscript_page: 12
+  unit_id: folio_315v
+  unit_order: 22
+  unit_position: left
+  modernized_response: 17
+  evidence:
+    D: [HID-001, HID-003, HID-005, HID-006]
+    C: [HID-002, HID-004, CAL-012, CAL-013]
+    I: [HID-007, INT-005]
+    E: [HID-008]
+    L: [LIM-005, LIM-010]
