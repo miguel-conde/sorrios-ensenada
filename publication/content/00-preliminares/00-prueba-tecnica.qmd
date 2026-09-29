@@ -1,0 +1,31 @@
+---
+title: "Prueba técnica de composición"
+chapter-id: prueba-tecnica
+publication-status: development
+sources: []
+---
+
+## Objetivo {#sec-objetivo-prueba}
+
+Este capítulo comprueba la estructura mínima del libro sin incorporar datos
+históricos. La [portada técnica](../../index.qmd) explica el alcance provisional
+de la publicación.
+
+### Elementos verificados
+
+La prueba incluye jerarquía de encabezados, navegación interna, una nota[^1] y
+la @tbl-prueba-tecnica. Los mismos elementos forman parte de las salidas HTML y
+PDF.
+
+| Elemento | Comprobación técnica |
+|---|---|
+| Navegación | Enlace entre dos páginas |
+| Estructura | Encabezados de varios niveles |
+| Composición | Tabla y nota en ambos formatos |
+
+: Comprobaciones sin contenido histórico {#tbl-prueba-tecnica}
+
+El [objetivo de la prueba](#sec-objetivo-prueba) queda disponible como enlace
+interno estable.
+
+[^1]: Nota exclusivamente técnica, sin contenido histórico.

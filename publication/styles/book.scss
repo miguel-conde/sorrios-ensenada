@@ -1,0 +1,14 @@
+/*-- scss:defaults --*/
+
+$body-color: #242424;
+$link-color: #6b3f20;
+
+/*-- scss:rules --*/
+
+.quarto-title-block .subtitle {
+  color: #5f5f5f;
+}
+
+table {
+  font-variant-numeric: tabular-nums;
+}

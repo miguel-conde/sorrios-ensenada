@@ -1,0 +1,16 @@
+---
+title: "Sorribos y Santibáñez de Ordás en 1752"
+subtitle: "Edición en desarrollo"
+chapter-id: portada
+publication-status: development
+sources: []
+---
+
+Esta publicación se encuentra en desarrollo. Esta portada y el [capítulo de
+prueba técnica](content/00-preliminares/00-prueba-tecnica.qmd) verifican
+únicamente la infraestructura de composición; no contienen ni sustituyen
+contenido histórico del proyecto.
+
+La prueba comprueba una fuente común para las salidas HTML y PDF, navegación
+entre páginas y presentación básica. El contenido editorial y los derivados
+documentales se incorporarán en fases posteriores del roadmap.

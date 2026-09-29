@@ -1,0 +1,9 @@
+schema_version: 1
+purpose: "Orden mínimo de capítulos para la prueba técnica de la Fase 2A."
+chapters:
+  - chapter_id: portada
+    path: index.qmd
+    publication_status: development
+  - chapter_id: prueba-tecnica
+    path: content/00-preliminares/00-prueba-tecnica.qmd
+    publication_status: development

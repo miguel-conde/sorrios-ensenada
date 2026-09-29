@@ -1,0 +1,25 @@
+project:
+  type: book
+  output-dir: _book
+  pre-render: scripts/prepare.py
+
+book:
+  title: "Sorribos y Santibáñez de Ordás en 1752"
+  subtitle: "Edición en desarrollo"
+  output-file: "sorribos-santibanez-ordas-1752"
+  chapters:
+    - index.qmd
+    - content/00-preliminares/00-prueba-tecnica.qmd
+  search: true
+  downloads:
+    - pdf
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles/book.scss
+  pdf:
+    pdf-engine: lualatex

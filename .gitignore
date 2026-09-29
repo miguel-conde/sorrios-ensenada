@@ -4,3 +4,9 @@ artifacts/
 .venv/
 .pytest_cache/
 *.egg-info/
+
+# Salidas y derivados regenerables de la publicación Quarto
+/publication/.gitignore
+/publication/.quarto/
+/publication/_book/
+/publication/generated/
