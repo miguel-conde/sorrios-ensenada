@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 28 de septiembre de 2026  
-**Estado global:** preparado para bootstrap técnico  
-**Fase actual:** 2A — infraestructura mínima y primer render  
+**Actualizado:** 29 de septiembre de 2026<br>
+**Estado global:** preparado para prototipo vertical<br>
+**Fase actual:** 2B — prototipo vertical<br>
 **Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
 **Operación canónica al auditar:** `clean`
 
@@ -16,8 +16,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
 4. `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`;
 5. este roadmap;
 6. `.github/instructions/publication.instructions.md`;
-7. `docs/ESPECIFICACION_BOOTSTRAP_PUBLICATION.md` para la tarea actual;
-8. `publication/README.md` cuando exista.
+7. `publication/README.md`;
+8. `docs/ESPECIFICACION_BOOTSTRAP_PUBLICATION.md` como registro de aceptación de la Fase 2A.
 
 ## Estado comprobado
 
@@ -26,7 +26,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Índice rector 1.5 y Plan de composición 0.5 vigentes.
 - Manuscrito: PDF autoritativo de 18 páginas en Drive, solo lectura; no está en GitHub.
 - PDF completo 0.6: referencia editorial externa, no autoridad ni archivo del repositorio.
-- `publication/`: todavía no existe.
+- Bootstrap mínimo de `publication/` publicado en `e9c3991ed72d9abf0469c11d87958bf934720f92`.
+- HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos ni configuración de despliegue.
 
 ## Fases
@@ -35,9 +36,9 @@ Una sesión nueva de Copilot debe leer, en este orden:
 |---|---|---|
 | 0. Auditoría de viabilidad y volumen 0.6 | completada | inventario, procedencia y problemas de regresión identificados |
 | 1. Diseño editorial y técnico v0.1 | completada | 16 capítulos, árbol objetivo, matriz manual/generado y estrategia de facsímil fijados |
-| 1B. Contexto autosuficiente para Copilot | completada con este commit | instrucciones, plan, especificación y roadmap versionados |
-| 2A. Bootstrap y smoke test | **siguiente** | HTML mínimo PASS; prueba PDF; `project/` intacto |
-| 2B. Prototipo vertical | pendiente | un capítulo histórico, una página facsimilar, una unidad paleográfica, una respuesta modernizada y un aparato |
+| 1B. Contexto autosuficiente para Copilot | completada | instrucciones, plan, especificación y roadmap versionados |
+| 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
+| 2B. Prototipo vertical | **siguiente** | un capítulo histórico, una página facsimilar, una unidad paleográfica, una respuesta modernizada y un aparato |
 | 3. Contenido editorial | pendiente | capítulos 1–13 refundidos y trazables; regresiones 0.6 resueltas |
 | 4. Generación documental | pendiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
@@ -45,22 +46,23 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Siguiente tarea exacta
 
-Ejecutar únicamente la Fase 2A definida en `docs/ESPECIFICACION_BOOTSTRAP_PUBLICATION.md`: crear el armazón mínimo de `publication/`, actualizar `.gitignore`, realizar el primer render HTML y probar PDF. No migrar contenido real, no añadir facsímiles y no modificar `project/`.
+Ejecutar únicamente la Fase 2B descrita en este roadmap: construir y validar un prototipo vertical real antes de migrar capítulos en bloque. No iniciar las fases 3–6, no configurar despliegue y no modificar fuentes canónicas de `project/` durante la operación de publicación.
 
-### Criterios de cierre de 2A
+### Cierre comprobado de 2A
 
-- `publication/README.md`, `_quarto.yml`, manifiestos, página inicial, capítulo técnico, estilo mínimo y `prepare.py` presentes;
-- `prepare.py` idempotente y limitado a `generated/`;
-- HTML renderizado correctamente;
-- resultado real de `quarto check` y del intento PDF registrado;
-- tests existentes aplicables en PASS;
-- ninguna modificación bajo `project/`, `plugins/`, `tests/` o `docs/`;
-- ningún PDF ni salida `_book/` versionados;
-- operación publicada en un commit atómico.
+- Implementación atómica publicada: `e9c3991ed72d9abf0469c11d87958bf934720f92`.
+- `prepare.py`: dos ejecuciones directas en PASS; mismo estado y escrituras limitadas a `generated/`.
+- Tests existentes: 34 en PASS.
+- `quarto check`: PASS con Quarto 1.7.31 y TinyTeX 2026.
+- HTML: PASS; portada, capítulo técnico, navegación y búsqueda generados.
+- PDF: PASS con LuaHBTeX 1.24.0; 4 páginas, texto seleccionable e inspección visual correcta.
+- Dependencias bloqueantes: ninguna; Quarto resolvió LuaLaTeX desde TinyTeX aunque no estaba en el `PATH` de la shell.
+- `project/`, `plugins/`, `tests/` y las instrucciones permanecieron intactos en el commit de implementación.
+- Ningún PDF, `_book/` ni contenido de `generated/` quedó versionado.
 
 ## Contenido de la Fase 2B
 
-No iniciar hasta cerrar 2A. El prototipo vertical seleccionará material suficiente para forzar las decisiones difíciles:
+El prototipo vertical seleccionará material suficiente para forzar las decisiones difíciles:
 
 - un capítulo histórico de la Parte II con identificadores D/C/I/E/L;
 - una página completa del facsímil como derivado temporal o local;
@@ -81,5 +83,5 @@ La aceptación decidirá tipografía, densidad, tratamiento de notas, estrategia
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `docs/ESPECIFICACION_BOOTSTRAP_PUBLICATION.md`. Ejecuta únicamente la Fase 2A: crea la infraestructura mínima de `publication/` y actualiza `.gitignore` según la especificación. No modifiques `project/`, `plugins/`, `tests/` ni `docs/`; no migres contenido histórico ni añadas PDFs o facsímiles. Ejecuta los tests aplicables, `quarto check`, el render HTML y la prueba PDF; registra con precisión cualquier dependencia ausente. Antes de terminar, revisa el diff, confirma que `project/` está intacto e informa de archivos y validaciones. Publica el conjunto como un único commit atómico solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 2B descrita en el roadmap: construye un prototipo vertical real con un capítulo histórico, una página facsimilar, una unidad paleográfica, una respuesta modernizada y un aparato. Mantén la trazabilidad D/C/I/E/L, no migres capítulos en bloque, no configures despliegue y no modifiques `project/` dentro de la operación de publicación. Valida HTML y PDF, revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
 
