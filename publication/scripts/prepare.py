@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Validate the Phase 2B snapshot and prepare generated publication output."""
+"""Validate publication sources and prepare generated Quarto output."""
 
 from __future__ import annotations
 
 import os
 import re
 import sys
+from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 
@@ -15,6 +16,7 @@ from build_vertical_prototype import PrototypeBuildError, build_vertical_prototy
 EXPECTED_SOURCE_COUNT = 4
 VERSION_PATTERN = re.compile(r"^\*\*Versión:\*\*\s*(?P<version>\S+)", re.MULTILINE)
 MANUSCRIPT_ENV = "SORRIOS_MANUSCRIPT_PDF"
+LOCAL_MANUSCRIPT_RELATIVE = Path("sorrios-ensenada") / "manuscript.pdf"
 
 
 class PreparationError(RuntimeError):
@@ -114,6 +116,50 @@ def _validate_sources(repository_root: Path, sources: tuple[Source, ...]) -> Non
             )
 
 
+def _resolve_manuscript_pdf(
+    repository_root: Path,
+    environ: Mapping[str, str] | None = None,
+    home: Path | None = None,
+) -> Path:
+    """Resolve a user-provisioned manuscript mirror outside the checkout."""
+
+    environment = os.environ if environ is None else environ
+    override = environment.get(MANUSCRIPT_ENV)
+    if override:
+        candidate = Path(override).expanduser()
+        location = f"la variable {MANUSCRIPT_ENV}"
+    else:
+        xdg_data_home = environment.get("XDG_DATA_HOME")
+        if xdg_data_home:
+            data_home = Path(xdg_data_home).expanduser()
+        else:
+            data_home = (Path.home() if home is None else home) / ".local" / "share"
+        candidate = data_home / LOCAL_MANUSCRIPT_RELATIVE
+        location = "la ubicación local estándar"
+
+    repository = repository_root.resolve()
+    resolved = candidate.resolve()
+    if resolved == repository or repository in resolved.parents:
+        raise PreparationError(
+            "La copia local del manuscrito debe estar fuera del checkout Git; "
+            f"ruta rechazada: {resolved}"
+        )
+    if not resolved.is_file():
+        default_path = (
+            (Path.home() if home is None else home)
+            / ".local"
+            / "share"
+            / LOCAL_MANUSCRIPT_RELATIVE
+        )
+        raise PreparationError(
+            f"No existe el manuscrito indicado por {location}: {resolved}. "
+            "Aprovisiona manualmente una réplica del PDF autoritativo de Drive "
+            f"fuera del checkout, preferentemente en {default_path}, o define "
+            f"{MANUSCRIPT_ENV}. No se realizará ninguna descarga automática."
+        )
+    return resolved
+
+
 def prepare() -> tuple[Path, ...]:
     script_path = Path(__file__).resolve()
     publication_root = script_path.parent.parent
@@ -129,16 +175,11 @@ def prepare() -> tuple[Path, ...]:
     manifest_path = publication_root / "meta" / "publication.yml"
     sources = _manifest_sources(manifest_path)
     _validate_sources(repository_root, sources)
-    manuscript_value = os.environ.get(MANUSCRIPT_ENV)
-    if not manuscript_value:
-        raise PreparationError(
-            f"Define {MANUSCRIPT_ENV} con la ruta de la copia temporal verificada "
-            "del PDF autoritativo."
-        )
+    manuscript_pdf = _resolve_manuscript_pdf(repository_root)
     outputs = build_vertical_prototype(
         repository_root,
         publication_root,
-        Path(manuscript_value),
+        manuscript_pdf,
     )
     print(
         "Preparación completada: 4 fuentes y versiones verificadas; "

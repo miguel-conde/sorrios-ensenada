@@ -295,6 +295,26 @@ validate_publication.py
 
 Los scripts serán deterministas, idempotentes, con mensajes de error accionables y sin escrituras en `project/`. `meta/publication.yml` congela la edición: versión, estado, commit base, rutas y versiones de fuentes y metadatos del manuscrito. `chapters.yml` fija orden y tratamiento; `indexes.yml`, entradas editoriales; `assets.yml`, procedencia y transformaciones.
 
+### Perfil local de composición
+
+La arquitectura editorial universal y la composición local son perfiles
+complementarios. ChatGPT Web/Desktop puede reconstruir el estado desde GitHub y
+leer el PDF de Drive sin requerir herramientas locales. El libro Quarto, en
+cambio, se prepara en el checkout con `.venv` y una réplica persistente del
+manuscrito situada fuera del worktree.
+
+La réplica local no es estado canónico ni autoridad: debe coincidir con los
+metadatos de `proyecto.yaml` y se rechaza si está dentro del checkout. El orden
+de resolución es una ruta explícita en `SORRIOS_MANUSCRIPT_PDF`, la ubicación
+XDG y `~/.local/share/sorrios-ensenada/manuscript.pdf`. No hay descarga
+automática. Cuando la réplica falta o no coincide, el build se detiene y el
+usuario decide cómo renovarla desde Drive.
+
+Durante este perfil, Copilot lee las fuentes versionadas en el checkout y solo
+usa el remoto Git para sincronización, comprobación de concurrencia y publicación.
+El PDF 0.6 puede mantenerse fuera del worktree como referencia visual, pero no
+participa en la generación ni adquiere autoridad textual.
+
 ## 15. Validación y criterios de aceptación
 
 ### Integridad editorial
@@ -356,6 +376,9 @@ La edición 1.0 registrará commit de fuentes, versiones, hash del manuscrito, n
 ## 17. Forma de trabajar con Copilot
 
 Copilot debe recibir tareas pequeñas, con alcance de rutas, fuentes, criterios de aceptación y prohibiciones explícitas. Antes de editar lee instrucciones y roadmap; después informa de diff, comandos y resultados. No migra capítulos masivamente mientras el prototipo no esté aceptado.
+En tareas Quarto trabaja localmente con `.venv`, la réplica verificada y los
+archivos del checkout; no repite accesos a Drive o GitHub cuando las entradas
+locales válidas ya están disponibles.
 
 Secuencia normal:
 

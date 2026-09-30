@@ -16,6 +16,31 @@ Estas reglas se aplican a todos los archivos de la futura capa Quarto.
 - `styles/`: presentación común para HTML y PDF. No debe contener contenido ni decisiones históricas.
 - `_book/`: salida de render, ignorada por Git.
 
+## Perfil local-first de composición
+
+El trabajo ordinario del libro se ejecuta sobre el checkout local. Los archivos
+versionados se leen desde ese checkout; GitHub remoto se reserva para sincronizar,
+comprobar `base_sha` y publicar el commit atómico.
+
+Antes de preparar o renderizar:
+
+1. usa el entorno `.venv` de la raíz y las dependencias declaradas por
+   `plugins/sorrios-ensenada/pyproject.toml`;
+2. usa una réplica del manuscrito proporcionada por el usuario y situada fuera
+   del worktree;
+3. deja que `prepare.py` compruebe metadatos, tamaño, SHA-256 y páginas;
+4. no accedas a Drive si la réplica local supera esas comprobaciones.
+
+`prepare.py` resuelve el manuscrito en este orden: `SORRIOS_MANUSCRIPT_PDF`,
+`$XDG_DATA_HOME/sorrios-ensenada/manuscript.pdf` y, por defecto,
+`~/.local/share/sorrios-ensenada/manuscript.pdf`. No descarga archivos. Si la
+réplica falta o no coincide, detente y pide al usuario que la renueve desde Drive.
+Nunca guardes el manuscrito dentro del checkout, aunque la ruta esté ignorada.
+
+La composición completa 0.6 puede conservarse fuera del checkout como referencia
+visual, por ejemplo en `~/.local/share/sorrios-ensenada/composition-0.6.pdf`.
+Nunca es entrada automática de los scripts ni autoridad textual.
+
 ## Regla para decidir dónde editar
 
 1. Si el texto selecciona, ordena, enlaza o explica fuentes para el lector, edítalo en `content/`.
@@ -61,6 +86,7 @@ Las expresiones anteriores deben activar revisión contextual en `validate_publi
 
 ## Quarto y generación
 
+- Activa `.venv` antes de invocar Quarto: el `pre-render` ejecuta `prepare.py`.
 - Mantén una única fuente de composición para HTML y PDF.
 - Usa rutas relativas al directorio `publication/` y evita rutas locales absolutas.
 - Mantén la lógica compleja fuera de los `.qmd`; `scripts/prepare.py` coordina generadores especializados.

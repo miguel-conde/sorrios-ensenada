@@ -1,6 +1,7 @@
 from pathlib import Path
 import sys
 
+import pytest
 import yaml
 
 
@@ -9,6 +10,7 @@ SCRIPTS = ROOT / "publication" / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
 import build_vertical_prototype as prototype  # noqa: E402
+import prepare as preparation  # noqa: E402
 import validate_publication as validator  # noqa: E402
 
 
@@ -124,3 +126,81 @@ def test_html_line_block_parser_rejects_collapsed_paragraph():
 
     assert semantic.blocks == [canonical]
     assert collapsed.blocks == []
+
+
+def test_local_manuscript_environment_override_has_priority(tmp_path):
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    override = tmp_path / "override" / "manuscript.pdf"
+    override.parent.mkdir()
+    override.write_bytes(b"override")
+    xdg_copy = tmp_path / "xdg" / "sorrios-ensenada" / "manuscript.pdf"
+    xdg_copy.parent.mkdir(parents=True)
+    xdg_copy.write_bytes(b"xdg")
+
+    resolved = preparation._resolve_manuscript_pdf(
+        repository,
+        {
+            preparation.MANUSCRIPT_ENV: str(override),
+            "XDG_DATA_HOME": str(tmp_path / "xdg"),
+        },
+        tmp_path / "home",
+    )
+
+    assert resolved == override.resolve()
+
+
+def test_local_manuscript_uses_xdg_data_home(tmp_path):
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    manuscript = tmp_path / "xdg" / "sorrios-ensenada" / "manuscript.pdf"
+    manuscript.parent.mkdir(parents=True)
+    manuscript.write_bytes(b"xdg")
+
+    resolved = preparation._resolve_manuscript_pdf(
+        repository,
+        {"XDG_DATA_HOME": str(tmp_path / "xdg")},
+        tmp_path / "home",
+    )
+
+    assert resolved == manuscript.resolve()
+
+
+def test_local_manuscript_uses_home_fallback(tmp_path):
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    home = tmp_path / "home"
+    manuscript = home / ".local" / "share" / "sorrios-ensenada" / "manuscript.pdf"
+    manuscript.parent.mkdir(parents=True)
+    manuscript.write_bytes(b"home")
+
+    resolved = preparation._resolve_manuscript_pdf(repository, {}, home)
+
+    assert resolved == manuscript.resolve()
+
+
+def test_local_manuscript_missing_fails_without_remote_fallback(tmp_path):
+    repository = tmp_path / "repository"
+    repository.mkdir()
+    home = tmp_path / "home"
+
+    with pytest.raises(preparation.PreparationError) as error:
+        preparation._resolve_manuscript_pdf(repository, {}, home)
+
+    message = str(error.value)
+    assert "No se realizará ninguna descarga automática" in message
+    assert str(home / ".local" / "share" / "sorrios-ensenada" / "manuscript.pdf") in message
+
+
+def test_local_manuscript_inside_checkout_is_rejected(tmp_path):
+    repository = tmp_path / "repository"
+    manuscript = repository / ".local" / "manuscript.pdf"
+    manuscript.parent.mkdir(parents=True)
+    manuscript.write_bytes(b"inside")
+
+    with pytest.raises(preparation.PreparationError, match="fuera del checkout Git"):
+        preparation._resolve_manuscript_pdf(
+            repository,
+            {preparation.MANUSCRIPT_ENV: str(manuscript)},
+            tmp_path / "home",
+        )

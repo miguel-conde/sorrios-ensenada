@@ -19,6 +19,22 @@ Este repositorio contiene dos capas con funciones diferentes:
 6. Ejecuta únicamente la tarea marcada como siguiente en el roadmap, salvo instrucción expresa del usuario.
 
 No uses una conversación, una descarga, una copia local ni el PDF de composición 0.6 como estado canónico.
+Una réplica local del manuscrito puede usarse como entrada de composición Quarto
+solo cuando esté fuera del checkout y supere las verificaciones declaradas en
+`proyecto.yaml`; sigue siendo un espejo operativo y Drive conserva la autoridad.
+
+## Perfil local para la publicación Quarto
+
+- Trabaja con los archivos del checkout; no consultes GitHub para releerlos.
+- Usa `.venv` y las herramientas del plugin versionado en este repositorio.
+- Prefiere la réplica local verificada del manuscrito y no accedas a Drive cuando
+  esa copia sea válida.
+- No descargues, sustituyas ni actualices automáticamente la réplica local.
+- Si falta o no coincide, detente y solicita al usuario que la aprovisione.
+- Reserva el remoto Git para sincronización, control de `base_sha` y publicación.
+
+Los detalles de rutas, resolución y validación están en
+`.github/instructions/publication.instructions.md` y `publication/README.md`.
 
 ## Autoridades
 

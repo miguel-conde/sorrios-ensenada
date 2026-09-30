@@ -26,6 +26,11 @@ Cuando la tarea afecte al libro Quarto, leer:
 
 `docs/ESTADO_PUBLICACION_QUARTO.md` es la referencia para conocer la fase vigente, el trabajo ya realizado y la siguiente tarea prevista.
 
+La composición Quarto local puede usar una réplica del manuscrito proporcionada
+por el usuario, verificada y situada fuera del checkout. Esa réplica no es estado
+canónico ni sustituye la autoridad de Drive. El contrato operativo completo vive
+en `.github/instructions/publication.instructions.md` y `publication/README.md`.
+
 ## Límites de autoridad
 
 - `project/` contiene las fuentes y datos canónicos del expediente.
