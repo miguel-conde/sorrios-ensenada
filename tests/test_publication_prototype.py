@@ -9,6 +9,7 @@ SCRIPTS = ROOT / "publication" / "scripts"
 sys.path.insert(0, str(SCRIPTS))
 
 import build_vertical_prototype as prototype  # noqa: E402
+import validate_publication as validator  # noqa: E402
 
 
 EXPECTED_EVIDENCE = {
@@ -82,3 +83,44 @@ def test_navigation_is_limited_to_the_vertical_prototype():
     quarto = (ROOT / "publication" / "_quarto.yml").read_text(encoding="utf-8")
     assert "content/02-estudio/09-rio-molinos-recursos.qmd" in quarto
     assert quarto.count("generated/") == 4
+
+
+def test_paleographic_transcription_uses_one_semantic_line_block():
+    edition = (
+        ROOT / "project" / "20_TRABAJO_EDITORIAL" / "Edicion_Critica.md"
+    ).read_text(encoding="utf-8")
+    canonical = prototype.read_paleographic_lines(edition)
+    generated = prototype._transcription_page(edition)
+
+    assert len(canonical) == prototype.PALEOGRAPHIC_LINE_COUNT == 18
+    assert validator._generated_paleographic_lines(generated) == canonical
+    assert generated.count("\n| ") == 18
+
+
+def test_paleographic_transcription_keeps_sections_and_documentary_hyphens():
+    edition = (
+        ROOT / "project" / "20_TRABAJO_EDITORIAL" / "Edicion_Critica.md"
+    ).read_text(encoding="utf-8")
+    generated = prototype._transcription_page(edition)
+    headings = tuple(
+        line.removeprefix("### ")
+        for line in generated.splitlines()
+        if line.startswith("### ")
+    )
+    lines = validator._generated_paleographic_lines(generated)
+
+    assert headings == validator.UNIT_HEADINGS
+    assert tuple(
+        line.rsplit(maxsplit=1)[-1] for line in lines if line.endswith("-")
+    ) == validator.DOCUMENTARY_HYPHEN_ENDINGS
+
+
+def test_html_line_block_parser_rejects_collapsed_paragraph():
+    canonical = ("primera línea", "segunda línea")
+    semantic = validator._LineBlockParser()
+    semantic.feed('<div class="line-block">primera línea<br>segunda línea</div>')
+    collapsed = validator._LineBlockParser()
+    collapsed.feed("<p>primera línea segunda línea</p>")
+
+    assert semantic.blocks == [canonical]
+    assert collapsed.blocks == []

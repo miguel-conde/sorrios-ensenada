@@ -22,6 +22,8 @@ PROTOTYPE_PAGE = 12
 PROTOTYPE_UNIT = "folio_315v"
 PROTOTYPE_RESPONSE = 17
 RENDER_DPI = 180
+PALEOGRAPHIC_LINE_COUNT = 18
+PALEOGRAPHIC_SECTION = "Transcripción paleográfica"
 EVIDENCE_GROUPS = {
     "D": ("HID-001", "HID-003", "HID-005", "HID-006"),
     "C": ("HID-002", "HID-004", "CAL-012", "CAL-013"),
@@ -87,6 +89,31 @@ def _subsections(block: str) -> dict[str, str]:
         elif current is not None:
             result[current].append(line)
     return {name: "\n".join(lines).strip() for name, lines in result.items()}
+
+
+def read_paleographic_lines(edition_text: str) -> tuple[str, ...]:
+    """Return the authoritative physical lines for the prototype unit."""
+
+    block = _heading_block(edition_text, "## Folio 315v")
+    parts = _subsections(block)
+    transcription = parts.get(PALEOGRAPHIC_SECTION)
+    if transcription is None:
+        raise PrototypeBuildError(
+            f"Falta la sección canónica {PALEOGRAPHIC_SECTION} en folio 315v"
+        )
+    lines = tuple(transcription.splitlines())
+    if len(lines) != PALEOGRAPHIC_LINE_COUNT or any(not line for line in lines):
+        raise PrototypeBuildError(
+            "La transcripción paleográfica de folio 315v debe contener exactamente "
+            f"{PALEOGRAPHIC_LINE_COUNT} líneas no vacías; contiene {len(lines)}."
+        )
+    return lines
+
+
+def _line_block(lines: tuple[str, ...]) -> str:
+    """Emit one Pandoc line block shared by the HTML and PDF renderers."""
+
+    return "\n".join(f"| {line}" for line in lines)
 
 
 def read_evidence_rows(register_text: str) -> dict[str, list[str]]:
@@ -283,6 +310,7 @@ def _transcription_page(edition_text: str) -> str:
         raise PrototypeBuildError(
             "Faltan secciones canónicas en folio 315v: " + ", ".join(missing)
         )
+    paleographic_lines = read_paleographic_lines(edition_text)
     chunks = [
         """---
 title: "Transcripción y aparato del prototipo"
@@ -303,7 +331,12 @@ lightbox: true
 """
     ]
     for name in required[1:]:
-        chunks.append(f"### {name}\n\n{parts[name]}\n")
+        content = (
+            _line_block(paleographic_lines)
+            if name == PALEOGRAPHIC_SECTION
+            else parts[name]
+        )
+        chunks.append(f"### {name}\n\n{content}\n")
     chunks.append(
         "[Volver al capítulo histórico](../content/02-estudio/09-rio-molinos-recursos.qmd)."
     )
@@ -455,10 +488,13 @@ __all__ = [
     "MANUSCRIPT_PAGES",
     "MANUSCRIPT_SHA256",
     "MANUSCRIPT_SIZE",
+    "PALEOGRAPHIC_LINE_COUNT",
+    "PALEOGRAPHIC_SECTION",
     "PROTOTYPE_PAGE",
     "PROTOTYPE_RESPONSE",
     "PROTOTYPE_UNIT",
     "PrototypeBuildError",
     "build_vertical_prototype",
+    "read_paleographic_lines",
     "read_evidence_rows",
 ]

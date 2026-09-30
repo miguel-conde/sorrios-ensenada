@@ -3,13 +3,24 @@
 
 from __future__ import annotations
 
+import argparse
 import re
+import shutil
+import subprocess
 import sys
+from html.parser import HTMLParser
 from pathlib import Path
 
 import yaml
 
-from build_vertical_prototype import EVIDENCE_GROUPS, MANUSCRIPT_FILE_ID
+from build_vertical_prototype import (
+    EVIDENCE_GROUPS,
+    MANUSCRIPT_FILE_ID,
+    PALEOGRAPHIC_LINE_COUNT,
+    PALEOGRAPHIC_SECTION,
+    PrototypeBuildError,
+    read_paleographic_lines,
+)
 
 
 PUBLICATION_ROOT = Path(__file__).resolve().parent.parent
@@ -21,10 +32,156 @@ GENERATED = {
     "modernized": PUBLICATION_ROOT / "generated" / "16-modernizada-prototipo.qmd",
     "apparatus": PUBLICATION_ROOT / "generated" / "aparato-molinos.qmd",
 }
+CANONICAL_EDITION = (
+    REPOSITORY_ROOT / "project" / "20_TRABAJO_EDITORIAL" / "Edicion_Critica.md"
+)
+RENDERED_HTML = (
+    PUBLICATION_ROOT / "_book" / "generated" / "15-transcripcion-prototipo.html"
+)
+RENDERED_PDF = (
+    PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
+)
+UNIT_HEADINGS = (
+    "Imagen",
+    PALEOGRAPHIC_SECTION,
+    "Observaciones editoriales",
+    "Notas paleográficas",
+    "Notas históricas",
+    "Referencias cruzadas",
+)
+DOCUMENTARY_HYPHEN_ENDINGS = (
+    "Bartho-",
+    "pro-",
+    "invier-",
+    "respec-",
+    "An-",
+    "Manu-",
+    "re-",
+)
 CANONICAL_FORMULA = (
     "ocho ruedas descritas en cuatro casas de molinos; además existe un molino "
     "venturero cuyo número de ruedas no consta"
 )
+
+
+class _LineBlockParser(HTMLParser):
+    """Collect visible lines from semantic Pandoc line blocks."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.blocks: list[tuple[str, ...]] = []
+        self._depth = 0
+        self._lines: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = dict(attrs)
+        classes = (attributes.get("class") or "").split()
+        if self._depth == 0 and tag == "div" and "line-block" in classes:
+            self._depth = 1
+            self._lines = [""]
+        elif self._depth and tag == "br":
+            self._lines.append("")
+        elif self._depth:
+            self._depth += 1
+
+    def handle_startendtag(
+        self, tag: str, attrs: list[tuple[str, str | None]]
+    ) -> None:
+        if self._depth and tag == "br":
+            self._lines.append("")
+
+    def handle_endtag(self, tag: str) -> None:
+        if not self._depth:
+            return
+        self._depth -= 1
+        if self._depth == 0:
+            self.blocks.append(tuple(line.strip() for line in self._lines))
+            self._lines = []
+
+    def handle_data(self, data: str) -> None:
+        if self._depth:
+            self._lines[-1] += data
+
+
+def _generated_paleographic_lines(text: str) -> tuple[str, ...]:
+    match = re.search(
+        rf"^### {re.escape(PALEOGRAPHIC_SECTION)}\s*$\n+(?P<body>.*?)(?=^### |\Z)",
+        text,
+        re.MULTILINE | re.DOTALL,
+    )
+    if match is None:
+        return ()
+    lines = [line for line in match.group("body").rstrip().splitlines() if line]
+    if any(not line.startswith("| ") for line in lines):
+        return ()
+    return tuple(line[2:] for line in lines)
+
+
+def _html_line_blocks(path: Path) -> list[tuple[str, ...]]:
+    parser = _LineBlockParser()
+    parser.feed(path.read_text(encoding="utf-8"))
+    parser.close()
+    return parser.blocks
+
+
+def _pdf_text_lines(path: Path) -> tuple[str, ...]:
+    executable = shutil.which("pdftotext")
+    if executable is None:
+        raise RuntimeError("No se encontró pdftotext en PATH")
+    result = subprocess.run(
+        [executable, "-layout", path, "-"],
+        check=True,
+        capture_output=True,
+        text=True,
+        shell=False,
+    )
+    return tuple(line.strip() for line in result.stdout.splitlines())
+
+
+def _contains_ordered_lines(haystack: tuple[str, ...], needles: tuple[str, ...]) -> bool:
+    position = 0
+    for line in haystack:
+        if position < len(needles) and line == needles[position]:
+            position += 1
+    return position == len(needles)
+
+
+def validate_rendered_outputs() -> list[str]:
+    """Validate lineation in the actual HTML and PDF book artifacts."""
+
+    errors: list[str] = []
+    canonical = read_paleographic_lines(CANONICAL_EDITION.read_text(encoding="utf-8"))
+    if not RENDERED_HTML.is_file():
+        errors.append(f"Falta el HTML renderizado: {RENDERED_HTML}")
+    else:
+        blocks = _html_line_blocks(RENDERED_HTML)
+        matching = [block for block in blocks if block == canonical]
+        if len(matching) != 1:
+            errors.append(
+                "El HTML debe contener un único bloque semántico con las 18 líneas "
+                "paleográficas exactas"
+            )
+        html_text = RENDERED_HTML.read_text(encoding="utf-8")
+        collapsed = " ".join(canonical)
+        if re.search(rf"<p[^>]*>\s*{re.escape(collapsed)}\s*</p>", html_text):
+            errors.append("La transcripción HTML ha colapsado en un único párrafo")
+    if not RENDERED_PDF.is_file():
+        errors.append(f"Falta el PDF renderizado: {RENDERED_PDF}")
+    else:
+        try:
+            pdf_lines = _pdf_text_lines(RENDERED_PDF)
+        except (OSError, RuntimeError, subprocess.CalledProcessError) as exc:
+            errors.append(f"No se pudo extraer texto del PDF: {exc}")
+        else:
+            if not _contains_ordered_lines(pdf_lines, canonical):
+                errors.append(
+                    "El PDF no conserva en orden las 18 líneas paleográficas exactas"
+                )
+            normalized_pdf = re.sub(r"\s+", " ", " ".join(pdf_lines))
+            normalized_canonical = re.sub(r"\s+", " ", " ".join(canonical))
+            if normalized_canonical not in normalized_pdf:
+                errors.append("El PDF no conserva equivalencia textual con la transcripción")
+    return errors
 
 
 def _front_matter(path: Path) -> dict:
@@ -130,16 +287,35 @@ def validate() -> list[str]:
             errors.append("La página facsimilar carece de texto alternativo suficiente")
     if GENERATED["transcription"].is_file():
         transcription = GENERATED["transcription"].read_text(encoding="utf-8")
-        headings = (
-            "### Imagen",
-            "### Transcripción paleográfica",
-            "### Observaciones editoriales",
-            "### Notas paleográficas",
-            "### Notas históricas",
-            "### Referencias cruzadas",
+        headings = tuple(
+            re.findall(r"^### (.+?)\s*$", transcription, re.MULTILINE)
         )
-        if any(heading not in transcription for heading in headings):
+        if headings != UNIT_HEADINGS:
             errors.append("Faltan secciones canónicas en la unidad paleográfica")
+        try:
+            canonical_lines = read_paleographic_lines(
+                CANONICAL_EDITION.read_text(encoding="utf-8")
+            )
+        except (OSError, PrototypeBuildError) as exc:
+            errors.append(f"No se pudo leer la transcripción canónica: {exc}")
+        else:
+            generated_lines = _generated_paleographic_lines(transcription)
+            if generated_lines != canonical_lines:
+                errors.append(
+                    "Las líneas paleográficas generadas no coinciden exactamente con las "
+                    "18 líneas canónicas o carecen de bloque de líneas semántico"
+                )
+            if len(generated_lines) != PALEOGRAPHIC_LINE_COUNT:
+                errors.append(
+                    f"La transcripción generada no contiene {PALEOGRAPHIC_LINE_COUNT} líneas"
+                )
+            hyphen_endings = tuple(
+                line.rsplit(maxsplit=1)[-1]
+                for line in generated_lines
+                if line.endswith("-")
+            )
+            if hyphen_endings != DOCUMENTARY_HYPHEN_ENDINGS:
+                errors.append("No se conservan los guiones documentales de final de línea")
         if not re.search(
             r"!\[[^\]]{20,}\]\(assets/folio-315v\.png\)"
             r'\{[^}]*fig-alt="[^"]{20,}"[^}]*\}',
@@ -190,17 +366,30 @@ def validate() -> list[str]:
     return errors
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--rendered",
+        action="store_true",
+        help="valida además la lineación en los artefactos HTML y PDF renderizados",
+    )
+    args = parser.parse_args(argv)
     try:
         errors = validate()
-    except (OSError, ValueError, yaml.YAMLError) as exc:
+        if args.rendered:
+            errors.extend(validate_rendered_outputs())
+    except (OSError, ValueError, yaml.YAMLError, PrototypeBuildError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
     if errors:
         for error in errors:
             print(f"ERROR: {error}", file=sys.stderr)
         return 1
-    print("PASS: prototipo 2B, metadatos, anclas, evidencia y regresiones validados")
+    scope = " y artefactos HTML/PDF" if args.rendered else ""
+    print(
+        "PASS: prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        f"{scope} validados"
+    )
     return 0
 
 
