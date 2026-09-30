@@ -1,5 +1,5 @@
 ---
-title: "Prueba técnica de composición"
+title: "# Prueba técnica de composición {.unnumbered}"
 chapter-id: prueba-tecnica
 publication-status: development
 sources: []

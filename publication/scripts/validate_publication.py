@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the bounded Phase 2B publication prototype."""
+"""Validate the developing publication and the bounded Phase 2B regression."""
 
 from __future__ import annotations
 
@@ -25,7 +25,12 @@ from build_vertical_prototype import (
 
 PUBLICATION_ROOT = Path(__file__).resolve().parent.parent
 REPOSITORY_ROOT = PUBLICATION_ROOT.parent
-CHAPTER = PUBLICATION_ROOT / "content" / "02-estudio" / "09-rio-molinos-recursos.qmd"
+CHAPTER_ONE = (
+    PUBLICATION_ROOT / "content" / "01-catastro" / "01-catastro-ensenada.qmd"
+)
+PROTOTYPE_CHAPTER = (
+    PUBLICATION_ROOT / "content" / "02-estudio" / "09-rio-molinos-recursos.qmd"
+)
 GENERATED = {
     "facsimile": PUBLICATION_ROOT / "generated" / "14-facsimil-prototipo.qmd",
     "transcription": PUBLICATION_ROOT / "generated" / "15-transcripcion-prototipo.qmd",
@@ -37,6 +42,13 @@ CANONICAL_EDITION = (
 )
 RENDERED_HTML = (
     PUBLICATION_ROOT / "_book" / "generated" / "15-transcripcion-prototipo.html"
+)
+RENDERED_CHAPTER_ONE_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "01-catastro"
+    / "01-catastro-ensenada.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -62,6 +74,19 @@ CANONICAL_FORMULA = (
     "ocho ruedas descritas en cuatro casas de molinos; además existe un molino "
     "venturero cuyo número de ruedas no consta"
 )
+CHAPTER_ONE_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md",
+    "project/00_CONTROL/Manual_Editorial.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+}
+CHAPTER_ONE_LINKS = {
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=33",
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=40",
+    "https://www.catastro.hacienda.gob.es/es-ES/fondo_editorial.html",
+}
 
 
 class _LineBlockParser(HTMLParser):
@@ -151,6 +176,19 @@ def validate_rendered_outputs() -> list[str]:
 
     errors: list[str] = []
     canonical = read_paleographic_lines(CANONICAL_EDITION.read_text(encoding="utf-8"))
+    if not RENDERED_CHAPTER_ONE_HTML.is_file():
+        errors.append(f"Falta el HTML del capítulo 1: {RENDERED_CHAPTER_ONE_HTML}")
+    else:
+        chapter_html = RENDERED_CHAPTER_ONE_HTML.read_text(encoding="utf-8")
+        if "El Catastro de Ensenada" not in chapter_html:
+            errors.append("El HTML del capítulo 1 no contiene su título")
+        if 'name="viewport"' not in chapter_html:
+            errors.append("El HTML del capítulo 1 carece de metadatos adaptables")
+        for url in CHAPTER_ONE_LINKS:
+            encoded_url = url.replace("&", "&amp;")
+            if url not in chapter_html and encoded_url not in chapter_html:
+                errors.append(f"Falta el enlace institucional en HTML: {url}")
+
     if not RENDERED_HTML.is_file():
         errors.append(f"Falta el HTML renderizado: {RENDERED_HTML}")
     else:
@@ -181,6 +219,8 @@ def validate_rendered_outputs() -> list[str]:
             normalized_canonical = re.sub(r"\s+", " ", " ".join(canonical))
             if normalized_canonical not in normalized_pdf:
                 errors.append("El PDF no conserva equivalencia textual con la transcripción")
+            if "El Catastro de Ensenada" not in normalized_pdf:
+                errors.append("El PDF no contiene el capítulo 1")
     return errors
 
 
@@ -215,12 +255,45 @@ def validate() -> list[str]:
         "modernized": ("#respuesta-17",),
         "apparatus": ("#cuadro-molinos", "#matriz-molinera"),
     }
-    if not CHAPTER.is_file():
-        return [f"Falta el capítulo editorial: {CHAPTER}"]
+    if not CHAPTER_ONE.is_file():
+        errors.append(f"Falta el capítulo 1: {CHAPTER_ONE}")
+    else:
+        try:
+            chapter_one_metadata = _front_matter(CHAPTER_ONE)
+        except (OSError, ValueError, yaml.YAMLError) as exc:
+            errors.append(str(exc))
+        else:
+            for key in ("title", "chapter-id", "publication-status", "sources"):
+                if key not in chapter_one_metadata:
+                    errors.append(f"Falta {key} en el capítulo 1")
+            if chapter_one_metadata.get("chapter-id") != "catastro-ensenada":
+                errors.append("chapter-id incorrecto en el capítulo 1")
+            if chapter_one_metadata.get("publication-status") != "development":
+                errors.append("El capítulo 1 debe declarar publication-status: development")
+            if chapter_one_metadata.get("evidence"):
+                errors.append("El capítulo 1 no debe inventar identificadores de evidencia")
+            sources = chapter_one_metadata.get("sources", [])
+            source_paths = {
+                source.get("path") for source in sources if isinstance(source, dict)
+            }
+            locators = [
+                source.get("locator") for source in sources if isinstance(source, dict)
+            ]
+            if source_paths != CHAPTER_ONE_SOURCE_PATHS or not all(locators):
+                errors.append("Procedencia incompleta o no autorizada en el capítulo 1")
+        chapter_one_text = CHAPTER_ONE.read_text(encoding="utf-8")
+        links = set(re.findall(r"\]\((https://[^)]+)\)", chapter_one_text))
+        if links != CHAPTER_ONE_LINKS:
+            errors.append(
+                "Los enlaces externos del capítulo 1 no son los institucionales autorizados"
+            )
+
+    if not PROTOTYPE_CHAPTER.is_file():
+        return errors + [f"Falta el capítulo editorial: {PROTOTYPE_CHAPTER}"]
     try:
-        metadata = _front_matter(CHAPTER)
+        metadata = _front_matter(PROTOTYPE_CHAPTER)
     except (OSError, ValueError, yaml.YAMLError) as exc:
-        return [str(exc)]
+        return errors + [str(exc)]
     for key in ("title", "chapter-id", "publication-status", "sources", "evidence"):
         if key not in metadata:
             errors.append(f"Falta {key} en el capítulo editorial")
@@ -249,7 +322,7 @@ def validate() -> list[str]:
     if missing_registry:
         errors.append("Identificadores ausentes del Registro 1.2: " + ", ".join(missing_registry))
 
-    chapter_text = CHAPTER.read_text(encoding="utf-8")
+    chapter_text = PROTOTYPE_CHAPTER.read_text(encoding="utf-8")
     chapter_normalized = re.sub(r"\s+", " ", chapter_text)
     if CANONICAL_FORMULA not in chapter_normalized:
         errors.append("Falta la formulación canónica de las ocho ruedas y el venturero")
@@ -345,16 +418,43 @@ def validate() -> list[str]:
         if not destination.startswith("generated/assets/"):
             errors.append("Los destinos facsimilares deben permanecer en generated/assets/")
 
-    quarto = (PUBLICATION_ROOT / "_quarto.yml").read_text(encoding="utf-8")
-    for path in (
+    quarto_data = yaml.safe_load(
+        (PUBLICATION_ROOT / "_quarto.yml").read_text(encoding="utf-8")
+    )
+    navigation = quarto_data.get("book", {}).get("chapters", [])
+    expected_navigation = (
+        "content/00-preliminares/00-prueba-tecnica.qmd",
+        "content/01-catastro/01-catastro-ensenada.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
         "generated/16-modernizada-prototipo.qmd",
         "generated/aparato-molinos.qmd",
-    ):
-        if path not in quarto:
-            errors.append(f"Falta en la navegación: {path}")
+    )
+    for item in expected_navigation:
+        if item not in navigation:
+            errors.append(f"Falta en la navegación: {item}")
+    positions = [navigation.index(item) for item in expected_navigation if item in navigation]
+    if positions != sorted(positions):
+        errors.append("Orden incorrecto del capítulo 1 y del prototipo en la navegación")
+
+    chapters_data = yaml.safe_load(
+        (PUBLICATION_ROOT / "meta" / "chapters.yml").read_text(encoding="utf-8")
+    )
+    manifest = chapters_data.get("chapters", [])
+    manifest_paths = [item.get("path") for item in manifest]
+    if "Fase 2B" in chapters_data.get("purpose", ""):
+        errors.append("meta/chapters.yml sigue limitado exclusivamente a la Fase 2B")
+    for item in expected_navigation[:3]:
+        if item not in manifest_paths:
+            errors.append(f"Falta en meta/chapters.yml: {item}")
+    manifest_positions = [
+        manifest_paths.index(item)
+        for item in expected_navigation[:3]
+        if item in manifest_paths
+    ]
+    if manifest_positions != sorted(manifest_positions):
+        errors.append("Orden incorrecto del capítulo 1 en meta/chapters.yml")
 
     for path, text in _all_publication_texts():
         if path.resolve() == Path(__file__).resolve():
@@ -387,7 +487,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulo 1, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0

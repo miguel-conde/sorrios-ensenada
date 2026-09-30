@@ -1,0 +1,134 @@
+---
+title: "El Catastro de Ensenada"
+chapter-id: catastro-ensenada
+publication-status: development
+sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "versión 1.5, Parte I, capítulo 1"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md
+    locator: "versión 1.3, secciones 1, 2, 4 y 9–11"
+  - path: project/00_CONTROL/Manual_Editorial.md
+    locator: "versión 1.6, secciones 1–4, 17, 21 y 26–27"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    locator: "versión 1.2, sección 0"
+---
+
+Antes de ser el nombre de un conjunto documental, el Catastro de Ensenada fue
+un proyecto de conocimiento fiscal. La Monarquía quiso averiguar qué riqueza
+existía, cómo podía valorarse y sobre quién recaería una contribución concebida
+con criterios distintos de los tributos provinciales vigentes. De aquella
+empresa no resultó solo una propuesta de reforma: quedó una extensa descripción
+de los territorios de la Corona de Castilla a mediados del siglo XVIII.
+
+Este capítulo presenta ese marco general. El formulario de las Respuestas
+Generales se estudiará en el capítulo 2; el expediente concreto de Sorribos y
+Santibáñez de Ordás, en el capítulo 3; y el itinerario desde el manuscrito hasta
+esta edición, en el capítulo 4.
+
+## Una reforma que necesitaba conocer la riqueza
+
+Durante el reinado de Fernando VI, el proyecto asociado al marqués de la
+Ensenada pretendió sustituir las diversas rentas provinciales por una Única
+Contribución proporcional a la riqueza. El Real Decreto de 10 de octubre de
+1749 puso en marcha la averiguación destinada a preparar esa reforma. La
+contribución no llegó a implantarse de la manera prevista, pero las operaciones
+realizadas principalmente entre 1750 y 1754 produjeron un corpus documental de
+alcance extraordinario. La [presentación institucional de las Respuestas
+Generales en PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10)
+sitúa la pesquisa en ese proceso.
+
+El objetivo inmediato era fiscal: conocer y valorar la riqueza susceptible de
+contribuir. Por eso la averiguación no se limitó a enumerar tierras. Reunió
+información sobre personas e instituciones, casas, cultivos, ganados, oficios,
+rentas y derechos, y la organizó en declaraciones, comprobaciones, libros y
+estados de resumen. El [estudio institucional de
+PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=40)
+explica la relación entre esas piezas y los cálculos fiscales.
+
+## Una averiguación declarativa y pericial
+
+La información nacía, en primer término, de declaraciones. Los titulares
+preparaban memoriales sobre personas y bienes, y las autoridades y personas
+convocadas respondían bajo juramento a un formulario común. Ese componente
+declarativo no agotaba el procedimiento: las noticias se sometían también a
+comprobaciones periciales, incluida la revisión sobre el terreno de tierras y
+calidades. Después se ordenaban en libros, copias y resúmenes para uso de la
+Administración.
+
+Fiscal, declarativa y pericial son, por tanto, tres dimensiones inseparables de
+la documentación. Su finalidad condicionó las categorías empleadas y el modo de
+valorar lo declarado; el juramento y la intervención de conocedores locales
+dieron forma a la información; y la comprobación buscó contrastarla dentro del
+procedimiento regulado. Las Respuestas Generales son una de sus piezas, no la
+totalidad del Catastro.
+
+## Autoridades, concejos, peritos y declarantes
+
+La pesquisa enlazaba la iniciativa de la Monarquía con el conocimiento local.
+Intervenían el intendente o un juez subdelegado y un escribano. Las justicias y
+los concejos designaban representantes, mientras los peritos aportaban
+conocimiento de tierras, frutos, población, ocupaciones y ganados; la
+Administración podía nombrar además sus propios peritos. El cura principal
+actuaba como otro testigo cualificado y los titulares contribuían mediante sus
+memoriales.
+
+El [proceso catastral descrito por
+PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32)
+muestra así una producción colectiva y reglada de información. No era una voz
+única ni una observación neutral realizada desde fuera de la comunidad: era un
+expediente administrativo construido con declaraciones, saberes locales,
+categorías fiscales y controles periciales. El capítulo siguiente explicará la
+función específica del interrogatorio sin reproducir aquí sus cuarenta
+preguntas.
+
+## Un archivo excepcional, pero situado
+
+La amplitud de la encuesta permite estudiar numerosos aspectos de las
+sociedades castellanas del siglo XVIII. Su valor histórico procede tanto de la
+variedad de materias recogidas como de la posibilidad de relacionar las
+respuestas colectivas con otras piezas de la averiguación. También importa su
+historia material: según la [explicación archivística de
+PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=33),
+los originales quedaron ligados a las contadurías y pasaron después a archivos
+históricos provinciales, mientras el Archivo General de Simancas conserva la
+gran serie de copias compulsadas.
+
+Esa riqueza no elimina las condiciones bajo las que se produjo la fuente. El
+documento responde a una fecha, un territorio, un procedimiento y una finalidad
+concretos. Sus silencios, aproximaciones y discrepancias forman parte de la
+evidencia y no deben rellenarse por analogía ni mediante conversiones modernas.
+
+## Lo que este Catastro no es
+
+El nombre puede inducir a imaginar un catastro actual de parcelas, planos y
+propietarios. La averiguación de Ensenada fue más amplia en las materias que
+preguntaba y distinta en sus instrumentos. Tampoco fue un censo moderno: las
+respuestas colectivas describen cada población, pero no contienen por sí solas
+el detalle de todos los bienes ni de todas las personas. Y no constituyen una
+contabilidad completa: una utilidad declarada o regulada es una valoración
+fiscal, no necesariamente un beneficio contable o una renta efectiva.
+
+Por las mismas razones, sus categorías no forman automáticamente una estadística
+homogénea comparable con unidades actuales. Las medidas históricas, las
+condiciones vecinales y las valoraciones han de leerse según el expediente y la
+pregunta que las organiza. El Catastro ofrece una observación extraordinaria,
+pero no una reproducción exhaustiva de la vida social ni una descripción válida
+sin más para épocas anteriores o posteriores.
+
+## Dos planos de lectura
+
+Este libro separa el dato local del contexto externo. Para lo que afirma el
+expediente de Sorribos y Santibáñez, la autoridad reside en el manuscrito y en
+las fuentes canónicas del proyecto: la Edición Crítica, sus controles y los
+resultados derivados con trazabilidad. Las fuentes externas sirven para situar
+instituciones, términos y procedimientos; no corrigen por sí mismas el dato
+local ni autorizan a proyectar sobre Sorribos rasgos documentados en otros
+lugares.
+
+En este capítulo, ese contexto procede únicamente de recursos institucionales
+ya identificados por el proyecto: PARES y el [fondo editorial de la Dirección
+General del
+Catastro](https://www.catastro.hacienda.gob.es/es-ES/fondo_editorial.html).
+La separación continuará en los capítulos siguientes: formulario general,
+expediente local y trabajo editorial tendrán cada uno su espacio, sin que una
+capa sustituya a las demás.

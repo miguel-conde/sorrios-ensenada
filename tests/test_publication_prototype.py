@@ -1,4 +1,5 @@
 from pathlib import Path
+import re
 import sys
 
 import pytest
@@ -20,6 +21,20 @@ EXPECTED_EVIDENCE = {
     "I": ("HID-007", "INT-005"),
     "E": ("HID-008",),
     "L": ("LIM-005", "LIM-010"),
+}
+
+CHAPTER_ONE_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md",
+    "project/00_CONTROL/Manual_Editorial.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+}
+AUTHORIZED_INSTITUTIONAL_LINKS = {
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=33",
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=40",
+    "https://www.catastro.hacienda.gob.es/es-ES/fondo_editorial.html",
 }
 
 
@@ -66,6 +81,27 @@ def test_editorial_chapter_declares_required_metadata():
     } == EXPECTED_EVIDENCE
 
 
+def test_chapter_one_has_bounded_metadata_and_provenance():
+    path = (
+        ROOT
+        / "publication"
+        / "content"
+        / "01-catastro"
+        / "01-catastro-ensenada.qmd"
+    )
+    metadata = read_front_matter(path)
+    text = path.read_text(encoding="utf-8")
+    links = set(re.findall(r"\]\((https://[^)]+)\)", text))
+
+    assert metadata["title"] == "El Catastro de Ensenada"
+    assert metadata["chapter-id"] == "catastro-ensenada"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_ONE_SOURCES
+    assert all(source["locator"] for source in metadata["sources"])
+    assert "evidence" not in metadata
+    assert links == AUTHORIZED_INSTITUTIONAL_LINKS
+
+
 def test_asset_manifest_has_only_page_12_and_folio_315v():
     manifest = yaml.safe_load(
         (ROOT / "publication" / "meta" / "assets.yml").read_text(encoding="utf-8")
@@ -81,10 +117,50 @@ def test_asset_manifest_has_only_page_12_and_folio_315v():
     )
 
 
-def test_navigation_is_limited_to_the_vertical_prototype():
-    quarto = (ROOT / "publication" / "_quarto.yml").read_text(encoding="utf-8")
-    assert "content/02-estudio/09-rio-molinos-recursos.qmd" in quarto
-    assert quarto.count("generated/") == 4
+def test_navigation_integrates_chapter_one_before_the_vertical_prototype():
+    quarto = yaml.safe_load(
+        (ROOT / "publication" / "_quarto.yml").read_text(encoding="utf-8")
+    )
+    manifest = yaml.safe_load(
+        (ROOT / "publication" / "meta" / "chapters.yml").read_text(encoding="utf-8")
+    )
+    navigation = quarto["book"]["chapters"]
+    manifest_paths = [chapter["path"] for chapter in manifest["chapters"]]
+    expected_order = [
+        "content/00-preliminares/00-prueba-tecnica.qmd",
+        "content/01-catastro/01-catastro-ensenada.qmd",
+        "content/02-estudio/09-rio-molinos-recursos.qmd",
+    ]
+
+    assert [item for item in navigation if item in expected_order] == expected_order
+    assert [item for item in manifest_paths if item in expected_order] == expected_order
+    assert sum(item.startswith("generated/") for item in navigation) == 4
+    index_path = ROOT / "publication" / "index.qmd"
+    technical_path = (
+        ROOT
+        / "publication"
+        / "content"
+        / "00-preliminares"
+        / "00-prueba-tecnica.qmd"
+    )
+    assert (
+        read_front_matter(index_path)["title"]
+        == "# Sorribos y Santibáñez de Ordás en 1752 {.unnumbered}"
+    )
+    assert (
+        read_front_matter(technical_path)["title"]
+        == "# Prueba técnica de composición {.unnumbered}"
+    )
+    assert "number-sections" not in index_path.read_text(encoding="utf-8")
+    assert "number-sections" not in technical_path.read_text(encoding="utf-8")
+    assert "number-sections" not in read_front_matter(
+        ROOT
+        / "publication"
+        / "content"
+        / "01-catastro"
+        / "01-catastro-ensenada.qmd"
+    )
+    assert "Fase 2B" not in manifest["purpose"]
 
 
 def test_paleographic_transcription_uses_one_semantic_line_block():

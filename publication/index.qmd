@@ -1,5 +1,5 @@
 ---
-title: "Sorribos y Santibáñez de Ordás en 1752"
+title: "# Sorribos y Santibáñez de Ordás en 1752 {.unnumbered}"
 subtitle: "Edición en desarrollo"
 chapter-id: portada
 publication-status: development

@@ -1,11 +1,14 @@
 schema_version: 1
-purpose: "Orden limitado de capítulos y vistas para el prototipo vertical de la Fase 2B."
+purpose: "Orden de capítulos y vistas para la edición en desarrollo; conserva el prototipo vertical 2B como regresión técnica."
 chapters:
   - chapter_id: portada
     path: index.qmd
     publication_status: development
   - chapter_id: prueba-tecnica
     path: content/00-preliminares/00-prueba-tecnica.qmd
+    publication_status: development
+  - chapter_id: catastro-ensenada
+    path: content/01-catastro/01-catastro-ensenada.qmd
     publication_status: development
   - chapter_id: rio-molinos-recursos
     path: content/02-estudio/09-rio-molinos-recursos.qmd
