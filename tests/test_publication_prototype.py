@@ -191,6 +191,25 @@ def test_extensive_questionnaire_is_detected_across_markdown_forms(fragment):
     assert validator._has_extensive_questionnaire_sequence(fragment)
 
 
+@pytest.mark.parametrize("label", ("Pregunta", "Respuesta"))
+def test_bare_questionnaire_markers_are_detected_without_false_positives(label):
+    bare_headings = "\n".join(
+        f"### {label} {number}" for number in range(1, 41)
+    )
+    bare_bold_labels = "\n".join(
+        f"- **{label} {number}**" for number in range(1, 41)
+    )
+    isolated_markers = "\n".join(
+        f"- **{label} {number}**"
+        for number in (6, 7, 8, 13, 29, 31, 32, 34, 37, 40)
+    )
+
+    for fragment in (bare_headings, bare_bold_labels):
+        assert validator._questionnaire_markers(fragment) == tuple(range(1, 41))
+        assert validator._has_extensive_questionnaire_sequence(fragment)
+    assert not validator._has_extensive_questionnaire_sequence(isolated_markers)
+
+
 def test_thematic_ranges_and_isolated_examples_are_not_questionnaire_duplication():
     thematic_table = "\n".join(
         f"| {question_range} | {subject} |"

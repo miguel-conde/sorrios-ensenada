@@ -131,7 +131,7 @@ QUESTIONNAIRE_MIN_CONSECUTIVE_MARKERS = 15
 QUESTION_MARKER_PATTERNS = (
     re.compile(
         r"^(?:(?:pregunta|respuesta)\s+)?"
-        r"(?P<number>[1-9]|[1-3]\d|40)\s*(?:[.):-]\s*|\s+)",
+        r"(?P<number>[1-9]|[1-3]\d|40)\s*(?:[.):-]\s*|\s+|$)",
         re.IGNORECASE,
     ),
     re.compile(
