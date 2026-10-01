@@ -1,0 +1,144 @@
+---
+title: "Las Respuestas Generales y el interrogatorio de cuarenta preguntas"
+chapter-id: respuestas-generales-interrogatorio
+publication-status: development
+sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "versión 1.5, Parte I, capítulo 2"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md
+    locator: "versión 1.3, secciones 2–4 y 9–11"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Verificacion_Interrogatorio_40_Preguntas.md
+    locator: "secciones 1–8"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
+    locator: "versión 1.3, cabecera, respuestas 6–8, 13, 29, 31–32, 34, 37 y 40, y nota de uso"
+  - path: project/00_CONTROL/Manual_Editorial.md
+    locator: "versión 1.6, secciones 2, 17, 21 y 26–27"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    locator: "versión 1.2, sección 0"
+---
+
+Las Respuestas Generales no son todo el Catastro de Ensenada. Son el acta de
+las contestaciones dadas en cada población a un formulario común de cuarenta
+preguntas. Ese formulario ordenaba la declaración colectiva del lugar, mientras
+los memoriales particulares, las comprobaciones, los libros y los estados
+cumplían otras funciones dentro de la averiguación.
+
+Para leer una respuesta hay que conocer, por tanto, qué se preguntaba. Una
+negativa breve, una remisión a otra contestación o una cifra aislada adquieren
+sentido dentro de la arquitectura previa del cuestionario. Este capítulo explica
+esa arquitectura sin reproducir los cuarenta enunciados, que acompañarán a sus
+respuestas respectivas en la edición modernizada completa.
+
+## Un formulario común dentro del Catastro
+
+El cuestionario era el **Interrogatorio de la letra A**, publicado como parte
+del dispositivo normativo asociado al Real Decreto de 10 de octubre de 1749.
+La [presentación institucional del
+interrogatorio](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=30)
+lo identifica como un impreso de cuarenta preguntas. El expediente local remite
+a ese formulario, pero el impreso no forma parte material de las dieciocho
+páginas del manuscrito conservado por el proyecto.
+
+Las preguntas proporcionaban una pauta común para describir nombre,
+jurisdicción y término; tierras, frutos y ganados; derechos, rentas y gastos;
+población, edificios, servicios y oficios. Esa pauta no convertía las
+contestaciones en un inventario completo de personas y bienes. Las Respuestas
+Generales eran una pieza fiscal, declarativa y pericial dentro de un conjunto
+documental más amplio.
+
+## Quiénes respondían y bajo qué carácter
+
+Las justicias locales y las demás personas convocadas debían contestar bajo
+juramento. El procedimiento incorporaba representantes del concejo y peritos
+conocedores de las tierras, los frutos, la población, las ocupaciones y los
+ganados; intervenían además la autoridad delegada y el escribano. El [proceso
+catastral descrito por
+PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32)
+sitúa esas declaraciones dentro de una pesquisa reglada que incluía también
+comprobaciones.
+
+El resultado era colectivo, pero no neutral ni exhaustivo. Las categorías y el
+orden de la información estaban fijados antes de comenzar la comparecencia. El
+formulario determinaba qué materias debían tratarse y qué clase de dato fiscal
+se buscaba en cada una.
+
+## Cuarenta preguntas organizadas por materias
+
+La secuencia avanzaba desde la identificación del lugar y su territorio hasta
+las rentas del rey. Entre ambos extremos agrupaba la base agraria, los derechos
+eclesiásticos, los recursos productivos, la población, la hacienda del común y
+las actividades económicas. Su carácter común permitía solicitar en cada
+población las mismas clases de información y ordenar las contestaciones en una
+secuencia reconocible. La concordancia verificada puede resumirse así:
+
+| Preguntas | Materias principales |
+|---|---|
+| 1–3 | Nombre, jurisdicción, término y límites |
+| 4–14 | Tierras, árboles, medidas, cabidas, frutos y valores |
+| 15–16 | Diezmos, primicia, voto y cuantía |
+| 17 | Minas, salinas, molinos y otros artefactos |
+| 18–20 | Esquileo, colmenas y ganados |
+| 21–22 | Vecinos, casas y edificios |
+| 23–28 | Propios, arbitrios, gastos, cargas y rentas enajenadas |
+| 29–34 | Servicios, comercio y oficios |
+| 35–39 | Jornaleros, pobres, embarcaciones, clérigos y conventos |
+| 40 | Fincas o rentas del rey |
+
+El cuadro muestra una estructura, no cuarenta asuntos independientes. Varias
+preguntas forman series y solo se comprenden en relación con las anteriores.
+También explica por qué una respuesta aparentemente mínima puede cerrar una
+materia amplia: contesta al contenido ya formulado por el impreso.
+
+## De la pregunta general a la respuesta local
+
+La edición modernizada mantiene cada pregunta general y cada respuesta local en
+secciones separadas. Así permite leerlas juntas sin confundir sus autoridades:
+el enunciado procede de una fuente institucional externa verificada; la
+contestación procede del expediente y conserva su vínculo con la Edición
+Crítica 3.6.
+
+Las remisiones hacen visible esa dependencia. Las respuestas 7, 8 y 13 remiten
+a la 6 porque pertenecen a la misma serie sobre árboles y plantíos. Del mismo
+modo, respuestas negativas como las 31, 32, 34 y 37 solo precisan su alcance al
+consultar qué actividades enumeraba la pregunta correspondiente. «No hay cosa
+alguna» no describe por sí solo la materia negada.
+
+La pregunta aclara el campo de la respuesta, pero no añade hechos locales. No
+autoriza a convertir una negativa en una descripción más amplia, a completar
+una omisión por analogía ni a sustituir una lectura difícil del manuscrito.
+
+## La transmisión moderna de la pregunta 29
+
+La pregunta 29 presenta una incidencia bien delimitada. La [versión en grafía
+actual de
+PARES](https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=31b)
+termina de forma abreviada tras «hay en la población». Una [publicación oficial
+de la Dirección General del
+Catastro](https://www.catastro.hacienda.gob.es/documentos/publicaciones/catalogoensenada_1752_vera.pdf)
+conserva también la referencia al término, la titularidad de los
+establecimientos y su utilidad anual.
+
+El proyecto adoptó la formulación completa con ese respaldo institucional. La
+incidencia afecta a la transmisión moderna del formulario, no a la identificación
+ni al orden de sus cuarenta preguntas. Tampoco convierte el formulario externo
+en autoridad sobre la lectura paleográfica local: permite saber qué información
+solicitaba la pregunta, pero no corregir la respuesta manuscrita.
+
+## Dos textos y dos autoridades
+
+El Interrogatorio de la letra A y las respuestas de cada población se relacionan
+sin confundirse. El primero ofrece la pauta externa común; las segundas son el
+texto local producido al aplicarla. La Edición Crítica 3.6 mantiene la autoridad
+sobre ese texto local, incluidas sus remisiones, omisiones, discrepancias y
+formas documentales.
+
+Por eso la pregunta 40 puede hablar de fincas o rentas del rey mientras la copia
+local conserva su propia lectura, sin que el formulario sirva para enmendarla
+silenciosamente. La edición modernizada hace visible la relación colocando
+pregunta y respuesta en apartados distintos. El futuro capítulo 16 reunirá los
+cuarenta pares completos; aquí basta con explicar la función del formulario.
+
+El capítulo siguiente estudiará el expediente concreto y sus participantes. El
+capítulo 4 explicará el tránsito desde el manuscrito hasta el volumen actual.
+Mantener esas fronteras permite que contexto institucional, documento local y
+trabajo editorial se apoyen mutuamente sin sustituirse.

@@ -28,6 +28,12 @@ REPOSITORY_ROOT = PUBLICATION_ROOT.parent
 CHAPTER_ONE = (
     PUBLICATION_ROOT / "content" / "01-catastro" / "01-catastro-ensenada.qmd"
 )
+CHAPTER_TWO = (
+    PUBLICATION_ROOT
+    / "content"
+    / "01-catastro"
+    / "02-respuestas-generales-interrogatorio.qmd"
+)
 PROTOTYPE_CHAPTER = (
     PUBLICATION_ROOT / "content" / "02-estudio" / "09-rio-molinos-recursos.qmd"
 )
@@ -49,6 +55,13 @@ RENDERED_CHAPTER_ONE_HTML = (
     / "content"
     / "01-catastro"
     / "01-catastro-ensenada.html"
+)
+RENDERED_CHAPTER_TWO_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "01-catastro"
+    / "02-respuestas-generales-interrogatorio.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -87,6 +100,32 @@ CHAPTER_ONE_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=40",
     "https://www.catastro.hacienda.gob.es/es-ES/fondo_editorial.html",
 }
+CHAPTER_TWO_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Verificacion_Interrogatorio_40_Preguntas.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/00_CONTROL/Manual_Editorial.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+}
+CHAPTER_TWO_LINKS = {
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=30",
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=31b",
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
+    "https://www.catastro.hacienda.gob.es/documentos/publicaciones/catalogoensenada_1752_vera.pdf",
+}
+CHAPTER_TWO_THEMATIC_BLOCKS = (
+    ("1–3", "Nombre, jurisdicción, término y límites"),
+    ("4–14", "Tierras, árboles, medidas, cabidas, frutos y valores"),
+    ("15–16", "Diezmos, primicia, voto y cuantía"),
+    ("17", "Minas, salinas, molinos y otros artefactos"),
+    ("18–20", "Esquileo, colmenas y ganados"),
+    ("21–22", "Vecinos, casas y edificios"),
+    ("23–28", "Propios, arbitrios, gastos, cargas y rentas enajenadas"),
+    ("29–34", "Servicios, comercio y oficios"),
+    ("35–39", "Jornaleros, pobres, embarcaciones, clérigos y conventos"),
+    ("40", "Fincas o rentas del rey"),
+)
 
 
 class _LineBlockParser(HTMLParser):
@@ -189,6 +228,27 @@ def validate_rendered_outputs() -> list[str]:
             if url not in chapter_html and encoded_url not in chapter_html:
                 errors.append(f"Falta el enlace institucional en HTML: {url}")
 
+    if not RENDERED_CHAPTER_TWO_HTML.is_file():
+        errors.append(f"Falta el HTML del capítulo 2: {RENDERED_CHAPTER_TWO_HTML}")
+    else:
+        chapter_two_html = RENDERED_CHAPTER_TWO_HTML.read_text(encoding="utf-8")
+        if (
+            "Las Respuestas Generales y el interrogatorio de cuarenta preguntas"
+            not in chapter_two_html
+        ):
+            errors.append("El HTML del capítulo 2 no contiene su título")
+        if 'name="viewport"' not in chapter_two_html:
+            errors.append("El HTML del capítulo 2 carece de metadatos adaptables")
+        for url in CHAPTER_TWO_LINKS:
+            encoded_url = url.replace("&", "&amp;")
+            if url not in chapter_two_html and encoded_url not in chapter_two_html:
+                errors.append(f"Falta el enlace institucional de 3B en HTML: {url}")
+        for question_range, subject in CHAPTER_TWO_THEMATIC_BLOCKS:
+            if question_range not in chapter_two_html or subject not in chapter_two_html:
+                errors.append(
+                    f"Falta el bloque temático {question_range} en el HTML del capítulo 2"
+                )
+
     if not RENDERED_HTML.is_file():
         errors.append(f"Falta el HTML renderizado: {RENDERED_HTML}")
     else:
@@ -221,6 +281,11 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append("El PDF no conserva equivalencia textual con la transcripción")
             if "El Catastro de Ensenada" not in normalized_pdf:
                 errors.append("El PDF no contiene el capítulo 1")
+            if (
+                "Las Respuestas Generales y el interrogatorio de cuarenta preguntas"
+                not in normalized_pdf
+            ):
+                errors.append("El PDF no contiene el capítulo 2")
     return errors
 
 
@@ -286,6 +351,88 @@ def validate() -> list[str]:
         if links != CHAPTER_ONE_LINKS:
             errors.append(
                 "Los enlaces externos del capítulo 1 no son los institucionales autorizados"
+            )
+
+    if not CHAPTER_TWO.is_file():
+        errors.append(f"Falta el capítulo 2: {CHAPTER_TWO}")
+    else:
+        try:
+            chapter_two_metadata = _front_matter(CHAPTER_TWO)
+        except (OSError, ValueError, yaml.YAMLError) as exc:
+            errors.append(str(exc))
+        else:
+            for key in ("title", "chapter-id", "publication-status", "sources"):
+                if key not in chapter_two_metadata:
+                    errors.append(f"Falta {key} en el capítulo 2")
+            if (
+                chapter_two_metadata.get("title")
+                != "Las Respuestas Generales y el interrogatorio de cuarenta preguntas"
+            ):
+                errors.append("Título incorrecto en el capítulo 2")
+            if (
+                chapter_two_metadata.get("chapter-id")
+                != "respuestas-generales-interrogatorio"
+            ):
+                errors.append("chapter-id incorrecto en el capítulo 2")
+            if chapter_two_metadata.get("publication-status") != "development":
+                errors.append("El capítulo 2 debe declarar publication-status: development")
+            if "evidence" in chapter_two_metadata:
+                errors.append("El capítulo 2 no debe inventar identificadores de evidencia")
+            sources = chapter_two_metadata.get("sources", [])
+            source_paths = [
+                source.get("path") for source in sources if isinstance(source, dict)
+            ]
+            locators = [
+                source.get("locator") for source in sources if isinstance(source, dict)
+            ]
+            if (
+                set(source_paths) != CHAPTER_TWO_SOURCE_PATHS
+                or len(source_paths) != len(CHAPTER_TWO_SOURCE_PATHS)
+                or not all(locators)
+            ):
+                errors.append("Procedencia incompleta o no autorizada en el capítulo 2")
+            for source_path in CHAPTER_TWO_SOURCE_PATHS:
+                if not (REPOSITORY_ROOT / source_path).is_file():
+                    errors.append(f"Fuente declarada inexistente en el capítulo 2: {source_path}")
+
+        chapter_two_text = CHAPTER_TWO.read_text(encoding="utf-8")
+        chapter_two_links = set(
+            re.findall(r"\]\((https://[^)]+)\)", chapter_two_text)
+        )
+        if chapter_two_links != CHAPTER_TWO_LINKS:
+            errors.append(
+                "Los enlaces externos del capítulo 2 no son los institucionales autorizados"
+            )
+        for question_range, subject in CHAPTER_TWO_THEMATIC_BLOCKS:
+            row = rf"\|\s*{re.escape(question_range)}\s*\|\s*{re.escape(subject)}\s*\|"
+            if not re.search(row, chapter_two_text, re.IGNORECASE):
+                errors.append(
+                    f"Falta el bloque temático {question_range} en el capítulo 2"
+                )
+        normalized_chapter_two = re.sub(r"\s+", " ", chapter_two_text).casefold()
+        for phrase in (
+            "pregunta 29",
+            "hay en la población",
+            "transmisión moderna",
+            "titularidad",
+            "utilidad anual",
+            "formulario externo",
+            "lectura paleográfica local",
+        ):
+            if phrase.casefold() not in normalized_chapter_two:
+                errors.append(
+                    f"Falta explicar {phrase!r} en el tratamiento de la pregunta 29"
+                )
+        numbered_questions = re.findall(
+            r"(?m)^\s*(?:[1-9]|[1-3]\d|40)[.)]\s+¿", chapter_two_text
+        )
+        individual_question_headings = re.findall(
+            r"(?mi)^#{2,6}\s+(?:pregunta|respuesta)\s+\d+", chapter_two_text
+        )
+        if numbered_questions or individual_question_headings:
+            errors.append(
+                "El capítulo 2 no debe reproducir ni parafrasear individualmente "
+                "las cuarenta preguntas"
             )
 
     if not PROTOTYPE_CHAPTER.is_file():
@@ -425,6 +572,7 @@ def validate() -> list[str]:
     expected_navigation = (
         "content/00-preliminares/00-prueba-tecnica.qmd",
         "content/01-catastro/01-catastro-ensenada.qmd",
+        "content/01-catastro/02-respuestas-generales-interrogatorio.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
@@ -432,29 +580,34 @@ def validate() -> list[str]:
         "generated/aparato-molinos.qmd",
     )
     for item in expected_navigation:
-        if item not in navigation:
-            errors.append(f"Falta en la navegación: {item}")
+        if navigation.count(item) != 1:
+            errors.append(f"La navegación debe registrar una sola vez: {item}")
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
-        errors.append("Orden incorrecto del capítulo 1 y del prototipo en la navegación")
+        errors.append(
+            "Orden incorrecto de los capítulos 1 y 2 y del prototipo en la navegación"
+        )
 
     chapters_data = yaml.safe_load(
         (PUBLICATION_ROOT / "meta" / "chapters.yml").read_text(encoding="utf-8")
     )
     manifest = chapters_data.get("chapters", [])
     manifest_paths = [item.get("path") for item in manifest]
+    manifest_ids = [item.get("chapter_id") for item in manifest]
     if "Fase 2B" in chapters_data.get("purpose", ""):
         errors.append("meta/chapters.yml sigue limitado exclusivamente a la Fase 2B")
-    for item in expected_navigation[:3]:
-        if item not in manifest_paths:
-            errors.append(f"Falta en meta/chapters.yml: {item}")
+    for item in expected_navigation[:4]:
+        if manifest_paths.count(item) != 1:
+            errors.append(f"meta/chapters.yml debe registrar una sola vez: {item}")
     manifest_positions = [
         manifest_paths.index(item)
-        for item in expected_navigation[:3]
+        for item in expected_navigation[:4]
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto del capítulo 1 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1 y 2 en meta/chapters.yml")
+    if len(manifest_ids) != len(set(manifest_ids)):
+        errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
     for path, text in _all_publication_texts():
         if path.resolve() == Path(__file__).resolve():
@@ -487,7 +640,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulo 1, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1 y 2, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0

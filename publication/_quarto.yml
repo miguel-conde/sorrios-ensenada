@@ -11,6 +11,7 @@ book:
     - index.qmd
     - content/00-preliminares/00-prueba-tecnica.qmd
     - content/01-catastro/01-catastro-ensenada.qmd
+    - content/01-catastro/02-respuestas-generales-interrogatorio.qmd
     - content/02-estudio/09-rio-molinos-recursos.qmd
     - generated/14-facsimil-prototipo.qmd
     - generated/15-transcripcion-prototipo.qmd

@@ -29,12 +29,26 @@ CHAPTER_ONE_SOURCES = {
     "project/00_CONTROL/Manual_Editorial.md",
     "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
 }
+CHAPTER_TWO_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Verificacion_Interrogatorio_40_Preguntas.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/00_CONTROL/Manual_Editorial.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+}
 AUTHORIZED_INSTITUTIONAL_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=33",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=40",
     "https://www.catastro.hacienda.gob.es/es-ES/fondo_editorial.html",
+}
+CHAPTER_TWO_LINKS = {
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=30",
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=31b",
+    "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
+    "https://www.catastro.hacienda.gob.es/documentos/publicaciones/catalogoensenada_1752_vera.pdf",
 }
 
 
@@ -102,6 +116,57 @@ def test_chapter_one_has_bounded_metadata_and_provenance():
     assert links == AUTHORIZED_INSTITUTIONAL_LINKS
 
 
+def test_chapter_two_has_bounded_metadata_structure_and_provenance():
+    path = (
+        ROOT
+        / "publication"
+        / "content"
+        / "01-catastro"
+        / "02-respuestas-generales-interrogatorio.qmd"
+    )
+    metadata = read_front_matter(path)
+    text = path.read_text(encoding="utf-8")
+    links = set(re.findall(r"\]\((https://[^)]+)\)", text))
+
+    assert (
+        metadata["title"]
+        == "Las Respuestas Generales y el interrogatorio de cuarenta preguntas"
+    )
+    assert metadata["chapter-id"] == "respuestas-generales-interrogatorio"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_TWO_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_TWO_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    assert "evidence" not in metadata
+    assert links == CHAPTER_TWO_LINKS
+    for question_range, subject in validator.CHAPTER_TWO_THEMATIC_BLOCKS:
+        assert f"| {question_range} | {subject} |" in text
+
+
+def test_chapter_two_explains_question_29_without_duplicating_the_questionnaire():
+    text = (
+        ROOT
+        / "publication"
+        / "content"
+        / "01-catastro"
+        / "02-respuestas-generales-interrogatorio.qmd"
+    ).read_text(encoding="utf-8")
+    normalized = re.sub(r"\s+", " ", text).casefold()
+
+    for phrase in (
+        "pregunta 29",
+        "hay en la población",
+        "transmisión moderna",
+        "titularidad",
+        "utilidad anual",
+        "formulario externo",
+        "lectura paleográfica local",
+    ):
+        assert phrase.casefold() in normalized
+    assert not re.findall(r"(?m)^\s*(?:[1-9]|[1-3]\d|40)[.)]\s+¿", text)
+    assert not re.findall(r"(?mi)^#{2,6}\s+(?:pregunta|respuesta)\s+\d+", text)
+
+
 def test_asset_manifest_has_only_page_12_and_folio_315v():
     manifest = yaml.safe_load(
         (ROOT / "publication" / "meta" / "assets.yml").read_text(encoding="utf-8")
@@ -117,7 +182,7 @@ def test_asset_manifest_has_only_page_12_and_folio_315v():
     )
 
 
-def test_navigation_integrates_chapter_one_before_the_vertical_prototype():
+def test_navigation_integrates_chapters_one_and_two_before_the_vertical_prototype():
     quarto = yaml.safe_load(
         (ROOT / "publication" / "_quarto.yml").read_text(encoding="utf-8")
     )
@@ -129,11 +194,16 @@ def test_navigation_integrates_chapter_one_before_the_vertical_prototype():
     expected_order = [
         "content/00-preliminares/00-prueba-tecnica.qmd",
         "content/01-catastro/01-catastro-ensenada.qmd",
+        "content/01-catastro/02-respuestas-generales-interrogatorio.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
     ]
 
     assert [item for item in navigation if item in expected_order] == expected_order
     assert [item for item in manifest_paths if item in expected_order] == expected_order
+    assert all(navigation.count(item) == 1 for item in expected_order)
+    assert all(manifest_paths.count(item) == 1 for item in expected_order)
+    chapter_ids = [chapter["chapter_id"] for chapter in manifest["chapters"]]
+    assert len(chapter_ids) == len(set(chapter_ids))
     assert sum(item.startswith("generated/") for item in navigation) == 4
     index_path = ROOT / "publication" / "index.qmd"
     technical_path = (
@@ -159,6 +229,13 @@ def test_navigation_integrates_chapter_one_before_the_vertical_prototype():
         / "content"
         / "01-catastro"
         / "01-catastro-ensenada.qmd"
+    )
+    assert "number-sections" not in read_front_matter(
+        ROOT
+        / "publication"
+        / "content"
+        / "01-catastro"
+        / "02-respuestas-generales-interrogatorio.qmd"
     )
     assert "Fase 2B" not in manifest["purpose"]
 
