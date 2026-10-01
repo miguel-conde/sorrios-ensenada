@@ -1,0 +1,168 @@
+---
+title: "Del manuscrito al volumen actual"
+chapter-id: manuscrito-volumen-actual
+publication-status: development
+sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "versión 1.5, Parte I, capítulo 4"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md
+    locator: "versión 1.3, secciones 7–9 y 11"
+  - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
+    locator: "versión 3.6, introducción, criterios y estructura de las unidades"
+  - path: project/00_CONTROL/unidades.yaml
+    locator: "schema 1, secuencia completa de 35 unidades"
+  - path: project/00_CONTROL/Manual_Editorial.md
+    locator: "versión 1.6, secciones 2–4, 7–17, 21, 23 y 26–27"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Criterios_Edicion_Modernizada.md
+    locator: "versión 1.2, secciones 1–7"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    locator: "versión 1.2, sección 0"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
+    locator: "versión 1.2, secciones 1–2, 4–5 y 8"
+  - path: docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md
+    locator: "secciones 3–5, 8–9 y 12–15"
+  - path: publication/README.md
+    locator: "capas de publicación y réplica local del manuscrito"
+---
+
+Entre el manuscrito y este libro no hay una sustitución, sino una serie de
+capas con funciones distintas. Cada una responde a una pregunta: cómo es el
+objeto conservado, qué letras contiene, qué decisiones fijan su lectura, cómo
+puede leerse en español actual y qué interpretaciones admite. Mantener esas
+funciones separadas permite volver desde una afirmación del volumen hasta la
+fuente que la sostiene.
+
+El [capítulo anterior](03-expediente-sorribos-santibanez.qmd) describió el
+expediente como documento histórico. Este capítulo explica su construcción
+editorial para el lector. No reproduce el Manual Editorial ni ofrece una guía
+de comandos: presenta las decisiones necesarias para comprender qué se está
+leyendo en cada parte del volumen.
+
+## La fuente y su orden material {#volumen-fuente-material}
+
+El punto de partida es el **PDF manuscrito autoritativo**. Contiene 18 páginas
+digitales y permanece fuera de GitHub. La copia local externa usada durante la
+composición es solamente una réplica técnica de lectura: se verifica antes de
+generar derivados, pero no adquiere autoridad propia ni sustituye al original
+declarado por el proyecto.
+
+Las páginas fueron ordenadas como **35 unidades documentales**. La portada
+ocupa una página completa; después se alternan reverso, rectos y vueltos desde
+el folio 306r hasta el 321v, y cierra una hoja enfrentada posterior. Esta
+ordenación conserva páginas, posiciones y caras en blanco. También distingue
+el número de página digital de la foliación archivística, que comienza dentro
+del documento y no coincide con la paginación del archivo.
+
+La secuencia material es la base común de las representaciones posteriores.
+Una concordancia permite relacionar página, posición, folio y unidad; las
+anclas estables hacen posible enlazar una unidad concreta en la edición
+digital sin perder su lugar dentro del conjunto.
+
+## Cuatro formas de acceso {#volumen-cuatro-accesos}
+
+El **facsímil** reproduce la imagen del documento. Permite observar escritura,
+márgenes, blancos, foliación, signos, rúbricas y distribución espacial. Es la
+vista más próxima a la materialidad, pero no resuelve por sí sola abreviaturas,
+lecturas difíciles ni relaciones entre caras sucesivas.
+
+La **transcripción paleográfica semidiplomática** fija el texto línea por línea.
+Conserva ortografía, grafías históricas, mayúsculas, puntuación y disposición
+lineal; desarrolla únicamente las abreviaturas mediante signos explícitos.
+Facilita citar y buscar sin ocultar las dificultades de lectura, pero tampoco
+sustituye la imagen de la que procede.
+
+La **Edición Crítica 3.6** reúne para cada unidad seis secciones estables:
+**Imagen**, **Transcripción paleográfica**, **Observaciones editoriales**,
+**Notas paleográficas**, **Notas históricas** y **Referencias cruzadas**. Las
+observaciones explican la relación material y las decisiones adoptadas; las
+notas aclaran grafías o identificaciones puntuales; las referencias enlazan
+personas, topónimos, instituciones y unidades. Esta arquitectura hace visible
+la intervención editorial en vez de fundirla con el texto.
+
+La **edición modernizada 1.3** ofrece una lectura continua en español actual.
+Actualiza ortografía, acentuación, mayúsculas y puntuación; une palabras
+partidas y presenta sin corchetes las abreviaturas ya desarrolladas. Conserva,
+en cambio, nombres, cantidades, medidas, monedas, instituciones, términos
+históricos, dudas y anomalías. No convierte unidades antiguas, no completa
+lagunas y no reemplaza la Edición Crítica cuando se necesita verificar una
+grafía o una cita.
+
+## Preguntas externas y respuestas locales {#volumen-preguntas-respuestas}
+
+La edición modernizada coloca antes de cada respuesta el enunciado verificado
+de la pregunta correspondiente. Son dos capas relacionadas, pero diferentes:
+las **preguntas externas** proceden del formulario general de 1749; las
+**respuestas locales** proceden del expediente de Sorribos y Santibáñez. La
+pregunta aclara qué se solicitaba, pero no forma parte material del manuscrito
+local ni puede corregir silenciosamente su contestación.
+
+Esta separación es especialmente importante ante negativas, remisiones y
+omisiones. El formulario define la materia; la respuesta conserva su tenor,
+sus límites y su vínculo con los folios. Leerlas juntas ayuda a comprender el
+documento sin convertir dos autoridades distintas en un solo texto.
+
+## De la transcripción a la interpretación {#volumen-evidencia}
+
+La transcripción establece qué dice la fuente; la interpretación pregunta qué
+puede significar históricamente. Entre ambas se sitúan el **Estudio Histórico
+1.2** y el **Registro 1.2**, que organizan las afirmaciones mediante cinco tipos
+de evidencia:
+
+- **D — dato:** contenido explícito de la Edición Crítica;
+- **C — cálculo:** operación reproducible con datos y reglas declarados;
+- **I — interpretación:** lectura compatible con la evidencia, formulada con
+  cautela;
+- **E — contexto externo:** información identificada que sitúa un término,
+  institución, antecedente o continuidad sin crear datos locales;
+- **L — límite:** ausencia, discrepancia o imposibilidad de cálculo que debe
+  permanecer visible.
+
+Las letras no sustituyen la lectura. Sirven para conservar la procedencia y el
+grado de una afirmación. Un dato puede remitir a respuesta y folio; un cálculo
+debe declarar sus operandos y denominador; una interpretación conserva su
+cautela; un contexto externo no corrige el manuscrito; y un límite impide
+rellenar por analogía lo que la fuente no ofrece.
+
+## Una cadena de trazabilidad {#volumen-trazabilidad}
+
+La trazabilidad comienza en la imagen y sigue por la unidad, la transcripción y
+el aparato de la Edición Crítica. Desde allí alcanza la edición modernizada, el
+Estudio Histórico y las afirmaciones controladas por el Registro. En la capa
+editorial de este libro Quarto, el front matter de cada capítulo declara sus
+fuentes y, cuando utiliza entradas registradas, sus identificadores de
+evidencia. Los enlaces y las anclas permiten recorrer esa cadena sin confundir
+una capa con otra.
+
+Los folios conservan la referencia material; las notas documentan decisiones y
+cautelas; las concordancias relacionan vistas; y los identificadores mantienen
+estable la referencia aunque cambie la composición de una página. De este modo,
+una afirmación editorial no depende de recordar cómo se produjo: declara de
+dónde procede y qué transformación ha recibido.
+
+## Contenido editorial y derivados {#volumen-content-generated}
+
+Los capítulos que seleccionan, ordenan y explican fuentes para el lector se
+editan manualmente en **publication/content/**. En cambio, las vistas que pueden
+reconstruirse de manera determinista —facsímil preparado, transcripción,
+modernización y aparatos derivados— se regeneran en
+**publication/generated/**. Esos derivados no se corrigen a mano ni se
+convierten en nuevas autoridades.
+
+La salida HTML y PDF procede de una misma composición. El PDF completo 0.6
+puede servir como **referencia editorial** para comparar soluciones alcanzadas,
+pero no es una autoridad textual ni una entrada de generación. Tampoco se
+incorporan al repositorio el manuscrito autoritativo, su réplica técnica ni los
+PDF producidos durante la composición.
+
+## Límites de la intervención {#volumen-limites}
+
+Editar hace legible y trazable el documento; no permite completar una ausencia,
+normalizar una duda como certeza ni introducir una conclusión histórica dentro
+de la transcripción. El facsímil conserva la materialidad, la paleografía fija
+el texto, la edición crítica explica sus decisiones, la modernizada facilita la
+lectura y el estudio interpreta dentro de límites declarados.
+
+Con este capítulo concluye la Parte I. La Parte II estudiará la sociedad y la
+economía descritas en 1752, pero no se inicia aquí: antes de interpretar sus
+datos era necesario identificar el expediente y hacer visible cómo cada forma
+de lectura mantiene su relación con la fuente.

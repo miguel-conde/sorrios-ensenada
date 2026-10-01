@@ -37,6 +37,35 @@ CHAPTER_TWO_SOURCES = {
     "project/00_CONTROL/Manual_Editorial.md",
     "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
 }
+
+CHAPTER_THREE_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/00_CONTROL/unidades.yaml",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+}
+CHAPTER_THREE_EVIDENCE = {
+    "D": ("JUR-001", "JUR-002", "JUR-003", "JUR-004", "TOP-001"),
+    "I": ("TOP-002",),
+    "E": (
+        "TOP-004", "TOP-005", "TOP-007", "TOP-008", "TOP-009",
+        "TOP-010", "TOP-011", "JUR-009",
+    ),
+}
+CHAPTER_FOUR_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/00_CONTROL/unidades.yaml",
+    "project/00_CONTROL/Manual_Editorial.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Criterios_Edicion_Modernizada.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md",
+    "publication/README.md",
+}
 AUTHORIZED_INSTITUTIONAL_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
@@ -166,6 +195,85 @@ def test_chapter_two_explains_question_29_without_duplicating_the_questionnaire(
     assert not validator._has_extensive_questionnaire_sequence(text)
 
 
+def test_chapter_three_has_controlled_provenance_and_registered_evidence():
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    metadata = read_front_matter(path)
+    register = (
+        ROOT / "project/30_RESULTADOS/ESTUDIO_HISTORICO"
+        / "Registro_Afirmaciones_Calculos_v1.md"
+    ).read_text(encoding="utf-8")
+    registered = set(re.findall(r"^\|\s*([A-Z]+-\d{3})\s*\|", register, re.MULTILINE))
+
+    assert metadata["title"] == "El expediente de Sorribos y Santibáñez de Ordás"
+    assert metadata["chapter-id"] == "expediente-sorribos-santibanez"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_THREE_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_THREE_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    evidence = {level: tuple(values) for level, values in metadata["evidence"].items()}
+    assert evidence == CHAPTER_THREE_EVIDENCE
+    assert {item for group in evidence.values() for item in group} <= registered
+
+
+def test_chapter_three_preserves_facts_toponym_limits_and_scope():
+    text = (
+        ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    ).read_text(encoding="utf-8")
+    normalized = re.sub(r"\s+", " ", text).casefold()
+
+    required = (
+        "17 de septiembre de 1752", "joaquín aguado", "manuel antonio de bega",
+        "juan álvarez", "remirio rodríguez", "domingo díez",
+        "francisco de llorca", "domingo suárez", "manuel antonio alonso",
+        "excepto el cura", "18 páginas digitales", "35 unidades documentales",
+        "cuarenta respuestas", "dos rúbricas gráficas inferiores",
+        "no demuestra continuidad económica automática hasta 1752",
+        "no proporciona una secuencia fonética completa",
+        "69 años", "49 años", "59 años", "52 años", "44 años",
+    )
+    assert all(phrase in normalized for phrase in required)
+    assert all(form in text for form in ("Sorribios", "Sorribos", "Sorrios"))
+    assert "sorribas" not in normalized
+    assert "(04-manuscrito-volumen-actual.qmd)" in text
+    assert "publication/generated/" not in text
+    assert not re.search(r"<[A-Za-z][^>]*>", text)
+
+
+def test_chapter_four_separates_editorial_layers_and_provenance():
+    path = ROOT / "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
+    metadata = read_front_matter(path)
+    text = path.read_text(encoding="utf-8")
+    normalized = re.sub(r"\s+", " ", text).casefold()
+
+    assert metadata["title"] == "Del manuscrito al volumen actual"
+    assert metadata["chapter-id"] == "manuscrito-volumen-actual"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_FOUR_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_FOUR_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    assert "evidence" not in metadata
+    required = (
+        "pdf manuscrito autoritativo", "18 páginas digitales",
+        "35 unidades documentales", "facsímil",
+        "transcripción paleográfica semidiplomática", "edición crítica 3.6",
+        "edición modernizada 1.3", "preguntas externas", "respuestas locales",
+        "estudio histórico 1.2", "registro 1.2", "front matter",
+        "libro quarto", "publication/content/", "publication/generated/", "referencia editorial",
+        "no es una autoridad textual", "permanece fuera de github",
+    )
+    assert all(phrase in normalized for phrase in required)
+    assert all(heading.casefold() in normalized for heading in validator.UNIT_HEADINGS)
+    assert all(
+        level in normalized
+        for level in ("d — dato", "c — cálculo", "i — interpretación",
+                      "e — contexto", "l — límite")
+    )
+    assert "(03-expediente-sorribos-santibanez.qmd)" in text
+    assert not any(name in text for name in ("Joaquín Aguado", "Remirio Rodríguez"))
+    assert not re.search(r"(?:/home/|/tmp/|[A-Za-z]:\\\\)", text)
+    assert "base64" not in normalized
+    assert not re.search(r"<[A-Za-z][^>]*>", text)
+
 @pytest.mark.parametrize(
     "fragment",
     (
@@ -239,7 +347,7 @@ def test_asset_manifest_has_only_page_12_and_folio_315v():
     )
 
 
-def test_navigation_integrates_chapters_one_and_two_before_the_vertical_prototype():
+def test_navigation_integrates_part_one_before_the_vertical_prototype():
     quarto = yaml.safe_load(
         (ROOT / "publication" / "_quarto.yml").read_text(encoding="utf-8")
     )
@@ -252,6 +360,8 @@ def test_navigation_integrates_chapters_one_and_two_before_the_vertical_prototyp
         "content/00-preliminares/00-prueba-tecnica.qmd",
         "content/01-catastro/01-catastro-ensenada.qmd",
         "content/01-catastro/02-respuestas-generales-interrogatorio.qmd",
+        "content/01-catastro/03-expediente-sorribos-santibanez.qmd",
+        "content/01-catastro/04-manuscrito-volumen-actual.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
     ]
 
@@ -294,6 +404,13 @@ def test_navigation_integrates_chapters_one_and_two_before_the_vertical_prototyp
         / "01-catastro"
         / "02-respuestas-generales-interrogatorio.qmd"
     )
+    for filename in (
+        "03-expediente-sorribos-santibanez.qmd",
+        "04-manuscrito-volumen-actual.qmd",
+    ):
+        assert "number-sections" not in read_front_matter(
+            ROOT / "publication" / "content" / "01-catastro" / filename
+        )
     assert "Fase 2B" not in manifest["purpose"]
 
 

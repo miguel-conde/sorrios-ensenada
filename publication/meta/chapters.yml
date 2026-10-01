@@ -1,5 +1,5 @@
 schema_version: 1
-purpose: "Orden de capítulos y vistas para la edición en desarrollo; conserva el prototipo vertical 2B como regresión técnica."
+purpose: "Orden de capítulos y vistas para la edición en desarrollo; integra la Parte I y conserva el prototipo vertical como regresión técnica."
 chapters:
   - chapter_id: portada
     path: index.qmd
@@ -12,6 +12,12 @@ chapters:
     publication_status: development
   - chapter_id: respuestas-generales-interrogatorio
     path: content/01-catastro/02-respuestas-generales-interrogatorio.qmd
+    publication_status: development
+  - chapter_id: expediente-sorribos-santibanez
+    path: content/01-catastro/03-expediente-sorribos-santibanez.qmd
+    publication_status: development
+  - chapter_id: manuscrito-volumen-actual
+    path: content/01-catastro/04-manuscrito-volumen-actual.qmd
     publication_status: development
   - chapter_id: rio-molinos-recursos
     path: content/02-estudio/09-rio-molinos-recursos.qmd

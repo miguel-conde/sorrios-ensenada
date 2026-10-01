@@ -1,0 +1,151 @@
+---
+title: "El expediente de Sorribos y Santibáñez de Ordás"
+chapter-id: expediente-sorribos-santibanez
+publication-status: development
+sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "versión 1.5, Parte I, capítulo 3"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md
+    locator: "versión 1.3, secciones 5, 7–9 y 11"
+  - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
+    locator: "versión 3.6, Portada y folios 306r–306v y 321r–321v"
+  - path: project/00_CONTROL/unidades.yaml
+    locator: "schema 1, secuencia completa de 35 unidades"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    locator: "versión 1.2, secciones 0 y 2.1–2.3"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
+    locator: "versión 1.2, entradas JUR-001–JUR-004, TOP-001–TOP-002, TOP-004–TOP-005, TOP-007–TOP-011 y JUR-009"
+evidence:
+  D: [JUR-001, JUR-002, JUR-003, JUR-004, TOP-001]
+  I: [TOP-002]
+  E: [TOP-004, TOP-005, TOP-007, TOP-008, TOP-009, TOP-010, TOP-011, JUR-009]
+---
+
+La portada identifica el documento como «Copia de las respuestas generales del
+lugar de Sorribos y Santibáñez de Ordás». Ese título reúne desde el principio
+los dos nombres que articulan la declaración. No designa una descripción
+abstracta del Concejo de Ordás, sino un expediente local fechado, producido por
+personas concretas y conservado con una secuencia material propia.
+
+El capítulo anterior explicó el formulario común de cuarenta preguntas. Aquí el
+centro es el documento que resultó de aplicarlo en Sorribos y Santibáñez: su
+comparecencia, sus participantes, su cierre y su trayectoria material. El
+análisis económico y social de las respuestas pertenece a la Parte II; el
+proceso de edición se explicará en el [capítulo 4](04-manuscrito-volumen-actual.qmd).
+
+## La comparecencia de 1752 {#expediente-comparecencia}
+
+La comparecencia tuvo lugar el **17 de septiembre de 1752** en Sorribos y
+Santibáñez, «ambos de este Concejo de Ordás». Presidió la operación el
+licenciado **Joaquín Aguado**, abogado de los Reales Consejos y juez
+subdelegado. La primera expresión era un título o habilitación profesional:
+permite reconocer su condición de abogado, pero no convertirlo en empleado
+permanente de un consejo concreto.
+
+Compareció **Manuel Antonio de Bega**, cura párroco del lugar. La respuesta 15
+escribe su apellido como **Vega**; ambas formas se conservan como variantes
+documentales de una misma persona, sin corregir una aparición mediante la otra.
+También comparecieron **Juan Álvarez** y **Remirio Rodríguez**, vecinos y
+únicos oficiales de justicia; **Domingo Díez** y **Francisco de Llorca**,
+peritos nombrados por el concejo; y **Domingo Suárez**, perito nombrado de
+oficio. **Manuel Antonio Alonso** actuó como escribano y autorizó el cierre.
+
+La reunión combinaba así autoridad delegada, justicia local, conocimiento
+pericial, presencia parroquial y fe pública. Los comparecientes prestaron
+juramento **excepto el cura**. Prometieron decir verdad sobre lo que supieran y
+les fuera preguntado siguiendo el Interrogatorio impreso de la letra A. Esta
+composición permite entender cómo se produjo la declaración, pero no convierte
+a todas las personas presentes en voces equivalentes ni hace del texto una
+observación ajena a las categorías fiscales.
+
+## De la comparecencia al cierre {#expediente-estructura}
+
+El expediente ocupa **18 páginas digitales** y está ordenado en **35 unidades
+documentales**: portada, reverso, folios 306r–321v y hoja enfrentada posterior.
+Página digital y folio no son la misma cosa. Salvo la portada completa, las
+páginas reúnen dos posiciones sucesivas; las caras en blanco también se
+conservan porque forman parte de la materialidad y de la secuencia.
+
+Dentro de esa estructura se suceden la comparecencia, las **cuarenta
+respuestas**, la ratificación, la declaración de edades y las firmas. La
+respuesta 40 termina en el folio 321r. Inmediatamente después, los declarantes
+afirman la verdad de lo dicho bajo el juramento prestado y se ratifican en sus
+contestaciones.
+
+El cierre consigna estas edades:
+
+| Compareciente | Edad declarada |
+|---|---:|
+| Remirio Rodríguez | 69 años |
+| Juan Álvarez | 49 años |
+| Domingo Suárez | 59 años |
+| Francisco de Llorca | 52 años |
+| Domingo Díez | 44 años, poco más o menos |
+
+La fórmula anuncia que firmaron quienes supieron, junto con el juez. El texto
+permite leer las firmas o nombres de Joaquín Aguado y Domingo Díez en 321r; la
+de Domingo Suárez continúa en 321v, seguida por Remirio Rodríguez. La fórmula
+«ante mí, Manuel Antonio Alonso» identifica al escribano. Bajo ese cierre se
+ven además **dos rúbricas gráficas inferiores**: se describen como signos de
+validación, pero no se fuerzan su lectura ni su atribución individual.
+
+## Sorribios, Sorribos y Sorrios {#expediente-toponimo}
+
+La historia documentada del nombre se expresa mediante una secuencia positiva:
+
+**`Sorribios` → `Sorribos` → `Sorrios`.**
+
+En **1215**, una pesquisa patrimonial de Alfonso IX distinguía `Sorribios`
+dentro de Ordás entre heredades reconocidas a la Iglesia de León. El testimonio
+sitúa el nombre en una controversia patrimonial concreta; no describe todavía
+el expediente ni la organización local de 1752.
+
+El **1 de julio de 1267**, Miasol y su hija Teresa Pérez vendieron a Ruy
+Fernández, juez de León, por ochenta maravedís, su heredamiento en `Sorribios de
+Ordás e en sos términos`. La relación incluía casas, solares, tierras, huertos,
+prados, pastos, palomares, molinos, sotos, montes, fuentes y aguas. Es una
+evidencia patrimonial medieval y acredita una transmisión determinada; **no
+demuestra continuidad económica automática hasta 1752**.
+
+La forma **Sorribos** está documentada después en la Edad Moderna. Un pleito de
+1715 menciona al concejo y vecinos del lugar de Santibáñez de Sorribos. El
+manuscrito de 1752 escribe `Sorribos` cuatro veces y una de ellas divide el
+nombre entre líneas como `Sorri-` / `bos`. En 1768 aparece la parroquia de
+Santibáñez de Sorribos dentro del Concejo de Ordás; una escritura de 1831 habla
+del barrio de Sorribos; y el arreglo municipal de 1836 y Madoz en 1848 conservan
+esa forma entre los lugares del Ayuntamiento de Santa María de Ordás.
+
+El Ayuntamiento identifica hoy **Sorrios** como barrio de Santibáñez de Ordás.
+La convergencia de los testimonios permite identificar con seguridad muy alta
+el Sorribos de 1752 con el Sorrios actual. La documentación, sin embargo, **no
+proporciona una secuencia fonética completa** ni permite fechar todos los pasos
+del cambio. La continuidad de identificación no equivale a una explicación
+lingüística exhaustiva.
+
+## Dos nombres dentro de un mismo expediente {#expediente-dos-lugares}
+
+Sorribos y Santibáñez aparecen unidos en el título, en la comparecencia y en la
+primera respuesta. El documento los presenta como lugares vinculados dentro del
+Concejo de Ordás y responde conjuntamente por ellos. Esa relación documental
+no autoriza a borrar sus nombres ni a proyectar hacia 1752, sin más, las
+categorías administrativas actuales.
+
+Los testimonios posteriores ayudan a seguir la relación: en 1715 se habla de
+Santibáñez de Sorribos; en 1768, de su parroquia; en 1831, de Sorribos como
+barrio relacionado con un vecino de Santibáñez; y hoy Sorrios se identifica
+como barrio de Santibáñez de Ordás. Cada referencia pertenece a su propia fecha
+y función. Juntas sostienen la identificación histórica, pero no convierten las
+formas administrativas de épocas distintas en equivalentes perfectos.
+
+## Lo que pertenece a otros capítulos {#expediente-fronteras}
+
+Este expediente ofrece abundante información sobre jurisdicción, tierras,
+ganadería, molinos, población fiscal, oficios, derechos y gastos. Esos
+contenidos se estudiarán en la Parte II con sus cálculos, interpretaciones y
+límites. Aquí sirven únicamente para reconocer la arquitectura del documento y
+el carácter local de la declaración.
+
+Del mismo modo, la ordenación de imágenes, la transcripción, la edición crítica
+y la modernización no son hechos de 1752, sino intervenciones editoriales sobre
+la fuente conservada. El capítulo siguiente explica esas capas sin convertir
+el método de trabajo en parte del testimonio histórico.

@@ -34,6 +34,18 @@ CHAPTER_TWO = (
     / "01-catastro"
     / "02-respuestas-generales-interrogatorio.qmd"
 )
+CHAPTER_THREE = (
+    PUBLICATION_ROOT
+    / "content"
+    / "01-catastro"
+    / "03-expediente-sorribos-santibanez.qmd"
+)
+CHAPTER_FOUR = (
+    PUBLICATION_ROOT
+    / "content"
+    / "01-catastro"
+    / "04-manuscrito-volumen-actual.qmd"
+)
 PROTOTYPE_CHAPTER = (
     PUBLICATION_ROOT / "content" / "02-estudio" / "09-rio-molinos-recursos.qmd"
 )
@@ -62,6 +74,20 @@ RENDERED_CHAPTER_TWO_HTML = (
     / "content"
     / "01-catastro"
     / "02-respuestas-generales-interrogatorio.html"
+)
+RENDERED_CHAPTER_THREE_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "01-catastro"
+    / "03-expediente-sorribos-santibanez.html"
+)
+RENDERED_CHAPTER_FOUR_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "01-catastro"
+    / "04-manuscrito-volumen-actual.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -113,6 +139,40 @@ CHAPTER_TWO_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=31b",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
     "https://www.catastro.hacienda.gob.es/documentos/publicaciones/catalogoensenada_1752_vera.pdf",
+}
+CHAPTER_THREE_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/00_CONTROL/unidades.yaml",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+}
+CHAPTER_THREE_EVIDENCE = {
+    "D": ("JUR-001", "JUR-002", "JUR-003", "JUR-004", "TOP-001"),
+    "I": ("TOP-002",),
+    "E": (
+        "TOP-004",
+        "TOP-005",
+        "TOP-007",
+        "TOP-008",
+        "TOP-009",
+        "TOP-010",
+        "TOP-011",
+        "JUR-009",
+    ),
+}
+CHAPTER_FOUR_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/00_CONTROL/unidades.yaml",
+    "project/00_CONTROL/Manual_Editorial.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Criterios_Edicion_Modernizada.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md",
+    "publication/README.md",
 }
 CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("1–3", "Nombre, jurisdicción, término y límites"),
@@ -292,6 +352,36 @@ def validate_rendered_outputs() -> list[str]:
                     f"Falta el bloque temático {question_range} en el HTML del capítulo 2"
                 )
 
+    rendered_chapters = (
+        (
+            RENDERED_CHAPTER_THREE_HTML,
+            "El expediente de Sorribos y Santibáñez de Ordás",
+            3,
+            "04-manuscrito-volumen-actual.html",
+        ),
+        (
+            RENDERED_CHAPTER_FOUR_HTML,
+            "Del manuscrito al volumen actual",
+            4,
+            "03-expediente-sorribos-santibanez.html",
+        ),
+    )
+    for path, title, number, linked_chapter in rendered_chapters:
+        if not path.is_file():
+            errors.append(f"Falta el HTML del capítulo {number}: {path}")
+            continue
+        html = path.read_text(encoding="utf-8")
+        if title not in html:
+            errors.append(f"El HTML del capítulo {number} no contiene su título")
+        if 'name="viewport"' not in html:
+            errors.append(
+                f"El HTML del capítulo {number} carece de metadatos adaptables"
+            )
+        if linked_chapter not in html:
+            errors.append(
+                f"El HTML del capítulo {number} no conserva su enlace cruzado"
+            )
+
     if not RENDERED_HTML.is_file():
         errors.append(f"Falta el HTML renderizado: {RENDERED_HTML}")
     else:
@@ -329,6 +419,10 @@ def validate_rendered_outputs() -> list[str]:
                 not in normalized_pdf
             ):
                 errors.append("El PDF no contiene el capítulo 2")
+            if "El expediente de Sorribos y Santibáñez de Ordás" not in normalized_pdf:
+                errors.append("El PDF no contiene el capítulo 3")
+            if "Del manuscrito al volumen actual" not in normalized_pdf:
+                errors.append("El PDF no contiene el capítulo 4")
     return errors
 
 
@@ -341,6 +435,13 @@ def _front_matter(path: Path) -> dict:
     if not isinstance(data, dict):
         raise ValueError(f"Front matter inválido en {path}")
     return data
+
+
+def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
+    evidence = metadata.get("evidence", {})
+    if not isinstance(evidence, dict):
+        return {}
+    return {level: tuple(values or []) for level, values in evidence.items()}
 
 
 def _all_publication_texts() -> list[tuple[Path, str]]:
@@ -472,6 +573,102 @@ def validate() -> list[str]:
                 "respuestas; los cuarenta pares completos pertenecen al capítulo 16"
             )
 
+    chapter_specs = (
+        (CHAPTER_THREE, "El expediente de Sorribos y Santibáñez de Ordás",
+         "expediente-sorribos-santibanez", CHAPTER_THREE_SOURCE_PATHS,
+         CHAPTER_THREE_EVIDENCE, 3),
+        (CHAPTER_FOUR, "Del manuscrito al volumen actual",
+         "manuscrito-volumen-actual", CHAPTER_FOUR_SOURCE_PATHS, None, 4),
+    )
+    for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
+        if not path.is_file():
+            errors.append(f"Falta el capítulo {number}: {path}")
+            continue
+        try:
+            chapter_metadata = _front_matter(path)
+        except (OSError, ValueError, yaml.YAMLError) as exc:
+            errors.append(str(exc))
+            continue
+        if chapter_metadata.get("title") != title:
+            errors.append(f"Título incorrecto en el capítulo {number}")
+        if chapter_metadata.get("chapter-id") != chapter_id:
+            errors.append(f"chapter-id incorrecto en el capítulo {number}")
+        if chapter_metadata.get("publication-status") != "development":
+            errors.append(f"publication-status incorrecto en el capítulo {number}")
+        sources = chapter_metadata.get("sources", [])
+        source_paths = [source.get("path") for source in sources if isinstance(source, dict)]
+        locators = [source.get("locator") for source in sources if isinstance(source, dict)]
+        if (set(source_paths) != allowed_sources
+                or len(source_paths) != len(allowed_sources) or not all(locators)):
+            errors.append(f"Procedencia incompleta o no autorizada en el capítulo {number}")
+        for source_path in allowed_sources:
+            if not (REPOSITORY_ROOT / source_path).is_file():
+                errors.append(f"Fuente inexistente en el capítulo {number}: {source_path}")
+        if required_evidence is None and "evidence" in chapter_metadata:
+            errors.append("El capítulo 4 no debe declarar evidencia")
+        elif (required_evidence is not None
+              and _normalized_evidence(chapter_metadata) != required_evidence):
+            errors.append("Evidencia D/I/E incorrecta en el capítulo 3")
+
+    if CHAPTER_THREE.is_file():
+        chapter_three_text = CHAPTER_THREE.read_text(encoding="utf-8")
+        normalized_three = re.sub(r"\s+", " ", chapter_three_text).casefold()
+        required_three = (
+            "17 de septiembre de 1752", "joaquín aguado",
+            "manuel antonio de bega", "juan álvarez", "remirio rodríguez",
+            "domingo díez", "francisco de llorca", "domingo suárez",
+            "manuel antonio alonso", "excepto el cura", "18 páginas digitales",
+            "35 unidades documentales", "cuarenta respuestas",
+            "dos rúbricas gráficas inferiores",
+            "no demuestra continuidad económica automática hasta 1752",
+            "no proporciona una secuencia fonética completa",
+            "69 años", "49 años", "59 años", "52 años", "44 años",
+        )
+        for phrase in required_three:
+            if phrase not in normalized_three:
+                errors.append(f"Falta el hecho controlado {phrase!r} en el capítulo 3")
+        if not all(form in chapter_three_text for form in ("Sorribios", "Sorribos", "Sorrios")):
+            errors.append("Falta la secuencia toponímica positiva en el capítulo 3")
+        if "sorribas" in normalized_three:
+            errors.append("El capítulo 3 introduce la forma no autorizada Sorribas")
+        if "(04-manuscrito-volumen-actual.qmd)" not in chapter_three_text:
+            errors.append("El capítulo 3 no enlaza el capítulo 4")
+        if "publication/generated/" in chapter_three_text:
+            errors.append("El capítulo 3 invade la explicación técnica del capítulo 4")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_three_text):
+            errors.append("El capítulo 3 contiene HTML crudo")
+
+    if CHAPTER_FOUR.is_file():
+        chapter_four_text = CHAPTER_FOUR.read_text(encoding="utf-8")
+        normalized_four = re.sub(r"\s+", " ", chapter_four_text).casefold()
+        required_four = (
+            "pdf manuscrito autoritativo", "18 páginas digitales",
+            "35 unidades documentales", "facsímil",
+            "transcripción paleográfica semidiplomática", "edición crítica 3.6",
+            "edición modernizada 1.3", "preguntas externas", "respuestas locales",
+            "estudio histórico 1.2", "registro 1.2", "front matter",
+            "libro quarto", "publication/content/", "publication/generated/",
+            "referencia editorial", "no es una autoridad textual",
+            "permanece fuera de github",
+        )
+        for phrase in required_four:
+            if phrase not in normalized_four:
+                errors.append(f"Falta distinguir {phrase!r} en el capítulo 4")
+        for heading in UNIT_HEADINGS:
+            if heading.casefold() not in normalized_four:
+                errors.append(f"Falta la sección {heading!r} en el capítulo 4")
+        for level in ("d — dato", "c — cálculo", "i — interpretación",
+                      "e — contexto", "l — límite"):
+            if level not in normalized_four:
+                errors.append(f"Falta explicar el nivel {level!r} en el capítulo 4")
+        if "(03-expediente-sorribos-santibanez.qmd)" not in chapter_four_text:
+            errors.append("El capítulo 4 no enlaza el capítulo 3")
+        for participant in ("Joaquín Aguado", "Remirio Rodríguez", "Domingo Díez"):
+            if participant in chapter_four_text:
+                errors.append(f"El capítulo 4 invade la narración con {participant}")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_four_text):
+            errors.append("El capítulo 4 contiene HTML crudo")
+
     if not PROTOTYPE_CHAPTER.is_file():
         return errors + [f"Falta el capítulo editorial: {PROTOTYPE_CHAPTER}"]
     try:
@@ -502,7 +699,10 @@ def validate() -> list[str]:
     registered = set(
         re.findall(r"^\|\s*([A-Z]+-\d{3})\s*\|", register, re.MULTILINE)
     )
-    missing_registry = sorted(expected_ids - registered)
+    phase_3c_ids = {
+        item for group in CHAPTER_THREE_EVIDENCE.values() for item in group
+    }
+    missing_registry = sorted((expected_ids | phase_3c_ids) - registered)
     if missing_registry:
         errors.append("Identificadores ausentes del Registro 1.2: " + ", ".join(missing_registry))
 
@@ -610,6 +810,8 @@ def validate() -> list[str]:
         "content/00-preliminares/00-prueba-tecnica.qmd",
         "content/01-catastro/01-catastro-ensenada.qmd",
         "content/01-catastro/02-respuestas-generales-interrogatorio.qmd",
+        "content/01-catastro/03-expediente-sorribos-santibanez.qmd",
+        "content/01-catastro/04-manuscrito-volumen-actual.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
@@ -622,7 +824,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1 y 2 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–4 y del prototipo en la navegación"
         )
 
     chapters_data = yaml.safe_load(
@@ -633,16 +835,16 @@ def validate() -> list[str]:
     manifest_ids = [item.get("chapter_id") for item in manifest]
     if "Fase 2B" in chapters_data.get("purpose", ""):
         errors.append("meta/chapters.yml sigue limitado exclusivamente a la Fase 2B")
-    for item in expected_navigation[:4]:
+    for item in expected_navigation[:6]:
         if manifest_paths.count(item) != 1:
             errors.append(f"meta/chapters.yml debe registrar una sola vez: {item}")
     manifest_positions = [
         manifest_paths.index(item)
-        for item in expected_navigation[:4]
+        for item in expected_navigation[:6]
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1 y 2 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–4 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -677,7 +879,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1 y 2, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–4, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0
