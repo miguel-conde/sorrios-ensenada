@@ -163,8 +163,46 @@ def test_chapter_two_explains_question_29_without_duplicating_the_questionnaire(
         "lectura paleográfica local",
     ):
         assert phrase.casefold() in normalized
-    assert not re.findall(r"(?m)^\s*(?:[1-9]|[1-3]\d|40)[.)]\s+¿", text)
-    assert not re.findall(r"(?mi)^#{2,6}\s+(?:pregunta|respuesta)\s+\d+", text)
+    assert not validator._has_extensive_questionnaire_sequence(text)
+
+
+@pytest.mark.parametrize(
+    "fragment",
+    (
+        "\n".join(
+            f"{number}. ¿Pregunta sintética {number}?"
+            for number in range(1, 31)
+        ),
+        "\n".join(
+            f"### Pregunta {number}: formulación sintética"
+            for number in range(1, 31)
+        ),
+        "\n".join(
+            f"| {number} | Respuesta sintética {number} |"
+            for number in range(1, 31)
+        ),
+        "\n".join(
+            f"- **Pregunta {number}:** formulación sintética"
+            for number in range(1, 31)
+        ),
+    ),
+)
+def test_extensive_questionnaire_is_detected_across_markdown_forms(fragment):
+    assert validator._has_extensive_questionnaire_sequence(fragment)
+
+
+def test_thematic_ranges_and_isolated_examples_are_not_questionnaire_duplication():
+    thematic_table = "\n".join(
+        f"| {question_range} | {subject} |"
+        for question_range, subject in validator.CHAPTER_TWO_THEMATIC_BLOCKS
+    )
+    isolated_examples = "\n".join(
+        f"### Pregunta {number}: ejemplo documental aislado"
+        for number in (6, 7, 8, 13, 29, 31, 32, 34, 37, 40)
+    )
+
+    assert not validator._has_extensive_questionnaire_sequence(thematic_table)
+    assert not validator._has_extensive_questionnaire_sequence(isolated_examples)
 
 
 def test_asset_manifest_has_only_page_12_and_folio_315v():

@@ -126,6 +126,20 @@ CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("35–39", "Jornaleros, pobres, embarcaciones, clérigos y conventos"),
     ("40", "Fincas o rentas del rey"),
 )
+QUESTIONNAIRE_MIN_DISTINCT_MARKERS = 20
+QUESTIONNAIRE_MIN_CONSECUTIVE_MARKERS = 15
+QUESTION_MARKER_PATTERNS = (
+    re.compile(
+        r"^(?:(?:pregunta|respuesta)\s+)?"
+        r"(?P<number>[1-9]|[1-3]\d|40)\s*(?:[.):-]\s*|\s+)",
+        re.IGNORECASE,
+    ),
+    re.compile(
+        r"^\|\s*(?:(?:pregunta|respuesta)\s+)?"
+        r"(?P<number>[1-9]|[1-3]\d|40)\s*\|",
+        re.IGNORECASE,
+    ),
+)
 
 
 class _LineBlockParser(HTMLParser):
@@ -179,6 +193,35 @@ def _generated_paleographic_lines(text: str) -> tuple[str, ...]:
     if any(not line.startswith("| ") for line in lines):
         return ()
     return tuple(line[2:] for line in lines)
+
+
+def _questionnaire_markers(text: str) -> tuple[int, ...]:
+    markers: set[int] = set()
+    for raw_line in text.splitlines():
+        line = re.sub(r"^\s*(?:#{1,6}|>|[-+*])\s*", "", raw_line)
+        line = line.translate(str.maketrans("", "", "*_`")).strip()
+        for pattern in QUESTION_MARKER_PATTERNS:
+            match = pattern.match(line)
+            if match is not None:
+                markers.add(int(match.group("number")))
+                break
+    return tuple(sorted(markers))
+
+
+def _has_extensive_questionnaire_sequence(text: str) -> bool:
+    markers = _questionnaire_markers(text)
+    if len(markers) < QUESTIONNAIRE_MIN_DISTINCT_MARKERS:
+        return False
+
+    longest_run = 1
+    current_run = 1
+    for previous, current in zip(markers, markers[1:]):
+        if current == previous + 1:
+            current_run += 1
+            longest_run = max(longest_run, current_run)
+        else:
+            current_run = 1
+    return longest_run >= QUESTIONNAIRE_MIN_CONSECUTIVE_MARKERS
 
 
 def _html_line_blocks(path: Path) -> list[tuple[str, ...]]:
@@ -423,16 +466,10 @@ def validate() -> list[str]:
                 errors.append(
                     f"Falta explicar {phrase!r} en el tratamiento de la pregunta 29"
                 )
-        numbered_questions = re.findall(
-            r"(?m)^\s*(?:[1-9]|[1-3]\d|40)[.)]\s+¿", chapter_two_text
-        )
-        individual_question_headings = re.findall(
-            r"(?mi)^#{2,6}\s+(?:pregunta|respuesta)\s+\d+", chapter_two_text
-        )
-        if numbered_questions or individual_question_headings:
+        if _has_extensive_questionnaire_sequence(chapter_two_text):
             errors.append(
-                "El capítulo 2 no debe reproducir ni parafrasear individualmente "
-                "las cuarenta preguntas"
+                "El capítulo 2 contiene una secuencia extensa de preguntas o "
+                "respuestas; los cuarenta pares completos pertenecen al capítulo 16"
             )
 
     if not PROTOTYPE_CHAPTER.is_file():
