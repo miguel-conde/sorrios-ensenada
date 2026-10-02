@@ -313,7 +313,9 @@ def test_relation_segmentation_keeps_colon_context_and_splits_semicolon_clauses(
     paragraphs = validator._controlled_paragraphs(
         "Son indistinguibles: facsímil y transcripción.\n\n"
         "publication/content/ contiene texto editorial; "
-        "publication/generated/ contiene derivados."
+        "publication/generated/ contiene derivados.\n\n"
+        "El facsímil no reproduce la imagen, mientras la transcripción conserva "
+        "el texto."
     )
 
     assert paragraphs[0][1] == (
@@ -322,6 +324,10 @@ def test_relation_segmentation_keeps_colon_context_and_splits_semicolon_clauses(
     assert paragraphs[1][1] == (
         "publication/content/ contiene texto editorial",
         "publication/generated/ contiene derivados.",
+    )
+    assert paragraphs[2][1] == (
+        "el facsímil no reproduce la imagen",
+        "mientras la transcripción conserva el texto.",
     )
 
 
@@ -387,6 +393,7 @@ def test_chapter_three_rejects_missing_economic_continuity_limit():
     (
         "Una secuencia fonética completa sí existe.",
         "Existe una secuencia fonética completa.",
+        "Está completamente documentada la evolución fonética.",
     ),
 )
 def test_chapter_three_rejects_positive_complete_phonetic_sequence(statement):
@@ -433,6 +440,8 @@ def test_chapter_three_rejects_positive_economic_continuity(statement):
         "nunca existe una secuencia fonética completa",
         "tampoco existe una secuencia fonética completa",
         "sin disponer de una secuencia fonética completa",
+        "no se dispone de una evolución fonética completamente documentada",
+        "la evolución fonética no está completamente documentada",
     ),
 )
 def test_chapter_three_accepts_equivalent_phonetic_limits(wording):
@@ -578,6 +587,62 @@ def test_chapter_four_rejects_negated_expected_functions(
 
 
 @pytest.mark.parametrize(
+    "coordinated_functions",
+    (
+        "El facsímil no reproduce la imagen, mientras la transcripción conserva "
+        "el texto línea por línea.",
+        "Mientras la transcripción conserva el texto línea por línea, el facsímil "
+        "no reproduce la imagen.",
+        "La transcripción no fija el texto línea por línea, mientras el facsímil "
+        "reproduce la imagen.",
+        "Mientras el facsímil reproduce la imagen, la transcripción no fija el "
+        "texto línea por línea.",
+    ),
+)
+def test_chapter_four_does_not_cross_layer_function_subclauses(
+    coordinated_functions,
+):
+    path = ROOT / "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
+    _, body = validator._front_matter_and_body(path)
+    replacement = (
+        "Las cuatro representaciones cumplen funciones distintas.\n\n"
+        f"{coordinated_functions}\n\n"
+        "La edición crítica reúne el aparato y documenta decisiones.\n\n"
+        "La edición modernizada ofrece una lectura en español actual."
+    )
+    mutated = replace_section(body, "volumen-cuatro-accesos", replacement)
+
+    assert error_codes(validator._validate_chapter_four_body(mutated)) == {
+        "C4_LAYER_FUNCTIONS"
+    }
+
+
+@pytest.mark.parametrize(
+    "coordinated_functions",
+    (
+        "El facsímil reproduce la imagen, mientras la transcripción fija el texto "
+        "línea por línea.",
+        "Mientras la transcripción fija el texto línea por línea, el facsímil "
+        "reproduce la imagen.",
+    ),
+)
+def test_chapter_four_accepts_affirmed_layer_function_subclauses(
+    coordinated_functions,
+):
+    path = ROOT / "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
+    _, body = validator._front_matter_and_body(path)
+    replacement = (
+        "Las cuatro representaciones cumplen funciones distintas.\n\n"
+        f"{coordinated_functions}\n\n"
+        "La edición crítica reúne el aparato y documenta decisiones.\n\n"
+        "La edición modernizada ofrece una lectura en español actual."
+    )
+    mutated = replace_section(body, "volumen-cuatro-accesos", replacement)
+
+    assert validator._validate_chapter_four_body(mutated) == []
+
+
+@pytest.mark.parametrize(
     "replacement",
     (
         "publication/content/ contiene texto editorial mantenido de forma humana; "
@@ -593,6 +658,19 @@ def test_chapter_four_rejects_negated_expected_functions(
         "publication/generated/ no contiene una fuente editorial mantenida "
         "manualmente, sino derivados reproducibles que se regeneran. Esos derivados "
         "no tienen autoridad canónica propia.",
+        "publication/generated/ no contiene la fuente editorial mantenida "
+        "manualmente, mientras publication/content/ sí contiene texto editorial "
+        "mantenido humanamente. Los derivados reproducibles se regeneran en "
+        "publication/generated/. Ninguna autoridad canónica propia corresponde a "
+        "esos derivados.",
+        "publication/content/ sí contiene texto editorial mantenido humanamente, "
+        "mientras publication/generated/ no contiene la fuente editorial mantenida "
+        "manualmente. Los derivados reproducibles se regeneran en "
+        "publication/generated/. Ninguna autoridad canónica propia corresponde a "
+        "esos derivados.",
+        "publication/content/ contiene texto editorial mantenido humanamente. "
+        "publication/generated/ contiene derivados reproducibles que se regeneran. "
+        "Ninguna autoridad canónica propia corresponde a esos derivados.",
     ),
 )
 def test_chapter_four_accepts_equivalent_directory_relations(replacement):
@@ -601,6 +679,24 @@ def test_chapter_four_accepts_equivalent_directory_relations(replacement):
     mutated = replace_section(body, "volumen-content-generated", replacement)
 
     assert validator._validate_chapter_four_body(mutated) == []
+
+
+@pytest.mark.parametrize(
+    "mutation",
+    (
+        "publication/generated/ sí contiene la fuente editorial mantenida "
+        "manualmente, mientras publication/content/ no la contiene.",
+        "publication/content/ contiene salidas regenerables que se regeneran, "
+        "mientras publication/generated/ no las contiene.",
+    ),
+)
+def test_chapter_four_rejects_inverted_directory_function_subclauses(mutation):
+    path = ROOT / "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
+    _, body = validator._front_matter_and_body(path)
+
+    assert error_codes(
+        validator._validate_chapter_four_body(f"{body}\n\n{mutation}\n")
+    ) == {"C4_DIRECTORY_FUNCTIONS_REVERSED"}
 
 
 @pytest.mark.parametrize(

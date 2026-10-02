@@ -485,11 +485,31 @@ def _plain_text(text: str) -> str:
     return _normalized_text(text.translate(str.maketrans("", "", "*_`")))
 
 
-def _controlled_paragraphs(markdown: str) -> tuple[tuple[str, tuple[str, ...]], ...]:
-    """Return normalized paragraphs and their locally bounded propositions.
+_RELATION_CLAUSE_BOUNDARY = re.compile(r"(?<=[.!?])\s+|;\s*")
+_CONTRASTIVE_CLAUSE_BOUNDARY = re.compile(r",\s+(?=mientras\b)")
 
-    Full stops and semicolons delimit propositions. Colons deliberately do not:
-    they can introduce the entity list governed by a preceding predicate.
+
+def _relation_clauses(paragraph: str) -> tuple[str, ...]:
+    """Split only the controlled relation boundaries used by this validator."""
+
+    clauses: list[str] = []
+    for proposition in _RELATION_CLAUSE_BOUNDARY.split(paragraph):
+        for clause in _CONTRASTIVE_CLAUSE_BOUNDARY.split(proposition):
+            clause = clause.strip()
+            if clause.startswith("mientras ") and "," in clause:
+                contrast, remainder = clause.split(",", maxsplit=1)
+                clauses.extend((contrast.strip(), remainder.strip()))
+            elif clause:
+                clauses.append(clause)
+    return tuple(clause for clause in clauses if clause)
+
+
+def _controlled_paragraphs(markdown: str) -> tuple[tuple[str, tuple[str, ...]], ...]:
+    """Return normalized paragraphs and their locally bounded relation clauses.
+
+    Full stops, semicolons, and controlled contrastive coordination delimit
+    clauses. Colons deliberately do not: they can introduce the entity list
+    governed by a preceding predicate.
     """
 
     paragraphs: list[tuple[str, tuple[str, ...]]] = []
@@ -497,11 +517,7 @@ def _controlled_paragraphs(markdown: str) -> tuple[tuple[str, tuple[str, ...]], 
         paragraph = _plain_text(block)
         if not paragraph:
             continue
-        propositions = tuple(
-            proposition.strip()
-            for proposition in re.split(r"(?<=[.!?])\s+|;\s*", paragraph)
-            if proposition.strip()
-        )
+        propositions = _relation_clauses(paragraph)
         paragraphs.append((paragraph, propositions))
     return tuple(paragraphs)
 
@@ -550,9 +566,11 @@ def _predicate_polarities(
 
 
 _PHONETIC_ENTITY = (
-    r"\bsecuencia\s+fonética\s+completa\b",
-    r"\bevolución\s+fonética\s+completa\b",
-    r"\breconstrucción\s+fonética\s+completa\b",
+    r"\b(?:secuencia|evolución|reconstrucción)\s+fonética\b",
+)
+_PHONETIC_COMPLETENESS = (
+    r"\bcompleta\b",
+    r"\bcompletamente\s+documentad\w*\b",
 )
 _PHONETIC_PREDICATES = (
     r"\bexist(?:e|en|ía|ió|irá|iría)\b",
@@ -586,7 +604,11 @@ _ECONOMIC_PREDICATES = (
 
 
 def _phonetic_polarities(proposition: str) -> set[bool]:
-    if not _matches_any(proposition, _PHONETIC_ENTITY):
+    if not _matches_groups(
+        proposition,
+        _PHONETIC_ENTITY,
+        _PHONETIC_COMPLETENESS,
+    ):
         return set()
     polarities = _predicate_polarities(proposition, _PHONETIC_PREDICATES)
     entity = r"(?:secuencia|evolución|reconstrucción)[^.]{0,40}fonética[^.]{0,20}completa"
