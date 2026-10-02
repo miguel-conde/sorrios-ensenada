@@ -479,19 +479,134 @@ def _markdown_section(body: str, anchor: str) -> str:
     return body[heading.end():end]
 
 
-def _paragraphs(markdown: str) -> tuple[str, ...]:
-    return tuple(
-        normalized
-        for block in re.split(r"\n\s*\n", markdown)
-        if (normalized := _normalized_text(block))
-    )
+def _plain_text(text: str) -> str:
+    """Normalize the small Markdown subset used by controlled relations."""
+
+    return _normalized_text(text.translate(str.maketrans("", "", "*_`")))
 
 
-def _paragraph_matches(paragraphs: tuple[str, ...], *patterns: str) -> bool:
-    return any(
-        all(re.search(pattern, paragraph) for pattern in patterns)
-        for paragraph in paragraphs
-    )
+def _controlled_paragraphs(markdown: str) -> tuple[tuple[str, tuple[str, ...]], ...]:
+    """Return normalized paragraphs and their locally bounded propositions.
+
+    Full stops and semicolons delimit propositions. Colons deliberately do not:
+    they can introduce the entity list governed by a preceding predicate.
+    """
+
+    paragraphs: list[tuple[str, tuple[str, ...]]] = []
+    for block in re.split(r"\n\s*\n", markdown):
+        paragraph = _plain_text(block)
+        if not paragraph:
+            continue
+        propositions = tuple(
+            proposition.strip()
+            for proposition in re.split(r"(?<=[.!?])\s+|;\s*", paragraph)
+            if proposition.strip()
+        )
+        paragraphs.append((paragraph, propositions))
+    return tuple(paragraphs)
+
+
+def _matches_any(text: str, patterns: tuple[str, ...]) -> bool:
+    return any(re.search(pattern, text) for pattern in patterns)
+
+
+def _matches_groups(text: str, *groups: tuple[str, ...]) -> bool:
+    return all(_matches_any(text, group) for group in groups)
+
+
+_POLARITY_MARKER = re.compile(
+    r"\b(?P<marker>no|ni|nunca|tampoco|sin|ningun[ao]s?|ninguna|sí)\b"
+)
+
+
+def _predicate_is_negated(text: str, start: int) -> bool:
+    """Return the polarity attached locally to a controlled predicate."""
+
+    prefix = text[max(0, start - 100):start]
+    boundary = max(prefix.rfind(","), prefix.rfind(":"))
+    if boundary >= 0:
+        prefix = prefix[boundary + 1:]
+    markers = tuple(_POLARITY_MARKER.finditer(prefix))
+    if not markers:
+        return False
+    return markers[-1].group("marker") != "sí"
+
+
+def _predicate_polarities(
+    proposition: str,
+    affirmative_patterns: tuple[str, ...],
+    negative_patterns: tuple[str, ...] = (),
+) -> set[bool]:
+    """Return True for affirmed and False for negated relation predicates."""
+
+    polarities: set[bool] = set()
+    for pattern in affirmative_patterns:
+        for match in re.finditer(pattern, proposition):
+            polarities.add(not _predicate_is_negated(proposition, match.start()))
+    for pattern in negative_patterns:
+        for match in re.finditer(pattern, proposition):
+            polarities.add(_predicate_is_negated(proposition, match.start()))
+    return polarities
+
+
+_PHONETIC_ENTITY = (
+    r"\bsecuencia\s+fonética\s+completa\b",
+    r"\bevolución\s+fonética\s+completa\b",
+    r"\breconstrucción\s+fonética\s+completa\b",
+)
+_PHONETIC_PREDICATES = (
+    r"\bexist(?:e|en|ía|ió|irá|iría)\b",
+    r"\bhay\b",
+    r"\bdispon(?:e|en|er|ible)\b",
+    r"\bproporciona\b",
+    r"\b(?:documentada?|documentadas?|documentados?)\b",
+    r"\breconstru(?:ir|ye|ida?|idas?|idos?)\b",
+    r"\bpermite\b",
+    r"\bautoriza\b",
+    r"\bdemuestra\b",
+    r"\bprueba\b",
+    r"\bacredita\b",
+)
+_ECONOMIC_ENTITY = (r"\bcontinuidad\s+económica\b",)
+_ECONOMIC_PREDICATES = (
+    r"\bhay\b",
+    r"\bdemuestr\w*\b",
+    r"\bdemostrad\w*\b",
+    r"\bprueb\w*\b",
+    r"\bprobad\w*\b",
+    r"\bacredit\w*\b",
+    r"\bconfirm\w*\b",
+    r"\bgarantiz\w*\b",
+    r"\bestablec\w*\b",
+    r"\bestablecid\w*\b",
+    r"\bpermit\w*\b",
+    r"\bautoriz\w*\b",
+    r"\bafirm\w*\b",
+)
+
+
+def _phonetic_polarities(proposition: str) -> set[bool]:
+    if not _matches_any(proposition, _PHONETIC_ENTITY):
+        return set()
+    polarities = _predicate_polarities(proposition, _PHONETIC_PREDICATES)
+    entity = r"(?:secuencia|evolución|reconstrucción)[^.]{0,40}fonética[^.]{0,20}completa"
+    if re.search(rf"\b(?:sin|ningun[ao]s?)\b[^.;:]{{0,60}}{entity}", proposition):
+        polarities.add(False)
+    if re.search(rf"\b(?:ausencia|falta)\s+de\b[^.;:]{{0,60}}{entity}", proposition):
+        polarities.add(False)
+    return polarities
+
+
+def _economic_polarities(proposition: str) -> set[bool]:
+    if not _matches_any(proposition, _ECONOMIC_ENTITY):
+        return set()
+    polarities = _predicate_polarities(proposition, _ECONOMIC_PREDICATES)
+    if re.search(
+        r"\b(?:sin|ningun[ao]s?)\b[^.;:]{0,70}continuidad\s+económica",
+        proposition,
+    ):
+        polarities.add(False)
+    return polarities
 
 
 def _validate_chapter_three_body(body: str) -> list[str]:
@@ -501,29 +616,30 @@ def _validate_chapter_three_body(body: str) -> list[str]:
     section = _markdown_section(body, "expediente-toponimo")
     if not section:
         return ["C3_TOPONYM_SECTION: falta la sección histórica del topónimo"]
-    normalized = _normalized_text(section)
-    paragraphs = _paragraphs(section)
+    paragraphs = _controlled_paragraphs(section)
 
-    phonetic_reversal = (
-        r"(?:sí\s+)?(?:existe|hay|demuestra|prueba|acredita)\s+"
-        r"(?:una\s+)?secuencia\s+fonética\s+completa"
-        r"|(?:(?<!no )se\s+puede|(?<!no )(?<!ni )permite)\s+reconstruir\s+"
-        r"(?:una\s+)?secuencia\s+fonética\s+completa"
-        r"|(?<!no )(?<!ni )proporciona\s+"
-        r"(?:una\s+)?secuencia\s+fonética\s+completa"
+    phonetic_reversal = any(
+        True in _phonetic_polarities(proposition)
+        for _, propositions in paragraphs
+        for proposition in propositions
     )
-    if re.search(phonetic_reversal, normalized):
+    if phonetic_reversal:
         errors.append(
             "C3_PHONETIC_REVERSAL: el capítulo afirma una secuencia fonética completa"
         )
 
-    phonetic_limit = _paragraph_matches(
-        paragraphs,
-        r"sorrios\s+actual|actual(?:mente)?[^.]{0,80}sorrios",
-        r"identific\w*[^.]{0,100}segur|segur\w*[^.]{0,100}identific",
-        r"(?:no|sin)\s+(?:[^.;]{0,60}\s)?(?:secuencia|evolución|reconstrucción)"
-        r"[^.;]{0,60}fonétic|no\s+(?:proporciona|permite|demuestra|prueba|acredita)"
-        r"[^.;]{0,50}secuencia\s+fonética\s+completa",
+    phonetic_limit = any(
+        _matches_groups(
+            paragraph,
+            (r"\bsorrios\s+actual\b", r"\bactual(?:mente)?\b[^.]{0,80}\bsorrios\b"),
+            (r"\bidentific\w*\b[^.]{0,100}\bsegur\w*\b",
+             r"\bsegur\w*\b[^.]{0,100}\bidentific\w*\b"),
+        )
+        and any(
+            False in _phonetic_polarities(proposition)
+            for proposition in propositions
+        )
+        for paragraph, propositions in paragraphs
     )
     if not phonetic_limit:
         errors.append(
@@ -531,24 +647,30 @@ def _validate_chapter_three_body(body: str) -> list[str]:
             "con el límite de la secuencia fonética"
         )
 
-    economic_reversal = (
-        r"(?<!no )(?<!ni )(?:sí\s+)?(?:demuestra|prueba|acredita|confirma|garantiza)"
-        r"[^.;]{0,70}continuidad\s+económica[^.;]{0,70}1752"
-        r"|continuidad\s+económica\s+(?:demostrada|probada|acreditada)"
-        r"[^.;]{0,70}1752"
+    economic_reversal = any(
+        "1267" in paragraph
+        and "1752" in paragraph
+        and any(
+            True in _economic_polarities(proposition)
+            for proposition in propositions
+        )
+        for paragraph, propositions in paragraphs
     )
-    if re.search(economic_reversal, normalized):
+    if economic_reversal:
         errors.append(
             "C3_ECONOMIC_CONTINUITY_REVERSAL: el capítulo afirma continuidad "
             "económica demostrada entre 1267 y 1752"
         )
 
-    economic_limit = _paragraph_matches(
-        paragraphs,
-        r"1267",
-        r"patrimonial|compraventa|venta|transmisión",
-        r"(?:no|sin)\s+(?:[^.;]{0,60}\s)?(?:demuestra|prueba|acredita|confirma|"
-        r"garantiza|autoriza)[^.;]{0,80}continuidad\s+económica[^.;]{0,80}1752",
+    economic_limit = any(
+        "1267" in paragraph
+        and "1752" in paragraph
+        and re.search(r"\b(?:patrimonial|compraventa|venta|transmisión)\b", paragraph)
+        and any(
+            False in _economic_polarities(proposition)
+            for proposition in propositions
+        )
+        for paragraph, propositions in paragraphs
     )
     if not economic_limit:
         errors.append(
@@ -558,40 +680,226 @@ def _validate_chapter_three_body(body: str) -> list[str]:
     return errors
 
 
+_FACSIMILE = (r"\bfacsímil\b",)
+_TRANSCRIPTION = (r"\btranscripción(?:\s+paleográfica)?\b",)
+_CRITICAL_EDITION = (r"\bedición\s+crítica\b",)
+_MODERNIZED_EDITION = (r"\bedición\s+modernizada\b", r"\bmodernizada\b")
+_INTERPRETATION = (r"\binterpretación\b",)
+_CONTENT_PATH = (r"publication/content/",)
+_GENERATED_PATH = (r"publication/generated/",)
+_DERIVATIVES = (r"\bderivad\w*\b", r"\bsalidas?\b", r"\bproductos?\b")
+_EQUALITY_PREDICATES = (
+    r"\bigual(?:es)?\b",
+    r"\bequivalent(?:e|es)\b",
+    r"\bindistinguible(?:s)?\b",
+    r"\bintercambiable(?:s)?\b",
+    r"\blo\s+mismo\b",
+    r"\bla\s+misma\s+capa\b",
+)
+
+
+def _affirms_function(
+    propositions: tuple[str, ...],
+    entity: tuple[str, ...],
+    predicates: tuple[str, ...],
+    objects: tuple[str, ...],
+) -> bool:
+    return any(
+        _matches_groups(proposition, entity, objects)
+        and True in _predicate_polarities(proposition, predicates)
+        for proposition in propositions
+    )
+
+
+def _layer_equality_polarities(proposition: str) -> set[bool]:
+    if not _matches_groups(
+        proposition,
+        _FACSIMILE,
+        _TRANSCRIPTION,
+        _CRITICAL_EDITION,
+        _MODERNIZED_EDITION,
+    ):
+        return set()
+    return _predicate_polarities(proposition, _EQUALITY_PREDICATES)
+
+
+def _pair_equality_polarities(
+    proposition: str,
+    first: tuple[str, ...],
+    second: tuple[str, ...],
+) -> set[bool]:
+    if not _matches_groups(proposition, first, second):
+        return set()
+    return _predicate_polarities(proposition, _EQUALITY_PREDICATES)
+
+
+_STORAGE_PREDICATES = (
+    r"\b(?:es|son)\b",
+    r"\bcontien\w*\b",
+    r"\balberg\w*\b",
+    r"\bguard\w*\b",
+    r"\balmacen\w*\b",
+    r"\bresid\w*\b",
+    r"\bedit\w*\b",
+    r"\bredact\w*\b",
+    r"\bmanten\w*\b",
+)
+_OUTPUT_PREDICATES = _STORAGE_PREDICATES + (
+    r"\bregener\w*\b",
+    r"\breproduc\w*\b",
+    r"\breconstru\w*\b",
+)
+_MANUAL_EDITORIAL = (
+    r"\b(?:texto|contenido|fuente|redacción)\s+editorial\b",
+    r"\bcapítulos?\b",
+)
+_HUMAN_MAINTENANCE = (
+    r"\bmanual(?:mente)?\b",
+    r"\bhuman\w*\b",
+    r"\bpor\s+personas\b",
+)
+_REGENERABLE_OUTPUT = (
+    r"\b(?:derivad\w*|salidas?|productos?|vistas?|directorio)\b",
+)
+_REGENERATION = (
+    r"\b(?:regener\w*|reproduc\w*|reconstru\w*|determinista\w*|automátic\w*)\b",
+)
+_AUTHORITY = (
+    r"\bautoridad(?:es)?(?:\s+canónica)?(?:\s+propia)?\b",
+    r"\bnuevas?\s+autoridades\b",
+)
+_AUTHORITY_POSSESSION = (
+    r"\b(?:tien\w*|adquier\w*|correspond\w*|pose\w*|goz\w*)\b",
+    r"\b(?:es|son)\b(?=[^,;:.]{0,50}\bautoridad)",
+    r"\bse\s+conviert\w*\b",
+)
+_AUTHORITY_ABSENCE = (r"\bcarec\w*\b",)
+
+
+def _content_function_is_affirmed(proposition: str) -> bool:
+    return (
+        _matches_groups(
+            proposition,
+            _CONTENT_PATH,
+            _MANUAL_EDITORIAL,
+            _HUMAN_MAINTENANCE,
+        )
+        and True in _predicate_polarities(proposition, _STORAGE_PREDICATES)
+    )
+
+
+def _generated_function_is_affirmed(proposition: str) -> bool:
+    return (
+        _matches_groups(
+            proposition,
+            _GENERATED_PATH,
+            _REGENERABLE_OUTPUT,
+            _REGENERATION,
+        )
+        and True in _predicate_polarities(proposition, _OUTPUT_PREDICATES)
+    )
+
+
+def _directory_function_is_reversed(proposition: str) -> bool:
+    content_is_generated = (
+        _matches_groups(
+            proposition,
+            _CONTENT_PATH,
+            _REGENERABLE_OUTPUT,
+            _REGENERATION,
+        )
+        and True in _predicate_polarities(proposition, _OUTPUT_PREDICATES)
+    )
+    generated_is_manual = (
+        _matches_groups(
+            proposition,
+            _GENERATED_PATH,
+            _MANUAL_EDITORIAL,
+            _HUMAN_MAINTENANCE,
+        )
+        and True in _predicate_polarities(proposition, _STORAGE_PREDICATES)
+    )
+    return content_is_generated or generated_is_manual
+
+
+def _authority_polarities(proposition: str) -> set[bool]:
+    if not _matches_any(proposition, _AUTHORITY):
+        return set()
+    if not (
+        _matches_any(proposition, _GENERATED_PATH)
+        or _matches_any(proposition, _DERIVATIVES)
+    ):
+        return set()
+    return _predicate_polarities(
+        proposition,
+        _AUTHORITY_POSSESSION,
+        _AUTHORITY_ABSENCE,
+    )
+
+
 def _validate_chapter_four_body(body: str) -> list[str]:
     """Validate stable distinctions between publication and documentary layers."""
 
     errors: list[str] = []
-    normalized = _normalized_text(body)
+    paragraphs = _controlled_paragraphs(body)
+    propositions = tuple(
+        proposition
+        for _, paragraph_propositions in paragraphs
+        for proposition in paragraph_propositions
+    )
     access = _markdown_section(body, "volumen-cuatro-accesos")
     evidence = _markdown_section(body, "volumen-evidencia")
     generated = _markdown_section(body, "volumen-content-generated")
 
-    layer_contradiction = (
-        r"facsímil[^.]{0,180}transcripción[^.]{0,180}edición\s+crítica"
-        r"[^.]{0,180}(?:edición\s+)?modernizada[^.]{0,80}"
-        r"(?:son|resultan|constituyen)[^.]{0,30}"
-        r"(?:iguales|equivalentes|indistinguibles|la\s+misma\s+capa)"
-    )
-    if re.search(layer_contradiction, normalized):
+    if any(True in _layer_equality_polarities(item) for item in propositions):
         errors.append(
             "C4_LAYERS_CONTRADICTED: las cuatro representaciones se presentan "
             "como iguales o indistinguibles"
         )
 
-    access_paragraphs = _paragraphs(access)
-    layer_functions = (
-        (r"facsímil", r"reproduce|imagen|materialidad"),
-        (r"transcripción\s+paleográfica", r"fija|línea\s+por\s+línea|conserva"),
-        (r"edición\s+crítica", r"secciones|aparato|decisiones"),
-        (r"edición\s+modernizada", r"lectura[^.]{0,60}español\s+actual|actualiza"),
+    access_propositions = tuple(
+        proposition
+        for _, paragraph_propositions in _controlled_paragraphs(access)
+        for proposition in paragraph_propositions
     )
-    distinct_layers = bool(access) and all(
-        _paragraph_matches(access_paragraphs, name, function)
-        for name, function in layer_functions
-    ) and bool(
-        re.search(
-            r"capas?[^.]{0,100}funciones?\s+(?:distintas|diferentes)", normalized
+    distinct_relation = any(
+        _matches_groups(
+            item,
+            (r"\b(?:capas?|representaciones?)\b",),
+            (r"\b(?:funciones?|cometidos?)\b",),
+        )
+        and True in _predicate_polarities(
+            item,
+            (r"\bdistint\w*\b", r"\bdiferent\w*\b", r"\bseparad\w*\b"),
+        )
+        for item in propositions
+    )
+    distinct_layers = bool(access) and distinct_relation and all(
+        (
+            _affirms_function(
+                access_propositions,
+                _FACSIMILE,
+                (r"\breproduc\w*\b", r"\bmuestr\w*\b", r"\bconserv\w*\b"),
+                (r"\bimagen\b", r"\bmaterialidad\b", r"\baspecto\s+material\b"),
+            ),
+            _affirms_function(
+                access_propositions,
+                _TRANSCRIPTION,
+                (r"\bfij\w*\b", r"\bconserv\w*\b", r"\brepresent\w*\b", r"\bregistr\w*\b"),
+                (r"\btexto\b", r"\blínea\b", r"\brenglones?\b", r"\bgrafías?\b"),
+            ),
+            _affirms_function(
+                access_propositions,
+                _CRITICAL_EDITION,
+                (r"\breún\w*\b", r"\bdocument\w*\b", r"\bexplic\w*\b", r"\bregistr\w*\b", r"\bcontien\w*\b"),
+                (r"\bsecciones?\b", r"\baparato\b", r"\bdecisiones?\b", r"\bcriterios?\b", r"\bvariantes?\b"),
+            ),
+            _affirms_function(
+                access_propositions,
+                _MODERNIZED_EDITION,
+                (r"\bofrec\w*\b", r"\bactualiz\w*\b", r"\bfacilit\w*\b", r"\bpresent\w*\b"),
+                (r"\blectura\b", r"\bespañol\s+actual\b", r"\bcontemporánea\b"),
+            ),
         )
     )
     if not distinct_layers:
@@ -600,26 +908,30 @@ def _validate_chapter_four_body(body: str) -> list[str]:
             "transcripción, edición crítica y modernizada"
         )
 
-    transcription_contradiction = (
-        r"transcripción[^.]{0,100}interpretación[^.]{0,50}"
-        r"(?:son|constituyen|representan)[^.]{0,20}"
-        r"(?:lo\s+mismo|iguales|equivalentes|indistinguibles)"
-        r"|transcripción[^.]{0,60}(?:\bes\b|equivale\s+a|se\s+confunde\s+con)"
-        r"[^.]{0,30}(?:la\s+)?interpretación"
-    )
-    if re.search(transcription_contradiction, normalized):
+    if any(
+        True in _pair_equality_polarities(item, _TRANSCRIPTION, _INTERPRETATION)
+        for item in propositions
+    ):
         errors.append(
             "C4_TRANSCRIPTION_INTERPRETATION_REVERSED: transcripción e "
             "interpretación se presentan como la misma operación"
         )
 
-    evidence_paragraphs = _paragraphs(evidence)
-    separates_interpretation = _paragraph_matches(
-        evidence_paragraphs,
-        r"transcripción",
-        r"interpretación",
-        r"transcripción[^.;]{0,80}(?:establece|fija|registra)[^.;]{0,80}fuente",
-        r"interpretación[^.;]{0,80}(?:pregunta|explica|interpreta|significa)",
+    evidence_paragraphs = _controlled_paragraphs(evidence)
+    separates_interpretation = any(
+        _affirms_function(
+            paragraph_propositions,
+            _TRANSCRIPTION,
+            (r"\bestablec\w*\b", r"\bfij\w*\b", r"\bregistr\w*\b", r"\bconsign\w*\b"),
+            (r"\bfuente\b", r"\btexto\b", r"\btenor\b", r"\bqué\s+dice\b"),
+        )
+        and _affirms_function(
+            paragraph_propositions,
+            _INTERPRETATION,
+            (r"\bpregunt\w*\b", r"\bexplic\w*\b", r"\binterpret\w*\b", r"\bsignific\w*\b", r"\bofrec\w*\b"),
+            (r"\bhistóric\w*\b", r"\bsignific\w*\b", r"\blectura\b", r"\bqué\s+puede\b"),
+        )
+        for _, paragraph_propositions in evidence_paragraphs
     )
     if not separates_interpretation:
         errors.append(
@@ -627,57 +939,46 @@ def _validate_chapter_four_body(body: str) -> list[str]:
             "transcripción de lo que interpreta el estudio"
         )
 
-    same_directory_layer = (
-        r"publication/content/[^.]{0,100}publication/generated/[^.]{0,60}"
-        r"(?:son|constituyen|representan)[^.]{0,20}"
-        r"(?:la\s+misma\s+capa|iguales|equivalentes|indistinguibles)"
-    )
-    if re.search(same_directory_layer, normalized):
+    if any(
+        True in _pair_equality_polarities(item, _CONTENT_PATH, _GENERATED_PATH)
+        for item in propositions
+    ):
         errors.append(
             "C4_CONTENT_GENERATED_SAME: content/ y generated/ se presentan como "
             "la misma capa"
         )
 
-    content_inverted = re.search(
-        r"publication/content/[^.]{0,60}(?:es|contiene|alberga)[^.]{0,50}"
-        r"(?:regenerad|derivad|generad\w*\s+automát)",
-        normalized,
-    )
-    generated_inverted = re.search(
-        r"publication/generated/[^.]{0,60}(?:es|contiene|alberga)[^.]{0,60}"
-        r"(?:fuente|texto|contenido)\s+editorial[^.]{0,40}(?:manual|human)",
-        normalized,
-    )
-    if content_inverted or generated_inverted:
+    if any(_directory_function_is_reversed(item) for item in propositions):
         errors.append(
             "C4_DIRECTORY_FUNCTIONS_REVERSED: se invierten las funciones de "
             "publication/content/ y publication/generated/"
         )
 
-    generated_authority = re.search(
-        r"(?:derivados|publication/generated/)[^.]{0,100}"
-        r"(?:(?<!no )son|tienen|adquieren|(?<!no )(?<!ni )se\s+convierten\s+en)"
-        r"[^.]{0,40}(?:autoridad\s+canónica|autoridad\s+propia|nuevas?\s+autoridades?)",
-        normalized,
-    )
-    if generated_authority:
+    authority_polarities = {
+        polarity
+        for item in propositions
+        for polarity in _authority_polarities(item)
+    }
+    if True in authority_polarities:
         errors.append(
             "C4_GENERATED_AUTHORITY: los derivados reciben autoridad canónica propia"
         )
 
-    generated_paragraphs = _paragraphs(generated)
-    separates_directories = _paragraph_matches(
-        generated_paragraphs,
-        r"publication/content/",
-        r"publication/generated/",
-        r"edit\w*\s+manualmente|manten\w*\s+(?:por\s+personas|de\s+forma\s+humana)",
-        r"regener\w*|reproduc\w*",
-        r"derivad",
+    generated_propositions = tuple(
+        proposition
+        for _, paragraph_propositions in _controlled_paragraphs(generated)
+        for proposition in paragraph_propositions
     )
-    generated_lacks_authority = _paragraph_matches(
-        generated_paragraphs,
-        r"derivad",
-        r"no[^.]{0,60}(?:autoridad|autoridades)",
+    separates_directories = (
+        any(_content_function_is_affirmed(item) for item in generated_propositions)
+        and any(
+            _generated_function_is_affirmed(item)
+            for item in generated_propositions
+        )
+    )
+    generated_lacks_authority = any(
+        False in _authority_polarities(item)
+        for item in generated_propositions
     )
     if not separates_directories or not generated_lacks_authority:
         errors.append(

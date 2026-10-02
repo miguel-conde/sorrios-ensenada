@@ -91,6 +91,19 @@ def replace_once(text: str, pattern: str, replacement: str) -> str:
     return mutated
 
 
+def replace_section(text: str, anchor: str, replacement: str) -> str:
+    pattern = rf"(^##[^\n]*\{{#{re.escape(anchor)}\}}[^\n]*\n).*?(?=^##\s+|\Z)"
+    mutated, count = re.subn(
+        pattern,
+        rf"\1\n{replacement}\n\n",
+        text,
+        count=1,
+        flags=re.IGNORECASE | re.MULTILINE | re.DOTALL,
+    )
+    assert count == 1, f"La mutación no encontró la sección: {anchor}"
+    return mutated
+
+
 def error_codes(errors: list[str]) -> set[str]:
     return {error.partition(":")[0] for error in errors}
 
@@ -296,6 +309,22 @@ def test_document_parser_rejects_missing_incomplete_or_invalid_front_matter(
         validator._parse_document(document, "mutacion.qmd")
 
 
+def test_relation_segmentation_keeps_colon_context_and_splits_semicolon_clauses():
+    paragraphs = validator._controlled_paragraphs(
+        "Son indistinguibles: facsímil y transcripción.\n\n"
+        "publication/content/ contiene texto editorial; "
+        "publication/generated/ contiene derivados."
+    )
+
+    assert paragraphs[0][1] == (
+        "son indistinguibles: facsímil y transcripción.",
+    )
+    assert paragraphs[1][1] == (
+        "publication/content/ contiene texto editorial",
+        "publication/generated/ contiene derivados.",
+    )
+
+
 def test_chapter_three_cautions_in_front_matter_do_not_satisfy_body_validation():
     path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
     _, body = validator._front_matter_and_body(path)
@@ -353,46 +382,89 @@ def test_chapter_three_rejects_missing_economic_continuity_limit():
     )
 
 
-def test_chapter_three_rejects_positive_complete_phonetic_sequence():
+@pytest.mark.parametrize(
+    "statement",
+    (
+        "Una secuencia fonética completa sí existe.",
+        "Existe una secuencia fonética completa.",
+    ),
+)
+def test_chapter_three_rejects_positive_complete_phonetic_sequence(statement):
     path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
     _, body = validator._front_matter_and_body(path)
     mutated = replace_once(
         body,
         r"no\s+proporciona\s+una\s+secuencia\s+fonética\s+completa",
-        "proporciona una secuencia fonética completa",
+        "no proporciona una secuencia fonética completa. " + statement,
     )
 
-    assert "C3_PHONETIC_REVERSAL" in error_codes(
-        validator._validate_chapter_three_body(mutated)
-    )
+    assert error_codes(validator._validate_chapter_three_body(mutated)) == {
+        "C3_PHONETIC_REVERSAL"
+    }
 
 
-def test_chapter_three_rejects_positive_economic_continuity():
+@pytest.mark.parametrize(
+    "statement",
+    (
+        "Entre 1267 y 1752 está demostrada la continuidad económica.",
+        "Está probada la continuidad económica desde 1267 hasta 1752.",
+    ),
+)
+def test_chapter_three_rejects_positive_economic_continuity(statement):
     path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
     _, body = validator._front_matter_and_body(path)
     mutated = replace_once(
         body,
         r"no\s+demuestra\s+continuidad\s+económica\s+automática\s+hasta\s+1752",
-        "demuestra continuidad económica automática hasta 1752",
+        "no demuestra continuidad económica automática hasta 1752. " + statement,
     )
 
-    assert "C3_ECONOMIC_CONTINUITY_REVERSAL" in error_codes(
-        validator._validate_chapter_three_body(mutated)
-    )
+    assert error_codes(validator._validate_chapter_three_body(mutated)) == {
+        "C3_ECONOMIC_CONTINUITY_REVERSAL"
+    }
 
 
-def test_chapter_three_accepts_equivalent_limit_wording():
-    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
-    _, body = validator._front_matter_and_body(path)
-    mutated = replace_once(
-        body,
-        r"no\s+proporciona\s+una\s+secuencia\s+fonética\s+completa",
+@pytest.mark.parametrize(
+    "wording",
+    (
+        "no existe una secuencia fonética completa",
+        "una secuencia fonética completa no existe",
         "no permite reconstruir una secuencia fonética completa",
-    )
+        "nunca existe una secuencia fonética completa",
+        "tampoco existe una secuencia fonética completa",
+        "sin disponer de una secuencia fonética completa",
+    ),
+)
+def test_chapter_three_accepts_equivalent_phonetic_limits(wording):
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    _, body = validator._front_matter_and_body(path)
     mutated = replace_once(
-        mutated,
-        r"no\s+demuestra\s+continuidad\s+económica\s+automática\s+hasta\s+1752",
+        body,
+        r"no\s+proporciona\s+una\s+secuencia\s+fonética\s+completa",
+        wording,
+    )
+
+    assert validator._validate_chapter_three_body(mutated) == []
+
+
+@pytest.mark.parametrize(
+    "wording",
+    (
+        "no hay continuidad económica demostrada entre 1267 y 1752",
+        "entre 1267 y 1752 no está demostrada la continuidad económica",
         "no autoriza a afirmar continuidad económica hasta 1752",
+        "nunca demuestra continuidad económica automática hasta 1752",
+        "tampoco prueba continuidad económica entre 1267 y 1752",
+        "sin continuidad económica demostrada entre 1267 y 1752",
+    ),
+)
+def test_chapter_three_accepts_equivalent_economic_limits(wording):
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    _, body = validator._front_matter_and_body(path)
+    mutated = replace_once(
+        body,
+        r"no\s+demuestra\s+continuidad\s+económica\s+automática\s+hasta\s+1752",
+        wording,
     )
 
     assert validator._validate_chapter_three_body(mutated) == []
@@ -407,7 +479,16 @@ def test_chapter_three_accepts_equivalent_limit_wording():
             "C4_LAYERS_CONTRADICTED",
         ),
         (
+            "Las cuatro capas son indistinguibles: el facsímil, la transcripción "
+            "paleográfica, la edición crítica y la modernizada.",
+            "C4_LAYERS_CONTRADICTED",
+        ),
+        (
             "La transcripción y la interpretación son lo mismo.",
+            "C4_TRANSCRIPTION_INTERPRETATION_REVERSED",
+        ),
+        (
+            "La interpretación y la transcripción son equivalentes.",
             "C4_TRANSCRIPTION_INTERPRETATION_REVERSED",
         ),
         (
@@ -415,7 +496,15 @@ def test_chapter_three_accepts_equivalent_limit_wording():
             "C4_CONTENT_GENERATED_SAME",
         ),
         (
+            "publication/generated/ y publication/content/ son la misma capa.",
+            "C4_CONTENT_GENERATED_SAME",
+        ),
+        (
             "publication/content/ es el directorio regenerado automáticamente.",
+            "C4_DIRECTORY_FUNCTIONS_REVERSED",
+        ),
+        (
+            "Las salidas regenerables se almacenan en publication/content/.",
             "C4_DIRECTORY_FUNCTIONS_REVERSED",
         ),
         (
@@ -423,7 +512,17 @@ def test_chapter_three_accepts_equivalent_limit_wording():
             "C4_DIRECTORY_FUNCTIONS_REVERSED",
         ),
         (
+            "La fuente editorial mantenida manualmente se guarda en "
+            "publication/generated/.",
+            "C4_DIRECTORY_FUNCTIONS_REVERSED",
+        ),
+        (
             "Los derivados de publication/generated/ tienen autoridad canónica propia.",
+            "C4_GENERATED_AUTHORITY",
+        ),
+        (
+            "La autoridad canónica propia corresponde a los derivados de "
+            "publication/generated/.",
             "C4_GENERATED_AUTHORITY",
         ),
     ),
@@ -432,9 +531,76 @@ def test_chapter_four_rejects_semantic_reversals(mutation, expected_code):
     path = ROOT / "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
     _, body = validator._front_matter_and_body(path)
 
-    assert expected_code in error_codes(
+    assert error_codes(
         validator._validate_chapter_four_body(f"{body}\n\n{mutation}\n")
-    )
+    ) == {expected_code}
+
+
+@pytest.mark.parametrize(
+    ("anchor", "replacement", "expected_code"),
+    (
+        (
+            "volumen-cuatro-accesos",
+            "El facsímil no reproduce la imagen ni conserva la materialidad.\n\n"
+            "La transcripción paleográfica nunca fija ni conserva el texto línea "
+            "por línea.\n\n"
+            "La edición crítica tampoco contiene secciones, aparato ni decisiones.\n\n"
+            "La edición modernizada no actualiza ni ofrece una lectura en español "
+            "actual.",
+            "C4_LAYER_FUNCTIONS",
+        ),
+        (
+            "volumen-evidencia",
+            "La transcripción no establece qué dice la fuente; la interpretación "
+            "tampoco explica qué significa históricamente.",
+            "C4_TRANSCRIPTION_INTERPRETATION",
+        ),
+        (
+            "volumen-content-generated",
+            "publication/content/ no contiene texto editorial mantenido de forma "
+            "humana; publication/generated/ tampoco contiene derivados "
+            "reproducibles que se regeneran. Esos derivados no tienen autoridad "
+            "canónica propia.",
+            "C4_CONTENT_GENERATED_FUNCTIONS",
+        ),
+    ),
+)
+def test_chapter_four_rejects_negated_expected_functions(
+    anchor, replacement, expected_code
+):
+    path = ROOT / "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
+    _, body = validator._front_matter_and_body(path)
+    mutated = replace_section(body, anchor, replacement)
+
+    assert error_codes(validator._validate_chapter_four_body(mutated)) == {
+        expected_code
+    }
+
+
+@pytest.mark.parametrize(
+    "replacement",
+    (
+        "publication/content/ contiene texto editorial mantenido de forma humana; "
+        "publication/generated/ contiene derivados reproducibles que se regeneran. "
+        "Esos derivados no tienen autoridad canónica propia.",
+        "publication/generated/ contiene derivados reproducibles que se regeneran; "
+        "publication/content/ contiene texto editorial mantenido de forma humana. "
+        "Ninguna autoridad canónica propia corresponde a los derivados.",
+        "El texto editorial redactado humanamente se guarda en publication/content/; "
+        "las salidas reproducibles se regeneran en publication/generated/. Los "
+        "derivados carecen de autoridad canónica propia.",
+        "publication/content/ contiene texto editorial mantenido de forma humana; "
+        "publication/generated/ no contiene una fuente editorial mantenida "
+        "manualmente, sino derivados reproducibles que se regeneran. Esos derivados "
+        "no tienen autoridad canónica propia.",
+    ),
+)
+def test_chapter_four_accepts_equivalent_directory_relations(replacement):
+    path = ROOT / "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
+    _, body = validator._front_matter_and_body(path)
+    mutated = replace_section(body, "volumen-content-generated", replacement)
+
+    assert validator._validate_chapter_four_body(mutated) == []
 
 
 @pytest.mark.parametrize(
