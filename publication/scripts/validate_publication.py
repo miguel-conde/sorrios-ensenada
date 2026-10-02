@@ -426,15 +426,265 @@ def validate_rendered_outputs() -> list[str]:
     return errors
 
 
-def _front_matter(path: Path) -> dict:
-    text = path.read_text(encoding="utf-8")
-    if not text.startswith("---\n"):
-        raise ValueError(f"{path} no comienza con front matter")
-    _, metadata, _ = text.split("---", 2)
-    data = yaml.safe_load(metadata)
+def _parse_document(text: str, source: str | Path) -> tuple[dict, str]:
+    """Split an initial YAML front matter block from reader-facing Markdown."""
+
+    lines = text.splitlines(keepends=True)
+    if not lines or lines[0].rstrip("\r\n") != "---":
+        raise ValueError(f"{source} no comienza con front matter delimitado por ---")
+
+    closing = next(
+        (
+            index
+            for index, line in enumerate(lines[1:], start=1)
+            if line.rstrip("\r\n") == "---"
+        ),
+        None,
+    )
+    if closing is None:
+        raise ValueError(f"Front matter sin delimitador de cierre en {source}")
+
+    metadata_text = "".join(lines[1:closing])
+    try:
+        data = yaml.safe_load(metadata_text)
+    except yaml.YAMLError as exc:
+        raise ValueError(f"Front matter YAML inválido en {source}: {exc}") from exc
     if not isinstance(data, dict):
-        raise ValueError(f"Front matter inválido en {path}")
-    return data
+        raise ValueError(f"Front matter inválido en {source}: se esperaba un mapa YAML")
+    return data, "".join(lines[closing + 1:])
+
+
+def _front_matter_and_body(path: Path) -> tuple[dict, str]:
+    return _parse_document(path.read_text(encoding="utf-8"), path)
+
+
+def _front_matter(path: Path) -> dict:
+    return _front_matter_and_body(path)[0]
+
+
+def _normalized_text(text: str) -> str:
+    return re.sub(r"\s+", " ", text).casefold().strip()
+
+
+def _markdown_section(body: str, anchor: str) -> str:
+    heading = re.search(
+        rf"^##\s+.+?\s+\{{#{re.escape(anchor)}\}}\s*$",
+        body,
+        re.MULTILINE,
+    )
+    if heading is None:
+        return ""
+    following = re.search(r"^##\s+", body[heading.end():], re.MULTILINE)
+    end = heading.end() + following.start() if following else len(body)
+    return body[heading.end():end]
+
+
+def _paragraphs(markdown: str) -> tuple[str, ...]:
+    return tuple(
+        normalized
+        for block in re.split(r"\n\s*\n", markdown)
+        if (normalized := _normalized_text(block))
+    )
+
+
+def _paragraph_matches(paragraphs: tuple[str, ...], *patterns: str) -> bool:
+    return any(
+        all(re.search(pattern, paragraph) for pattern in patterns)
+        for paragraph in paragraphs
+    )
+
+
+def _validate_chapter_three_body(body: str) -> list[str]:
+    """Validate the two historical limits in their toponymic context."""
+
+    errors: list[str] = []
+    section = _markdown_section(body, "expediente-toponimo")
+    if not section:
+        return ["C3_TOPONYM_SECTION: falta la sección histórica del topónimo"]
+    normalized = _normalized_text(section)
+    paragraphs = _paragraphs(section)
+
+    phonetic_reversal = (
+        r"(?:sí\s+)?(?:existe|hay|demuestra|prueba|acredita)\s+"
+        r"(?:una\s+)?secuencia\s+fonética\s+completa"
+        r"|(?:(?<!no )se\s+puede|(?<!no )(?<!ni )permite)\s+reconstruir\s+"
+        r"(?:una\s+)?secuencia\s+fonética\s+completa"
+        r"|(?<!no )(?<!ni )proporciona\s+"
+        r"(?:una\s+)?secuencia\s+fonética\s+completa"
+    )
+    if re.search(phonetic_reversal, normalized):
+        errors.append(
+            "C3_PHONETIC_REVERSAL: el capítulo afirma una secuencia fonética completa"
+        )
+
+    phonetic_limit = _paragraph_matches(
+        paragraphs,
+        r"sorrios\s+actual|actual(?:mente)?[^.]{0,80}sorrios",
+        r"identific\w*[^.]{0,100}segur|segur\w*[^.]{0,100}identific",
+        r"(?:no|sin)\s+(?:[^.;]{0,60}\s)?(?:secuencia|evolución|reconstrucción)"
+        r"[^.;]{0,60}fonétic|no\s+(?:proporciona|permite|demuestra|prueba|acredita)"
+        r"[^.;]{0,50}secuencia\s+fonética\s+completa",
+    )
+    if not phonetic_limit:
+        errors.append(
+            "C3_PHONETIC_LIMIT: falta relacionar la identificación segura de Sorrios "
+            "con el límite de la secuencia fonética"
+        )
+
+    economic_reversal = (
+        r"(?<!no )(?<!ni )(?:sí\s+)?(?:demuestra|prueba|acredita|confirma|garantiza)"
+        r"[^.;]{0,70}continuidad\s+económica[^.;]{0,70}1752"
+        r"|continuidad\s+económica\s+(?:demostrada|probada|acreditada)"
+        r"[^.;]{0,70}1752"
+    )
+    if re.search(economic_reversal, normalized):
+        errors.append(
+            "C3_ECONOMIC_CONTINUITY_REVERSAL: el capítulo afirma continuidad "
+            "económica demostrada entre 1267 y 1752"
+        )
+
+    economic_limit = _paragraph_matches(
+        paragraphs,
+        r"1267",
+        r"patrimonial|compraventa|venta|transmisión",
+        r"(?:no|sin)\s+(?:[^.;]{0,60}\s)?(?:demuestra|prueba|acredita|confirma|"
+        r"garantiza|autoriza)[^.;]{0,80}continuidad\s+económica[^.;]{0,80}1752",
+    )
+    if not economic_limit:
+        errors.append(
+            "C3_PATRIMONIAL_LIMIT: falta relacionar la evidencia patrimonial de "
+            "1267 con el límite de continuidad económica hasta 1752"
+        )
+    return errors
+
+
+def _validate_chapter_four_body(body: str) -> list[str]:
+    """Validate stable distinctions between publication and documentary layers."""
+
+    errors: list[str] = []
+    normalized = _normalized_text(body)
+    access = _markdown_section(body, "volumen-cuatro-accesos")
+    evidence = _markdown_section(body, "volumen-evidencia")
+    generated = _markdown_section(body, "volumen-content-generated")
+
+    layer_contradiction = (
+        r"facsímil[^.]{0,180}transcripción[^.]{0,180}edición\s+crítica"
+        r"[^.]{0,180}(?:edición\s+)?modernizada[^.]{0,80}"
+        r"(?:son|resultan|constituyen)[^.]{0,30}"
+        r"(?:iguales|equivalentes|indistinguibles|la\s+misma\s+capa)"
+    )
+    if re.search(layer_contradiction, normalized):
+        errors.append(
+            "C4_LAYERS_CONTRADICTED: las cuatro representaciones se presentan "
+            "como iguales o indistinguibles"
+        )
+
+    access_paragraphs = _paragraphs(access)
+    layer_functions = (
+        (r"facsímil", r"reproduce|imagen|materialidad"),
+        (r"transcripción\s+paleográfica", r"fija|línea\s+por\s+línea|conserva"),
+        (r"edición\s+crítica", r"secciones|aparato|decisiones"),
+        (r"edición\s+modernizada", r"lectura[^.]{0,60}español\s+actual|actualiza"),
+    )
+    distinct_layers = bool(access) and all(
+        _paragraph_matches(access_paragraphs, name, function)
+        for name, function in layer_functions
+    ) and bool(
+        re.search(
+            r"capas?[^.]{0,100}funciones?\s+(?:distintas|diferentes)", normalized
+        )
+    )
+    if not distinct_layers:
+        errors.append(
+            "C4_LAYER_FUNCTIONS: falta distinguir las funciones propias de facsímil, "
+            "transcripción, edición crítica y modernizada"
+        )
+
+    transcription_contradiction = (
+        r"transcripción[^.]{0,100}interpretación[^.]{0,50}"
+        r"(?:son|constituyen|representan)[^.]{0,20}"
+        r"(?:lo\s+mismo|iguales|equivalentes|indistinguibles)"
+        r"|transcripción[^.]{0,60}(?:\bes\b|equivale\s+a|se\s+confunde\s+con)"
+        r"[^.]{0,30}(?:la\s+)?interpretación"
+    )
+    if re.search(transcription_contradiction, normalized):
+        errors.append(
+            "C4_TRANSCRIPTION_INTERPRETATION_REVERSED: transcripción e "
+            "interpretación se presentan como la misma operación"
+        )
+
+    evidence_paragraphs = _paragraphs(evidence)
+    separates_interpretation = _paragraph_matches(
+        evidence_paragraphs,
+        r"transcripción",
+        r"interpretación",
+        r"transcripción[^.;]{0,80}(?:establece|fija|registra)[^.;]{0,80}fuente",
+        r"interpretación[^.;]{0,80}(?:pregunta|explica|interpreta|significa)",
+    )
+    if not separates_interpretation:
+        errors.append(
+            "C4_TRANSCRIPTION_INTERPRETATION: falta separar lo que fija la "
+            "transcripción de lo que interpreta el estudio"
+        )
+
+    same_directory_layer = (
+        r"publication/content/[^.]{0,100}publication/generated/[^.]{0,60}"
+        r"(?:son|constituyen|representan)[^.]{0,20}"
+        r"(?:la\s+misma\s+capa|iguales|equivalentes|indistinguibles)"
+    )
+    if re.search(same_directory_layer, normalized):
+        errors.append(
+            "C4_CONTENT_GENERATED_SAME: content/ y generated/ se presentan como "
+            "la misma capa"
+        )
+
+    content_inverted = re.search(
+        r"publication/content/[^.]{0,60}(?:es|contiene|alberga)[^.]{0,50}"
+        r"(?:regenerad|derivad|generad\w*\s+automát)",
+        normalized,
+    )
+    generated_inverted = re.search(
+        r"publication/generated/[^.]{0,60}(?:es|contiene|alberga)[^.]{0,60}"
+        r"(?:fuente|texto|contenido)\s+editorial[^.]{0,40}(?:manual|human)",
+        normalized,
+    )
+    if content_inverted or generated_inverted:
+        errors.append(
+            "C4_DIRECTORY_FUNCTIONS_REVERSED: se invierten las funciones de "
+            "publication/content/ y publication/generated/"
+        )
+
+    generated_authority = re.search(
+        r"(?:derivados|publication/generated/)[^.]{0,100}"
+        r"(?:(?<!no )son|tienen|adquieren|(?<!no )(?<!ni )se\s+convierten\s+en)"
+        r"[^.]{0,40}(?:autoridad\s+canónica|autoridad\s+propia|nuevas?\s+autoridades?)",
+        normalized,
+    )
+    if generated_authority:
+        errors.append(
+            "C4_GENERATED_AUTHORITY: los derivados reciben autoridad canónica propia"
+        )
+
+    generated_paragraphs = _paragraphs(generated)
+    separates_directories = _paragraph_matches(
+        generated_paragraphs,
+        r"publication/content/",
+        r"publication/generated/",
+        r"edit\w*\s+manualmente|manten\w*\s+(?:por\s+personas|de\s+forma\s+humana)",
+        r"regener\w*|reproduc\w*",
+        r"derivad",
+    )
+    generated_lacks_authority = _paragraph_matches(
+        generated_paragraphs,
+        r"derivad",
+        r"no[^.]{0,60}(?:autoridad|autoridades)",
+    )
+    if not separates_directories or not generated_lacks_authority:
+        errors.append(
+            "C4_CONTENT_GENERATED_FUNCTIONS: falta separar el contenido editorial "
+            "humano de los derivados regenerables sin autoridad propia"
+        )
+    return errors
 
 
 def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
@@ -580,15 +830,17 @@ def validate() -> list[str]:
         (CHAPTER_FOUR, "Del manuscrito al volumen actual",
          "manuscrito-volumen-actual", CHAPTER_FOUR_SOURCE_PATHS, None, 4),
     )
+    chapter_bodies: dict[int, str] = {}
     for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
         if not path.is_file():
             errors.append(f"Falta el capítulo {number}: {path}")
             continue
         try:
-            chapter_metadata = _front_matter(path)
+            chapter_metadata, chapter_body = _front_matter_and_body(path)
         except (OSError, ValueError, yaml.YAMLError) as exc:
             errors.append(str(exc))
             continue
+        chapter_bodies[number] = chapter_body
         if chapter_metadata.get("title") != title:
             errors.append(f"Título incorrecto en el capítulo {number}")
         if chapter_metadata.get("chapter-id") != chapter_id:
@@ -611,8 +863,8 @@ def validate() -> list[str]:
             errors.append("Evidencia D/I/E incorrecta en el capítulo 3")
 
     if CHAPTER_THREE.is_file():
-        chapter_three_text = CHAPTER_THREE.read_text(encoding="utf-8")
-        normalized_three = re.sub(r"\s+", " ", chapter_three_text).casefold()
+        chapter_three_text = chapter_bodies.get(3, "")
+        normalized_three = _normalized_text(chapter_three_text)
         required_three = (
             "17 de septiembre de 1752", "joaquín aguado",
             "manuel antonio de bega", "juan álvarez", "remirio rodríguez",
@@ -620,8 +872,6 @@ def validate() -> list[str]:
             "manuel antonio alonso", "excepto el cura", "18 páginas digitales",
             "35 unidades documentales", "cuarenta respuestas",
             "dos rúbricas gráficas inferiores",
-            "no demuestra continuidad económica automática hasta 1752",
-            "no proporciona una secuencia fonética completa",
             "69 años", "49 años", "59 años", "52 años", "44 años",
         )
         for phrase in required_three:
@@ -637,10 +887,11 @@ def validate() -> list[str]:
             errors.append("El capítulo 3 invade la explicación técnica del capítulo 4")
         if re.search(r"<[A-Za-z][^>]*>", chapter_three_text):
             errors.append("El capítulo 3 contiene HTML crudo")
+        errors.extend(_validate_chapter_three_body(chapter_three_text))
 
     if CHAPTER_FOUR.is_file():
-        chapter_four_text = CHAPTER_FOUR.read_text(encoding="utf-8")
-        normalized_four = re.sub(r"\s+", " ", chapter_four_text).casefold()
+        chapter_four_text = chapter_bodies.get(4, "")
+        normalized_four = _normalized_text(chapter_four_text)
         required_four = (
             "pdf manuscrito autoritativo", "18 páginas digitales",
             "35 unidades documentales", "facsímil",
@@ -668,6 +919,7 @@ def validate() -> list[str]:
                 errors.append(f"El capítulo 4 invade la narración con {participant}")
         if re.search(r"<[A-Za-z][^>]*>", chapter_four_text):
             errors.append("El capítulo 4 contiene HTML crudo")
+        errors.extend(_validate_chapter_four_body(chapter_four_text))
 
     if not PROTOTYPE_CHAPTER.is_file():
         return errors + [f"Falta el capítulo editorial: {PROTOTYPE_CHAPTER}"]

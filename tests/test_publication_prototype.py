@@ -82,9 +82,17 @@ CHAPTER_TWO_LINKS = {
 
 
 def read_front_matter(path: Path) -> dict:
-    text = path.read_text(encoding="utf-8")
-    _, metadata, _ = text.split("---", 2)
-    return yaml.safe_load(metadata)
+    return validator._front_matter_and_body(path)[0]
+
+
+def replace_once(text: str, pattern: str, replacement: str) -> str:
+    mutated, count = re.subn(pattern, replacement, text, count=1, flags=re.IGNORECASE)
+    assert count == 1, f"La mutación no encontró su objetivo: {pattern}"
+    return mutated
+
+
+def error_codes(errors: list[str]) -> set[str]:
+    return {error.partition(":")[0] for error in errors}
 
 
 def test_vertical_sample_is_strictly_fixed():
@@ -216,10 +224,9 @@ def test_chapter_three_has_controlled_provenance_and_registered_evidence():
 
 
 def test_chapter_three_preserves_facts_toponym_limits_and_scope():
-    text = (
-        ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
-    ).read_text(encoding="utf-8")
-    normalized = re.sub(r"\s+", " ", text).casefold()
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    _, body = validator._front_matter_and_body(path)
+    normalized = re.sub(r"\s+", " ", body).casefold()
 
     required = (
         "17 de septiembre de 1752", "joaquín aguado", "manuel antonio de bega",
@@ -227,23 +234,21 @@ def test_chapter_three_preserves_facts_toponym_limits_and_scope():
         "francisco de llorca", "domingo suárez", "manuel antonio alonso",
         "excepto el cura", "18 páginas digitales", "35 unidades documentales",
         "cuarenta respuestas", "dos rúbricas gráficas inferiores",
-        "no demuestra continuidad económica automática hasta 1752",
-        "no proporciona una secuencia fonética completa",
         "69 años", "49 años", "59 años", "52 años", "44 años",
     )
     assert all(phrase in normalized for phrase in required)
-    assert all(form in text for form in ("Sorribios", "Sorribos", "Sorrios"))
+    assert all(form in body for form in ("Sorribios", "Sorribos", "Sorrios"))
     assert "sorribas" not in normalized
-    assert "(04-manuscrito-volumen-actual.qmd)" in text
-    assert "publication/generated/" not in text
-    assert not re.search(r"<[A-Za-z][^>]*>", text)
+    assert "(04-manuscrito-volumen-actual.qmd)" in body
+    assert "publication/generated/" not in body
+    assert not re.search(r"<[A-Za-z][^>]*>", body)
+    assert validator._validate_chapter_three_body(body) == []
 
 
 def test_chapter_four_separates_editorial_layers_and_provenance():
     path = ROOT / "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
-    metadata = read_front_matter(path)
-    text = path.read_text(encoding="utf-8")
-    normalized = re.sub(r"\s+", " ", text).casefold()
+    metadata, body = validator._front_matter_and_body(path)
+    normalized = re.sub(r"\s+", " ", body).casefold()
 
     assert metadata["title"] == "Del manuscrito al volumen actual"
     assert metadata["chapter-id"] == "manuscrito-volumen-actual"
@@ -268,11 +273,169 @@ def test_chapter_four_separates_editorial_layers_and_provenance():
         for level in ("d — dato", "c — cálculo", "i — interpretación",
                       "e — contexto", "l — límite")
     )
-    assert "(03-expediente-sorribos-santibanez.qmd)" in text
-    assert not any(name in text for name in ("Joaquín Aguado", "Remirio Rodríguez"))
-    assert not re.search(r"(?:/home/|/tmp/|[A-Za-z]:\\\\)", text)
+    assert "(03-expediente-sorribos-santibanez.qmd)" in body
+    assert not any(name in body for name in ("Joaquín Aguado", "Remirio Rodríguez"))
+    assert not re.search(r"(?:/home/|/tmp/|[A-Za-z]:\\\\)", body)
     assert "base64" not in normalized
-    assert not re.search(r"<[A-Za-z][^>]*>", text)
+    assert not re.search(r"<[A-Za-z][^>]*>", body)
+    assert validator._validate_chapter_four_body(body) == []
+
+
+@pytest.mark.parametrize(
+    ("document", "message"),
+    (
+        ("Texto sin cabecera", "no comienza con front matter"),
+        ("---\ntitle: incompleto\nTexto", "sin delimitador de cierre"),
+        ("---\ntitle: [\n---\nTexto", "YAML inválido"),
+    ),
+)
+def test_document_parser_rejects_missing_incomplete_or_invalid_front_matter(
+    document, message
+):
+    with pytest.raises(ValueError, match=message):
+        validator._parse_document(document, "mutacion.qmd")
+
+
+def test_chapter_three_cautions_in_front_matter_do_not_satisfy_body_validation():
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    _, body = validator._front_matter_and_body(path)
+    body = replace_once(
+        body,
+        r"no\s+demuestra\s+continuidad\s+económica\s+automática\s+hasta\s+1752",
+        "describe una transmisión patrimonial determinada",
+    )
+    body = replace_once(
+        body,
+        r"no\s+proporciona\s+una\s+secuencia\s+fonética\s+completa",
+        "documenta varios estados del nombre",
+    )
+    document = (
+        "---\n"
+        "audit-carrier: >-\n"
+        "  no demuestra continuidad económica automática hasta 1752;\n"
+        "  no proporciona una secuencia fonética completa\n"
+        "---\n"
+        f"{body}"
+    )
+    _, parsed_body = validator._parse_document(document, "mutacion.qmd")
+
+    assert error_codes(validator._validate_chapter_three_body(parsed_body)) >= {
+        "C3_PHONETIC_LIMIT",
+        "C3_PATRIMONIAL_LIMIT",
+    }
+
+
+def test_chapter_three_rejects_missing_phonetic_limit():
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    _, body = validator._front_matter_and_body(path)
+    mutated = replace_once(
+        body,
+        r"no\s+proporciona\s+una\s+secuencia\s+fonética\s+completa",
+        "documenta varios estados del nombre",
+    )
+
+    assert "C3_PHONETIC_LIMIT" in error_codes(
+        validator._validate_chapter_three_body(mutated)
+    )
+
+
+def test_chapter_three_rejects_missing_economic_continuity_limit():
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    _, body = validator._front_matter_and_body(path)
+    mutated = replace_once(
+        body,
+        r"no\s+demuestra\s+continuidad\s+económica\s+automática\s+hasta\s+1752",
+        "describe una transmisión patrimonial determinada",
+    )
+
+    assert "C3_PATRIMONIAL_LIMIT" in error_codes(
+        validator._validate_chapter_three_body(mutated)
+    )
+
+
+def test_chapter_three_rejects_positive_complete_phonetic_sequence():
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    _, body = validator._front_matter_and_body(path)
+    mutated = replace_once(
+        body,
+        r"no\s+proporciona\s+una\s+secuencia\s+fonética\s+completa",
+        "proporciona una secuencia fonética completa",
+    )
+
+    assert "C3_PHONETIC_REVERSAL" in error_codes(
+        validator._validate_chapter_three_body(mutated)
+    )
+
+
+def test_chapter_three_rejects_positive_economic_continuity():
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    _, body = validator._front_matter_and_body(path)
+    mutated = replace_once(
+        body,
+        r"no\s+demuestra\s+continuidad\s+económica\s+automática\s+hasta\s+1752",
+        "demuestra continuidad económica automática hasta 1752",
+    )
+
+    assert "C3_ECONOMIC_CONTINUITY_REVERSAL" in error_codes(
+        validator._validate_chapter_three_body(mutated)
+    )
+
+
+def test_chapter_three_accepts_equivalent_limit_wording():
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    _, body = validator._front_matter_and_body(path)
+    mutated = replace_once(
+        body,
+        r"no\s+proporciona\s+una\s+secuencia\s+fonética\s+completa",
+        "no permite reconstruir una secuencia fonética completa",
+    )
+    mutated = replace_once(
+        mutated,
+        r"no\s+demuestra\s+continuidad\s+económica\s+automática\s+hasta\s+1752",
+        "no autoriza a afirmar continuidad económica hasta 1752",
+    )
+
+    assert validator._validate_chapter_three_body(mutated) == []
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_code"),
+    (
+        (
+            "El facsímil, la transcripción paleográfica, la edición crítica y la "
+            "edición modernizada son indistinguibles.",
+            "C4_LAYERS_CONTRADICTED",
+        ),
+        (
+            "La transcripción y la interpretación son lo mismo.",
+            "C4_TRANSCRIPTION_INTERPRETATION_REVERSED",
+        ),
+        (
+            "publication/content/ y publication/generated/ son la misma capa.",
+            "C4_CONTENT_GENERATED_SAME",
+        ),
+        (
+            "publication/content/ es el directorio regenerado automáticamente.",
+            "C4_DIRECTORY_FUNCTIONS_REVERSED",
+        ),
+        (
+            "publication/generated/ contiene el texto editorial mantenido manualmente.",
+            "C4_DIRECTORY_FUNCTIONS_REVERSED",
+        ),
+        (
+            "Los derivados de publication/generated/ tienen autoridad canónica propia.",
+            "C4_GENERATED_AUTHORITY",
+        ),
+    ),
+)
+def test_chapter_four_rejects_semantic_reversals(mutation, expected_code):
+    path = ROOT / "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
+    _, body = validator._front_matter_and_body(path)
+
+    assert expected_code in error_codes(
+        validator._validate_chapter_four_body(f"{body}\n\n{mutation}\n")
+    )
+
 
 @pytest.mark.parametrize(
     "fragment",
