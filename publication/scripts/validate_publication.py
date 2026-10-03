@@ -1162,34 +1162,59 @@ def _validate_chapter_five_body(body: str) -> list[str]:
                 + ", ".join(absent)
             )
 
-    normalized = _normalized_text(body)
+    controlled_blocks = _controlled_paragraphs(body)
+    paragraphs = tuple(paragraph for paragraph, _ in controlled_blocks)
+    propositions = tuple(
+        proposition
+        for _, block_propositions in controlled_blocks
+        for proposition in block_propositions
+    )
     prohibited = {
-        "C5_COMMON_COUNCIL_EQUIVALENCE": "el común del lugar era el concejo de ordás",
+        "C5_COMMON_COUNCIL_EQUIVALENCE": (
+            r"\bel común del lugar era el concejo de ordás\b",
+        ),
         "C5_COUNCIL_MUNICIPALITY_EQUIVALENCE": (
-            "el concejo de ordás de 1752 era el municipio actual"
+            r"\bel concejo de ordás de 1752 era el municipio actual\b",
         ),
         "C5_MANUSCRIPT_IDENTIFIES_COUNT": (
-            "el manuscrito identifica a francisco alfonso pimentel"
+            r"\bel manuscrito identifica a francisco alfonso pimentel\b",
         ),
-        "C5_NO_LORDLY_RIGHTS": "el lugar no pagaba ningún derecho al conde",
+        "C5_NO_LORDLY_RIGHTS": (
+            r"\bel lugar no pagaba ningún derecho al conde\b",
+        ),
         "C5_R22_ERASES_RIGHTS": (
-            "la respuesta 22 demuestra la ausencia de derechos señoriales"
-        ),
-        "C5_KNOWN_LEGAL_TITLE": (
-            "conocemos el título jurídico de las alcabalas y del pozo"
+            r"\bla respuesta 22 demuestra la ausencia de derechos señoriales\b",
+            r"\bla respuesta 22 demuestra que no exist(?:en|ían) derechos señoriales\b",
         ),
         "C5_EXACT_POLYGON_RECONSTRUCTION": (
-            "el croquis permite reconstruir un polígono geográfico exacto"
+            r"\bel croquis permite reconstruir un polígono geográfico exacto\b",
         ),
     }
-    for code, phrase in prohibited.items():
-        if phrase in normalized:
+    for code, patterns in prohibited.items():
+        if any(
+            re.search(pattern, paragraph)
+            for paragraph in paragraphs
+            for pattern in patterns
+        ):
             errors.append(f"{code}: formulación no autorizada en el capítulo 5")
 
-    if re.search(
-        r"\b\d+(?:[.,]\d+)?\s*(?:hectáreas?|ha\b|km(?:²|2)|kilómetros? cuadrados?)",
-        normalized,
+    known_legal_title = re.compile(
+        r"\b(?:se\s+conoce|conocemos)\s+el\s+título\s+jurídico\s+de\s+las\s+"
+        r"alcabalas\s+y\s+del\s+pozo\b"
+    )
+    if any(
+        not _predicate_is_negated(proposition, match.start())
+        for proposition in propositions
+        for match in known_legal_title.finditer(proposition)
     ):
+        errors.append(
+            "C5_KNOWN_LEGAL_TITLE: formulación no autorizada en el capítulo 5"
+        )
+
+    modern_conversion = re.compile(
+        r"\b\d+(?:[.,]\d+)?\s*(?:hectáreas?|ha\b|km(?:²|2)|kilómetros? cuadrados?)"
+    )
+    if any(modern_conversion.search(paragraph) for paragraph in paragraphs):
         errors.append(
             "C5_MODERN_TERRITORIAL_CONVERSION: conversión territorial no autorizada"
         )

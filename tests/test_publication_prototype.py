@@ -323,6 +323,7 @@ def test_chapter_five_has_controlled_provenance_evidence_and_structure():
     assert all(source["locator"] for source in metadata["sources"])
     evidence = {level: tuple(values) for level, values in metadata["evidence"].items()}
     assert evidence == CHAPTER_FIVE_EVIDENCE
+    assert "I" not in evidence
     assert {item for group in evidence.values() for item in group} <= registered
     assert all(
         validator._markdown_section(body, anchor)
@@ -330,6 +331,12 @@ def test_chapter_five_has_controlled_provenance_evidence_and_structure():
     )
     assert "(../01-catastro/03-expediente-sorribos-santibanez.qmd)" in body
     assert "(../01-catastro/04-manuscrito-volumen-actual.qmd)" in body
+    normalized = validator._normalized_text(body)
+    assert "continuidad territorial y administrativa" not in normalized
+    assert (
+        "esas fuentes describen una configuración administrativa decimonónica "
+        "posterior, que no puede proyectarse sobre 1752"
+    ) in normalized
     assert not re.search(r"<[A-Za-z][^>]*>", body)
     assert validator._validate_chapter_five_body(body) == []
 
@@ -347,7 +354,16 @@ def test_chapter_five_has_controlled_provenance_evidence_and_structure():
          "C5_NO_LORDLY_RIGHTS"),
         ("La respuesta 22 demuestra la ausencia de derechos señoriales.",
          "C5_R22_ERASES_RIGHTS"),
+        ("La respuesta 22 demuestra que no existían derechos señoriales.",
+         "C5_R22_ERASES_RIGHTS"),
+        ("La respuesta 22 demuestra que no existen derechos señoriales.",
+         "C5_R22_ERASES_RIGHTS"),
+        ("Se conoce el título jurídico de las alcabalas y del pozo.",
+         "C5_KNOWN_LEGAL_TITLE"),
         ("Conocemos el título jurídico de las alcabalas y del pozo.",
+         "C5_KNOWN_LEGAL_TITLE"),
+        ("No consta el título jurídico concreto. Se conoce el título jurídico "
+         "de las alcabalas y del pozo.",
          "C5_KNOWN_LEGAL_TITLE"),
         ("El croquis permite reconstruir un polígono geográfico exacto.",
          "C5_EXACT_POLYGON_RECONSTRUCTION"),
@@ -361,9 +377,9 @@ def test_chapter_five_rejects_bounded_semantic_reversals(mutation, expected_code
     path = ROOT / "publication/content/02-estudio/05-lugar-senorio-concejo-ordas.qmd"
     _, body = validator._front_matter_and_body(path)
 
-    assert expected_code in error_codes(
+    assert error_codes(
         validator._validate_chapter_five_body(f"{body}\n\n{mutation}\n")
-    )
+    ) == {expected_code}
 
 
 @pytest.mark.parametrize(
@@ -375,7 +391,9 @@ def test_chapter_five_rejects_bounded_semantic_reversals(mutation, expected_code
         "identificación de Francisco Alfonso Pimentel procede de contexto externo.",
         "La falta de carga por establecimiento del suelo coexiste con las alcabalas "
         "y el pozo.",
+        "No se conoce el título jurídico de las alcabalas y del pozo.",
         "No consta el título jurídico concreto de las alcabalas ni del pozo.",
+        "Se desconoce el origen jurídico de las alcabalas y del pozo.",
         "Las dimensiones no se convierten en superficie moderna.",
     ),
 )
@@ -384,6 +402,42 @@ def test_chapter_five_accepts_bounded_cautionary_formulations(caution):
     _, body = validator._front_matter_and_body(path)
 
     assert validator._validate_chapter_five_body(f"{body}\n\n{caution}\n") == []
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_codes"),
+    (
+        (
+            "La respuesta 22 demuestra la ausencia de derechos señoriales.",
+            {"C5_R22_ERASES_RIGHTS"},
+        ),
+        (
+            "La respuesta 22 demuestra la ausencia de\n"
+            "derechos señoriales.",
+            {"C5_R22_ERASES_RIGHTS"},
+        ),
+        (
+            "La respuesta 22 demuestra la ausencia de\n\n"
+            "Derechos señoriales es el título del apartado siguiente.",
+            set(),
+        ),
+        (
+            "La respuesta 22 demuestra la ausencia de\n\n"
+            "## Derechos señoriales\n\n"
+            "El apartado distingue conceptos.",
+            set(),
+        ),
+    ),
+)
+def test_chapter_five_prohibitions_preserve_semantic_block_boundaries(
+    mutation, expected_codes
+):
+    path = ROOT / "publication/content/02-estudio/05-lugar-senorio-concejo-ordas.qmd"
+    _, body = validator._front_matter_and_body(path)
+
+    assert error_codes(
+        validator._validate_chapter_five_body(f"{body}\n\n{mutation}\n")
+    ) == expected_codes
 
 
 @pytest.mark.parametrize(
