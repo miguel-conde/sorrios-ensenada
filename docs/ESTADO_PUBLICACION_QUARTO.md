@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 3 de octubre de 2026<br>
-**Estado global:** Fase 3 en curso; Fases 3A, 3B, 3C, 3D y 3E completadas<br>
-**Fase actual:** 3F — capítulo 7 (siguiente; no iniciada)<br>
+**Estado global:** Fase 3 en curso; Fases 3A, 3B, 3C, 3D, 3E y 3F completadas<br>
+**Fase actual:** 3G — capítulo 8 (siguiente; no iniciada)<br>
 **Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
 **Operación canónica al auditar:** `clean`
 
@@ -33,6 +33,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Capítulos 3 y 4 implementados en `5d9f600a68702f0c061b04c821e83e56ab3baf9f`, corregidos técnicamente y aceptados mediante auditoría independiente final con veredicto `APTO`; cierran la Parte I sin correcciones pendientes.
 - Capítulo 5 implementado en `ad891d9a072c292302f813f0a5536e6c29a3a1d9`, corregido técnica y editorialmente en `1fd074e8e4b6dade5585cf20cefc2d4cbb27651c` y aceptado mediante auditoría independiente final con veredicto `APTO`; abre la Parte II sin correcciones pendientes.
 - Capítulo 6 implementado en `1c5cb13c661f7bd27a3a6a9d6849655ece2d63d2` y aceptado mediante auditoría final focalizada con veredicto `APTO`; distingue vecindad, residencia, hogares, viviendas y categorías laborales sin producir cifras no sustentadas de población, hogares o ingresos.
+- Capítulo 7 implementado en `dcaa6378168b442a16cc37f5c684e2f5edcab119` y aceptado mediante auditoría final con veredicto `APTO`; reconstruye clases, calidades, cabidas, ciclos, rendimientos y medidas sin conversiones modernas, agregaciones incompatibles ni falsa precisión productiva.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -45,14 +46,14 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 1B. Contexto autosuficiente para Copilot | completada | instrucciones, plan, especificación y roadmap versionados |
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
-| 3. Contenido editorial | en curso | Fases 3A–3E completadas; capítulos 1–6 aceptados; Fase 3F como única tarea siguiente |
+| 3. Contenido editorial | en curso | Fases 3A–3F completadas; capítulos 1–7 aceptados; Fase 3G como única tarea siguiente |
 | 4. Generación documental | pendiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 3F: crear y validar exclusivamente el capítulo 7, «Tierra, sistema agrario y medidas», manteniendo la trazabilidad D/C/I/E/L, las unidades documentales y los límites metrológicos vigentes, sin iniciar los capítulos 8–13 ni modificar fuentes canónicas.
+Fase 3G: crear y validar exclusivamente el capítulo 8, «Ganadería, montes y aprovechamientos comunales», manteniendo la trazabilidad D/C/I/E/L y la cautela sobre titularidad, censos de cabezas, contratos y patrimonios, sin iniciar los capítulos 9–13 ni modificar fuentes canónicas.
 
 ### Cierre comprobado de 2A
 
@@ -139,6 +140,20 @@ Fase 3F: crear y validar exclusivamente el capítulo 7, «Tierra, sistema agrari
 - Auditoría final: `APTO`. No se detectaron confusiones vecino/habitante, hogar/vivienda, dobles conteos, ponderación falsa de medios vecinos, normalización injustificada de `avitadores`, estimaciones falsas de población o ingresos, cifras sin procedencia, contradicciones con los capítulos 1–5 ni anticipación de los capítulos 7–13.
 - Regresiones e integridad: 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
 
+## Cierre comprobado de 3F
+
+- Implementación atómica: `dcaa6378168b442a16cc37f5c684e2f5edcab119` (`feat(publication): add chapter 7`).
+- Resultado editorial: el capítulo 7, «Tierra, sistema agrario y medidas», integra las trece clases de tierras y aprovechamientos, la distribución no uniforme de calidades, las discordancias entre las respuestas 5 y 10, la cabida por sembradura, cultivos, alternancias, descansos y rendimientos regulados. Distingue cabida, simiente, producto, rendimiento y valor; conserva por separado el total escrito de 3.823 medidas y un celemín y la suma de 3.811,5 medidas principales más siete celemines; y no reconstruye montes por residuo.
+- Resultados cuantitativos: 666 / 1.398 / 1.747,5 medidas principales por calidad sobre el denominador 3.811,5; cabida cultivada comparable de 2.953,5 y centenal de 2.750,5; pesos centenales de 93,13 % y 72,16 % con denominadores distintos; índice mecánico anualizado de 1.578,25 unidades activas medias y 87,14 % centenal, expresamente identificado como escenario analítico y no como superficie sembrada observada.
+- Procedencia aceptada: D — `TER-001`–`TER-006`, `TER-010`, `AGR-001`–`AGR-003`, `AGR-007`–`AGR-008`, `AGR-010`; C — `TER-007`–`TER-008`, `AGR-004`–`AGR-006`, `AGR-009`, `CAL-001`–`CAL-009`; I — `INT-001`, `INT-003`; E — `TER-011`, `AGR-011`–`AGR-013`; L — `TER-009`, `LIM-003`–`LIM-007`, `LIM-009`.
+- Límites preservados: ninguna equivalencia métrica de legua, vara, `quartal`, fanega, celemín, carga, libra, montón o carro; solo se usan las relaciones internas cuatro `quartales` por fanega y cuatro montones por carro. No se mezclan unidades, no se calcula producto agrario total, no se convierte alternancia en rotación completa y no se deducen autoconsumo, suficiencia, productividad por hogar o trabajador ni nivel de vida.
+- Validación semántica: 22 pruebas específicas del capítulo 7 en PASS —estructura y procedencia, dieciséis mutaciones adversariales y cinco formulaciones cautelares—; suite completa final `190 passed`, sin `skip`, con hash de colección `8d083bb553fb21ec973269ad69e75a1a4569deea698f7b3c83d4a31f5a10e483`.
+- Generación y composición: `prepare.py` se ejecutó dos veces con SHA-256 idénticos para los seis derivados; validador estático y `--rendered`, `quarto check` y render HTML/PDF multiformato en PASS. El PDF final tiene 47 páginas y 3.656.317 bytes; el capítulo 7 ocupa las páginas 29–36.
+- Inspección visual: título, numeración, navegación, anclas, nueve secciones, tablas, continuaciones con encabezado repetido, saltos y pies revisados en las ocho páginas; no se detectaron desbordes ni colisiones. La navegación HTML enlaza los capítulos 6, 7 y el prototipo siguiente.
+- Incidencias resueltas: el primer render no activó `.venv` y un intento posterior encontró las cachés de Sass y LuaTeX fuera del perfil de escritura restringido; se regeneraron los derivados, se usó el entorno correcto y el render multiformato final se ejecutó con acceso a la caché normal de TinyTeX. Ninguna incidencia afectó al contenido o a las fuentes.
+- Auditoría final: `APTO`. Todas las cifras tienen fuente o cálculo declarado; las operaciones muestran operandos, denominador y regla; las interpretaciones siguen a la evidencia; las fronteras con los capítulos 6 y 8–13 permanecen explícitas; no se requirió cambiar criterios editoriales ni corregir fuentes canónicas.
+- Regresiones e integridad: 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -149,4 +164,4 @@ Fase 3F: crear y validar exclusivamente el capítulo 7, «Tierra, sistema agrari
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3F: crea y valida exclusivamente el capítulo 7, «Tierra, sistema agrario y medidas», manteniendo la trazabilidad D/C/I/E/L, las unidades documentales y los límites metrológicos vigentes, sin iniciar los capítulos 8–13 ni modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3G: crea y valida exclusivamente el capítulo 8, «Ganadería, montes y aprovechamientos comunales», manteniendo la trazabilidad D/C/I/E/L y la cautela sobre titularidad, censos de cabezas, contratos y patrimonios, sin iniciar los capítulos 9–13 ni modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
