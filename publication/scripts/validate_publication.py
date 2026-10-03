@@ -58,6 +58,12 @@ CHAPTER_SIX = (
     / "02-estudio"
     / "06-vecinos-hogares-viviendas-trabajo.qmd"
 )
+CHAPTER_SEVEN = (
+    PUBLICATION_ROOT
+    / "content"
+    / "02-estudio"
+    / "07-tierra-sistema-agrario-medidas.qmd"
+)
 PROTOTYPE_CHAPTER = (
     PUBLICATION_ROOT / "content" / "02-estudio" / "09-rio-molinos-recursos.qmd"
 )
@@ -114,6 +120,13 @@ RENDERED_CHAPTER_SIX_HTML = (
     / "content"
     / "02-estudio"
     / "06-vecinos-hogares-viviendas-trabajo.html"
+)
+RENDERED_CHAPTER_SEVEN_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "02-estudio"
+    / "07-tierra-sistema-agrario-medidas.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -246,6 +259,42 @@ CHAPTER_SIX_ANCHORS = (
     "trabajo-categorias",
     "trabajo-utilidades",
     "estructura-limites",
+)
+CHAPTER_SEVEN_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_SEVEN_EVIDENCE = {
+    "D": (
+        "TER-001", "TER-002", "TER-003", "TER-004", "TER-005", "TER-006",
+        "TER-010", "AGR-001", "AGR-002", "AGR-003", "AGR-007", "AGR-008",
+        "AGR-010",
+    ),
+    "C": (
+        "TER-007", "TER-008", "AGR-004", "AGR-005", "AGR-006", "AGR-009",
+        "CAL-001", "CAL-002", "CAL-003", "CAL-004", "CAL-005", "CAL-006",
+        "CAL-007", "CAL-008", "CAL-009",
+    ),
+    "I": ("INT-001", "INT-003"),
+    "E": ("TER-011", "AGR-011", "AGR-012", "AGR-013"),
+    "L": ("TER-009", "LIM-003", "LIM-004", "LIM-005", "LIM-006", "LIM-007", "LIM-009"),
+}
+CHAPTER_SEVEN_ANCHORS = (
+    "tierra-clases",
+    "tierra-calidades",
+    "tierra-medidas",
+    "tierra-cabida",
+    "tierra-centeno",
+    "tierra-ciclos",
+    "tierra-rendimientos",
+    "tierra-produccion-limites",
+    "tierra-sintesis",
 )
 CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("1–3", "Nombre, jurisdicción, término y límites"),
@@ -450,6 +499,12 @@ def validate_rendered_outputs() -> list[str]:
             6,
             "05-lugar-senorio-concejo-ordas.html",
         ),
+        (
+            RENDERED_CHAPTER_SEVEN_HTML,
+            "Tierra, sistema agrario y medidas",
+            7,
+            "06-vecinos-hogares-viviendas-trabajo.html",
+        ),
     )
     for path, title, number, linked_chapter in rendered_chapters:
         if not path.is_file():
@@ -466,7 +521,7 @@ def validate_rendered_outputs() -> list[str]:
             errors.append(
                 f"El HTML del capítulo {number} no conserva su enlace cruzado"
             )
-        if number in (5, 6) and not re.search(
+        if number in (5, 6, 7) and not re.search(
             rf'class="chapter-number"[^>]*>\s*{number}\s*<', html
         ):
             errors.append(
@@ -518,6 +573,8 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append("El PDF no contiene el capítulo 5")
             if "Vecinos, hogares, viviendas y trabajo" not in normalized_pdf:
                 errors.append("El PDF no contiene el capítulo 6")
+            if "Tierra, sistema agrario y medidas" not in normalized_pdf:
+                errors.append("El PDF no contiene el capítulo 7")
     return errors
 
 
@@ -1409,6 +1466,191 @@ def _validate_chapter_six_body(body: str) -> list[str]:
     return errors
 
 
+def _validate_chapter_seven_body(body: str) -> list[str]:
+    """Validate agrarian calculations, metrology, limits, and chapter borders."""
+
+    errors: list[str] = []
+    sections = {
+        anchor: _plain_text(_markdown_section(body, anchor))
+        for anchor in CHAPTER_SEVEN_ANCHORS
+    }
+    for anchor, section in sections.items():
+        if not section:
+            errors.append(f"C7_SECTION_{anchor.upper().replace('-', '_')}: falta la sección")
+
+    required_by_section = {
+        "tierra-clases": (
+            "trece clases de tierras y aprovechamientos",
+            "ferrañales centenales de secano",
+            "linares de regadío",
+            "linares de secano",
+            "centenales de secano",
+            "prados entreparedes",
+            "matorrales",
+            "eras o sitios",
+            "montes de robles altos y bajos",
+            "soto de negrillos, alisos y fresnos",
+            "funciones, no títulos de propiedad",
+            "capítulo 8",
+            "árboles frutales",
+        ),
+        "tierra-calidades": (
+            "no aplica una escala uniforme",
+            "prado cercado de secano",
+            "solo segunda, llamada única",
+            "montes",
+            "no aparecen en el desglose cuantitativo",
+            "sotos",
+            "no armonizar ambas respuestas",
+        ),
+        "tierra-medidas": (
+            "no se usa una medida superficial cierta reducible a varas castellanas",
+            "el mismo quartal de tierra ocupa más o menos terreno según su calidad",
+            "4 quartales = 1 fanega",
+            "4 montones = 1 carro",
+            "ninguna relación declarada con la medida principal, el quartal o la fanega",
+            "no permiten encadenar",
+        ),
+        "tierra-cabida": (
+            "3.823 medidas y un celemín",
+            "3.811,5 medidas principales y siete celemines",
+            "no se restan ni se reconcilian",
+            "666 de primera calidad",
+            "1.398 de segunda",
+            "1.747,5 de tercera",
+            "3.811,5 como denominador",
+        ),
+        "tierra-centeno": (
+            "centeno, cebada, lino, linaza y yerba",
+            "34 medidas de ferrañales + 149,5",
+            "2.953,5 medidas de cabida cultivada comparable",
+            "2.750,5 medidas centenales",
+            "2.750,5 ÷ 2.953,5 × 100",
+            "93,13 %",
+            "2.750,5 ÷ 3.811,5 × 100",
+            "72,16 %",
+            "preguntas distintas",
+        ),
+        "tierra-ciclos": (
+            "linares de regadío alternan lino y cebada",
+            "linares de secano, lino y centeno",
+            "producen un año y descansan otro",
+            "no describen una rotación agronómica completa",
+            "2.750,5 ÷ 2 + 34 + 149,5 + 19,5",
+            "1.578,25 unidades activas medias",
+            "1.375,25",
+            "87,14 %",
+            "índice analítico",
+            "no superficie efectivamente sembrada",
+        ),
+        "tierra-rendimientos": (
+            "un quartal de tierra",
+            "no registra lo que se cosechó en un año concreto",
+            "ferrañal / forraje",
+            "linar de regadío / linaza y lino",
+            "linar de secano / centeno",
+            "centenal / centeno",
+            "no se suman linaza en quartales y lino en libras",
+            "cuatro montones que componen un carro",
+        ),
+        "tierra-produccion-limites": (
+            "producto agrario total",
+            "multiplicar cada cabida por una tasa seleccionada",
+            "valores regulados por quinquenio",
+            "40 fejes de lino × 4 libras = 160 libras",
+            "no representa la producción total de lino",
+            "no permite deducir autoconsumo",
+            "suficiencia alimentaria",
+            "productividad por trabajador",
+            "capítulo 12",
+        ),
+        "tierra-sintesis": (
+            "comparte unidad, base y denominador",
+            "no pueden agregarse celemín y medida principal",
+            "carga y quartal",
+            "valor monetario y producto físico",
+            "capítulo 8",
+            "al 9",
+            "al 10",
+            "al 11",
+            "al 12",
+            "al 13",
+        ),
+    }
+    for anchor, phrases in required_by_section.items():
+        section = sections[anchor]
+        absent = [phrase for phrase in phrases if phrase not in section]
+        if absent:
+            errors.append(
+                f"C7_CONTENT_{anchor.upper().replace('-', '_')}: faltan relaciones "
+                + ", ".join(absent)
+            )
+
+    controlled = _controlled_paragraphs(body)
+    propositions = tuple(
+        proposition
+        for _, paragraph_propositions in controlled
+        for proposition in paragraph_propositions
+    )
+    prohibited_predicates = {
+        "C7_TOTALS_RECONCILED": (
+            r"\b(?:3\.823[^.;]{0,80}3\.811,5|3\.811,5[^.;]{0,80}3\.823)\b[^.;]{0,80}\b(?:coinciden|equivalen|son\s+iguales|se\s+reconcilian)\b",
+        ),
+        "C7_MOUNTS_BY_RESIDUAL": (
+            r"\b(?:la\s+)?(?:cabida|cantidad)\s+de\s+los\s+montes\b[^.;]{0,80}\b(?:se\s+obtiene|se\s+calcula|equivale|es)\b[^.;]{0,40}\b(?:por\s+residuo|diferencia)\b",
+        ),
+        "C7_FALSE_CELEMIN_EQUIVALENCE": (
+            r"\b(?:un|1)\s+celem[ií]n\s+(?:equivale|corresponde|es\s+igual)\s+a\b[^.;]{0,40}\b(?:quartal|fanega|medida)\b",
+        ),
+        "C7_PERCENTAGES_SAME_DENOMINATOR": (
+            r"\b93,13\s*%[^.;]{0,80}72,16\s*%[^.;]{0,80}\b(?:mismo|igual)\s+denominador\b",
+            r"\b(?:mismo|igual)\s+denominador[^.;]{0,80}93,13\s*%[^.;]{0,80}72,16\s*%\b",
+        ),
+        "C7_EXACT_ROTATION": (
+            r"\b(?:se\s+documenta|documenta|demuestra|consta)\b[^.;]{0,60}\brotaci[oó]n\s+(?:trienal|cuatrienal|completa|precisa)\b",
+        ),
+        "C7_OBSERVED_ACTIVE_SURFACE": (
+            r"\b1\.578,25\b[^.;]{0,80}\b(?:superficie\s+efectivamente\s+sembrada|cosecha\s+observada)\b",
+        ),
+        "C7_TOTAL_PRODUCTION": (
+            r"\b(?:el\s+)?producto\s+agrario\s+total\b[^.;]{0,50}\b(?:fue|era|ascend[ií]a|se\s+calcula|puede\s+calcularse)\b",
+            r"\b(?:la\s+)?producci[oó]n\s+total\s+de\s+lino\b[^.;]{0,50}\b(?:fue|era|ascend[ií]a|equival(?:e|[ií]a|dr[ií]a))\b",
+        ),
+        "C7_INCOMPATIBLE_SUM": (
+            r"\b(?:sumar|sumando|agregar|agregando)\b[^.;]{0,70}\bcargas?\b[^.;]{0,40}\b(?:fanegas?|quartales?)\b",
+            r"\b(?:sumar|sumando|agregar|agregando)\b[^.;]{0,70}\bquartales?\b[^.;]{0,40}\blibras?\b",
+        ),
+        "C7_AUTOCONSUMPTION": (
+            r"\b(?:demuestra|prueba|confirma|garantiza|documenta)\b[^.;]{0,80}\b(?:autoconsumo|suficiencia\s+alimentaria)\b",
+        ),
+        "C7_PRODUCTIVITY_INFERENCE": (
+            r"\b(?:permite|permiten|puede|pueden)\b[^.;]{0,60}\bcalcular\b[^.;]{0,60}\bproductividad\s+por\s+(?:trabajador|hogar)\b",
+        ),
+    }
+    for code, patterns in prohibited_predicates.items():
+        if any(
+            not _predicate_is_negated(proposition, match.start())
+            for proposition in propositions
+            for pattern in patterns
+            for match in re.finditer(pattern, proposition)
+        ):
+            errors.append(f"{code}: formulación no autorizada en el capítulo 7")
+
+    normalized = _plain_text(body)
+    if re.search(
+        r"\b\d+(?:[.,]\d+)?\s*(?:hectáreas?|ha\b|m(?:²|2)\b|km(?:²|2)\b|litros?|kilogramos?|kg\b)",
+        normalized,
+    ):
+        errors.append("C7_MODERN_CONVERSION: conversión moderna no autorizada")
+    for marker in ("ocho ruedas", "18 pies de abejas", "633 reales", "hacienda concejil detallada"):
+        if marker in normalized:
+            errors.append(
+                "C7_CHAPTER_BOUNDARY: desarrollo sustantivo reservado a los capítulos 8–13"
+            )
+            break
+    return errors
+
+
 def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
     evidence = metadata.get("evidence", {})
     if not isinstance(evidence, dict):
@@ -1557,6 +1799,9 @@ def validate() -> list[str]:
         (CHAPTER_SIX, "Vecinos, hogares, viviendas y trabajo",
          "vecinos-hogares-viviendas-trabajo", CHAPTER_SIX_SOURCE_PATHS,
          CHAPTER_SIX_EVIDENCE, 6),
+        (CHAPTER_SEVEN, "Tierra, sistema agrario y medidas",
+         "tierra-sistema-agrario-medidas", CHAPTER_SEVEN_SOURCE_PATHS,
+         CHAPTER_SEVEN_EVIDENCE, 7),
     )
     chapter_bodies: dict[int, str] = {}
     for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
@@ -1667,6 +1912,14 @@ def validate() -> list[str]:
             errors.append("El capítulo 6 contiene HTML crudo")
         errors.extend(_validate_chapter_six_body(chapter_six_text))
 
+    if CHAPTER_SEVEN.is_file():
+        chapter_seven_text = chapter_bodies.get(7, "")
+        if "(06-vecinos-hogares-viviendas-trabajo.qmd)" not in chapter_seven_text:
+            errors.append("El capítulo 7 no enlaza el capítulo 6")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_seven_text):
+            errors.append("El capítulo 7 contiene HTML crudo")
+        errors.extend(_validate_chapter_seven_body(chapter_seven_text))
+
     if not PROTOTYPE_CHAPTER.is_file():
         return errors + [f"Falta el capítulo editorial: {PROTOTYPE_CHAPTER}"]
     try:
@@ -1706,8 +1959,12 @@ def validate() -> list[str]:
     phase_3e_ids = {
         item for group in CHAPTER_SIX_EVIDENCE.values() for item in group
     }
+    phase_3f_ids = {
+        item for group in CHAPTER_SEVEN_EVIDENCE.values() for item in group
+    }
     missing_registry = sorted(
-        (expected_ids | phase_3c_ids | phase_3d_ids | phase_3e_ids) - registered
+        (expected_ids | phase_3c_ids | phase_3d_ids | phase_3e_ids | phase_3f_ids)
+        - registered
     )
     if missing_registry:
         errors.append("Identificadores ausentes del Registro 1.2: " + ", ".join(missing_registry))
@@ -1820,6 +2077,7 @@ def validate() -> list[str]:
         "content/01-catastro/04-manuscrito-volumen-actual.qmd",
         "content/02-estudio/05-lugar-senorio-concejo-ordas.qmd",
         "content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd",
+        "content/02-estudio/07-tierra-sistema-agrario-medidas.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
@@ -1832,7 +2090,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–6 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–7 y del prototipo en la navegación"
         )
 
     chapters_data = yaml.safe_load(
@@ -1852,7 +2110,7 @@ def validate() -> list[str]:
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–6 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–7 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -1887,7 +2145,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–6, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–7, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0

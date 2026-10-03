@@ -96,6 +96,34 @@ CHAPTER_SIX_EVIDENCE = {
     "E": ("DEM-005", "DEM-006"),
     "L": ("LIM-001", "LIM-002", "LIM-008"),
 }
+CHAPTER_SEVEN_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_SEVEN_EVIDENCE = {
+    "D": (
+        "TER-001", "TER-002", "TER-003", "TER-004", "TER-005", "TER-006",
+        "TER-010", "AGR-001", "AGR-002", "AGR-003", "AGR-007", "AGR-008",
+        "AGR-010",
+    ),
+    "C": (
+        "TER-007", "TER-008", "AGR-004", "AGR-005", "AGR-006", "AGR-009",
+        "CAL-001", "CAL-002", "CAL-003", "CAL-004", "CAL-005", "CAL-006",
+        "CAL-007", "CAL-008", "CAL-009",
+    ),
+    "I": ("INT-001", "INT-003"),
+    "E": ("TER-011", "AGR-011", "AGR-012", "AGR-013"),
+    "L": (
+        "TER-009", "LIM-003", "LIM-004", "LIM-005", "LIM-006", "LIM-007",
+        "LIM-009",
+    ),
+}
 AUTHORIZED_INSTITUTIONAL_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
@@ -544,6 +572,130 @@ def test_chapter_six_accepts_bounded_cautionary_formulations(caution):
     _, body = validator._front_matter_and_body(path)
 
     assert validator._validate_chapter_six_body(f"{body}\n\n{caution}\n") == []
+
+
+def test_chapter_seven_has_controlled_provenance_evidence_and_structure():
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "07-tierra-sistema-agrario-medidas.qmd"
+    )
+    metadata, body = validator._front_matter_and_body(path)
+    register = (
+        ROOT / "project/30_RESULTADOS/ESTUDIO_HISTORICO"
+        / "Registro_Afirmaciones_Calculos_v1.md"
+    ).read_text(encoding="utf-8")
+    registered = set(re.findall(r"^\|\s*([A-Z]+-\d{3})\s*\|", register, re.MULTILINE))
+
+    assert metadata["title"] == "Tierra, sistema agrario y medidas"
+    assert metadata["chapter-id"] == "tierra-sistema-agrario-medidas"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_SEVEN_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_SEVEN_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    evidence = {level: tuple(values) for level, values in metadata["evidence"].items()}
+    assert evidence == CHAPTER_SEVEN_EVIDENCE
+    assert set(evidence) == {"D", "C", "I", "E", "L"}
+    assert {item for group in evidence.values() for item in group} <= registered
+    assert all(
+        validator._markdown_section(body, anchor)
+        for anchor in validator.CHAPTER_SEVEN_ANCHORS
+    )
+    assert "(06-vecinos-hogares-viviendas-trabajo.qmd)" in body
+    assert not re.search(r"<[A-Za-z][^>]*>", body)
+    assert validator._validate_chapter_seven_body(body) == []
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_code"),
+    (
+        ("La cabida equivalía a 318 hectáreas.", "C7_MODERN_CONVERSION"),
+        ("La cosecha pesó 900 kilogramos.", "C7_MODERN_CONVERSION"),
+        (
+            "3.823 medidas y un celemín y 3.811,5 medidas y siete celemines "
+            "coinciden exactamente.",
+            "C7_TOTALS_RECONCILED",
+        ),
+        (
+            "La cabida de los montes se calcula por diferencia.",
+            "C7_MOUNTS_BY_RESIDUAL",
+        ),
+        ("Un celemín equivale a un quartal.", "C7_FALSE_CELEMIN_EQUIVALENCE"),
+        (
+            "93,13 % y 72,16 % usan el mismo denominador.",
+            "C7_PERCENTAGES_SAME_DENOMINATOR",
+        ),
+        (
+            "Se documenta una rotación trienal.",
+            "C7_EXACT_ROTATION",
+        ),
+        (
+            "1.578,25 representa la superficie efectivamente sembrada.",
+            "C7_OBSERVED_ACTIVE_SURFACE",
+        ),
+        (
+            "El producto agrario total fue de 8.000 quartales.",
+            "C7_TOTAL_PRODUCTION",
+        ),
+        (
+            "La producción total de lino equivalía a 160 libras.",
+            "C7_TOTAL_PRODUCTION",
+        ),
+        (
+            "Se pueden sumar cargas y fanegas para obtener el cereal total.",
+            "C7_INCOMPATIBLE_SUM",
+        ),
+        (
+            "Se pueden agregar quartales y libras como una sola producción.",
+            "C7_INCOMPATIBLE_SUM",
+        ),
+        (
+            "La diversidad productiva demuestra el autoconsumo.",
+            "C7_AUTOCONSUMPTION",
+        ),
+        (
+            "El centeno confirma la suficiencia alimentaria.",
+            "C7_AUTOCONSUMPTION",
+        ),
+        (
+            "La cabida permite calcular la productividad por trabajador.",
+            "C7_PRODUCTIVITY_INFERENCE",
+        ),
+        (
+            "La sección demuestra el funcionamiento de ocho ruedas.",
+            "C7_CHAPTER_BOUNDARY",
+        ),
+    ),
+)
+def test_chapter_seven_rejects_bounded_semantic_reversals(mutation, expected_code):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "07-tierra-sistema-agrario-medidas.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert error_codes(
+        validator._validate_chapter_seven_body(f"{body}\n\n{mutation}\n")
+    ) == {expected_code}
+
+
+@pytest.mark.parametrize(
+    "caution",
+    (
+        "El quartal de Sorribos no tiene equivalencia métrica fijada.",
+        "Los dos porcentajes usan denominadores distintos.",
+        "Las alternancias no describen una rotación completa parcela por parcela.",
+        "El índice anualizado es un escenario mecánico, no una observación.",
+        "La fuente no permite deducir el destino predominante de la producción.",
+    ),
+)
+def test_chapter_seven_accepts_bounded_cautionary_formulations(caution):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "07-tierra-sistema-agrario-medidas.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert validator._validate_chapter_seven_body(f"{body}\n\n{caution}\n") == []
 
 
 @pytest.mark.parametrize(
@@ -1061,6 +1213,7 @@ def test_navigation_integrates_part_one_before_the_vertical_prototype():
         "content/01-catastro/04-manuscrito-volumen-actual.qmd",
         "content/02-estudio/05-lugar-senorio-concejo-ordas.qmd",
         "content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd",
+        "content/02-estudio/07-tierra-sistema-agrario-medidas.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
     ]
 

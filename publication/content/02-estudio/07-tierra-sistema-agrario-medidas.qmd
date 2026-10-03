@@ -1,0 +1,298 @@
+---
+title: "Tierra, sistema agrario y medidas"
+chapter-id: tierra-sistema-agrario-medidas
+publication-status: development
+sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "versión 1.5, Parte II, capítulo 7"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md
+    locator: "versión 0.5, secciones 12.1–12.3"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    locator: "versión 1.2, secciones 0, 5–8, 14–15, 17–18 y anexo A, CAL-001–CAL-009"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
+    locator: "versión 1.2, entradas TER-001–TER-011, AGR-001–AGR-013, INT-001, INT-003, LIM-003–LIM-007, LIM-009 y CAL-001–CAL-009"
+  - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
+    locator: "versión 3.6, respuestas 4–14 y 16; folios 307v–315r"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
+    locator: "versión 1.3, respuestas 4–14 y 16 y notas 2–12"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md
+    locator: "entradas legua, baras, quartal, fanega, celemin, carga, libras, monton, carro, real y maravedís"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md
+    locator: "versión 0.2, secciones 0, 2–4 y 10–11; uso auxiliar sujeto al Estudio y al Registro 1.2"
+evidence:
+  D: [TER-001, TER-002, TER-003, TER-004, TER-005, TER-006, TER-010, AGR-001, AGR-002, AGR-003, AGR-007, AGR-008, AGR-010]
+  C: [TER-007, TER-008, AGR-004, AGR-005, AGR-006, AGR-009, CAL-001, CAL-002, CAL-003, CAL-004, CAL-005, CAL-006, CAL-007, CAL-008, CAL-009]
+  I: [INT-001, INT-003]
+  E: [TER-011, AGR-011, AGR-012, AGR-013]
+  L: [TER-009, LIM-003, LIM-004, LIM-005, LIM-006, LIM-007, LIM-009]
+---
+
+El [capítulo 6](06-vecinos-hogares-viviendas-trabajo.qmd) distinguió
+personas, hogares, edificios y categorías de trabajo. Esa cautela vuelve a ser
+necesaria ante las tierras: **cabida**, **simiente**, **producto**,
+**rendimiento** y **valor** son magnitudes relacionadas, pero no
+intercambiables. El expediente permite reconstruir la composición del espacio
+agrario y sus ritmos con bastante detalle; no ofrece una superficie métrica ni
+una cuenta anual de producción.
+
+Las respuestas 4–14 forman el núcleo de este capítulo. Clasifican tierras y
+aprovechamientos, asignan calidades, explican cómo se estima la cabida,
+desglosan cantidades, enumeran frutos y regulan rendimientos y valores. La
+reconstrucción conserva también sus discrepancias: componer el sistema no
+significa armonizar lo que la propia fuente dejó desigual.
+
+## Trece clases, no una sola escala de tierra {#tierra-clases}
+
+La respuesta 4 distingue **trece clases de tierras y aprovechamientos**. La
+clasificación combina régimen de agua, cultivo, cerramiento, ciclo y uso; no es
+una lista de superficies homogéneas.
+
+| Clase documental | Rasgo o uso declarado |
+|---|---|
+| Ferrañales centenales de secano | Producen forraje sin interrupción. |
+| Linares de regadío | Alternan lino y cebada sin descanso. |
+| Linares de secano | Alternan lino y centeno sin descanso. |
+| Centenales de secano | Producen un año y descansan otro. |
+| Prados cercados de regadío | Producen *pelo y otoño* sin interrupción. |
+| Prados cercados de secano | Producen *pelo y otoño* sin interrupción. |
+| Prados abiertos de regadío | Producen un solo pelo sin descanso. |
+| Prados abiertos de secano | Producen un solo pelo; el otoño se pasta en común. |
+| Prados entreparedes | Producen un año y descansan otro. |
+| Matorrales | No se labran por las matas y su mala calidad. |
+| Eras o sitios | Sirven para pasto y para resguardar el cereal. |
+| Montes de robles altos y bajos | Sirven para pasto, leña y reparación de puentes. |
+| Soto de negrillos, alisos y fresnos | Sirve para pasto y para reparar puentes y puertas del río. |
+
+Esta tabla registra funciones, no títulos de propiedad. Los pastos, montes y
+otros aprovechamientos de uso común documentado se desarrollarán en el
+capítulo 8; aquí solo intervienen porque forman parte de la clasificación y de
+la cabida agrarias.
+
+Las respuestas 6–8 añaden que había algunos **árboles frutales**, pero les
+atribuyen utilidad regulada nula porque la fruta no llegaba a madurar
+perfectamente y era de mala calidad. No identifican especies, localización o
+disposición de los plantíos. La respuesta 4 tampoco separa una clase de
+huertos. Estos silencios no autorizan a introducir una explicación climática.
+
+## Calidades distribuidas por clase {#tierra-calidades}
+
+La respuesta 5 no aplica una escala uniforme. Ferrañales, linares de regadío,
+centenales y prados abiertos de regadío tienen primera, segunda y tercera
+calidad; otras clases solo dos, y los matorrales una tercera calidad única. La
+calidad pertenece siempre a una clase concreta: una medida de primera calidad
+de linar no es una unidad intercambiable con una de primera calidad de prado.
+
+El contraste con la respuesta 10 conserva tres desajustes internos:
+
+| Clase | Respuesta 5 | Respuesta 10 | Tratamiento editorial |
+|---|---|---|---|
+| Prado cercado de secano | Primera y segunda. | Solo segunda, llamada única. | No completar la primera por conjetura. |
+| Montes | Primera y tercera. | No aparecen en el desglose cuantitativo. | No obtener su cabida por residuo. |
+| Sotos | Primera y tercera. | Solo tercera, llamada única. | No armonizar ambas respuestas. |
+
+La discrepancia es información sobre el expediente, no un error que la
+publicación pueda reparar. Por eso los porcentajes posteriores describen las
+partidas cuantificadas, no una distribución exacta de todo el término.
+
+## Medir por la sembradura {#tierra-medidas}
+
+La respuesta 9 declara que no se usa una medida superficial cierta reducible a
+**varas castellanas**. Las tierras de pan llevar se entienden por el *quartal*
+de grano que cabe en ellas; los prados de guadaña se regulan por los
+*quartales* que admitirían de sembradura; matorrales, eras, sitios, montes y
+sotos quedan al juicio de peritos. El mismo *quartal de tierra* ocupa más o
+menos terreno según su calidad.
+
+La metrología leonesa ofrece paralelos para esta forma de expresar extensión
+agraria mediante la cantidad de simiente admitida. Ese contexto explica la
+lógica de la respuesta; no fija cuántas hectáreas, áreas o metros cuadrados
+tenía el *quartal* de Sorribos.
+
+| Unidad o expresión | Magnitud o función en el expediente | Relación interna segura | Límite |
+|---|---|---|---|
+| Legua y vara | Longitud del término, en la respuesta 3. | Ninguna conversión interna. | Las longitudes no producen por sí solas una superficie. |
+| *Quartal* | Capacidad de grano; referencia de cabida, simiente, fruto y algunas prestaciones. | 4 *quartales* = 1 fanega. | No tiene equivalencia métrica fijada. |
+| Fanega | Capacidad vinculada a sembradura o cabida y cantidad de grano. | 1 fanega = 4 *quartales*. | La relación no convierte la cabida en superficie moderna. |
+| Celemín | Subunidad escrita en el desglose de cabida de la respuesta 10. | Ninguna relación declarada con la medida principal, el *quartal* o la fanega. | Los siete celemines resultantes permanecen separados. |
+| Carga | Cantidad de cereal en diezmos y utilidades molineras. | Ninguna relación declarada con fanega o *quartal*. | No puede agregarse a esas unidades. |
+| Libra | Peso aplicado al lino y otros productos. | 40 fejes de 4 libras = 160 libras en la partida decimal. | La relación no mide la producción total de lino. |
+| Montón y carro | Cantidad de yerba. | 4 montones = 1 carro. | No se aplica a cereal, lino u otros productos. |
+| Real y maravedí | Valor monetario. | El expediente no declara su equivalencia interna. | No se decimalizan ni se confunden con cantidades físicas. |
+
+Las dos equivalencias internas —cuatro *quartales* por fanega y cuatro montones
+por carro— tienen dominios distintos. No permiten encadenar *quartal*, celemín,
+fanega, carga, libra, montón, carro, longitud y moneda en un único sistema.
+
+## Cabida declarada y suma de partidas {#tierra-cabida}
+
+La respuesta 10 escribe un total de **3.823 medidas y un celemín**. Al sumar
+sus partidas transcritas se obtienen **3.811,5 medidas principales y siete
+celemines**. Los operandos de `CAL-001` son todas las partidas de la tabla que
+usan la unidad principal, sumadas por separado de los complementos en
+celemines. Como no consta la equivalencia entre ambas unidades, los dos
+resultados no se restan ni se reconcilian y la cabida omitida de los montes no
+se reconstruye por residuo.
+
+| Clase | 1.ª calidad | 2.ª calidad | 3.ª calidad |
+|---|---:|---:|---:|
+| Ferrañales | 23 + 2,5 cel. | 7 + 1 cel. | 4 |
+| Linares de regadío | 101 | 45,5 | 3 |
+| Linares de secano | — | 17,5 | 2 |
+| Centenales de secano | 473,5 | 1.055 + 0,5 cel. | 1.222 |
+| Prados cercados de regadío | 57 + 2,5 cel. | 20 | — |
+| Prados cercados de secano | — | 19 + 0,5 cel. | — |
+| Prados abiertos de regadío | 11,5 | 93 | 11 |
+| Prados abiertos de secano | — | 107,5 | 50 |
+| Prados entreparedes | — | 9,5 | 6 |
+| Matorrales | — | — | 233,5 |
+| Eras o sitios | — | 24 | 120 |
+| Montes | — | — | — |
+| Sotos | — | — | 96 |
+
+*Las cifras sin abreviatura son medidas principales; `cel.` significa
+celemines, conservados como complemento no convertible. Un guion indica que la
+respuesta 10 no cuantifica esa combinación, no que se haya probado su
+inexistencia.*
+
+`CAL-002` agrupa solo las **3.811,5 medidas principales**: 666 de primera
+calidad, 1.398 de segunda y 1.747,5 de tercera. Los porcentajes respectivos
+—17,47 %, 36,68 % y 45,85 %— usan exactamente 3.811,5 como denominador; dejan
+fuera los siete celemines y las clases no cuantificadas. La tercera calidad es
+la mayor dentro de ese subtotal parcial, no necesariamente dentro de toda la
+superficie del término.
+
+## Predominio centenal con denominadores visibles {#tierra-centeno}
+
+La respuesta 11 enumera cinco frutos: **centeno, cebada, lino, linaza y
+yerba**. Para comparar cabidas cultivadas, `CAL-003` suma únicamente cuatro
+clases expresadas en la unidad principal: 34 medidas de ferrañales + 149,5 de
+linares de regadío + 19,5 de linares de secano + 2.750,5 de centenales. El
+resultado es **2.953,5 medidas de cabida cultivada comparable**. `CAL-004`
+obtiene las **2.750,5 medidas centenales** sumando sus tres calidades.
+
+| Cálculo | Operación | Resultado | Qué describe |
+|---|---:|---:|---|
+| `CAL-003` | 34 + 149,5 + 19,5 + 2.750,5 | 2.953,5 | Cuatro clases cultivadas comparables. |
+| `CAL-004` | 473,5 + 1.055 + 1.222 | 2.750,5 | Cabida centenal en medidas principales. |
+| `CAL-005` | 2.750,5 ÷ 2.953,5 × 100 | 93,13 % | Peso centenal dentro de la cabida cultivada comparable. |
+| `CAL-006` | 2.750,5 ÷ 3.811,5 × 100 | 72,16 % | Peso centenal dentro de todas las partidas principales explícitas. |
+
+El **93,13 %** y el **72,16 %** responden a preguntas distintas y no pueden
+presentarse como porcentajes sobre el mismo total. Ambos sostienen el
+predominio cuantitativo del centeno, pero el primero describe la composición
+del cultivo comparable y el segundo su peso en un desglose más amplio que
+incluye prados y otros usos.
+
+## Alternancias y descansos, no una rotación reconstruida {#tierra-ciclos}
+
+Los ritmos declarados son precisos en su propio nivel. Los ferrañales producen
+sin interrupción; los linares de regadío alternan lino y cebada; los linares de
+secano, lino y centeno; las tierras centenales producen un año y descansan
+otro. Entre los prados, los cercados dan *pelo y otoño*, los abiertos un solo
+*pelo* y los entreparedes producen un año y descansan otro.
+
+Estos datos acreditan alternancias y descansos por clase. No describen una
+rotación agronómica completa ejecutada parcela por parcela, ni permiten saber
+qué mitad de las tierras centenales estaba sembrada en 1752.
+
+El índice `CAL-007` hace visible el efecto mecánico del descanso bienal:
+
+> 2.750,5 ÷ 2 + 34 + 149,5 + 19,5 = **1.578,25 unidades activas medias**.
+
+Su primer operando anualiza por mitades la cabida centenal; los otros tres
+añaden las clases cultivadas sin descanso. `CAL-008` divide el componente
+centenal anualizado, 1.375,25, entre 1.578,25 y obtiene **87,14 %**. Es un
+**índice analítico**, no superficie efectivamente sembrada, cosecha observada
+ni prueba de un escalonamiento real del descanso.
+
+## Simiente, producto y rendimiento regulado {#tierra-rendimientos}
+
+Las respuestas 9 y 12 permiten relacionar simiente y producto cuando ambas
+cantidades están expresas. La base es siempre **un *quartal de tierra*** de una
+clase y calidad determinadas; la respuesta 12 regula rendimientos ordinarios
+por quinquenio, no registra lo que se cosechó en un año concreto.
+
+| Tierra y cultivo | Simiente por *quartal* de tierra | Producto regulado por calidad |
+|---|---|---|
+| Ferrañal / forraje | 1 *quartal* en 1.ª, 2.ª y 3.ª | 5 / 4 / 3 *quartales*. |
+| Linar de regadío / linaza y lino | 1 *quartal* explícito para 1.ª; no se individualiza para 2.ª y 3.ª | 1.ª: 5 *quartales* de linaza + 12 libras de lino; 2.ª: «el mismo *quartal*» + 10 libras; 3.ª: «el mismo *quartal*» + 8 libras. |
+| Linar de regadío / cebada | 0,5 *quartal* en las tres calidades | 5 / 4 / 3 *quartales*. |
+| Linar de secano / linaza y lino | 1 *quartal* en 2.ª y 3.ª | «El mismo *quartal*» de linaza + 8 / 6 libras de lino. |
+| Linar de secano / centeno | 0,5 *quartal* en 2.ª y 3.ª | 3 / 3 *quartales*. |
+| Centenal / centeno | 1 *quartal* en 1.ª, 2.ª y 3.ª | 4 / 3 / 2,5 *quartales*. |
+
+La calidad se relaciona con gradientes distintos según cultivo. En
+ferrañales, cebada de linar de regadío y centenales, el producto regulado baja
+al descender la calidad; los linares separan además linaza y fibra de lino.
+La fórmula «el mismo *quartal*» se conserva donde la fuente no repite un
+referente numérico inequívoco. No se suman linaza en *quartales* y lino en
+libras como si fueran una sola producción.
+
+Los prados usan otra serie:
+
+| Tipo de prado | 1.ª calidad | 2.ª calidad | 3.ª calidad | Ciclo declarado |
+|---|---:|---:|---:|---|
+| Cercado de regadío | 2,5 montones | 2 | — | *Pelo y otoño*. |
+| Cercado de secano | — | 1,5 | — | *Pelo y otoño*. |
+| Abierto de regadío | 2 | 1,5 | 1 | Un pelo. |
+| Abierto de secano | — | 1 | 0,5 | Un pelo. |
+| Entreparedes | — | 1 | 0,5 | Produce un año y descansa otro. |
+
+Los cuatro montones que componen un carro permiten comparar los rendimientos
+de yerba entre sí, pero no con los *quartales* de cereal o las libras de lino.
+Los paralelos regionales ayudan a entender los prados de uno o dos pelos y el
+sentido léxico de *ferrañal*; no transfieren a Sorribos rendimientos ni usos no
+declarados.
+
+## Regulación, producción y valor {#tierra-produccion-limites}
+
+La relación entre cabida y rendimiento no basta para obtener un **producto
+agrario total**. Faltan una asignación anual efectiva de cultivos y descansos,
+la equivalencia de los celemines, la cabida de los montes y correspondencias
+sin ambigüedad entre todas las partidas y rendimientos. Multiplicar cada
+cabida por una tasa seleccionada produciría una precisión que la fuente no
+sostiene.
+
+La respuesta 14 añade precios ordinarios: *quartales* de centeno, cebada,
+linaza y trigo; libra de lino; y carro de yerba. Son valores regulados por
+quinquenio, no cantidades producidas ni prueba de venta. Tampoco consta una
+equivalencia interna entre reales y maravedís. El cálculo `CAL-009` —40 fejes
+de lino × 4 libras = **160 libras**— pertenece a la regulación decimal de la
+respuesta 16: comprueba esa partida, pero no representa la producción total de
+lino.
+
+El expediente tampoco distribuye la producción entre semilla, consumo,
+cargas, venta u otros destinos. Por ello no permite deducir autoconsumo,
+suficiencia alimentaria, productividad por trabajador, productividad por
+hogar ni nivel de vida. El contexto regional del lino acredita una actividad
+conocida en las riberas septentrionales de León, incluida Luna; no demuestra
+que la producción concreta de Sorribos siguiera un circuito comercial
+determinado. Precios, conexiones y monetización se desarrollarán en el
+capítulo 12.
+
+## Un sistema agrario desigual y mensurable con cautela {#tierra-sintesis}
+
+La reconstrucción conjunta muestra un sistema de base cerealista, con claro
+predominio centenal dentro de las magnitudes comparables, pero no reducido al
+centeno. Ferrañales, linares, cebada y prados introducen productos y ritmos
+distintos; sotos y frutales amplían los usos y elementos documentados, aunque
+no sostienen aquí un producto calculable. Las alternancias sin descanso
+conviven con el descanso bienal de centenales y prados entreparedes; las
+calidades gradúan cabidas y rendimientos sin formar una escala espacial
+uniforme.
+
+Puede compararse aquello que comparte unidad, base y denominador: medidas
+principales entre sí, calidades dentro del subtotal de 3.811,5, cabida centenal
+dentro de cada uno de sus dos totales declarados, y montones de yerba dentro de
+su propia serie. No pueden agregarse celemín y medida principal, carga y
+*quartal*, longitud y cabida, *quartales* de linaza y libras de lino, ni valor
+monetario y producto físico.
+
+Los límites no debilitan la explicación: definen su alcance. El Catastro
+documenta una convención local de cabida por sembradura, una distribución
+parcial por clases y calidades, ciclos productivos y rendimientos regulados.
+No documenta hectáreas, producción efectivamente cosechada, balances de
+destino ni una rotación completa. La ganadería y los aprovechamientos de uso
+común corresponden al capítulo 8; río y molinos, al 9; derechos eclesiásticos
+y fiscales, al 10; hacienda concejil, al 11; conexiones monetarias, al 12; y
+la síntesis de vulnerabilidades y resiliencia, al 13.
