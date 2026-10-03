@@ -19,6 +19,9 @@ chapters:
   - chapter_id: manuscrito-volumen-actual
     path: content/01-catastro/04-manuscrito-volumen-actual.qmd
     publication_status: development
+  - chapter_id: lugar-senorio-concejo-ordas
+    path: content/02-estudio/05-lugar-senorio-concejo-ordas.qmd
+    publication_status: development
   - chapter_id: rio-molinos-recursos
     path: content/02-estudio/09-rio-molinos-recursos.qmd
     publication_status: prototype

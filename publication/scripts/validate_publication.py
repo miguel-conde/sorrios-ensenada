@@ -46,6 +46,12 @@ CHAPTER_FOUR = (
     / "01-catastro"
     / "04-manuscrito-volumen-actual.qmd"
 )
+CHAPTER_FIVE = (
+    PUBLICATION_ROOT
+    / "content"
+    / "02-estudio"
+    / "05-lugar-senorio-concejo-ordas.qmd"
+)
 PROTOTYPE_CHAPTER = (
     PUBLICATION_ROOT / "content" / "02-estudio" / "09-rio-molinos-recursos.qmd"
 )
@@ -88,6 +94,13 @@ RENDERED_CHAPTER_FOUR_HTML = (
     / "content"
     / "01-catastro"
     / "04-manuscrito-volumen-actual.html"
+)
+RENDERED_CHAPTER_FIVE_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "02-estudio"
+    / "05-lugar-senorio-concejo-ordas.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -174,6 +187,26 @@ CHAPTER_FOUR_SOURCE_PATHS = {
     "docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md",
     "publication/README.md",
 }
+CHAPTER_FIVE_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md",
+}
+CHAPTER_FIVE_EVIDENCE = {
+    "D": ("JUR-001", "JUR-002", "JUR-005", "JUR-006", "FIS-012"),
+    "E": ("JUR-007", "JUR-008"),
+    "L": ("LIM-011",),
+}
+CHAPTER_FIVE_ANCHORS = (
+    "lugar-actores",
+    "lugar-concejo-municipio",
+    "lugar-senorio-conde",
+    "lugar-derechos",
+    "lugar-termino",
+    "lugar-sintesis",
+)
 CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("1–3", "Nombre, jurisdicción, término y límites"),
     ("4–14", "Tierras, árboles, medidas, cabidas, frutos y valores"),
@@ -365,6 +398,12 @@ def validate_rendered_outputs() -> list[str]:
             4,
             "03-expediente-sorribos-santibanez.html",
         ),
+        (
+            RENDERED_CHAPTER_FIVE_HTML,
+            "Un lugar de señorío en el Concejo de Ordás",
+            5,
+            "04-manuscrito-volumen-actual.html",
+        ),
     )
     for path, title, number, linked_chapter in rendered_chapters:
         if not path.is_file():
@@ -381,6 +420,10 @@ def validate_rendered_outputs() -> list[str]:
             errors.append(
                 f"El HTML del capítulo {number} no conserva su enlace cruzado"
             )
+        if number == 5 and not re.search(
+            r'class="chapter-number"[^>]*>\s*5\s*<', html
+        ):
+            errors.append("El capítulo nuevo no aparece numerado realmente como 5")
 
     if not RENDERED_HTML.is_file():
         errors.append(f"Falta el HTML renderizado: {RENDERED_HTML}")
@@ -423,6 +466,8 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append("El PDF no contiene el capítulo 3")
             if "Del manuscrito al volumen actual" not in normalized_pdf:
                 errors.append("El PDF no contiene el capítulo 4")
+            if "Un lugar de señorío en el Concejo de Ordás" not in normalized_pdf:
+                errors.append("El PDF no contiene el capítulo 5")
     return errors
 
 
@@ -1034,6 +1079,123 @@ def _validate_chapter_four_body(body: str) -> list[str]:
     return errors
 
 
+def _validate_chapter_five_body(body: str) -> list[str]:
+    """Validate the bounded institutional and territorial claims of chapter 5."""
+
+    errors: list[str] = []
+    sections = {
+        anchor: _normalized_text(_markdown_section(body, anchor))
+        for anchor in CHAPTER_FIVE_ANCHORS
+    }
+    for anchor, section in sections.items():
+        if not section:
+            errors.append(f"C5_SECTION_{anchor.upper().replace('-', '_')}: falta la sección")
+
+    required_by_section = {
+        "lugar-actores": (
+            "lugar de sorribos y santibáñez de ordás",
+            "común del lugar",
+            "vecinos",
+            "concejo de ordás",
+            "municipio posterior de santa maría de ordás",
+            "tampoco son intercambiables",
+        ),
+        "lugar-concejo-municipio": (
+            "1768",
+            "1789",
+            "cinco lugares",
+            "1836",
+            "1848",
+            "no puede proyectarse sobre 1752",
+            "no son equivalentes automáticos",
+        ),
+        "lugar-senorio-conde": (
+            "el manuscrito",
+            "conde de luna",
+            "no proporciona el nombre personal",
+            "francisco alfonso pimentel como xv conde de luna",
+            "identificación nominal procede de documentación externa",
+        ),
+        "lugar-derechos": (
+            "establecimiento del suelo",
+            "alcabalas",
+            "633 reales anuales",
+            "pozo de pesca",
+            "nueve reales",
+            "coexiste",
+            "no consta el título jurídico concreto",
+            "conceptos diferenciados",
+        ),
+        "lugar-termino": (
+            "una legua y media y 787 varas",
+            "2.500 varas de oriente a poniente",
+            "2.708 varas de norte a sur",
+            "tapia",
+            "rioseco",
+            "santa maría",
+            "villapodambre",
+            "croquis o figura marginal",
+            "no constituyen cartografía métrica moderna",
+            "no se convierten en superficie moderna",
+            "ni permiten reconstruir un polígono geográfico exacto",
+        ),
+        "lugar-sintesis": (
+            "lugar",
+            "comunidad",
+            "jurisdicción",
+            "señorío",
+            "término",
+            "no una única realidad",
+            "capítulo 6",
+            "capítulo 7",
+            "capítulo 9",
+            "capítulo 10",
+            "capítulo 11",
+        ),
+    }
+    for anchor, phrases in required_by_section.items():
+        section = sections[anchor]
+        absent = [phrase for phrase in phrases if phrase not in section]
+        if absent:
+            errors.append(
+                f"C5_CONTENT_{anchor.upper().replace('-', '_')}: faltan relaciones "
+                + ", ".join(absent)
+            )
+
+    normalized = _normalized_text(body)
+    prohibited = {
+        "C5_COMMON_COUNCIL_EQUIVALENCE": "el común del lugar era el concejo de ordás",
+        "C5_COUNCIL_MUNICIPALITY_EQUIVALENCE": (
+            "el concejo de ordás de 1752 era el municipio actual"
+        ),
+        "C5_MANUSCRIPT_IDENTIFIES_COUNT": (
+            "el manuscrito identifica a francisco alfonso pimentel"
+        ),
+        "C5_NO_LORDLY_RIGHTS": "el lugar no pagaba ningún derecho al conde",
+        "C5_R22_ERASES_RIGHTS": (
+            "la respuesta 22 demuestra la ausencia de derechos señoriales"
+        ),
+        "C5_KNOWN_LEGAL_TITLE": (
+            "conocemos el título jurídico de las alcabalas y del pozo"
+        ),
+        "C5_EXACT_POLYGON_RECONSTRUCTION": (
+            "el croquis permite reconstruir un polígono geográfico exacto"
+        ),
+    }
+    for code, phrase in prohibited.items():
+        if phrase in normalized:
+            errors.append(f"{code}: formulación no autorizada en el capítulo 5")
+
+    if re.search(
+        r"\b\d+(?:[.,]\d+)?\s*(?:hectáreas?|ha\b|km(?:²|2)|kilómetros? cuadrados?)",
+        normalized,
+    ):
+        errors.append(
+            "C5_MODERN_TERRITORIAL_CONVERSION: conversión territorial no autorizada"
+        )
+    return errors
+
+
 def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
     evidence = metadata.get("evidence", {})
     if not isinstance(evidence, dict):
@@ -1176,6 +1338,9 @@ def validate() -> list[str]:
          CHAPTER_THREE_EVIDENCE, 3),
         (CHAPTER_FOUR, "Del manuscrito al volumen actual",
          "manuscrito-volumen-actual", CHAPTER_FOUR_SOURCE_PATHS, None, 4),
+        (CHAPTER_FIVE, "Un lugar de señorío en el Concejo de Ordás",
+         "lugar-senorio-concejo-ordas", CHAPTER_FIVE_SOURCE_PATHS,
+         CHAPTER_FIVE_EVIDENCE, 5),
     )
     chapter_bodies: dict[int, str] = {}
     for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
@@ -1207,7 +1372,7 @@ def validate() -> list[str]:
             errors.append("El capítulo 4 no debe declarar evidencia")
         elif (required_evidence is not None
               and _normalized_evidence(chapter_metadata) != required_evidence):
-            errors.append("Evidencia D/I/E incorrecta en el capítulo 3")
+            errors.append(f"Evidencia incorrecta en el capítulo {number}")
 
     if CHAPTER_THREE.is_file():
         chapter_three_text = chapter_bodies.get(3, "")
@@ -1268,6 +1433,16 @@ def validate() -> list[str]:
             errors.append("El capítulo 4 contiene HTML crudo")
         errors.extend(_validate_chapter_four_body(chapter_four_text))
 
+    if CHAPTER_FIVE.is_file():
+        chapter_five_text = chapter_bodies.get(5, "")
+        if "(../01-catastro/03-expediente-sorribos-santibanez.qmd)" not in chapter_five_text:
+            errors.append("El capítulo 5 no enlaza el capítulo 3")
+        if "(../01-catastro/04-manuscrito-volumen-actual.qmd)" not in chapter_five_text:
+            errors.append("El capítulo 5 no enlaza el capítulo 4")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_five_text):
+            errors.append("El capítulo 5 contiene HTML crudo")
+        errors.extend(_validate_chapter_five_body(chapter_five_text))
+
     if not PROTOTYPE_CHAPTER.is_file():
         return errors + [f"Falta el capítulo editorial: {PROTOTYPE_CHAPTER}"]
     try:
@@ -1301,7 +1476,12 @@ def validate() -> list[str]:
     phase_3c_ids = {
         item for group in CHAPTER_THREE_EVIDENCE.values() for item in group
     }
-    missing_registry = sorted((expected_ids | phase_3c_ids) - registered)
+    phase_3d_ids = {
+        item for group in CHAPTER_FIVE_EVIDENCE.values() for item in group
+    }
+    missing_registry = sorted(
+        (expected_ids | phase_3c_ids | phase_3d_ids) - registered
+    )
     if missing_registry:
         errors.append("Identificadores ausentes del Registro 1.2: " + ", ".join(missing_registry))
 
@@ -1411,6 +1591,7 @@ def validate() -> list[str]:
         "content/01-catastro/02-respuestas-generales-interrogatorio.qmd",
         "content/01-catastro/03-expediente-sorribos-santibanez.qmd",
         "content/01-catastro/04-manuscrito-volumen-actual.qmd",
+        "content/02-estudio/05-lugar-senorio-concejo-ordas.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
@@ -1423,7 +1604,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–4 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–5 y del prototipo en la navegación"
         )
 
     chapters_data = yaml.safe_load(
@@ -1434,16 +1615,16 @@ def validate() -> list[str]:
     manifest_ids = [item.get("chapter_id") for item in manifest]
     if "Fase 2B" in chapters_data.get("purpose", ""):
         errors.append("meta/chapters.yml sigue limitado exclusivamente a la Fase 2B")
-    for item in expected_navigation[:6]:
+    for item in expected_navigation:
         if manifest_paths.count(item) != 1:
             errors.append(f"meta/chapters.yml debe registrar una sola vez: {item}")
     manifest_positions = [
         manifest_paths.index(item)
-        for item in expected_navigation[:6]
+        for item in expected_navigation
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–4 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–5 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -1478,7 +1659,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–4, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–5, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0

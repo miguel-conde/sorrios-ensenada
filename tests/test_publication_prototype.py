@@ -66,6 +66,18 @@ CHAPTER_FOUR_SOURCES = {
     "docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md",
     "publication/README.md",
 }
+CHAPTER_FIVE_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md",
+}
+CHAPTER_FIVE_EVIDENCE = {
+    "D": ("JUR-001", "JUR-002", "JUR-005", "JUR-006", "FIS-012"),
+    "E": ("JUR-007", "JUR-008"),
+    "L": ("LIM-011",),
+}
 AUTHORIZED_INSTITUTIONAL_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
@@ -292,6 +304,86 @@ def test_chapter_four_separates_editorial_layers_and_provenance():
     assert "base64" not in normalized
     assert not re.search(r"<[A-Za-z][^>]*>", body)
     assert validator._validate_chapter_four_body(body) == []
+
+
+def test_chapter_five_has_controlled_provenance_evidence_and_structure():
+    path = ROOT / "publication/content/02-estudio/05-lugar-senorio-concejo-ordas.qmd"
+    metadata, body = validator._front_matter_and_body(path)
+    register = (
+        ROOT / "project/30_RESULTADOS/ESTUDIO_HISTORICO"
+        / "Registro_Afirmaciones_Calculos_v1.md"
+    ).read_text(encoding="utf-8")
+    registered = set(re.findall(r"^\|\s*([A-Z]+-\d{3})\s*\|", register, re.MULTILINE))
+
+    assert metadata["title"] == "Un lugar de señorío en el Concejo de Ordás"
+    assert metadata["chapter-id"] == "lugar-senorio-concejo-ordas"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_FIVE_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_FIVE_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    evidence = {level: tuple(values) for level, values in metadata["evidence"].items()}
+    assert evidence == CHAPTER_FIVE_EVIDENCE
+    assert {item for group in evidence.values() for item in group} <= registered
+    assert all(
+        validator._markdown_section(body, anchor)
+        for anchor in validator.CHAPTER_FIVE_ANCHORS
+    )
+    assert "(../01-catastro/03-expediente-sorribos-santibanez.qmd)" in body
+    assert "(../01-catastro/04-manuscrito-volumen-actual.qmd)" in body
+    assert not re.search(r"<[A-Za-z][^>]*>", body)
+    assert validator._validate_chapter_five_body(body) == []
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_code"),
+    (
+        ("El común del lugar era el Concejo de Ordás.",
+         "C5_COMMON_COUNCIL_EQUIVALENCE"),
+        ("El Concejo de Ordás de 1752 era el municipio actual.",
+         "C5_COUNCIL_MUNICIPALITY_EQUIVALENCE"),
+        ("El manuscrito identifica a Francisco Alfonso Pimentel.",
+         "C5_MANUSCRIPT_IDENTIFIES_COUNT"),
+        ("El lugar no pagaba ningún derecho al conde.",
+         "C5_NO_LORDLY_RIGHTS"),
+        ("La respuesta 22 demuestra la ausencia de derechos señoriales.",
+         "C5_R22_ERASES_RIGHTS"),
+        ("Conocemos el título jurídico de las alcabalas y del pozo.",
+         "C5_KNOWN_LEGAL_TITLE"),
+        ("El croquis permite reconstruir un polígono geográfico exacto.",
+         "C5_EXACT_POLYGON_RECONSTRUCTION"),
+        ("Las dimensiones equivalen a 317 hectáreas.",
+         "C5_MODERN_TERRITORIAL_CONVERSION"),
+        ("La superficie era de 3,17 kilómetros cuadrados.",
+         "C5_MODERN_TERRITORIAL_CONVERSION"),
+    ),
+)
+def test_chapter_five_rejects_bounded_semantic_reversals(mutation, expected_code):
+    path = ROOT / "publication/content/02-estudio/05-lugar-senorio-concejo-ordas.qmd"
+    _, body = validator._front_matter_and_body(path)
+
+    assert expected_code in error_codes(
+        validator._validate_chapter_five_body(f"{body}\n\n{mutation}\n")
+    )
+
+
+@pytest.mark.parametrize(
+    "caution",
+    (
+        "El común del lugar y el Concejo de Ordás no son intercambiables.",
+        "El Concejo histórico no es equivalente automático al municipio actual.",
+        "El manuscrito no proporciona el nombre personal del titular; la "
+        "identificación de Francisco Alfonso Pimentel procede de contexto externo.",
+        "La falta de carga por establecimiento del suelo coexiste con las alcabalas "
+        "y el pozo.",
+        "No consta el título jurídico concreto de las alcabalas ni del pozo.",
+        "Las dimensiones no se convierten en superficie moderna.",
+    ),
+)
+def test_chapter_five_accepts_bounded_cautionary_formulations(caution):
+    path = ROOT / "publication/content/02-estudio/05-lugar-senorio-concejo-ordas.qmd"
+    _, body = validator._front_matter_and_body(path)
+
+    assert validator._validate_chapter_five_body(f"{body}\n\n{caution}\n") == []
 
 
 @pytest.mark.parametrize(
@@ -807,6 +899,7 @@ def test_navigation_integrates_part_one_before_the_vertical_prototype():
         "content/01-catastro/02-respuestas-generales-interrogatorio.qmd",
         "content/01-catastro/03-expediente-sorribos-santibanez.qmd",
         "content/01-catastro/04-manuscrito-volumen-actual.qmd",
+        "content/02-estudio/05-lugar-senorio-concejo-ordas.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
     ]
 
@@ -856,6 +949,13 @@ def test_navigation_integrates_part_one_before_the_vertical_prototype():
         assert "number-sections" not in read_front_matter(
             ROOT / "publication" / "content" / "01-catastro" / filename
         )
+    assert "number-sections" not in read_front_matter(
+        ROOT
+        / "publication"
+        / "content"
+        / "02-estudio"
+        / "05-lugar-senorio-concejo-ordas.qmd"
+    )
     assert "Fase 2B" not in manifest["purpose"]
 
 
