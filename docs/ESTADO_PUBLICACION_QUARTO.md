@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 3 de octubre de 2026<br>
-**Estado global:** Fase 3 en curso; Fases 3A, 3B y 3C completadas<br>
-**Fase actual:** 3D — capítulo 5 (siguiente; no iniciada)<br>
+**Estado global:** Fase 3 en curso; Fases 3A, 3B, 3C y 3D completadas<br>
+**Fase actual:** 3E — capítulo 6 (siguiente; no iniciada)<br>
 **Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
 **Operación canónica al auditar:** `clean`
 
@@ -31,6 +31,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Capítulo 1 implementado en `030ea7e51fc42d23bf32d914df0bf6b0d7ddfda7` y aceptado mediante auditoría independiente con veredicto `APTO`.
 - Capítulo 2 implementado en `3b07bdf0a4c22bfe0e97015005f087125328c484`, corregido técnicamente y aceptado mediante auditoría independiente final con veredicto `APTO`.
 - Capítulos 3 y 4 implementados en `5d9f600a68702f0c061b04c821e83e56ab3baf9f`, corregidos técnicamente y aceptados mediante auditoría independiente final con veredicto `APTO`; cierran la Parte I sin correcciones pendientes.
+- Capítulo 5 implementado en `ad891d9a072c292302f813f0a5536e6c29a3a1d9`, corregido técnica y editorialmente en `1fd074e8e4b6dade5585cf20cefc2d4cbb27651c` y aceptado mediante auditoría independiente final con veredicto `APTO`; abre la Parte II sin correcciones pendientes.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -43,14 +44,14 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 1B. Contexto autosuficiente para Copilot | completada | instrucciones, plan, especificación y roadmap versionados |
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
-| 3. Contenido editorial | en curso | Fases 3A, 3B y 3C completadas; capítulos 1–4 aceptados; Fase 3D como única tarea siguiente |
+| 3. Contenido editorial | en curso | Fases 3A–3D completadas; capítulos 1–5 aceptados; Fase 3E como única tarea siguiente |
 | 4. Generación documental | pendiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 3D: crear y validar exclusivamente el capítulo 5, «Un lugar de señorío en el Concejo de Ordás», como primer capítulo de la Parte II, refundiendo de forma controlada las fuentes históricas vigentes y manteniendo la trazabilidad D/C/I/E/L, sin iniciar los capítulos 6–13 ni modificar fuentes canónicas.
+Fase 3E: crear y validar exclusivamente el capítulo 6, «Vecinos, hogares, viviendas y trabajo», distinguiendo con rigor vecinos, medios vecinos, «avitadores», residentes, hogares, viviendas y categorías laborales, manteniendo la trazabilidad D/C/I/E/L y los límites para reconstruir población, estructura social e ingresos, sin iniciar los capítulos 7–13 ni modificar fuentes canónicas.
 
 ### Cierre comprobado de 2A
 
@@ -116,6 +117,16 @@ Fase 3D: crear y validar exclusivamente el capítulo 5, «Un lugar de señorío 
 - Regresiones e integridad: 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; ningún PDF, `_book/` ni derivado versionado; ninguna dependencia bloqueante; `project/`, `plugins/`, fuentes canónicas y `main` intactos.
 - La auditoría final focalizada no repitió el render porque el último diff solo afectaba al validador y sus pruebas; el render completo ya había pasado en el commit de corrección.
 
+## Cierre comprobado de 3D
+
+- Implementación: `ad891d9a072c292302f813f0a5536e6c29a3a1d9` (`feat(publication): add chapter 5`). Corrección técnica y editorial: `1fd074e8e4b6dade5585cf20cefc2d4cbb27651c` (`fix(publication): tighten chapter 5 validation`).
+- Resultado editorial: el capítulo 5, «Un lugar de señorío en el Concejo de Ordás», abre la Parte II y distingue lugar, común, vecinos, Concejo de Ordás y municipio posterior. Separa el Concejo histórico de la configuración municipal decimonónica y el `Conde de Luna` documental de la identificación externa del XV conde. Interpreta conjuntamente las respuestas 2, 22, 28 y 29 sin convertir la exención por establecimiento del suelo en ausencia general de derechos; conserva `LIM-011`; presenta las dimensiones y la figura del término sin conversiones modernas; mantiene las fronteras con los capítulos 6, 7, 9, 10 y 11; y no modifica fuentes canónicas.
+- Procedencia aceptada: D — `JUR-001`, `JUR-002`, `JUR-005`, `JUR-006`, `FIS-012`; E — `JUR-007`, `JUR-008`; L — `LIM-011`. No se declararon C ni I. `JUR-007` permaneció bajo E y la formulación interpretativa inicial se sustituyó por una descripción externa de una configuración administrativa posterior; el Registro no fue modificado.
+- Auditorías: la primera auditoría fue `APTO CON AJUSTES`; consideró sólidos el contenido editorial y el render y pidió ampliar las variantes sobre la respuesta 22 y el conocimiento del título jurídico, conservar las fronteras de párrafo y reformular `JUR-007`. La auditoría final focalizada de `1fd074e8e4b6dade5585cf20cefc2d4cbb27651c` fue `APTO`; no queda ningún defecto bloqueante ni corrección pendiente de 3D.
+- Validación semántica: pruebas focalizadas `27 passed`; arnés focal independiente `12/12`; arnés independiente de fronteras `8/8`; suite completa `152 passed` antes y después del render; colección estable de 152 identificadores, sin `skip` ni colección condicional, con hash `cb37d5e676e9297719bf8fe3b714eae238efdf47090942f9bb20518ddf17e14f`.
+- Generación y composición: `prepare.py` se ejecutó dos veces y conservó seis derivados idempotentes con sus hashes aceptados; validador estático y `--rendered`, `quarto check` y render HTML/PDF en PASS; 12 documentos HTML y PDF de 32 páginas y 3.610.801 bytes, con el capítulo 5 en las páginas 19–21; inspección visual aceptada.
+- Regresiones e integridad: 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; ningún PDF, `_book/` ni derivado versionado; ninguna dependencia bloqueante; `project/`, `plugins/`, fuentes canónicas y `main` intactos.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -126,4 +137,4 @@ Fase 3D: crear y validar exclusivamente el capítulo 5, «Un lugar de señorío 
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3D: crea y valida exclusivamente el capítulo 5, «Un lugar de señorío en el Concejo de Ordás», como primer capítulo de la Parte II, refundiendo de forma controlada las fuentes históricas vigentes y manteniendo la trazabilidad D/C/I/E/L, sin iniciar los capítulos 6–13 ni modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3E: crea y valida exclusivamente el capítulo 6, «Vecinos, hogares, viviendas y trabajo», distinguiendo con rigor vecinos, medios vecinos, «avitadores», residentes, hogares, viviendas y categorías laborales, manteniendo la trazabilidad D/C/I/E/L y los límites para reconstruir población, estructura social e ingresos, sin iniciar los capítulos 7–13 ni modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
