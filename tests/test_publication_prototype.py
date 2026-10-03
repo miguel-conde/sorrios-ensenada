@@ -78,6 +78,24 @@ CHAPTER_FIVE_EVIDENCE = {
     "E": ("JUR-007", "JUR-008"),
     "L": ("LIM-011",),
 }
+CHAPTER_SIX_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Oficios.md",
+}
+CHAPTER_SIX_EVIDENCE = {
+    "D": (
+        "DEM-001", "DEM-002", "DEM-003", "DEM-004", "GAN-007",
+        "TRA-001", "TRA-002", "TRA-003", "TRA-004", "TRA-005", "FIS-007",
+    ),
+    "C": ("CAL-018", "CAL-019"),
+    "I": ("INT-002", "INT-008", "INT-010"),
+    "E": ("DEM-005", "DEM-006"),
+    "L": ("LIM-001", "LIM-002", "LIM-008"),
+}
 AUTHORIZED_INSTITUTIONAL_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
@@ -438,6 +456,94 @@ def test_chapter_five_prohibitions_preserve_semantic_block_boundaries(
     assert error_codes(
         validator._validate_chapter_five_body(f"{body}\n\n{mutation}\n")
     ) == expected_codes
+
+
+def test_chapter_six_has_controlled_provenance_evidence_and_structure():
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "06-vecinos-hogares-viviendas-trabajo.qmd"
+    )
+    metadata, body = validator._front_matter_and_body(path)
+    register = (
+        ROOT / "project/30_RESULTADOS/ESTUDIO_HISTORICO"
+        / "Registro_Afirmaciones_Calculos_v1.md"
+    ).read_text(encoding="utf-8")
+    registered = set(re.findall(r"^\|\s*([A-Z]+-\d{3})\s*\|", register, re.MULTILINE))
+
+    assert metadata["title"] == "Vecinos, hogares, viviendas y trabajo"
+    assert metadata["chapter-id"] == "vecinos-hogares-viviendas-trabajo"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_SIX_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_SIX_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    evidence = {level: tuple(values) for level, values in metadata["evidence"].items()}
+    assert evidence == CHAPTER_SIX_EVIDENCE
+    assert set(evidence) == {"D", "C", "I", "E", "L"}
+    assert {item for group in evidence.values() for item in group} <= registered
+    assert all(
+        validator._markdown_section(body, anchor)
+        for anchor in validator.CHAPTER_SIX_ANCHORS
+    )
+    assert "(05-lugar-senorio-concejo-ordas.qmd)" in body
+    assert not re.search(r"<[A-Za-z][^>]*>", body)
+    assert validator._validate_chapter_six_body(body) == []
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_code"),
+    (
+        ("Los 26 avitadores son 26 habitantes.",
+         "C6_AVITADORES_ARE_INHABITANTS"),
+        ("La población total era de 34 habitantes.",
+         "C6_RESIDENT_SUM_IS_POPULATION"),
+        ("Ocho medios vecinos equivalen a cuatro vecinos.",
+         "C6_HALF_NEIGHBOUR_WEIGHTED"),
+        ("Las cuarenta casas habitables representan cuarenta hogares.",
+         "C6_HOUSES_ARE_HOUSEHOLDS"),
+        ("Los 18 jornaleros y los 24 labradores forman una población activa de 42.",
+         "C6_LABOUR_CATEGORIES_ADDED"),
+        ("El medio vecino era media persona.",
+         "C6_HALF_NEIGHBOUR_IS_HALF_PERSON"),
+        ("Los 2,5 reales diarios permiten calcular el ingreso anual.",
+         "C6_DAILY_RATE_IS_ANNUAL_INCOME"),
+        ("El herrero no ejercía como labrador.",
+         "C6_SMITH_NOT_FARMER"),
+        ("Los cinco pobres de solemnidad permiten calcular la tasa de pobreza.",
+         "C6_POVERTY_RATE"),
+        ("Vecinos × 4 = 72 habitantes.",
+         "C6_GENERIC_POPULATION_FACTOR"),
+    ),
+)
+def test_chapter_six_rejects_bounded_semantic_reversals(mutation, expected_code):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "06-vecinos-hogares-viviendas-trabajo.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert error_codes(
+        validator._validate_chapter_six_body(f"{body}\n\n{mutation}\n")
+    ) == {expected_code}
+
+
+@pytest.mark.parametrize(
+    "caution",
+    (
+        "Los 26 avitadores no son 26 habitantes.",
+        "Ocho medios vecinos no equivalen a cuatro vecinos.",
+        "Las cuarenta casas habitables no representan cuarenta hogares.",
+        "Los cinco pobres de solemnidad no permiten calcular la tasa de pobreza.",
+        "La regulación diaria no permite calcular el ingreso anual.",
+    ),
+)
+def test_chapter_six_accepts_bounded_cautionary_formulations(caution):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "06-vecinos-hogares-viviendas-trabajo.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert validator._validate_chapter_six_body(f"{body}\n\n{caution}\n") == []
 
 
 @pytest.mark.parametrize(
@@ -954,6 +1060,7 @@ def test_navigation_integrates_part_one_before_the_vertical_prototype():
         "content/01-catastro/03-expediente-sorribos-santibanez.qmd",
         "content/01-catastro/04-manuscrito-volumen-actual.qmd",
         "content/02-estudio/05-lugar-senorio-concejo-ordas.qmd",
+        "content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
     ]
 
@@ -1009,6 +1116,13 @@ def test_navigation_integrates_part_one_before_the_vertical_prototype():
         / "content"
         / "02-estudio"
         / "05-lugar-senorio-concejo-ordas.qmd"
+    )
+    assert "number-sections" not in read_front_matter(
+        ROOT
+        / "publication"
+        / "content"
+        / "02-estudio"
+        / "06-vecinos-hogares-viviendas-trabajo.qmd"
     )
     assert "Fase 2B" not in manifest["purpose"]
 

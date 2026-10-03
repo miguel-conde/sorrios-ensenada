@@ -1,0 +1,189 @@
+---
+title: "Vecinos, hogares, viviendas y trabajo"
+chapter-id: vecinos-hogares-viviendas-trabajo
+publication-status: development
+sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "versión 1.5, Parte II, capítulo 6"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    locator: "versión 1.2, secciones 3–4, 16–17 y anexo A, CAL-018–CAL-019"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
+    locator: "versión 1.2, entradas DEM-001–DEM-006, GAN-007, TRA-001–TRA-005, FIS-007, INT-002, INT-008, INT-010, LIM-001, LIM-002, LIM-008 y CAL-018–CAL-019"
+  - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
+    locator: "versión 3.6, respuestas 18, 21–22, 29 y 33–39; folios 316r y 318r–321r"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
+    locator: "versión 1.3, respuestas 18, 21–22, 29 y 33–39 y notas 27, 33–35 y avitadores"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Oficios.md
+    locator: "entradas herrero, labrador, jornalero, criado sirviente, cura párroco y capellán"
+evidence:
+  D: [DEM-001, DEM-002, DEM-003, DEM-004, GAN-007, TRA-001, TRA-002, TRA-003, TRA-004, TRA-005, FIS-007]
+  C: [CAL-018, CAL-019]
+  I: [INT-002, INT-008, INT-010]
+  E: [DEM-005, DEM-006]
+  L: [LIM-001, LIM-002, LIM-008]
+---
+
+El [capítulo 5](05-lugar-senorio-concejo-ordas.qmd) separó el lugar, el común,
+los vecinos, el Concejo de Ordás y el municipio posterior. Esa distinción es
+también el punto de partida para leer la sociedad local. Las respuestas no
+ofrecen un censo moderno: cuentan categorías vecinales y fiscales, edificios y
+posiciones laborales según preguntas diferentes. **Persona**, **vecino**,
+**medio vecino**, **residente**, **hogar** y **casa** no son sinónimos.
+
+## Qué cuenta la respuesta 21 {#vecinos-recuento}
+
+La respuesta 21 declara cuatro magnitudes o condiciones que deben conservarse
+por separado:
+
+| Categoría o condición documental | Cifra | Alcance seguro |
+|---|---:|---|
+| Vecinos | 18 | Categoría vecinal asociada en la propia respuesta a la contribución a los tributos reales. |
+| Medios vecinos | 8 | Categoría distinta; incluye dos viudas, sin que el expediente formule una regla jurídica general. |
+| «Avitadores» | 26 | Suma que el texto forma con los 18 vecinos y los 8 medios vecinos. |
+| Residentes no considerados vecinos | 8 | Residen en el lugar, pero la respuesta los excluye de la vecindad porque no contribuyen a los tributos reales. |
+
+El total de 26 tiene una doble trazabilidad: es dato escrito en el manuscrito y
+coincide con el cálculo directo **18 + 8 = 26**. La operación no pondera cada
+medio vecino como la mitad de un vecino completo; reproduce exactamente la
+suma practicada por los declarantes. Por eso ocho medios vecinos no equivalen
+a cuatro vecinos en este recuento.
+
+La relación con los tributos muestra una función fiscal de la vecindad en este
+pasaje. También la respuesta 25 sitúa entre los vecinos el repartimiento de
+cantidades que el común no podía satisfacer con recursos propios. Esto no
+convierte toda aparición de *vecino* en una unidad fiscal idéntica ni define
+por sí solo una categoría administrativa universal: describe cómo opera el
+término en estas respuestas de Sorribos y Santibáñez.
+
+## «Avitadores» no es una población total {#avitadores-poblacion}
+
+La forma **«avitadores»** se conserva entre comillas porque es la forma
+documental de la respuesta 21. El expediente la aplica al resultado de sumar
+vecinos y medios vecinos; no ofrece una definición que autorice a
+normalizarla como un número de habitantes individuales. Tampoco incluye bajo
+esa suma a los ocho residentes que la misma respuesta distingue de los
+vecinos.
+
+No se obtiene una población total añadiendo 26 y 8. El resultado aritmético 34
+mezclaría categorías cuya unidad de observación no consta como equivalente.
+El expediente no enumera cónyuges, hijos, criados y demás convivientes de cada
+unidad ni proporciona edades o tamaños familiares. Por la misma razón, no se
+aplica un coeficiente genérico del tipo *vecinos × k*: produciría un escenario
+externo, no una cifra observada para el lugar.
+
+Una relación parroquial atribuye **137 habitantes a Santibáñez de Sorribos en
+1768**. Por su fecha y unidad distintas, es solo contexto externo: no comprueba
+ni estima la población local de 1752.
+
+## Personas, familias y hogares {#personas-hogares}
+
+Una **persona** es un individuo, pero la respuesta 21 no presenta una lista
+completa. En la práctica general del Catastro, los libros personales se
+articulaban en torno a cabezas de casa y familias e incluían cónyuges, hijos,
+criados y otros convivientes; en distintos lugares las viudas podían contarse
+como medios vecinos. Este contexto explica las categorías, pero no identifica
+aquí un hogar por cada vecino o medio vecino.
+
+Sí aparecen relaciones domésticas. De los 18 jornaleros, 14 son **hijos de
+familia que viven en compañía de sus padres** y tres son **criados
+sirvientes**; solo uno vive ocupado exclusivamente como jornalero. La respuesta
+18 añade que cada propietario esquila su ganado en su habitación, pues no hay
+casa destinada a ello. Son indicios de convivencia y trabajo doméstico, no un
+padrón de hogares.
+
+Así, **hogar** es una unidad analítica útil para describir convivencia y
+organización doméstica, pero no una magnitud contada directamente. No sabemos
+cuántos cabezas de casa aparecen detrás del recuento, cuántos grupos convivían
+en una misma vivienda ni si todas las casas habitables estaban ocupadas.
+
+## Casas, viviendas y pajares {#casas-viviendas}
+
+La respuesta 22 cambia la unidad de observación y cuenta edificios:
+
+| Elemento | Número documentado | Lo que no permite inferir |
+|---|---:|---|
+| Casas habitables | 40 | No equivalen a 40 hogares, familias o casas ocupadas. |
+| Casas arruinadas | 2 | No informan sobre ocupantes ni sobre la fecha o causa de la ruina. |
+| Pajares separados | 15 | Sirven para paja y ganado; no son viviendas adicionales. |
+
+La respuesta 21 añade que no hay casa de campo ni alquería. El **parque
+edificado** —cuarenta casas habitables, dos arruinadas y quince construcciones
+auxiliares— no permite estimar cuántas personas ocupaban cada casa. *Casa
+habitable* no equivale a *vivienda ocupada* ni a *hogar residente*.
+
+## Trabajo: categorías que se cruzan {#trabajo-categorias}
+
+Las respuestas 29, 33 y 35 registran formas diferentes de trabajo y servicio:
+
+| Categoría o actividad | Dato documentado | Relación interna |
+|---|---:|---|
+| Jornaleros | 18 | 14 hijos de familia + 3 criados sirvientes + 1 dedicado solo a ese ejercicio = 18. |
+| Labradores | 24 | No consta que sean un grupo excluyente. |
+| Herrero | 1 | Dedica la mayor parte del año al ejercicio de labrador: un caso individual de pluriactividad. |
+| Taberna por vecera | 1 servicio | Pasa por turno entre vecinos y no produce utilidad al común ni a un particular. |
+
+El desglose de los jornaleros es una composición, no tres grupos añadidos a
+los 18. Del mismo modo, los 18 jornaleros y los 24 labradores no se suman para
+formar una población activa: desconocemos los solapamientos entre categorías
+salvo el caso explícito del herrero que también ejerce como labrador. La vecera
+describe una modalidad rotatoria de prestación del servicio de taberna, no un
+oficio estable atribuido a una persona determinada.
+
+**Oficio**, **ocupación** y **condición laboral** tampoco son equivalentes. El
+herrero desempeña un oficio; *labrador* nombra aquí un ejercicio al que se
+asigna utilidad; *jornalero* es una categoría laboral; *hijo de familia* y
+*criado sirviente* expresan posiciones domésticas y laborales dentro de ese
+grupo. La propiedad de tierras, ganado, colmenas o molinos sería otra relación
+distinta y no demuestra por sí sola una ocupación.
+
+La respuesta 36 (folio 320v) declara cinco **pobres de solemnidad**. Las
+respuestas 38–39 (folios 320v–321r) cuentan un cura párroco y dos capellanes y
+niegan la existencia de convento. Son posiciones sociales, no sumandos de una
+población laboral. Los cinco pobres tampoco permiten calcular una tasa de
+pobreza: falta el denominador y la categoría no mide todos los recursos o el
+patrimonio.
+
+## Utilidad regulada no es ingreso anual {#trabajo-utilidades}
+
+La respuesta 35 regula **2,5 reales por día trabajado** para los jornaleros y
+**3 reales** para los labradores; ambos valores incluyen la comida, tasada en
+**1,5 reales**. Al herrero se le atribuye **medio real diario** por ese oficio,
+además de lo que gana como labrador. Son valores regulados, no cuentas de cobros
+efectivos.
+
+No consta el número anual de jornadas. Por eso una regulación diaria no es un
+ingreso anual ni puede multiplicarse por un calendario supuesto. La comida
+tasada tampoco prueba un pago monetario efectivo. Rendimientos imputados a
+bienes, rentas y derechos son magnitudes distintas, no componentes
+automáticamente sumables de una renta familiar.
+
+El capítulo permite, por tanto, identificar **fuentes potenciales y formas de
+valoración documentadas**, no reconstruir la renta anual de un hogar. Faltan
+jornadas efectivas, distribución completa de activos, autoconsumo, deudas,
+precios suficientes y correspondencias entre personas, hogares y bienes.
+
+## Una estructura visible y sus límites {#estructura-limites}
+
+La evidencia dibuja una sociedad de base agraria en la que conviven trabajo
+familiar, servicio doméstico, jornal, labranza, un oficio artesanal y un
+servicio rotatorio. El herrero-labrador prueba pluriactividad en un caso concreto; la
+composición de los jornaleros muestra dependencia familiar y servicio en casos
+documentados. Ninguna de esas observaciones autoriza a generalizar la misma
+organización a todos los hogares.
+
+| Pregunta | Respuesta que sostiene el expediente | Nivel de conocimiento |
+|---|---|---|
+| ¿Cuántos vecinos se declararon? | 18 vecinos y 8 medios vecinos; el texto los suma como 26 «avitadores». | Dato y cálculo directo. |
+| ¿Cuánta población había? | No consta el total de individuos. | Límite. |
+| ¿Cuántos hogares había? | Se observan relaciones familiares y de servicio, pero no un total de unidades domésticas. | Interpretación limitada. |
+| ¿Cuántas viviendas había? | Hay 40 casas habitables y 2 arruinadas; no consta cuántas estaban ocupadas ni por cuántos hogares. | Dato edilicio y límite residencial. |
+| ¿Cuántos trabajadores había? | Hay recuentos por categorías que no son necesariamente excluyentes. | Dato sin suma total. |
+| ¿Qué ingresos obtenían? | Hay utilidades diarias reguladas y otras valoraciones parciales, no rentas anuales personales o familiares. | Dato y límite. |
+| ¿Puede medirse riqueza o nivel de vida? | No con la distribución parcial de oficios, casas o activos conservada en estas respuestas. | Límite. |
+
+La distinción final es sencilla pero decisiva: el documento cuenta aquello que
+pregunta y con la unidad que cada respuesta adopta. Vecindad, residencia,
+convivencia, edificio, trabajo, propiedad y utilidad se relacionan, pero no son
+equivalentes. Mantenerlas separadas permite describir con rigor la estructura
+social y laboral observable sin fabricar una cifra de población, hogares,
+ingresos o riqueza que el expediente no contiene.

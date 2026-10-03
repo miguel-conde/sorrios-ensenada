@@ -52,6 +52,12 @@ CHAPTER_FIVE = (
     / "02-estudio"
     / "05-lugar-senorio-concejo-ordas.qmd"
 )
+CHAPTER_SIX = (
+    PUBLICATION_ROOT
+    / "content"
+    / "02-estudio"
+    / "06-vecinos-hogares-viviendas-trabajo.qmd"
+)
 PROTOTYPE_CHAPTER = (
     PUBLICATION_ROOT / "content" / "02-estudio" / "09-rio-molinos-recursos.qmd"
 )
@@ -101,6 +107,13 @@ RENDERED_CHAPTER_FIVE_HTML = (
     / "content"
     / "02-estudio"
     / "05-lugar-senorio-concejo-ordas.html"
+)
+RENDERED_CHAPTER_SIX_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "02-estudio"
+    / "06-vecinos-hogares-viviendas-trabajo.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -206,6 +219,33 @@ CHAPTER_FIVE_ANCHORS = (
     "lugar-derechos",
     "lugar-termino",
     "lugar-sintesis",
+)
+CHAPTER_SIX_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Oficios.md",
+}
+CHAPTER_SIX_EVIDENCE = {
+    "D": (
+        "DEM-001", "DEM-002", "DEM-003", "DEM-004", "GAN-007",
+        "TRA-001", "TRA-002", "TRA-003", "TRA-004", "TRA-005", "FIS-007",
+    ),
+    "C": ("CAL-018", "CAL-019"),
+    "I": ("INT-002", "INT-008", "INT-010"),
+    "E": ("DEM-005", "DEM-006"),
+    "L": ("LIM-001", "LIM-002", "LIM-008"),
+}
+CHAPTER_SIX_ANCHORS = (
+    "vecinos-recuento",
+    "avitadores-poblacion",
+    "personas-hogares",
+    "casas-viviendas",
+    "trabajo-categorias",
+    "trabajo-utilidades",
+    "estructura-limites",
 )
 CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("1–3", "Nombre, jurisdicción, término y límites"),
@@ -404,6 +444,12 @@ def validate_rendered_outputs() -> list[str]:
             5,
             "04-manuscrito-volumen-actual.html",
         ),
+        (
+            RENDERED_CHAPTER_SIX_HTML,
+            "Vecinos, hogares, viviendas y trabajo",
+            6,
+            "05-lugar-senorio-concejo-ordas.html",
+        ),
     )
     for path, title, number, linked_chapter in rendered_chapters:
         if not path.is_file():
@@ -420,10 +466,12 @@ def validate_rendered_outputs() -> list[str]:
             errors.append(
                 f"El HTML del capítulo {number} no conserva su enlace cruzado"
             )
-        if number == 5 and not re.search(
-            r'class="chapter-number"[^>]*>\s*5\s*<', html
+        if number in (5, 6) and not re.search(
+            rf'class="chapter-number"[^>]*>\s*{number}\s*<', html
         ):
-            errors.append("El capítulo nuevo no aparece numerado realmente como 5")
+            errors.append(
+                f"El capítulo {number} no aparece numerado realmente como {number}"
+            )
 
     if not RENDERED_HTML.is_file():
         errors.append(f"Falta el HTML renderizado: {RENDERED_HTML}")
@@ -468,6 +516,8 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append("El PDF no contiene el capítulo 4")
             if "Un lugar de señorío en el Concejo de Ordás" not in normalized_pdf:
                 errors.append("El PDF no contiene el capítulo 5")
+            if "Vecinos, hogares, viviendas y trabajo" not in normalized_pdf:
+                errors.append("El PDF no contiene el capítulo 6")
     return errors
 
 
@@ -1221,6 +1271,144 @@ def _validate_chapter_five_body(body: str) -> list[str]:
     return errors
 
 
+def _validate_chapter_six_body(body: str) -> list[str]:
+    """Validate the demographic, domestic and labour limits of chapter 6."""
+
+    errors: list[str] = []
+    sections = {
+        anchor: _plain_text(_markdown_section(body, anchor))
+        for anchor in CHAPTER_SIX_ANCHORS
+    }
+    for anchor, section in sections.items():
+        if not section:
+            errors.append(f"C6_SECTION_{anchor.upper().replace('-', '_')}: falta la sección")
+
+    required_by_section = {
+        "vecinos-recuento": (
+            "vecinos | 18",
+            "medios vecinos | 8",
+            "«avitadores» | 26",
+            "residentes no considerados vecinos | 8",
+            "18 + 8 = 26",
+            "ocho medios vecinos no equivalen a cuatro vecinos",
+            "función fiscal de la vecindad",
+        ),
+        "avitadores-poblacion": (
+            "forma documental de la respuesta 21",
+            "no se obtiene una población total añadiendo 26 y 8",
+            "unidad de observación no consta como equivalente",
+            "vecinos × k",
+            "137 habitantes a santibáñez de sorribos en 1768",
+            "por su fecha y unidad distintas",
+        ),
+        "personas-hogares": (
+            "persona es un individuo",
+            "cabezas de casa y familias",
+            "14 son hijos de familia",
+            "tres son criados sirvientes",
+            "indicios de convivencia y trabajo doméstico",
+            "no una magnitud contada directamente",
+        ),
+        "casas-viviendas": (
+            "casas habitables | 40",
+            "casas arruinadas | 2",
+            "pajares separados | 15",
+            "no equivalen a 40 hogares",
+            "no permite estimar cuántas personas ocupaban cada casa",
+            "vivienda ocupada",
+        ),
+        "trabajo-categorias": (
+            "jornaleros | 18",
+            "14 hijos de familia + 3 criados sirvientes + 1 dedicado solo a ese ejercicio = 18",
+            "labradores | 24",
+            "herrero | 1",
+            "no se suman para formar una población activa",
+            "oficio, ocupación y condición laboral tampoco son equivalentes",
+            "cinco pobres de solemnidad",
+            "un cura párroco y dos capellanes",
+        ),
+        "trabajo-utilidades": (
+            "2,5 reales por día trabajado",
+            "3 reales",
+            "1,5 reales",
+            "medio real diario",
+            "una regulación diaria no es un ingreso anual",
+            "no reconstruir la renta anual de un hogar",
+        ),
+        "estructura-limites": (
+            "trabajo familiar, servicio doméstico, jornal, labranza",
+            "no consta el total de individuos",
+            "no un total de unidades domésticas",
+            "dato sin suma total",
+            "no rentas anuales personales o familiares",
+            "no son equivalentes",
+        ),
+    }
+    for anchor, phrases in required_by_section.items():
+        section = sections[anchor]
+        absent = [phrase for phrase in phrases if phrase not in section]
+        if absent:
+            errors.append(
+                f"C6_CONTENT_{anchor.upper().replace('-', '_')}: faltan relaciones "
+                + ", ".join(absent)
+            )
+
+    controlled = _controlled_paragraphs(body)
+    propositions = tuple(
+        proposition
+        for _, paragraph_propositions in controlled
+        for proposition in paragraph_propositions
+    )
+    prohibited_predicates = {
+        "C6_AVITADORES_ARE_INHABITANTS": (
+            r"\b(?:los\s+)?26\s+avitadores\s+(?:son|equivalen\s+a)\s+26\s+habitantes\b",
+        ),
+        "C6_RESIDENT_SUM_IS_POPULATION": (
+            r"\b(?:sumar|sumando|añadir|añadiendo)\b[^.;]{0,80}\b(?:26\s+y\s+8|ocho\s+residentes)\b[^.;]{0,80}\b(?:da|daría|produce|produciría|forma|formaría)\b[^.;]{0,40}\b(?:la\s+)?población\s+total\b",
+            r"\b(?:la\s+)?población\s+total\s+(?:era|es|sería)\s+(?:de\s+)?34\s+habitantes\b",
+        ),
+        "C6_HALF_NEIGHBOUR_WEIGHTED": (
+            r"\bocho\s+medios\s+vecinos\s+(?:equivalen|equivalían|son)\s+a?\s*cuatro\s+vecinos\b",
+        ),
+        "C6_HOUSES_ARE_HOUSEHOLDS": (
+            r"\b(?:las\s+)?(?:40|cuarenta)\s+casas\s+habitables\s+(?:representan|equivalen\s+a|son)\s+(?:40|cuarenta)\s+hogares\b",
+        ),
+        "C6_LABOUR_CATEGORIES_ADDED": (
+            r"\b(?:los\s+)?18\s+jornaleros\s+y\s+(?:los\s+)?24\s+labradores\s+(?:forman|suman|equivalen\s+a)\b[^.;]{0,50}\b(?:42|cuarenta\s+y\s+dos)\b",
+        ),
+        "C6_HALF_NEIGHBOUR_IS_HALF_PERSON": (
+            r"\b(?:el\s+)?medio\s+vecino\s+(?:era|es|equivale\s+a)\s+(?:media\s+persona|medio\s+habitante)\b",
+        ),
+        "C6_DAILY_RATE_IS_ANNUAL_INCOME": (
+            r"\b(?:los\s+)?2,5\s+reales\s+diarios\s+(?:permiten|permitirían)\s+calcular\b[^.;]{0,50}\b(?:el\s+)?ingreso\s+anual\b",
+        ),
+        "C6_SMITH_NOT_FARMER": (
+            r"\bel\s+herrero\s+no\s+(?:ejercía|trabajaba)\s+como\s+labrador\b",
+        ),
+        "C6_POVERTY_RATE": (
+            r"\b(?:los\s+)?cinco\s+pobres\s+de\s+solemnidad\s+(?:permiten|permitirían)\s+calcular\b[^.;]{0,40}\b(?:la\s+)?tasa\s+de\s+pobreza\b",
+        ),
+    }
+    for code, patterns in prohibited_predicates.items():
+        if any(
+            not _predicate_is_negated(proposition, match.start())
+            for proposition in propositions
+            for pattern in patterns
+            for match in re.finditer(pattern, proposition)
+        ):
+            errors.append(f"{code}: formulación no autorizada en el capítulo 6")
+
+    normalized = _plain_text(body)
+    if re.search(
+        r"\bvecinos\s*[×x]\s*\d+(?:[.,]\d+)?\s*=\s*\d+(?:[.,]\d+)?\s+habitantes\b",
+        normalized,
+    ):
+        errors.append(
+            "C6_GENERIC_POPULATION_FACTOR: conversión no autorizada de vecinos en habitantes"
+        )
+    return errors
+
+
 def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
     evidence = metadata.get("evidence", {})
     if not isinstance(evidence, dict):
@@ -1366,6 +1554,9 @@ def validate() -> list[str]:
         (CHAPTER_FIVE, "Un lugar de señorío en el Concejo de Ordás",
          "lugar-senorio-concejo-ordas", CHAPTER_FIVE_SOURCE_PATHS,
          CHAPTER_FIVE_EVIDENCE, 5),
+        (CHAPTER_SIX, "Vecinos, hogares, viviendas y trabajo",
+         "vecinos-hogares-viviendas-trabajo", CHAPTER_SIX_SOURCE_PATHS,
+         CHAPTER_SIX_EVIDENCE, 6),
     )
     chapter_bodies: dict[int, str] = {}
     for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
@@ -1468,6 +1659,14 @@ def validate() -> list[str]:
             errors.append("El capítulo 5 contiene HTML crudo")
         errors.extend(_validate_chapter_five_body(chapter_five_text))
 
+    if CHAPTER_SIX.is_file():
+        chapter_six_text = chapter_bodies.get(6, "")
+        if "(05-lugar-senorio-concejo-ordas.qmd)" not in chapter_six_text:
+            errors.append("El capítulo 6 no enlaza el capítulo 5")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_six_text):
+            errors.append("El capítulo 6 contiene HTML crudo")
+        errors.extend(_validate_chapter_six_body(chapter_six_text))
+
     if not PROTOTYPE_CHAPTER.is_file():
         return errors + [f"Falta el capítulo editorial: {PROTOTYPE_CHAPTER}"]
     try:
@@ -1504,8 +1703,11 @@ def validate() -> list[str]:
     phase_3d_ids = {
         item for group in CHAPTER_FIVE_EVIDENCE.values() for item in group
     }
+    phase_3e_ids = {
+        item for group in CHAPTER_SIX_EVIDENCE.values() for item in group
+    }
     missing_registry = sorted(
-        (expected_ids | phase_3c_ids | phase_3d_ids) - registered
+        (expected_ids | phase_3c_ids | phase_3d_ids | phase_3e_ids) - registered
     )
     if missing_registry:
         errors.append("Identificadores ausentes del Registro 1.2: " + ", ".join(missing_registry))
@@ -1617,6 +1819,7 @@ def validate() -> list[str]:
         "content/01-catastro/03-expediente-sorribos-santibanez.qmd",
         "content/01-catastro/04-manuscrito-volumen-actual.qmd",
         "content/02-estudio/05-lugar-senorio-concejo-ordas.qmd",
+        "content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
@@ -1629,7 +1832,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–5 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–6 y del prototipo en la navegación"
         )
 
     chapters_data = yaml.safe_load(
@@ -1649,7 +1852,7 @@ def validate() -> list[str]:
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–5 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–6 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -1684,7 +1887,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–5, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–6, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0
