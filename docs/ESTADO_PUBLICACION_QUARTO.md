@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 1 de octubre de 2026<br>
-**Estado global:** Fase 3 en curso; Fases 3A y 3B completadas<br>
-**Fase actual:** 3C — capítulos 3 y 4 (siguiente; no iniciada)<br>
+**Actualizado:** 3 de octubre de 2026<br>
+**Estado global:** Fase 3 en curso; Fases 3A, 3B y 3C completadas<br>
+**Fase actual:** 3D — capítulo 5 (siguiente; no iniciada)<br>
 **Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
 **Operación canónica al auditar:** `clean`
 
@@ -30,6 +30,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Prototipo vertical 2B implementado, corregido y validado en los commits registrados en este roadmap.
 - Capítulo 1 implementado en `030ea7e51fc42d23bf32d914df0bf6b0d7ddfda7` y aceptado mediante auditoría independiente con veredicto `APTO`.
 - Capítulo 2 implementado en `3b07bdf0a4c22bfe0e97015005f087125328c484`, corregido técnicamente y aceptado mediante auditoría independiente final con veredicto `APTO`.
+- Capítulos 3 y 4 implementados en `5d9f600a68702f0c061b04c821e83e56ab3baf9f`, corregidos técnicamente y aceptados mediante auditoría independiente final con veredicto `APTO`; cierran la Parte I sin correcciones pendientes.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -42,14 +43,14 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 1B. Contexto autosuficiente para Copilot | completada | instrucciones, plan, especificación y roadmap versionados |
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
-| 3. Contenido editorial | en curso | Fases 3A y 3B completadas; capítulos 1 y 2 aceptados; Fase 3C como única tarea siguiente |
+| 3. Contenido editorial | en curso | Fases 3A, 3B y 3C completadas; capítulos 1–4 aceptados; Fase 3D como única tarea siguiente |
 | 4. Generación documental | pendiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 3C: crear y validar conjuntamente los capítulos 3, «El expediente de Sorribos y Santibáñez de Ordás», y 4, «Del manuscrito al volumen actual», como cierre de la Parte I, manteniendo separadas la descripción histórica del expediente y la explicación del proceso editorial, sin modificar fuentes canónicas ni iniciar la Parte II.
+Fase 3D: crear y validar exclusivamente el capítulo 5, «Un lugar de señorío en el Concejo de Ordás», como primer capítulo de la Parte II, refundiendo de forma controlada las fuentes históricas vigentes y manteniendo la trazabilidad D/C/I/E/L, sin iniciar los capítulos 6–13 ni modificar fuentes canónicas.
 
 ### Cierre comprobado de 2A
 
@@ -104,6 +105,17 @@ Fase 3C: crear y validar conjuntamente los capítulos 3, «El expediente de Sorr
 - Política de PDFs: los PDFs seguidos o no ignorados se rechazan; el PDF reproducible de `_book/` se permite y permanece ignorado. Ningún PDF, `_book/` ni derivado quedó versionado.
 - Integridad: `project/`, `plugins/`, fuentes canónicas y `main` permanecieron intactos.
 
+## Cierre comprobado de 3C
+
+- Implementación: `5d9f600a68702f0c061b04c821e83e56ab3baf9f` (`feat(publication): add chapters 3 and 4`). Correcciones técnicas: `efd403cc414e38fc0e1d1aa164e9012c5439d7eb` (`fix(publication): strengthen phase 3C semantic validation`), `1bff0c633c6fb1c63b1404a743a087f31a3f57a7` (`fix(publication): make phase 3C relation checks polarity-aware`), `899a927acf9718aada83e29987441008ceb48d88` (`fix(publication): scope phase 3C relations by clause`) y `399c9b3a5abf59da84984c9b45ed688025de50c4` (`fix(publication): distinguish phonetic attribute polarity`).
+- Resultado editorial: el capítulo 3, «El expediente de Sorribos y Santibáñez de Ordás», describe el expediente histórico local, sus participantes, materialidad, cierre y evolución positiva del topónimo; el capítulo 4, «Del manuscrito al volumen actual», explica las capas documentales y editoriales, la trazabilidad y la separación entre `content/` y `generated/`. Ambos capítulos cierran la Parte I.
+- Fronteras: se preservaron la separación con la Parte II y con los capítulos generados; las fuentes canónicas no fueron modificadas.
+- Auditorías: la auditoría editorial inicial fue `APTO CON AJUSTES`, sin defectos históricos o editoriales en los capítulos. Las auditorías técnicas intermedias detectaron y permitieron corregir cobertura semántica, polaridad, orden sintáctico, asociación por subcláusulas y uso atributivo de `documentada`. La auditoría independiente final de `399c9b3a5abf59da84984c9b45ed688025de50c4` fue `APTO`; no quedan defectos bloqueantes dentro del contrato validado.
+- Validación semántica: parser único con separación de front matter y cuerpo y validación por secciones, proposiciones y subcláusulas; matriz adversarial anterior `34/34`, matriz ampliada `21/21` y total independiente `55/55`; pruebas fonéticas focalizadas `18 passed`, regresiones semánticas focalizadas `65 passed`, suite completa final `126 passed` y validador estático en PASS.
+- Generación y composición: preparación idempotente de seis derivados con hashes conservados; `quarto check` y render conjunto HTML/PDF en PASS; 11 documentos HTML y PDF de 29 páginas, con el capítulo 3 en las páginas 12–14 y el capítulo 4 en las páginas 15–18; inspección visual aceptada.
+- Regresiones e integridad: 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; ningún PDF, `_book/` ni derivado versionado; ninguna dependencia bloqueante; `project/`, `plugins/`, fuentes canónicas y `main` intactos.
+- La auditoría final focalizada no repitió el render porque el último diff solo afectaba al validador y sus pruebas; el render completo ya había pasado en el commit de corrección.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -114,4 +126,4 @@ Fase 3C: crear y validar conjuntamente los capítulos 3, «El expediente de Sorr
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3C: crea y valida conjuntamente los capítulos 3, «El expediente de Sorribos y Santibáñez de Ordás», y 4, «Del manuscrito al volumen actual», como cierre de la Parte I, manteniendo separadas la descripción histórica del expediente y la explicación del proceso editorial, sin modificar fuentes canónicas ni iniciar la Parte II. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3D: crea y valida exclusivamente el capítulo 5, «Un lugar de señorío en el Concejo de Ordás», como primer capítulo de la Parte II, refundiendo de forma controlada las fuentes históricas vigentes y manteniendo la trazabilidad D/C/I/E/L, sin iniciar los capítulos 6–13 ni modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
