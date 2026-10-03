@@ -552,15 +552,26 @@ def _predicate_polarities(
     proposition: str,
     affirmative_patterns: tuple[str, ...],
     negative_patterns: tuple[str, ...] = (),
+    ignored_spans: tuple[tuple[int, int], ...] = (),
 ) -> set[bool]:
     """Return True for affirmed and False for negated relation predicates."""
 
     polarities: set[bool] = set()
     for pattern in affirmative_patterns:
         for match in re.finditer(pattern, proposition):
+            if any(
+                start <= match.start() and match.end() <= end
+                for start, end in ignored_spans
+            ):
+                continue
             polarities.add(not _predicate_is_negated(proposition, match.start()))
     for pattern in negative_patterns:
         for match in re.finditer(pattern, proposition):
+            if any(
+                start <= match.start() and match.end() <= end
+                for start, end in ignored_spans
+            ):
+                continue
             polarities.add(_predicate_is_negated(proposition, match.start()))
     return polarities
 
@@ -571,6 +582,11 @@ _PHONETIC_ENTITY = (
 _PHONETIC_COMPLETENESS = (
     r"\bcompleta\b",
     r"\bcompletamente\s+documentad\w*\b",
+    r"\bpor\s+completo\b",
+)
+_PHONETIC_ATTRIBUTIVE_ENTITY = re.compile(
+    r"\b(?:secuencia|evolución|reconstrucción)\s+fonética\s+"
+    r"completamente\s+documentad\w*\b"
 )
 _PHONETIC_PREDICATES = (
     r"\bexist(?:e|en|ía|ió|irá|iría)\b",
@@ -610,7 +626,15 @@ def _phonetic_polarities(proposition: str) -> set[bool]:
         _PHONETIC_COMPLETENESS,
     ):
         return set()
-    polarities = _predicate_polarities(proposition, _PHONETIC_PREDICATES)
+    attributive_entity_spans = tuple(
+        match.span()
+        for match in _PHONETIC_ATTRIBUTIVE_ENTITY.finditer(proposition)
+    )
+    polarities = _predicate_polarities(
+        proposition,
+        _PHONETIC_PREDICATES,
+        ignored_spans=attributive_entity_spans,
+    )
     entity = r"(?:secuencia|evolución|reconstrucción)[^.]{0,40}fonética[^.]{0,20}completa"
     if re.search(rf"\b(?:sin|ningun[ao]s?)\b[^.;:]{{0,60}}{entity}", proposition):
         polarities.add(False)

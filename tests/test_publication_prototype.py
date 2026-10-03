@@ -394,6 +394,8 @@ def test_chapter_three_rejects_missing_economic_continuity_limit():
         "Una secuencia fonética completa sí existe.",
         "Existe una secuencia fonética completa.",
         "Está completamente documentada la evolución fonética.",
+        "La evolución fonética está completamente documentada.",
+        "Sí está documentada por completo la evolución fonética.",
     ),
 )
 def test_chapter_three_rejects_positive_complete_phonetic_sequence(statement):
@@ -403,6 +405,21 @@ def test_chapter_three_rejects_positive_complete_phonetic_sequence(statement):
         body,
         r"no\s+proporciona\s+una\s+secuencia\s+fonética\s+completa",
         "no proporciona una secuencia fonética completa. " + statement,
+    )
+
+    assert error_codes(validator._validate_chapter_three_body(mutated)) == {
+        "C3_PHONETIC_REVERSAL"
+    }
+
+
+def test_chapter_three_rejects_positive_phonetic_claim_in_separate_paragraph():
+    path = ROOT / "publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    _, body = validator._front_matter_and_body(path)
+    mutated = replace_once(
+        body,
+        r"no\s+proporciona\s+una\s+secuencia\s+fonética\s+completa",
+        "No se dispone de una evolución fonética completamente documentada.\n\n"
+        "La evolución fonética está completamente documentada.",
     )
 
     assert error_codes(validator._validate_chapter_three_body(mutated)) == {
@@ -441,7 +458,10 @@ def test_chapter_three_rejects_positive_economic_continuity(statement):
         "tampoco existe una secuencia fonética completa",
         "sin disponer de una secuencia fonética completa",
         "no se dispone de una evolución fonética completamente documentada",
+        "de una evolución fonética completamente documentada no se dispone",
+        "una evolución fonética completamente documentada no está disponible",
         "la evolución fonética no está completamente documentada",
+        "no proporciona una secuencia fonética completa",
     ),
 )
 def test_chapter_three_accepts_equivalent_phonetic_limits(wording):
