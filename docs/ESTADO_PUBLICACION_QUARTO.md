@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 4 de octubre de 2026<br>
-**Estado global:** Fase 3 en curso; Fases 3A–3J completadas<br>
-**Fase actual:** 3K — capítulo 12 (siguiente; no iniciada)<br>
+**Estado global:** Fase 3 en curso; Fases 3A–3K completadas<br>
+**Fase actual:** 3L — capítulo 13 (siguiente; no iniciada)<br>
 **Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
 **Operación canónica al auditar:** `clean`
 
@@ -38,6 +38,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Capítulo 9 implementado en `da76dbb3d7714d4e282f936efb1e1bc657d0dcff` y aceptado mediante auditoría final con veredicto `APTO`; distingue casas, ruedas, venturero, titulares, explotación, usuarios, utilidades, producción y capacidad, e integra colmenas y pozo de pesca sin falsas equivalencias ni estimaciones de actividad.
 - Capítulo 10 implementado en `02dcc31ea6db8250013c99fbc37ecbd0747bcaeb` y aceptado mediante validación final con veredicto `APTO`; separa jurisdicción, señorío, propiedad, rentas, derechos fiscales y obligaciones vecinales, y distingue perceptores, bases, cantidades reguladas y pagos sin agregaciones heterogéneas ni indicadores fiscales no sustentados.
 - Capítulo 11 implementado en `9ac6d90141e0c609b1961367c3333fbf1d86a318` y aceptado mediante validación final con veredicto `APTO`; distingue común, concejo y vecinos, reconstruye el repartimiento y los servicios documentados, y limita los 233 reales a un subtotal anual explícito sin inventar patrimonio, presupuesto, balance ni cobertura estable.
+- Capítulo 12 implementado en `413d1e6bd7c03e71ee7ce0a47a2531be6caf1f35` y aceptado mediante validación final con veredicto `APTO`; distingue precios, valoraciones, utilidades, jornales, pagos y gastos, conserva separadas moneda, especie y servicio, y documenta oficios y conexiones exteriores sin fabricar una economía de mercado, ingresos anuales ni flujos comerciales.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -50,14 +51,14 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 1B. Contexto autosuficiente para Copilot | completada | instrucciones, plan, especificación y roadmap versionados |
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
-| 3. Contenido editorial | en curso | Fases 3A–3J completadas; capítulos 1–11 aceptados; Fase 3K como única tarea siguiente |
+| 3. Contenido editorial | en curso | Fases 3A–3K completadas; capítulos 1–12 aceptados; Fase 3L como única tarea siguiente |
 | 4. Generación documental | pendiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 3K: crear y validar exclusivamente el capítulo 12, «Dinero, oficios y conexiones exteriores», sin iniciar el capítulo 13 ni modificar fuentes canónicas.
+Fase 3L: crear y validar exclusivamente el capítulo 13, «Una economía rural integrada: vulnerabilidades, resiliencia y límites», sin iniciar los capítulos generados ni modificar fuentes canónicas.
 
 ### Cierre comprobado de 2A
 
@@ -211,6 +212,21 @@ Fase 3K: crear y validar exclusivamente el capítulo 12, «Dinero, oficios y con
 - Validación final: `APTO`. Las 19 confusiones semánticas definidas para la fase están cubiertas por regresiones y las cautelas equivalentes se aceptan. No se requirió investigación externa, cambio de criterio editorial ni corrección de fuentes canónicas.
 - Regresiones e integridad: prototipo vertical, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
 
+## Cierre comprobado de 3K
+
+- Implementación atómica: `413d1e6bd7c03e71ee7ce0a47a2531be6caf1f35` (`feat(publication): add chapter 12`).
+- Resultado editorial: el capítulo 12, «Dinero, oficios y conexiones exteriores», distingue precio o valor ordinario, valor o producto regulado, utilidad regulada, pago declarado y gasto u obligación. Conserva la coexistencia de dinero, especie y servicio y no convierte valoraciones catastrales en compraventas, utilidades en ingresos efectivos ni presencia monetaria en monetización plena.
+- Magnitudes y naturaleza: mantiene los valores ordinarios de centeno, cebada, linaza, lino, trigo y heno en sus unidades documentales; calcula `18 × 2 = 36` reales como utilidad regulada de los pies de abejas; y reúne `633 + 233 + 140 = 1.006` reales únicamente como mínimo institucional explícito de tres magnitudes anuales heterogéneas, no como circulación total, presupuesto, presión fiscal, ingreso local, salida neta o balance.
+- Trabajo y oficios: conserva 18 jornaleros —14 hijos de familia, tres criados sirvientes y uno dedicado solo a ese ejercicio—, 24 labradores y un herrero que trabaja principalmente como labrador como categorías cruzadas, no aditivas ni equivalentes a población activa moderna. Los 2,5 reales diarios del jornalero, tres del labrador y medio real adicional del herrero mantienen su carácter de utilidad por día trabajado; no se suponen días, continuidad, salario anual, renta familiar ni riqueza.
+- Conexiones exteriores: documenta quince reales al Hospital de Inocentes de Valladolid y diez por derecho de Mesta en León. `15 + 10 = 25`, `25 / 233 = 10,73 %` y `25 / 1.006 = 2,49 %` usan denominadores parciales distintos y no son cuotas de comercio exterior ni de una balanza de pagos. Las siembras fuera del término, el voto a la fábrica del Apóstol Santiago y los derechos del conde conservan su naturaleza territorial, eclesiástica o señorial; no prueban importaciones, exportaciones, movilidad habitual o una red mercantil estable.
+- Procedencia aceptada: D — `GAN-001`, `GAN-003`, `HID-005`, `TRA-001`–`TRA-005`, `JUR-006`, `FIS-002`–`FIS-004`, `FIS-006`, `FIS-007`, `FIS-012`; C — `GAN-005`, `HID-004`, `FIS-009`–`FIS-011`, `CAL-010`, `CAL-014`–`CAL-017`; I — `INT-007`, `INT-008`, `INT-010`; E — `JUR-009`, `FIS-013`–`FIS-015`; L — `LIM-002`, `LIM-005`, `LIM-006`, `LIM-008`, `LIM-009`, `LIM-011`–`LIM-013`.
+- Límites preservados: las negativas de las respuestas 31, 32 y 34 acotan las categorías preguntadas, pero no prueban ausencia de todo intercambio o transporte. Joaquín Aguado acredita una conexión administrativa y documental, no comercial. No se calculan mercado, comercio, importaciones, exportaciones, ingresos domésticos, autosuficiencia, dependencia, vulnerabilidad o resiliencia; la síntesis sistémica queda reservada al capítulo 13.
+- Validación semántica: 42 pruebas específicas del capítulo 12 en PASS —estructura y procedencia, 21 mutaciones adversariales y 20 formulaciones cautelares—; selección focal final `44 passed` al incluir dos pruebas de frontera preexistentes. Suite completa final `355 passed`, sin `skip`, con colección estable de 355 identificadores y hash `6c93ecd9bb6adb59c9f613e5d8cae21dabda3113d2e18c245e2057a81f178254` calculado solo sobre los identificadores coleccionados.
+- Generación y composición: `prepare.py` se ejecutó dos veces de forma directa con SHA-256 idénticos para los seis derivados; validador estático y `--rendered`, `quarto check` y render HTML, PDF y multiformato en PASS. El libro genera 18 documentos HTML; el PDF final tiene 74 páginas y 3.740.568 bytes; el capítulo 12 ocupa las páginas 60–65.
+- Inspección visual: título, numeración, navegación, diez anclas, tablas, fórmulas, encabezados, pies y saltos revisados en las seis páginas. Una primera composición acercó la última línea al pie de la página 61; se compactaron dos pasajes, se repitieron pruebas y render, y el resultado final no presenta desbordes, colisiones ni páginas huérfanas.
+- Validación final: `APTO`. Las 21 confusiones semánticas definidas para la fase están cubiertas por regresiones y las cautelas equivalentes se aceptan. No se requirió investigación externa, cambio de criterio editorial ni corrección de fuentes canónicas.
+- Regresiones e integridad: prototipo vertical, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas, informe comparativo y `main` intactos; ninguna dependencia bloqueante.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -221,4 +237,4 @@ Fase 3K: crear y validar exclusivamente el capítulo 12, «Dinero, oficios y con
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3K: crea y valida exclusivamente el capítulo 12, «Dinero, oficios y conexiones exteriores», manteniendo la trazabilidad D/C/I/E/L y las fronteras con los capítulos 10, 11 y 13, sin modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3L: crea y valida exclusivamente el capítulo 13, «Una economía rural integrada: vulnerabilidades, resiliencia y límites», manteniendo la trazabilidad D/C/I/E/L y las fronteras con los capítulos 6–12 y 14–16, sin modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
