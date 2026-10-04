@@ -1,0 +1,217 @@
+---
+title: "Hacienda concejil y servicios colectivos"
+chapter-id: hacienda-concejil-servicios-colectivos
+publication-status: development
+sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "Parte II, capítulo 11"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md
+    locator: "capítulo 11 y matriz de transferencia temática"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    locator: "sección 13, Hacienda del común y servicios colectivos"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
+    locator: "FIS-005–FIS-008; FIS-014–FIS-017; GAN-002; TRA-005–TRA-006; INT-004; INT-006; LIM-012–LIM-013"
+  - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
+    locator: "respuestas 23–27, 29–30 y 39; folios 318v–321r"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
+    locator: "respuestas 23–27, 29–30 y 39"
+  - path: project/20_TRABAJO_EDITORIAL/Glosario.md
+    locator: "voces «propios», «arbitrio», «vecera» y «servicio ordinario y extraordinario»"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md
+    locator: "Concejo de Ordás, Hospital de Inocentes y Mesta"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Toponimos.md
+    locator: "Valladolid y León"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md
+    locator: "real y reales"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md
+    locator: "sección 7.2, Hacienda del común"
+evidence:
+  D: [FIS-005, FIS-006, FIS-007, FIS-008, GAN-002, TRA-005]
+  C: []
+  I: [INT-004, INT-006]
+  E: [FIS-014, FIS-015, FIS-016, FIS-017, TRA-006]
+  L: [LIM-012, LIM-013]
+---
+
+Las respuestas 23–27 describen una hacienda del común sin propios, arbitrios
+ni renta declarados, pero con gastos y obligaciones concretos. La respuesta 29
+añade una taberna que funciona por turno entre los vecinos y no produce
+utilidad. Este conjunto permite reconstruir mecanismos colectivos precisos;
+no constituye una contabilidad completa ni un presupuesto municipal en sentido
+moderno.
+
+## Común, concejo y vecinos {#hacienda-sujetos}
+
+El [capítulo 5](05-lugar-senorio-concejo-ordas.qmd#lugar-actores) distinguió el
+lugar, el común, los vecinos y el Concejo de Ordás. Esa separación gobierna
+también la lectura económica. El común es el sujeto al que las respuestas
+23–27 atribuyen la ausencia de rentas y la obligación de satisfacer partidas;
+los vecinos intervienen mediante repartimiento; el Concejo de Ordás sigue
+siendo el marco jurisdiccional declarado. Ninguno de esos términos equivale
+automáticamente a un ayuntamiento o municipio moderno. [D: FIS-005, FIS-006,
+FIS-007, FIS-008]
+
+El [capítulo 10](10-iglesia-senorio-fiscalidad.qmd) separó los derechos
+eclesiásticos y señoriales de las obligaciones del común. Por eso las
+alcabalas de los vecinos, los diezmos o la utilidad del pozo del conde no se
+reclasifican aquí como ingresos o gastos concejiles.
+
+## Recursos rentísticos que el común niega {#hacienda-recursos}
+
+La respuesta 23 declara que el común no tiene propios; la 24 añade que no
+disfruta arbitrio ni renta alguna. Son negaciones referidas a las categorías
+por las que pregunta el interrogatorio. No prueban pobreza absoluta, ausencia
+de cualquier recurso material o inexistencia de relaciones económicas fuera
+del alcance de esas preguntas. [D/I: FIS-005, INT-006]
+
+Propios y arbitrios eran categorías relevantes de las haciendas locales, cuyo
+control institucional se reforzó en 1760 con la Contaduría General de Propios
+y Arbitrios. Este contexto ya incorporado ayuda a entender el significado de
+las respuestas, pero no convierte el común de 1752 en un ayuntamiento posterior
+ni le atribuye un patrimonio que el expediente niega. [E: FIS-016]
+
+El uso colectivo tampoco resuelve esa ausencia. El
+[capítulo 8](08-ganaderia-montes-aprovechamientos-comunales.qmd#uso-comun)
+documentó pasto de los ganados del común en determinados espacios. Acredita un
+aprovechamiento, no propiedad, administración, renta ni ingreso del común. La
+expresión «uso común» no equivale a «propiedad comunal» o municipal. [D/I:
+GAN-002, INT-004]
+
+## Partidas monetarias documentadas {#hacienda-partidas}
+
+La respuesta 25 sitúa bajo una formulación anual cuatro cantidades expresas y
+añade otras no cuantificadas:
+
+| Partida | Sujeto obligado | Destino o beneficiario | Cuantía | Naturaleza y certeza |
+|---|---|---|---:|---|
+| Festividad del Corpus | común | celebración declarada | 200 reales al año | gasto u obligación anual declarado |
+| Limpieza de las fuentes | común | atención material local | 8 reales al año | gasto u obligación anual declarado |
+| Hospital de Inocentes de Valladolid | común | institución receptora | 15 reales al año | pago declarado; origen jurídico desconocido |
+| Derecho de Mesta en León | común | referencia institucional en León | 10 reales al año | pago declarado; naturaleza precisa desconocida |
+| Otras cantidades | común, mediante repartimiento vecinal | no consta | no cuantificadas | impiden cerrar el conjunto |
+
+Las cuatro cifras compatibles permiten una sola comprobación aritmética:
+
+$$
+200 + 8 + 15 + 10 = 233\ \text{reales al año}.
+$$
+
+Los 233 reales son el subtotal de las partidas monetarias expresamente
+cuantificadas en la respuesta 25. No son ingresos, gastos totales ni presupuesto
+completo: la misma respuesta menciona otras cantidades cuyo importe no ofrece.
+[D: FIS-006]
+
+## Repartimiento: mecanismo declarado {#hacienda-repartimiento}
+
+La respuesta concluye que, por no tenerlas propias, las cantidades se pagan
+por repartimiento entre los vecinos. La secuencia documental puede expresarse
+como `obligaciones del común → repartimiento → vecinos`. Describe el mecanismo
+de financiación declarado, no la cuota individual de cada contribuyente, el
+calendario de cobro o una distribución por hogares. [D/I: FIS-007, INT-006]
+
+«Vecinos» no significa aquí todos los habitantes ni cada vivienda. Tampoco
+consta si el reparto fue igual, proporcional o sujeto a exenciones. La respuesta
+afirma el pago por repartimiento, pero no aporta padrones de cobro, recibos ni
+cuentas que permitan verificar cuánto satisfizo efectivamente cada persona.
+
+## Destinos locales y exteriores {#hacienda-destinos}
+
+Dos partidas se sitúan fuera del lugar. El Hospital de Inocentes de Valladolid
+fue una institución asistencial fundada en 1489 y activa a mediados del siglo
+XVIII. El contexto identifica al receptor de quince reales, pero no explica el
+origen jurídico de la obligación de Sorribos. [E/L: FIS-014, LIM-012]
+
+La mención del derecho de Mesta remite al Honrado Concejo de la Mesta y a su
+ámbito ganadero leonés. Identifica la institución relacionada con los diez
+reales, pero no permite decidir si el concepto local era tasa, servicio,
+reparto u otra clase de pago. [E/L: FIS-015, LIM-013]
+
+La festividad del Corpus y la limpieza de fuentes permanecen en la escala que
+declara la respuesta. Otros catastros leoneses registran gastos de Corpus junto
+con caminos, puentes u otras atenciones, pero esa comparación tipológica no
+autoriza a comparar importes sin poblaciones y cuentas equivalentes ni a añadir
+partidas ausentes en Sorribos. [E: FIS-017]
+
+## Ausencias específicas {#hacienda-ausencias}
+
+La respuesta 26 declara que el común no tiene cargo alguno de justicia; la 27,
+que no está cargado de servicio ordinario ni extraordinario. Son ausencias de
+conceptos determinados. No anulan los gastos de la respuesta 25 ni prueban que
+el común careciera de cualquier obligación. [D: FIS-008]
+
+El expediente declara además que no había hospital local ni convento. El pago
+al Hospital de Inocentes de Valladolid no contradice la primera ausencia: una
+institución receptora exterior no se convierte por ello en establecimiento del
+lugar. Tampoco la ausencia de hospital local demuestra que no existiera ninguna
+forma de asistencia, pues la fuente no ofrece un inventario completo de
+cuidados o prestaciones.
+
+## La taberna por vecera {#hacienda-servicios}
+
+La respuesta 29 registra una taberna para la que, desde hacía mucho tiempo, no
+había arrendatario. Funcionaba por *vecera* entre los vecinos y por esa razón no
+producía utilidad al común ni a particular. Quedan documentados la existencia,
+la falta de arrendatario, el turno vecinal y la ausencia de utilidad declarada;
+no la propiedad del local, sus cuentas, frecuencia de apertura, cobertura,
+precios o calidad del servicio. [D: TRA-005]
+
+Ordenanzas concejiles leonesas emplean «andar por vecera» para servicios que
+pasan por turno entre vecinos cuando nadie los arrienda. El paralelo confirma
+el sentido institucional de la expresión, pero no extiende el turno a otras
+actividades de Sorribos ni demuestra una plantilla, financiación estable,
+gratuidad o funcionamiento permanente. [E: TRA-006]
+
+La taberna puede describirse como una prestación rotatoria documentada. No
+basta para definir un sistema general de servicios públicos ni una forma de
+gobierno económico aplicable a todo el lugar.
+
+## Fuentes, puentes y alcance de la infraestructura {#hacienda-infraestructuras}
+
+Los ocho reales para limpiar las fuentes documentan una atención colectiva
+concreta y una cuantía anual declarada. No indican cuántas fuentes había, quién
+realizaba el trabajo, con qué frecuencia se limpiaban, a quién daban cobertura
+o si el servicio funcionaba permanentemente. Existencia, mantenimiento,
+financiación, prestación y cobertura siguen siendo dimensiones distintas.
+
+Los capítulos [8](08-ganaderia-montes-aprovechamientos-comunales.qmd#montes-arbolado)
+y [9](09-rio-molinos-recursos.qmd#molinos-estacionalidad) documentaron materiales
+destinados a reparar puentes y daños asociados al río. Esas referencias no
+identifican aquí un pagador, administrador o gasto concejil, de modo que los
+puentes no se incorporan al subtotal de la respuesta 25 ni a un supuesto
+patrimonio del concejo.
+
+## Un subtotal, no un presupuesto {#hacienda-presupuesto-limites}
+
+La fuente no ofrece un universo exhaustivo de entradas y salidas. Declara
+ausencia de propios, arbitrios y renta, enumera 233 reales de partidas
+cuantificadas y menciona otras cantidades sin importe. Tampoco conserva para
+este pasaje una cuenta de caja, saldos iniciales o finales, atrasos, crédito,
+reservas, fechas de pago o ejecución efectiva de cada obligación.
+
+No puede calcularse, por tanto, un total de ingresos, un total de gastos,
+superávit, déficit, capacidad financiera o presupuesto completo. Los 233 reales
+son comparables entre sí por sujeto, periodo, naturaleza monetaria y unidad;
+no se agregan a valores patrimoniales, utilidades productivas, derechos
+señoriales o cargas eclesiásticas. La circulación general de dinero se reserva
+para el capítulo 12.
+
+Estas carencias tampoco demuestran que la hacienda fuese eficiente, frágil,
+insolvente o resiliente. El capítulo 13 evaluará las relaciones y límites del
+sistema económico sin convertir los silencios documentales en resultados.
+
+## Síntesis {#hacienda-sintesis}
+
+La hacienda colectiva documentada se organiza alrededor de una relación
+precisa: el común declara carecer de propios, arbitrios y renta; debe satisfacer
+partidas concretas; y las cantidades se pagan mediante repartimiento entre los
+vecinos. Los 233 reales reúnen solo cuatro partidas expresas —Corpus, limpieza
+de fuentes, Hospital de Inocentes y derecho de Mesta—, mientras otras quedan
+sin cuantificar. El resultado es un subtotal conocido, no una cuenta completa.
+
+Junto a ese mecanismo financiero, la taberna por vecera muestra una prestación
+rotatoria sin utilidad declarada. La limpieza de fuentes acredita una atención
+material, pero no permite reconstruir cobertura o administración; los
+aprovechamientos comunes y los puentes no se convierten en propiedad o
+patrimonio concejil. Así puede describirse la hacienda y los servicios que el
+expediente documenta sin proyectar un municipio moderno, una red estable de
+servicios públicos o un balance que la fuente no conserva.

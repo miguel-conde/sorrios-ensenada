@@ -37,6 +37,9 @@ chapters:
   - chapter_id: iglesia-senorio-fiscalidad
     path: content/02-estudio/10-iglesia-senorio-fiscalidad.qmd
     publication_status: development
+  - chapter_id: hacienda-concejil-servicios-colectivos
+    path: content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd
+    publication_status: development
   - chapter_id: facsimil-pagina-12
     path: generated/14-facsimil-prototipo.qmd
     publication_status: prototype

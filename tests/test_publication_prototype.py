@@ -184,6 +184,26 @@ CHAPTER_TEN_EVIDENCE = {
     "E": ("FIS-013",),
     "L": ("LIM-001", "LIM-002", "LIM-005", "LIM-011"),
 }
+CHAPTER_ELEVEN_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/Glosario.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Toponimos.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_ELEVEN_EVIDENCE = {
+    "D": ("FIS-005", "FIS-006", "FIS-007", "FIS-008", "GAN-002", "TRA-005"),
+    "C": (),
+    "I": ("INT-004", "INT-006"),
+    "E": ("FIS-014", "FIS-015", "FIS-016", "FIS-017", "TRA-006"),
+    "L": ("LIM-012", "LIM-013"),
+}
 AUTHORIZED_INSTITUTIONAL_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
@@ -1214,6 +1234,163 @@ def test_chapter_ten_accepts_bounded_cautionary_formulations(caution):
     assert validator._validate_chapter_ten_body(f"{body}\n\n{caution}\n") == []
 
 
+def test_chapter_eleven_has_controlled_provenance_evidence_and_structure():
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "11-hacienda-concejil-servicios-colectivos.qmd"
+    )
+    metadata, body = validator._front_matter_and_body(path)
+    register = (
+        ROOT / "project/30_RESULTADOS/ESTUDIO_HISTORICO"
+        / "Registro_Afirmaciones_Calculos_v1.md"
+    ).read_text(encoding="utf-8")
+    registered = set(re.findall(r"^\|\s*([A-Z]+-\d{3})\s*\|", register, re.MULTILINE))
+
+    assert metadata["title"] == "Hacienda concejil y servicios colectivos"
+    assert metadata["chapter-id"] == "hacienda-concejil-servicios-colectivos"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_ELEVEN_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_ELEVEN_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    evidence = {level: tuple(values or []) for level, values in metadata["evidence"].items()}
+    assert evidence == CHAPTER_ELEVEN_EVIDENCE
+    assert set(evidence) == {"D", "C", "I", "E", "L"}
+    assert evidence["C"] == ()
+    assert {item for group in evidence.values() for item in group} <= registered
+    assert all(
+        validator._markdown_section(body, anchor)
+        for anchor in validator.CHAPTER_ELEVEN_ANCHORS
+    )
+    assert "(10-iglesia-senorio-fiscalidad.qmd)" in body
+    assert "200 + 8 + 15 + 10 = 233" in validator._normalized_text(body)
+    assert "se reserva para el capítulo 12" in validator._normalized_text(body)
+    assert not re.search(r"<[A-Za-z][^>]*>", body)
+    assert validator._validate_chapter_eleven_body(body) == []
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_code"),
+    (
+        (
+            "El Concejo histórico era el ayuntamiento moderno de Santa María de Ordás.",
+            "C11_CONCEJO_IS_MODERN_TOWN_HALL",
+        ),
+        (
+            "El uso común convertía los montes en propiedad municipal.",
+            "C11_COMMON_USE_IS_MUNICIPAL_PROPERTY",
+        ),
+        (
+            "La administración del recurso demostraba que el concejo era propietario.",
+            "C11_ADMINISTRATION_IS_PROPERTY",
+        ),
+        (
+            "La renta regulada era un ingreso efectivamente cobrado.",
+            "C11_REGULATED_RENT_IS_COLLECTION",
+        ),
+        (
+            "La utilidad era un ingreso efectivo del común.",
+            "C11_UTILITY_IS_CASH_INCOME",
+        ),
+        (
+            "La obligación de 200 reales fue un gasto efectivamente realizado.",
+            "C11_OBLIGATION_IS_REALIZED_EXPENSE",
+        ),
+        (
+            "La existencia de fuentes demuestra un servicio permanente de abastecimiento.",
+            "C11_INFRASTRUCTURE_IS_PERMANENT_SERVICE",
+        ),
+        (
+            "La taberna daba cobertura universal a todos los habitantes.",
+            "C11_UNIVERSAL_COVERAGE",
+        ),
+        (
+            "Sumando ingresos y valores patrimoniales se obtiene la hacienda total.",
+            "C11_INCOME_PROPERTY_SUM",
+        ),
+        (
+            "Pueden sumarse gastos de periodos y naturalezas incompatibles.",
+            "C11_INCOMPATIBLE_EXPENSE_SUM",
+        ),
+        (
+            "Los 233 reales eran los ingresos totales del común.",
+            "C11_SUBTOTAL_IS_TOTAL_INCOME",
+        ),
+        (
+            "Los 233 reales eran los gastos totales del común.",
+            "C11_SUBTOTAL_IS_TOTAL_EXPENSE",
+        ),
+        (
+            "El común tuvo un superávit de cincuenta reales.",
+            "C11_UNSUPPORTED_BALANCE",
+        ),
+        (
+            "Los 233 reales formaban el presupuesto concejil completo.",
+            "C11_COMPLETE_BUDGET",
+        ),
+        (
+            "Las alcabalas eran un gasto concejil del común.",
+            "C11_FISCAL_RECLASSIFICATION",
+        ),
+        (
+            "Los montes de uso común eran patrimonio concejil.",
+            "C11_COMMON_RESOURCE_IS_CONCEJO_ASSET",
+        ),
+        (
+            "Se conoce el origen jurídico del pago al Hospital de Inocentes.",
+            "C11_EVIDENCE_LIMITS_ERASED",
+        ),
+        (
+            "Los pagos prueban que la economía estaba plenamente monetizada.",
+            "C11_CHAPTER_TWELVE_BOUNDARY",
+        ),
+        (
+            "La hacienda concejil era eficiente y resiliente.",
+            "C11_CHAPTER_THIRTEEN_BOUNDARY",
+        ),
+    ),
+)
+def test_chapter_eleven_rejects_nineteen_semantic_reversals(mutation, expected_code):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "11-hacienda-concejil-servicios-colectivos.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert error_codes(
+        validator._validate_chapter_eleven_body(f"{body}\n\n{mutation}\n")
+    ) == {expected_code}
+
+
+@pytest.mark.parametrize(
+    "caution",
+    (
+        "El Concejo histórico no era el ayuntamiento moderno.",
+        "El uso común no convertía los montes en propiedad municipal.",
+        "Administrar un recurso no demostraba que el concejo fuera propietario.",
+        "La renta regulada no era un ingreso efectivamente cobrado.",
+        "La utilidad no era un ingreso efectivo del común.",
+        "Una obligación no fue necesariamente un gasto efectivamente realizado.",
+        "La existencia de fuentes no demuestra un servicio permanente.",
+        "La taberna no daba cobertura universal a todos los habitantes.",
+        "No deben sumarse ingresos y valores patrimoniales ni gastos incompatibles.",
+        "Los 233 reales no eran ingresos totales ni gastos totales.",
+        "El común no tuvo un superávit o déficit calculable ni un presupuesto completo.",
+        "Las alcabalas no eran un gasto concejil y los montes no eran patrimonio concejil.",
+        "No se conoce el origen jurídico del pago al Hospital ni la naturaleza precisa del derecho de Mesta.",
+        "Los pagos no prueban una economía plenamente monetizada.",
+        "La hacienda concejil no era calificable como eficiente, frágil o resiliente.",
+    ),
+)
+def test_chapter_eleven_accepts_bounded_cautionary_formulations(caution):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "11-hacienda-concejil-servicios-colectivos.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert validator._validate_chapter_eleven_body(f"{body}\n\n{caution}\n") == []
+
+
 @pytest.mark.parametrize(
     ("document", "message"),
     (
@@ -1733,6 +1910,7 @@ def test_navigation_integrates_part_one_before_the_vertical_prototype():
         "content/02-estudio/08-ganaderia-montes-aprovechamientos-comunales.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "content/02-estudio/10-iglesia-senorio-fiscalidad.qmd",
+        "content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd",
     ]
 
     assert [item for item in navigation if item in expected_order] == expected_order

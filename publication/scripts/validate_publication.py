@@ -79,6 +79,12 @@ CHAPTER_TEN = (
     / "02-estudio"
     / "10-iglesia-senorio-fiscalidad.qmd"
 )
+CHAPTER_ELEVEN = (
+    PUBLICATION_ROOT
+    / "content"
+    / "02-estudio"
+    / "11-hacienda-concejil-servicios-colectivos.qmd"
+)
 GENERATED = {
     "facsimile": PUBLICATION_ROOT / "generated" / "14-facsimil-prototipo.qmd",
     "transcription": PUBLICATION_ROOT / "generated" / "15-transcripcion-prototipo.qmd",
@@ -160,6 +166,13 @@ RENDERED_CHAPTER_TEN_HTML = (
     / "content"
     / "02-estudio"
     / "10-iglesia-senorio-fiscalidad.html"
+)
+RENDERED_CHAPTER_ELEVEN_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "02-estudio"
+    / "11-hacienda-concejil-servicios-colectivos.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -424,6 +437,38 @@ CHAPTER_TEN_ANCHORS = (
     "fiscal-limites",
     "fiscal-sintesis",
 )
+CHAPTER_ELEVEN_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/Glosario.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Toponimos.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_ELEVEN_EVIDENCE = {
+    "D": ("FIS-005", "FIS-006", "FIS-007", "FIS-008", "GAN-002", "TRA-005"),
+    "C": (),
+    "I": ("INT-004", "INT-006"),
+    "E": ("FIS-014", "FIS-015", "FIS-016", "FIS-017", "TRA-006"),
+    "L": ("LIM-012", "LIM-013"),
+}
+CHAPTER_ELEVEN_ANCHORS = (
+    "hacienda-sujetos",
+    "hacienda-recursos",
+    "hacienda-partidas",
+    "hacienda-repartimiento",
+    "hacienda-destinos",
+    "hacienda-ausencias",
+    "hacienda-servicios",
+    "hacienda-infraestructuras",
+    "hacienda-presupuesto-limites",
+    "hacienda-sintesis",
+)
 CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("1–3", "Nombre, jurisdicción, término y límites"),
     ("4–14", "Tierras, árboles, medidas, cabidas, frutos y valores"),
@@ -651,6 +696,12 @@ def validate_rendered_outputs() -> list[str]:
             10,
             "09-rio-molinos-recursos.html",
         ),
+        (
+            RENDERED_CHAPTER_ELEVEN_HTML,
+            "Hacienda concejil y servicios colectivos",
+            11,
+            "10-iglesia-senorio-fiscalidad.html",
+        ),
     )
     for path, title, number, linked_chapter in rendered_chapters:
         if not path.is_file():
@@ -667,7 +718,7 @@ def validate_rendered_outputs() -> list[str]:
             errors.append(
                 f"El HTML del capítulo {number} no conserva su enlace cruzado"
             )
-        if number in (5, 6, 7, 8, 9, 10) and not re.search(
+        if number in (5, 6, 7, 8, 9, 10, 11) and not re.search(
             rf'class="chapter-number"[^>]*>\s*{number}\s*<', html
         ):
             errors.append(
@@ -2329,6 +2380,178 @@ def _validate_chapter_ten_body(body: str) -> list[str]:
     return errors
 
 
+def _validate_chapter_eleven_body(body: str) -> list[str]:
+    """Validate collective finances without inventing ownership or a budget."""
+
+    errors: list[str] = []
+    sections = {
+        anchor: _plain_text(_markdown_section(body, anchor))
+        for anchor in CHAPTER_ELEVEN_ANCHORS
+    }
+    for anchor, section in sections.items():
+        if not section:
+            errors.append(f"C11_SECTION_{anchor.upper().replace('-', '_')}: falta la sección")
+
+    required_by_section = {
+        "hacienda-sujetos": (
+            "el común es el sujeto",
+            "los vecinos intervienen mediante repartimiento",
+            "marco jurisdiccional declarado",
+            "ayuntamiento o municipio moderno",
+            "no se reclasifican aquí como ingresos o gastos concejiles",
+        ),
+        "hacienda-recursos": (
+            "el común no tiene propios",
+            "no disfruta arbitrio ni renta alguna",
+            "no prueban pobreza absoluta",
+            "no equivale a «propiedad comunal»",
+            "aprovechamiento, no propiedad, administración, renta ni ingreso",
+        ),
+        "hacienda-partidas": (
+            "festividad del corpus",
+            "limpieza de las fuentes",
+            "hospital de inocentes de valladolid",
+            "derecho de mesta en león",
+            "200 + 8 + 15 + 10 = 233",
+            "otras cantidades cuyo importe no ofrece",
+        ),
+        "hacienda-repartimiento": (
+            "obligaciones del común → repartimiento → vecinos",
+            "mecanismo de financiación declarado",
+            "no la cuota individual",
+            "no significa aquí todos los habitantes ni cada vivienda",
+            "no aporta padrones de cobro, recibos ni cuentas",
+        ),
+        "hacienda-destinos": (
+            "receptor de quince reales",
+            "no explica el origen jurídico",
+            "no permite decidir si el concepto local era tasa, servicio, reparto",
+            "comparación tipológica",
+            "no autoriza a comparar importes",
+        ),
+        "hacienda-ausencias": (
+            "no tiene cargo alguno de justicia",
+            "no está cargado de servicio ordinario ni extraordinario",
+            "no anulan los gastos de la respuesta 25",
+            "no había hospital local ni convento",
+            "institución receptora exterior",
+        ),
+        "hacienda-servicios": (
+            "funcionaba por vecera entre los vecinos",
+            "no producía utilidad al común ni a particular",
+            "no la propiedad del local",
+            "no extiende el turno a otras actividades",
+            "no basta para definir un sistema general de servicios públicos",
+        ),
+        "hacienda-infraestructuras": (
+            "ocho reales para limpiar las fuentes",
+            "existencia, mantenimiento, financiación, prestación y cobertura",
+            "no identifican aquí un pagador, administrador o gasto concejil",
+            "no se incorporan al subtotal",
+            "supuesto patrimonio del concejo",
+        ),
+        "hacienda-presupuesto-limites": (
+            "no ofrece un universo exhaustivo de entradas y salidas",
+            "otras cantidades sin importe",
+            "no puede calcularse, por tanto, un total de ingresos, un total de gastos",
+            "no se agregan a valores patrimoniales",
+            "se reserva para el capítulo 12",
+            "eficiente, frágil, insolvente o resiliente",
+        ),
+        "hacienda-sintesis": (
+            "carecer de propios, arbitrios y renta",
+            "subtotal conocido, no una cuenta completa",
+            "prestación rotatoria sin utilidad declarada",
+            "no se convierten en propiedad o patrimonio concejil",
+            "sin proyectar un municipio moderno",
+        ),
+    }
+    for anchor, phrases in required_by_section.items():
+        section = sections[anchor]
+        absent = [phrase for phrase in phrases if phrase.casefold() not in section]
+        if absent:
+            errors.append(
+                f"C11_CONTENT_{anchor.upper().replace('-', '_')}: faltan relaciones "
+                + ", ".join(absent)
+            )
+
+    propositions = tuple(
+        proposition
+        for _, paragraph_propositions in _controlled_paragraphs(body)
+        for proposition in paragraph_propositions
+    )
+    prohibited_predicates = {
+        "C11_CONCEJO_IS_MODERN_TOWN_HALL": (
+            r"\bera\b[^.;]{0,60}\bel\s+ayuntamiento\s+moderno\b",
+            r"\bequival[ií]a\b[^.;]{0,60}\bmunicipio\s+moderno\b",
+        ),
+        "C11_COMMON_USE_IS_MUNICIPAL_PROPERTY": (
+            r"\bconvert[ií]a\b[^.;]{0,80}\b(?:montes?|recursos?|espacios?)\b[^.;]{0,60}\bpropiedad\s+municipal\b",
+        ),
+        "C11_ADMINISTRATION_IS_PROPERTY": (
+            r"\bdemostraba\b[^.;]{0,80}\bconcejo\b[^.;]{0,40}\b(?:era\s+)?propietario\b",
+        ),
+        "C11_REGULATED_RENT_IS_COLLECTION": (
+            r"\bera\b[^.;]{0,40}\bingreso\s+efectivamente\s+cobrado\b",
+        ),
+        "C11_UTILITY_IS_CASH_INCOME": (
+            r"\bera\b[^.;]{0,40}\bingreso\s+efectivo\b[^.;]{0,40}\bcom[uú]n\b",
+        ),
+        "C11_OBLIGATION_IS_REALIZED_EXPENSE": (
+            r"\bfue\b[^.;]{0,50}\bgasto\s+efectivamente\s+realizado\b",
+        ),
+        "C11_INFRASTRUCTURE_IS_PERMANENT_SERVICE": (
+            r"\bdemuestr[ae]\b[^.;]{0,80}\bservicio\s+permanente\b",
+        ),
+        "C11_UNIVERSAL_COVERAGE": (
+            r"\bdaba\b[^.;]{0,30}\bcobertura\s+universal\b[^.;]{0,50}\b(?:habitantes|vecinos|poblaci[oó]n)\b",
+        ),
+        "C11_INCOME_PROPERTY_SUM": (
+            r"\bsumando\b[^.;]{0,60}\bingresos\b[^.;]{0,60}\bvalores\s+patrimoniales\b",
+        ),
+        "C11_INCOMPATIBLE_EXPENSE_SUM": (
+            r"\bpueden\s+sumarse\b[^.;]{0,80}\bgastos\b[^.;]{0,70}\b(?:periodos|naturalezas)\s+incompatibles\b",
+        ),
+        "C11_SUBTOTAL_IS_TOTAL_INCOME": (
+            r"\beran\b[^.;]{0,40}\bingresos\s+totales\b",
+        ),
+        "C11_SUBTOTAL_IS_TOTAL_EXPENSE": (
+            r"\beran\b[^.;]{0,40}\bgastos\s+totales\b",
+        ),
+        "C11_UNSUPPORTED_BALANCE": (
+            r"\btuvo\b[^.;]{0,30}\b(?:super[aá]vit|d[eé]ficit)\b",
+        ),
+        "C11_COMPLETE_BUDGET": (
+            r"\bformaban\b[^.;]{0,50}\bpresupuesto\s+concejil\s+completo\b",
+        ),
+        "C11_FISCAL_RECLASSIFICATION": (
+            r"\beran\b[^.;]{0,40}\bgasto\s+concejil\b",
+        ),
+        "C11_COMMON_RESOURCE_IS_CONCEJO_ASSET": (
+            r"\beran\b[^.;]{0,40}\bpatrimonio\s+concejil\b",
+        ),
+        "C11_EVIDENCE_LIMITS_ERASED": (
+            r"\bse\s+conoce\b[^.;]{0,80}\borigen\s+jur[ií]dico\b[^.;]{0,80}\bhospital\b",
+            r"\bse\s+conoce\b[^.;]{0,80}\bnaturaleza\s+precisa\b[^.;]{0,80}\bmesta\b",
+        ),
+        "C11_CHAPTER_TWELVE_BOUNDARY": (
+            r"\bprueban\b[^.;]{0,70}\beconom[ií]a\b[^.;]{0,30}\bplenamente\s+monetizada\b",
+        ),
+        "C11_CHAPTER_THIRTEEN_BOUNDARY": (
+            r"\bera\b[^.;]{0,40}\b(?:eficiente|fr[aá]gil|resiliente)\b",
+        ),
+    }
+    for code, patterns in prohibited_predicates.items():
+        if any(
+            not _predicate_is_negated(proposition, match.start())
+            for proposition in propositions
+            for pattern in patterns
+            for match in re.finditer(pattern, proposition)
+        ):
+            errors.append(f"{code}: formulación no autorizada en el capítulo 11")
+    return errors
+
+
 def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
     evidence = metadata.get("evidence", {})
     if not isinstance(evidence, dict):
@@ -2489,6 +2712,9 @@ def validate() -> list[str]:
         (CHAPTER_TEN, "Iglesia, señorío y fiscalidad",
          "iglesia-senorio-fiscalidad", CHAPTER_TEN_SOURCE_PATHS,
          CHAPTER_TEN_EVIDENCE, 10),
+        (CHAPTER_ELEVEN, "Hacienda concejil y servicios colectivos",
+         "hacienda-concejil-servicios-colectivos", CHAPTER_ELEVEN_SOURCE_PATHS,
+         CHAPTER_ELEVEN_EVIDENCE, 11),
     )
     chapter_bodies: dict[int, str] = {}
     for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
@@ -2631,6 +2857,14 @@ def validate() -> list[str]:
             errors.append("El capítulo 10 contiene HTML crudo")
         errors.extend(_validate_chapter_ten_body(chapter_ten_text))
 
+    if CHAPTER_ELEVEN.is_file():
+        chapter_eleven_text = chapter_bodies.get(11, "")
+        if "(10-iglesia-senorio-fiscalidad.qmd)" not in chapter_eleven_text:
+            errors.append("El capítulo 11 no enlaza el capítulo 10")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_eleven_text):
+            errors.append("El capítulo 11 contiene HTML crudo")
+        errors.extend(_validate_chapter_eleven_body(chapter_eleven_text))
+
     register_path = (
         REPOSITORY_ROOT
         / "project"
@@ -2663,9 +2897,12 @@ def validate() -> list[str]:
     phase_3i_ids = {
         item for group in CHAPTER_TEN_EVIDENCE.values() for item in group
     }
+    phase_3j_ids = {
+        item for group in CHAPTER_ELEVEN_EVIDENCE.values() for item in group
+    }
     missing_registry = sorted(
         (expected_ids | phase_3c_ids | phase_3d_ids | phase_3e_ids | phase_3f_ids
-         | phase_3g_ids | phase_3h_ids | phase_3i_ids)
+         | phase_3g_ids | phase_3h_ids | phase_3i_ids | phase_3j_ids)
         - registered
     )
     if missing_registry:
@@ -2783,6 +3020,7 @@ def validate() -> list[str]:
         "content/02-estudio/08-ganaderia-montes-aprovechamientos-comunales.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "content/02-estudio/10-iglesia-senorio-fiscalidad.qmd",
+        "content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
         "generated/16-modernizada-prototipo.qmd",
@@ -2794,7 +3032,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–10 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–11 y del prototipo en la navegación"
         )
 
     chapters_data = yaml.safe_load(
@@ -2814,7 +3052,7 @@ def validate() -> list[str]:
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–10 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–11 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -2849,7 +3087,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–10, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–11, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0
