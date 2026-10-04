@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 4 de octubre de 2026<br>
-**Estado global:** Fase 3 en curso; Fases 3A, 3B, 3C, 3D, 3E, 3F y 3G completadas<br>
-**Fase actual:** 3H — capítulo 9 (siguiente; no iniciada)<br>
+**Estado global:** Fase 3 en curso; Fases 3A, 3B, 3C, 3D, 3E, 3F, 3G y 3H completadas<br>
+**Fase actual:** 3I — capítulo 10 (siguiente; no iniciada)<br>
 **Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
 **Operación canónica al auditar:** `clean`
 
@@ -35,6 +35,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Capítulo 6 implementado en `1c5cb13c661f7bd27a3a6a9d6849655ece2d63d2` y aceptado mediante auditoría final focalizada con veredicto `APTO`; distingue vecindad, residencia, hogares, viviendas y categorías laborales sin producir cifras no sustentadas de población, hogares o ingresos.
 - Capítulo 7 implementado en `dcaa6378168b442a16cc37f5c684e2f5edcab119` y aceptado mediante auditoría final con veredicto `APTO`; reconstruye clases, calidades, cabidas, ciclos, rendimientos y medidas sin conversiones modernas, agregaciones incompatibles ni falsa precisión productiva.
 - Capítulo 8 implementado en `e5ddab34ef757aef9ddfbe0b62229f9cb40746df` y aceptado mediante auditoría final con veredicto `APTO`; distingue especies, regulaciones unitarias, usos y recursos sin inventar efectivos, producción total, reparto doméstico, suficiencia material ni títulos de propiedad.
+- Capítulo 9 implementado en `da76dbb3d7714d4e282f936efb1e1bc657d0dcff` y aceptado mediante auditoría final con veredicto `APTO`; distingue casas, ruedas, venturero, titulares, explotación, usuarios, utilidades, producción y capacidad, e integra colmenas y pozo de pesca sin falsas equivalencias ni estimaciones de actividad.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -47,14 +48,14 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 1B. Contexto autosuficiente para Copilot | completada | instrucciones, plan, especificación y roadmap versionados |
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
-| 3. Contenido editorial | en curso | Fases 3A–3G completadas; capítulos 1–8 aceptados; Fase 3H como única tarea siguiente |
+| 3. Contenido editorial | en curso | Fases 3A–3H completadas; capítulos 1–9 aceptados; Fase 3I como única tarea siguiente |
 | 4. Generación documental | pendiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 3H: crear y validar exclusivamente el capítulo 9, «Río, molinos y otros recursos productivos», manteniendo la trazabilidad D/C/I/E/L y las cautelas ya fijadas sobre ruedas, titularidad, utilidades, dependencia hidráulica y relaciones causales, sin iniciar los capítulos 10–13 ni modificar fuentes canónicas.
+Fase 3I: crear y validar exclusivamente el capítulo 10, «Iglesia, señorío y fiscalidad», manteniendo separadas las titularidades eclesiásticas o señoriales, los derechos, las cargas y las utilidades documentadas, sin iniciar los capítulos 11–13 ni modificar fuentes canónicas.
 
 ### Cierre comprobado de 2A
 
@@ -168,6 +169,20 @@ Fase 3H: crear y validar exclusivamente el capítulo 9, «Río, molinos y otros 
 - Auditoría final: `APTO`. Cada cifra conserva su naturaleza; no se confunden cabeza, stock, flujo, valor, prestación, renta o propiedad; las interpretaciones y el contexto externo permanecen graduados; no se requirió investigación nueva, cambio de criterio editorial ni corrección de fuentes canónicas.
 - Regresiones e integridad: 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
 
+## Cierre comprobado de 3H
+
+- Implementación atómica: `da76dbb3d7714d4e282f936efb1e1bc657d0dcff` (`feat(publication): add chapter 9`).
+- Resultado editorial: el capítulo 9, «Río, molinos y otros recursos productivos», reconstruye el río como soporte productivo, cuatro casas con ocho ruedas descritas y otro molino venturero cuyo número de ruedas no consta. Separa casa, rueda y molino; titular o partícipe, molinero, operador y usuario; utilidad, renta, producción y capacidad. Integra como recursos pertinentes los 18 pies de abejas y el pozo de pesca arrendado, y reserva el marco institucional del conde para el capítulo 10.
+- Funcionamiento y vínculo agrario: conserva la molienda de determinadas ruedas durante la mitad del año, la referencia a algunos meses invernales del venturero y la mención conjunta de puentes y funcionamiento sin convertirlas en calendario completo, causalidad universal, caudal permanente o suficiencia de agua. Vincula descriptivamente molinos harineros, centeno y sistema cerealista del capítulo 7 sin deducir volumen molido, usuarios, abastecimiento, autosuficiencia o excedente.
+- Resultados cuantitativos: `3 + 2 + 2 + 1 = 8` ruedas descritas; `(3 × 2) + (5 × 4) = 26` cargas de utilidad regulada, sin agregar los cuatro quartales del venturero; `7 + 6 + 3 + 1 + 1 = 18` pies de abejas; `18 × 2 = 36` reales de utilidad anual regulada; `13 / 18 × 100 = 72,22 %` para los dos mayores titulares, limitado a este activo; nueve reales de utilidad para el pozo, sin formar una renta sectorial agregada.
+- Procedencia aceptada: D — `HID-001`, `HID-003`, `HID-005`, `HID-006`, `GAN-003`, `GAN-004`, `FIS-012`; C — `HID-002`, `HID-004`, `GAN-005`, `GAN-006`, `CAL-010`, `CAL-011`, `CAL-012`, `CAL-013`, `CAL-020`; I — `HID-007`, `INT-002`, `INT-005`; E — `HID-008`; L — `LIM-005`, `LIM-008`, `LIM-009`, `LIM-010`, `LIM-011`.
+- Límites preservados: no se estiman producción, capacidad, días de uso, grado de utilización, número de usuarios, población abastecida, capturas, miel o cera, renta neta, autosuficiencia o excedente. No se identifica al venturero con otro molino o titular, no se convierte pluralidad en copropiedad general ni redundancia garantizada y no se agregan cargas, quartales y reales.
+- Validación semántica: 26 pruebas específicas del capítulo 9 en PASS —metadatos, estructura y procedencia, dieciséis mutaciones adversariales y ocho formulaciones cautelares—; suite completa final `247 passed`, sin `skip`, con colección estable de 247 identificadores y hash `fc50ee0dc8533448265f09492037800bf126740cd7b81eb0b457df59d8f0b0ec` calculado solo sobre los identificadores coleccionados.
+- Generación y composición: `prepare.py` se ejecutó dos veces de forma directa con SHA-256 idénticos para los seis derivados; validador estático y `--rendered`, `quarto check` y render HTML/PDF multiformato en PASS. El libro genera 15 documentos HTML; el PDF final tiene 58 páginas y 3.692.865 bytes; el capítulo 9 ocupa las páginas 44–48.
+- Inspección visual: título, numeración, navegación anterior/siguiente, diez anclas, dos tablas, encabezados, pies y saltos revisados en las cinco páginas. Un primer render dejó tres líneas aisladas en una sexta página; se compactaron dos pasajes redundantes, se repitieron pruebas y render, y el resultado final no presenta desbordes, colisiones ni páginas huérfanas.
+- Auditoría final: `APTO`. Cada molino y cifra conserva respaldo y significado; propiedad y explotación, utilidad y producción, agua y funcionamiento permanecen separados; la conexión cerealista está graduada; no se repiten los capítulos 7–8 ni se desarrollan de forma sustantiva los capítulos 10–13. No se requirió investigación externa, cambio de criterio editorial ni corrección de fuentes canónicas.
+- Regresiones e integridad: prototipo vertical, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -178,4 +193,4 @@ Fase 3H: crear y validar exclusivamente el capítulo 9, «Río, molinos y otros 
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3H: crea y valida exclusivamente el capítulo 9, «Río, molinos y otros recursos productivos», manteniendo la trazabilidad D/C/I/E/L y las cautelas sobre ruedas, titularidad, utilidades, dependencia hidráulica y relaciones causales, sin iniciar los capítulos 10–13 ni modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3I: crea y valida exclusivamente el capítulo 10, «Iglesia, señorío y fiscalidad», manteniendo la trazabilidad D/C/I/E/L y separando titularidades, derechos, cargas y utilidades, sin iniciar los capítulos 11–13 ni modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
