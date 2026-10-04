@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 4 de octubre de 2026<br>
-**Estado global:** Fase 3 en curso; Fases 3A–3K completadas<br>
-**Fase actual:** 3L — capítulo 13 (siguiente; no iniciada)<br>
+**Estado global:** Fase 3 completada; Parte II cerrada<br>
+**Fase actual:** Fase 4 — generación documental (siguiente; no iniciada)<br>
 **Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
 **Operación canónica al auditar:** `clean`
 
@@ -39,6 +39,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Capítulo 10 implementado en `02dcc31ea6db8250013c99fbc37ecbd0747bcaeb` y aceptado mediante validación final con veredicto `APTO`; separa jurisdicción, señorío, propiedad, rentas, derechos fiscales y obligaciones vecinales, y distingue perceptores, bases, cantidades reguladas y pagos sin agregaciones heterogéneas ni indicadores fiscales no sustentados.
 - Capítulo 11 implementado en `9ac6d90141e0c609b1961367c3333fbf1d86a318` y aceptado mediante validación final con veredicto `APTO`; distingue común, concejo y vecinos, reconstruye el repartimiento y los servicios documentados, y limita los 233 reales a un subtotal anual explícito sin inventar patrimonio, presupuesto, balance ni cobertura estable.
 - Capítulo 12 implementado en `413d1e6bd7c03e71ee7ce0a47a2531be6caf1f35` y aceptado mediante validación final con veredicto `APTO`; distingue precios, valoraciones, utilidades, jornales, pagos y gastos, conserva separadas moneda, especie y servicio, y documenta oficios y conexiones exteriores sin fabricar una economía de mercado, ingresos anuales ni flujos comerciales.
+- Capítulo 13 implementado en `fdcb18dc8e714dabfcba5032439074d8460f67e1` y aceptado mediante validación final con veredicto `APTO`; integra los capítulos 5–12, distingue dependencia, exposición y daño, formula mecanismos potencialmente amortiguadores sin afirmar resiliencia y cierra la Parte II sin convertir la síntesis en balance total.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -51,14 +52,14 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 1B. Contexto autosuficiente para Copilot | completada | instrucciones, plan, especificación y roadmap versionados |
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
-| 3. Contenido editorial | en curso | Fases 3A–3K completadas; capítulos 1–12 aceptados; Fase 3L como única tarea siguiente |
-| 4. Generación documental | pendiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
+| 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
+| 4. Generación documental | pendiente; siguiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 3L: crear y validar exclusivamente el capítulo 13, «Una economía rural integrada: vulnerabilidades, resiliencia y límites», sin iniciar los capítulos generados ni modificar fuentes canónicas.
+Fase 4: implementar los generadores documentales y aparatos para los capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles, sin modificar fuentes canónicas.
 
 ### Cierre comprobado de 2A
 
@@ -227,6 +228,19 @@ Fase 3L: crear y validar exclusivamente el capítulo 13, «Una economía rural i
 - Validación final: `APTO`. Las 21 confusiones semánticas definidas para la fase están cubiertas por regresiones y las cautelas equivalentes se aceptan. No se requirió investigación externa, cambio de criterio editorial ni corrección de fuentes canónicas.
 - Regresiones e integridad: prototipo vertical, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas, informe comparativo y `main` intactos; ninguna dependencia bloqueante.
 
+## Cierre comprobado de 3L
+
+- Implementación atómica: `fdcb18dc8e714dabfcba5032439074d8460f67e1` (`feat(publication): add chapter 13`).
+- Resultado editorial: el capítulo 13, «Una economía rural integrada: vulnerabilidades, resiliencia y límites», sintetiza territorio, población documental, trabajo, tierras, ganado, agua, transformación, derechos, hacienda y dinero como relaciones locales funcionales e institucionales. La integración interna no se presenta como integración en mercados regionales, autosuficiencia, equilibrio, sostenibilidad o resiliencia.
+- Dependencias y amortiguación: distingue dependencia documentada, exposición plausible y crisis o daño observado; acota el predominio centenal, los ritmos agrarios, la dependencia hidráulica, los usos comunes y el repartimiento sin atribuir impactos sufridos. Describe diversidad de actividades, pluralidad de unidades y mecanismos colectivos como posibilidades de amortiguación cuya eficacia no puede medirse; para afirmar resiliencia fuerte exige choque, respuesta, recuperación o adaptación observables.
+- Magnitudes y límites: reutiliza únicamente cálculos canónicos con sus denominadores y naturalezas —93,13 %, 72,16 %, 1.578,25 unidades, ocho ruedas en cuatro casas, 26 cargas de utilidad regulada, 36 y nueve reales de utilidad y el mínimo institucional parcial de 1.006 reales—. No calcula producción total, renta por habitante u hogar, nivel de vida, desigualdad, suficiencia, presión fiscal, presupuesto, comercio regular o causalidad económica.
+- Procedencia aceptada: D — `JUR-001`, `JUR-002`, `JUR-005`, `JUR-006`, `TER-001`, `TER-010`, `AGR-001`–`AGR-003`, `AGR-010`, `GAN-001`–`GAN-003`, `GAN-007`, `HID-001`, `HID-005`, `HID-006`, `DEM-001`, `DEM-003`, `TRA-001`–`TRA-005`, `FIS-001`–`FIS-008`, `FIS-012`; C — `AGR-004`–`AGR-006`, `GAN-005`, `HID-002`, `HID-004`, `FIS-009`–`FIS-011`, `CAL-003`–`CAL-006`, `CAL-012`–`CAL-017`; I — `INT-001`–`INT-010`; E — `TER-011`, `AGR-011`–`AGR-013`, `GAN-008`, `HID-008`, `TRA-006`, `FIS-013`–`FIS-017`; L — `LIM-001`–`LIM-013`.
+- Validación semántica: 25 inversiones semánticas y 25 formulaciones cautelares cubiertas, además de nueve guardas transversales para los capítulos 5–13; selección focal final `64 passed`. Suite completa final `416 passed`, sin `skip`, con colección estable de 416 identificadores y hash `f99eae9678d9a7cf49897d5fcefbb0fa5eff82d900fe33081216e067b4829f76` calculado solo sobre los identificadores coleccionados.
+- Generación y composición: `prepare.py` se ejecutó dos veces de forma directa con SHA-256 idénticos para los seis derivados; validador estático y `--rendered`, `quarto check` y render HTML, PDF y multiformato en PASS. El libro genera 19 documentos HTML; el PDF final tiene 81 páginas y 3.762.360 bytes; el capítulo 13 ocupa las páginas 66–72.
+- Inspección visual: se revisaron las páginas 65–73, incluidas la salida del capítulo 12, las siete páginas del capítulo 13 y la entrada al facsímil. Título, numeración, once anclas, dos tablas, encabezados, pies y saltos son legibles; no hay desbordes, colisiones ni encabezados huérfanos y la Parte III comienza limpiamente en la página 73.
+- Cierre de parte: los capítulos 5–13 mantienen las cautelas aceptadas y la transición final devuelve al soporte material sin confundir facsímil, transcripción e interpretación. La Parte II queda cerrada con veredicto `APTO`; no se requirió investigación externa, cambio de criterio editorial ni corrección de fuentes canónicas.
+- Regresiones e integridad: prototipo vertical, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas, informe comparativo y `main` intactos; ninguna dependencia bloqueante.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -237,4 +251,4 @@ Fase 3L: crear y validar exclusivamente el capítulo 13, «Una economía rural i
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3L: crea y valida exclusivamente el capítulo 13, «Una economía rural integrada: vulnerabilidades, resiliencia y límites», manteniendo la trazabilidad D/C/I/E/L y las fronteras con los capítulos 6–12 y 14–16, sin modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 4: implementa los generadores documentales y aparatos para los capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles, sin modificar fuentes canónicas. Revisa el diff y publica cambios atómicos solo si la rama sigue en el mismo `base_sha`.
