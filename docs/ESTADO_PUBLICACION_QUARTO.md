@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 3 de octubre de 2026<br>
-**Estado global:** Fase 3 en curso; Fases 3A, 3B, 3C, 3D, 3E y 3F completadas<br>
-**Fase actual:** 3G — capítulo 8 (siguiente; no iniciada)<br>
+**Actualizado:** 4 de octubre de 2026<br>
+**Estado global:** Fase 3 en curso; Fases 3A, 3B, 3C, 3D, 3E, 3F y 3G completadas<br>
+**Fase actual:** 3H — capítulo 9 (siguiente; no iniciada)<br>
 **Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
 **Operación canónica al auditar:** `clean`
 
@@ -34,6 +34,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Capítulo 5 implementado en `ad891d9a072c292302f813f0a5536e6c29a3a1d9`, corregido técnica y editorialmente en `1fd074e8e4b6dade5585cf20cefc2d4cbb27651c` y aceptado mediante auditoría independiente final con veredicto `APTO`; abre la Parte II sin correcciones pendientes.
 - Capítulo 6 implementado en `1c5cb13c661f7bd27a3a6a9d6849655ece2d63d2` y aceptado mediante auditoría final focalizada con veredicto `APTO`; distingue vecindad, residencia, hogares, viviendas y categorías laborales sin producir cifras no sustentadas de población, hogares o ingresos.
 - Capítulo 7 implementado en `dcaa6378168b442a16cc37f5c684e2f5edcab119` y aceptado mediante auditoría final con veredicto `APTO`; reconstruye clases, calidades, cabidas, ciclos, rendimientos y medidas sin conversiones modernas, agregaciones incompatibles ni falsa precisión productiva.
+- Capítulo 8 implementado en `e5ddab34ef757aef9ddfbe0b62229f9cb40746df` y aceptado mediante auditoría final con veredicto `APTO`; distingue especies, regulaciones unitarias, usos y recursos sin inventar efectivos, producción total, reparto doméstico, suficiencia material ni títulos de propiedad.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -46,14 +47,14 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 1B. Contexto autosuficiente para Copilot | completada | instrucciones, plan, especificación y roadmap versionados |
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
-| 3. Contenido editorial | en curso | Fases 3A–3F completadas; capítulos 1–7 aceptados; Fase 3G como única tarea siguiente |
+| 3. Contenido editorial | en curso | Fases 3A–3G completadas; capítulos 1–8 aceptados; Fase 3H como única tarea siguiente |
 | 4. Generación documental | pendiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 3G: crear y validar exclusivamente el capítulo 8, «Ganadería, montes y aprovechamientos comunales», manteniendo la trazabilidad D/C/I/E/L y la cautela sobre titularidad, censos de cabezas, contratos y patrimonios, sin iniciar los capítulos 9–13 ni modificar fuentes canónicas.
+Fase 3H: crear y validar exclusivamente el capítulo 9, «Río, molinos y otros recursos productivos», manteniendo la trazabilidad D/C/I/E/L y las cautelas ya fijadas sobre ruedas, titularidad, utilidades, dependencia hidráulica y relaciones causales, sin iniciar los capítulos 10–13 ni modificar fuentes canónicas.
 
 ### Cierre comprobado de 2A
 
@@ -154,6 +155,19 @@ Fase 3G: crear y validar exclusivamente el capítulo 8, «Ganadería, montes y a
 - Auditoría final: `APTO`. Todas las cifras tienen fuente o cálculo declarado; las operaciones muestran operandos, denominador y regla; las interpretaciones siguen a la evidencia; las fronteras con los capítulos 6 y 8–13 permanecen explícitas; no se requirió cambiar criterios editoriales ni corregir fuentes canónicas.
 - Regresiones e integridad: 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
 
+## Cierre comprobado de 3G
+
+- Implementación atómica: `e5ddab34ef757aef9ddfbe0b62229f9cb40746df` (`feat(publication): add chapter 8`).
+- Resultado editorial: el capítulo 8, «Ganadería, montes y aprovechamientos comunales», documenta vacuno, lanar, cerda, yeguas y crías mulares; separa valores de crías, productos anuales regulados, animales de labor y prestaciones *arenta*; y declara indeterminados los efectivos ganaderos porque la respuesta 20 no ofrece un censo de cabezas. Integra esquileo doméstico, ferrañales, prados, matorrales, eras o sitios, montes de robles y soto de negrillos, alisos y fresnos sin convertir funciones unitarias en producción total.
+- Montes, pastos y uso común: distingue el otoño pastado en común de los prados abiertos de secano y el pasto de los ganados del común en matorrales, eras o sitios, montes y soto. Conserva los usos declarados de leña, reparación y resguardo del cereal, pero separa titularidad, uso, derecho de aprovechamiento, administración y beneficio económico; no atribuye propiedad ni gestión común no documentadas.
+- Procedencia aceptada: D — `TER-001`, `GAN-001`, `GAN-002`, `GAN-007`; C — sin entradas, porque no existe base para un cálculo editorial de totales; I — `INT-002`, `INT-004`; E — `AGR-012`, `AGR-013`, `GAN-008`; L — `TER-009`, `LIM-008`, `LIM-009`.
+- Límites preservados: no se reconstruyen stock por especie, reparto por hogares o titulares, producción total o neta, destino predominante, ingresos, costes, carga ganadera, suficiencia de pastos o combustible, presión sobre los recursos, equilibrio ecológico, sostenibilidad, superficie de montes por residuo ni título jurídico de los espacios de uso común. Se mantienen explícitas las fronteras con el capítulo 7 y con los capítulos 9–13.
+- Validación semántica: 32 pruebas específicas del capítulo 8 en PASS —estructura y procedencia, 24 mutaciones adversariales y siete formulaciones cautelares—; suite completa final `222 passed`, sin `skip`, con hash de colección `606dad318389f1aa87519a1cad05ebebbd05fa702d482f5d0506347e42c3f862`.
+- Generación y composición: `prepare.py` se ejecutó dos veces con SHA-256 idénticos para los seis derivados; validador estático y `--rendered`, `quarto check` y render HTML/PDF multiformato en PASS. El libro genera 15 documentos HTML; el PDF final tiene 54 páginas y 3.679.088 bytes; el capítulo 8 ocupa las páginas 37–43.
+- Inspección visual: título, numeración, navegación, anclas, nueve secciones, tablas, continuaciones con encabezado repetido, saltos y pies revisados en las siete páginas; no se detectaron desbordes ni colisiones. La tabla principal continúa correctamente entre las páginas 38–39.
+- Auditoría final: `APTO`. Cada cifra conserva su naturaleza; no se confunden cabeza, stock, flujo, valor, prestación, renta o propiedad; las interpretaciones y el contexto externo permanecen graduados; no se requirió investigación nueva, cambio de criterio editorial ni corrección de fuentes canónicas.
+- Regresiones e integridad: 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -164,4 +178,4 @@ Fase 3G: crear y validar exclusivamente el capítulo 8, «Ganadería, montes y a
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3G: crea y valida exclusivamente el capítulo 8, «Ganadería, montes y aprovechamientos comunales», manteniendo la trazabilidad D/C/I/E/L y la cautela sobre titularidad, censos de cabezas, contratos y patrimonios, sin iniciar los capítulos 9–13 ni modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3H: crea y valida exclusivamente el capítulo 9, «Río, molinos y otros recursos productivos», manteniendo la trazabilidad D/C/I/E/L y las cautelas sobre ruedas, titularidad, utilidades, dependencia hidráulica y relaciones causales, sin iniciar los capítulos 10–13 ni modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
