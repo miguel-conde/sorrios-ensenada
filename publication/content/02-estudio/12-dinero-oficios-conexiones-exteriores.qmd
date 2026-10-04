@@ -1,0 +1,275 @@
+---
+title: "Dinero, oficios y conexiones exteriores"
+chapter-id: dinero-oficios-conexiones-exteriores
+publication-status: development
+sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "Parte II, capítulo 12"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md
+    locator: "capítulo 12 y matriz de transferencia temática"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    locator: "secciones 4, 12–14 y anexo A, CAL-014–CAL-018"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
+    locator: "GAN-001, GAN-003, GAN-005; HID-004–HID-005; TRA-001–TRA-005; JUR-006, JUR-009; FIS-002–FIS-004, FIS-006–FIS-007, FIS-009–FIS-015; INT-007–INT-008, INT-010; LIM-002, LIM-005–LIM-006, LIM-008–LIM-009, LIM-011–LIM-013; CAL-010, CAL-014–CAL-017"
+  - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
+    locator: "comparecencia y respuestas 14–20, 25, 28–35; folios 306r–306v y 314r–320v"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
+    locator: "comparecencia y respuestas 14–20, 25, 28–35"
+  - path: project/20_TRABAJO_EDITORIAL/Glosario.md
+    locator: "voces laborales, fiscales, monetarias y de servicios"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Oficios.md
+    locator: "abogado, juez subdelegado, herrero, labrador, jornalero y criado sirviente"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Personas.md
+    locator: "Joaquín Aguado, Manuel Antonio de Vega, conde de Luna y titulares de recursos"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Toponimos.md
+    locator: "Valladolid y León"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md
+    locator: "Reales Consejos, fábrica del Apóstol Santiago, Hospital de Inocentes y Mesta"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md
+    locator: "real, maravedí, quartal, fanega, carga, libra y carro"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md
+    locator: "secciones 7.4, 8 y 10.2; mínimos monetarios y utilidad diaria"
+evidence:
+  D: [GAN-001, GAN-003, HID-005, TRA-001, TRA-002, TRA-003, TRA-004, TRA-005, JUR-006, FIS-002, FIS-003, FIS-004, FIS-006, FIS-007, FIS-012]
+  C: [GAN-005, HID-004, FIS-009, FIS-010, FIS-011, CAL-010, CAL-014, CAL-015, CAL-016, CAL-017]
+  I: [INT-007, INT-008, INT-010]
+  E: [JUR-009, FIS-013, FIS-014, FIS-015]
+  L: [LIM-002, LIM-005, LIM-006, LIM-008, LIM-009, LIM-011, LIM-012, LIM-013]
+---
+
+El expediente expresa en dinero precios, valoraciones, utilidades, jornales,
+pagos y gastos, pero también conserva prestaciones en cereal, derechos en
+especie y servicios sin utilidad declarada. La moneda funciona como una de las
+formas de describir relaciones económicas; su presencia no demuestra por sí
+sola una economía plenamente monetizada, un mercado dominante o liquidez
+suficiente en los hogares.
+
+## Dónde aparece el dinero {#dinero-formas}
+
+Las respuestas usan reales y maravedís con funciones que deben permanecer
+separadas:
+
+| Función documental | Ejemplo | Lo que acredita | Lo que no acredita |
+|---|---|---|---|
+| Precio o valor ordinario | frutos de la respuesta 14 | equivalencia regulada por quinquenio | venta efectiva a ese precio |
+| Valor o producto regulado | ganado de la respuesta 20 | estimación por especie y cabeza | censo, ingreso o beneficio neto |
+| Utilidad regulada | colmenas, pozo y trabajo | cuantía atribuida por la fuente | cobro efectivo o renta familiar |
+| Pago declarado | alcabalas y partidas del común | obligación, sujetos y periodicidad expresos | reparto individual o ejecución contable completa |
+| Gasto u obligación | Corpus y fuentes | destino colectivo cuantificado | presupuesto total del común |
+
+La presencia de estas expresiones monetarias no demuestra por sí sola una
+economía plenamente monetizada.
+
+La misma fuente regula en especie los diezmos, la primicia, el voto, las
+utilidades molineras y determinadas prestaciones ganaderas. La taberna por
+*vecera* añade una prestación sin utilidad para el común ni para un particular.
+Dinero, especie y servicio coexisten; ninguno de los tres absorbe a los otros.
+[D/I: GAN-001, HID-004, HID-005, TRA-005, FIS-003, FIS-004, INT-007]
+
+## Precios y valores ordinarios {#dinero-precios-valores}
+
+La respuesta 14 fija valores ordinarios de los frutos, regulados cada año por
+un quinquenio:
+
+| Bien y unidad original | Valor declarado | Naturaleza |
+|---|---:|---|
+| *Quartal* de centeno | 2 reales y 25 maravedís | valor ordinario regulado |
+| *Quartal* de cebada | 2 reales | valor ordinario regulado |
+| *Quartal* de linaza | 4 reales | valor ordinario regulado |
+| Libra de lino | 1 real y 6 maravedís | valor ordinario regulado |
+| *Quartal* de trigo | 4 reales | valor ordinario regulado |
+| Carro de hierba | 15 reales | valor ordinario regulado |
+
+Son valoraciones catastrales, no registros de compraventa: no prueban venta de
+toda la producción, uso efectivo de esos importes ni un único mercado formador
+de precios. Como el expediente no declara la equivalencia entre real y
+maravedí, las cantidades mixtas no se decimalizan ni se convierten a moneda
+moderna. [L: LIM-006, LIM-009]
+
+Las valoraciones ganaderas del [capítulo 8](08-ganaderia-montes-aprovechamientos-comunales.qmd#ganado-valores)
+distinguen crías, producto anual moderado, animales de labor y prestaciones en
+centeno. Una valoración por cabeza no demuestra que esa cabeza existiera en un
+censo ni que su valor se pagara.
+
+## Utilidades, rentas, pagos y gastos {#dinero-naturalezas}
+
+La unidad monetaria común no vuelve homogéneas las relaciones. Dieciocho pies
+de abejas a dos reales de utilidad anual producen $18 \times 2 = 36$ reales,
+no una cuenta de ventas. Los nueve reales del pozo de pesca son utilidad de un
+recurso arrendado, no canon comprobado ni impuesto. [D/C/L: GAN-003, GAN-005,
+CAL-010, FIS-012, LIM-008, LIM-011]
+
+Los 633 reales de alcabalas son un pago anual declarado de los vecinos al conde
+de Luna. Como delimitó el
+[capítulo 11](11-hacienda-concejil-servicios-colectivos.qmd#hacienda-partidas),
+los 233 reales de la respuesta 25 son el subtotal de cuatro partidas del común,
+financiadas con otras cantidades no cuantificadas mediante repartimiento. Los
+140 reales de diezmos menudos son una regulación anual por quinquenio. Pago,
+obligación y regulación siguen siendo categorías diferentes aunque se expresen en reales.
+[D: JUR-006, FIS-003, FIS-006, FIS-007]
+
+No se suman a esos importes los valores de animales, utilidades de activos, jornales
+diarios o prestaciones en especie: no forman un ingreso o circulación total.
+
+## Un mínimo monetario institucional {#dinero-minimo-institucional}
+
+El Registro admite una agregación muy acotada de cantidades anuales expresadas
+en reales y ligadas a cargas o relaciones institucionales:
+
+$$
+633 + 233 + 140 = 1.006\ \text{reales}.
+$$
+
+| Componente | Cuantía | Naturaleza conservada |
+|---|---:|---|
+| Alcabalas | 633 reales | pago anual declarado de los vecinos al conde |
+| Partidas explícitas de la respuesta 25 | 233 reales | subtotal de obligaciones del común; existen otras sin cuantía |
+| Diezmos menudos | 140 reales | regulación monetaria anual por quinquenio |
+| **Mínimo agregado** | **1.006 reales** | **mínimo institucional explícito, no cuenta total** |
+
+La regla suma solo tres magnitudes monetarias anuales seleccionadas por el
+registro. El resultado no es presión fiscal total, gasto total, ingreso local,
+renta disponible, salida neta ni balanza: reúne naturalezas diferentes, omite
+partidas comunes no cuantificadas y deja fuera prestaciones en especie. [C:
+FIS-009, CAL-014]
+
+## Categorías laborales que se cruzan {#oficios-categorias}
+
+El [capítulo 6](06-vecinos-hogares-viviendas-trabajo.qmd#trabajo-categorias)
+estableció el recuento que aquí sirve de punto de partida: 18 jornaleros —14
+hijos de familia, tres criados sirvientes y uno dedicado solo a ese ejercicio—,
+24 labradores y un herrero que pasa la mayor parte del año como labrador. [D/I:
+TRA-001, TRA-002, TRA-004, INT-008]
+
+Esas etiquetas no forman una clasificación profesional moderna. *Jornalero*
+es una categoría laboral, *labrador* un ejercicio al que se regula utilidad,
+*herrero* un oficio y *criado sirviente* una posición incluida dentro del
+grupo de jornaleros. El único solapamiento individual expreso es el
+herrero-labrador; los demás posibles cruces no constan.
+
+Por eso no se suman 18 jornaleros, 24 labradores y un herrero como 43 puestos
+de trabajo o integrantes de una población activa. Tampoco *labrador* equivale
+a propietario de tierras ni *jornalero* a asalariado permanente. La fuente no
+indica dedicación exclusiva salvo para el único hombre descrito como ocupado
+solo en el ejercicio de jornalero.
+
+## Jornales y utilidad diaria {#oficios-jornales}
+
+La respuesta 35 regula 2,5 reales por día trabajado para los jornaleros y tres
+para los labradores. En ambos importes incluye la comida, valorada en 1,5
+reales. Al herrero se le atribuye medio real diario por el oficio, además de lo
+que gana como labrador. [D: TRA-003, TRA-004]
+
+La unidad temporal es decisiva: **día trabajado**. No consta cuántos días
+trabajó cada persona, con qué continuidad, para quién, mediante qué forma de
+pago o si la comida se entregaba siempre del mismo modo. La valoración de la
+comida incluida no demuestra que toda la utilidad se abonara en moneda.
+
+No puede multiplicarse el jornal por 365 ni por otro calendario supuesto. La
+utilidad diaria regulada no es ingreso anual, salario anual, renta familiar o
+medida de riqueza y nivel de vida. También faltan distribución de activos,
+autoconsumo, deudas y correspondencias completas entre trabajadores y hogares.
+[I/L: INT-010, LIM-002, LIM-008]
+
+## Servicios, agentes y ausencias {#oficios-servicios-ausencias}
+
+La taberna no tenía arrendatario desde hacía mucho tiempo, funcionaba por turno
+entre vecinos y no producía utilidad declarada. Es un servicio rotatorio, no un
+oficio estable, una empresa con cuentas conocidas o un ingreso general del
+lugar. [D: TRA-005]
+
+Las respuestas 31, 32 y 34 niegan, dentro de las categorías preguntadas,
+cambistas o mercaderes al por mayor, empleo lucrativo de capital por corredor,
+tenderos, médicos, cirujanos, boticarios, escribanos, arrieros y artesanos con
+acopio de materiales, comercio o arrendamientos. La respuesta 33 declara solo
+un herrero entre las artes mecánicas enumeradas. Estas negativas perfilan lo
+que el interrogatorio no localizó; no prueban ausencia de todo intercambio,
+transporte ocasional, trabajo no preguntado o contacto exterior.
+
+Joaquín Aguado comparece como abogado de los Reales Consejos y juez
+subdelegado de la operación. El título acredita una habilitación profesional,
+no un empleo permanente en un consejo, un origen exterior conocido ni una
+relación comercial. Su conexión es administrativa y documental, no un flujo
+económico del lugar. [E: JUR-009]
+
+## Destinos y relaciones exteriores {#conexiones-exteriores}
+
+Los dos pagos con destino exterior inequívoco en la respuesta 25 son quince
+reales al Hospital de Inocentes de Valladolid y diez por el derecho de Mesta
+en León:
+
+$$
+15 + 10 = 25\ \text{reales}.
+$$
+
+Esos 25 reales representan:
+
+$$
+25 \div 233 \times 100 = 10{,}73\ \%,
+$$
+
+si el denominador es el subtotal monetario explícito de la respuesta 25, y
+
+$$
+25 \div 1.006 \times 100 = 2{,}49\ \%,
+$$
+
+si el denominador es el mínimo institucional de 1.006 reales. Son proporciones
+de dos conjuntos parciales distintos, no cuotas del comercio exterior, de la
+renta local ni de una balanza de pagos. [C: FIS-010, FIS-011, CAL-015,
+CAL-016, CAL-017]
+
+El contexto ya incorporado identifica el hospital y la Mesta, pero no resuelve
+el origen jurídico de la obligación vallisoletana ni la naturaleza precisa del
+derecho pagado en León. La mención de las ciudades acredita destino y marco
+institucional en esos pagos concretos; no demuestra desplazamiento habitual,
+una ruta comercial o una red mercantil estable. [E/L: FIS-014, FIS-015,
+LIM-012, LIM-013]
+
+Hay otras relaciones que cruzan la escala local sin ser intercambios de mercado.
+Cinco fanegas de trigo de algunos vecinos proceden de siembras fuera del
+término; el voto se destina a la fábrica del Apóstol Santiago, aunque la fuente
+omite el producto de sus 24 *quartales*; y las alcabalas están enajenadas a
+favor del conde de Luna. Son relaciones territoriales, eclesiásticas o
+señoriales documentadas, no pruebas automáticas de importación, exportación o
+movilidad habitual. [D/E/L: FIS-002, FIS-003, FIS-004, FIS-013, LIM-005,
+LIM-011]
+
+## Mercado y monetización: límites {#dinero-mercado-limites}
+
+La respuesta 29 no documenta un mercado o feria regular y las respuestas
+31–32 no registran los agentes comerciales y de transporte por los que
+preguntan. Ese conjunto impide afirmar que existiera un mercado local regular,
+pero tampoco demuestra una comunidad autosuficiente o cerrada. Un silencio
+sobre compraventas no permite repartir la producción entre consumo, semilla,
+cargas, venta y otros destinos. [L: LIM-009]
+
+No pueden calcularse importaciones, exportaciones, volumen de comercio,
+integración regional de precios, dependencia exterior, liquidez doméstica o
+grado de monetización. La coexistencia de moneda, especie, trabajo y servicios
+autoriza la interpretación acotada de una monetización parcial; no una tasa ni
+una jerarquía completa entre mercado y relaciones no monetarias. [I/L: INT-007,
+INT-010, LIM-002, LIM-009]
+
+Estas piezas tampoco determinan por sí mismas diversificación, fortaleza,
+dependencia, vulnerabilidad o resiliencia del sistema. El capítulo 13 realizará
+la síntesis integrada manteniendo separados los hechos, los mecanismos
+posibles y los resultados que no pueden observarse.
+
+## Síntesis {#dinero-sintesis}
+
+El dinero aparece en el expediente como lenguaje de valoración y como medio
+de determinados pagos, gastos y utilidades. Convive con cereal, lino,
+prestaciones ganaderas y servicios sin renta. El mínimo de 1.006 reales hace
+visible una parte de las relaciones institucionales, pero no mide toda la
+circulación; los 25 reales destinados expresamente a Valladolid y León fijan
+dos conexiones exteriores, no un sector comercial.
+
+La estructura laboral combina jornaleros, labradores, servicio doméstico,
+vecera y un herrero-labrador. Solo este último acredita pluriactividad
+individual expresa; las categorías no se suman ni producen ingresos anuales.
+Las ausencias declaradas de agentes comerciales y profesionales acotan el
+cuadro sin probar aislamiento o autosuficiencia. Así, el capítulo identifica
+usos del dinero, formas de trabajo y relaciones supralocales concretas sin
+convertir valoraciones fiscales en transacciones ni menciones exteriores en
+un mercado documentado.

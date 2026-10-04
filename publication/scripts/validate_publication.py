@@ -85,6 +85,12 @@ CHAPTER_ELEVEN = (
     / "02-estudio"
     / "11-hacienda-concejil-servicios-colectivos.qmd"
 )
+CHAPTER_TWELVE = (
+    PUBLICATION_ROOT
+    / "content"
+    / "02-estudio"
+    / "12-dinero-oficios-conexiones-exteriores.qmd"
+)
 GENERATED = {
     "facsimile": PUBLICATION_ROOT / "generated" / "14-facsimil-prototipo.qmd",
     "transcription": PUBLICATION_ROOT / "generated" / "15-transcripcion-prototipo.qmd",
@@ -173,6 +179,13 @@ RENDERED_CHAPTER_ELEVEN_HTML = (
     / "content"
     / "02-estudio"
     / "11-hacienda-concejil-servicios-colectivos.html"
+)
+RENDERED_CHAPTER_TWELVE_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "02-estudio"
+    / "12-dinero-oficios-conexiones-exteriores.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -469,6 +482,50 @@ CHAPTER_ELEVEN_ANCHORS = (
     "hacienda-presupuesto-limites",
     "hacienda-sintesis",
 )
+CHAPTER_TWELVE_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/Glosario.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Oficios.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Personas.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Toponimos.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_TWELVE_EVIDENCE = {
+    "D": (
+        "GAN-001", "GAN-003", "HID-005", "TRA-001", "TRA-002",
+        "TRA-003", "TRA-004", "TRA-005", "JUR-006", "FIS-002",
+        "FIS-003", "FIS-004", "FIS-006", "FIS-007", "FIS-012",
+    ),
+    "C": (
+        "GAN-005", "HID-004", "FIS-009", "FIS-010", "FIS-011",
+        "CAL-010", "CAL-014", "CAL-015", "CAL-016", "CAL-017",
+    ),
+    "I": ("INT-007", "INT-008", "INT-010"),
+    "E": ("JUR-009", "FIS-013", "FIS-014", "FIS-015"),
+    "L": (
+        "LIM-002", "LIM-005", "LIM-006", "LIM-008", "LIM-009",
+        "LIM-011", "LIM-012", "LIM-013",
+    ),
+}
+CHAPTER_TWELVE_ANCHORS = (
+    "dinero-formas",
+    "dinero-precios-valores",
+    "dinero-naturalezas",
+    "dinero-minimo-institucional",
+    "oficios-categorias",
+    "oficios-jornales",
+    "oficios-servicios-ausencias",
+    "conexiones-exteriores",
+    "dinero-mercado-limites",
+    "dinero-sintesis",
+)
 CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("1–3", "Nombre, jurisdicción, término y límites"),
     ("4–14", "Tierras, árboles, medidas, cabidas, frutos y valores"),
@@ -702,6 +759,12 @@ def validate_rendered_outputs() -> list[str]:
             11,
             "10-iglesia-senorio-fiscalidad.html",
         ),
+        (
+            RENDERED_CHAPTER_TWELVE_HTML,
+            "Dinero, oficios y conexiones exteriores",
+            12,
+            "11-hacienda-concejil-servicios-colectivos.html",
+        ),
     )
     for path, title, number, linked_chapter in rendered_chapters:
         if not path.is_file():
@@ -718,7 +781,7 @@ def validate_rendered_outputs() -> list[str]:
             errors.append(
                 f"El HTML del capítulo {number} no conserva su enlace cruzado"
             )
-        if number in (5, 6, 7, 8, 9, 10, 11) and not re.search(
+        if number in (5, 6, 7, 8, 9, 10, 11, 12) and not re.search(
             rf'class="chapter-number"[^>]*>\s*{number}\s*<', html
         ):
             errors.append(
@@ -2552,6 +2615,180 @@ def _validate_chapter_eleven_body(body: str) -> list[str]:
     return errors
 
 
+def _validate_chapter_twelve_body(body: str) -> list[str]:
+    """Validate money and work without manufacturing a market economy."""
+
+    errors: list[str] = []
+    sections = {
+        anchor: _plain_text(_markdown_section(body, anchor))
+        for anchor in CHAPTER_TWELVE_ANCHORS
+    }
+    for anchor, section in sections.items():
+        if not section:
+            errors.append(f"C12_SECTION_{anchor.upper().replace('-', '_')}: falta la sección")
+
+    required_by_section = {
+        "dinero-formas": (
+            "precio o valor ordinario",
+            "valor o producto regulado",
+            "pago declarado",
+            "dinero, especie y servicio coexisten",
+            "no demuestra por sí sola una economía plenamente monetizada",
+        ),
+        "dinero-precios-valores": (
+            "2 reales y 25 maravedís",
+            "1 real y 6 maravedís",
+            "valoraciones catastrales, no registros de compraventa",
+            "no declara la equivalencia entre real y maravedí",
+            "no demuestra que esa cabeza existiera en un censo",
+        ),
+        "dinero-naturalezas": (
+            "18 \\times 2 = 36",
+            "nueve reales del pozo de pesca",
+            "633 reales de alcabalas",
+            "pago, obligación y regulación siguen siendo categorías diferentes",
+            "no se suman a esos importes los valores de animales",
+        ),
+        "dinero-minimo-institucional": (
+            "633 + 233 + 140 = 1.006",
+            "mínimo institucional explícito, no cuenta total",
+            "no es presión fiscal total",
+            "omite partidas comunes no cuantificadas",
+            "deja fuera prestaciones en especie",
+        ),
+        "oficios-categorias": (
+            "18 jornaleros",
+            "24 labradores",
+            "herrero que pasa la mayor parte del año como labrador",
+            "no forman una clasificación profesional moderna",
+            "no se suman 18 jornaleros, 24 labradores y un herrero",
+        ),
+        "oficios-jornales": (
+            "2,5 reales por día trabajado",
+            "comida, valorada en 1,5 reales",
+            "medio real diario por el oficio",
+            "no puede multiplicarse el jornal por 365",
+            "no es ingreso anual, salario anual, renta familiar",
+        ),
+        "oficios-servicios-ausencias": (
+            "funcionaba por turno entre vecinos",
+            "las respuestas 31, 32 y 34 niegan",
+            "no prueban ausencia de todo intercambio",
+            "su conexión es administrativa y documental",
+            "no un flujo económico del lugar",
+        ),
+        "conexiones-exteriores": (
+            "15 + 10 = 25",
+            "25 \\div 233 \\times 100 = 10{,}73",
+            "25 \\div 1.006 \\times 100 = 2{,}49",
+            "no demuestra desplazamiento habitual",
+            "no pruebas automáticas de importación, exportación o movilidad habitual",
+        ),
+        "dinero-mercado-limites": (
+            "no documenta un mercado o feria regular",
+            "tampoco demuestra una comunidad autosuficiente o cerrada",
+            "no pueden calcularse importaciones, exportaciones",
+            "monetización parcial",
+            "el capítulo 13 realizará la síntesis integrada",
+        ),
+        "dinero-sintesis": (
+            "lenguaje de valoración",
+            "no mide toda la circulación",
+            "no un sector comercial",
+            "las categorías no se suman ni producen ingresos anuales",
+            "sin probar aislamiento o autosuficiencia",
+        ),
+    }
+    for anchor, phrases in required_by_section.items():
+        section = sections[anchor]
+        absent = [phrase for phrase in phrases if phrase.casefold() not in section]
+        if absent:
+            errors.append(
+                f"C12_CONTENT_{anchor.upper().replace('-', '_')}: faltan relaciones "
+                + ", ".join(absent)
+            )
+
+    propositions = tuple(
+        proposition
+        for _, paragraph_propositions in _controlled_paragraphs(body)
+        for proposition in paragraph_propositions
+    )
+    prohibited_predicates = {
+        "C12_CURRENCY_IS_FULL_MONETIZATION": (
+            r"\bdemostraba\b[^.;]{0,60}\beconom[ií]a\s+plenamente\s+monetizada\b",
+        ),
+        "C12_VALUATION_IS_EFFECTIVE_PAYMENT": (
+            r"\bera\b[^.;]{0,40}\bpago\s+efectiv(?:o|amente)\b",
+        ),
+        "C12_UTILITY_IS_REAL_INCOME": (
+            r"\bera\b[^.;]{0,45}\bingreso\s+(?:real|efectivo)\b",
+        ),
+        "C12_DAILY_WAGE_IS_ANNUAL_INCOME": (
+            r"\bera\b[^.;]{0,45}\bingreso\s+anual\b",
+        ),
+        "C12_ASSUMED_WORKDAYS": (
+            r"\bmultiplicando\b[^.;]{0,45}\bjornal\b[^.;]{0,35}\b365\s+d[ií]as\b",
+        ),
+        "C12_LABRADOR_IS_LANDOWNER": (
+            r"\bera\b[^.;]{0,35}\bpropietario\s+de\s+tierras\b",
+        ),
+        "C12_JORNALERO_IS_PERMANENT_EMPLOYEE": (
+            r"\bera\b[^.;]{0,35}\basalariado\s+permanente\b",
+        ),
+        "C12_CRAFT_IS_EXCLUSIVE_OCCUPATION": (
+            r"\bdemostraba\b[^.;]{0,40}\bdedicaci[oó]n\s+exclusiva\b",
+        ),
+        "C12_OVERLAPPING_LABOR_SUM": (
+            r"\b18\s+jornaleros\b[^.;]{0,45}\b24\s+labradores\b[^.;]{0,45}\bsumaban\s+43\s+trabajadores\b",
+        ),
+        "C12_MODERN_ACTIVE_POPULATION": (
+            r"\bformaban\b[^.;]{0,45}\bpoblaci[oó]n\s+activa\s+moderna\b",
+        ),
+        "C12_UNSUPPORTED_FAMILY_INCOME": (
+            r"\bpermiten\s+calcular\b[^.;]{0,35}\brenta\s+familiar\b",
+        ),
+        "C12_FISCAL_UTILITY_IS_WEALTH": (
+            r"\bmed[ií]an\b[^.;]{0,35}\briqueza\b",
+        ),
+        "C12_EXTERNAL_PERSON_IS_COMMERCE": (
+            r"\bdemostraba\b[^.;]{0,50}\brelaci[oó]n\s+comercial\b",
+        ),
+        "C12_PLACE_MENTION_IS_FLOW": (
+            r"\bdemostraba\b[^.;]{0,45}\bflujo\s+econ[oó]mico\s+estable\b",
+        ),
+        "C12_REGULAR_MARKET": (
+            r"\bhab[ií]a\b[^.;]{0,25}\bmercado\s+local\s+regular\b",
+        ),
+        "C12_UNSUPPORTED_EXPORTS_IMPORTS": (
+            r"\bexportaba\b[^.;]{0,60}\be\s+importaba\b",
+        ),
+        "C12_ABSENCE_PROVES_SELF_SUFFICIENCY": (
+            r"\bdemostraba\b[^.;]{0,45}\bautosuficiencia\b",
+        ),
+        "C12_FISCAL_AMOUNT_IS_LABOR_INCOME": (
+            r"\beran\b[^.;]{0,35}\bingreso\s+laboral\b",
+        ),
+        "C12_COMMON_EXPENSE_IS_LOCAL_INCOME": (
+            r"\beran\b[^.;]{0,35}\bingreso\s+general\b",
+        ),
+        "C12_EVIDENCE_LIMITS_ERASED": (
+            r"\bcomprend[ií]an\b[^.;]{0,50}\btoda\s+la\s+circulaci[oó]n\s+monetaria\b",
+        ),
+        "C12_CHAPTER_THIRTEEN_BOUNDARY": (
+            r"\bhizo\b[^.;]{0,35}\bresiliente\b[^.;]{0,35}\beconom[ií]a\b",
+        ),
+    }
+    for code, patterns in prohibited_predicates.items():
+        if any(
+            not _predicate_is_negated(proposition, match.start())
+            for proposition in propositions
+            for pattern in patterns
+            for match in re.finditer(pattern, proposition)
+        ):
+            errors.append(f"{code}: formulación no autorizada en el capítulo 12")
+    return errors
+
+
 def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
     evidence = metadata.get("evidence", {})
     if not isinstance(evidence, dict):
@@ -2715,6 +2952,9 @@ def validate() -> list[str]:
         (CHAPTER_ELEVEN, "Hacienda concejil y servicios colectivos",
          "hacienda-concejil-servicios-colectivos", CHAPTER_ELEVEN_SOURCE_PATHS,
          CHAPTER_ELEVEN_EVIDENCE, 11),
+        (CHAPTER_TWELVE, "Dinero, oficios y conexiones exteriores",
+         "dinero-oficios-conexiones-exteriores", CHAPTER_TWELVE_SOURCE_PATHS,
+         CHAPTER_TWELVE_EVIDENCE, 12),
     )
     chapter_bodies: dict[int, str] = {}
     for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
@@ -2865,6 +3105,14 @@ def validate() -> list[str]:
             errors.append("El capítulo 11 contiene HTML crudo")
         errors.extend(_validate_chapter_eleven_body(chapter_eleven_text))
 
+    if CHAPTER_TWELVE.is_file():
+        chapter_twelve_text = chapter_bodies.get(12, "")
+        if "(11-hacienda-concejil-servicios-colectivos.qmd" not in chapter_twelve_text:
+            errors.append("El capítulo 12 no enlaza el capítulo 11")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_twelve_text):
+            errors.append("El capítulo 12 contiene HTML crudo")
+        errors.extend(_validate_chapter_twelve_body(chapter_twelve_text))
+
     register_path = (
         REPOSITORY_ROOT
         / "project"
@@ -2900,9 +3148,13 @@ def validate() -> list[str]:
     phase_3j_ids = {
         item for group in CHAPTER_ELEVEN_EVIDENCE.values() for item in group
     }
+    phase_3k_ids = {
+        item for group in CHAPTER_TWELVE_EVIDENCE.values() for item in group
+    }
     missing_registry = sorted(
         (expected_ids | phase_3c_ids | phase_3d_ids | phase_3e_ids | phase_3f_ids
-         | phase_3g_ids | phase_3h_ids | phase_3i_ids | phase_3j_ids)
+         | phase_3g_ids | phase_3h_ids | phase_3i_ids | phase_3j_ids
+         | phase_3k_ids)
         - registered
     )
     if missing_registry:
@@ -3021,6 +3273,7 @@ def validate() -> list[str]:
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "content/02-estudio/10-iglesia-senorio-fiscalidad.qmd",
         "content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd",
+        "content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
         "generated/16-modernizada-prototipo.qmd",
@@ -3032,7 +3285,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–11 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–12 y del prototipo en la navegación"
         )
 
     chapters_data = yaml.safe_load(
@@ -3052,7 +3305,7 @@ def validate() -> list[str]:
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–11 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–12 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -3087,7 +3340,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–11, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–12, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0

@@ -40,6 +40,9 @@ chapters:
   - chapter_id: hacienda-concejil-servicios-colectivos
     path: content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd
     publication_status: development
+  - chapter_id: dinero-oficios-conexiones-exteriores
+    path: content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd
+    publication_status: development
   - chapter_id: facsimil-pagina-12
     path: generated/14-facsimil-prototipo.qmd
     publication_status: prototype

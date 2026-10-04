@@ -204,6 +204,38 @@ CHAPTER_ELEVEN_EVIDENCE = {
     "E": ("FIS-014", "FIS-015", "FIS-016", "FIS-017", "TRA-006"),
     "L": ("LIM-012", "LIM-013"),
 }
+CHAPTER_TWELVE_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/Glosario.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Oficios.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Personas.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Toponimos.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_TWELVE_EVIDENCE = {
+    "D": (
+        "GAN-001", "GAN-003", "HID-005", "TRA-001", "TRA-002",
+        "TRA-003", "TRA-004", "TRA-005", "JUR-006", "FIS-002",
+        "FIS-003", "FIS-004", "FIS-006", "FIS-007", "FIS-012",
+    ),
+    "C": (
+        "GAN-005", "HID-004", "FIS-009", "FIS-010", "FIS-011",
+        "CAL-010", "CAL-014", "CAL-015", "CAL-016", "CAL-017",
+    ),
+    "I": ("INT-007", "INT-008", "INT-010"),
+    "E": ("JUR-009", "FIS-013", "FIS-014", "FIS-015"),
+    "L": (
+        "LIM-002", "LIM-005", "LIM-006", "LIM-008", "LIM-009",
+        "LIM-011", "LIM-012", "LIM-013",
+    ),
+}
 AUTHORIZED_INSTITUTIONAL_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
@@ -1391,6 +1423,179 @@ def test_chapter_eleven_accepts_bounded_cautionary_formulations(caution):
     assert validator._validate_chapter_eleven_body(f"{body}\n\n{caution}\n") == []
 
 
+def test_chapter_twelve_has_controlled_provenance_evidence_and_structure():
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "12-dinero-oficios-conexiones-exteriores.qmd"
+    )
+    metadata, body = validator._front_matter_and_body(path)
+    register = (
+        ROOT / "project/30_RESULTADOS/ESTUDIO_HISTORICO"
+        / "Registro_Afirmaciones_Calculos_v1.md"
+    ).read_text(encoding="utf-8")
+    registered = set(re.findall(r"^\|\s*([A-Z]+-\d{3})\s*\|", register, re.MULTILINE))
+
+    assert metadata["title"] == "Dinero, oficios y conexiones exteriores"
+    assert metadata["chapter-id"] == "dinero-oficios-conexiones-exteriores"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_TWELVE_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_TWELVE_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    evidence = {level: tuple(values or []) for level, values in metadata["evidence"].items()}
+    assert evidence == CHAPTER_TWELVE_EVIDENCE
+    assert set(evidence) == {"D", "C", "I", "E", "L"}
+    assert {item for group in evidence.values() for item in group} <= registered
+    assert all(
+        validator._markdown_section(body, anchor)
+        for anchor in validator.CHAPTER_TWELVE_ANCHORS
+    )
+    normalized = validator._normalized_text(body)
+    assert "633 + 233 + 140 = 1.006" in normalized
+    assert "15 + 10 = 25" in normalized
+    assert "25 \\div 233 \\times 100 = 10{,}73" in normalized
+    assert "25 \\div 1.006 \\times 100 = 2{,}49" in normalized
+    assert "el capítulo 13 realizará la síntesis integrada" in normalized
+    assert "(11-hacienda-concejil-servicios-colectivos.qmd" in body
+    assert not re.search(r"<[A-Za-z][^>]*>", body)
+    assert validator._validate_chapter_twelve_body(body) == []
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_code"),
+    (
+        (
+            "La presencia de moneda demostraba una economía plenamente monetizada.",
+            "C12_CURRENCY_IS_FULL_MONETIZATION",
+        ),
+        (
+            "La valoración monetaria era un pago efectivamente realizado.",
+            "C12_VALUATION_IS_EFFECTIVE_PAYMENT",
+        ),
+        (
+            "La utilidad regulada era un ingreso real de los hogares.",
+            "C12_UTILITY_IS_REAL_INCOME",
+        ),
+        (
+            "El jornal diario era el ingreso anual del jornalero.",
+            "C12_DAILY_WAGE_IS_ANNUAL_INCOME",
+        ),
+        (
+            "El ingreso anual se obtiene multiplicando el jornal por 365 días.",
+            "C12_ASSUMED_WORKDAYS",
+        ),
+        (
+            "Todo labrador era propietario de tierras.",
+            "C12_LABRADOR_IS_LANDOWNER",
+        ),
+        (
+            "Cada jornalero era un asalariado permanente.",
+            "C12_JORNALERO_IS_PERMANENT_EMPLOYEE",
+        ),
+        (
+            "El oficio de herrero demostraba dedicación exclusiva.",
+            "C12_CRAFT_IS_EXCLUSIVE_OCCUPATION",
+        ),
+        (
+            "Los 18 jornaleros y 24 labradores sumaban 43 trabajadores.",
+            "C12_OVERLAPPING_LABOR_SUM",
+        ),
+        (
+            "Esas categorías formaban una población activa moderna.",
+            "C12_MODERN_ACTIVE_POPULATION",
+        ),
+        (
+            "Las utilidades permiten calcular la renta familiar anual.",
+            "C12_UNSUPPORTED_FAMILY_INCOME",
+        ),
+        (
+            "Las utilidades fiscales medían la riqueza y el nivel de vida.",
+            "C12_FISCAL_UTILITY_IS_WEALTH",
+        ),
+        (
+            "La presencia de Joaquín Aguado demostraba una relación comercial exterior.",
+            "C12_EXTERNAL_PERSON_IS_COMMERCE",
+        ),
+        (
+            "La mención de Valladolid demostraba un flujo económico estable.",
+            "C12_PLACE_MENTION_IS_FLOW",
+        ),
+        (
+            "En Sorribos había un mercado local regular.",
+            "C12_REGULAR_MARKET",
+        ),
+        (
+            "El lugar exportaba cereal e importaba manufacturas.",
+            "C12_UNSUPPORTED_EXPORTS_IMPORTS",
+        ),
+        (
+            "La ausencia de mercaderes demostraba la autosuficiencia del lugar.",
+            "C12_ABSENCE_PROVES_SELF_SUFFICIENCY",
+        ),
+        (
+            "Los 633 reales de alcabalas eran un ingreso laboral.",
+            "C12_FISCAL_AMOUNT_IS_LABOR_INCOME",
+        ),
+        (
+            "Los 233 reales del común eran un ingreso general de la localidad.",
+            "C12_COMMON_EXPENSE_IS_LOCAL_INCOME",
+        ),
+        (
+            "Los 1.006 reales comprendían toda la circulación monetaria.",
+            "C12_EVIDENCE_LIMITS_ERASED",
+        ),
+        (
+            "La pluriactividad hizo resiliente la economía rural.",
+            "C12_CHAPTER_THIRTEEN_BOUNDARY",
+        ),
+    ),
+)
+def test_chapter_twelve_rejects_twenty_one_semantic_reversals(mutation, expected_code):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "12-dinero-oficios-conexiones-exteriores.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert error_codes(
+        validator._validate_chapter_twelve_body(f"{body}\n\n{mutation}\n")
+    ) == {expected_code}
+
+
+@pytest.mark.parametrize(
+    "caution",
+    (
+        "La moneda no demostraba una economía plenamente monetizada.",
+        "La valoración monetaria no era un pago efectivamente realizado.",
+        "La utilidad regulada no era un ingreso real ni el jornal diario era ingreso anual.",
+        "No se obtiene ingreso anual multiplicando el jornal por 365 días.",
+        "El labrador no era necesariamente propietario de tierras.",
+        "El jornalero no era necesariamente un asalariado permanente.",
+        "El oficio de herrero no demostraba dedicación exclusiva.",
+        "No se sostiene que 18 jornaleros y 24 labradores sumaban 43 trabajadores.",
+        "Las categorías no formaban una población activa moderna.",
+        "Las utilidades no permiten calcular la renta familiar anual.",
+        "Las utilidades fiscales no medían riqueza ni nivel de vida.",
+        "La presencia de Joaquín Aguado no demostraba una relación comercial exterior.",
+        "La mención de Valladolid no demostraba un flujo económico estable.",
+        "No había un mercado local regular documentado.",
+        "No consta que el lugar exportaba cereal e importaba manufacturas.",
+        "La ausencia de mercaderes no demostraba autosuficiencia.",
+        "Los 633 reales de alcabalas no eran ingreso laboral.",
+        "Los 233 reales del común no eran ingreso general de la localidad.",
+        "Los 1.006 reales no comprendían toda la circulación monetaria.",
+        "La pluriactividad no hizo resiliente la economía rural.",
+    ),
+)
+def test_chapter_twelve_accepts_bounded_cautionary_formulations(caution):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "12-dinero-oficios-conexiones-exteriores.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert validator._validate_chapter_twelve_body(f"{body}\n\n{caution}\n") == []
+
+
 @pytest.mark.parametrize(
     ("document", "message"),
     (
@@ -1911,6 +2116,7 @@ def test_navigation_integrates_part_one_before_the_vertical_prototype():
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "content/02-estudio/10-iglesia-senorio-fiscalidad.qmd",
         "content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd",
+        "content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd",
     ]
 
     assert [item for item in navigation if item in expected_order] == expected_order
