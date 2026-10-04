@@ -1,10 +1,10 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 4 de octubre de 2026<br>
-**Estado global:** Fase 3 completada; Parte II cerrada<br>
-**Fase actual:** Fase 4 — generación documental (siguiente; no iniciada)<br>
-**Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
-**Operación canónica al auditar:** `clean`
+**Estado global:** Fase 4 en curso; 4A completada<br>
+**Fase actual:** 4B — capítulo 15, transcripción y aparato crítico<br>
+**Base de concurrencia de 4A:** `753f3faf5c3c8ac06fca5a85be38a2831222ce42`<br>
+**Upstream comprobado antes del cierre técnico:** `753f3faf5c3c8ac06fca5a85be38a2831222ce42`
 
 ## Lectura de entrada
 
@@ -40,6 +40,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Capítulo 11 implementado en `9ac6d90141e0c609b1961367c3333fbf1d86a318` y aceptado mediante validación final con veredicto `APTO`; distingue común, concejo y vecinos, reconstruye el repartimiento y los servicios documentados, y limita los 233 reales a un subtotal anual explícito sin inventar patrimonio, presupuesto, balance ni cobertura estable.
 - Capítulo 12 implementado en `413d1e6bd7c03e71ee7ce0a47a2531be6caf1f35` y aceptado mediante validación final con veredicto `APTO`; distingue precios, valoraciones, utilidades, jornales, pagos y gastos, conserva separadas moneda, especie y servicio, y documenta oficios y conexiones exteriores sin fabricar una economía de mercado, ingresos anuales ni flujos comerciales.
 - Capítulo 13 implementado en `fdcb18dc8e714dabfcba5032439074d8460f67e1` y aceptado mediante validación final con veredicto `APTO`; integra los capítulos 5–12, distingue dependencia, exposición y daño, formula mecanismos potencialmente amortiguadores sin afirmar resiliencia y cierra la Parte II sin convertir la síntesis en balance total.
+- Fase 4A implementada en `6c27050fe478386f6a887c1efa1c4f25f9fbc6df`; el capítulo 14 presenta las 18 páginas completas del manuscrito autoritativo mediante derivados reproducibles no versionados.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -53,13 +54,22 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
-| 4. Generación documental | pendiente; siguiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
+| 4. Generación documental | en curso; 4A completada | capítulo 14 y su infraestructura cerrados; quedan 4B–4D |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 4: implementar los generadores documentales y aparatos para los capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles, sin modificar fuentes canónicas.
+4B — capítulo 15, transcripción y aparato crítico de las 35 unidades.
+
+### Descomposición operativa de la Fase 4
+
+| Tarea | Estado | Alcance |
+|---|---|---|
+| 4A | completada | infraestructura de generación y capítulo 14, «Facsímil íntegro del expediente» |
+| 4B | siguiente | capítulo 15, transcripción y aparato crítico de las 35 unidades |
+| 4C | pendiente | capítulo 16, edición modernizada |
+| 4D | pendiente | glosario, cuadros cuantitativos, concordancia y matriz de evidencia |
 
 ### Cierre comprobado de 2A
 
@@ -241,6 +251,19 @@ Fase 4: implementar los generadores documentales y aparatos para los capítulos 
 - Cierre de parte: los capítulos 5–13 mantienen las cautelas aceptadas y la transición final devuelve al soporte material sin confundir facsímil, transcripción e interpretación. La Parte II queda cerrada con veredicto `APTO`; no se requirió investigación externa, cambio de criterio editorial ni corrección de fuentes canónicas.
 - Regresiones e integridad: prototipo vertical, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas, informe comparativo y `main` intactos; ninguna dependencia bloqueante.
 
+## Cierre comprobado de 4A
+
+- Implementación atómica: `6c27050fe478386f6a887c1efa1c4f25f9fbc6df` (`feat(publication): generate chapter 14 facsimile`).
+- Contrato de entrada: `check_sources.py` valida las cuatro fuentes versionadas, los metadatos concordantes del manuscrito, su réplica local fuera del checkout, tamaño, SHA-256, 18 páginas, las 35 unidades en orden, capítulos, evidencia y activos. La réplica usada fue `/home/miguel/.local/share/sorrios-ensenada/manuscript.pdf`, con SHA-256 `d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24`; no hubo descarga desde Drive ni uso del PDF 0.6.
+- Generación: `prepare.py` verifica primero las entradas y coordina por separado el prototipo vertical y el nuevo `build_facsimile.py`. El capítulo 14 y 18 PNG completos a 180 dpi se reconstruyen solo bajo `publication/generated/`, sin recortes, OCR o realce y sin borrar salidas ajenas. Las seis salidas previas del prototipo conservan su contrato.
+- Reproducibilidad: dos preparaciones consecutivas mantuvieron idénticos los SHA-256 de las 25 salidas generadas; el manifiesto conjunto tiene SHA-256 `424466caf39943e013c63dc18ee96e4d91b29a21869fd29113e7b71b535497f0`. Las 18 imágenes suman 35.063.833 bytes.
+- Política de activos: el QMD y los PNG son derivados reproducibles ignorados mediante la política vigente `generated_ignored`; no se versionan binarios, no se introduce Git LFS y no queda decisión pendiente sobre activos.
+- Validación: 10 pruebas focalizadas y 426 pruebas totales en PASS, sin `skip`; hash de la colección de identificadores `729cf4621fa720f98e08b71d2e76617103e30078b6c6a6a32802174730b236ee`. `check_sources.py`, validadores estático y renderizado, `quarto check`, render HTML, PDF y multiformato, y `git diff --check` en PASS.
+- Composición: 19 documentos HTML y PDF de 100 páginas y 36.540.687 bytes. El capítulo 14 ocupa las páginas 74–92: apertura de Parte III en la 74 y una hoja por cada página digital en las 75–92. La primera imagen vertical se ajustó al 62 % para evitar una hoja en blanco y mantener su nota de procedencia; las otras 17 conservan el 82 %.
+- Inspección visual: se revisaron las 18 imágenes generadas y las páginas PDF 73–94. Orden, orientación, márgenes, blancos, sellos, reclamos, nitidez, pies, paginación y transiciones son correctos; no hay cortes, colisiones ni páginas huérfanas propias de 4A. La página 93 es la hoja de cortesía previa a la apertura del capítulo 15 en la 94.
+- Regresiones e integridad: capítulos 1–13, D/C/I/E/L, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas continúan en PASS. `project/`, `plugins/`, fuentes canónicas, `main` y `origin/main` permanecen intactos; ningún PDF, `_book/`, QMD generado ni PNG quedó versionado.
+- Estado: 4A cerrada; la Fase 4 continúa en curso y 4B es la única tarea siguiente.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -251,4 +274,4 @@ Fase 4: implementar los generadores documentales y aparatos para los capítulos 
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 4: implementa los generadores documentales y aparatos para los capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles, sin modificar fuentes canónicas. Revisa el diff y publica cambios atómicos solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente 4B: implementa el capítulo 15, transcripción y aparato crítico de las 35 unidades, reutilizando la infraestructura verificada de 4A y sin modificar fuentes canónicas. No inicies 4C ni 4D. Revisa el diff y publica cambios atómicos solo si la rama y el upstream conservan la base de concurrencia que se establezca al inicio.
