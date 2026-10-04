@@ -1,78 +1,251 @@
 ---
 title: "Río, molinos y otros recursos productivos"
 chapter-id: rio-molinos-recursos
-publication-status: prototype
+publication-status: development
 sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "Parte II, capítulo 9"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
-    locator: "sección 10"
+    locator: "secciones 10–11"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
-    locator: "HID-001–HID-008; CAL-012–CAL-013; INT-005; LIM-005; LIM-010"
+    locator: "HID-001–HID-008; GAN-003–GAN-006; FIS-012; CAL-010–CAL-013; CAL-020; INT-002; INT-005; LIM-005; LIM-008–LIM-011"
   - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
-    locator: "folios 315r–316r"
+    locator: "respuestas 17, 19 y 29; folios 315r–316v y 319v"
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
-    locator: "respuesta 17"
+    locator: "respuestas 17, 19 y 29"
+  - path: project/20_TRABAJO_EDITORIAL/Glosario.md
+    locator: "voces «molino venturero» y «pies de abejas»"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md
+    locator: "carga, quartal y real"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md
+    locator: "secciones sobre molinos y pies de abejas; cifras contrastadas con el Registro 1.2"
 evidence:
-  D: [HID-001, HID-003, HID-005, HID-006]
-  C: [HID-002, HID-004, CAL-012, CAL-013]
-  I: [HID-007, INT-005]
+  D: [HID-001, HID-003, HID-005, HID-006, GAN-003, GAN-004, FIS-012]
+  C: [HID-002, HID-004, GAN-005, GAN-006, CAL-010, CAL-011, CAL-012, CAL-013, CAL-020]
+  I: [HID-007, INT-002, INT-005]
   E: [HID-008]
-  L: [LIM-005, LIM-010]
+  L: [LIM-005, LIM-008, LIM-009, LIM-010, LIM-011]
 ---
 
-Este capítulo es un prototipo editorial limitado. Reúne una sola muestra del
-sistema molinero para probar la relación entre relato histórico, documento,
-cálculo y cautela; no anticipa la redacción completa de la Parte II.
+El río entra en las Respuestas Generales como soporte material de varias
+actividades, no como una corriente medida. Su agua mueve molinos harineros y su
+cauce contiene un pozo de pesca. El expediente permite identificar artefactos,
+atribuciones personales, utilidades reguladas y algunas condiciones de
+funcionamiento; no proporciona aforos, series estacionales, producción efectiva
+ni un inventario de usuarios. Esta diferencia entre lo que existe, quién figura
+asociado, cómo se explota y qué utilidad se le regula guía todo el capítulo.
 
-## Agua y capacidad de transformación
+## El río como espacio productivo {#rio-espacio-productivo}
 
-La respuesta 17 sitúa la molienda harinera en el agua del río. La formulación
-que conserva a la vez el recuento y su límite es: «ocho ruedas descritas en
-cuatro casas de molinos; además existe un molino venturero cuyo número de ruedas
-no consta». El recuento de las ruedas descritas es (3 + 2 + 2 + 1 = 8); no
-incluye una rueda supuesta para el venturero. [D/C/L: HID-001, HID-002, HID-005,
-CAL-012, LIM-010]
+La respuesta 17 declara cuatro casas de molinos harineros que muelen con el agua
+del río. La respuesta 29 sitúa también en el río un pozo de pesca. Es la misma
+referencia física general, pero la fuente no localiza los artefactos dentro del
+cauce, no nombra el río y no mide su caudal. Por eso, río, casas, ruedas y pozo
+no deben convertirse en un mapa más preciso del que ofrece el documento. [D:
+HID-001, FIS-012]
 
-La enumeración distribuye ruedas y derechos entre personas nombradas y
-consortes. Esa pluralidad de titulares no autoriza a reconstruir como
-copropiedad cada casa ni garantiza que unas unidades pudieran sustituir a otras.
-El [cuadro del prototipo](../../generated/aparato-molinos.qmd#cuadro-molinos)
-mantiene cada atribución en el nivel que permite la fuente. [D/I: HID-003,
-INT-005]
+El agua es una condición común de la molienda documentada. Esa dependencia no
+implica que todas las unidades tuvieran idéntico régimen, ni demuestra un flujo
+constante o suficiente durante todo el año. Tampoco permite deducir el número de
+personas que acudían a moler, pescar o servirse de estos recursos. [I/L: HID-007,
+LIM-009]
 
-## Utilidades sin falsa equivalencia
+## Casas, ruedas y molino venturero {#molinos-recuento}
 
-Las ocho ruedas descritas reúnen una utilidad regulada de 26 cargas de centeno:
-tres ruedas a dos cargas y cinco ruedas a cuatro. El molino venturero queda
-separado con cuatro quartales de centeno, porque el expediente no ofrece una
-equivalencia que permita agregar cargas y quartales. [C/L: HID-004, CAL-013,
-LIM-005]
+La formulación que conserva a la vez el recuento y su límite es: «ocho ruedas
+descritas en cuatro casas de molinos; además existe un molino venturero cuyo
+número de ruedas no consta». Las casas reúnen, respectivamente, tres, dos, dos y
+una ruedas:
 
-La cifra expresa una regulación declarada, no una medición moderna de caudal,
-producción efectiva o rentabilidad comparable. Tampoco permite completar el
-número de ruedas del venturero.
+$$
+3 + 2 + 2 + 1 = 8\ \text{ruedas descritas}.
+$$
 
-## Dependencia hidráulica y límites de la inferencia
+El resultado no incluye una rueda supuesta para el venturero. «Venturero» se usa
+aquí con el alcance que le da el propio expediente: un molino que trabaja
+algunos meses de invierno con el agua disponible. No autoriza una tipología
+técnica adicional ni completa el dato ausente. [D/C/L: HID-001, HID-002,
+HID-005, CAL-012, LIM-010]
 
-El expediente relaciona la regulación menor de determinadas ruedas con dos
-circunstancias: el río lleva los puentes y esas ruedas muelen solo la mitad del
-año. El venturero trabaja algunos meses de invierno con el agua disponible.
-Estos datos documentan una dependencia hidráulica compartida, pero no demuestran
-que la pérdida de puentes paralizara todos los molinos ni que existiera
-continuidad operativa garantizada. [D/I: HID-005, HID-006, HID-007, INT-005]
+La casa es el edificio o unidad que agrupa ruedas; la rueda es la unidad que el
+documento enumera y valora; el venturero aparece como otro molino, separado de
+las cuatro casas descritas. Fundir esas tres escalas produciría un total falso.
 
-El contexto aprobado en el Registro sitúa la amplia presencia del molino
-hidráulico en el Catastro leonés y la estacionalidad de la molienda en otros
-territorios del siglo XVIII. Sirve para hacer inteligible el caso, no para
-asignar a Sorribos caudales, meses de trabajo o capacidades que la respuesta 17
-no declara. [E: HID-008]
+## Titulares, participaciones y explotación {#molinos-titulares}
 
-## Cuatro accesos a la muestra
+La respuesta distribuye ruedas o participaciones entre personas nombradas y
+«consortes». La tabla conserva cada atribución en el nivel documental y no
+convierte automáticamente la pluralidad de nombres en copropiedad de toda una
+casa.
 
-- [Página digital 12 completa](../../generated/14-facsimil-prototipo.qmd#pagina-digital-12).
-- [Folio 315v: imagen, transcripción y aparato](../../generated/15-transcripcion-prototipo.qmd#folio-315v).
-- [Respuesta 17 modernizada](../../generated/16-modernizada-prototipo.qmd#respuesta-17).
-- [Cuadro y matriz D/C/I/E/L](../../generated/aparato-molinos.qmd#matriz-molinera).
+| Unidad documentada | Titular o participación expresada | Utilidad regulada |
+|---|---|---:|
+| Casa 1, rueda 1 | don Manuel Antonio, cura | 2 cargas de centeno |
+| Casa 1, rueda 2 | Manuel Fernández y Francisco Fernández | 2 cargas de centeno |
+| Casa 1, rueda 3 | Manuel González y Francisco Díez | 2 cargas de centeno |
+| Casa 2, rueda 1 | Manuel García y consortes | 4 cargas de centeno |
+| Casa 2, rueda 2 | Margarita García y Bartholomé Fernández | 4 cargas de centeno |
+| Casa 3, dos ruedas | Andrés Suárez | 8 cargas de centeno en conjunto |
+| Casa 4, una rueda | Marcos Suárez | 4 cargas de centeno |
+| Otro molino venturero | otro don Manuel | 4 quartales de centeno |
 
-Las cuatro vistas se mantienen separadas: el facsímil conserva la materialidad,
-la paleografía conserva la lectura validada, la modernización facilita el
-acceso y el aparato hace visibles cálculos, interpretaciones y límites.
+La mención nominal acredita la atribución que formula la respuesta, pero no
+identifica al molinero que operaba cada rueda, al arrendatario, a sus clientes ni
+la distribución interna de derechos entre los consortes. Propietario, partícipe,
+molinero, operador y usuario son funciones distintas; el documento no permite
+igualarlas. La expresión «otro don Manuel» tampoco autoriza a identificarlo con
+uno de los Manueles anteriores. [D/L: HID-003, LIM-010]
+
+La pluralidad de ruedas y titulares puede leerse como una diversificación de
+unidades dentro del lugar, no como garantía de sustitución entre ellas. Todas
+dependían del río, y se desconocen los accesos, turnos y acuerdos de explotación.
+[I: INT-005]
+
+## Utilidades reguladas, no producción {#molinos-utilidades}
+
+Las ocho ruedas descritas reúnen una utilidad regulada de 26 cargas de centeno.
+El cálculo reproduce la clasificación del expediente: tres ruedas valoradas en
+dos cargas y cinco en cuatro.
+
+$$
+(3 \times 2) + (5 \times 4) = 26\ \text{cargas de centeno}.
+$$
+
+La cifra es una suma de utilidades declaradas con la misma unidad y el mismo
+objeto. No mide grano molido, capacidad técnica, ingreso neto, renta contractual
+ni producción anual efectiva. Tampoco informa sobre días de uso, clientela o
+grado de ocupación de cada rueda. [C: HID-004, CAL-013]
+
+El venturero permanece fuera de esa suma: sus cuatro quartales de centeno no se
+agregan a las 26 cargas porque el expediente no ofrece aquí una equivalencia
+segura entre carga y quartal. La separación evita fabricar un total homogéneo a
+partir de magnitudes no convertibles. [L: LIM-005]
+
+El caso puede contrastarse en cuatro capas que cumplen funciones diferentes:
+la [página digital 12](../../generated/14-facsimil-prototipo.qmd#pagina-digital-12),
+el [folio 315v con su transcripción](../../generated/15-transcripcion-prototipo.qmd#folio-315v),
+la [respuesta 17 modernizada](../../generated/16-modernizada-prototipo.qmd#respuesta-17)
+y el [aparato D/C/I/E/L](../../generated/aparato-molinos.qmd#matriz-molinera).
+Estas vistas conservan la regresión del prototipo vertical sin reducir a ella el
+desarrollo histórico del capítulo.
+
+## Agua, estacionalidad y puentes {#molinos-estacionalidad}
+
+La respuesta atribuye la utilidad menor de determinadas ruedas a dos
+circunstancias expresadas conjuntamente: el río se lleva los puentes y esas
+ruedas muelen solo la mitad del año. El venturero trabaja algunos meses de
+invierno «con el agua que lleva» y su valoración remite a la causa ya indicada.
+El texto documenta así restricciones y ritmos diferentes, pero no enumera los
+meses, los días efectivos de molienda ni el caudal necesario. [D: HID-005,
+HID-006]
+
+La pérdida de puentes afecta a la infraestructura de paso y aparece junto a la
+limitación temporal; no demuestra que cada avenida paralizara todos los molinos
+ni que el daño de los puentes fuese la única causa de la molienda semestral. Del
+mismo modo, «mitad del año» no puede extenderse a todas las ruedas, y «algunos
+meses de invierno» no equivale a funcionamiento continuo durante el invierno.
+[I/L: HID-007, LIM-010]
+
+El contexto comparativo registrado confirma que los molinos hidráulicos eran
+frecuentes en el Catastro leonés y que en otras zonas del siglo XVIII se
+documenta estacionalidad por falta de agua. Ayuda a hacer inteligible el caso,
+pero no asigna a Sorribos caudales, meses, rendimientos ni capacidad. [E:
+HID-008]
+
+## Molienda y sistema cerealista {#molinos-cereal}
+
+El carácter harinero de los molinos y la expresión de sus utilidades en centeno
+los vinculan descriptivamente con el sistema cerealista presentado en el
+[capítulo 7](07-tierra-sistema-agrario-medidas.qmd). Allí el centeno domina la
+cabida cultivada comparable; aquí aparece como unidad de regulación de las
+ruedas. La coincidencia permite situar la molienda dentro de una economía rural
+de base agraria. [I: INT-002]
+
+No permite, sin embargo, convertir cabidas y rendimientos regulados en volumen
+molido. Tampoco prueba que el cereal local abasteciera todos los molinos, que
+cada vecino los utilizara, que existiera excedente comercializable o que las 26
+cargas fueran una fracción conocida de la cosecha. El destino predominante de
+la producción, los flujos de entrada y salida y el número de usuarios no
+constan. [L: LIM-009]
+
+## Colmenas: un recurso menor cuantificado {#recursos-colmenas}
+
+La respuesta 19 registra 18 «pies de abejas», expresión documental de recuento
+que se mantiene sin equivalencia moderna. Se distribuyen entre cinco vecinos:
+
+| Titular | Pies de abejas |
+|---|---:|
+| Agustín García Ordás, presbítero | 7 |
+| Francisco Díez | 6 |
+| Manuel García | 3 |
+| Juan Fernández | 1 |
+| Margarita García | 1 |
+| **Total** | **18** |
+
+La comprobación del total es $7 + 6 + 3 + 1 + 1 = 18$. A dos reales de utilidad
+anual regulada por pie, el conjunto suma $18 \times 2 = 36$ reales. Los dos
+mayores titulares reúnen $13 \div 18 \times 100 = 72{,}22\ \%$ de los pies de
+abejas registrados. Ese porcentaje describe solo la concentración de este
+activo concreto; no es una medida de riqueza general, renta doméstica o
+desigualdad del lugar. [D/C/L: GAN-003, GAN-004, GAN-005, GAN-006, CAL-010,
+CAL-011, CAL-020, LIM-008]
+
+Francisco Díez, Manuel García y Margarita García aparecen también en las
+atribuciones molineras. El solapamiento muestra que ciertos nombres participan
+en más de un recurso documentado; no permite reconstruir su patrimonio completo
+ni extender la relación a todos los titulares. La producción de miel y cera, el
+número de colmenas en explotación y sus circuitos de consumo o venta no
+constan. [I/L: INT-002, LIM-008, LIM-009]
+
+## El pozo de pesca {#recursos-pesca}
+
+La respuesta 29 declara un pozo de pesca en el río, propio del conde de Luna,
+arrendado entonces y con nueve reales de utilidad. Aquí se registra como un
+recurso productivo vinculado al cauce: existencia, titular atribuido, forma de
+explotación y utilidad declarada. No se conoce el nombre del arrendatario, el
+número de pescadores o usuarios, las capturas, la capacidad ni la renta neta.
+[D: FIS-012]
+
+Los nueve reales del pozo no se agregan a los 36 de los pies de abejas: no
+forman una renta sectorial completa. El título jurídico del derecho señorial no
+consta; su encaje institucional se reserva para el capítulo 10. [L: LIM-011]
+
+## Alcance de la reconstrucción {#recursos-limites}
+
+El expediente permite distinguir siete dimensiones que no son
+intercambiables:
+
+- **Existencia:** cuatro casas, ocho ruedas descritas, un venturero, 18 pies de
+  abejas y un pozo.
+- **Tipo:** molinos harineros hidráulicos, pies de abejas y pozo de pesca.
+- **Titularidad o participación:** nombres y consortes, sin completar repartos.
+- **Explotación:** molienda temporal y arrendamiento del pozo, solo en los casos
+  declarados.
+- **Usuarios:** no identificados ni contados.
+- **Utilidad:** cargas, quartales o reales, separados por objeto.
+- **Producción y capacidad:** no observadas; no se deducen de la utilidad, del
+  número de ruedas ni de la presencia del río.
+
+No constan series de caudal, calendarios completos, velocidades, volúmenes de
+grano, capturas, miel o cera, ni costes, salarios, beneficios o destinos de
+mercado. Sin ellos no pueden calcularse producción total, autosuficiencia,
+excedente, rentabilidad comparada o cobertura local. [L: LIM-005, LIM-008,
+LIM-009, LIM-010, LIM-011]
+
+## Síntesis {#recursos-sintesis}
+
+El río sostiene una infraestructura productiva plural, pero documentalmente
+acotada: cuatro casas con ocho ruedas descritas, otro molino venturero sin
+recuento de ruedas y un pozo de pesca; fuera del cauce, dieciocho pies de abejas
+añaden un activo menor cuantificado. Las utilidades reguladas hacen comparables
+solo magnitudes que comparten objeto y unidad: 26 cargas entre las ocho ruedas,
+cuatro quartales para el venturero, 36 reales para los pies de abejas y nueve
+reales para el pozo. No forman entre sí una producción agregada.
+
+La documentación deja ver dependencia hidráulica, funcionamiento temporal y
+participaciones personales, no una capacidad técnica calculable ni un sistema
+de abastecimiento completo. El [capítulo 8](08-ganaderia-montes-aprovechamientos-comunales.qmd)
+explica los recursos pecuarios y comunales que preceden a este cuadro; el
+capítulo 10 examinará iglesia, señorío y fiscalidad; los capítulos 11–13 tratarán
+la economía concejil, las cargas fiscales, los servicios y la síntesis de
+vulnerabilidad sin adelantar aquí sus argumentos.

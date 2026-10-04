@@ -70,7 +70,7 @@ CHAPTER_EIGHT = (
     / "02-estudio"
     / "08-ganaderia-montes-aprovechamientos-comunales.qmd"
 )
-PROTOTYPE_CHAPTER = (
+CHAPTER_NINE = (
     PUBLICATION_ROOT / "content" / "02-estudio" / "09-rio-molinos-recursos.qmd"
 )
 GENERATED = {
@@ -140,6 +140,13 @@ RENDERED_CHAPTER_EIGHT_HTML = (
     / "content"
     / "02-estudio"
     / "08-ganaderia-montes-aprovechamientos-comunales.html"
+)
+RENDERED_CHAPTER_NINE_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "02-estudio"
+    / "09-rio-molinos-recursos.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -336,6 +343,38 @@ CHAPTER_EIGHT_ANCHORS = (
     "articulacion-agraria",
     "ganado-limites",
     "ganado-sintesis",
+)
+CHAPTER_NINE_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/Glosario.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_NINE_EVIDENCE = {
+    "D": ("HID-001", "HID-003", "HID-005", "HID-006", "GAN-003", "GAN-004", "FIS-012"),
+    "C": (
+        "HID-002", "HID-004", "GAN-005", "GAN-006", "CAL-010",
+        "CAL-011", "CAL-012", "CAL-013", "CAL-020",
+    ),
+    "I": ("HID-007", "INT-002", "INT-005"),
+    "E": ("HID-008",),
+    "L": ("LIM-005", "LIM-008", "LIM-009", "LIM-010", "LIM-011"),
+}
+CHAPTER_NINE_ANCHORS = (
+    "rio-espacio-productivo",
+    "molinos-recuento",
+    "molinos-titulares",
+    "molinos-utilidades",
+    "molinos-estacionalidad",
+    "molinos-cereal",
+    "recursos-colmenas",
+    "recursos-pesca",
+    "recursos-limites",
+    "recursos-sintesis",
 )
 CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("1–3", "Nombre, jurisdicción, término y límites"),
@@ -552,6 +591,12 @@ def validate_rendered_outputs() -> list[str]:
             8,
             "07-tierra-sistema-agrario-medidas.html",
         ),
+        (
+            RENDERED_CHAPTER_NINE_HTML,
+            "Río, molinos y otros recursos productivos",
+            9,
+            "08-ganaderia-montes-aprovechamientos-comunales.html",
+        ),
     )
     for path, title, number, linked_chapter in rendered_chapters:
         if not path.is_file():
@@ -568,7 +613,7 @@ def validate_rendered_outputs() -> list[str]:
             errors.append(
                 f"El HTML del capítulo {number} no conserva su enlace cruzado"
             )
-        if number in (5, 6, 7, 8) and not re.search(
+        if number in (5, 6, 7, 8, 9) and not re.search(
             rf'class="chapter-number"[^>]*>\s*{number}\s*<', html
         ):
             errors.append(
@@ -1890,6 +1935,176 @@ def _validate_chapter_eight_body(body: str) -> list[str]:
     return errors
 
 
+def _validate_chapter_nine_body(body: str) -> list[str]:
+    """Validate hydraulic resources without inventing operation or output."""
+
+    errors: list[str] = []
+    sections = {
+        anchor: _plain_text(_markdown_section(body, anchor))
+        for anchor in CHAPTER_NINE_ANCHORS
+    }
+    for anchor, section in sections.items():
+        if not section:
+            errors.append(f"C9_SECTION_{anchor.upper().replace('-', '_')}: falta la sección")
+
+    required_by_section = {
+        "rio-espacio-productivo": (
+            "cuatro casas de molinos harineros",
+            "un pozo de pesca",
+            "no localiza los artefactos dentro del cauce",
+            "no mide su caudal",
+            "no implica que todas las unidades tuvieran idéntico régimen",
+        ),
+        "molinos-recuento": (
+            CANONICAL_FORMULA,
+            "3 + 2 + 2 + 1 = 8",
+            "no incluye una rueda supuesta para el venturero",
+            "algunos meses de invierno",
+            "casa es el edificio",
+        ),
+        "molinos-titulares": (
+            "don manuel antonio, cura",
+            "manuel garcía y consortes",
+            "otro don manuel",
+            "propietario, partícipe, molinero, operador y usuario son funciones distintas",
+            "no identifica al molinero",
+        ),
+        "molinos-utilidades": (
+            "tres ruedas valoradas en dos cargas y cinco en cuatro",
+            "utilidades declaradas",
+            "no mide grano molido",
+            "no se agregan a las 26 cargas",
+            "equivalencia segura entre carga y quartal",
+        ),
+        "molinos-estacionalidad": (
+            "esas ruedas muelen solo la mitad del año",
+            "algunos meses de invierno",
+            "no enumera los meses",
+            "no demuestra que cada avenida paralizara todos los molinos",
+            "no asigna a sorribos caudales, meses, rendimientos ni capacidad",
+        ),
+        "molinos-cereal": (
+            "carácter harinero de los molinos",
+            "utilidades en centeno",
+            "capítulo 7",
+            "no permite, sin embargo, convertir cabidas y rendimientos regulados en volumen molido",
+            "excedente comercializable",
+        ),
+        "recursos-colmenas": (
+            "registra 18 «pies de abejas»",
+            "7 + 6 + 3 + 1 + 1 = 18",
+            "a dos reales de utilidad anual regulada por pie",
+            "los dos mayores titulares reúnen",
+            "no es una medida de riqueza general",
+        ),
+        "recursos-pesca": (
+            "pozo de pesca en el río",
+            "propio del conde de luna",
+            "arrendado entonces",
+            "nueve reales de utilidad",
+            "no se conoce el nombre del arrendatario",
+            "capítulo 10",
+        ),
+        "recursos-limites": (
+            "existencia",
+            "titularidad o participación",
+            "explotación",
+            "usuarios",
+            "utilidad",
+            "producción y capacidad",
+            "autosuficiencia, excedente, rentabilidad comparada",
+        ),
+        "recursos-sintesis": (
+            "26 cargas entre las ocho ruedas",
+            "cuatro quartales para el venturero",
+            "36 reales para los pies de abejas",
+            "nueve reales para el pozo",
+            "no forman entre sí una producción agregada",
+            "capítulos 11–13",
+        ),
+    }
+    for anchor, phrases in required_by_section.items():
+        section = sections[anchor]
+        absent = [phrase for phrase in phrases if phrase.casefold() not in section]
+        if absent:
+            errors.append(
+                f"C9_CONTENT_{anchor.upper().replace('-', '_')}: faltan relaciones "
+                + ", ".join(absent)
+            )
+
+    propositions = tuple(
+        proposition
+        for _, paragraph_propositions in _controlled_paragraphs(body)
+        for proposition in paragraph_propositions
+    )
+    prohibited_predicates = {
+        "C9_EXISTENCE_IS_PRODUCTION": (
+            r"\b(?:existencia|presencia)\s+de\s+(?:los\s+)?molinos?\b[^.;]{0,90}\b(?:demuestr\w*|prueb\w*|implic\w*|acredit\w*)\b[^.;]{0,70}\bproducci[oó]n\s+(?:conocida|anual|efectiva)\b",
+        ),
+        "C9_UTILITY_IS_PRODUCTION": (
+            r"\b(?:utilidad|renta)\b(?![^.;]{0,70}\bno\b)[^.;]{0,70}\b(?:equivale|corresponde|es\s+igual)\b[^.;]{0,70}\bproducci[oó]n\b",
+            r"\b26\s+cargas\b[^.;]{0,70}\b(?:eran|representan|miden)\b[^.;]{0,50}\b(?:grano\s+molido|producci[oó]n)\b",
+        ),
+        "C9_FISCAL_IS_INCOME": (
+            r"\b(?:valor|estimaci[oó]n)\s+fiscal\b[^.;]{0,70}\b(?:era|equivale|representa)\b[^.;]{0,50}\bingreso\s+real\b",
+        ),
+        "C9_OWNER_IS_OPERATOR": (
+            r"\b(?:propietario|titular)\b[^.;]{0,60}\b(?:era|actuaba\s+como|explotaba)\b[^.;]{0,40}\b(?:explotador|operador)\b",
+        ),
+        "C9_OWNER_IS_MILLER": (
+            r"\b(?:propietario|titular)\b[^.;]{0,70}\b(?:era|trabajaba\s+como)\b[^.;]{0,30}\bmolinero\b",
+            r"\b(?:todos\s+los\s+)?titulares\b[^.;]{0,50}\bmol[ií]an\b",
+        ),
+        "C9_UNDOCUMENTED_USERS": (
+            r"\b(?:todos\s+los\s+vecinos|cada\s+hogar|la\s+poblaci[oó]n\s+entera)\b[^.;]{0,60}\b(?:us\w*|utiliz\w*|acud\w*|se\s+abastec\w*)\b[^.;]{0,40}\bmolinos?\b",
+            r"\b(?:se\s+conoce|consta)\b[^.;]{0,60}\bn[uú]mero\s+de\s+usuarios\b",
+        ),
+        "C9_ANNUAL_OPERATION": (
+            r"\b(?:molinos?|ruedas?)\b[^.;]{0,60}\b(?:funcionaban|mol[ií]an|operaban)\b[^.;]{0,50}\b(?:todo\s+el\s+a[nñ]o|durante\s+todo\s+el\s+a[nñ]o|sin\s+interrupci[oó]n)\b",
+        ),
+        "C9_WATER_SUFFICIENCY": (
+            r"\b(?:r[ií]o|agua|caudal)\b[^.;]{0,80}\b(?:era\s+suficiente|bastaba|garantizaba|era\s+permanente|no\s+ten[ií]a\s+estiaje)\b",
+        ),
+        "C9_MILLING_CAPACITY": (
+            r"\b(?:capacidad\s+de\s+molienda|capacidad\s+t[eé]cnica)\b[^.;]{0,70}\b(?:era|fue|ascend[ií]a|se\s+calcula|puede\s+calcularse)\b",
+            r"\b(?:ocho\s+ruedas|26\s+cargas)\b(?![^.;]{0,80}\bno\b)[^.;]{0,80}\bpermit(?:e|en)\s+calcular\b[^.;]{0,50}\bcapacidad\b",
+        ),
+        "C9_COMPLETE_SUPPLY": (
+            r"\b(?:molinos?|ruedas?)\b[^.;]{0,80}\b(?:abastec[ií]an|cubr[ií]an|garantizaban)\b[^.;]{0,60}\b(?:toda\s+la\s+localidad|toda\s+la\s+poblaci[oó]n|necesidades\s+locales)\b",
+        ),
+        "C9_CEREAL_SELF_SUFFICIENCY": (
+            r"\b(?:centeno|sistema\s+cerealista|cultivos?)\b(?![^.;]{0,90}\bno\b)[^.;]{0,90}\b(?:demuestr\w*|prueb\w*|garantiz\w*|asegur\w*)\b[^.;]{0,60}\bautosuficiencia\s+cerealista\b",
+        ),
+        "C9_COMMERCIAL_SURPLUS": (
+            r"\b(?:molinos?|molienda|26\s+cargas|centeno)\b(?![^.;]{0,90}\bno\b)[^.;]{0,90}\b(?:demuestr\w*|prueb\w*|gener\w*|confirma\w*)\b[^.;]{0,60}\bexcedente\s+comercial\b",
+        ),
+        "C9_INTERPRETATION_AS_DATA": (
+            r"\b(?:es\s+un\s+dato\s+(?:expl[ií]cito\s+)?del\s+manuscrito|el\s+manuscrito\s+declara)\b[^.;]{0,100}\b(?:econom[ií]a\s+(?:rural\s+)?(?:era\s+)?mixta|diversificaci[oó]n\s+productiva|sistema\s+integrado)\b",
+        ),
+        "C9_EVIDENCE_LIMITS_ERASED": (
+            r"\b(?:se\s+conoce|consta)\b[^.;]{0,70}\bn[uú]mero\s+(?:exacto\s+)?de\s+ruedas\s+del\s+venturero\b",
+            r"\b(?:se\s+conocen|constan)\b[^.;]{0,80}\b(?:producci[oó]n|capacidad|usuarios)\s+(?:exacta|completa|totales?)\b",
+        ),
+        "C9_PRIOR_CHAPTER_CONTRADICTION": (
+            r"\bcenteno\b[^.;]{0,70}\b(?:ocupaba|representaba)\b[^.;]{0,30}\b93,13\s*%[^.;]{0,40}\b(?:cabida\s+total|todas\s+las\s+tierras)\b",
+            r"\btodos\s+los\s+prados\b[^.;]{0,50}\b(?:eran|se\s+usaban)\b[^.;]{0,30}\bcom[uú]n\b",
+        ),
+        "C9_CHAPTER_BOUNDARY": (
+            r"\b(?:nueve|9)\s+reales\b[^.;]{0,90}\b(?:demuestr\w*|prueb\w*|permit\w*)\b[^.;]{0,80}\b(?:sistema\s+fiscal|fiscalidad\s+se[nñ]orial|ingresos?\s+del\s+se[nñ]or[ií]o)\b",
+            r"\b(?:sistema|econom[ií]a)\b[^.;]{0,60}\b(?:era|fue)\b[^.;]{0,30}\b(?:resiliente|fr[aá]gil|eficiente|integrado)\b",
+        ),
+    }
+    for code, patterns in prohibited_predicates.items():
+        if any(
+            not _predicate_is_negated(proposition, match.start())
+            for proposition in propositions
+            for pattern in patterns
+            for match in re.finditer(pattern, proposition)
+        ):
+            errors.append(f"{code}: formulación no autorizada en el capítulo 9")
+    return errors
+
+
 def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
     evidence = metadata.get("evidence", {})
     if not isinstance(evidence, dict):
@@ -2044,6 +2259,9 @@ def validate() -> list[str]:
         (CHAPTER_EIGHT, "Ganadería, montes y aprovechamientos comunales",
          "ganaderia-montes-aprovechamientos-comunales",
          CHAPTER_EIGHT_SOURCE_PATHS, CHAPTER_EIGHT_EVIDENCE, 8),
+        (CHAPTER_NINE, "Río, molinos y otros recursos productivos",
+         "rio-molinos-recursos", CHAPTER_NINE_SOURCE_PATHS,
+         CHAPTER_NINE_EVIDENCE, 9),
     )
     chapter_bodies: dict[int, str] = {}
     for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
@@ -2170,24 +2388,13 @@ def validate() -> list[str]:
             errors.append("El capítulo 8 contiene HTML crudo")
         errors.extend(_validate_chapter_eight_body(chapter_eight_text))
 
-    if not PROTOTYPE_CHAPTER.is_file():
-        return errors + [f"Falta el capítulo editorial: {PROTOTYPE_CHAPTER}"]
-    try:
-        metadata = _front_matter(PROTOTYPE_CHAPTER)
-    except (OSError, ValueError, yaml.YAMLError) as exc:
-        return errors + [str(exc)]
-    for key in ("title", "chapter-id", "publication-status", "sources", "evidence"):
-        if key not in metadata:
-            errors.append(f"Falta {key} en el capítulo editorial")
-    if metadata.get("publication-status") != "prototype":
-        errors.append("El capítulo debe declarar publication-status: prototype")
-    evidence = metadata.get("evidence", {})
-    normalized = {
-        level: tuple(values or [])
-        for level, values in evidence.items()
-    } if isinstance(evidence, dict) else {}
-    if normalized != EVIDENCE_GROUPS:
-        errors.append("Los identificadores D/C/I/E/L del capítulo no coinciden con la muestra fijada")
+    if CHAPTER_NINE.is_file():
+        chapter_nine_text = chapter_bodies.get(9, "")
+        if "(08-ganaderia-montes-aprovechamientos-comunales.qmd)" not in chapter_nine_text:
+            errors.append("El capítulo 9 no enlaza el capítulo 8")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_nine_text):
+            errors.append("El capítulo 9 contiene HTML crudo")
+        errors.extend(_validate_chapter_nine_body(chapter_nine_text))
 
     register_path = (
         REPOSITORY_ROOT
@@ -2215,15 +2422,18 @@ def validate() -> list[str]:
     phase_3g_ids = {
         item for group in CHAPTER_EIGHT_EVIDENCE.values() for item in group
     }
+    phase_3h_ids = {
+        item for group in CHAPTER_NINE_EVIDENCE.values() for item in group
+    }
     missing_registry = sorted(
         (expected_ids | phase_3c_ids | phase_3d_ids | phase_3e_ids | phase_3f_ids
-         | phase_3g_ids)
+         | phase_3g_ids | phase_3h_ids)
         - registered
     )
     if missing_registry:
         errors.append("Identificadores ausentes del Registro 1.2: " + ", ".join(missing_registry))
 
-    chapter_text = PROTOTYPE_CHAPTER.read_text(encoding="utf-8")
+    chapter_text = CHAPTER_NINE.read_text(encoding="utf-8")
     chapter_normalized = re.sub(r"\s+", " ", chapter_text)
     if CANONICAL_FORMULA not in chapter_normalized:
         errors.append("Falta la formulación canónica de las ocho ruedas y el venturero")
@@ -2345,7 +2555,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–8 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–9 y del prototipo en la navegación"
         )
 
     chapters_data = yaml.safe_load(
@@ -2365,7 +2575,7 @@ def validate() -> list[str]:
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–8 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–9 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -2400,7 +2610,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–8, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–9, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0
