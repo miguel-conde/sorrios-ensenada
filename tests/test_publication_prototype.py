@@ -161,6 +161,29 @@ CHAPTER_NINE_EVIDENCE = {
     "E": ("HID-008",),
     "L": ("LIM-005", "LIM-008", "LIM-009", "LIM-010", "LIM-011"),
 }
+CHAPTER_TEN_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/Glosario.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Personas.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_TEN_EVIDENCE = {
+    "D": (
+        "JUR-005", "JUR-006", "FIS-001", "FIS-002", "FIS-003",
+        "FIS-004", "FIS-008", "FIS-012",
+    ),
+    "C": ("CAL-009",),
+    "I": ("INT-010",),
+    "E": ("FIS-013",),
+    "L": ("LIM-001", "LIM-002", "LIM-005", "LIM-011"),
+}
 AUTHORIZED_INSTITUTIONAL_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
@@ -1040,6 +1063,157 @@ def test_chapter_nine_accepts_bounded_cautionary_formulations(caution):
     assert validator._validate_chapter_nine_body(f"{body}\n\n{caution}\n") == []
 
 
+def test_chapter_ten_has_controlled_provenance_evidence_and_structure():
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "10-iglesia-senorio-fiscalidad.qmd"
+    )
+    metadata, body = validator._front_matter_and_body(path)
+    register = (
+        ROOT / "project/30_RESULTADOS/ESTUDIO_HISTORICO"
+        / "Registro_Afirmaciones_Calculos_v1.md"
+    ).read_text(encoding="utf-8")
+    registered = set(re.findall(r"^\|\s*([A-Z]+-\d{3})\s*\|", register, re.MULTILINE))
+
+    assert metadata["title"] == "Iglesia, señorío y fiscalidad"
+    assert metadata["chapter-id"] == "iglesia-senorio-fiscalidad"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_TEN_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_TEN_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    evidence = {level: tuple(values) for level, values in metadata["evidence"].items()}
+    assert evidence == CHAPTER_TEN_EVIDENCE
+    assert set(evidence) == {"D", "C", "I", "E", "L"}
+    assert {item for group in evidence.values() for item in group} <= registered
+    assert all(
+        validator._markdown_section(body, anchor)
+        for anchor in validator.CHAPTER_TEN_ANCHORS
+    )
+    assert "(09-rio-molinos-recursos.qmd#recursos-pesca)" in body
+    assert "capítulo 11 estudiará la hacienda concejil" in validator._normalized_text(body)
+    assert not re.search(r"<[A-Za-z][^>]*>", body)
+    assert validator._validate_chapter_ten_body(body) == []
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_code"),
+    (
+        (
+            "El señorío significa que el conde era propietario de todas las tierras.",
+            "C10_LORDSHIP_IS_GENERAL_PROPERTY",
+        ),
+        (
+            "El conde de Luna percibía todos los tributos del lugar.",
+            "C10_COUNT_ALL_TAXES",
+        ),
+        (
+            "La Iglesia percibía los diezmos, la primicia y el voto.",
+            "C10_CHURCH_GENERIC_RECIPIENT",
+        ),
+        (
+            "Percibir el diezmo convertía al cura en propietario de las tierras.",
+            "C10_TITHE_IS_PROPERTY",
+        ),
+        (
+            "Los nueve reales del pozo eran un impuesto pagado por los vecinos.",
+            "C10_RENT_IS_TAX",
+        ),
+        (
+            "La utilidad del pozo constituía una carga fiscal vecinal.",
+            "C10_UTILITY_IS_FISCAL_CHARGE",
+        ),
+        (
+            "Las treinta cargas reguladas fueron efectivamente pagadas al cura.",
+            "C10_REGULATION_IS_PAYMENT",
+        ),
+        (
+            "El pueblo estaba exento de todos los impuestos.",
+            "C10_EXEMPTION_GENERALIZED",
+        ),
+        (
+            "Sumando cargas, fanegas, quartales, libras y reales se obtiene la carga fiscal.",
+            "C10_INCOMPATIBLE_SUM",
+        ),
+        (
+            "Los 773 reales eran la fiscalidad total.",
+            "C10_SUBTOTAL_IS_TOTAL",
+        ),
+        (
+            "La presión fiscal era del 25 % de la renta.",
+            "C10_TAX_PRESSURE",
+        ),
+        (
+            "Cada vecino soportaba 29 reales de alcabalas.",
+            "C10_PER_CAPITA_CHARGE",
+        ),
+        (
+            "Las 30 cargas equivalían a 500 reales.",
+            "C10_SPECIE_MONEY_CONVERSION",
+        ),
+        (
+            "La renta disponible de cada hogar era de 100 reales.",
+            "C10_DISPOSABLE_INCOME",
+        ),
+        (
+            "Se conoce el título jurídico exacto de las alcabalas.",
+            "C10_EVIDENCE_LIMITS_ERASED",
+        ),
+        (
+            "La respuesta 22 demuestra que no existían derechos señoriales.",
+            "C10_CHAPTER_FIVE_CONTRADICTION",
+        ),
+        (
+            "El presupuesto anual completo del común era de 233 reales.",
+            "C10_CHAPTER_ELEVEN_BOUNDARY",
+        ),
+        (
+            "Los pagos prueban que la economía estaba plenamente monetizada.",
+            "C10_CHAPTER_TWELVE_BOUNDARY",
+        ),
+        (
+            "La fiscalidad hizo vulnerable la economía local.",
+            "C10_CHAPTER_THIRTEEN_BOUNDARY",
+        ),
+    ),
+)
+def test_chapter_ten_rejects_nineteen_semantic_reversals(mutation, expected_code):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "10-iglesia-senorio-fiscalidad.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert error_codes(
+        validator._validate_chapter_ten_body(f"{body}\n\n{mutation}\n")
+    ) == {expected_code}
+
+
+@pytest.mark.parametrize(
+    "caution",
+    (
+        "El señorío no equivale a propiedad de todas las tierras.",
+        "El conde no percibía todos los tributos del lugar.",
+        "La Iglesia no percibía indistintamente diezmos, primicia y voto.",
+        "El diezmo no convertía al cura en propietario de las tierras.",
+        "Los nueve reales del pozo no eran un impuesto pagado por los vecinos.",
+        "La regulación no demuestra que las cantidades fueran efectivamente pagadas.",
+        "La exención concreta no hacía al pueblo exento de todos los impuestos.",
+        "Cargas, fanegas, quartales, libras y reales no forman una suma homogénea.",
+        "No puede calcularse presión fiscal, cuota por vecino ni renta disponible.",
+        "No se conoce el título jurídico exacto de las alcabalas.",
+        "Los pagos no prueban una economía plenamente monetizada ni una vulnerabilidad fiscal.",
+    ),
+)
+def test_chapter_ten_accepts_bounded_cautionary_formulations(caution):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "10-iglesia-senorio-fiscalidad.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert validator._validate_chapter_ten_body(f"{body}\n\n{caution}\n") == []
+
+
 @pytest.mark.parametrize(
     ("document", "message"),
     (
@@ -1556,7 +1730,9 @@ def test_navigation_integrates_part_one_before_the_vertical_prototype():
         "content/02-estudio/05-lugar-senorio-concejo-ordas.qmd",
         "content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd",
         "content/02-estudio/07-tierra-sistema-agrario-medidas.qmd",
+        "content/02-estudio/08-ganaderia-montes-aprovechamientos-comunales.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
+        "content/02-estudio/10-iglesia-senorio-fiscalidad.qmd",
     ]
 
     assert [item for item in navigation if item in expected_order] == expected_order

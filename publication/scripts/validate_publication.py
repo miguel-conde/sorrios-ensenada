@@ -73,6 +73,12 @@ CHAPTER_EIGHT = (
 CHAPTER_NINE = (
     PUBLICATION_ROOT / "content" / "02-estudio" / "09-rio-molinos-recursos.qmd"
 )
+CHAPTER_TEN = (
+    PUBLICATION_ROOT
+    / "content"
+    / "02-estudio"
+    / "10-iglesia-senorio-fiscalidad.qmd"
+)
 GENERATED = {
     "facsimile": PUBLICATION_ROOT / "generated" / "14-facsimil-prototipo.qmd",
     "transcription": PUBLICATION_ROOT / "generated" / "15-transcripcion-prototipo.qmd",
@@ -147,6 +153,13 @@ RENDERED_CHAPTER_NINE_HTML = (
     / "content"
     / "02-estudio"
     / "09-rio-molinos-recursos.html"
+)
+RENDERED_CHAPTER_TEN_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "02-estudio"
+    / "10-iglesia-senorio-fiscalidad.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -376,6 +389,41 @@ CHAPTER_NINE_ANCHORS = (
     "recursos-limites",
     "recursos-sintesis",
 )
+CHAPTER_TEN_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/Glosario.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Personas.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_TEN_EVIDENCE = {
+    "D": (
+        "JUR-005", "JUR-006", "FIS-001", "FIS-002", "FIS-003",
+        "FIS-004", "FIS-008", "FIS-012",
+    ),
+    "C": ("CAL-009",),
+    "I": ("INT-010",),
+    "E": ("FIS-013",),
+    "L": ("LIM-001", "LIM-002", "LIM-005", "LIM-011"),
+}
+CHAPTER_TEN_ANCHORS = (
+    "fiscal-marco-senorial",
+    "fiscal-perceptores-eclesiasticos",
+    "fiscal-diezmos",
+    "fiscal-primicia-voto",
+    "fiscal-derechos-senoriales",
+    "fiscal-exenciones",
+    "fiscal-sujetos-bases",
+    "fiscal-magnitudes",
+    "fiscal-limites",
+    "fiscal-sintesis",
+)
 CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("1–3", "Nombre, jurisdicción, término y límites"),
     ("4–14", "Tierras, árboles, medidas, cabidas, frutos y valores"),
@@ -597,6 +645,12 @@ def validate_rendered_outputs() -> list[str]:
             9,
             "08-ganaderia-montes-aprovechamientos-comunales.html",
         ),
+        (
+            RENDERED_CHAPTER_TEN_HTML,
+            "Iglesia, señorío y fiscalidad",
+            10,
+            "09-rio-molinos-recursos.html",
+        ),
     )
     for path, title, number, linked_chapter in rendered_chapters:
         if not path.is_file():
@@ -613,7 +667,7 @@ def validate_rendered_outputs() -> list[str]:
             errors.append(
                 f"El HTML del capítulo {number} no conserva su enlace cruzado"
             )
-        if number in (5, 6, 7, 8, 9) and not re.search(
+        if number in (5, 6, 7, 8, 9, 10) and not re.search(
             rf'class="chapter-number"[^>]*>\s*{number}\s*<', html
         ):
             errors.append(
@@ -2105,6 +2159,176 @@ def _validate_chapter_nine_body(body: str) -> list[str]:
     return errors
 
 
+def _validate_chapter_ten_body(body: str) -> list[str]:
+    """Validate fiscal relations without merging rights, payers, or measures."""
+
+    errors: list[str] = []
+    sections = {
+        anchor: _plain_text(_markdown_section(body, anchor))
+        for anchor in CHAPTER_TEN_ANCHORS
+    }
+    for anchor, section in sections.items():
+        if not section:
+            errors.append(f"C10_SECTION_{anchor.upper().replace('-', '_')}: falta la sección")
+
+    required_by_section = {
+        "fiscal-marco-senorial": (
+            "marco institucional documentado",
+            "beneficiario de las alcabalas",
+            "titular del pozo de pesca",
+            "no describe un dominio general",
+            "compartir perceptor no vuelve idéntica su naturaleza",
+        ),
+        "fiscal-perceptores-eclesiasticos": (
+            "don manuel antonio de vega, cura del lugar",
+            "la primicia, a la iglesia local",
+            "el voto, a la fábrica del apóstol santiago",
+            "perceptor indiferenciado",
+            "no hace al cura propietario",
+        ),
+        "fiscal-diezmos": (
+            "30 cargas",
+            "2 cargas",
+            "5 fanegas",
+            "40 fejes de 4 libras cada uno",
+            "160 libras",
+            "140 reales",
+            "no son recibos, cuentas de cobro ni comprobantes de pago efectivo",
+        ),
+        "fiscal-primicia-voto": (
+            "26 quartales de centeno",
+            "24 quartales",
+            "la respuesta omite el producto",
+            "renta eclesiástica de origen medieval",
+            "no autoriza a reunirlos en una sola cifra",
+        ),
+        "fiscal-derechos-senoriales": (
+            "los vecinos pagaban por ellas 633 reales cada año",
+            "no el título jurídico concreto ni el reparto individual",
+            "nueve reales de utilidad",
+            "no un impuesto pagado por los vecinos",
+            "sumarlos fabricaría una categoría",
+        ),
+        "fiscal-exenciones": (
+            "establecimiento del suelo",
+            "tampoco acredita una exención fiscal general",
+            "el común no estaba cargado con servicio ordinario ni extraordinario",
+            "el sujeto es aquí el común",
+            "pertenecen al capítulo 11",
+        ),
+        "fiscal-sujetos-bases": (
+            "sujeto o base documentada",
+            "magnitud y periodicidad",
+            "pago efectivo no comprobado",
+            "título y reparto desconocidos",
+            "utilidad de un recurso, no carga vecinal",
+        ),
+        "fiscal-magnitudes": (
+            "no forman un subtotal material",
+            "sus bases y naturalezas difieren",
+            "no pueden calcularse carga por vecino o por habitante, presión fiscal",
+            "renta disponible o desigualdad",
+            "capítulo 12",
+        ),
+        "fiscal-limites": (
+            "reparto de cada obligación entre contribuyentes",
+            "producto omitido del voto",
+            "diferencia entre regulación y cobro",
+            "renta anual completa",
+            "incidencia distributiva ni vulnerabilidad",
+        ),
+        "fiscal-sintesis": (
+            "cada relación tiene sujeto, base y naturaleza propios",
+            "ni el señorío equivale a propiedad universal",
+            "cantidades reguladas que no demuestran pagos efectivos",
+            "son específicas, no generales",
+            "capítulo 11 estudiará la hacienda concejil",
+        ),
+    }
+    for anchor, phrases in required_by_section.items():
+        section = sections[anchor]
+        absent = [phrase for phrase in phrases if phrase.casefold() not in section]
+        if absent:
+            errors.append(
+                f"C10_CONTENT_{anchor.upper().replace('-', '_')}: faltan relaciones "
+                + ", ".join(absent)
+            )
+
+    propositions = tuple(
+        proposition
+        for _, paragraph_propositions in _controlled_paragraphs(body)
+        for proposition in paragraph_propositions
+    )
+    prohibited_predicates = {
+        "C10_LORDSHIP_IS_GENERAL_PROPERTY": (
+            r"\b(?:significa|implica|equivale)\b[^.;]{0,80}\bel\s+conde\b[^.;]{0,60}\bpropietario\b[^.;]{0,40}\btodas\s+las\s+tierras\b",
+        ),
+        "C10_COUNT_ALL_TAXES": (
+            r"\bpercib[ií]a\b[^.;]{0,40}\btodos\s+los\s+tributos\b",
+        ),
+        "C10_CHURCH_GENERIC_RECIPIENT": (
+            r"\bpercib[ií]a\b[^.;]{0,40}\blos\s+diezmos\b[^.;]{0,40}\bla\s+primicia\b[^.;]{0,40}\bel\s+voto\b",
+        ),
+        "C10_TITHE_IS_PROPERTY": (
+            r"\bconvert[ií]a\b[^.;]{0,50}\bcura\b[^.;]{0,40}\bpropietario\b[^.;]{0,40}\btierras\b",
+        ),
+        "C10_RENT_IS_TAX": (
+            r"\beran\s+un\s+impuesto\b[^.;]{0,60}\bpagado\b[^.;]{0,40}\bvecinos\b",
+        ),
+        "C10_UTILITY_IS_FISCAL_CHARGE": (
+            r"\bconstitu[ií]a\b[^.;]{0,30}\buna\s+carga\s+fiscal\s+vecinal\b",
+        ),
+        "C10_REGULATION_IS_PAYMENT": (
+            r"\bfueron\s+efectivamente\s+pagad[ao]s\b[^.;]{0,50}\bcura\b",
+        ),
+        "C10_EXEMPTION_GENERALIZED": (
+            r"\bestaba\s+exento\b[^.;]{0,40}\btodos\s+los\s+impuestos\b",
+        ),
+        "C10_INCOMPATIBLE_SUM": (
+            r"\bsumando\b[^.;]{0,80}\bcargas\b[^.;]{0,60}\bfanegas\b[^.;]{0,60}\bquartales\b[^.;]{0,60}\blibras\b[^.;]{0,60}\breales\b",
+        ),
+        "C10_SUBTOTAL_IS_TOTAL": (
+            r"\b(?:773|seiscientos\s+setenta\s+y\s+tres)\s+reales\b[^.;]{0,40}\beran\b[^.;]{0,30}\bfiscalidad\s+total\b",
+        ),
+        "C10_TAX_PRESSURE": (
+            r"\bpresi[oó]n\s+fiscal\b[^.;]{0,30}\bera\b[^.;]{0,30}\b\d+(?:[,.]\d+)?\s*%",
+        ),
+        "C10_PER_CAPITA_CHARGE": (
+            r"\bcada\s+(?:vecino|habitante|hogar)\b[^.;]{0,50}\bsoportaba\b[^.;]{0,40}\breales\b",
+        ),
+        "C10_SPECIE_MONEY_CONVERSION": (
+            r"\bcargas\b[^.;]{0,40}\bequival[ií]an\b[^.;]{0,40}\breales\b",
+        ),
+        "C10_DISPOSABLE_INCOME": (
+            r"\brenta\s+disponible\b[^.;]{0,40}\b(?:era|ascend[ií]a)\b[^.;]{0,40}\breales\b",
+        ),
+        "C10_EVIDENCE_LIMITS_ERASED": (
+            r"\bse\s+conoce\b[^.;]{0,60}\bt[ií]tulo\s+jur[ií]dico\s+exacto\b[^.;]{0,40}\balcabalas\b",
+        ),
+        "C10_CHAPTER_FIVE_CONTRADICTION": (
+            r"\brespuesta\s+22\b[^.;]{0,50}\bdemuestra\b[^.;]{0,50}\bno\s+exist[ií]an\s+derechos\s+se[nñ]oriales\b",
+        ),
+        "C10_CHAPTER_ELEVEN_BOUNDARY": (
+            r"\bpresupuesto\s+anual\s+completo\s+del\s+com[uú]n\b[^.;]{0,40}\bera\b[^.;]{0,30}\b233\s+reales\b",
+        ),
+        "C10_CHAPTER_TWELVE_BOUNDARY": (
+            r"\bprueban\b[^.;]{0,60}\beconom[ií]a\b[^.;]{0,30}\bplenamente\s+monetizada\b",
+        ),
+        "C10_CHAPTER_THIRTEEN_BOUNDARY": (
+            r"\bfiscalidad\b[^.;]{0,40}\bhizo\b[^.;]{0,50}\bvulnerable\b[^.;]{0,40}\beconom[ií]a\s+local\b",
+        ),
+    }
+    for code, patterns in prohibited_predicates.items():
+        if any(
+            not _predicate_is_negated(proposition, match.start())
+            for proposition in propositions
+            for pattern in patterns
+            for match in re.finditer(pattern, proposition)
+        ):
+            errors.append(f"{code}: formulación no autorizada en el capítulo 10")
+    return errors
+
+
 def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
     evidence = metadata.get("evidence", {})
     if not isinstance(evidence, dict):
@@ -2262,6 +2486,9 @@ def validate() -> list[str]:
         (CHAPTER_NINE, "Río, molinos y otros recursos productivos",
          "rio-molinos-recursos", CHAPTER_NINE_SOURCE_PATHS,
          CHAPTER_NINE_EVIDENCE, 9),
+        (CHAPTER_TEN, "Iglesia, señorío y fiscalidad",
+         "iglesia-senorio-fiscalidad", CHAPTER_TEN_SOURCE_PATHS,
+         CHAPTER_TEN_EVIDENCE, 10),
     )
     chapter_bodies: dict[int, str] = {}
     for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
@@ -2396,6 +2623,14 @@ def validate() -> list[str]:
             errors.append("El capítulo 9 contiene HTML crudo")
         errors.extend(_validate_chapter_nine_body(chapter_nine_text))
 
+    if CHAPTER_TEN.is_file():
+        chapter_ten_text = chapter_bodies.get(10, "")
+        if "(09-rio-molinos-recursos.qmd#recursos-pesca)" not in chapter_ten_text:
+            errors.append("El capítulo 10 no enlaza el capítulo 9")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_ten_text):
+            errors.append("El capítulo 10 contiene HTML crudo")
+        errors.extend(_validate_chapter_ten_body(chapter_ten_text))
+
     register_path = (
         REPOSITORY_ROOT
         / "project"
@@ -2425,9 +2660,12 @@ def validate() -> list[str]:
     phase_3h_ids = {
         item for group in CHAPTER_NINE_EVIDENCE.values() for item in group
     }
+    phase_3i_ids = {
+        item for group in CHAPTER_TEN_EVIDENCE.values() for item in group
+    }
     missing_registry = sorted(
         (expected_ids | phase_3c_ids | phase_3d_ids | phase_3e_ids | phase_3f_ids
-         | phase_3g_ids | phase_3h_ids)
+         | phase_3g_ids | phase_3h_ids | phase_3i_ids)
         - registered
     )
     if missing_registry:
@@ -2544,6 +2782,7 @@ def validate() -> list[str]:
         "content/02-estudio/07-tierra-sistema-agrario-medidas.qmd",
         "content/02-estudio/08-ganaderia-montes-aprovechamientos-comunales.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
+        "content/02-estudio/10-iglesia-senorio-fiscalidad.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
         "generated/16-modernizada-prototipo.qmd",
@@ -2555,7 +2794,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–9 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–10 y del prototipo en la navegación"
         )
 
     chapters_data = yaml.safe_load(
@@ -2575,7 +2814,7 @@ def validate() -> list[str]:
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–9 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–10 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -2610,7 +2849,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–9, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–10, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0

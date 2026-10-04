@@ -34,6 +34,9 @@ chapters:
   - chapter_id: rio-molinos-recursos
     path: content/02-estudio/09-rio-molinos-recursos.qmd
     publication_status: development
+  - chapter_id: iglesia-senorio-fiscalidad
+    path: content/02-estudio/10-iglesia-senorio-fiscalidad.qmd
+    publication_status: development
   - chapter_id: facsimil-pagina-12
     path: generated/14-facsimil-prototipo.qmd
     publication_status: prototype

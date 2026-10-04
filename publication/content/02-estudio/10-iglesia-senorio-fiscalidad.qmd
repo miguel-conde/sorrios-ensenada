@@ -1,0 +1,217 @@
+---
+title: "Iglesia, señorío y fiscalidad"
+chapter-id: iglesia-senorio-fiscalidad
+publication-status: development
+sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "Parte II, capítulo 10"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md
+    locator: "capítulo 10 y matriz de transferencia temática"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
+    locator: "secciones sobre fiscalidad, Iglesia y señorío"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
+    locator: "JUR-005–JUR-006; FIS-001–FIS-004; FIS-008; FIS-012–FIS-013; CAL-009; INT-010; LIM-001–LIM-002; LIM-005; LIM-011"
+  - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
+    locator: "respuestas 15–16, 22 y 27–29; folios 314v–315r y 318v–319v"
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
+    locator: "respuestas 15–16, 22 y 27–29"
+  - path: project/20_TRABAJO_EDITORIAL/Glosario.md
+    locator: "voces fiscales, eclesiásticas y señoriales"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Personas.md
+    locator: "conde de Luna y Manuel Antonio de Vega"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Instituciones.md
+    locator: "iglesia local y fábrica del Apóstol Santiago"
+  - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md
+    locator: "carga, fanega, quartal, libra y real"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md
+    locator: "secciones sobre diezmos, primicia, voto y alcabalas; cifras contrastadas con el Registro 1.2"
+evidence:
+  D: [JUR-005, JUR-006, FIS-001, FIS-002, FIS-003, FIS-004, FIS-008, FIS-012]
+  C: [CAL-009]
+  I: [INT-010]
+  E: [FIS-013]
+  L: [LIM-001, LIM-002, LIM-005, LIM-011]
+---
+
+El lugar pertenecía al señorío del conde de Luna, pero esa condición
+jurisdiccional no convierte al conde en propietario de todas las tierras ni en
+perceptor de todos los tributos. Las Respuestas Generales documentan derechos,
+perceptores y obligaciones concretos: diezmos, primicia y voto en el ámbito
+eclesiástico; alcabalas y un pozo de pesca vinculados al conde; y dos
+exenciones de alcance preciso. Reconstruir este entramado exige no confundir
+jurisdicción, propiedad, renta, derecho fiscal y obligación vecinal.
+
+## Un marco señorial de derechos delimitados {#fiscal-marco-senorial}
+
+El [capítulo 5](05-lugar-senorio-concejo-ordas.qmd) estableció la pertenencia
+señorial del lugar y la coexistencia del concejo con derechos atribuidos al
+conde de Luna. Aquí importa su traducción económica y fiscal. La fuente solo
+permite afirmar que el conde figura como beneficiario de las alcabalas y como
+titular del pozo de pesca; no describe un dominio general sobre el suelo, la
+producción o las demás percepciones. [D/L: JUR-005, JUR-006, FIS-012, LIM-011]
+
+Señorío designa, por tanto, el marco institucional documentado, no una categoría
+capaz de absorber cualquier propiedad o pago del lugar. También deben
+separarse los dos derechos atribuidos al conde: las alcabalas son una exacción
+pagada por los vecinos, mientras que el pozo es un recurso arrendado al que se
+regula una utilidad. Compartir perceptor no vuelve idéntica su naturaleza.
+
+## Perceptores eclesiásticos diferenciados {#fiscal-perceptores-eclesiasticos}
+
+La presencia del clero local fue delimitada en el
+[capítulo 6](06-vecinos-hogares-viviendas-trabajo.qmd). Las respuestas 15 y 16
+añaden ahora tres destinos institucionales distintos: los diezmos correspondían
+por entero a don Manuel Antonio de Vega, cura del lugar; la primicia, a la
+iglesia local; y el voto, a la fábrica del Apóstol Santiago. «La Iglesia» no
+puede usarse como perceptor indiferenciado cuando el expediente distingue una
+persona, una institución local y una fábrica eclesiástica. [D: FIS-001,
+FIS-002]
+
+La condición eclesiástica tampoco equivale por sí sola a percepción de una
+renta. Es la declaración concreta la que asocia al cura con los diezmos, a la
+iglesia con la primicia y a la fábrica con el voto. Recibir el diezmo no hace al
+cura propietario de las tierras sobre las que se devenga.
+
+## Diezmos: productos y dinero sin una suma común {#fiscal-diezmos}
+
+La respuesta 16 ofrece una regulación anual hecha por quinquenio. Conserva
+varios productos y unidades que no deben fundirse:
+
+| Componente regulado | Magnitud | Perceptor documentado | Alcance y cautela |
+|---|---:|---|---|
+| Centeno | 30 cargas | don Manuel Antonio de Vega, cura | cantidad anual regulada, no cobro comprobado |
+| Cebada | 2 cargas | el mismo cura | cantidad anual regulada |
+| Trigo de algunos vecinos que siembran fuera del término | 5 fanegas | el mismo cura | base personal y territorial específica |
+| Lino | 40 fejes de 4 libras cada uno | el mismo cura | 160 libras calculadas solo para este componente |
+| Diezmos menudos de lana, crías de mulas y otros conceptos | 140 reales | el mismo cura | valoración monetaria regulada, no renta neta |
+
+El único cálculo interno seguro es $40 \times 4 = 160$ libras de lino. No
+convierte el lino en cargas o fanegas ni permite sumarlo con los 140 reales. Las
+cinco fanegas de trigo corresponden solo a algunos vecinos que sembraban fuera
+del término; no describen a todos los contribuyentes ni toda la cosecha. [D/C/L:
+FIS-003, CAL-009, LIM-005]
+
+Estas cifras expresan lo que el interrogatorio regula anualmente a partir de un
+quinquenio. No son recibos, cuentas de cobro ni comprobantes de pago efectivo.
+Tampoco convierten el derecho decimal en propiedad sobre la tierra o sobre el
+conjunto de la producción.
+
+## Primicia y voto: obligaciones distintas {#fiscal-primicia-voto}
+
+La primicia se regula en 26 quartales de centeno y corresponde a la iglesia del
+lugar. El voto se fija en 24 quartales, pero la respuesta omite el producto; no
+es lícito completarlo por analogía con la primicia. Ambas cantidades están
+expresadas en quartales, aunque pertenecen a obligaciones y perceptores
+distintos. [D/L: FIS-002, FIS-004, LIM-005]
+
+El Voto de Santiago fue una renta eclesiástica de origen medieval cuya
+implantación y modalidades variaron territorialmente, también en León. Ese
+contexto explica la denominación y el destino institucional, pero no sustituye
+el dato local, no identifica un producto ausente ni demuestra cómo se repartió
+la obligación entre los vecinos de Sorribos. [E: FIS-013]
+
+Diezmo, primicia y voto aparecen juntos en la descripción de las cargas sobre
+las tierras, pero no son sinónimos. Difieren en destinatario, composición y
+grado de precisión documental. La coincidencia de ámbito eclesiástico no
+autoriza a reunirlos en una sola cifra.
+
+## Derechos del conde: alcabalas y pozo {#fiscal-derechos-senoriales}
+
+La respuesta 28 declara las alcabalas enajenadas a favor del conde de Luna y
+añade que los vecinos pagaban por ellas 633 reales cada año. No se sabía si la
+enajenación procedía de servicio pecuniario u otro motivo. Quedan documentados
+el derecho, el beneficiario, los sujetos pagadores, la cantidad y la
+periodicidad; no el título jurídico concreto ni el reparto individual de la
+carga. [D/L: JUR-006, LIM-011]
+
+La respuesta 29 atribuye al conde un pozo de pesca en el río, entonces
+arrendado, con nueve reales de utilidad. Como mostró el
+[capítulo 9](09-rio-molinos-recursos.qmd#recursos-pesca), es un recurso
+productivo y una renta señorial documentada, no un impuesto pagado por los
+vecinos. Se desconocen el arrendatario, la renta contractual y el título
+jurídico preciso. Utilidad regulada, canon de arrendamiento e ingreso efectivo
+no pueden tratarse como equivalentes. [D/L: FIS-012, LIM-011]
+
+Los 633 reales de alcabalas y los nueve de utilidad del pozo comparten moneda y
+beneficiario, pero no sujeto, base ni naturaleza. Sumarlos fabricaría una
+categoría que el expediente no proporciona.
+
+## Exenciones de alcance preciso {#fiscal-exenciones}
+
+La respuesta 22 afirma que no se pagaba al señor por razón del establecimiento
+del suelo. La negación se refiere a ese concepto concreto: no elimina el
+señorío, las alcabalas ni el derecho sobre el pozo, y tampoco acredita una
+exención fiscal general. [D: JUR-005]
+
+La respuesta 27 declara, por otra parte, que el común no estaba cargado con
+servicio ordinario ni extraordinario. El sujeto es aquí el común y los
+conceptos son esos dos servicios. La declaración no puede trasladarse sin más
+a cada vecino ni a todas las obligaciones locales. Las cuentas y servicios
+colectivos del común pertenecen al capítulo 11. [D: FIS-008]
+
+## Sujetos, bases y naturaleza de las cargas {#fiscal-sujetos-bases}
+
+La siguiente matriz resume solo relaciones expresas o límites impuestos por la
+fuente:
+
+| Concepto | Sujeto o base documentada | Perceptor o titular | Magnitud y periodicidad | Naturaleza y certeza |
+|---|---|---|---|---|
+| Diezmos | productos de las tierras; caso particular del trigo sembrado fuera del término | don Manuel Antonio de Vega, cura | productos y 140 reales; regulación anual por quinquenio | derecho eclesiástico documentado; pago efectivo no comprobado |
+| Primicia | tierras, sin reparto personal | iglesia del lugar | 26 quartales de centeno; anual regulado | derecho eclesiástico documentado |
+| Voto | tierras, sin reparto personal | fábrica del Apóstol Santiago | 24 quartales; anual regulado, producto no indicado | derecho eclesiástico documentado y contexto externo delimitado |
+| Alcabalas | vecinos | conde de Luna | 633 reales cada año | derecho enajenado y pago colectivo declarado; título y reparto desconocidos |
+| Pozo de pesca | recurso arrendado | conde de Luna | 9 reales de utilidad | renta o utilidad de un recurso, no carga vecinal |
+| Establecimiento del suelo | concepto por el que se pregunta | señor del lugar | nada | exención específica |
+| Servicio ordinario y extraordinario | común | no procede | nada | ausencia específica de ambas cargas |
+
+«Tierras», «algunos vecinos», «vecinos», «común» y «recurso arrendado» no son
+bases intercambiables. La tabla impide atribuir a cada hogar una cuota que el
+documento no reparte y evita transformar una utilidad patrimonial en tributo.
+
+## Magnitudes sin presión fiscal calculable {#fiscal-magnitudes}
+
+Las cantidades en especie están expresadas en cargas, fanegas, quartales,
+fejes y libras sin una tabla local completa de equivalencias. No forman un
+subtotal material. Los importes monetarios tampoco constituyen por sí solos un
+total: 140 reales valoran diezmos menudos; 633 reales corresponden a las
+alcabalas pagadas por los vecinos; y nueve reales son utilidad del pozo. Sus
+bases y naturalezas difieren. [L: LIM-005, LIM-011]
+
+El expediente no ofrece una población total en individuos, una distribución
+por hogares de estas cargas ni rentas domésticas anuales completas. Por ello no
+pueden calcularse carga por vecino o por habitante, presión fiscal, renta
+disponible o desigualdad. La circulación conjunta de especie y dinero será
+examinada en el capítulo 12 sin asignar equivalencias inexistentes. [I/L:
+INT-010, LIM-001, LIM-002]
+
+## Límites de la reconstrucción {#fiscal-limites}
+
+La documentación permite reconocer perceptores y titulares, pero deja abiertas
+cuestiones decisivas: el título concreto de la enajenación de alcabalas y del
+derecho sobre el pozo, el reparto de cada obligación entre contribuyentes, las
+exenciones personales que pudieran existir, el producto omitido del voto y la
+diferencia entre regulación y cobro. [L: LIM-011]
+
+Tampoco consta una contabilidad que reúna ingresos señoriales y eclesiásticos,
+ni una renta anual completa de vecinos u hogares contra la que medirlos. En
+consecuencia, no se deducen aquí suficiencia económica, capacidad contributiva,
+incidencia distributiva ni vulnerabilidad. Esas ausencias no borran las cargas
+documentadas: delimitan exactamente qué puede afirmarse de ellas.
+
+## Síntesis {#fiscal-sintesis}
+
+Sorribos aparece inserto en un marco señorial y eclesiástico plural. El conde de
+Luna era beneficiario de las alcabalas y titular del pozo; don Manuel Antonio de
+Vega recibía los diezmos; la iglesia local, la primicia; y la fábrica del
+Apóstol Santiago, el voto. Cada relación tiene sujeto, base y naturaleza
+propios. Ni el señorío equivale a propiedad universal ni la presencia
+eclesiástica convierte todas las percepciones en una renta genérica de «la
+Iglesia».
+
+Las cifras conservan esa pluralidad: productos y unidades no convertibles,
+cantidades reguladas que no demuestran pagos efectivos y reales referidos a
+conceptos heterogéneos. Las exenciones sobre el establecimiento del suelo y los
+servicios ordinario y extraordinario son específicas, no generales. El
+capítulo 11 estudiará la hacienda concejil y los servicios colectivos; el 12,
+la articulación entre especie y dinero; y el 13, los límites y vulnerabilidades
+del sistema sin anticiparlos como conclusiones de este capítulo.
