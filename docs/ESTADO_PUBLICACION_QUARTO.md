@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 4 de octubre de 2026<br>
-**Estado global:** Fase 3 en curso; Fases 3A–3I completadas<br>
-**Fase actual:** 3J — capítulo 11 (siguiente; no iniciada)<br>
+**Estado global:** Fase 3 en curso; Fases 3A–3J completadas<br>
+**Fase actual:** 3K — capítulo 12 (siguiente; no iniciada)<br>
 **Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
 **Operación canónica al auditar:** `clean`
 
@@ -37,6 +37,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Capítulo 8 implementado en `e5ddab34ef757aef9ddfbe0b62229f9cb40746df` y aceptado mediante auditoría final con veredicto `APTO`; distingue especies, regulaciones unitarias, usos y recursos sin inventar efectivos, producción total, reparto doméstico, suficiencia material ni títulos de propiedad.
 - Capítulo 9 implementado en `da76dbb3d7714d4e282f936efb1e1bc657d0dcff` y aceptado mediante auditoría final con veredicto `APTO`; distingue casas, ruedas, venturero, titulares, explotación, usuarios, utilidades, producción y capacidad, e integra colmenas y pozo de pesca sin falsas equivalencias ni estimaciones de actividad.
 - Capítulo 10 implementado en `02dcc31ea6db8250013c99fbc37ecbd0747bcaeb` y aceptado mediante validación final con veredicto `APTO`; separa jurisdicción, señorío, propiedad, rentas, derechos fiscales y obligaciones vecinales, y distingue perceptores, bases, cantidades reguladas y pagos sin agregaciones heterogéneas ni indicadores fiscales no sustentados.
+- Capítulo 11 implementado en `9ac6d90141e0c609b1961367c3333fbf1d86a318` y aceptado mediante validación final con veredicto `APTO`; distingue común, concejo y vecinos, reconstruye el repartimiento y los servicios documentados, y limita los 233 reales a un subtotal anual explícito sin inventar patrimonio, presupuesto, balance ni cobertura estable.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -49,14 +50,14 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 1B. Contexto autosuficiente para Copilot | completada | instrucciones, plan, especificación y roadmap versionados |
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
-| 3. Contenido editorial | en curso | Fases 3A–3I completadas; capítulos 1–10 aceptados; Fase 3J como única tarea siguiente |
+| 3. Contenido editorial | en curso | Fases 3A–3J completadas; capítulos 1–11 aceptados; Fase 3K como única tarea siguiente |
 | 4. Generación documental | pendiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 3J: crear y validar exclusivamente el capítulo 11, «Hacienda concejil y servicios colectivos», sin iniciar los capítulos 12–13 ni modificar fuentes canónicas.
+Fase 3K: crear y validar exclusivamente el capítulo 12, «Dinero, oficios y conexiones exteriores», sin iniciar el capítulo 13 ni modificar fuentes canónicas.
 
 ### Cierre comprobado de 2A
 
@@ -197,6 +198,19 @@ Fase 3J: crear y validar exclusivamente el capítulo 11, «Hacienda concejil y s
 - Validación final: `APTO`. Las 19 confusiones semánticas definidas para la fase están cubiertas por regresiones y las cautelas equivalentes se aceptan. No se requirió investigación externa, cambio de criterio editorial ni corrección de fuentes canónicas.
 - Regresiones e integridad: prototipo vertical, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
 
+## Cierre comprobado de 3J
+
+- Implementación atómica: `9ac6d90141e0c609b1961367c3333fbf1d86a318` (`feat(publication): add chapter 11`).
+- Resultado editorial: el capítulo 11, «Hacienda concejil y servicios colectivos», distingue común, concejo, vecinos y municipio moderno; documenta la ausencia declarada de propios, arbitrios y renta; reconstruye el repartimiento vecinal, la taberna por vecera y la limpieza de fuentes; y mantiene separados uso colectivo, propiedad, administración, renta, prestación y cobertura. Los puentes no se convierten en gasto o patrimonio concejil sin un pagador o administrador documentado.
+- Magnitudes y sujetos: conserva los 200 reales del Corpus, ocho de limpieza de fuentes, quince al Hospital de Inocentes de Valladolid y diez por derecho de Mesta en León. La operación `200 + 8 + 15 + 10 = 233` se presenta exclusivamente como subtotal anual de las partidas expresamente cuantificadas en la respuesta 25; las otras cantidades sin importe impiden tratarlo como ingreso total, gasto total, presupuesto o balance.
+- Procedencia aceptada: D — `FIS-005`–`FIS-008`, `GAN-002`, `TRA-005`; C — sin entradas, porque no existe en el registro un cálculo canónico específico para este subtotal; I — `INT-004`, `INT-006`; E — `FIS-014`–`FIS-017`, `TRA-006`; L — `LIM-012`, `LIM-013`.
+- Límites preservados: no se conoce el origen jurídico del pago al Hospital de Inocentes ni la naturaleza precisa del derecho de Mesta; la ausencia de hospital local no elimina otras formas posibles de asistencia; no se reconstruyen cuotas individuales, ejecución efectiva, cuentas de caja, cobertura universal, servicios permanentes, patrimonio concejil, capacidad financiera, eficiencia, fragilidad o resiliencia. La circulación monetaria queda reservada al capítulo 12 y la evaluación sistémica al capítulo 13.
+- Validación semántica: 35 pruebas específicas del capítulo 11 en PASS —estructura y procedencia, diecinueve mutaciones adversariales y quince formulaciones cautelares—; suite completa final `313 passed`, sin `skip`, con colección estable de 313 identificadores y hash `364e4b22876e3a3e0c3e9b7b5437a18496a3af97f786c6cae96982ba2c17941a` calculado solo sobre los identificadores coleccionados.
+- Generación y composición: `prepare.py` se ejecutó dos veces de forma directa con SHA-256 idénticos para los seis derivados; validador estático y `--rendered`, `quarto check` y render HTML, PDF y multiformato en PASS. El libro genera 17 documentos HTML; el PDF final tiene 68 páginas y 3.723.590 bytes; el capítulo 11 ocupa las páginas 55–59.
+- Inspección visual: título, numeración, navegación, diez anclas, tabla, fórmula, encabezados, pies y saltos revisados en las cinco páginas. La tabla es legible, no hay desbordes ni colisiones y la síntesis termina antes del capítulo siguiente sin página huérfana.
+- Validación final: `APTO`. Las 19 confusiones semánticas definidas para la fase están cubiertas por regresiones y las cautelas equivalentes se aceptan. No se requirió investigación externa, cambio de criterio editorial ni corrección de fuentes canónicas.
+- Regresiones e integridad: prototipo vertical, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -207,4 +221,4 @@ Fase 3J: crear y validar exclusivamente el capítulo 11, «Hacienda concejil y s
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3J: crea y valida exclusivamente el capítulo 11, «Hacienda concejil y servicios colectivos», manteniendo la trazabilidad D/C/I/E/L y las fronteras con los capítulos 10, 12 y 13, sin modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3K: crea y valida exclusivamente el capítulo 12, «Dinero, oficios y conexiones exteriores», manteniendo la trazabilidad D/C/I/E/L y las fronteras con los capítulos 10, 11 y 13, sin modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
