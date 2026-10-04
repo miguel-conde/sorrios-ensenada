@@ -124,6 +124,23 @@ CHAPTER_SEVEN_EVIDENCE = {
         "LIM-009",
     ),
 }
+CHAPTER_EIGHT_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/Glosario.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_EIGHT_EVIDENCE = {
+    "D": ("TER-001", "GAN-001", "GAN-002", "GAN-007"),
+    "C": (),
+    "I": ("INT-002", "INT-004"),
+    "E": ("AGR-012", "AGR-013", "GAN-008"),
+    "L": ("TER-009", "LIM-008", "LIM-009"),
+}
 AUTHORIZED_INSTITUTIONAL_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
@@ -696,6 +713,173 @@ def test_chapter_seven_accepts_bounded_cautionary_formulations(caution):
     _, body = validator._front_matter_and_body(path)
 
     assert validator._validate_chapter_seven_body(f"{body}\n\n{caution}\n") == []
+
+
+def test_chapter_eight_has_controlled_provenance_evidence_and_structure():
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "08-ganaderia-montes-aprovechamientos-comunales.qmd"
+    )
+    metadata, body = validator._front_matter_and_body(path)
+    register = (
+        ROOT / "project/30_RESULTADOS/ESTUDIO_HISTORICO"
+        / "Registro_Afirmaciones_Calculos_v1.md"
+    ).read_text(encoding="utf-8")
+    registered = set(re.findall(r"^\|\s*([A-Z]+-\d{3})\s*\|", register, re.MULTILINE))
+
+    assert metadata["title"] == "Ganadería, montes y aprovechamientos comunales"
+    assert metadata["chapter-id"] == "ganaderia-montes-aprovechamientos-comunales"
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_EIGHT_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_EIGHT_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    evidence = {level: tuple(values) for level, values in metadata["evidence"].items()}
+    assert evidence == CHAPTER_EIGHT_EVIDENCE
+    assert set(evidence) == {"D", "C", "I", "E", "L"}
+    assert evidence["C"] == ()
+    assert {item for group in evidence.values() for item in group} <= registered
+    assert all(
+        validator._markdown_section(body, anchor)
+        for anchor in validator.CHAPTER_EIGHT_ANCHORS
+    )
+    assert "(07-tierra-sistema-agrario-medidas.qmd)" in body
+    assert not re.search(r"<[A-Za-z][^>]*>", body)
+    assert validator._validate_chapter_eight_body(body) == []
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_code"),
+    (
+        (
+            "El uso común demuestra la propiedad comunal de los terrenos.",
+            "C8_COMMON_USE_IS_PROPERTY",
+        ),
+        (
+            "Los bienes comunales pertenecían al común del lugar.",
+            "C8_COMMON_USE_IS_PROPERTY",
+        ),
+        (
+            "20 ovejas producían 20 libras de lana cada año.",
+            "C8_HEADCOUNT_IS_OUTPUT",
+        ),
+        (
+            "Cada hogar poseía una vaca de labranza.",
+            "C8_LIVESTOCK_ASSIGNED_HOUSEHOLDS",
+        ),
+        (
+            "Había una oveja por vivienda.",
+            "C8_LIVESTOCK_ASSIGNED_HOUSEHOLDS",
+        ),
+        (
+            "La producción ganadera total fue de 500 reales anuales.",
+            "C8_UNSUPPORTED_PRODUCTION",
+        ),
+        (
+            "Multiplicando las valoraciones por las cabezas se obtiene la renta total.",
+            "C8_UNSUPPORTED_PRODUCTION",
+        ),
+        (
+            "Las ovejas tiraban del arado durante la siembra.",
+            "C8_UNSUPPORTED_SPECIES_FUNCTION",
+        ),
+        (
+            "Los bueyes producían lana para los vecinos.",
+            "C8_UNSUPPORTED_SPECIES_FUNCTION",
+        ),
+        (
+            "Los pastos eran suficientes para alimentar a todo el ganado.",
+            "C8_PASTURE_SUFFICIENCY",
+        ),
+        (
+            "La alimentación del ganado estaba asegurada por los prados.",
+            "C8_PASTURE_SUFFICIENCY",
+        ),
+        (
+            "Existía un equilibrio ecológico entre ganado y pastos.",
+            "C8_ECOLOGICAL_BALANCE",
+        ),
+        (
+            "El sistema de aprovechamiento era sostenible.",
+            "C8_ECOLOGICAL_BALANCE",
+        ),
+        (
+            "Los montes garantizaban madera y combustible para todo el año.",
+            "C8_GUARANTEED_WOOD_FUEL",
+        ),
+        (
+            "La leña era inagotable.",
+            "C8_GUARANTEED_WOOD_FUEL",
+        ),
+        (
+            "Es un dato explícito del manuscrito que la economía era mixta.",
+            "C8_INTERPRETATION_AS_DATA",
+        ),
+        (
+            "El manuscrito declara la complementariedad agraria.",
+            "C8_INTERPRETATION_AS_DATA",
+        ),
+        (
+            "El censo ganadero completo consta en la respuesta 20.",
+            "C8_EVIDENCE_LIMITS_ERASED",
+        ),
+        (
+            "Se conoce el propietario de cada animal.",
+            "C8_EVIDENCE_LIMITS_ERASED",
+        ),
+        (
+            "Las ocho ruedas de los molinos producían 26 cargas de centeno.",
+            "C8_CHAPTER_BOUNDARY",
+        ),
+        (
+            "La taberna funcionaba por vecera entre los vecinos.",
+            "C8_CHAPTER_BOUNDARY",
+        ),
+        (
+            "La cabida de los montes se calcula por diferencia.",
+            "C8_CHAPTER_SEVEN_CONTRADICTION",
+        ),
+        (
+            "Todos los prados eran de uso común.",
+            "C8_CHAPTER_SEVEN_CONTRADICTION",
+        ),
+        (
+            "Un carro de yerba equivalía a cinco montones.",
+            "C8_CHAPTER_SEVEN_CONTRADICTION",
+        ),
+    ),
+)
+def test_chapter_eight_rejects_bounded_semantic_reversals(mutation, expected_code):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "08-ganaderia-montes-aprovechamientos-comunales.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert error_codes(
+        validator._validate_chapter_eight_body(f"{body}\n\n{mutation}\n")
+    ) == {expected_code}
+
+
+@pytest.mark.parametrize(
+    "caution",
+    (
+        "La enumeración de especies no es un censo de cabezas.",
+        "Las valoraciones unitarias no permiten calcular una producción total.",
+        "No consta cómo se distribuía el ganado entre los hogares.",
+        "Los pastos no prueban que la alimentación del ganado estuviera asegurada.",
+        "La fuente no permite evaluar equilibrio ecológico ni sostenibilidad.",
+        "Los usos documentados no garantizan un suministro estable de leña.",
+        "La cabida de los montes no se obtiene por diferencia.",
+    ),
+)
+def test_chapter_eight_accepts_bounded_cautionary_formulations(caution):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "08-ganaderia-montes-aprovechamientos-comunales.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert validator._validate_chapter_eight_body(f"{body}\n\n{caution}\n") == []
 
 
 @pytest.mark.parametrize(

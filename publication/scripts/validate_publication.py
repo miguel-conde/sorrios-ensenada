@@ -64,6 +64,12 @@ CHAPTER_SEVEN = (
     / "02-estudio"
     / "07-tierra-sistema-agrario-medidas.qmd"
 )
+CHAPTER_EIGHT = (
+    PUBLICATION_ROOT
+    / "content"
+    / "02-estudio"
+    / "08-ganaderia-montes-aprovechamientos-comunales.qmd"
+)
 PROTOTYPE_CHAPTER = (
     PUBLICATION_ROOT / "content" / "02-estudio" / "09-rio-molinos-recursos.qmd"
 )
@@ -127,6 +133,13 @@ RENDERED_CHAPTER_SEVEN_HTML = (
     / "content"
     / "02-estudio"
     / "07-tierra-sistema-agrario-medidas.html"
+)
+RENDERED_CHAPTER_EIGHT_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "02-estudio"
+    / "08-ganaderia-montes-aprovechamientos-comunales.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -295,6 +308,34 @@ CHAPTER_SEVEN_ANCHORS = (
     "tierra-rendimientos",
     "tierra-produccion-limites",
     "tierra-sintesis",
+)
+CHAPTER_EIGHT_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/20_TRABAJO_EDITORIAL/Glosario.md",
+    "project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+}
+CHAPTER_EIGHT_EVIDENCE = {
+    "D": ("TER-001", "GAN-001", "GAN-002", "GAN-007"),
+    "C": (),
+    "I": ("INT-002", "INT-004"),
+    "E": ("AGR-012", "AGR-013", "GAN-008"),
+    "L": ("TER-009", "LIM-008", "LIM-009"),
+}
+CHAPTER_EIGHT_ANCHORS = (
+    "ganado-alcance",
+    "ganado-valores",
+    "ganado-funciones",
+    "pastos-recursos",
+    "montes-arbolado",
+    "uso-comun",
+    "articulacion-agraria",
+    "ganado-limites",
+    "ganado-sintesis",
 )
 CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("1–3", "Nombre, jurisdicción, término y límites"),
@@ -505,6 +546,12 @@ def validate_rendered_outputs() -> list[str]:
             7,
             "06-vecinos-hogares-viviendas-trabajo.html",
         ),
+        (
+            RENDERED_CHAPTER_EIGHT_HTML,
+            "Ganadería, montes y aprovechamientos comunales",
+            8,
+            "07-tierra-sistema-agrario-medidas.html",
+        ),
     )
     for path, title, number, linked_chapter in rendered_chapters:
         if not path.is_file():
@@ -521,7 +568,7 @@ def validate_rendered_outputs() -> list[str]:
             errors.append(
                 f"El HTML del capítulo {number} no conserva su enlace cruzado"
             )
-        if number in (5, 6, 7) and not re.search(
+        if number in (5, 6, 7, 8) and not re.search(
             rf'class="chapter-number"[^>]*>\s*{number}\s*<', html
         ):
             errors.append(
@@ -575,6 +622,8 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append("El PDF no contiene el capítulo 6")
             if "Tierra, sistema agrario y medidas" not in normalized_pdf:
                 errors.append("El PDF no contiene el capítulo 7")
+            if "Ganadería, montes y aprovechamientos comunales" not in normalized_pdf:
+                errors.append("El PDF no contiene el capítulo 8")
     return errors
 
 
@@ -1651,6 +1700,196 @@ def _validate_chapter_seven_body(body: str) -> list[str]:
     return errors
 
 
+def _validate_chapter_eight_body(body: str) -> list[str]:
+    """Validate livestock semantics, common use, resources, and chapter borders."""
+
+    errors: list[str] = []
+    sections = {
+        anchor: _plain_text(_markdown_section(body, anchor))
+        for anchor in CHAPTER_EIGHT_ANCHORS
+    }
+    for anchor, section in sections.items():
+        if not section:
+            errors.append(f"C8_SECTION_{anchor.upper().replace('-', '_')}: falta la sección")
+
+    required_by_section = {
+        "ganado-alcance": (
+            "ganado vacuno, lanar y de cerda",
+            "yeguas y crías mulares",
+            "no constituyen un recuento de existencias",
+            "efectivos ganaderos documentados son indeterminados",
+            "stock ganadero",
+            "reparto de cabezas",
+        ),
+        "ganado-valores": (
+            "flujos anuales moderados",
+            "valores de una cría",
+            "prestación en centeno",
+            "no es número de crías observado",
+            "no es precio de venta ni cantidad de ganado",
+            "no los multiplica por cabezas inexistentes",
+        ),
+        "ganado-funciones": (
+            "función de labor solo se atribuye expresamente a bueyes y vacas",
+            "no había casa destinada al esquileo",
+            "no demuestra que todas las viviendas acogieran esquileo",
+            "dado arenta",
+            "cinco quartales de centeno por buey y cuatro por vaca",
+            "no constan titular, receptor, plazo",
+        ),
+        "pastos-recursos": (
+            "ferrañales de forraje",
+            "el otoño se pasta en común",
+            "no se declara uso común",
+            "cuatro montones componen un carro",
+            "no como base para calcular alimentación disponible",
+        ),
+        "montes-arbolado": (
+            "montes de robles altos y bajos",
+            "soto de negrillos, alisos y fresnos",
+            "leña se destina a quemar",
+            "reparar puentes y puertas del río",
+            "no proporciona volumen cortado",
+            "no se resuelve por residuo",
+            "capítulo 9",
+        ),
+        "uso-comun": (
+            "acreditan disfrute colectivo",
+            "no acreditan por sí solas titularidad",
+            "derecho de aprovechamiento",
+            "administración",
+            "no una conclusión automática sobre el dominio",
+            "capítulo 11",
+        ),
+        "articulacion-agraria": (
+            "los ferrañales producen forraje",
+            "bueyes y vacas aparecen valorados para la labranza",
+            "no componen un balance de entradas y salidas",
+            "no mide cuánta yerba consumía cada especie",
+            "no se publica un nuevo cálculo editorial",
+            "conservan la definición y los denominadores del capítulo 7",
+        ),
+        "ganado-limites": (
+            "stock ganadero total o por especie",
+            "distribución de animales entre titulares, vecinos, hogares o viviendas",
+            "producción total o neta",
+            "suficiencia de pastos, forraje, leña o madera",
+            "presión, conservación, equilibrio o sostenibilidad",
+            "titularidad y las reglas de reparto o administración",
+        ),
+        "ganado-sintesis": (
+            "calla el número de cabezas",
+            "el otoño de un tipo concreto de prado se pastaba en común",
+            "no prueba de su suficiencia",
+            "no estima producción",
+            "el capítulo 9",
+            "los capítulos 10–12",
+            "el 13",
+        ),
+    }
+    for anchor, phrases in required_by_section.items():
+        section = sections[anchor]
+        absent = [phrase for phrase in phrases if phrase not in section]
+        if absent:
+            errors.append(
+                f"C8_CONTENT_{anchor.upper().replace('-', '_')}: faltan relaciones "
+                + ", ".join(absent)
+            )
+
+    normalized = _plain_text(body)
+    propositions = tuple(
+        proposition
+        for _, paragraph_propositions in _controlled_paragraphs(body)
+        for proposition in paragraph_propositions
+    )
+
+    if re.search(r"\b(?:bienes comunales|propiedad comunal|monte comunal)\b", normalized):
+        errors.append(
+            "C8_COMMON_USE_IS_PROPERTY: el uso común recibe un título jurídico no probado"
+        )
+    common_property_patterns = (
+        r"\b(?:demuestr\w*|prueb\w*|implic\w*|equival\w*|acredit\w*|confirm\w*)\b[^.;]{0,90}\b(?:propiedad|titularidad|dominio)\s+comunal\b",
+        r"\b(?:pertenec\w*|era\w*\s+propiedad)\b[^.;]{0,70}\bcom[uú]n\b",
+    )
+    if any(
+        not _predicate_is_negated(proposition, match.start())
+        for proposition in propositions
+        for pattern in common_property_patterns
+        for match in re.finditer(pattern, proposition)
+    ):
+        errors.append(
+            "C8_COMMON_USE_IS_PROPERTY: el uso común recibe un título jurídico no probado"
+        )
+
+    prohibited_predicates = {
+        "C8_HEADCOUNT_IS_OUTPUT": (
+            r"\b\d+(?:[.,]\d+)?\s+(?:vacas?|ovejas?|yeguas?|cerdas?|bueyes?|carneros?|corderos?)\b[^.;]{0,90}\b(?:produc(?:en|ían)|dan|daban|generan)\b[^.;]{0,80}\b(?:reales|libras|cr[ií]as?|lana|leche)\b",
+        ),
+        "C8_LIVESTOCK_ASSIGNED_HOUSEHOLDS": (
+            r"\bcada\s+(?:hogar|vecino|vivienda)\b[^.;]{0,60}\b(?:ten[ií]a|pose[ií]a|recib[ií]a)\b[^.;]{0,50}\b(?:ganado|vaca|oveja|buey|yegua|cerda)\b",
+            r"\b(?:una|un)\s+(?:vaca|oveja|buey|yegua|cerda)\s+por\s+(?:hogar|vecino|vivienda)\b",
+            r"\b(?:ganado|cabezas?|animales?)\b[^.;]{0,70}\b(?:repartid\w*|distribuid\w*|asignad\w*)\b[^.;]{0,60}\bhogares?\b",
+        ),
+        "C8_UNSUPPORTED_PRODUCTION": (
+            r"\bproducci[oó]n\s+(?:ganadera|anual\s+de\s+(?:lana|leche|carne|cr[ií]as?))\s+total\b[^.;]{0,60}\b(?:fue|era|ascend[ií]a|se\s+calcula|puede\s+calcularse)\b",
+            r"\b(?:multiplicar|multiplicando)\b[^.;]{0,80}\b(?:valoraciones?|productos?)\s+por\s+(?:las\s+)?cabezas\b[^.;]{0,60}\b(?:total|producci[oó]n|renta)\b",
+        ),
+        "C8_UNSUPPORTED_SPECIES_FUNCTION": (
+            r"\b(?:ovejas?|cerdas?|yeguas?)\b[^.;]{0,60}\b(?:araban|tiraban\s+del\s+arado|transportaban\s+cargas)\b",
+            r"\b(?:cerdas?|bueyes?|yeguas?)\b[^.;]{0,60}\bproduc[ií]an\s+lana\b",
+            r"\b(?:ovejas?|carneros?)\b[^.;]{0,60}\bproduc[ií]an\s+leche\s+para\s+el\s+consumo\b",
+        ),
+        "C8_PASTURE_SUFFICIENCY": (
+            r"\b(?:pastos?|prados?|forraje)\b[^.;]{0,80}\b(?:bastaban|eran\s+suficientes|garantizaban|cubr[ií]an)\b[^.;]{0,70}\b(?:ganado|necesidades|alimentaci[oó]n)\b",
+            r"\b(?:alimentaci[oó]n|mantenimiento)\s+del\s+ganado\b[^.;]{0,70}\b(?:estaba\s+asegurad\w*|quedaba\s+garantizad\w*)\b",
+        ),
+        "C8_ECOLOGICAL_BALANCE": (
+            r"\b(?:exist[ií]a|hab[ií]a|demuestr\w*|prueb\w*)\b[^.;]{0,80}\b(?:equilibrio|desequilibrio)\s+ecol[oó]gico\b",
+            r"\b(?:sistema|aprovechamiento)\b[^.;]{0,60}\b(?:era|fue)\s+(?:sostenible|insostenible)\b",
+            r"\b(?:montes?|pastos?)\b[^.;]{0,70}\b(?:estaban|fueron)\s+sobreexplotad\w*\b",
+        ),
+        "C8_GUARANTEED_WOOD_FUEL": (
+            r"\b(?:montes?|soto)\b[^.;]{0,90}\b(?:garantizaban|aseguraban|proporcionaban\s+siempre)\b[^.;]{0,60}\b(?:madera|leña|combustible)\b",
+            r"\b(?:madera|leña|combustible)\b[^.;]{0,70}\b(?:era\s+inagotable|estaba\s+garantizad\w*|era\s+suficiente)\b",
+        ),
+        "C8_INTERPRETATION_AS_DATA": (
+            r"\bes\s+un\s+dato\s+(?:expl[ií]cito\s+)?del\s+manuscrito\s+que\b[^.;]{0,100}\b(?:econom[ií]a\s+(?:era\s+)?mixta|funciones\s+complementarias|soporte\s+material)\b",
+            r"\bel\s+manuscrito\s+declara\b[^.;]{0,100}\b(?:econom[ií]a\s+mixta|complementariedad\s+agraria)\b",
+        ),
+        "C8_EVIDENCE_LIMITS_ERASED": (
+            r"\b(?:censo|stock)\s+ganadero\s+(?:completo|exacto)\b[^.;]{0,60}\b(?:consta|se\s+conoce|puede\s+reconstruirse)\b",
+            r"\b(?:se\s+conoce|consta)\b[^.;]{0,80}\b(?:titular|propietario)\s+de\s+cada\s+(?:animal|cabeza)\b",
+            r"\bla\s+fuente\s+permite\b[^.;]{0,90}\b(?:reparto\s+completo|producci[oó]n\s+total|presi[oó]n\s+sobre\s+los\s+recursos)\b",
+        ),
+        "C8_CHAPTER_SEVEN_CONTRADICTION": (
+            r"\b(?:cabida|superficie)\s+de\s+los\s+montes\b(?![^.;]{0,40}\bno\b)[^.;]{0,70}\b(?:se\s+calcula|se\s+obtiene|resulta)\b[^.;]{0,40}\b(?:por\s+residuo|diferencia)\b",
+            r"\btodos\s+los\s+prados\b[^.;]{0,50}\b(?:eran|son|se\s+usaban)\b[^.;]{0,30}\bcom[uú]n\b",
+            r"\b(?:un|1)\s+carro\s+de\s+yerba\b[^.;]{0,40}\b(?:equivale|equival[ií]a)\b[^.;]{0,20}\b(?:tres|cinco|\d+)\s+montones\b",
+        ),
+    }
+    for code, patterns in prohibited_predicates.items():
+        if any(
+            not _predicate_is_negated(proposition, match.start())
+            for proposition in propositions
+            for pattern in patterns
+            for match in re.finditer(pattern, proposition)
+        ):
+            errors.append(f"{code}: formulación no autorizada en el capítulo 8")
+
+    boundary_patterns = (
+        r"\bocho\s+ruedas\b",
+        r"\b633\s+reales\b",
+        r"\btaberna\b[^.;]{0,50}\bvecera\b",
+        r"\b30\s+cargas\s+de\s+centeno\b[^.;]{0,50}\bdiezmos\b",
+        r"\b[ií]ndice\s+(?:global\s+)?de\s+vulnerabilidad\b",
+    )
+    if any(re.search(pattern, normalized) for pattern in boundary_patterns):
+        errors.append(
+            "C8_CHAPTER_BOUNDARY: desarrollo sustantivo reservado a los capítulos 9–13"
+        )
+    return errors
+
+
 def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
     evidence = metadata.get("evidence", {})
     if not isinstance(evidence, dict):
@@ -1802,6 +2041,9 @@ def validate() -> list[str]:
         (CHAPTER_SEVEN, "Tierra, sistema agrario y medidas",
          "tierra-sistema-agrario-medidas", CHAPTER_SEVEN_SOURCE_PATHS,
          CHAPTER_SEVEN_EVIDENCE, 7),
+        (CHAPTER_EIGHT, "Ganadería, montes y aprovechamientos comunales",
+         "ganaderia-montes-aprovechamientos-comunales",
+         CHAPTER_EIGHT_SOURCE_PATHS, CHAPTER_EIGHT_EVIDENCE, 8),
     )
     chapter_bodies: dict[int, str] = {}
     for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
@@ -1920,6 +2162,14 @@ def validate() -> list[str]:
             errors.append("El capítulo 7 contiene HTML crudo")
         errors.extend(_validate_chapter_seven_body(chapter_seven_text))
 
+    if CHAPTER_EIGHT.is_file():
+        chapter_eight_text = chapter_bodies.get(8, "")
+        if "(07-tierra-sistema-agrario-medidas.qmd)" not in chapter_eight_text:
+            errors.append("El capítulo 8 no enlaza el capítulo 7")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_eight_text):
+            errors.append("El capítulo 8 contiene HTML crudo")
+        errors.extend(_validate_chapter_eight_body(chapter_eight_text))
+
     if not PROTOTYPE_CHAPTER.is_file():
         return errors + [f"Falta el capítulo editorial: {PROTOTYPE_CHAPTER}"]
     try:
@@ -1962,8 +2212,12 @@ def validate() -> list[str]:
     phase_3f_ids = {
         item for group in CHAPTER_SEVEN_EVIDENCE.values() for item in group
     }
+    phase_3g_ids = {
+        item for group in CHAPTER_EIGHT_EVIDENCE.values() for item in group
+    }
     missing_registry = sorted(
-        (expected_ids | phase_3c_ids | phase_3d_ids | phase_3e_ids | phase_3f_ids)
+        (expected_ids | phase_3c_ids | phase_3d_ids | phase_3e_ids | phase_3f_ids
+         | phase_3g_ids)
         - registered
     )
     if missing_registry:
@@ -2078,6 +2332,7 @@ def validate() -> list[str]:
         "content/02-estudio/05-lugar-senorio-concejo-ordas.qmd",
         "content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd",
         "content/02-estudio/07-tierra-sistema-agrario-medidas.qmd",
+        "content/02-estudio/08-ganaderia-montes-aprovechamientos-comunales.qmd",
         "content/02-estudio/09-rio-molinos-recursos.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
@@ -2090,7 +2345,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–7 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–8 y del prototipo en la navegación"
         )
 
     chapters_data = yaml.safe_load(
@@ -2110,7 +2365,7 @@ def validate() -> list[str]:
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–7 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–8 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -2145,7 +2400,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–7, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–8, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0
