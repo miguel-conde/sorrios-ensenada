@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 4 de octubre de 2026<br>
-**Estado global:** Fase 3 en curso; Fases 3A, 3B, 3C, 3D, 3E, 3F, 3G y 3H completadas<br>
-**Fase actual:** 3I — capítulo 10 (siguiente; no iniciada)<br>
+**Estado global:** Fase 3 en curso; Fases 3A–3I completadas<br>
+**Fase actual:** 3J — capítulo 11 (siguiente; no iniciada)<br>
 **Base documental auditada:** `6b49be848c92c4772b37c46495135352821d50f8`  
 **Operación canónica al auditar:** `clean`
 
@@ -36,6 +36,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Capítulo 7 implementado en `dcaa6378168b442a16cc37f5c684e2f5edcab119` y aceptado mediante auditoría final con veredicto `APTO`; reconstruye clases, calidades, cabidas, ciclos, rendimientos y medidas sin conversiones modernas, agregaciones incompatibles ni falsa precisión productiva.
 - Capítulo 8 implementado en `e5ddab34ef757aef9ddfbe0b62229f9cb40746df` y aceptado mediante auditoría final con veredicto `APTO`; distingue especies, regulaciones unitarias, usos y recursos sin inventar efectivos, producción total, reparto doméstico, suficiencia material ni títulos de propiedad.
 - Capítulo 9 implementado en `da76dbb3d7714d4e282f936efb1e1bc657d0dcff` y aceptado mediante auditoría final con veredicto `APTO`; distingue casas, ruedas, venturero, titulares, explotación, usuarios, utilidades, producción y capacidad, e integra colmenas y pozo de pesca sin falsas equivalencias ni estimaciones de actividad.
+- Capítulo 10 implementado en `02dcc31ea6db8250013c99fbc37ecbd0747bcaeb` y aceptado mediante validación final con veredicto `APTO`; separa jurisdicción, señorío, propiedad, rentas, derechos fiscales y obligaciones vecinales, y distingue perceptores, bases, cantidades reguladas y pagos sin agregaciones heterogéneas ni indicadores fiscales no sustentados.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -48,14 +49,14 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 1B. Contexto autosuficiente para Copilot | completada | instrucciones, plan, especificación y roadmap versionados |
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
-| 3. Contenido editorial | en curso | Fases 3A–3H completadas; capítulos 1–9 aceptados; Fase 3I como única tarea siguiente |
+| 3. Contenido editorial | en curso | Fases 3A–3I completadas; capítulos 1–10 aceptados; Fase 3J como única tarea siguiente |
 | 4. Generación documental | pendiente | capítulos 14–16, glosario, cuadros, concordancia y matriz reproducibles |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 3I: crear y validar exclusivamente el capítulo 10, «Iglesia, señorío y fiscalidad», manteniendo separadas las titularidades eclesiásticas o señoriales, los derechos, las cargas y las utilidades documentadas, sin iniciar los capítulos 11–13 ni modificar fuentes canónicas.
+Fase 3J: crear y validar exclusivamente el capítulo 11, «Hacienda concejil y servicios colectivos», sin iniciar los capítulos 12–13 ni modificar fuentes canónicas.
 
 ### Cierre comprobado de 2A
 
@@ -183,6 +184,19 @@ Fase 3I: crear y validar exclusivamente el capítulo 10, «Iglesia, señorío y 
 - Auditoría final: `APTO`. Cada molino y cifra conserva respaldo y significado; propiedad y explotación, utilidad y producción, agua y funcionamiento permanecen separados; la conexión cerealista está graduada; no se repiten los capítulos 7–8 ni se desarrollan de forma sustantiva los capítulos 10–13. No se requirió investigación externa, cambio de criterio editorial ni corrección de fuentes canónicas.
 - Regresiones e integridad: prototipo vertical, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
 
+## Cierre comprobado de 3I
+
+- Implementación atómica: `02dcc31ea6db8250013c99fbc37ecbd0747bcaeb` (`feat(publication): add chapter 10`).
+- Resultado editorial: el capítulo 10, «Iglesia, señorío y fiscalidad», distingue señorío y jurisdicción de propiedad; separa los diezmos recibidos por don Manuel Antonio de Vega, la primicia de la iglesia local y el voto destinado a la fábrica del Apóstol Santiago; y diferencia las alcabalas pagadas por los vecinos de la utilidad del pozo atribuido al conde de Luna. La percepción del diezmo no se convierte en propiedad, la utilidad del pozo no se trata como impuesto y ninguna institución absorbe derechos ajenos.
+- Magnitudes y sujetos: conserva como regulación anual 30 cargas de centeno, dos de cebada, cinco fanegas de trigo para el caso territorial indicado, 40 fejes de lino de cuatro libras y 140 reales de diezmos menudos; calcula únicamente las 160 libras de lino. Mantiene separados los 26 quartales de centeno de primicia, los 24 quartales de voto con producto omitido, los 633 reales anuales de alcabalas y los nueve reales de utilidad del pozo. No suma especies, unidades o importes de naturaleza distinta ni transforma cantidades reguladas en pagos efectivos.
+- Procedencia aceptada: D — `JUR-005`, `JUR-006`, `FIS-001`–`FIS-004`, `FIS-008`, `FIS-012`; C — `CAL-009`; I — `INT-010`; E — `FIS-013`; L — `LIM-001`, `LIM-002`, `LIM-005`, `LIM-011`.
+- Límites preservados: las exenciones por establecimiento del suelo y por servicio ordinario y extraordinario conservan sujetos y conceptos específicos; no se generalizan. No se calculan carga por vecino, hogar o habitante, presión fiscal, renta disponible, desigualdad o vulnerabilidad; tampoco se completa el título jurídico de las alcabalas o del pozo. Hacienda común, circulación entre especie y dinero y vulnerabilidad quedan reservadas a los capítulos 11–13.
+- Validación semántica: 31 pruebas específicas del capítulo 10 en PASS —estructura y procedencia, diecinueve mutaciones adversariales y once formulaciones cautelares—; suite completa final `278 passed`, sin `skip`, con colección estable de 278 identificadores y hash `d1043ce9acc7d0744c73a4d343e11aa8c54f5cfec5d6b1141216e4dc549f6247` calculado solo sobre los identificadores coleccionados.
+- Generación y composición: `prepare.py` se ejecutó dos veces de forma directa con SHA-256 idénticos para los seis derivados; validador estático y `--rendered`, `quarto check` y render HTML, PDF y multiformato en PASS. El libro genera 16 documentos HTML; el PDF final tiene 62 páginas y 3.708.291 bytes; el capítulo 10 ocupa las páginas 49–53.
+- Inspección visual: título, numeración, navegación, diez anclas, dos matrices, encabezados, pies y saltos revisados en las cinco páginas. Las tablas son legibles, no hay desbordes ni colisiones y la síntesis termina antes del capítulo siguiente.
+- Validación final: `APTO`. Las 19 confusiones semánticas definidas para la fase están cubiertas por regresiones y las cautelas equivalentes se aceptan. No se requirió investigación externa, cambio de criterio editorial ni corrección de fuentes canónicas.
+- Regresiones e integridad: prototipo vertical, 18 líneas paleográficas, siete guiones documentales y seis secciones canónicas conservados; `git diff --check` en PASS; ningún PDF, `_book/` ni derivado versionado; `project/`, `plugins/`, fuentes canónicas y `main` intactos; ninguna dependencia bloqueante.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -193,4 +207,4 @@ Fase 3I: crear y validar exclusivamente el capítulo 10, «Iglesia, señorío y 
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3I: crea y valida exclusivamente el capítulo 10, «Iglesia, señorío y fiscalidad», manteniendo la trazabilidad D/C/I/E/L y separando titularidades, derechos, cargas y utilidades, sin iniciar los capítulos 11–13 ni modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 3J: crea y valida exclusivamente el capítulo 11, «Hacienda concejil y servicios colectivos», manteniendo la trazabilidad D/C/I/E/L y las fronteras con los capítulos 10, 12 y 13, sin modificar fuentes canónicas. Revisa el diff y publica un único commit atómico solo si la rama sigue en el mismo `base_sha`.
