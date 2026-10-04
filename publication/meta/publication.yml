@@ -22,7 +22,9 @@ sources:
 manuscript:
   metadata_source: project/00_CONTROL/proyecto.yaml
   file_id: "1GgBs68iTi53ue8-TbrYFABALxadhQe5u"
+  name: sorrios_ensenada_orden_lectura_calidad_original.pdf
   sha256: "d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24"
+  size_bytes: 5038575
   pages: 18
 
 prototype:

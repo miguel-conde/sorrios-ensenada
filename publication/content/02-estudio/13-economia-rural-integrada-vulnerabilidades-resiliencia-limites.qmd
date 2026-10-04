@@ -288,7 +288,7 @@ balance total ni una teoría general de la economía campesina.
 Con esta síntesis concluye la Parte II. La reconstrucción histórica se ha
 apoyado en una edición controlada y en una jerarquía explícita de dato,
 cálculo, interpretación, contexto y límite. La Parte III vuelve al soporte
-material: el [facsímil del expediente](../../generated/14-facsimil-prototipo.qmd)
+material: el [facsímil del expediente](../../generated/14-facsimil.qmd)
 permitirá observar la escritura, la disposición y los folios de los que procede
 la explicación, sin convertir la imagen en sustituto de la transcripción o del
 aparato crítico.

@@ -1680,7 +1680,7 @@ def test_chapter_thirteen_has_controlled_provenance_evidence_and_structure():
     assert "no se afirma que el sistema fuera resiliente" in normalized
     assert "con esta síntesis concluye la parte ii" in normalized
     assert "(12-dinero-oficios-conexiones-exteriores.qmd" in body
-    assert "../../generated/14-facsimil-prototipo.qmd" in body
+    assert "../../generated/14-facsimil.qmd" in body
     assert not re.search(r"<[A-Za-z][^>]*>", body)
     assert validator._validate_chapter_thirteen_body(body) == []
 
@@ -2379,17 +2379,21 @@ def test_thematic_ranges_and_isolated_examples_are_not_questionnaire_duplication
     assert not validator._has_extensive_questionnaire_sequence(isolated_examples)
 
 
-def test_asset_manifest_has_only_page_12_and_folio_315v():
+def test_asset_manifest_preserves_prototype_and_adds_complete_facsimile_series():
     manifest = yaml.safe_load(
         (ROOT / "publication" / "meta" / "assets.yml").read_text(encoding="utf-8")
     )
     assert [asset["asset_id"] for asset in manifest["assets"]] == [
         "manuscript-page-12",
         "folio-315v",
+        "manuscript-pages-1-18",
     ]
-    assert all(asset["source"]["page"] == 12 for asset in manifest["assets"])
+    assert all(asset["source"]["page"] == 12 for asset in manifest["assets"][:2])
+    assert manifest["assets"][2]["source"]["pages"] == [1, 18]
     assert all(
-        asset["destination"].startswith("generated/assets/")
+        (asset.get("destination") or asset.get("destination_pattern")).startswith(
+            "generated/assets/"
+        )
         for asset in manifest["assets"]
     )
 

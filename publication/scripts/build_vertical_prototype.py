@@ -3,14 +3,17 @@
 
 from __future__ import annotations
 
-import hashlib
 import re
 import shutil
 import subprocess
 import sys
 from pathlib import Path
 
-import yaml
+from check_sources import (
+    ManuscriptMetadata,
+    SourceCheckError,
+    verify_local_manuscript,
+)
 
 
 MANUSCRIPT_FILE_ID = "1GgBs68iTi53ue8-TbrYFABALxadhQe5u"
@@ -48,14 +51,6 @@ def _write_text(path: Path, content: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="\n") as stream:
         stream.write(content.rstrip() + "\n")
-
-
-def _sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as stream:
-        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
 
 
 def _heading_block(text: str, heading: str) -> str:
@@ -160,59 +155,21 @@ def _footnote(text: str, label: str) -> str:
     return match.group(0)
 
 
-def _pdf_pages(pdf: Path) -> int:
-    executable = shutil.which("pdfinfo")
-    if executable is None:
-        raise PrototypeBuildError("No se encontró pdfinfo en PATH")
-    result = subprocess.run(
-        [executable, pdf],
-        check=True,
-        capture_output=True,
-        text=True,
-        shell=False,
-    )
-    match = re.search(r"^Pages:\s+(\d+)\s*$", result.stdout, re.MULTILINE)
-    if match is None:
-        raise PrototypeBuildError("pdfinfo no devolvió el número de páginas")
-    return int(match.group(1))
-
-
 def verify_manuscript(pdf: Path, project_file: Path) -> None:
-    if not pdf.is_file():
-        raise PrototypeBuildError(f"No existe el PDF temporal indicado: {pdf}")
-    project_data = yaml.safe_load(_read_text(project_file))
-    manuscript = project_data.get("authorities", {}).get("manuscript", {})
-    expected = {
-        "file_id": MANUSCRIPT_FILE_ID,
-        "name": MANUSCRIPT_NAME,
-        "size_bytes": MANUSCRIPT_SIZE,
-        "sha256": MANUSCRIPT_SHA256,
-        "pages": MANUSCRIPT_PAGES,
-    }
-    mismatches = [
-        key
-        for key, expected_value in expected.items()
-        if manuscript.get(key) != expected_value
-    ]
-    if mismatches:
-        raise PrototypeBuildError(
-            "proyecto.yaml no coincide con el snapshot del prototipo: "
-            + ", ".join(mismatches)
-        )
-    if pdf.stat().st_size != MANUSCRIPT_SIZE:
-        raise PrototypeBuildError(
-            f"Tamaño incorrecto del PDF: {pdf.stat().st_size}; esperado {MANUSCRIPT_SIZE}"
-        )
-    digest = _sha256(pdf)
-    if digest != MANUSCRIPT_SHA256:
-        raise PrototypeBuildError(
-            f"SHA-256 incorrecto del PDF: {digest}; esperado {MANUSCRIPT_SHA256}"
-        )
-    pages = _pdf_pages(pdf)
-    if pages != MANUSCRIPT_PAGES:
-        raise PrototypeBuildError(
-            f"Número de páginas incorrecto: {pages}; esperado {MANUSCRIPT_PAGES}"
-        )
+    """Compatibility wrapper; source validation now lives in check_sources.py."""
+
+    del project_file
+    metadata = ManuscriptMetadata(
+        MANUSCRIPT_FILE_ID,
+        MANUSCRIPT_NAME,
+        MANUSCRIPT_SHA256,
+        MANUSCRIPT_SIZE,
+        MANUSCRIPT_PAGES,
+    )
+    try:
+        verify_local_manuscript(pdf, metadata)
+    except SourceCheckError as exc:
+        raise PrototypeBuildError(str(exc)) from exc
 
 
 def _load_render_unit(repository_root: Path):
@@ -438,10 +395,6 @@ def build_vertical_prototype(
     generated_root = publication_root / "generated"
     if generated_root.parent != publication_root or generated_root.name != "generated":
         raise PrototypeBuildError("Ruta generated insegura")
-    verify_manuscript(
-        manuscript_pdf,
-        repository_root / "project" / "00_CONTROL" / "proyecto.yaml",
-    )
     source_paths = {
         "study": repository_root
         / "project"
@@ -464,9 +417,18 @@ def build_vertical_prototype(
         / "Catastro_Sorrios_1752_Version_Modernizada.md",
     }
     texts = {name: _read_text(path) for name, path in source_paths.items()}
-    if generated_root.exists():
-        shutil.rmtree(generated_root)
-    generated_root.mkdir(parents=True)
+    generated_root.mkdir(parents=True, exist_ok=True)
+    owned_paths = (
+        generated_root / "14-facsimil-prototipo.qmd",
+        generated_root / "15-transcripcion-prototipo.qmd",
+        generated_root / "16-modernizada-prototipo.qmd",
+        generated_root / "aparato-molinos.qmd",
+        generated_root / "assets" / "manuscript-page-12.png",
+        generated_root / "assets" / "folio-315v.png",
+    )
+    for path in owned_paths:
+        if path.is_file():
+            path.unlink()
     _render_images(repository_root, publication_root, manuscript_pdf, generated_root)
     outputs = {
         generated_root / "14-facsimil-prototipo.qmd": _facsimile_page(),
@@ -479,7 +441,11 @@ def build_vertical_prototype(
     }
     for path, content in outputs.items():
         _write_text(path, content)
-    return tuple(sorted((*outputs.keys(), *(generated_root / "assets").iterdir())))
+    prototype_images = (
+        generated_root / "assets" / "manuscript-page-12.png",
+        generated_root / "assets" / "folio-315v.png",
+    )
+    return tuple(sorted((*outputs.keys(), *prototype_images)))
 
 
 __all__ = [

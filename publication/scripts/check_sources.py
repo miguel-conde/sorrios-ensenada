@@ -1,0 +1,431 @@
+#!/usr/bin/env python3
+"""Validate publication inputs without generating or modifying any output."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import os
+import re
+import shutil
+import subprocess
+import sys
+from collections.abc import Mapping
+from dataclasses import dataclass
+from pathlib import Path, PurePosixPath
+
+import yaml
+
+
+EXPECTED_SOURCE_COUNT = 4
+EXPECTED_UNIT_COUNT = 35
+MANUSCRIPT_ENV = "SORRIOS_MANUSCRIPT_PDF"
+LOCAL_MANUSCRIPT_RELATIVE = Path("sorrios-ensenada") / "manuscript.pdf"
+VERSION_PATTERN = re.compile(r"^\*\*Versión:\*\*\s*(?P<version>\S+)", re.MULTILINE)
+EVIDENCE_PATTERN = re.compile(r"^\|\s*([A-Z]+-\d{3})\s*\|", re.MULTILINE)
+
+
+class SourceCheckError(RuntimeError):
+    """Report one actionable and deterministic source validation failure."""
+
+
+@dataclass(frozen=True)
+class Source:
+    name: str
+    path: str
+    version: str
+
+
+@dataclass(frozen=True)
+class ManuscriptMetadata:
+    file_id: str
+    name: str
+    sha256: str
+    size_bytes: int
+    pages: int
+
+
+@dataclass(frozen=True)
+class CheckedSources:
+    manuscript_pdf: Path
+    manuscript: ManuscriptMetadata
+    sources: tuple[Source, ...]
+    unit_count: int
+
+
+def _read_yaml(path: Path) -> dict:
+    if not path.is_file():
+        raise SourceCheckError(f"No existe el archivo YAML requerido: {path}")
+    try:
+        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, yaml.YAMLError) as exc:
+        raise SourceCheckError(f"No se pudo leer YAML válido en {path}: {exc}") from exc
+    if not isinstance(data, dict):
+        raise SourceCheckError(f"El archivo YAML debe contener un mapa: {path}")
+    return data
+
+
+def _safe_repository_path(repository_root: Path, logical_path: str, label: str) -> Path:
+    relative = PurePosixPath(logical_path)
+    if relative.is_absolute() or ".." in relative.parts:
+        raise SourceCheckError(
+            f"La ruta de {label} debe ser relativa y permanecer en el repositorio: "
+            f"{logical_path}"
+        )
+    resolved = repository_root.joinpath(*relative.parts).resolve()
+    repository = repository_root.resolve()
+    if resolved == repository or repository not in resolved.parents:
+        raise SourceCheckError(f"La ruta de {label} sale del repositorio: {logical_path}")
+    return resolved
+
+
+def _manifest_sources(manifest: dict) -> tuple[Source, ...]:
+    raw_sources = manifest.get("sources")
+    if not isinstance(raw_sources, dict) or len(raw_sources) != EXPECTED_SOURCE_COUNT:
+        count = len(raw_sources) if isinstance(raw_sources, dict) else 0
+        raise SourceCheckError(
+            "publication/meta/publication.yml debe declarar exactamente "
+            f"{EXPECTED_SOURCE_COUNT} fuentes; declara {count}."
+        )
+    sources: list[Source] = []
+    for name, fields in raw_sources.items():
+        if not isinstance(fields, dict) or not fields.get("path") or not fields.get("version"):
+            raise SourceCheckError(
+                f"La fuente {name} debe declarar path y version en publication.yml."
+            )
+        sources.append(Source(str(name), str(fields["path"]), str(fields["version"])))
+    return tuple(sources)
+
+
+def _validate_source_versions(repository_root: Path, sources: tuple[Source, ...]) -> None:
+    for source in sources:
+        path = _safe_repository_path(repository_root, source.path, f"la fuente {source.name}")
+        if not path.is_file():
+            raise SourceCheckError(
+                f"No existe la fuente {source.name} declarada en publication.yml: "
+                f"{source.path}"
+            )
+        try:
+            text = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            raise SourceCheckError(f"No se pudo leer {source.path}: {exc}") from exc
+        match = VERSION_PATTERN.search(text)
+        if match is None:
+            raise SourceCheckError(
+                f"No se pudo comprobar la versión de {source.name} en {source.path}."
+            )
+        actual = match.group("version")
+        if actual != source.version:
+            raise SourceCheckError(
+                f"Versión discordante para {source.name}: publication.yml declara "
+                f"{source.version} y {source.path} contiene {actual}."
+            )
+
+
+def _manuscript_metadata(project: dict, publication: dict) -> ManuscriptMetadata:
+    project_manuscript = project.get("authorities", {}).get("manuscript")
+    publication_manuscript = publication.get("manuscript")
+    if not isinstance(project_manuscript, dict):
+        raise SourceCheckError("proyecto.yaml no declara authorities.manuscript.")
+    if not isinstance(publication_manuscript, dict):
+        raise SourceCheckError("publication.yml no declara manuscript.")
+    required = ("file_id", "name", "sha256", "size_bytes", "pages")
+    missing = [key for key in required if key not in project_manuscript]
+    if missing:
+        raise SourceCheckError(
+            "Faltan metadatos del manuscrito en proyecto.yaml: " + ", ".join(missing)
+        )
+    mismatches = [
+        key
+        for key in required
+        if publication_manuscript.get(key) != project_manuscript.get(key)
+    ]
+    metadata_source = publication_manuscript.get("metadata_source")
+    if metadata_source != "project/00_CONTROL/proyecto.yaml":
+        mismatches.append("metadata_source")
+    if mismatches:
+        raise SourceCheckError(
+            "Los metadatos del manuscrito en publication.yml no coinciden con "
+            "proyecto.yaml: " + ", ".join(mismatches)
+        )
+    try:
+        return ManuscriptMetadata(
+            file_id=str(project_manuscript["file_id"]),
+            name=str(project_manuscript["name"]),
+            sha256=str(project_manuscript["sha256"]),
+            size_bytes=int(project_manuscript["size_bytes"]),
+            pages=int(project_manuscript["pages"]),
+        )
+    except (TypeError, ValueError) as exc:
+        raise SourceCheckError("Los metadatos numéricos del manuscrito no son válidos.") from exc
+
+
+def resolve_manuscript_pdf(
+    repository_root: Path,
+    environ: Mapping[str, str] | None = None,
+    home: Path | None = None,
+) -> Path:
+    """Resolve the user-provisioned manuscript mirror outside the checkout."""
+
+    environment = os.environ if environ is None else environ
+    override = environment.get(MANUSCRIPT_ENV)
+    if override:
+        candidate = Path(override).expanduser()
+        location = f"la variable {MANUSCRIPT_ENV}"
+    else:
+        xdg_data_home = environment.get("XDG_DATA_HOME")
+        data_home = (
+            Path(xdg_data_home).expanduser()
+            if xdg_data_home
+            else (Path.home() if home is None else home) / ".local" / "share"
+        )
+        candidate = data_home / LOCAL_MANUSCRIPT_RELATIVE
+        location = "la ubicación local estándar"
+
+    repository = repository_root.resolve()
+    resolved = candidate.resolve()
+    if resolved == repository or repository in resolved.parents:
+        raise SourceCheckError(
+            "La copia local del manuscrito debe estar fuera del checkout Git; "
+            f"ruta rechazada: {resolved}"
+        )
+    if not resolved.is_file():
+        default_path = (
+            (Path.home() if home is None else home)
+            / ".local"
+            / "share"
+            / LOCAL_MANUSCRIPT_RELATIVE
+        )
+        raise SourceCheckError(
+            f"No existe el manuscrito indicado por {location}: {resolved}. "
+            "Aprovisiona manualmente una réplica del PDF autoritativo de Drive "
+            f"fuera del checkout, preferentemente en {default_path}, o define "
+            f"{MANUSCRIPT_ENV}. No se realizará ninguna descarga automática."
+        )
+    return resolved
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    try:
+        with path.open("rb") as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                digest.update(chunk)
+    except OSError as exc:
+        raise SourceCheckError(f"No se pudo leer el manuscrito local {path}: {exc}") from exc
+    return digest.hexdigest()
+
+
+def _pdf_pages(pdf: Path) -> int:
+    executable = shutil.which("pdfinfo")
+    if executable is None:
+        raise SourceCheckError(
+            "No se encontró pdfinfo en PATH; instala Poppler para validar el manuscrito."
+        )
+    try:
+        result = subprocess.run(
+            [executable, pdf], check=True, capture_output=True, text=True, shell=False
+        )
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise SourceCheckError(f"pdfinfo no pudo leer el manuscrito {pdf}: {exc}") from exc
+    match = re.search(r"^Pages:\s+(\d+)\s*$", result.stdout, re.MULTILINE)
+    if match is None:
+        raise SourceCheckError("pdfinfo no devolvió el número de páginas del manuscrito.")
+    return int(match.group(1))
+
+
+def verify_local_manuscript(pdf: Path, metadata: ManuscriptMetadata) -> None:
+    size = pdf.stat().st_size
+    if size != metadata.size_bytes:
+        raise SourceCheckError(
+            f"Tamaño incorrecto del manuscrito local: {size}; esperado "
+            f"{metadata.size_bytes} según proyecto.yaml."
+        )
+    digest = _sha256(pdf)
+    if digest != metadata.sha256:
+        raise SourceCheckError(
+            f"SHA-256 incorrecto del manuscrito local: {digest}; esperado "
+            f"{metadata.sha256}. No uses una copia recompuesta ni el PDF 0.6."
+        )
+    pages = _pdf_pages(pdf)
+    if pages != metadata.pages:
+        raise SourceCheckError(
+            f"Número de páginas incorrecto del manuscrito local: {pages}; esperado "
+            f"{metadata.pages}."
+        )
+
+
+def _validate_units(repository_root: Path, manuscript_pages: int) -> int:
+    path = repository_root / "project" / "00_CONTROL" / "unidades.yaml"
+    data = _read_yaml(path)
+    units = data.get("units")
+    if data.get("unit_count") != EXPECTED_UNIT_COUNT or not isinstance(units, list):
+        raise SourceCheckError(
+            "unidades.yaml debe declarar unit_count: 35 y una lista units."
+        )
+    if len(units) != EXPECTED_UNIT_COUNT:
+        raise SourceCheckError(
+            f"unidades.yaml contiene {len(units)} unidades; se esperaban 35."
+        )
+    identifiers = [unit.get("id") for unit in units if isinstance(unit, dict)]
+    orders = [unit.get("order") for unit in units if isinstance(unit, dict)]
+    if len(identifiers) != EXPECTED_UNIT_COUNT or len(set(identifiers)) != EXPECTED_UNIT_COUNT:
+        raise SourceCheckError("Los 35 identificadores de unidades deben existir y ser únicos.")
+    if orders != list(range(1, EXPECTED_UNIT_COUNT + 1)):
+        raise SourceCheckError("Las unidades deben conservar el orden canónico consecutivo 1–35.")
+    for index, unit in enumerate(units):
+        page = unit.get("pdf_page")
+        position = unit.get("position")
+        expected_previous = identifiers[index - 1] if index else None
+        expected_next = identifiers[index + 1] if index + 1 < len(units) else None
+        if not isinstance(page, int) or not 1 <= page <= manuscript_pages:
+            raise SourceCheckError(
+                f"La unidad {unit.get('id')} declara una página PDF inválida: {page}."
+            )
+        if position not in {"left", "right", "complete"}:
+            raise SourceCheckError(
+                f"La unidad {unit.get('id')} declara una posición inválida: {position}."
+            )
+        if unit.get("previous") != expected_previous or unit.get("next") != expected_next:
+            raise SourceCheckError(
+                f"La cadena previous/next se rompe en la unidad {unit.get('id')}."
+            )
+    return len(units)
+
+
+def _validate_chapters(publication_root: Path, repository_root: Path) -> None:
+    data = _read_yaml(publication_root / "meta" / "chapters.yml")
+    chapters = data.get("chapters")
+    if not isinstance(chapters, list) or not chapters:
+        raise SourceCheckError("meta/chapters.yml debe declarar una lista de capítulos.")
+    ids: list[str] = []
+    paths: list[str] = []
+    for chapter in chapters:
+        if not isinstance(chapter, dict) or not chapter.get("chapter_id") or not chapter.get("path"):
+            raise SourceCheckError("Cada entrada de chapters.yml debe declarar chapter_id y path.")
+        chapter_id = str(chapter["chapter_id"])
+        logical_path = str(chapter["path"])
+        ids.append(chapter_id)
+        paths.append(logical_path)
+        path = _safe_repository_path(
+            repository_root, f"publication/{logical_path}", f"el capítulo {chapter_id}"
+        )
+        if not chapter.get("generated") and not path.is_file():
+            raise SourceCheckError(
+                f"No existe el capítulo no generado {chapter_id}: publication/{logical_path}"
+            )
+    if len(ids) != len(set(ids)):
+        raise SourceCheckError("Los chapter_id de chapters.yml deben ser únicos.")
+    if len(paths) != len(set(paths)):
+        raise SourceCheckError("Las rutas de chapters.yml deben ser únicas.")
+
+
+def _validate_evidence_ids(publication_root: Path, repository_root: Path) -> None:
+    register_path = (
+        repository_root
+        / "project"
+        / "30_RESULTADOS"
+        / "ESTUDIO_HISTORICO"
+        / "Registro_Afirmaciones_Calculos_v1.md"
+    )
+    registered = set(EVIDENCE_PATTERN.findall(register_path.read_text(encoding="utf-8")))
+    referenced: set[str] = set()
+    for path in sorted((publication_root / "content").rglob("*.qmd")):
+        text = path.read_text(encoding="utf-8")
+        if not text.startswith("---\n"):
+            continue
+        closing = text.find("\n---\n", 4)
+        if closing < 0:
+            raise SourceCheckError(f"Front matter incompleto en {path}.")
+        metadata = yaml.safe_load(text[4:closing])
+        if not isinstance(metadata, dict):
+            raise SourceCheckError(f"Front matter inválido en {path}.")
+        evidence = metadata.get("evidence", {})
+        if isinstance(evidence, dict):
+            for values in evidence.values():
+                if isinstance(values, list):
+                    referenced.update(str(value) for value in values)
+    missing = sorted(referenced - registered)
+    if missing:
+        raise SourceCheckError(
+            "Identificadores de evidencia inexistentes en el Registro: "
+            + ", ".join(missing)
+        )
+
+
+def _validate_assets(publication_root: Path, manuscript: ManuscriptMetadata) -> None:
+    data = _read_yaml(publication_root / "meta" / "assets.yml")
+    assets = data.get("assets")
+    if not isinstance(assets, list) or not assets:
+        raise SourceCheckError("meta/assets.yml debe declarar una lista assets.")
+    identifiers = [asset.get("asset_id") for asset in assets if isinstance(asset, dict)]
+    if len(identifiers) != len(assets) or len(identifiers) != len(set(identifiers)):
+        raise SourceCheckError("Los asset_id deben existir y ser únicos.")
+    for asset in assets:
+        source = asset.get("source", {})
+        for key in ("file_id", "name", "sha256"):
+            if source.get(key) != getattr(manuscript, key):
+                raise SourceCheckError(
+                    f"El activo {asset.get('asset_id')} no conserva {key} del manuscrito."
+                )
+        if asset.get("versioned") is not False:
+            raise SourceCheckError(
+                f"El activo {asset.get('asset_id')} debe seguir marcado como no versionado."
+            )
+        destination = asset.get("destination") or asset.get("destination_pattern")
+        if not isinstance(destination, str) or not destination.startswith("generated/"):
+            raise SourceCheckError(
+                f"El destino de {asset.get('asset_id')} debe permanecer bajo generated/."
+            )
+
+
+def check_sources(
+    repository_root: Path,
+    publication_root: Path,
+    *,
+    environ: Mapping[str, str] | None = None,
+    home: Path | None = None,
+) -> CheckedSources:
+    """Validate every Phase 4A input and return the verified manuscript."""
+
+    repository_root = repository_root.resolve()
+    publication_root = publication_root.resolve()
+    project = _read_yaml(repository_root / "project" / "00_CONTROL" / "proyecto.yaml")
+    publication = _read_yaml(publication_root / "meta" / "publication.yml")
+    sources = _manifest_sources(publication)
+    _validate_source_versions(repository_root, sources)
+    manuscript = _manuscript_metadata(project, publication)
+    manuscript_pdf = resolve_manuscript_pdf(repository_root, environ, home)
+    verify_local_manuscript(manuscript_pdf, manuscript)
+    unit_count = _validate_units(repository_root, manuscript.pages)
+    _validate_chapters(publication_root, repository_root)
+    _validate_evidence_ids(publication_root, repository_root)
+    _validate_assets(publication_root, manuscript)
+    return CheckedSources(manuscript_pdf, manuscript, sources, unit_count)
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Valida las fuentes de la publicación sin generar salidas."
+    )
+    parser.parse_args(argv)
+    publication_root = Path(__file__).resolve().parent.parent
+    repository_root = publication_root.parent
+    try:
+        checked = check_sources(repository_root, publication_root)
+    except (OSError, UnicodeError, SourceCheckError, yaml.YAMLError) as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+    print(
+        "PASS: "
+        f"{len(checked.sources)} fuentes versionadas, {checked.unit_count} unidades y "
+        f"manuscrito {checked.manuscript.name} verificado en "
+        f"{checked.manuscript_pdf} ({checked.manuscript.pages} páginas; "
+        f"SHA-256 {checked.manuscript.sha256})"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+

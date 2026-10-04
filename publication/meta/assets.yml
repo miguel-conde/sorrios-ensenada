@@ -30,3 +30,20 @@ assets:
       format: png
     destination: generated/assets/folio-315v.png
     versioned: false
+  - asset_id: manuscript-pages-1-18
+    source:
+      provider: google_drive
+      file_id: "1GgBs68iTi53ue8-TbrYFABALxadhQe5u"
+      name: sorrios_ensenada_orden_lectura_calidad_original.pdf
+      sha256: "d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24"
+      pages: [1, 18]
+    transformation:
+      kind: rasterize_complete_pages
+      dpi: 180
+      format: png
+      preserve_materiality: true
+    page_count: 18
+    destination_pattern: generated/assets/facsimile/page-{page:02d}.png
+    authority: derivative
+    versioned: false
+    versioning_policy: generated_ignored

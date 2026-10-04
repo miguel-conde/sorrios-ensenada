@@ -12,6 +12,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 import yaml
+from PIL import Image
 
 from build_vertical_prototype import (
     EVIDENCE_GROUPS,
@@ -99,6 +100,7 @@ CHAPTER_THIRTEEN = (
 )
 GENERATED = {
     "facsimile": PUBLICATION_ROOT / "generated" / "14-facsimil-prototipo.qmd",
+    "facsimile_full": PUBLICATION_ROOT / "generated" / "14-facsimil.qmd",
     "transcription": PUBLICATION_ROOT / "generated" / "15-transcripcion-prototipo.qmd",
     "modernized": PUBLICATION_ROOT / "generated" / "16-modernizada-prototipo.qmd",
     "apparatus": PUBLICATION_ROOT / "generated" / "aparato-molinos.qmd",
@@ -108,6 +110,9 @@ CANONICAL_EDITION = (
 )
 RENDERED_HTML = (
     PUBLICATION_ROOT / "_book" / "generated" / "15-transcripcion-prototipo.html"
+)
+RENDERED_FACSIMILE_HTML = (
+    PUBLICATION_ROOT / "_book" / "generated" / "14-facsimil.html"
 )
 RENDERED_CHAPTER_ONE_HTML = (
     PUBLICATION_ROOT
@@ -868,6 +873,32 @@ def validate_rendered_outputs() -> list[str]:
                 f"El capítulo {number} no aparece numerado realmente como {number}"
             )
 
+    if not RENDERED_FACSIMILE_HTML.is_file():
+        errors.append(f"Falta el HTML del capítulo 14: {RENDERED_FACSIMILE_HTML}")
+    else:
+        facsimile_html = RENDERED_FACSIMILE_HTML.read_text(encoding="utf-8")
+        if "Facsímil íntegro del expediente" not in facsimile_html:
+            errors.append("El HTML del capítulo 14 no contiene su título")
+        if 'name="viewport"' not in facsimile_html:
+            errors.append("El HTML del capítulo 14 carece de metadatos adaptables")
+        if not re.search(r'class="chapter-number"[^>]*>\s*14\s*<', facsimile_html):
+            errors.append("El facsímil no aparece numerado realmente como capítulo 14")
+        anchors = re.findall(
+            r'<section id="pagina-digital-(\d{2})"', facsimile_html
+        )
+        if anchors != [f"{page:02d}" for page in range(1, 19)]:
+            errors.append("El HTML facsimilar no conserva las 18 anclas en orden")
+        images = re.findall(r'src="assets/facsimile/page-(\d{2})\.png"', facsimile_html)
+        if images != [f"{page:02d}" for page in range(1, 19)]:
+            errors.append("El HTML facsimilar no contiene las 18 páginas en orden")
+        alt_pages = re.findall(
+            r'<img[^>]+src="assets/facsimile/page-\d{2}\.png"[^>]+'
+            r'alt="Página digital (\d{2}) completa[^>]+>',
+            facsimile_html,
+        )
+        if alt_pages != [f"{page:02d}" for page in range(1, 19)]:
+            errors.append("Las 18 páginas HTML deben conservar texto alternativo")
+
     if not RENDERED_HTML.is_file():
         errors.append(f"Falta el HTML renderizado: {RENDERED_HTML}")
     else:
@@ -917,6 +948,8 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append("El PDF no contiene el capítulo 7")
             if "Ganadería, montes y aprovechamientos comunales" not in normalized_pdf:
                 errors.append("El PDF no contiene el capítulo 8")
+            if "Facsímil íntegro del expediente" not in normalized_pdf:
+                errors.append("El PDF no contiene el capítulo 14")
     return errors
 
 
@@ -3100,6 +3133,11 @@ def validate() -> list[str]:
     expected_ids = {item for group in EVIDENCE_GROUPS.values() for item in group}
     required_generated = {
         "facsimile": ("#pagina-digital-12", "lightbox: true"),
+        "facsimile_full": (
+            "#pagina-digital-01",
+            "#pagina-digital-18",
+            "lightbox: true",
+        ),
         "transcription": ("#folio-315v", "lightbox: true"),
         "modernized": ("#respuesta-17",),
         "apparatus": ("#cuadro-molinos", "#matriz-molinera"),
@@ -3409,7 +3447,7 @@ def validate() -> list[str]:
         chapter_thirteen_text = chapter_bodies.get(13, "")
         if "(12-dinero-oficios-conexiones-exteriores.qmd" not in chapter_thirteen_text:
             errors.append("El capítulo 13 no enlaza el capítulo 12")
-        if "../../generated/14-facsimil-prototipo.qmd" not in chapter_thirteen_text:
+        if "../../generated/14-facsimil.qmd" not in chapter_thirteen_text:
             errors.append("El capítulo 13 no prepara la transición a la Parte III")
         if re.search(r"<[A-Za-z][^>]*>", chapter_thirteen_text):
             errors.append("El capítulo 13 contiene HTML crudo")
@@ -3503,6 +3541,48 @@ def validate() -> list[str]:
             facsimile,
         ):
             errors.append("La página facsimilar carece de texto alternativo suficiente")
+    if GENERATED["facsimile_full"].is_file():
+        complete_facsimile = GENERATED["facsimile_full"].read_text(encoding="utf-8")
+        try:
+            metadata, body = _parse_document(
+                complete_facsimile, GENERATED["facsimile_full"]
+            )
+        except ValueError as exc:
+            errors.append(str(exc))
+        else:
+            if metadata.get("title") != "Facsímil íntegro del expediente":
+                errors.append("Título incorrecto en el capítulo 14 generado")
+            if metadata.get("chapter-id") != "facsimil-integro-expediente":
+                errors.append("chapter-id incorrecto en el capítulo 14 generado")
+            if metadata.get("publication-status") != "generated":
+                errors.append("El capítulo 14 debe declarar publication-status: generated")
+            anchors = re.findall(r"^## Página digital (\d{2}) \{#pagina-digital-\d{2}\}$", body, re.MULTILINE)
+            images = re.findall(r"\]\(assets/facsimile/page-(\d{2})\.png\)", body)
+            expected_pages = [f"{page:02d}" for page in range(1, 19)]
+            if anchors != expected_pages:
+                errors.append("El capítulo 14 no contiene las 18 anclas en orden 01–18")
+            if images != expected_pages:
+                errors.append("El capítulo 14 no contiene las 18 imágenes en orden 01–18")
+            if body.count('fig-alt="Página digital') != 18:
+                errors.append("Las 18 páginas facsimilares necesitan texto alternativo")
+            if "### Transcripción" in body or "Transcripción paleográfica" in body:
+                errors.append("El capítulo 14 no debe anticipar la transcripción del capítulo 15")
+        facsimile_dir = PUBLICATION_ROOT / "generated" / "assets" / "facsimile"
+        expected_images = [facsimile_dir / f"page-{page:02d}.png" for page in range(1, 19)]
+        actual_images = sorted(facsimile_dir.glob("*.png")) if facsimile_dir.is_dir() else []
+        if actual_images != expected_images:
+            errors.append("La serie facsimilar debe contener exactamente page-01.png–page-18.png")
+        for page, image in enumerate(expected_images, start=1):
+            if not image.is_file() or image.stat().st_size == 0:
+                errors.append(f"Falta la página facsimilar completa {page:02d}")
+                continue
+            try:
+                with Image.open(image) as opened:
+                    opened.verify()
+                    if opened.width <= 0 or opened.height <= 0:
+                        errors.append(f"Dimensiones inválidas en la página facsimilar {page:02d}")
+            except (OSError, SyntaxError) as exc:
+                errors.append(f"PNG inválido en la página facsimilar {page:02d}: {exc}")
     if GENERATED["transcription"].is_file():
         transcription = GENERATED["transcription"].read_text(encoding="utf-8")
         headings = tuple(
@@ -3553,15 +3633,28 @@ def validate() -> list[str]:
     assets_path = PUBLICATION_ROOT / "meta" / "assets.yml"
     assets_data = yaml.safe_load(assets_path.read_text(encoding="utf-8"))
     assets = assets_data.get("assets", []) if isinstance(assets_data, dict) else []
-    if len(assets) != 2:
-        errors.append("meta/assets.yml debe declarar exactamente dos derivados")
-    for asset in assets:
+    if len(assets) != 3:
+        errors.append("meta/assets.yml debe declarar dos activos del prototipo y la serie 4A")
+    for asset in assets[:2]:
         source = asset.get("source", {})
         if source.get("file_id") != MANUSCRIPT_FILE_ID or source.get("page") != 12:
             errors.append("Procedencia incorrecta en meta/assets.yml")
         destination = asset.get("destination", "")
         if not destination.startswith("generated/assets/"):
             errors.append("Los destinos facsimilares deben permanecer en generated/assets/")
+    series = [asset for asset in assets if asset.get("asset_id") == "manuscript-pages-1-18"]
+    if len(series) != 1:
+        errors.append("meta/assets.yml debe declarar una única serie manuscript-pages-1-18")
+    else:
+        series_asset = series[0]
+        if series_asset.get("source", {}).get("pages") != [1, 18]:
+            errors.append("La serie 4A debe declarar las páginas fuente 1–18")
+        if series_asset.get("page_count") != 18:
+            errors.append("La serie 4A debe declarar page_count: 18")
+        if series_asset.get("versioned") is not False:
+            errors.append("Las imágenes completas de 4A deben permanecer no versionadas")
+        if series_asset.get("versioning_policy") != "generated_ignored":
+            errors.append("La serie 4A debe conservar la política generated_ignored")
 
     quarto_data = yaml.safe_load(
         (PUBLICATION_ROOT / "_quarto.yml").read_text(encoding="utf-8")
@@ -3582,7 +3675,7 @@ def validate() -> list[str]:
         "content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd",
         "content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd",
         "content/02-estudio/13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd",
-        "generated/14-facsimil-prototipo.qmd",
+        "generated/14-facsimil.qmd",
         "generated/15-transcripcion-prototipo.qmd",
         "generated/16-modernizada-prototipo.qmd",
         "generated/aparato-molinos.qmd",
@@ -3648,7 +3741,8 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–13, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–14, facsímil 4A, prototipo 2B, metadatos, anclas, "
+        "evidencia y regresiones"
         f"{scope} validados"
     )
     return 0
