@@ -43,6 +43,9 @@ chapters:
   - chapter_id: dinero-oficios-conexiones-exteriores
     path: content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd
     publication_status: development
+  - chapter_id: economia-rural-integrada-vulnerabilidades-resiliencia-limites
+    path: content/02-estudio/13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd
+    publication_status: development
   - chapter_id: facsimil-pagina-12
     path: generated/14-facsimil-prototipo.qmd
     publication_status: prototype

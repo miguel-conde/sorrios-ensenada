@@ -236,6 +236,54 @@ CHAPTER_TWELVE_EVIDENCE = {
         "LIM-011", "LIM-012", "LIM-013",
     ),
 }
+CHAPTER_THIRTEEN_SOURCES = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+    "publication/content/02-estudio/05-lugar-senorio-concejo-ordas.qmd",
+    "publication/content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd",
+    "publication/content/02-estudio/07-tierra-sistema-agrario-medidas.qmd",
+    "publication/content/02-estudio/08-ganaderia-montes-aprovechamientos-comunales.qmd",
+    "publication/content/02-estudio/09-rio-molinos-recursos.qmd",
+    "publication/content/02-estudio/10-iglesia-senorio-fiscalidad.qmd",
+    "publication/content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd",
+    "publication/content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd",
+}
+CHAPTER_THIRTEEN_EVIDENCE = {
+    "D": (
+        "JUR-001", "JUR-002", "JUR-005", "JUR-006", "TER-001",
+        "TER-010", "AGR-001", "AGR-002", "AGR-003", "AGR-010",
+        "GAN-001", "GAN-002", "GAN-003", "GAN-007", "HID-001",
+        "HID-005", "HID-006", "DEM-001", "DEM-003", "TRA-001",
+        "TRA-002", "TRA-003", "TRA-004", "TRA-005", "FIS-001",
+        "FIS-002", "FIS-003", "FIS-004", "FIS-005", "FIS-006",
+        "FIS-007", "FIS-008", "FIS-012",
+    ),
+    "C": (
+        "AGR-004", "AGR-005", "AGR-006", "GAN-005", "HID-002",
+        "HID-004", "FIS-009", "FIS-010", "FIS-011", "CAL-003",
+        "CAL-004", "CAL-005", "CAL-006", "CAL-012", "CAL-013",
+        "CAL-014", "CAL-015", "CAL-016", "CAL-017",
+    ),
+    "I": (
+        "INT-001", "INT-002", "INT-003", "INT-004", "INT-005",
+        "INT-006", "INT-007", "INT-008", "INT-009", "INT-010",
+    ),
+    "E": (
+        "TER-011", "AGR-011", "AGR-012", "AGR-013", "GAN-008",
+        "HID-008", "TRA-006", "FIS-013", "FIS-014", "FIS-015",
+        "FIS-016", "FIS-017",
+    ),
+    "L": (
+        "LIM-001", "LIM-002", "LIM-003", "LIM-004", "LIM-005",
+        "LIM-006", "LIM-007", "LIM-008", "LIM-009", "LIM-010",
+        "LIM-011", "LIM-012", "LIM-013",
+    ),
+}
 AUTHORIZED_INSTITUTIONAL_LINKS = {
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=10",
     "https://pares.cultura.gob.es/catastro/servlets/ServletController?accion=2&opcion=32",
@@ -1594,6 +1642,258 @@ def test_chapter_twelve_accepts_bounded_cautionary_formulations(caution):
     _, body = validator._front_matter_and_body(path)
 
     assert validator._validate_chapter_twelve_body(f"{body}\n\n{caution}\n") == []
+
+
+def test_chapter_thirteen_has_controlled_provenance_evidence_and_structure():
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd"
+    )
+    metadata, body = validator._front_matter_and_body(path)
+    register = (
+        ROOT / "project/30_RESULTADOS/ESTUDIO_HISTORICO"
+        / "Registro_Afirmaciones_Calculos_v1.md"
+    ).read_text(encoding="utf-8")
+    registered = set(re.findall(r"^\|\s*([A-Z]+-\d{3})\s*\|", register, re.MULTILINE))
+
+    assert metadata["title"] == (
+        "Una economía rural integrada: vulnerabilidades, resiliencia y límites"
+    )
+    assert metadata["chapter-id"] == (
+        "economia-rural-integrada-vulnerabilidades-resiliencia-limites"
+    )
+    assert metadata["publication-status"] == "development"
+    assert {source["path"] for source in metadata["sources"]} == CHAPTER_THIRTEEN_SOURCES
+    assert len(metadata["sources"]) == len(CHAPTER_THIRTEEN_SOURCES)
+    assert all(source["locator"] for source in metadata["sources"])
+    evidence = {level: tuple(values or []) for level, values in metadata["evidence"].items()}
+    assert evidence == CHAPTER_THIRTEEN_EVIDENCE
+    assert set(evidence) == {"D", "C", "I", "E", "L"}
+    assert {item for group in evidence.values() for item in group} <= registered
+    assert all(
+        validator._markdown_section(body, anchor)
+        for anchor in validator.CHAPTER_THIRTEEN_ANCHORS
+    )
+    normalized = validator._normalized_text(body)
+    assert "2.750,5 de 2.953,5 medidas principales" in normalized
+    assert "mínimo institucional de 1.006 reales" in normalized
+    assert "no se afirma que el sistema fuera resiliente" in normalized
+    assert "con esta síntesis concluye la parte ii" in normalized
+    assert "(12-dinero-oficios-conexiones-exteriores.qmd" in body
+    assert "../../generated/14-facsimil-prototipo.qmd" in body
+    assert not re.search(r"<[A-Za-z][^>]*>", body)
+    assert validator._validate_chapter_thirteen_body(body) == []
+
+
+@pytest.mark.parametrize(
+    ("mutation", "expected_code"),
+    (
+        (
+            "La integración interna demostraba una economía integrada en mercados regionales.",
+            "C13_INTERNAL_IS_MARKET_INTEGRATION",
+        ),
+        (
+            "La diversidad demostraba que el sistema era resiliente.",
+            "C13_DIVERSITY_IS_RESILIENCE",
+        ),
+        (
+            "La falta de datos demostraba la vulnerabilidad de la comunidad.",
+            "C13_ABSENCE_IS_VULNERABILITY",
+        ),
+        (
+            "La dependencia hidráulica demuestra que hubo una crisis general.",
+            "C13_DEPENDENCY_IS_OBSERVED_CRISIS",
+        ),
+        (
+            "La comunidad era autosuficiente en alimentos.",
+            "C13_FOOD_SELF_SUFFICIENCY",
+        ),
+        (
+            "La comunidad era autosuficiente en energía.",
+            "C13_ENERGY_SELF_SUFFICIENCY",
+        ),
+        (
+            "La economía era económicamente autosuficiente.",
+            "C13_GENERAL_SELF_SUFFICIENCY",
+        ),
+        (
+            "El sistema era sostenible.",
+            "C13_SUSTAINABILITY",
+        ),
+        (
+            "Existía un equilibrio ecológico entre ganado y recursos.",
+            "C13_ECOLOGICAL_BALANCE",
+        ),
+        (
+            "El expediente permite calcular la productividad total.",
+            "C13_TOTAL_PRODUCTIVITY",
+        ),
+        (
+            "El expediente permite calcular la renta por habitante.",
+            "C13_PER_CAPITA_INCOME",
+        ),
+        (
+            "El expediente permite calcular la renta por hogar.",
+            "C13_HOUSEHOLD_INCOME",
+        ),
+        (
+            "El expediente permite medir el nivel de vida.",
+            "C13_LIVING_STANDARD",
+        ),
+        (
+            "El expediente permite medir la desigualdad general.",
+            "C13_INEQUALITY",
+        ),
+        (
+            "Las valoraciones fiscales eran la producción efectiva.",
+            "C13_VALUATION_IS_PRODUCTION",
+        ),
+        (
+            "Las utilidades eran ingresos efectivos de los hogares.",
+            "C13_UTILITY_IS_EFFECTIVE_INCOME",
+        ),
+        (
+            "Las conexiones exteriores demostraban un comercio regular.",
+            "C13_EXTERNAL_IS_REGULAR_TRADE",
+        ),
+        (
+            "La variedad de oficios demostraba diversificación por hogar.",
+            "C13_TRADES_ARE_HOUSEHOLD_DIVERSIFICATION",
+        ),
+        (
+            "El predominio del centeno demostraba un monocultivo.",
+            "C13_RYE_IS_MONOCULTURE",
+        ),
+        (
+            "El uso común demostraba la propiedad comunal de los montes.",
+            "C13_COMMON_USE_IS_PROPERTY",
+        ),
+        (
+            "La presencia de molinos garantizaba suficiencia de transformación.",
+            "C13_MILLS_ARE_SUFFICIENT",
+        ),
+        (
+            "Los 1.006 reales medían la presión fiscal total.",
+            "C13_PARTIAL_FISCAL_IS_TOTAL",
+        ),
+        (
+            "Los 233 reales eran el presupuesto completo del común.",
+            "C13_PARTIAL_COMMON_IS_BUDGET",
+        ),
+        (
+            "La fiscalidad causó la caída de la producción.",
+            "C13_UNSUPPORTED_CAUSALITY",
+        ),
+        (
+            "La reconstrucción es completa y sin lagunas.",
+            "C13_EVIDENCE_LIMITS_ERASED",
+        ),
+    ),
+)
+def test_chapter_thirteen_rejects_twenty_five_semantic_reversals(
+    mutation, expected_code
+):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert error_codes(
+        validator._validate_chapter_thirteen_body(f"{body}\n\n{mutation}\n")
+    ) == {expected_code}
+
+
+@pytest.mark.parametrize(
+    "caution",
+    (
+        "La integración interna no demostraba una economía integrada en mercados regionales.",
+        "La diversidad no demostraba que el sistema era resiliente.",
+        "La falta de datos no demostraba vulnerabilidad histórica.",
+        "La dependencia hidráulica no demuestra que hubo una crisis general.",
+        "La comunidad no era autosuficiente en alimentos.",
+        "La comunidad no era autosuficiente en energía.",
+        "La economía no era económicamente autosuficiente.",
+        "El sistema no era sostenible.",
+        "No existía un equilibrio ecológico demostrado entre ganado y recursos.",
+        "El expediente no permite calcular la productividad total.",
+        "El expediente no permite calcular la renta por habitante.",
+        "El expediente no permite calcular la renta por hogar.",
+        "El expediente no permite medir el nivel de vida.",
+        "El expediente no permite medir la desigualdad general.",
+        "Las valoraciones fiscales no eran producción efectiva.",
+        "Las utilidades no eran ingresos efectivos de los hogares.",
+        "Las conexiones exteriores no demostraban comercio regular.",
+        "La variedad de oficios no demostraba diversificación por hogar.",
+        "El predominio del centeno no demostraba un monocultivo.",
+        "El uso común no demostraba propiedad comunal de los montes.",
+        "La presencia de molinos no garantizaba suficiencia de transformación.",
+        "Los 1.006 reales no medían la presión fiscal total.",
+        "Los 233 reales no eran el presupuesto completo del común.",
+        "La fiscalidad no causó la caída de la producción.",
+        "La reconstrucción no es completa ni está sin lagunas.",
+    ),
+)
+def test_chapter_thirteen_accepts_twenty_five_bounded_cautions(caution):
+    path = (
+        ROOT / "publication/content/02-estudio"
+        / "13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd"
+    )
+    _, body = validator._front_matter_and_body(path)
+
+    assert validator._validate_chapter_thirteen_body(f"{body}\n\n{caution}\n") == []
+
+
+PART_TWO_PATHS = {
+    5: "05-lugar-senorio-concejo-ordas.qmd",
+    6: "06-vecinos-hogares-viviendas-trabajo.qmd",
+    7: "07-tierra-sistema-agrario-medidas.qmd",
+    8: "08-ganaderia-montes-aprovechamientos-comunales.qmd",
+    9: "09-rio-molinos-recursos.qmd",
+    10: "10-iglesia-senorio-fiscalidad.qmd",
+    11: "11-hacienda-concejil-servicios-colectivos.qmd",
+    12: "12-dinero-oficios-conexiones-exteriores.qmd",
+    13: "13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd",
+}
+
+
+def part_two_bodies() -> dict[int, str]:
+    return {
+        number: validator._front_matter_and_body(
+            ROOT / "publication/content/02-estudio" / filename
+        )[1]
+        for number, filename in PART_TWO_PATHS.items()
+    }
+
+
+def test_part_two_cross_chapter_consistency_is_preserved():
+    assert validator._validate_part_two_consistency(part_two_bodies()) == []
+
+
+@pytest.mark.parametrize(
+    ("number", "phrase"),
+    (
+        (5, "no paga cosa alguna al señor por el establecimiento del suelo"),
+        (6, "no se suman para formar una población activa"),
+        (7, "no permite deducir autoconsumo, suficiencia alimentaria"),
+        (8, "no acreditan por sí solas titularidad"),
+        (9, "ocho ruedas descritas en cuatro casas de molinos"),
+        (10, "no pueden calcularse carga por vecino o por habitante, presión fiscal"),
+        (11, "no son ingresos, gastos totales ni presupuesto completo"),
+        (12, "tampoco demuestra una comunidad autosuficiente o cerrada"),
+        (13, "esta integración interna no demuestra integración comercial"),
+    ),
+)
+def test_part_two_cross_chapter_guard_rejects_lost_cautions(number, phrase):
+    bodies = part_two_bodies()
+    assert phrase in validator._normalized_text(bodies[number])
+    bodies[number] = validator._normalized_text(bodies[number]).replace(
+        phrase, "cautela retirada", 1
+    )
+
+    assert error_codes(validator._validate_part_two_consistency(bodies)) == {
+        f"PART_TWO_C{number}_CONSISTENCY"
+    }
 
 
 @pytest.mark.parametrize(

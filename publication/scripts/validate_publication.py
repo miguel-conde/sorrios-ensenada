@@ -91,6 +91,12 @@ CHAPTER_TWELVE = (
     / "02-estudio"
     / "12-dinero-oficios-conexiones-exteriores.qmd"
 )
+CHAPTER_THIRTEEN = (
+    PUBLICATION_ROOT
+    / "content"
+    / "02-estudio"
+    / "13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd"
+)
 GENERATED = {
     "facsimile": PUBLICATION_ROOT / "generated" / "14-facsimil-prototipo.qmd",
     "transcription": PUBLICATION_ROOT / "generated" / "15-transcripcion-prototipo.qmd",
@@ -186,6 +192,13 @@ RENDERED_CHAPTER_TWELVE_HTML = (
     / "content"
     / "02-estudio"
     / "12-dinero-oficios-conexiones-exteriores.html"
+)
+RENDERED_CHAPTER_THIRTEEN_HTML = (
+    PUBLICATION_ROOT
+    / "_book"
+    / "content"
+    / "02-estudio"
+    / "13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.html"
 )
 RENDERED_PDF = (
     PUBLICATION_ROOT / "_book" / "sorribos-santibanez-ordas-1752.pdf"
@@ -526,6 +539,67 @@ CHAPTER_TWELVE_ANCHORS = (
     "dinero-mercado-limites",
     "dinero-sintesis",
 )
+CHAPTER_THIRTEEN_SOURCE_PATHS = {
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md",
+    "project/20_TRABAJO_EDITORIAL/Edicion_Critica.md",
+    "project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md",
+    "project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md",
+    "publication/content/02-estudio/05-lugar-senorio-concejo-ordas.qmd",
+    "publication/content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd",
+    "publication/content/02-estudio/07-tierra-sistema-agrario-medidas.qmd",
+    "publication/content/02-estudio/08-ganaderia-montes-aprovechamientos-comunales.qmd",
+    "publication/content/02-estudio/09-rio-molinos-recursos.qmd",
+    "publication/content/02-estudio/10-iglesia-senorio-fiscalidad.qmd",
+    "publication/content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd",
+    "publication/content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd",
+}
+CHAPTER_THIRTEEN_EVIDENCE = {
+    "D": (
+        "JUR-001", "JUR-002", "JUR-005", "JUR-006", "TER-001",
+        "TER-010", "AGR-001", "AGR-002", "AGR-003", "AGR-010",
+        "GAN-001", "GAN-002", "GAN-003", "GAN-007", "HID-001",
+        "HID-005", "HID-006", "DEM-001", "DEM-003", "TRA-001",
+        "TRA-002", "TRA-003", "TRA-004", "TRA-005", "FIS-001",
+        "FIS-002", "FIS-003", "FIS-004", "FIS-005", "FIS-006",
+        "FIS-007", "FIS-008", "FIS-012",
+    ),
+    "C": (
+        "AGR-004", "AGR-005", "AGR-006", "GAN-005", "HID-002",
+        "HID-004", "FIS-009", "FIS-010", "FIS-011", "CAL-003",
+        "CAL-004", "CAL-005", "CAL-006", "CAL-012", "CAL-013",
+        "CAL-014", "CAL-015", "CAL-016", "CAL-017",
+    ),
+    "I": (
+        "INT-001", "INT-002", "INT-003", "INT-004", "INT-005",
+        "INT-006", "INT-007", "INT-008", "INT-009", "INT-010",
+    ),
+    "E": (
+        "TER-011", "AGR-011", "AGR-012", "AGR-013", "GAN-008",
+        "HID-008", "TRA-006", "FIS-013", "FIS-014", "FIS-015",
+        "FIS-016", "FIS-017",
+    ),
+    "L": (
+        "LIM-001", "LIM-002", "LIM-003", "LIM-004", "LIM-005",
+        "LIM-006", "LIM-007", "LIM-008", "LIM-009", "LIM-010",
+        "LIM-011", "LIM-012", "LIM-013",
+    ),
+}
+CHAPTER_THIRTEEN_ANCHORS = (
+    "economia-integrada-alcance",
+    "economia-base-agraria",
+    "economia-agua-transformacion",
+    "economia-trabajo-instituciones",
+    "economia-dependencias",
+    "economia-diversidad-amortiguadores",
+    "economia-vulnerabilidades",
+    "economia-resiliencia-limites",
+    "economia-limites-reconstruccion",
+    "economia-sintesis",
+    "economia-transicion-manuscrito",
+)
 CHAPTER_TWO_THEMATIC_BLOCKS = (
     ("1–3", "Nombre, jurisdicción, término y límites"),
     ("4–14", "Tierras, árboles, medidas, cabidas, frutos y valores"),
@@ -765,6 +839,12 @@ def validate_rendered_outputs() -> list[str]:
             12,
             "11-hacienda-concejil-servicios-colectivos.html",
         ),
+        (
+            RENDERED_CHAPTER_THIRTEEN_HTML,
+            "Una economía rural integrada: vulnerabilidades, resiliencia y límites",
+            13,
+            "12-dinero-oficios-conexiones-exteriores.html",
+        ),
     )
     for path, title, number, linked_chapter in rendered_chapters:
         if not path.is_file():
@@ -781,7 +861,7 @@ def validate_rendered_outputs() -> list[str]:
             errors.append(
                 f"El HTML del capítulo {number} no conserva su enlace cruzado"
             )
-        if number in (5, 6, 7, 8, 9, 10, 11, 12) and not re.search(
+        if number in (5, 6, 7, 8, 9, 10, 11, 12, 13) and not re.search(
             rf'class="chapter-number"[^>]*>\s*{number}\s*<', html
         ):
             errors.append(
@@ -2789,6 +2869,214 @@ def _validate_chapter_twelve_body(body: str) -> list[str]:
     return errors
 
 
+def _validate_chapter_thirteen_body(body: str) -> list[str]:
+    """Validate the synthesis without turning exposures into outcomes."""
+
+    errors: list[str] = []
+    sections = {
+        anchor: _plain_text(_markdown_section(body, anchor))
+        for anchor in CHAPTER_THIRTEEN_ANCHORS
+    }
+    for anchor, section in sections.items():
+        if not section:
+            errors.append(f"C13_SECTION_{anchor.upper().replace('-', '_')}: falta la sección")
+
+    required_by_section = {
+        "economia-integrada-alcance": (
+            "conjunto local de actividades, recursos y obligaciones relacionados entre sí",
+            "no significa una economía integrada en mercados regionales",
+            "el señorío forma parte de esta arquitectura",
+            "valor no equivale a producción",
+        ),
+        "economia-base-agraria": (
+            "2.750,5 de 2.953,5 medidas principales",
+            "sobre el subtotal más amplio de 3.811,5 medidas principales representan el 72,16 %",
+            "no un monocultivo probado",
+            "uso común no equivale a propiedad comunal",
+        ),
+        "economia-agua-transformacion": (
+            "ocho ruedas descritas",
+            "molino venturero cuyo número de ruedas no consta",
+            "utilidades reguladas, no volumen molido",
+            "no una paralización simultánea ni una crisis de abastecimiento observada",
+        ),
+        "economia-trabajo-instituciones": (
+            "no se suman como población activa",
+            "sus utilidades diarias no son ingresos anuales",
+            "mínimo institucional de 1.006 reales",
+            "repartimiento y turno son mecanismos operativos documentados",
+        ),
+        "economia-dependencias": (
+            "dependencia documentada",
+            "exposición plausible derivada de ella",
+            "crisis o daño observado",
+            "no documenta una crisis económica general en 1752",
+            "la ausencia de datos sobre reservas, crédito, cosechas efectivas o distribución doméstica no constituye por sí misma vulnerabilidad histórica",
+        ),
+        "economia-diversidad-amortiguadores": (
+            "no demuestra diversificación de ingresos en cada hogar",
+            "redundancia potencial de unidades",
+            "mecanismos potencialmente amortiguadores, no garantías de estabilidad",
+        ),
+        "economia-vulnerabilidades": (
+            "cuatro exposiciones estructurales y acotadas",
+            "no se usa la falta de una cifra como prueba de fragilidad",
+            "tampoco los 1.006 reales parciales permiten medir presión fiscal",
+        ),
+        "economia-resiliencia-limites": (
+            "un choque, una respuesta, una recuperación o una adaptación observables",
+            "no se afirma que el sistema fuera resiliente",
+            "posibilidades de amortiguación cuya eficacia no puede medirse",
+        ),
+        "economia-limites-reconstruccion": (
+            "no pueden afirmarse autosuficiencia alimentaria",
+            "celemín y medida principal no se convierten",
+            "las fuentes externas aclaran vocabulario, contexto regional e instituciones",
+            "siguen abiertas la base jurídica concreta de las alcabalas y del pozo",
+        ),
+        "economia-sintesis": (
+            "esta integración interna no demuestra integración comercial",
+            "la variedad no demuestra resiliencia",
+            "la dependencia no prueba crisis",
+            "no un balance total ni una teoría general de la economía campesina",
+        ),
+        "economia-transicion-manuscrito": (
+            "con esta síntesis concluye la parte ii",
+            "la parte iii vuelve al soporte material",
+            "sin convertir la imagen en sustituto de la transcripción o del aparato crítico",
+        ),
+    }
+    for anchor, phrases in required_by_section.items():
+        section = sections[anchor]
+        absent = [phrase for phrase in phrases if phrase.casefold() not in section]
+        if absent:
+            errors.append(
+                f"C13_CONTENT_{anchor.upper().replace('-', '_')}: faltan relaciones "
+                + ", ".join(absent)
+            )
+
+    propositions = tuple(
+        proposition
+        for _, paragraph_propositions in _controlled_paragraphs(body)
+        for proposition in paragraph_propositions
+    )
+    prohibited_predicates = {
+        "C13_INTERNAL_IS_MARKET_INTEGRATION": (
+            r"\bdemostraba\b[^.;]{0,70}\bintegrad[ao]\b[^.;]{0,45}\bmercados?\s+regionales?\b",
+        ),
+        "C13_DIVERSITY_IS_RESILIENCE": (
+            r"\bdiversidad\b[^.;]{0,50}\b(?P<predicate>demostraba)\b[^.;]{0,45}\bresiliente\b",
+        ),
+        "C13_ABSENCE_IS_VULNERABILITY": (
+            r"\bfalta\s+de\s+datos\b[^.;]{0,55}\b(?P<predicate>demostraba)\b[^.;]{0,35}\bvulnerabilidad\b",
+        ),
+        "C13_DEPENDENCY_IS_OBSERVED_CRISIS": (
+            r"\bdependencia\b[^.;]{0,55}\b(?P<predicate>demuestra)\b[^.;]{0,35}\b(?:hubo|ocurri[oó])\b[^.;]{0,30}\bcrisis\b",
+        ),
+        "C13_FOOD_SELF_SUFFICIENCY": (
+            r"\bera\b[^.;]{0,35}\bautosuficiente\s+en\s+alimentos\b",
+        ),
+        "C13_ENERGY_SELF_SUFFICIENCY": (
+            r"\bera\b[^.;]{0,35}\bautosuficiente\s+en\s+energ[ií]a\b",
+        ),
+        "C13_GENERAL_SELF_SUFFICIENCY": (
+            r"\bera\b[^.;]{0,35}\becon[oó]micamente\s+autosuficiente\b",
+        ),
+        "C13_SUSTAINABILITY": (
+            r"\bel\s+sistema\b[^.;]{0,35}\b(?P<predicate>era)\s+sostenible\b",
+        ),
+        "C13_ECOLOGICAL_BALANCE": (
+            r"\bexist[ií]a\b[^.;]{0,40}\bequilibrio\s+ecol[oó]gico\b",
+        ),
+        "C13_TOTAL_PRODUCTIVITY": (
+            r"\bpermite\s+calcular\b[^.;]{0,45}\bproductividad\s+total\b",
+        ),
+        "C13_PER_CAPITA_INCOME": (
+            r"\bpermite\s+calcular\b[^.;]{0,45}\brenta\s+por\s+habitante\b",
+        ),
+        "C13_HOUSEHOLD_INCOME": (
+            r"\bpermite\s+calcular\b[^.;]{0,45}\brenta\s+por\s+hogar\b",
+        ),
+        "C13_LIVING_STANDARD": (
+            r"\bpermite\s+(?:medir|deducir)\b[^.;]{0,45}\bnivel\s+de\s+vida\b",
+        ),
+        "C13_INEQUALITY": (
+            r"\bpermite\s+(?:medir|deducir)\b[^.;]{0,45}\bdesigualdad\b",
+        ),
+        "C13_VALUATION_IS_PRODUCTION": (
+            r"\bvaloraciones?\s+fiscales?\b[^.;]{0,45}\b(?P<predicate>eran)\b[^.;]{0,25}\bproducci[oó]n\b",
+        ),
+        "C13_UTILITY_IS_EFFECTIVE_INCOME": (
+            r"\butilidades?\b[^.;]{0,45}\b(?P<predicate>eran)\b[^.;]{0,35}\bingresos?\s+efectivos?\b",
+        ),
+        "C13_EXTERNAL_IS_REGULAR_TRADE": (
+            r"\bconexiones?\s+exteriores?\b[^.;]{0,55}\b(?P<predicate>demostraban)\b[^.;]{0,35}\bcomercio\s+regular\b",
+        ),
+        "C13_TRADES_ARE_HOUSEHOLD_DIVERSIFICATION": (
+            r"\bvariedad\s+de\s+oficios\b[^.;]{0,55}\b(?P<predicate>demostraba)\b[^.;]{0,40}\bdiversificaci[oó]n\s+por\s+hogar\b",
+        ),
+        "C13_RYE_IS_MONOCULTURE": (
+            r"\bpredominio\s+(?:del\s+)?centen(?:o|al)\b[^.;]{0,55}\b(?P<predicate>demostraba)\b[^.;]{0,30}\bmonocultivo\b",
+        ),
+        "C13_COMMON_USE_IS_PROPERTY": (
+            r"\buso\s+com[uú]n\b[^.;]{0,45}\b(?P<predicate>demostraba)\b[^.;]{0,35}\bpropiedad\s+comunal\b",
+        ),
+        "C13_MILLS_ARE_SUFFICIENT": (
+            r"\bpresencia\s+de\s+molinos\b[^.;]{0,55}\b(?P<predicate>garantizaba)\b[^.;]{0,40}\bsuficiencia\s+de\s+transformaci[oó]n\b",
+        ),
+        "C13_PARTIAL_FISCAL_IS_TOTAL": (
+            r"\b1\.006\s+reales\b[^.;]{0,45}\b(?P<predicate>med[ií]an)\b[^.;]{0,35}\bpresi[oó]n\s+fiscal\s+total\b",
+        ),
+        "C13_PARTIAL_COMMON_IS_BUDGET": (
+            r"\b233\s+reales\b[^.;]{0,45}\b(?P<predicate>eran)\b[^.;]{0,35}\bpresupuesto\s+completo\b",
+        ),
+        "C13_UNSUPPORTED_CAUSALITY": (
+            r"\bfiscalidad\b[^.;]{0,45}\b(?P<predicate>caus[oó])\b[^.;]{0,35}\bca[ií]da\s+de\s+la\s+producci[oó]n\b",
+        ),
+        "C13_EVIDENCE_LIMITS_ERASED": (
+            r"\bla\s+reconstrucci[oó]n\b[^.;]{0,40}\b(?P<predicate>es)\s+completa\b[^.;]{0,45}\bsin\s+lagunas\b",
+        ),
+    }
+    for code, patterns in prohibited_predicates.items():
+        if any(
+            not _predicate_is_negated(
+                proposition,
+                match.start("predicate")
+                if "predicate" in match.groupdict()
+                else match.start(),
+            )
+            for proposition in propositions
+            for pattern in patterns
+            for match in re.finditer(pattern, proposition)
+        ):
+            errors.append(f"{code}: formulación no autorizada en el capítulo 13")
+    return errors
+
+
+def _validate_part_two_consistency(chapter_bodies: dict[int, str]) -> list[str]:
+    """Keep accepted Part II meanings stable across chapters 5–13."""
+
+    required = {
+        5: "no paga cosa alguna al señor por el establecimiento del suelo",
+        6: "no se suman para formar una población activa",
+        7: "no permite deducir autoconsumo, suficiencia alimentaria",
+        8: "no acreditan por sí solas titularidad",
+        9: "ocho ruedas descritas en cuatro casas de molinos",
+        10: "no pueden calcularse carga por vecino o por habitante, presión fiscal",
+        11: "no son ingresos, gastos totales ni presupuesto completo",
+        12: "tampoco demuestra una comunidad autosuficiente o cerrada",
+        13: "esta integración interna no demuestra integración comercial",
+    }
+    errors: list[str] = []
+    for number, phrase in required.items():
+        body = chapter_bodies.get(number, "")
+        if phrase.casefold() not in _normalized_text(body):
+            errors.append(
+                f"PART_TWO_C{number}_CONSISTENCY: se ha perdido una cautela aceptada"
+            )
+    return errors
+
+
 def _normalized_evidence(metadata: dict) -> dict[str, tuple[str, ...]]:
     evidence = metadata.get("evidence", {})
     if not isinstance(evidence, dict):
@@ -2955,6 +3243,10 @@ def validate() -> list[str]:
         (CHAPTER_TWELVE, "Dinero, oficios y conexiones exteriores",
          "dinero-oficios-conexiones-exteriores", CHAPTER_TWELVE_SOURCE_PATHS,
          CHAPTER_TWELVE_EVIDENCE, 12),
+        (CHAPTER_THIRTEEN,
+         "Una economía rural integrada: vulnerabilidades, resiliencia y límites",
+         "economia-rural-integrada-vulnerabilidades-resiliencia-limites",
+         CHAPTER_THIRTEEN_SOURCE_PATHS, CHAPTER_THIRTEEN_EVIDENCE, 13),
     )
     chapter_bodies: dict[int, str] = {}
     for path, title, chapter_id, allowed_sources, required_evidence, number in chapter_specs:
@@ -3113,6 +3405,18 @@ def validate() -> list[str]:
             errors.append("El capítulo 12 contiene HTML crudo")
         errors.extend(_validate_chapter_twelve_body(chapter_twelve_text))
 
+    if CHAPTER_THIRTEEN.is_file():
+        chapter_thirteen_text = chapter_bodies.get(13, "")
+        if "(12-dinero-oficios-conexiones-exteriores.qmd" not in chapter_thirteen_text:
+            errors.append("El capítulo 13 no enlaza el capítulo 12")
+        if "../../generated/14-facsimil-prototipo.qmd" not in chapter_thirteen_text:
+            errors.append("El capítulo 13 no prepara la transición a la Parte III")
+        if re.search(r"<[A-Za-z][^>]*>", chapter_thirteen_text):
+            errors.append("El capítulo 13 contiene HTML crudo")
+        errors.extend(_validate_chapter_thirteen_body(chapter_thirteen_text))
+
+    errors.extend(_validate_part_two_consistency(chapter_bodies))
+
     register_path = (
         REPOSITORY_ROOT
         / "project"
@@ -3151,10 +3455,13 @@ def validate() -> list[str]:
     phase_3k_ids = {
         item for group in CHAPTER_TWELVE_EVIDENCE.values() for item in group
     }
+    phase_3l_ids = {
+        item for group in CHAPTER_THIRTEEN_EVIDENCE.values() for item in group
+    }
     missing_registry = sorted(
         (expected_ids | phase_3c_ids | phase_3d_ids | phase_3e_ids | phase_3f_ids
          | phase_3g_ids | phase_3h_ids | phase_3i_ids | phase_3j_ids
-         | phase_3k_ids)
+         | phase_3k_ids | phase_3l_ids)
         - registered
     )
     if missing_registry:
@@ -3274,6 +3581,7 @@ def validate() -> list[str]:
         "content/02-estudio/10-iglesia-senorio-fiscalidad.qmd",
         "content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd",
         "content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd",
+        "content/02-estudio/13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd",
         "generated/14-facsimil-prototipo.qmd",
         "generated/15-transcripcion-prototipo.qmd",
         "generated/16-modernizada-prototipo.qmd",
@@ -3285,7 +3593,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–12 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–13 y del prototipo en la navegación"
         )
 
     chapters_data = yaml.safe_load(
@@ -3305,7 +3613,7 @@ def validate() -> list[str]:
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–12 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–13 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -3340,7 +3648,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–12, prototipo 2B, metadatos, anclas, evidencia y regresiones"
+        "PASS: capítulos 1–13, prototipo 2B, metadatos, anclas, evidencia y regresiones"
         f"{scope} validados"
     )
     return 0
