@@ -2379,7 +2379,7 @@ def test_thematic_ranges_and_isolated_examples_are_not_questionnaire_duplication
     assert not validator._has_extensive_questionnaire_sequence(isolated_examples)
 
 
-def test_asset_manifest_preserves_prototype_and_adds_complete_facsimile_series():
+def test_asset_manifest_preserves_prototype_and_adds_phase_4_series():
     manifest = yaml.safe_load(
         (ROOT / "publication" / "meta" / "assets.yml").read_text(encoding="utf-8")
     )
@@ -2387,9 +2387,11 @@ def test_asset_manifest_preserves_prototype_and_adds_complete_facsimile_series()
         "manuscript-page-12",
         "folio-315v",
         "manuscript-pages-1-18",
+        "critical-edition-unit-images",
     ]
     assert all(asset["source"]["page"] == 12 for asset in manifest["assets"][:2])
     assert manifest["assets"][2]["source"]["pages"] == [1, 18]
+    assert manifest["assets"][3]["source"]["pages"] == [1, 18]
     assert all(
         (asset.get("destination") or asset.get("destination_pattern")).startswith(
             "generated/assets/"

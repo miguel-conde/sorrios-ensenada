@@ -16,6 +16,12 @@ from pathlib import Path, PurePosixPath
 
 import yaml
 
+from critical_edition import (
+    CriticalEditionError,
+    load_unit_specs,
+    parse_critical_edition,
+)
+
 
 EXPECTED_SOURCE_COUNT = 4
 EXPECTED_UNIT_COUNT = 35
@@ -293,6 +299,26 @@ def _validate_units(repository_root: Path, manuscript_pages: int) -> int:
     return len(units)
 
 
+def _validate_critical_edition(
+    repository_root: Path, manuscript: ManuscriptMetadata
+) -> None:
+    """Require an exact 35-unit match before Phase 4B generation."""
+
+    units_path = repository_root / "project" / "00_CONTROL" / "unidades.yaml"
+    edition_path = (
+        repository_root
+        / "project"
+        / "20_TRABAJO_EDITORIAL"
+        / "Edicion_Critica.md"
+    )
+    try:
+        specs = load_unit_specs(units_path)
+        text = edition_path.read_text(encoding="utf-8")
+        parse_critical_edition(text, specs, manuscript.name)
+    except (OSError, UnicodeError, CriticalEditionError) as exc:
+        raise SourceCheckError(f"Edición crítica no apta para 4B: {exc}") from exc
+
+
 def _validate_chapters(publication_root: Path, repository_root: Path) -> None:
     data = _read_yaml(publication_root / "meta" / "chapters.yml")
     chapters = data.get("chapters")
@@ -398,6 +424,7 @@ def check_sources(
     manuscript_pdf = resolve_manuscript_pdf(repository_root, environ, home)
     verify_local_manuscript(manuscript_pdf, manuscript)
     unit_count = _validate_units(repository_root, manuscript.pages)
+    _validate_critical_edition(repository_root, manuscript)
     _validate_chapters(publication_root, repository_root)
     _validate_evidence_ids(publication_root, repository_root)
     _validate_assets(publication_root, manuscript)
@@ -428,4 +455,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 from build_facsimile import FacsimileBuildError, build_facsimile
+from build_transcription import TranscriptionBuildError, build_transcription
 from build_vertical_prototype import PrototypeBuildError, build_vertical_prototype
 from check_sources import (
     MANUSCRIPT_ENV,
@@ -26,17 +27,21 @@ def prepare() -> tuple[Path, ...]:
     publication_root = script_path.parent.parent
     repository_root = publication_root.parent
     checked = check_sources(repository_root, publication_root)
+    facsimile_outputs = build_facsimile(publication_root, checked)
+    transcription_outputs = build_transcription(
+        repository_root, publication_root, checked
+    )
     prototype_outputs = build_vertical_prototype(
         repository_root,
         publication_root,
         checked.manuscript_pdf,
     )
-    facsimile_outputs = build_facsimile(publication_root, checked)
-    outputs = (*prototype_outputs, *facsimile_outputs)
+    outputs = (*facsimile_outputs, *transcription_outputs, *prototype_outputs)
     print(
         "Preparación completada: 4 fuentes, 35 unidades y manuscrito verificados; "
-        f"{len(prototype_outputs)} derivados del prototipo y "
-        f"{len(facsimile_outputs)} salidas del facsímil regenerados."
+        f"{len(facsimile_outputs)} salidas del facsímil, "
+        f"{len(transcription_outputs)} salidas de la transcripción y "
+        f"{len(prototype_outputs)} derivados del prototipo regenerados."
     )
     return tuple(outputs)
 
@@ -50,6 +55,7 @@ def main() -> int:
         PreparationError,
         PrototypeBuildError,
         FacsimileBuildError,
+        TranscriptionBuildError,
     ) as error:
         print(f"Error de preparación: {error}", file=sys.stderr)
         return 1

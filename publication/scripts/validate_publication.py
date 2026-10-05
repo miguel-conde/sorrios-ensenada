@@ -14,6 +14,13 @@ from pathlib import Path
 import yaml
 from PIL import Image
 
+from critical_edition import (
+    CriticalEditionError,
+    SECTION_NAMES,
+    load_unit_specs,
+    parse_critical_edition,
+)
+
 from build_vertical_prototype import (
     EVIDENCE_GROUPS,
     MANUSCRIPT_FILE_ID,
@@ -102,6 +109,7 @@ GENERATED = {
     "facsimile": PUBLICATION_ROOT / "generated" / "14-facsimil-prototipo.qmd",
     "facsimile_full": PUBLICATION_ROOT / "generated" / "14-facsimil.qmd",
     "transcription": PUBLICATION_ROOT / "generated" / "15-transcripcion-prototipo.qmd",
+    "transcription_full": PUBLICATION_ROOT / "generated" / "15-transcripcion.qmd",
     "modernized": PUBLICATION_ROOT / "generated" / "16-modernizada-prototipo.qmd",
     "apparatus": PUBLICATION_ROOT / "generated" / "aparato-molinos.qmd",
 }
@@ -109,7 +117,7 @@ CANONICAL_EDITION = (
     REPOSITORY_ROOT / "project" / "20_TRABAJO_EDITORIAL" / "Edicion_Critica.md"
 )
 RENDERED_HTML = (
-    PUBLICATION_ROOT / "_book" / "generated" / "15-transcripcion-prototipo.html"
+    PUBLICATION_ROOT / "_book" / "generated" / "15-transcripcion.html"
 )
 RENDERED_FACSIMILE_HTML = (
     PUBLICATION_ROOT / "_book" / "generated" / "14-facsimil.html"
@@ -669,7 +677,9 @@ class _LineBlockParser(HTMLParser):
 
     def handle_data(self, data: str) -> None:
         if self._depth:
-            self._lines[-1] += data
+            # Pandoc may use a non-breaking sentence space in HTML. It is a
+            # layout character, not a textual difference from the source.
+            self._lines[-1] += data.replace("\xa0", " ")
 
 
 def _generated_paleographic_lines(text: str) -> tuple[str, ...]:
@@ -684,6 +694,51 @@ def _generated_paleographic_lines(text: str) -> tuple[str, ...]:
     if any(not line.startswith("| ") for line in lines):
         return ()
     return tuple(line[2:] for line in lines)
+
+
+def _generated_transcription_units(text: str) -> tuple[tuple[str, str, dict[str, str]], ...]:
+    """Parse the generated 4B units for explicit source/output comparison."""
+
+    _, body = _parse_document(text, GENERATED["transcription_full"])
+    matches = list(
+        re.finditer(
+            r"^## (?P<label>.+?) \{#(?P<anchor>[a-z0-9-]+)\}\s*$",
+            body,
+            re.MULTILINE,
+        )
+    )
+    units: list[tuple[str, str, dict[str, str]]] = []
+    for index, match in enumerate(matches):
+        end = matches[index + 1].start() if index + 1 < len(matches) else len(body)
+        block = body[match.end():end]
+        section_matches = list(
+            re.finditer(r"^### (?P<name>[^\n]+)\s*$", block, re.MULTILINE)
+        )
+        sections: dict[str, str] = {}
+        for section_index, section_match in enumerate(section_matches):
+            section_end = (
+                section_matches[section_index + 1].start()
+                if section_index + 1 < len(section_matches)
+                else len(block)
+            )
+            content = block[section_match.end():section_end].strip("\n")
+            if content.endswith("\n\\newpage"):
+                content = content[:-9].rstrip("\n")
+            sections[section_match.group("name").strip()] = content
+        units.append((match.group("label"), match.group("anchor"), sections))
+    return tuple(units)
+
+
+def _decode_line_block(text: str) -> str:
+    decoded: list[str] = []
+    for line in text.splitlines():
+        if line == "|":
+            decoded.append("")
+        elif line.startswith("| "):
+            decoded.append(line[2:])
+        else:
+            return ""
+    return "\n".join(decoded).replace(r"[\.\.\.]", "[...]")
 
 
 def _questionnaire_markers(text: str) -> tuple[int, ...]:
@@ -748,7 +803,16 @@ def validate_rendered_outputs() -> list[str]:
     """Validate lineation in the actual HTML and PDF book artifacts."""
 
     errors: list[str] = []
-    canonical = read_paleographic_lines(CANONICAL_EDITION.read_text(encoding="utf-8"))
+    edition_text = CANONICAL_EDITION.read_text(encoding="utf-8")
+    canonical = read_paleographic_lines(edition_text)
+    specs = load_unit_specs(
+        REPOSITORY_ROOT / "project" / "00_CONTROL" / "unidades.yaml"
+    )
+    canonical_units = parse_critical_edition(
+        edition_text,
+        specs,
+        "sorrios_ensenada_orden_lectura_calidad_original.pdf",
+    )
     if not RENDERED_CHAPTER_ONE_HTML.is_file():
         errors.append(f"Falta el HTML del capítulo 1: {RENDERED_CHAPTER_ONE_HTML}")
     else:
@@ -899,10 +963,31 @@ def validate_rendered_outputs() -> list[str]:
         if alt_pages != [f"{page:02d}" for page in range(1, 19)]:
             errors.append("Las 18 páginas HTML deben conservar texto alternativo")
 
+    if RENDERED_CHAPTER_NINE_HTML.is_file():
+        chapter_nine_html = RENDERED_CHAPTER_NINE_HTML.read_text(encoding="utf-8")
+        for target in (
+            "../../generated/14-facsimil.html#pagina-digital-12",
+            "../../generated/15-transcripcion.html#folio-315v",
+        ):
+            if target not in chapter_nine_html:
+                errors.append(
+                    f"El capítulo 9 no enlaza el capítulo real correspondiente: {target}"
+                )
+        if "-prototipo.qmd#" in chapter_nine_html:
+            errors.append("El HTML conserva un enlace roto hacia un prototipo QMD")
+
     if not RENDERED_HTML.is_file():
         errors.append(f"Falta el HTML renderizado: {RENDERED_HTML}")
     else:
         blocks = _html_line_blocks(RENDERED_HTML)
+        expected_blocks = [
+            tuple(unit.sections[PALEOGRAPHIC_SECTION].splitlines())
+            for unit in canonical_units
+        ]
+        if blocks != expected_blocks:
+            errors.append(
+                "El HTML del capítulo 15 no conserva los 35 bloques paleográficos exactos"
+            )
         matching = [block for block in blocks if block == canonical]
         if len(matching) != 1:
             errors.append(
@@ -910,6 +995,20 @@ def validate_rendered_outputs() -> list[str]:
                 "paleográficas exactas"
             )
         html_text = RENDERED_HTML.read_text(encoding="utf-8")
+        anchors = re.findall(r'<section id="([a-z0-9-]+)"', html_text)
+        expected_anchors = [spec.anchor for spec in specs]
+        unit_anchors = [anchor for anchor in anchors if anchor in expected_anchors]
+        if unit_anchors != expected_anchors:
+            errors.append("El HTML del capítulo 15 no conserva las 35 anclas en orden")
+        images = re.findall(
+            r'src="assets/transcription/([a-z0-9_]+)\.png"', html_text
+        )
+        if images != [spec.unit_id for spec in specs]:
+            errors.append("El HTML del capítulo 15 no contiene los 35 recortes en orden")
+        if html_text.count('data-gallery="quarto-lightbox-gallery-') < 35:
+            errors.append("Los 35 recortes HTML deben admitir ampliación")
+        if "/home/" in html_text:
+            errors.append("El HTML del capítulo 15 contiene una ruta local absoluta")
         collapsed = " ".join(canonical)
         if re.search(rf"<p[^>]*>\s*{re.escape(collapsed)}\s*</p>", html_text):
             errors.append("La transcripción HTML ha colapsado en un único párrafo")
@@ -950,6 +1049,15 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append("El PDF no contiene el capítulo 8")
             if "Facsímil íntegro del expediente" not in normalized_pdf:
                 errors.append("El PDF no contiene el capítulo 14")
+            if "Transcripción y aparato crítico de las 35 unidades" not in normalized_pdf:
+                errors.append("El PDF no contiene el capítulo 15")
+            for unit in canonical_units:
+                lines = tuple(unit.sections[PALEOGRAPHIC_SECTION].splitlines())
+                if not _contains_ordered_lines(pdf_lines, lines):
+                    errors.append(
+                        "El PDF no conserva la lineación paleográfica de "
+                        f"{unit.spec.unit_id}"
+                    )
     return errors
 
 
@@ -3139,6 +3247,12 @@ def validate() -> list[str]:
             "lightbox: true",
         ),
         "transcription": ("#folio-315v", "lightbox: true"),
+        "transcription_full": (
+            "#portada",
+            "#folio-315v",
+            "#hoja-enfrentada-posterior",
+            "lightbox: true",
+        ),
         "modernized": ("#respuesta-17",),
         "apparatus": ("#cuadro-molinos", "#matriz-molinera"),
     }
@@ -3620,6 +3734,88 @@ def validate() -> list[str]:
             transcription,
         ):
             errors.append("El recorte paleográfico carece de texto alternativo suficiente")
+    if GENERATED["transcription_full"].is_file():
+        complete_transcription = GENERATED["transcription_full"].read_text(
+            encoding="utf-8"
+        )
+        try:
+            metadata, _ = _parse_document(
+                complete_transcription, GENERATED["transcription_full"]
+            )
+            specs = load_unit_specs(
+                REPOSITORY_ROOT / "project" / "00_CONTROL" / "unidades.yaml"
+            )
+            canonical_units = parse_critical_edition(
+                CANONICAL_EDITION.read_text(encoding="utf-8"),
+                specs,
+                "sorrios_ensenada_orden_lectura_calidad_original.pdf",
+            )
+            generated_units = _generated_transcription_units(complete_transcription)
+        except (OSError, ValueError, CriticalEditionError) as exc:
+            errors.append(f"No se pudo validar el capítulo 15 completo: {exc}")
+        else:
+            if metadata.get("title") != "Transcripción y aparato crítico de las 35 unidades":
+                errors.append("Título incorrecto en el capítulo 15 generado")
+            if metadata.get("chapter-id") != "transcripcion-aparato-critico":
+                errors.append("chapter-id incorrecto en el capítulo 15 generado")
+            if metadata.get("publication-status") != "generated":
+                errors.append("El capítulo 15 debe declarar publication-status: generated")
+            if len(generated_units) != 35:
+                errors.append(
+                    f"El capítulo 15 contiene {len(generated_units)} unidades; se esperaban 35"
+                )
+            for canonical, generated in zip(
+                canonical_units, generated_units, strict=False
+            ):
+                label, anchor, sections = generated
+                if label != canonical.spec.label or anchor != canonical.spec.anchor:
+                    errors.append(
+                        f"Unidad o ancla discordante en {canonical.spec.unit_id}"
+                    )
+                    continue
+                if tuple(sections) != SECTION_NAMES:
+                    errors.append(
+                        f"Secciones incompletas o desordenadas en {canonical.spec.unit_id}"
+                    )
+                    continue
+                expected_image = f"assets/transcription/{canonical.spec.unit_id}.png"
+                if expected_image not in sections["Imagen"]:
+                    errors.append(
+                        f"Imagen discordante en la unidad {canonical.spec.unit_id}"
+                    )
+                for section_name in SECTION_NAMES[1:]:
+                    actual = sections[section_name]
+                    if section_name == PALEOGRAPHIC_SECTION:
+                        actual = _decode_line_block(actual)
+                    if actual != canonical.sections[section_name]:
+                        errors.append(
+                            "Fidelidad textual rota en "
+                            f"{canonical.spec.unit_id} / {section_name}"
+                        )
+            transcription_dir = (
+                PUBLICATION_ROOT / "generated" / "assets" / "transcription"
+            )
+            expected_images = [
+                transcription_dir / f"{spec.unit_id}.png" for spec in specs
+            ]
+            actual_images = (
+                sorted(transcription_dir.glob("*.png"))
+                if transcription_dir.is_dir()
+                else []
+            )
+            if set(actual_images) != set(expected_images):
+                errors.append("La serie 4B debe contener exactamente los 35 PNG canónicos")
+            for image in expected_images:
+                if not image.is_file() or image.stat().st_size == 0:
+                    errors.append(f"Falta el recorte 4B: {image.name}")
+                    continue
+                try:
+                    with Image.open(image) as opened:
+                        opened.verify()
+                        if opened.width <= 0 or opened.height <= 0:
+                            errors.append(f"Dimensiones inválidas en {image.name}")
+                except (OSError, SyntaxError) as exc:
+                    errors.append(f"PNG inválido en {image.name}: {exc}")
     if GENERATED["modernized"].is_file():
         modernized = GENERATED["modernized"].read_text(encoding="utf-8")
         if "[^20]:" not in modernized or "[^21]:" not in modernized:
@@ -3633,8 +3829,10 @@ def validate() -> list[str]:
     assets_path = PUBLICATION_ROOT / "meta" / "assets.yml"
     assets_data = yaml.safe_load(assets_path.read_text(encoding="utf-8"))
     assets = assets_data.get("assets", []) if isinstance(assets_data, dict) else []
-    if len(assets) != 3:
-        errors.append("meta/assets.yml debe declarar dos activos del prototipo y la serie 4A")
+    if len(assets) != 4:
+        errors.append(
+            "meta/assets.yml debe declarar dos activos del prototipo y las series 4A/4B"
+        )
     for asset in assets[:2]:
         source = asset.get("source", {})
         if source.get("file_id") != MANUSCRIPT_FILE_ID or source.get("page") != 12:
@@ -3655,6 +3853,23 @@ def validate() -> list[str]:
             errors.append("Las imágenes completas de 4A deben permanecer no versionadas")
         if series_asset.get("versioning_policy") != "generated_ignored":
             errors.append("La serie 4A debe conservar la política generated_ignored")
+    transcription_series = [
+        asset
+        for asset in assets
+        if asset.get("asset_id") == "critical-edition-unit-images"
+    ]
+    if len(transcription_series) != 1:
+        errors.append(
+            "meta/assets.yml debe declarar una única serie critical-edition-unit-images"
+        )
+    else:
+        unit_asset = transcription_series[0]
+        if unit_asset.get("unit_count") != 35:
+            errors.append("La serie 4B debe declarar unit_count: 35")
+        if unit_asset.get("versioned") is not False:
+            errors.append("Los 35 recortes de 4B deben permanecer no versionados")
+        if unit_asset.get("versioning_policy") != "generated_ignored":
+            errors.append("La serie 4B debe conservar la política generated_ignored")
 
     quarto_data = yaml.safe_load(
         (PUBLICATION_ROOT / "_quarto.yml").read_text(encoding="utf-8")
@@ -3676,7 +3891,7 @@ def validate() -> list[str]:
         "content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd",
         "content/02-estudio/13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd",
         "generated/14-facsimil.qmd",
-        "generated/15-transcripcion-prototipo.qmd",
+        "generated/15-transcripcion.qmd",
         "generated/16-modernizada-prototipo.qmd",
         "generated/aparato-molinos.qmd",
     )
@@ -3687,6 +3902,10 @@ def validate() -> list[str]:
     if positions != sorted(positions):
         errors.append(
             "Orden incorrecto de los capítulos 1–13 y del prototipo en la navegación"
+        )
+    if "generated/15-transcripcion-prototipo.qmd" in navigation:
+        errors.append(
+            "El prototipo de transcripción no debe aparecer como segundo capítulo 15"
         )
 
     chapters_data = yaml.safe_load(
@@ -3732,7 +3951,13 @@ def main(argv: list[str] | None = None) -> int:
         errors = validate()
         if args.rendered:
             errors.extend(validate_rendered_outputs())
-    except (OSError, ValueError, yaml.YAMLError, PrototypeBuildError) as exc:
+    except (
+        OSError,
+        ValueError,
+        yaml.YAMLError,
+        PrototypeBuildError,
+        CriticalEditionError,
+    ) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
     if errors:
@@ -3741,7 +3966,8 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–14, facsímil 4A, prototipo 2B, metadatos, anclas, "
+        "PASS: capítulos 1–15, facsímil 4A, transcripción 4B, prototipo 2B, "
+        "metadatos, anclas, "
         "evidencia y regresiones"
         f"{scope} validados"
     )
