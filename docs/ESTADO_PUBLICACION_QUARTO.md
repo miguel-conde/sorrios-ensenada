@@ -1,10 +1,10 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 5 de octubre de 2026<br>
-**Estado global:** Fase 4 en curso; 4A y 4B completadas<br>
-**Fase actual:** 4C — capítulo 16, edición modernizada (pendiente)<br>
-**Base de concurrencia de 4B:** `baa412f4b48540d17f5ff73dbfb7ce3a07ddeb89`<br>
-**Upstream comprobado antes del cierre técnico:** `753f3faf5c3c8ac06fca5a85be38a2831222ce42`
+**Estado global:** Fase 4 en curso; 4A, 4B y 4C completadas<br>
+**Fase actual:** 4D — glosario, cuadros cuantitativos, concordancia y matriz de evidencia (pendiente)<br>
+**Base de concurrencia de 4C:** `497e1d2511718133dd81153895cfb4edcf247365`<br>
+**Upstream comprobado antes del cierre técnico:** `497e1d2511718133dd81153895cfb4edcf247365`
 
 ## Lectura de entrada
 
@@ -42,6 +42,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Capítulo 13 implementado en `fdcb18dc8e714dabfcba5032439074d8460f67e1` y aceptado mediante validación final con veredicto `APTO`; integra los capítulos 5–12, distingue dependencia, exposición y daño, formula mecanismos potencialmente amortiguadores sin afirmar resiliencia y cierra la Parte II sin convertir la síntesis en balance total.
 - Fase 4A implementada en `6c27050fe478386f6a887c1efa1c4f25f9fbc6df`; el capítulo 14 presenta las 18 páginas completas del manuscrito autoritativo mediante derivados reproducibles no versionados.
 - Fase 4B implementada en `bd0d20c18ba25d079a5faa34d51b5f82f3d5b0c2`; el capítulo 15 presenta las 35 unidades de la Edición Crítica 3.6, con imagen, transcripción paleográfica y aparato crítico fieles y reproducibles.
+- Fase 4C implementada en `84f31b4249b745fe50799b8cfce2682913100d8e`; el capítulo 16 presenta las 40 preguntas verificadas y sus respuestas locales en español actual, con notas, cautelas y navegación material hacia el capítulo 15.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -55,13 +56,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
-| 4. Generación documental | en curso; 4A y 4B completadas | capítulos 14–15 y su infraestructura cerrados; quedan 4C–4D |
+| 4. Generación documental | en curso; 4A, 4B y 4C completadas | capítulos 14–16 y su infraestructura cerrados; queda 4D |
 | 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-4C — capítulo 16, edición modernizada.
+4D — glosario, cuadros cuantitativos, concordancia y matriz de evidencia.
 
 ### Descomposición operativa de la Fase 4
 
@@ -69,8 +70,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
 |---|---|---|
 | 4A | completada | infraestructura de generación y capítulo 14, «Facsímil íntegro del expediente» |
 | 4B | completada | capítulo 15, transcripción y aparato crítico de las 35 unidades |
-| 4C | siguiente | capítulo 16, edición modernizada |
-| 4D | pendiente | glosario, cuadros cuantitativos, concordancia y matriz de evidencia |
+| 4C | completada | capítulo 16, edición modernizada |
+| 4D | siguiente | glosario, cuadros cuantitativos, concordancia y matriz de evidencia |
 
 ### Cierre comprobado de 2A
 
@@ -278,6 +279,18 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Política e integridad: QMD y PNG siguen siendo derivados reproducibles ignorados; no se versionan binarios ni se introduce Git LFS. El PDF autoritativo permanece fuera del checkout y el PDF 0.6 fuera del flujo. `project/`, `plugins/`, fuentes canónicas, `main` y `origin/main` permanecen intactos.
 - Estado: 4B cerrada; la Fase 4 continúa en curso y 4C —capítulo 16, edición modernizada— es la única tarea siguiente.
 
+## Cierre comprobado de 4C
+
+- Implementación atómica: `84f31b4249b745fe50799b8cfce2682913100d8e` (`feat(publication): generate chapter 16 modernized edition`).
+- Contrato y fidelidad: el parser exige la versión 1.3, el orden documental completo, 40 respuestas consecutivas y únicas, 35 filas de concordancia y todas las llamadas y definiciones de nota. Las 40 preguntas coinciden una a una con la lista verificada de la Introducción 1.3; el generador compara cada bloque con la fuente y emite errores localizados por respuesta.
+- Generación: `prepare.py` ejecuta comprobación de fuentes, 4A, 4B, 4C y el prototipo en ese orden. `build_modernized.py` es propietario solo de `generated/16-edicion-modernizada.qmd`; separa visualmente pregunta externa y respuesta local, conserva 46 anclas estables y deriva la navegación hacia las unidades del capítulo 15 desde la concordancia canónica. La sección fuente «Documentos relacionados» se sustituye explícitamente por la navegación del libro porque sus enlaces son internos al repositorio.
+- Cautelas: se conservan la laguna `en este pueblo […] medida de tierra`, las medidas y categorías documentales, `avitadores`, la pregunta 40 sobre `renta` y la respuesta local `venta`, además de las 39 notas —35 numéricas y cuatro semánticas—. Los identificadores técnicos de nota se aíslan con el prefijo `modernizada-` para evitar colisiones entre capítulos, sin alterar llamadas, texto ni correspondencia.
+- Reproducibilidad: dos preparaciones finales conservaron los hashes de 4A `b3e99b6c4d307e0d84842a906f85bb695eea00597b5e8ab576c58ebdfa884e2a`, 4B `e612ad8be0baee5af644c91b7bd70bcea8550447a47bec465c2cb8cb31eaecb6`, 4C `626e39103178a96b6798ae081cd0c26e9e2ea67d2ddbebad5da8b199d490c0ed` y prototipo `31bd1932af1aeeba8bc6521fe06cd1df7839710b9d8ec2eb4173d4725cad9421`; las 62 salidas conjuntas tienen SHA-256 `46dc55dba60a68b3c7b0165dcb138ac0577b70a7c94f3972939babe75886c8ae`. El QMD del capítulo 16 tiene SHA-256 `873a4f4f3a6662d65afac01d94d0777e0e3e14a880299279ab953f32c6d2ba05`.
+- Validación: 30 pruebas focalizadas y 480 pruebas totales en PASS, sin `skip`; colección estable con SHA-256 `0110803960024ba8c3831118edf4cebdbc74068ae19ff6e0f36ae7502093fb64`. `check_sources.py`, validadores estático y `--rendered`, `quarto check`, render HTML, PDF y multiformato, y `git diff --check` en PASS.
+- Composición: 18 documentos HTML y PDF de 226 páginas y 73.801.346 bytes; el capítulo 16 ocupa las páginas 203–226. Se inspeccionaron visualmente esas 24 páginas y la transición desde la 202: preguntas, respuestas, notas, tabla de concordancia, encabezados, pies y saltos son legibles y no presentan desbordes ni colisiones. Pandoc conserva un aviso no bloqueante por el identificador `portada`, exigido también por el capítulo 15; cada HTML mantiene su ancla propia y la navegación está validada.
+- Integridad: el capítulo real es el único 16 visible; los prototipos permanecen como regresión fuera de la navegación. QMD y artefactos renderizados siguen ignorados; ningún PDF ni derivado quedó versionado. `project/`, `plugins/`, fuentes canónicas, `main` y `origin/main` permanecen intactos.
+- Estado: 4C cerrada; la Fase 4 continúa en curso y 4D —glosario, cuadros cuantitativos, concordancia y matriz de evidencia— es la única tarea siguiente.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -288,4 +301,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente 4C: implementa el capítulo 16, edición modernizada, reutilizando la infraestructura verificada de 4A–4B y sin modificar fuentes canónicas. No inicies 4D. Revisa el diff y publica cambios atómicos solo si la rama y el upstream conservan la base de concurrencia que se establezca al inicio.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente 4D: implementa el glosario, los cuadros cuantitativos, la concordancia y la matriz de evidencia, reutilizando la infraestructura verificada de 4A–4C y sin modificar fuentes canónicas. No inicies la Fase 5. Revisa el diff y publica cambios atómicos solo si la rama y el upstream conservan la base de concurrencia que se establezca al inicio.
