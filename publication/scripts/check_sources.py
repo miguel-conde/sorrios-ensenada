@@ -21,6 +21,12 @@ from critical_edition import (
     load_unit_specs,
     parse_critical_edition,
 )
+from modernized_edition import (
+    ModernizedEditionError,
+    load_modernized_edition,
+    validate_concordance_units,
+    validate_verified_questions,
+)
 
 
 EXPECTED_SOURCE_COUNT = 4
@@ -319,6 +325,36 @@ def _validate_critical_edition(
         raise SourceCheckError(f"Edición crítica no apta para 4B: {exc}") from exc
 
 
+def _validate_modernized_edition(repository_root: Path) -> None:
+    """Require the complete 1.3 source contract before Phase 4C generation."""
+
+    source_root = (
+        repository_root
+        / "project"
+        / "30_RESULTADOS"
+        / "EDICION_DIVULGATIVA"
+    )
+    try:
+        edition = load_modernized_edition(
+            source_root / "Catastro_Sorrios_1752_Version_Modernizada.md"
+        )
+        specs = load_unit_specs(
+            repository_root / "project" / "00_CONTROL" / "unidades.yaml"
+        )
+        validate_concordance_units(edition, tuple(spec.label for spec in specs))
+        validate_verified_questions(
+            edition,
+            (source_root / "Introduccion_Catastro_Ensenada_Sorrios.md").read_text(
+                encoding="utf-8"
+            ),
+            (source_root / "Verificacion_Interrogatorio_40_Preguntas.md").read_text(
+                encoding="utf-8"
+            ),
+        )
+    except (OSError, UnicodeError, CriticalEditionError, ModernizedEditionError) as exc:
+        raise SourceCheckError(f"Edición modernizada no apta para 4C: {exc}") from exc
+
+
 def _validate_chapters(publication_root: Path, repository_root: Path) -> None:
     data = _read_yaml(publication_root / "meta" / "chapters.yml")
     chapters = data.get("chapters")
@@ -412,7 +448,7 @@ def check_sources(
     environ: Mapping[str, str] | None = None,
     home: Path | None = None,
 ) -> CheckedSources:
-    """Validate every Phase 4A input and return the verified manuscript."""
+    """Validate every implemented Phase 4 input and return the verified manuscript."""
 
     repository_root = repository_root.resolve()
     publication_root = publication_root.resolve()
@@ -425,6 +461,7 @@ def check_sources(
     verify_local_manuscript(manuscript_pdf, manuscript)
     unit_count = _validate_units(repository_root, manuscript.pages)
     _validate_critical_edition(repository_root, manuscript)
+    _validate_modernized_edition(repository_root)
     _validate_chapters(publication_root, repository_root)
     _validate_evidence_ids(publication_root, repository_root)
     _validate_assets(publication_root, manuscript)
@@ -445,7 +482,8 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     print(
         "PASS: "
-        f"{len(checked.sources)} fuentes versionadas, {checked.unit_count} unidades y "
+        f"{len(checked.sources)} fuentes versionadas, {checked.unit_count} unidades, "
+        "40 preguntas/respuestas modernizadas y "
         f"manuscrito {checked.manuscript.name} verificado en "
         f"{checked.manuscript_pdf} ({checked.manuscript.pages} páginas; "
         f"SHA-256 {checked.manuscript.sha256})"

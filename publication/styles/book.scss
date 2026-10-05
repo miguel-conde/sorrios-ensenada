@@ -34,3 +34,25 @@ table {
 #matriz-molinera + table {
   font-size: 0.9rem;
 }
+
+.question-external,
+.response-local,
+.material-navigation {
+  border-left: 0.25rem solid #c9b69f;
+  margin-block: 1rem;
+  padding: 0.7rem 1rem;
+}
+
+.question-external {
+  background: #f6f2ed;
+}
+
+.response-local {
+  border-left-color: #6b3f20;
+}
+
+.material-navigation {
+  border-left-color: #9a9a9a;
+  color: #555;
+  font-size: 0.9rem;
+}

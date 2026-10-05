@@ -2400,7 +2400,7 @@ def test_asset_manifest_preserves_prototype_and_adds_phase_4_series():
     )
 
 
-def test_navigation_integrates_part_one_before_the_vertical_prototype():
+def test_navigation_integrates_real_chapters_and_keeps_prototype_off_book():
     quarto = yaml.safe_load(
         (ROOT / "publication" / "_quarto.yml").read_text(encoding="utf-8")
     )
@@ -2423,6 +2423,10 @@ def test_navigation_integrates_part_one_before_the_vertical_prototype():
         "content/02-estudio/10-iglesia-senorio-fiscalidad.qmd",
         "content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd",
         "content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd",
+        "content/02-estudio/13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd",
+        "generated/14-facsimil.qmd",
+        "generated/15-transcripcion.qmd",
+        "generated/16-edicion-modernizada.qmd",
     ]
 
     assert [item for item in navigation if item in expected_order] == expected_order
@@ -2431,7 +2435,9 @@ def test_navigation_integrates_part_one_before_the_vertical_prototype():
     assert all(manifest_paths.count(item) == 1 for item in expected_order)
     chapter_ids = [chapter["chapter_id"] for chapter in manifest["chapters"]]
     assert len(chapter_ids) == len(set(chapter_ids))
-    assert sum(item.startswith("generated/") for item in navigation) == 4
+    assert sum(item.startswith("generated/") for item in navigation) == 3
+    assert not any("prototipo" in item for item in navigation)
+    assert "generated/aparato-molinos.qmd" not in navigation
     index_path = ROOT / "publication" / "index.qmd"
     technical_path = (
         ROOT

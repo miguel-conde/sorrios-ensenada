@@ -29,6 +29,16 @@ from build_vertical_prototype import (
     PrototypeBuildError,
     read_paleographic_lines,
 )
+from build_modernized import (
+    ModernizedBuildError,
+    validate_generated_fidelity,
+)
+from modernized_edition import (
+    ModernizedEditionError,
+    load_modernized_edition,
+    validate_concordance_units,
+    validate_verified_questions,
+)
 
 
 PUBLICATION_ROOT = Path(__file__).resolve().parent.parent
@@ -111,6 +121,7 @@ GENERATED = {
     "transcription": PUBLICATION_ROOT / "generated" / "15-transcripcion-prototipo.qmd",
     "transcription_full": PUBLICATION_ROOT / "generated" / "15-transcripcion.qmd",
     "modernized": PUBLICATION_ROOT / "generated" / "16-modernizada-prototipo.qmd",
+    "modernized_full": PUBLICATION_ROOT / "generated" / "16-edicion-modernizada.qmd",
     "apparatus": PUBLICATION_ROOT / "generated" / "aparato-molinos.qmd",
 }
 CANONICAL_EDITION = (
@@ -118,6 +129,9 @@ CANONICAL_EDITION = (
 )
 RENDERED_HTML = (
     PUBLICATION_ROOT / "_book" / "generated" / "15-transcripcion.html"
+)
+RENDERED_MODERNIZED_HTML = (
+    PUBLICATION_ROOT / "_book" / "generated" / "16-edicion-modernizada.html"
 )
 RENDERED_FACSIMILE_HTML = (
     PUBLICATION_ROOT / "_book" / "generated" / "14-facsimil.html"
@@ -968,13 +982,14 @@ def validate_rendered_outputs() -> list[str]:
         for target in (
             "../../generated/14-facsimil.html#pagina-digital-12",
             "../../generated/15-transcripcion.html#folio-315v",
+            "../../generated/16-edicion-modernizada.html#respuesta-17",
         ):
             if target not in chapter_nine_html:
                 errors.append(
                     f"El capítulo 9 no enlaza el capítulo real correspondiente: {target}"
                 )
-        if "-prototipo.qmd#" in chapter_nine_html:
-            errors.append("El HTML conserva un enlace roto hacia un prototipo QMD")
+        if ".qmd#" in chapter_nine_html:
+            errors.append("El HTML conserva un enlace roto hacia un QMD no renderizado")
 
     if not RENDERED_HTML.is_file():
         errors.append(f"Falta el HTML renderizado: {RENDERED_HTML}")
@@ -1012,6 +1027,53 @@ def validate_rendered_outputs() -> list[str]:
         collapsed = " ".join(canonical)
         if re.search(rf"<p[^>]*>\s*{re.escape(collapsed)}\s*</p>", html_text):
             errors.append("La transcripción HTML ha colapsado en un único párrafo")
+    if not RENDERED_MODERNIZED_HTML.is_file():
+        errors.append(
+            f"Falta el HTML del capítulo 16: {RENDERED_MODERNIZED_HTML}"
+        )
+    else:
+        modernized_html = RENDERED_MODERNIZED_HTML.read_text(encoding="utf-8")
+        if "El Catastro en español actual" not in modernized_html:
+            errors.append("El HTML del capítulo 16 no contiene su título")
+        if not re.search(
+            r'class="chapter-number"[^>]*>\s*16\s*<', modernized_html
+        ):
+            errors.append("La edición modernizada no aparece como capítulo 16")
+        expected_anchors = (
+            "portada",
+            "comparecencia",
+            *(f"respuesta-{number}" for number in range(1, 41)),
+            "ratificacion-edades-firmas",
+            "concordancia-material",
+            "notas",
+            "nota-de-uso",
+        )
+        actual_anchors = tuple(
+            anchor
+            for anchor in re.findall(r'<section id="([a-z0-9-]+)"', modernized_html)
+            if anchor in expected_anchors
+        )
+        if actual_anchors != expected_anchors:
+            errors.append("El HTML del capítulo 16 no conserva sus 46 anclas en orden")
+        if modernized_html.count('class="question-external"') != 40:
+            errors.append("El HTML del capítulo 16 no separa visualmente las 40 preguntas")
+        if modernized_html.count('class="response-local"') != 40:
+            errors.append("El HTML del capítulo 16 no separa las 40 respuestas locales")
+        if modernized_html.count("15-transcripcion.html#") < 40:
+            errors.append(
+                "El HTML del capítulo 16 no conserva la navegación material hacia el 15"
+            )
+        for marker in (
+            "en este pueblo […] medida de tierra",
+            "avitadores",
+            "venta",
+            "renta",
+            "dado a renta",
+        ):
+            if marker not in modernized_html:
+                errors.append(f"El HTML del capítulo 16 pierde la cautela: {marker}")
+        if "/home/" in modernized_html or "project/" in modernized_html:
+            errors.append("El HTML del capítulo 16 expone una ruta fuente local")
     if not RENDERED_PDF.is_file():
         errors.append(f"Falta el PDF renderizado: {RENDERED_PDF}")
     else:
@@ -1051,6 +1113,13 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append("El PDF no contiene el capítulo 14")
             if "Transcripción y aparato crítico de las 35 unidades" not in normalized_pdf:
                 errors.append("El PDF no contiene el capítulo 15")
+            if "El Catastro en español actual" not in normalized_pdf:
+                errors.append("El PDF no contiene el capítulo 16")
+            for marker in ("avitadores", "venta", "dado a renta"):
+                if marker not in normalized_pdf:
+                    errors.append(
+                        f"El PDF no conserva la cautela modernizada: {marker}"
+                    )
             for unit in canonical_units:
                 lines = tuple(unit.sections[PALEOGRAPHIC_SECTION].splitlines())
                 if not _contains_ordered_lines(pdf_lines, lines):
@@ -3254,6 +3323,16 @@ def validate() -> list[str]:
             "lightbox: true",
         ),
         "modernized": ("#respuesta-17",),
+        "modernized_full": (
+            "#portada",
+            "#comparecencia",
+            "#respuesta-1",
+            "#respuesta-40",
+            "#ratificacion-edades-firmas",
+            "#concordancia-material",
+            "#notas",
+            "#nota-de-uso",
+        ),
         "apparatus": ("#cuadro-molinos", "#matriz-molinera"),
     }
     if not CHAPTER_ONE.is_file():
@@ -3820,6 +3899,65 @@ def validate() -> list[str]:
         modernized = GENERATED["modernized"].read_text(encoding="utf-8")
         if "[^20]:" not in modernized or "[^21]:" not in modernized:
             errors.append("La respuesta 17 no conserva sus notas 20 y 21")
+    if GENERATED["modernized_full"].is_file():
+        complete_modernized = GENERATED["modernized_full"].read_text(
+            encoding="utf-8"
+        )
+        modernized_source_root = (
+            REPOSITORY_ROOT
+            / "project"
+            / "30_RESULTADOS"
+            / "EDICION_DIVULGATIVA"
+        )
+        try:
+            source_edition = load_modernized_edition(
+                modernized_source_root
+                / "Catastro_Sorrios_1752_Version_Modernizada.md"
+            )
+            modernized_specs = load_unit_specs(
+                REPOSITORY_ROOT / "project" / "00_CONTROL" / "unidades.yaml"
+            )
+            validate_concordance_units(
+                source_edition,
+                tuple(spec.label for spec in modernized_specs),
+            )
+            validate_verified_questions(
+                source_edition,
+                (
+                    modernized_source_root
+                    / "Introduccion_Catastro_Ensenada_Sorrios.md"
+                ).read_text(encoding="utf-8"),
+                (
+                    modernized_source_root
+                    / "Verificacion_Interrogatorio_40_Preguntas.md"
+                ).read_text(encoding="utf-8"),
+            )
+            validate_generated_fidelity(
+                source_edition,
+                complete_modernized,
+                {spec.label: spec.anchor for spec in modernized_specs},
+            )
+        except (
+            OSError,
+            UnicodeError,
+            CriticalEditionError,
+            ModernizedEditionError,
+            ModernizedBuildError,
+        ) as exc:
+            errors.append(f"Capítulo 16 no apto: {exc}")
+        else:
+            if len(source_edition.responses) != 40:
+                errors.append("El capítulo 16 no deriva exactamente 40 respuestas")
+            if len(source_edition.note_definitions) != 39:
+                errors.append("El capítulo 16 no conserva las 39 notas de la fuente 1.3")
+            for marker in (
+                "[^modernizada-bega-vega]",
+                "[^modernizada-administrarse]",
+                "[^modernizada-avitadores]",
+                "[^modernizada-renta-venta]",
+            ):
+                if marker not in complete_modernized:
+                    errors.append(f"El capítulo 16 pierde la nota semántica {marker}")
     if GENERATED["apparatus"].is_file():
         apparatus = GENERATED["apparatus"].read_text(encoding="utf-8")
         absent = sorted(identifier for identifier in expected_ids if identifier not in apparatus)
@@ -3892,8 +4030,7 @@ def validate() -> list[str]:
         "content/02-estudio/13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd",
         "generated/14-facsimil.qmd",
         "generated/15-transcripcion.qmd",
-        "generated/16-modernizada-prototipo.qmd",
-        "generated/aparato-molinos.qmd",
+        "generated/16-edicion-modernizada.qmd",
     )
     for item in expected_navigation:
         if navigation.count(item) != 1:
@@ -3901,12 +4038,18 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–13 y del prototipo en la navegación"
+            "Orden incorrecto de los capítulos 1–16 en la navegación"
         )
-    if "generated/15-transcripcion-prototipo.qmd" in navigation:
-        errors.append(
-            "El prototipo de transcripción no debe aparecer como segundo capítulo 15"
-        )
+    for prototype_path in (
+        "generated/14-facsimil-prototipo.qmd",
+        "generated/15-transcripcion-prototipo.qmd",
+        "generated/16-modernizada-prototipo.qmd",
+        "generated/aparato-molinos.qmd",
+    ):
+        if prototype_path in navigation:
+            errors.append(
+                f"El prototipo no debe aparecer en la navegación principal: {prototype_path}"
+            )
 
     chapters_data = yaml.safe_load(
         (PUBLICATION_ROOT / "meta" / "chapters.yml").read_text(encoding="utf-8")
@@ -3925,7 +4068,7 @@ def validate() -> list[str]:
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–13 en meta/chapters.yml")
+        errors.append("Orden incorrecto de los capítulos 1–16 en meta/chapters.yml")
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -3957,6 +4100,8 @@ def main(argv: list[str] | None = None) -> int:
         yaml.YAMLError,
         PrototypeBuildError,
         CriticalEditionError,
+        ModernizedEditionError,
+        ModernizedBuildError,
     ) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
@@ -3966,7 +4111,8 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–15, facsímil 4A, transcripción 4B, prototipo 2B, "
+        "PASS: capítulos 1–16, facsímil 4A, transcripción 4B, modernizada 4C, "
+        "prototipo 2B, "
         "metadatos, anclas, "
         "evidencia y regresiones"
         f"{scope} validados"

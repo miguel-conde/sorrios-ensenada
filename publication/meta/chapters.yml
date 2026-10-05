@@ -54,6 +54,10 @@ chapters:
     path: generated/15-transcripcion.qmd
     publication_status: generated
     generated: true
+  - chapter_id: edicion-modernizada
+    path: generated/16-edicion-modernizada.qmd
+    publication_status: generated
+    generated: true
   - chapter_id: facsimil-pagina-12
     path: generated/14-facsimil-prototipo.qmd
     publication_status: prototype

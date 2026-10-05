@@ -247,6 +247,7 @@ def test_prepare_coordinates_source_check_prototype_and_facsimile(monkeypatch, t
     prototype_output = tmp_path / "prototype.qmd"
     facsimile_output = tmp_path / "facsimile.qmd"
     transcription_output = tmp_path / "transcription.qmd"
+    modernized_output = tmp_path / "modernized.qmd"
     calls: list[str] = []
 
     monkeypatch.setattr(
@@ -271,13 +272,26 @@ def test_prepare_coordinates_source_check_prototype_and_facsimile(monkeypatch, t
         lambda repository, publication, result: calls.append("transcription")
         or (transcription_output,),
     )
+    monkeypatch.setattr(
+        preparation,
+        "build_modernized",
+        lambda repository, publication: calls.append("modernized")
+        or (modernized_output,),
+    )
 
     assert preparation.prepare() == (
         facsimile_output,
         transcription_output,
+        modernized_output,
         prototype_output,
     )
-    assert calls == ["check", "facsimile", "transcription", "prototype"]
+    assert calls == [
+        "check",
+        "facsimile",
+        "transcription",
+        "modernized",
+        "prototype",
+    ]
 
 
 def test_phase4a_metadata_declares_unversioned_complete_page_series():

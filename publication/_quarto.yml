@@ -26,8 +26,7 @@ book:
     - content/02-estudio/13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd
     - generated/14-facsimil.qmd
     - generated/15-transcripcion.qmd
-    - generated/16-modernizada-prototipo.qmd
-    - generated/aparato-molinos.qmd
+    - generated/16-edicion-modernizada.qmd
   search: true
   downloads:
     - pdf
