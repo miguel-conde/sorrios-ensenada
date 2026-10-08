@@ -1,10 +1,11 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 8 de octubre de 2026<br>
-**Estado global:** Fase 4 completada; 4A, 4B, 4C y 4D cerradas<br>
-**Fase actual:** Fase 5 — índices, calidad integral y accesibilidad (pendiente)<br>
-**Base de concurrencia de 4D:** `99f647bed713ed51f12fa7c337c5f03119fbac82`<br>
-**Upstream comprobado antes del cierre técnico:** `99f647bed713ed51f12fa7c337c5f03119fbac82`
+**Estado global:** Fase 5 en curso; 5A cerrada<br>
+**Fase actual:** Fase 5 — índices, calidad integral y accesibilidad (en curso)<br>
+**Base de concurrencia de 5A:** `b91e65f61bf4be7052922a9d348efcc1df79e87d`<br>
+**Upstream inicial de 5A:** `99f647bed713ed51f12fa7c337c5f03119fbac82`<br>
+**Upstream comprobado antes del cierre técnico:** `b91e65f61bf4be7052922a9d348efcc1df79e87d`
 
 ## Lectura de entrada
 
@@ -44,6 +45,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Fase 4B implementada en `bd0d20c18ba25d079a5faa34d51b5f82f3d5b0c2`; el capítulo 15 presenta las 35 unidades de la Edición Crítica 3.6, con imagen, transcripción paleográfica y aparato crítico fieles y reproducibles.
 - Fase 4C implementada en `84f31b4249b745fe50799b8cfce2682913100d8e`; el capítulo 16 presenta las 40 preguntas verificadas y sus respuestas locales en español actual, con notas, cautelas y navegación material hacia el capítulo 15.
 - Fase 4D implementada en `f9a7bf9d9a7e8cb70516e41105a472d7d7f3eed2`; el glosario, los cuadros cuantitativos, la concordancia y la matriz D/C/I/E/L se generan como cuatro vistas reproducibles de sus fuentes estructuradas.
+- Fase 5A implementada en `16084c95691d879675859030059c9bf25af1c7dc`; los nueve índices se generan desde sus fuentes estructuradas y comparten destinos para localizadores HTML y páginas PDF resueltas por LaTeX.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -58,12 +60,12 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
-| 5. Índices y calidad integral | siguiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
+| 5. Índices y calidad integral | en curso | 5A cerrada: nueve índices y localizadores HTML/PDF; 5B pendiente: calidad integral y accesibilidad |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-Fase 5 — índices, calidad integral y accesibilidad.
+5B — calidad integral y accesibilidad.
 
 ### Descomposición operativa de la Fase 4
 
@@ -73,6 +75,13 @@ Fase 5 — índices, calidad integral y accesibilidad.
 | 4B | completada | capítulo 15, transcripción y aparato crítico de las 35 unidades |
 | 4C | completada | capítulo 16, edición modernizada |
 | 4D | completada | glosario, cuadros cuantitativos, concordancia y matriz de evidencia |
+
+### Descomposición operativa de la Fase 5
+
+| Tarea | Estado | Alcance |
+|---|---|---|
+| 5A | completada | nueve índices reproducibles y localizadores HTML/PDF |
+| 5B | siguiente | calidad integral y accesibilidad |
 
 ### Cierre comprobado de 2A
 
@@ -308,6 +317,19 @@ Fase 5 — índices, calidad integral y accesibilidad.
 - Integridad: `project/`, `plugins/`, fuentes canónicas, `main` y `origin/main` permanecen intactos; QMD generados, PNG, PDF y `_book/` continúan ignorados y no se versionó ningún binario.
 - Estado: 4D y la Fase 4 quedan cerradas. La única tarea siguiente es Fase 5 — índices, calidad integral y accesibilidad.
 
+## Cierre comprobado de 5A
+
+- Implementación atómica: `16084c95691d879675859030059c9bf25af1c7dc` (`feat(publication): generate nine indexes`).
+- Arquitectura: `index_sources.py` aplica un parser común a los cinco índices vivos y valida los destinos estructurados `section`, `unit` y `response`; `build_indexes.py` es propietario de nueve QMD bajo `generated/indices/`. Los índices 1–5 proceden de las cinco fuentes vivas, los índices 6, 7 y 9 de `meta/indexes.yml`, y el índice 8 se deriva de las 40 respuestas de la edición modernizada. `check_sources.py`, `prepare.py`, la navegación y el validador integran 5A sin modificar `project/`.
+- Cobertura: los nueve índices contienen respectivamente 21, 9, 7, 12, 12, 27, 15, 40 y 21 entradas. La ordenación alfabética usa una clave Unicode determinista separada de la forma visible; las variantes, remisiones y grados de seguridad se conservan sin duplicar localizadores. `indexes.yml` contiene únicamente metadata editorial conservadora con destinos a secciones existentes y ninguna página escrita manualmente.
+- Localizadores: una única relación estructurada produce enlaces HTML y referencias PDF. HTML enlaza a las anclas estables de los capítulos 1–16; PDF usa `hyperref`, `pageref` y las etiquetas del propio render, suprimiendo páginas repetidas. La composición normal realizó tres pasadas de LuaLaTeX, sin manifiesto post-render, OCR ni tabla paralela de páginas.
+- Reproducibilidad: tres preparaciones de control —incluidas dos consecutivas— conservaron los hashes de grupo 4A `324f74a22d26eed7f24865366a2f2645b0c8d5ae1d4c98f8066211a9324f5bfd`, 4B `b7d12494f0fa8ddcc951700f0bc64917c9085afb1714a3505d480ecd7a5423e7`, 4C `5c9af85c196402c38376b644041e485a4364e8a1448564235aac44f3599e0a12`, 4D `af424eabbc32a15a7af4aa3ea853c69a2e496838560ae1fa60522e3d51f84c5f`, 5A `f7c673e966d8d94f7d053cbc1933d8cd8b80233fe0eafd2fe7a85874b049c5cd` y prototipo `a2cc3d473329bc44cedcc296c4263c83d8bd22a4961184630a250798c8062c75`. El flujo produce 75 salidas reproducibles.
+- Validación: 66 pruebas focalizadas y 546 pruebas totales en PASS, sin `skip` ni `xfail`; colección estable con SHA-256 `ab824cba2aed01260fc25fd395a1ba69d30833e8f130bae7332a1edb74f4f059`. `check_sources.py`, validadores estático y `--rendered`, `quarto check`, render HTML, PDF y multiformato, auditoría global de enlaces/anclas y `git diff --check` están en PASS.
+- Composición: 31 documentos HTML sin enlaces fragmentarios rotos ni rutas locales. El PDF final tiene 329 páginas y 74.026.158 bytes; los índices ocupan, en orden, 292–298, 299–301, 302–304, 305–308, 309–312, 313–317, 318–321, 322–325 y 326–329. Una muestra distribuida por los nueve índices confirmó automáticamente la correspondencia entre página impresa y destino real.
+- Inspección editorial y visual: se revisaron las 38 páginas de índices. Orden, grafías, cautelas metrológicas, remisiones, números, encabezados, pies, saltos y caracteres paleográficos son legibles; no hay desbordes, colisiones, páginas vacías, URLs accidentales ni identificadores duplicados. Se mantienen Sorribos/Sorrios, el contexto explícito del error `Sorribas`, Bega/Vega y las distinciones entre común, propiedad, vecindad, población, ruedas y medidas aceptadas en fases anteriores.
+- Integridad: `project/`, `plugins/`, fuentes canónicas, `main` y `origin/main` permanecen intactos; los QMD generados, PNG, PDF y `_book/` continúan ignorados y no se versionó ningún binario ni archivo temporal.
+- Estado: 5A queda cerrada; la Fase 5 continúa en curso. La única tarea siguiente es 5B — calidad integral y accesibilidad.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -318,4 +340,4 @@ Fase 5 — índices, calidad integral y accesibilidad.
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 5 — índices, calidad integral y accesibilidad— conforme al plan maestro: genera los nueve índices desde fuentes estructuradas, completa la auditoría integral de calidad y accesibilidad y no inicies la preview ni la publicación 1.0. Revisa el diff y publica cambios atómicos solo si la rama y el upstream conservan la base de concurrencia que se establezca al inicio.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente 5B — calidad integral y accesibilidad— conforme al plan maestro; no rehagas los nueve índices cerrados en 5A y no inicies la preview ni la publicación 1.0. Revisa el diff y publica cambios atómicos solo si la rama y el upstream conservan la base de concurrencia que se establezca al inicio.
