@@ -376,9 +376,9 @@ def test_navigation_integrates_only_the_four_phase4d_apparatus():
     )["chapters"]
     navigation = quarto["book"]["chapters"]
     expected = [f"generated/{name}" for name in builder.OUTPUT_NAMES]
-    assert navigation[-4:] == expected
+    assert navigation[-13:-9] == expected
     assert [item["path"] for item in chapters if item["path"] in expected] == expected
-    assert not any("indices/" in item for item in navigation)
+    assert len([item for item in navigation if "indices/" in item]) == 9
 
 
 def test_all_four_outputs_declare_part_six_without_creating_numbered_chapters(generated):

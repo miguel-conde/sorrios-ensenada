@@ -34,6 +34,12 @@ from modernized_edition import (
     validate_concordance_units,
     validate_verified_questions,
 )
+from index_sources import (
+    IndexSourceError,
+    load_editorial_indexes,
+    load_live_indexes,
+    response_index_entries,
+)
 
 
 EXPECTED_SOURCE_COUNT = 5
@@ -74,6 +80,7 @@ class CheckedSources:
     glossary_count: int = 0
     evidence_count: int = 0
     calculation_count: int = 0
+    index_entry_counts: tuple[int, ...] = ()
 
 
 def _read_yaml(path: Path) -> dict:
@@ -445,6 +452,42 @@ def _validate_apparatus_sources(repository_root: Path) -> tuple[int, int, int]:
     return len(glossary.entries), len(register.entries), len(register.calculations)
 
 
+def _validate_index_sources(
+    repository_root: Path, publication_root: Path
+) -> tuple[int, ...]:
+    """Validate the five live indexes, indexes.yml and the derived response index."""
+
+    try:
+        specs = load_unit_specs(
+            repository_root / "project" / "00_CONTROL" / "unidades.yaml"
+        )
+        live = load_live_indexes(repository_root, specs)
+        modernized = load_modernized_edition(
+            repository_root
+            / "project"
+            / "30_RESULTADOS"
+            / "EDICION_DIVULGATIVA"
+            / "Catastro_Sorrios_1752_Version_Modernizada.md"
+        )
+        editorial = load_editorial_indexes(
+            publication_root,
+            specs=specs,
+            modernized=modernized,
+        )
+        responses = response_index_entries(modernized)
+    except (CriticalEditionError, ModernizedEditionError, IndexSourceError) as exc:
+        raise SourceCheckError(f"Fuentes no aptas para 5A: {exc}") from exc
+    live_counts = tuple(len(index.entries) for index in live)
+    editorial_counts = {index.index_id: len(index.entries) for index in editorial}
+    return (
+        *live_counts,
+        editorial_counts["productos-recursos"],
+        editorial_counts["cargas-fiscalidad"],
+        len(responses),
+        editorial_counts["materias"],
+    )
+
+
 def _validate_chapters(publication_root: Path, repository_root: Path) -> None:
     data = _read_yaml(publication_root / "meta" / "chapters.yml")
     chapters = data.get("chapters")
@@ -558,6 +601,7 @@ def check_sources(
     _validate_chapters(publication_root, repository_root)
     _validate_evidence_ids(publication_root, repository_root)
     _validate_assets(publication_root, manuscript)
+    index_entry_counts = _validate_index_sources(repository_root, publication_root)
     return CheckedSources(
         manuscript_pdf,
         manuscript,
@@ -566,6 +610,7 @@ def check_sources(
         glossary_count,
         evidence_count,
         calculation_count,
+        index_entry_counts,
     )
 
 
@@ -578,7 +623,13 @@ def main(argv: list[str] | None = None) -> int:
     repository_root = publication_root.parent
     try:
         checked = check_sources(repository_root, publication_root)
-    except (OSError, UnicodeError, SourceCheckError, yaml.YAMLError) as exc:
+    except (
+        OSError,
+        UnicodeError,
+        SourceCheckError,
+        IndexSourceError,
+        yaml.YAMLError,
+    ) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
     print(
@@ -587,7 +638,8 @@ def main(argv: list[str] | None = None) -> int:
         "40 preguntas/respuestas modernizadas, "
         f"{checked.glossary_count} entradas de glosario, "
         f"{checked.evidence_count} entradas D/C/I/E/L y "
-        f"{checked.calculation_count} cálculos; "
+        f"{checked.calculation_count} cálculos; nueve índices 5A con entradas "
+        f"{'/'.join(map(str, checked.index_entry_counts))}; "
         f"manuscrito {checked.manuscript.name} verificado en "
         f"{checked.manuscript_pdf} ({checked.manuscript.pages} páginas; "
         f"SHA-256 {checked.manuscript.sha256})"

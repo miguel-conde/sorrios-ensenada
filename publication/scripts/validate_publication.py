@@ -4,12 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import html as html_module
 import re
 import shutil
 import subprocess
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 import yaml
 from PIL import Image
@@ -47,6 +49,16 @@ from modernized_edition import (
     validate_concordance_units,
     validate_verified_questions,
 )
+from build_indexes import (
+    OUTPUT_NAMES as INDEX_OUTPUT_NAMES,
+    INDEX_TITLES,
+    IndexBuildError,
+    index_entry_counts,
+    load_index_data,
+    validate_index_fidelity,
+)
+from index_sources import IndexSourceError
+from index_sources import response_index_entries, sort_key, unit_locator
 
 
 PUBLICATION_ROOT = Path(__file__).resolve().parent.parent
@@ -156,6 +168,10 @@ RENDERED_APPARATUS_HTML = {
     "matriz-evidencia.qmd": (
         PUBLICATION_ROOT / "_book" / "generated" / "matriz-evidencia.html"
     ),
+}
+RENDERED_INDEX_HTML = {
+    name: PUBLICATION_ROOT / "_book" / "generated" / "indices" / name.replace(".qmd", ".html")
+    for name in INDEX_OUTPUT_NAMES
 }
 RENDERED_FACSIMILE_HTML = (
     PUBLICATION_ROOT / "_book" / "generated" / "14-facsimil.html"
@@ -830,11 +846,184 @@ def _pdf_text_lines(path: Path) -> tuple[str, ...]:
 
 
 def _contains_ordered_lines(haystack: tuple[str, ...], needles: tuple[str, ...]) -> bool:
+    def comparable(line: str) -> str:
+        # LuaLaTeX preserves these editorial brackets visually, but pdftotext
+        # may extract the linked abbreviation expansion before its brackets.
+        return re.sub(r"\[([A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+)\]", r"\1", line)
+
     position = 0
     for line in haystack:
-        if position < len(needles) and line == needles[position]:
+        if position < len(needles) and (
+            line == needles[position]
+            or comparable(line) == comparable(needles[position])
+        ):
             position += 1
     return position == len(needles)
+
+
+def _pdf_page_texts(path: Path) -> tuple[str, ...]:
+    executable = shutil.which("pdftotext")
+    if executable is None:
+        raise RuntimeError("No se encontró pdftotext en PATH")
+    result = subprocess.run(
+        [executable, "-layout", path, "-"],
+        check=True,
+        capture_output=True,
+        text=True,
+        shell=False,
+    )
+    return tuple(result.stdout.split("\f"))
+
+
+def _index_pdf_locator_errors(path: Path) -> list[str]:
+    """Compare a distributed sample of printed index pages with target pages."""
+
+    errors: list[str] = []
+    pages = _pdf_page_texts(path)
+    data = load_index_data(REPOSITORY_ROOT, PUBLICATION_ROOT)
+    by_label = {spec.label: spec for spec in data.specs}
+    samples: list[tuple[str, str, object]] = []
+    for index in data.live:
+        ordered = sorted(index.entries, key=lambda entry: sort_key(entry.term))
+        entry = ordered[len(ordered) // 2]
+        samples.append(
+            (
+                INDEX_TITLES[index.index_id],
+                entry.term,
+                unit_locator(by_label[entry.units[0]]),
+            )
+        )
+    editorial = {index.index_id: index for index in data.editorial}
+    for index_id in ("productos-recursos", "cargas-fiscalidad"):
+        ordered = sorted(editorial[index_id].entries, key=lambda entry: sort_key(entry.term))
+        entry = ordered[len(ordered) // 2]
+        samples.append((INDEX_TITLES[index_id], entry.term, entry.targets[0]))
+    response_term, response_target = response_index_entries(data.modernized)[16]
+    samples.append((INDEX_TITLES["preguntas-respuestas"], response_term, response_target))
+    matter = sorted(
+        editorial["materias"].entries, key=lambda entry: sort_key(entry.term)
+    )
+    matter_entry = matter[len(matter) // 2]
+    samples.append((INDEX_TITLES["materias"], matter_entry.term, matter_entry.targets[0]))
+
+    index_starts: dict[str, int] = {}
+    for title in INDEX_TITLES.values():
+        matches = [
+            position
+            for position, page in enumerate(pages, start=1)
+            if title in " ".join(page.split())
+            and "Parte VI. Aparatos e índices" in " ".join(page.split())
+        ]
+        if len(matches) != 1:
+            errors.append(f"No se pudo delimitar en PDF el índice {title!r}")
+        else:
+            index_starts[title] = matches[0]
+    if errors:
+        return errors
+    first_index_page = min(index_starts.values())
+
+    for title, term, locator in samples:
+        start = index_starts[title]
+        following = [page for page in index_starts.values() if page > start]
+        end = min(following) - 1 if following else len(pages)
+        lines = [
+            line.strip()
+            for page in pages[start - 1 : end]
+            for line in page.splitlines()
+        ]
+        printed: tuple[int, ...] = ()
+        for position, line in enumerate(lines):
+            if line != term:
+                continue
+            for candidate in lines[position + 1 : position + 45]:
+                match = re.fullmatch(r"Páginas:\s*([0-9][0-9, ]*)", candidate)
+                if match:
+                    printed = tuple(
+                        int(value.strip()) for value in match.group(1).split(",")
+                    )
+                    break
+            if printed:
+                break
+        if not printed:
+            errors.append(f"No se pudo leer el localizador PDF de {term!r}")
+            continue
+        if locator.kind == "unit":
+            pattern = re.compile(rf"^15\.\d+\s+{re.escape(locator.label)}$")
+            target_pages = [
+                position
+                for position, page in enumerate(pages[: first_index_page - 1], start=1)
+                if any(pattern.match(line.strip()) for line in page.splitlines())
+            ]
+        elif locator.kind == "response":
+            pattern = re.compile(rf"^16\.\d+\s+Respuesta {re.escape(locator.key)}\.")
+            target_pages = [
+                position
+                for position, page in enumerate(pages[: first_index_page - 1], start=1)
+                if any(pattern.match(line.strip()) for line in page.splitlines())
+            ]
+        else:
+            heading = locator.label.split(": ", 1)[1]
+            target_pages = [
+                position
+                for position, page in enumerate(pages[: first_index_page - 1], start=1)
+                if any(heading == line.strip().split(" ", 1)[-1] for line in page.splitlines())
+            ]
+        if not target_pages:
+            errors.append(f"No se pudo hallar en PDF el destino de {term!r}: {locator.key}")
+        elif target_pages[-1] not in printed:
+            errors.append(
+                f"Localizador PDF discordante para {term!r}: imprime {printed}, "
+                f"destino real {target_pages[-1]}"
+            )
+    return errors
+
+
+def _rendered_link_and_id_errors(book_root: Path) -> list[str]:
+    """Audit duplicate IDs and every rendered local fragment link in the HTML book."""
+
+    errors: list[str] = []
+    html_paths = sorted(book_root.rglob("*.html"))
+    ids_by_path: dict[Path, set[str]] = {}
+    texts: dict[Path, str] = {}
+    for path in html_paths:
+        text = path.read_text(encoding="utf-8")
+        texts[path] = text
+        identifiers = re.findall(r'(?:^|\s)id="([^"]+)"', text)
+        duplicates = sorted(
+            identifier for identifier in set(identifiers) if identifiers.count(identifier) > 1
+        )
+        if duplicates:
+            errors.append(
+                f"IDs HTML duplicados en {path.relative_to(book_root)}: "
+                + ", ".join(duplicates)
+            )
+        ids_by_path[path.resolve()] = set(identifiers)
+    for source, text in texts.items():
+        for raw_href in re.findall(r'href="([^"]+)"', text):
+            href = html_module.unescape(raw_href)
+            parsed = urlsplit(href)
+            if parsed.scheme or parsed.netloc or not parsed.fragment:
+                continue
+            if parsed.path.startswith("/"):
+                continue
+            target = (
+                source.resolve()
+                if not parsed.path
+                else (source.parent / unquote(parsed.path)).resolve()
+            )
+            if target.suffix != ".html":
+                continue
+            if target not in ids_by_path:
+                errors.append(
+                    f"Enlace HTML a documento inexistente desde {source.relative_to(book_root)}: {href}"
+                )
+                continue
+            fragment = unquote(parsed.fragment)
+            if fragment not in ids_by_path[target]:
+                errors.append(
+                    f"Enlace HTML a ancla inexistente desde {source.relative_to(book_root)}: {href}"
+                )
+    return errors
 
 
 def validate_rendered_outputs() -> list[str]:
@@ -1180,6 +1369,43 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append(f"El HTML 4D conserva un enlace QMD roto: {name}")
             if "/home/" in html or "project/" in html:
                 errors.append(f"El HTML 4D expone una ruta fuente local: {name}")
+    rendered_indexes = {
+        name: path.read_text(encoding="utf-8")
+        for name, path in RENDERED_INDEX_HTML.items()
+        if path.is_file()
+    }
+    missing_indexes = [
+        str(path) for name, path in RENDERED_INDEX_HTML.items() if name not in rendered_indexes
+    ]
+    if missing_indexes:
+        errors.append("Faltan HTML de índices 5A: " + ", ".join(missing_indexes))
+    else:
+        expected_counts = (21, 9, 7, 12, 12, 27, 15, 40, 21)
+        for (name, html), title, expected_count in zip(
+            rendered_indexes.items(), INDEX_TITLES.values(), expected_counts, strict=True
+        ):
+            if title not in html:
+                errors.append(f"El HTML 5A no contiene su título: {name}")
+            anchors = re.findall(
+                r'<div id="(indice-[a-z0-9-]+)" class="index-entry', html
+            )
+            entry_anchors = [anchor for anchor in anchors if "-letra-" not in anchor]
+            if len(entry_anchors) != expected_count or len(set(entry_anchors)) != expected_count:
+                errors.append(
+                    f"El HTML 5A {name} no conserva {expected_count} entradas únicas"
+                )
+            if ".qmd#" in html:
+                errors.append(f"El HTML 5A conserva un enlace QMD roto: {name}")
+            if "/home/" in html or "project/" in html:
+                errors.append(f"El HTML 5A expone una ruta fuente local: {name}")
+            if "Páginas:" in html:
+                errors.append(f"El HTML 5A muestra el localizador exclusivo de PDF: {name}")
+            if "Localizadores:" not in html:
+                errors.append(f"El HTML 5A no muestra localizadores enlazados: {name}")
+        response_html = rendered_indexes[INDEX_OUTPUT_NAMES[7]]
+        if response_html.count("16-edicion-modernizada.html#respuesta-") != 40:
+            errors.append("El índice 8 HTML no enlaza exactamente las 40 respuestas")
+    errors.extend(_rendered_link_and_id_errors(PUBLICATION_ROOT / "_book"))
     if not RENDERED_PDF.is_file():
         errors.append(f"Falta el PDF renderizado: {RENDERED_PDF}")
     else:
@@ -1188,6 +1414,7 @@ def validate_rendered_outputs() -> list[str]:
         except (OSError, RuntimeError, subprocess.CalledProcessError) as exc:
             errors.append(f"No se pudo extraer texto del PDF: {exc}")
         else:
+            errors.extend(_index_pdf_locator_errors(RENDERED_PDF))
             if not _contains_ordered_lines(pdf_lines, canonical):
                 errors.append(
                     "El PDF no conserva en orden las 18 líneas paleográficas exactas"
@@ -1229,6 +1456,11 @@ def validate_rendered_outputs() -> list[str]:
             ):
                 if title not in normalized_pdf:
                     errors.append(f"El PDF no contiene el aparato 4D: {title}")
+            for title in INDEX_TITLES.values():
+                if title not in normalized_pdf:
+                    errors.append(f"El PDF no contiene el índice 5A: {title}")
+            if "??" in normalized_pdf:
+                errors.append("El PDF contiene localizadores o referencias sin resolver")
             for heading in (
                 "Entradas",
                 "3.2. Territorio, medidas y usos agrarios",
@@ -4170,6 +4402,48 @@ def validate() -> list[str]:
                 errors.append("La Fase 4 conserva identificadores globales duplicados")
             if "portada" in phase_four_anchors:
                 errors.append("La Fase 4 conserva el identificador ambiguo portada")
+    index_paths = {
+        name: PUBLICATION_ROOT / "generated" / "indices" / name
+        for name in INDEX_OUTPUT_NAMES
+    }
+    if all(path.is_file() for path in index_paths.values()):
+        try:
+            index_data = load_index_data(REPOSITORY_ROOT, PUBLICATION_ROOT)
+            actual_indexes = {
+                name: path.read_text(encoding="utf-8")
+                for name, path in index_paths.items()
+            }
+            validate_index_fidelity(index_data, actual_indexes)
+        except (IndexSourceError, IndexBuildError) as exc:
+            errors.append(f"Índices 5A no aptos: {exc}")
+        else:
+            if index_entry_counts(index_data) != (21, 9, 7, 12, 12, 27, 15, 40, 21):
+                errors.append("Los nueve índices 5A no conservan sus recuentos esperados")
+            if len(actual_indexes) != 9:
+                errors.append("La Fase 5A debe generar exactamente nueve índices")
+            anchors = [
+                anchor
+                for text in actual_indexes.values()
+                for anchor in re.findall(r"\{#(indice-[a-z0-9-]+)", text)
+            ]
+            if len(anchors) != len(set(anchors)):
+                errors.append("Los índices 5A contienen identificadores duplicados")
+            for name, text in actual_indexes.items():
+                html_targets = set(re.findall(r"\.qmd#([a-z0-9-]+)\)", text))
+                pdf_targets = set(re.findall(r"\\hyperref\[([a-z0-9-]+)\]", text))
+                if html_targets != pdf_targets:
+                    errors.append(
+                        f"{name} no comparte destinos entre localizadores HTML y PDF"
+                    )
+                if re.search(r"\*\*Páginas:\*\*\s+\d", text):
+                    errors.append(f"{name} contiene una página PDF manual")
+                if re.search(r"\]\([^)]*project/", text):
+                    errors.append(f"{name} enlaza directamente una fuente project/")
+                if "/home/" in text or "/tmp/" in text:
+                    errors.append(f"{name} contiene una ruta local absoluta")
+    else:
+        missing = [str(path) for path in index_paths.values() if not path.is_file()]
+        errors.append("Faltan índices generados 5A: " + ", ".join(missing))
     if GENERATED["apparatus"].is_file():
         apparatus = GENERATED["apparatus"].read_text(encoding="utf-8")
         absent = sorted(identifier for identifier in expected_ids if identifier not in apparatus)
@@ -4247,6 +4521,7 @@ def validate() -> list[str]:
         "generated/cuadros-cuantitativos.qmd",
         "generated/concordancia.qmd",
         "generated/matriz-evidencia.qmd",
+        *(f"generated/indices/{name}" for name in INDEX_OUTPUT_NAMES),
     )
     for item in expected_navigation:
         if navigation.count(item) != 1:
@@ -4254,7 +4529,26 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–16 y aparatos 4D en la navegación"
+            "Orden incorrecto de los capítulos 1–16, aparatos 4D e índices 5A en la navegación"
+        )
+    explicit_anchors: list[str] = []
+    for item in navigation:
+        chapter_path = PUBLICATION_ROOT / str(item)
+        if not chapter_path.is_file():
+            continue
+        explicit_anchors.extend(
+            re.findall(
+                r"\{#([a-z0-9-]+)(?:\s+[^}]*)?\}",
+                chapter_path.read_text(encoding="utf-8"),
+            )
+        )
+    duplicated_anchors = sorted(
+        anchor for anchor in set(explicit_anchors) if explicit_anchors.count(anchor) > 1
+    )
+    if duplicated_anchors:
+        errors.append(
+            "Identificadores explícitos duplicados en el libro: "
+            + ", ".join(duplicated_anchors)
         )
     for prototype_path in (
         "generated/14-facsimil-prototipo.qmd",
@@ -4285,7 +4579,7 @@ def validate() -> list[str]:
     ]
     if manifest_positions != sorted(manifest_positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–16 y aparatos 4D en meta/chapters.yml"
+            "Orden incorrecto de los capítulos 1–16, aparatos 4D e índices 5A en meta/chapters.yml"
         )
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
@@ -4322,6 +4616,8 @@ def main(argv: list[str] | None = None) -> int:
         ModernizedBuildError,
         ApparatusSourceError,
         ApparatusBuildError,
+        IndexSourceError,
+        IndexBuildError,
     ) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
@@ -4332,7 +4628,7 @@ def main(argv: list[str] | None = None) -> int:
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
         "PASS: capítulos 1–16, facsímil 4A, transcripción 4B, modernizada 4C, "
-        "aparatos reproducibles 4D, "
+        "aparatos reproducibles 4D, nueve índices reproducibles 5A, "
         "prototipo 2B, "
         "metadatos, anclas, "
         "evidencia y regresiones"

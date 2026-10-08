@@ -1,3 +1,369 @@
 schema_version: 1
-purpose: "Entradas editoriales para los índices derivados de la publicación."
-indexes: []
+purpose: "Entradas editoriales revisables para los índices 6, 7 y 9; no son una fuente histórica autónoma."
+indexes:
+  - id: productos-recursos
+    order: 6
+    title: "Índice de productos, cultivos, ganados y recursos"
+    entries:
+      - id: abejas
+        term: Abejas
+        category: animal
+        variants: [colmenas, pies de abejas]
+        targets:
+          - {type: section, chapter: rio-molinos-recursos, anchor: recursos-colmenas}
+      - id: agua
+        term: Agua
+        category: recurso-natural
+        see_also: [rio, molinos]
+        targets:
+          - {type: section, chapter: rio-molinos-recursos, anchor: molinos-estacionalidad}
+      - id: alisos
+        term: Alisos
+        category: recurso-natural
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: montes-arbolado}
+      - id: bueyes
+        term: Bueyes
+        category: animal
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: ganado-funciones}
+      - id: carneros
+        term: Carneros
+        category: animal
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: ganado-valores}
+      - id: cebada
+        term: Cebada
+        category: cultivo
+        targets:
+          - {type: section, chapter: tierra-sistema-agrario-medidas, anchor: tierra-rendimientos}
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-diezmos}
+      - id: cerdas
+        term: Cerdas
+        category: animal
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: ganado-valores}
+      - id: centeno
+        term: Centeno
+        category: cultivo
+        targets:
+          - {type: section, chapter: tierra-sistema-agrario-medidas, anchor: tierra-centeno}
+          - {type: section, chapter: rio-molinos-recursos, anchor: molinos-cereal}
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-diezmos}
+      - id: corderos
+        term: Corderos
+        category: animal
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: ganado-valores}
+      - id: feranales
+        term: Ferrañales
+        category: cultivo
+        targets:
+          - {type: section, chapter: tierra-sistema-agrario-medidas, anchor: tierra-clases}
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: pastos-recursos}
+      - id: fresnos
+        term: Fresnos
+        category: recurso-natural
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: montes-arbolado}
+      - id: lana
+        term: Lana
+        category: producto
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: ganado-valores}
+      - id: linaza
+        term: Linaza
+        category: cultivo
+        targets:
+          - {type: section, chapter: tierra-sistema-agrario-medidas, anchor: tierra-rendimientos}
+      - id: lino
+        term: Lino
+        category: producto
+        targets:
+          - {type: section, chapter: tierra-sistema-agrario-medidas, anchor: tierra-rendimientos}
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-diezmos}
+      - id: molinos
+        term: Molinos
+        category: infraestructura-productiva
+        see_also: [agua, rio]
+        targets:
+          - {type: section, chapter: rio-molinos-recursos, anchor: molinos-recuento}
+          - {type: section, chapter: rio-molinos-recursos, anchor: molinos-utilidades}
+      - id: montes
+        term: Montes
+        category: recurso-natural
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: montes-arbolado}
+      - id: negrillos
+        term: Negrillos
+        category: recurso-natural
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: montes-arbolado}
+      - id: ovejas
+        term: Ovejas
+        category: animal
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: ganado-valores}
+      - id: pesca
+        term: Pesca
+        category: recurso-natural
+        targets:
+          - {type: section, chapter: rio-molinos-recursos, anchor: recursos-pesca}
+      - id: prados
+        term: Prados
+        category: recurso-natural
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: pastos-recursos}
+      - id: rio
+        term: Río
+        category: recurso-natural
+        see_also: [agua, molinos]
+        targets:
+          - {type: section, chapter: rio-molinos-recursos, anchor: rio-espacio-productivo}
+      - id: robles
+        term: Robles
+        category: recurso-natural
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: montes-arbolado}
+      - id: soto
+        term: Soto
+        category: recurso-natural
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: montes-arbolado}
+      - id: trigo
+        term: Trigo
+        category: cultivo
+        targets:
+          - {type: section, chapter: tierra-sistema-agrario-medidas, anchor: tierra-rendimientos}
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-diezmos}
+      - id: vacas
+        term: Vacas
+        category: animal
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: ganado-valores}
+      - id: yeguas
+        term: Yeguas
+        category: animal
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: ganado-valores}
+      - id: yerba
+        term: Yerba
+        category: producto
+        targets:
+          - {type: section, chapter: tierra-sistema-agrario-medidas, anchor: tierra-rendimientos}
+
+  - id: cargas-fiscalidad
+    order: 7
+    title: "Índice de cargas, derechos, rentas y fiscalidad"
+    entries:
+      - id: alcabalas
+        term: Alcabalas
+        category: carga-fiscal
+        see_also: [derechos-senoriales]
+        targets:
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-derechos-senoriales}
+      - id: arbitrios
+        term: Arbitrios
+        category: recurso-concejil
+        targets:
+          - {type: section, chapter: hacienda-concejil-servicios-colectivos, anchor: hacienda-recursos}
+      - id: boto
+        term: Boto
+        category: obligacion-eclesiastica
+        variants: [voto]
+        targets:
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-primicia-voto}
+      - id: cargas-justicia
+        term: Cargas de justicia
+        category: carga-fiscal
+        targets:
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-sujetos-bases}
+      - id: derecho-mesta
+        term: Derecho de Mesta
+        category: derecho
+        targets:
+          - {type: section, chapter: hacienda-concejil-servicios-colectivos, anchor: hacienda-partidas}
+      - id: derechos-senoriales
+        term: Derechos señoriales
+        category: derecho
+        see_also: [alcabalas]
+        targets:
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-marco-senorial}
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-derechos-senoriales}
+      - id: diezmos
+        term: Diezmos
+        category: obligacion-eclesiastica
+        targets:
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-diezmos}
+      - id: gastos-comun
+        term: Gastos del común
+        category: gasto
+        targets:
+          - {type: section, chapter: hacienda-concejil-servicios-colectivos, anchor: hacienda-partidas}
+      - id: pagos
+        term: Pagos
+        category: pago
+        targets:
+          - {type: section, chapter: dinero-oficios-conexiones-exteriores, anchor: dinero-naturalezas}
+      - id: primicia
+        term: Primicia
+        category: obligacion-eclesiastica
+        targets:
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-primicia-voto}
+      - id: propios
+        term: Propios
+        category: recurso-concejil
+        targets:
+          - {type: section, chapter: hacienda-concejil-servicios-colectivos, anchor: hacienda-recursos}
+      - id: repartimiento
+        term: Repartimiento
+        category: mecanismo-financiacion
+        targets:
+          - {type: section, chapter: hacienda-concejil-servicios-colectivos, anchor: hacienda-repartimiento}
+      - id: rentas
+        term: Rentas
+        category: renta
+        targets:
+          - {type: section, chapter: dinero-oficios-conexiones-exteriores, anchor: dinero-naturalezas}
+      - id: servicio-ordinario-extraordinario
+        term: Servicio ordinario y extraordinario
+        category: carga-fiscal
+        targets:
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-exenciones}
+      - id: utilidades-reguladas
+        term: Utilidades reguladas
+        category: utilidad
+        targets:
+          - {type: section, chapter: dinero-oficios-conexiones-exteriores, anchor: dinero-naturalezas}
+
+  - id: materias
+    order: 9
+    title: "Índice de materias"
+    entries:
+      - id: aprovechamientos-comunes
+        term: Aprovechamientos comunes
+        category: materia
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: uso-comun}
+      - id: concordancia-documental
+        term: Concordancia documental
+        category: materia
+        targets:
+          - {type: section, chapter: manuscrito-volumen-actual, anchor: volumen-trazabilidad}
+      - id: facsimil
+        term: Facsímil
+        category: materia
+        targets:
+          - {type: section, chapter: manuscrito-volumen-actual, anchor: volumen-fuente-material}
+          - {type: section, chapter: manuscrito-volumen-actual, anchor: volumen-cuatro-accesos}
+      - id: fiscalidad
+        term: Fiscalidad
+        category: materia
+        targets:
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-sujetos-bases}
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-magnitudes}
+      - id: ganaderia
+        term: Ganadería
+        category: materia
+        targets:
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: ganado-alcance}
+          - {type: section, chapter: ganaderia-montes-aprovechamientos-comunales, anchor: ganado-funciones}
+      - id: hacienda-concejil
+        term: Hacienda concejil
+        category: materia
+        targets:
+          - {type: section, chapter: hacienda-concejil-servicios-colectivos, anchor: hacienda-sujetos}
+          - {type: section, chapter: hacienda-concejil-servicios-colectivos, anchor: hacienda-presupuesto-limites}
+      - id: jurisdiccion
+        term: Jurisdicción
+        category: materia
+        targets:
+          - {type: section, chapter: lugar-senorio-concejo-ordas, anchor: lugar-actores}
+          - {type: section, chapter: lugar-senorio-concejo-ordas, anchor: lugar-concejo-municipio}
+      - id: medidas-historicas
+        term: Medidas históricas
+        category: materia
+        targets:
+          - {type: section, chapter: tierra-sistema-agrario-medidas, anchor: tierra-medidas}
+      - id: molinos
+        term: Molinos
+        category: materia
+        targets:
+          - {type: section, chapter: rio-molinos-recursos, anchor: molinos-recuento}
+          - {type: section, chapter: rio-molinos-recursos, anchor: molinos-estacionalidad}
+      - id: monetizacion
+        term: Monetización
+        category: materia
+        targets:
+          - {type: section, chapter: dinero-oficios-conexiones-exteriores, anchor: dinero-formas}
+          - {type: section, chapter: dinero-oficios-conexiones-exteriores, anchor: dinero-mercado-limites}
+      - id: modernizacion-textual
+        term: Modernización textual
+        category: materia
+        see_also: [paleografia]
+        targets:
+          - {type: section, chapter: manuscrito-volumen-actual, anchor: volumen-cuatro-accesos}
+          - {type: section, chapter: manuscrito-volumen-actual, anchor: volumen-preguntas-respuestas}
+      - id: paleografia
+        term: Paleografía
+        category: materia
+        see_also: [modernizacion-textual]
+        targets:
+          - {type: section, chapter: manuscrito-volumen-actual, anchor: volumen-cuatro-accesos}
+          - {type: section, chapter: manuscrito-volumen-actual, anchor: volumen-evidencia}
+      - id: poblacion-documental
+        term: Población documental
+        category: materia
+        see_also: [trabajo, vivienda]
+        targets:
+          - {type: section, chapter: vecinos-hogares-viviendas-trabajo, anchor: vecinos-recuento}
+          - {type: section, chapter: vecinos-hogares-viviendas-trabajo, anchor: avitadores-poblacion}
+      - id: preguntas-respuestas
+        term: Preguntas y respuestas
+        category: materia
+        targets:
+          - {type: section, chapter: manuscrito-volumen-actual, anchor: volumen-preguntas-respuestas}
+      - id: resiliencia
+        term: Resiliencia
+        category: materia
+        see_also: [vulnerabilidad]
+        targets:
+          - {type: section, chapter: economia-rural-integrada-vulnerabilidades-resiliencia-limites, anchor: economia-resiliencia-limites}
+      - id: senorio
+        term: Señorío
+        category: materia
+        targets:
+          - {type: section, chapter: lugar-senorio-concejo-ordas, anchor: lugar-senorio-conde}
+          - {type: section, chapter: iglesia-senorio-fiscalidad, anchor: fiscal-marco-senorial}
+      - id: sistema-agrario
+        term: Sistema agrario
+        category: materia
+        targets:
+          - {type: section, chapter: tierra-sistema-agrario-medidas, anchor: tierra-sintesis}
+          - {type: section, chapter: economia-rural-integrada-vulnerabilidades-resiliencia-limites, anchor: economia-base-agraria}
+      - id: trabajo
+        term: Trabajo
+        category: materia
+        see_also: [poblacion-documental]
+        targets:
+          - {type: section, chapter: vecinos-hogares-viviendas-trabajo, anchor: trabajo-categorias}
+          - {type: section, chapter: dinero-oficios-conexiones-exteriores, anchor: oficios-categorias}
+      - id: trazabilidad
+        term: Trazabilidad
+        category: materia
+        targets:
+          - {type: section, chapter: manuscrito-volumen-actual, anchor: volumen-trazabilidad}
+          - {type: section, chapter: manuscrito-volumen-actual, anchor: volumen-content-generated}
+      - id: vivienda
+        term: Vivienda
+        category: materia
+        see_also: [poblacion-documental]
+        targets:
+          - {type: section, chapter: vecinos-hogares-viviendas-trabajo, anchor: casas-viviendas}
+      - id: vulnerabilidad
+        term: Vulnerabilidad
+        category: materia
+        see_also: [resiliencia]
+        targets:
+          - {type: section, chapter: economia-rural-integrada-vulnerabilidades-resiliencia-limites, anchor: economia-vulnerabilidades}
+          - {type: section, chapter: economia-rural-integrada-vulnerabilidades-resiliencia-limites, anchor: economia-dependencias}

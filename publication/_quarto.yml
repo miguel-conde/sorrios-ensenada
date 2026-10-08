@@ -31,6 +31,15 @@ book:
     - generated/cuadros-cuantitativos.qmd
     - generated/concordancia.qmd
     - generated/matriz-evidencia.qmd
+    - generated/indices/01-indice-onomastico.qmd
+    - generated/indices/02-indice-toponimos.qmd
+    - generated/indices/03-indice-instituciones.qmd
+    - generated/indices/04-indice-oficios.qmd
+    - generated/indices/05-indice-medidas.qmd
+    - generated/indices/06-indice-productos-recursos.qmd
+    - generated/indices/07-indice-cargas-fiscalidad.qmd
+    - generated/indices/08-indice-preguntas-respuestas.qmd
+    - generated/indices/09-indice-materias.qmd
   search: true
   downloads:
     - pdf
@@ -44,3 +53,4 @@ format:
       - styles/book.scss
   pdf:
     pdf-engine: lualatex
+    include-in-header: styles/latex/preamble.tex

@@ -2439,7 +2439,7 @@ def test_navigation_integrates_real_chapters_and_keeps_prototype_off_book():
     assert all(manifest_paths.count(item) == 1 for item in expected_order)
     chapter_ids = [chapter["chapter_id"] for chapter in manifest["chapters"]]
     assert len(chapter_ids) == len(set(chapter_ids))
-    assert sum(item.startswith("generated/") for item in navigation) == 7
+    assert sum(item.startswith("generated/") for item in navigation) == 16
     assert not any("prototipo" in item for item in navigation)
     assert "generated/aparato-molinos.qmd" not in navigation
     index_path = ROOT / "publication" / "index.qmd"

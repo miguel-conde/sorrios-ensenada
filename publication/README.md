@@ -15,6 +15,12 @@ el manuscrito autoritativo permanece en Google Drive, en modo de solo lectura.
 `generated/` y `_book/` están ignorados por Git. Tampoco se confirma en el
 repositorio ningún PDF fuente, PDF de referencia ni derivado facsimilar.
 
+Los nueve índices se reconstruyen con `scripts/build_indexes.py`: los cinco
+primeros leen los índices vivos, los índices 6, 7 y 9 leen `meta/indexes.yml` y
+el índice 8 deriva las cuarenta respuestas. HTML y PDF comparten destinos; el
+PDF resuelve sus páginas con las etiquetas y `pageref` de LaTeX durante el
+render normal, sin manifiestos manuales ni una pasada externa adicional.
+
 ## Requisitos
 
 - Quarto;

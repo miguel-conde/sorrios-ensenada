@@ -1,5 +1,5 @@
 schema_version: 1
-purpose: "Orden de capítulos y vistas para la edición en desarrollo; integra los capítulos 1–16, los aparatos reproducibles de 4D y conserva el prototipo vertical como regresión técnica."
+purpose: "Orden de capítulos y vistas para la edición en desarrollo; integra los capítulos 1–16, los aparatos reproducibles de 4D, los nueve índices de 5A y conserva el prototipo vertical como regresión técnica."
 chapters:
   - chapter_id: portada
     path: index.qmd
@@ -72,6 +72,42 @@ chapters:
     generated: true
   - chapter_id: matriz-evidencia
     path: generated/matriz-evidencia.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: indice-onomastico
+    path: generated/indices/01-indice-onomastico.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: indice-toponimos
+    path: generated/indices/02-indice-toponimos.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: indice-instituciones
+    path: generated/indices/03-indice-instituciones.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: indice-oficios
+    path: generated/indices/04-indice-oficios.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: indice-medidas
+    path: generated/indices/05-indice-medidas.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: indice-productos-recursos
+    path: generated/indices/06-indice-productos-recursos.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: indice-cargas-fiscalidad
+    path: generated/indices/07-indice-cargas-fiscalidad.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: indice-preguntas-respuestas
+    path: generated/indices/08-indice-preguntas-respuestas.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: indice-materias
+    path: generated/indices/09-indice-materias.qmd
     publication_status: generated
     generated: true
   - chapter_id: facsimil-pagina-12

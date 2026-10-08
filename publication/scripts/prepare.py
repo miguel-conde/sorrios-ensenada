@@ -8,6 +8,7 @@ from pathlib import Path
 
 from build_apparatus import ApparatusBuildError, build_apparatus
 from build_facsimile import FacsimileBuildError, build_facsimile
+from build_indexes import IndexBuildError, build_indexes
 from build_modernized import ModernizedBuildError, build_modernized
 from build_transcription import TranscriptionBuildError, build_transcription
 from build_vertical_prototype import PrototypeBuildError, build_vertical_prototype
@@ -39,6 +40,7 @@ def prepare() -> tuple[Path, ...]:
         publication_root,
         checked.manuscript.name,
     )
+    index_outputs = build_indexes(repository_root, publication_root)
     prototype_outputs = build_vertical_prototype(
         repository_root,
         publication_root,
@@ -49,6 +51,7 @@ def prepare() -> tuple[Path, ...]:
         *transcription_outputs,
         *modernized_outputs,
         *apparatus_outputs,
+        *index_outputs,
         *prototype_outputs,
     )
     print(
@@ -58,6 +61,7 @@ def prepare() -> tuple[Path, ...]:
         f"{len(transcription_outputs)} salidas de la transcripción y "
         f"{len(modernized_outputs)} salida de la edición modernizada, "
         f"{len(apparatus_outputs)} aparatos y "
+        f"{len(index_outputs)} índices, "
         f"{len(prototype_outputs)} derivados del prototipo regenerados."
     )
     return tuple(outputs)
@@ -75,6 +79,7 @@ def main() -> int:
         TranscriptionBuildError,
         ModernizedBuildError,
         ApparatusBuildError,
+        IndexBuildError,
     ) as error:
         print(f"Error de preparación: {error}", file=sys.stderr)
         return 1

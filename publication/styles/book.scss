@@ -83,6 +83,17 @@ table {
   background: #f6f6f6;
 }
 
+.index-entry {
+  border-left: 0.15rem solid #d6cec4;
+  break-inside: avoid;
+  margin-block: 0.7rem;
+  padding: 0.2rem 0.75rem;
+}
+
+.index-entry p {
+  margin-block: 0.3rem;
+}
+
 table {
   overflow-wrap: anywhere;
 }
