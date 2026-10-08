@@ -1,10 +1,10 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 5 de octubre de 2026<br>
-**Estado global:** Fase 4 en curso; 4A, 4B y 4C completadas<br>
-**Fase actual:** 4D — glosario, cuadros cuantitativos, concordancia y matriz de evidencia (pendiente)<br>
-**Base de concurrencia de 4C:** `497e1d2511718133dd81153895cfb4edcf247365`<br>
-**Upstream comprobado antes del cierre técnico:** `497e1d2511718133dd81153895cfb4edcf247365`
+**Actualizado:** 8 de octubre de 2026<br>
+**Estado global:** Fase 4 completada; 4A, 4B, 4C y 4D cerradas<br>
+**Fase actual:** Fase 5 — índices, calidad integral y accesibilidad (pendiente)<br>
+**Base de concurrencia de 4D:** `99f647bed713ed51f12fa7c337c5f03119fbac82`<br>
+**Upstream comprobado antes del cierre técnico:** `99f647bed713ed51f12fa7c337c5f03119fbac82`
 
 ## Lectura de entrada
 
@@ -43,6 +43,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Fase 4A implementada en `6c27050fe478386f6a887c1efa1c4f25f9fbc6df`; el capítulo 14 presenta las 18 páginas completas del manuscrito autoritativo mediante derivados reproducibles no versionados.
 - Fase 4B implementada en `bd0d20c18ba25d079a5faa34d51b5f82f3d5b0c2`; el capítulo 15 presenta las 35 unidades de la Edición Crítica 3.6, con imagen, transcripción paleográfica y aparato crítico fieles y reproducibles.
 - Fase 4C implementada en `84f31b4249b745fe50799b8cfce2682913100d8e`; el capítulo 16 presenta las 40 preguntas verificadas y sus respuestas locales en español actual, con notas, cautelas y navegación material hacia el capítulo 15.
+- Fase 4D implementada en `f9a7bf9d9a7e8cb70516e41105a472d7d7f3eed2`; el glosario, los cuadros cuantitativos, la concordancia y la matriz D/C/I/E/L se generan como cuatro vistas reproducibles de sus fuentes estructuradas.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -56,13 +57,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 2A. Bootstrap y smoke test | completada | implementación `e9c3991ed72d9abf0469c11d87958bf934720f92`; HTML, PDF y tests en PASS; `project/` intacto |
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
-| 4. Generación documental | en curso; 4A, 4B y 4C completadas | capítulos 14–16 y su infraestructura cerrados; queda 4D |
-| 5. Índices y calidad integral | pendiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
+| 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
+| 5. Índices y calidad integral | siguiente | nueve índices; HTML/PDF completos; accesibilidad y revisión visual |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-4D — glosario, cuadros cuantitativos, concordancia y matriz de evidencia.
+Fase 5 — índices, calidad integral y accesibilidad.
 
 ### Descomposición operativa de la Fase 4
 
@@ -71,7 +72,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 4A | completada | infraestructura de generación y capítulo 14, «Facsímil íntegro del expediente» |
 | 4B | completada | capítulo 15, transcripción y aparato crítico de las 35 unidades |
 | 4C | completada | capítulo 16, edición modernizada |
-| 4D | siguiente | glosario, cuadros cuantitativos, concordancia y matriz de evidencia |
+| 4D | completada | glosario, cuadros cuantitativos, concordancia y matriz de evidencia |
 
 ### Cierre comprobado de 2A
 
@@ -291,6 +292,22 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Integridad: el capítulo real es el único 16 visible; los prototipos permanecen como regresión fuera de la navegación. QMD y artefactos renderizados siguen ignorados; ningún PDF ni derivado quedó versionado. `project/`, `plugins/`, fuentes canónicas, `main` y `origin/main` permanecen intactos.
 - Estado: 4C cerrada; la Fase 4 continúa en curso y 4D —glosario, cuadros cuantitativos, concordancia y matriz de evidencia— es la única tarea siguiente.
 
+## Cierre comprobado de 4D
+
+- Implementación atómica: `f9a7bf9d9a7e8cb70516e41105a472d7d7f3eed2` (`feat(publication): generate reproducible apparatus`).
+- Arquitectura: `apparatus_sources.py` modela y valida el Glosario y el Registro; `build_apparatus.py` deriva exclusivamente `glosario.qmd`, `cuadros-cuantitativos.qmd`, `concordancia.qmd` y `matriz-evidencia.qmd`. `check_sources.py`, `prepare.py`, la navegación, el posprocesado y el validador integran 4D sin listas de publicación paralelas ni escritura en `project/` o `plugins/`.
+- Glosario: 22 entradas fieles a `Glosario.md`. Como la fuente no declara versión, `publication.yml` conserva ruta y snapshot Git `0df18f89e2f39f8d75279d06e6f1b0bfa77362fe`; no se inventa una versión. Folios, respuestas, referencias internas y fuentes externas seguras quedan enlazados; las referencias a índices futuros permanecen como texto.
+- Cuadros: 13 entradas canónicas de nivel C y 17 cálculos `CAL-*` asociados, derivados del Registro 1.2. Operaciones, resultados, unidades, denominadores, estados y cautelas se conservan literalmente. `CAL-018`–`CAL-020` no se presentan como resultados C porque el Registro los asocia a controles documentales.
+- Concordancia: dos vistas derivadas de una misma relación estructurada cubren 35 unidades, 18 páginas facsimilares, 40 respuestas y 65 relaciones unidad↔respuesta, incluidas las correspondencias muchos-a-muchos y los bloques no equivalentes. Los enlaces a los capítulos 14–16 están validados.
+- Matriz: 112 entradas fieles al Registro, con conteo por componentes D/C/I/E/L de 47/13/27/25/16; los niveles compuestos se conservan. Registra 88 estados `Admitida`, 10 `Condicionada`, ninguno `Excluida`, una cautela explícita adicional y 13 límites cuya tabla fuente no declara columna separada de estado. `Uso en el libro` se deriva únicamente de metadatos estructurados de los capítulos 5–13.
+- Identificadores: la colisión global `portada` quedó resuelta mediante `transcripcion-portada` y `modernizada-portada`; enlaces y regresiones se actualizaron y el render combinado ya no emite el aviso de identificador duplicado.
+- Reproducibilidad: dos preparaciones finales conservaron los hashes de grupo 4A `b3e99b6c4d307e0d84842a906f85bb695eea00597b5e8ab576c58ebdfa884e2a`, 4B `ccbc1db0e9549dc53af0bf9bb0b3f6539714a24b4d9300bc098c39da03a4ac3f`, 4C `ddd22812826f5aa2b04bd26884c2515bf596d6de28616d47fbdd65269311d8a3`, 4D `db2f5768f87fc5ad38b56a2af2ba0a6bf44573354d1c20a4f0b4f1c3fe7b2584` y prototipo `31bd1932af1aeeba8bc6521fe06cd1df7839710b9d8ec2eb4173d4725cad9421`. El flujo produce 66 salidas reproducibles.
+- Validación: 42 pruebas focalizadas y 522 pruebas totales en PASS, sin `skip`; colección estable de 522 identificadores con SHA-256 `a99c86a08832f5d3203b3160b67b60ca4816b57c5b9f65b0cf0b5699ac965867`. `check_sources.py`, validadores estático y `--rendered`, `quarto check`, render HTML, PDF y multiformato, y `git diff --check` en PASS.
+- Composición: 22 documentos HTML y PDF de 289 páginas y 73.955.867 bytes. El glosario ocupa 231–239; los cuadros, 240–246; la concordancia, 247–251; y la matriz, 252–289. Se inspeccionaron visualmente las 59 páginas: tablas, denominadores, cautelas, enlaces, fórmulas, URLs y saltos son legibles y no pierden información.
+- Auditoría global: capítulos 14–16 y los cuatro aparatos de 4D existen, son reproducibles y mantienen intactas sus autoridades. Las cuestiones abiertas, fuentes, versiones y modelos de cita no estaban asignados a 4D y no bloquean este cierre. No se inició ningún índice ni se creó `build_indexes.py`.
+- Integridad: `project/`, `plugins/`, fuentes canónicas, `main` y `origin/main` permanecen intactos; QMD generados, PNG, PDF y `_book/` continúan ignorados y no se versionó ningún binario.
+- Estado: 4D y la Fase 4 quedan cerradas. La única tarea siguiente es Fase 5 — índices, calidad integral y accesibilidad.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -301,4 +318,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente 4D: implementa el glosario, los cuadros cuantitativos, la concordancia y la matriz de evidencia, reutilizando la infraestructura verificada de 4A–4C y sin modificar fuentes canónicas. No inicies la Fase 5. Revisa el diff y publica cambios atómicos solo si la rama y el upstream conservan la base de concurrencia que se establezca al inicio.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Fase 5 — índices, calidad integral y accesibilidad— conforme al plan maestro: genera los nueve índices desde fuentes estructuradas, completa la auditoría integral de calidad y accesibilidad y no inicies la preview ni la publicación 1.0. Revisa el diff y publica cambios atómicos solo si la rama y el upstream conservan la base de concurrencia que se establezca al inicio.
