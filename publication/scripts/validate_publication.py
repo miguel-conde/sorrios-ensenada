@@ -19,7 +19,15 @@ from critical_edition import (
     SECTION_NAMES,
     load_unit_specs,
     parse_critical_edition,
+    published_unit_anchor,
 )
+from build_apparatus import (
+    OUTPUT_NAMES as APPARATUS_OUTPUT_NAMES,
+    ApparatusBuildError,
+    load_apparatus_data,
+    validate_apparatus_fidelity,
+)
+from apparatus_sources import ApparatusSourceError
 
 from build_vertical_prototype import (
     EVIDENCE_GROUPS,
@@ -122,6 +130,10 @@ GENERATED = {
     "transcription_full": PUBLICATION_ROOT / "generated" / "15-transcripcion.qmd",
     "modernized": PUBLICATION_ROOT / "generated" / "16-modernizada-prototipo.qmd",
     "modernized_full": PUBLICATION_ROOT / "generated" / "16-edicion-modernizada.qmd",
+    "glossary_full": PUBLICATION_ROOT / "generated" / "glosario.qmd",
+    "quantitative_full": PUBLICATION_ROOT / "generated" / "cuadros-cuantitativos.qmd",
+    "concordance_full": PUBLICATION_ROOT / "generated" / "concordancia.qmd",
+    "evidence_matrix_full": PUBLICATION_ROOT / "generated" / "matriz-evidencia.qmd",
     "apparatus": PUBLICATION_ROOT / "generated" / "aparato-molinos.qmd",
 }
 CANONICAL_EDITION = (
@@ -133,6 +145,18 @@ RENDERED_HTML = (
 RENDERED_MODERNIZED_HTML = (
     PUBLICATION_ROOT / "_book" / "generated" / "16-edicion-modernizada.html"
 )
+RENDERED_APPARATUS_HTML = {
+    "glosario.qmd": PUBLICATION_ROOT / "_book" / "generated" / "glosario.html",
+    "cuadros-cuantitativos.qmd": (
+        PUBLICATION_ROOT / "_book" / "generated" / "cuadros-cuantitativos.html"
+    ),
+    "concordancia.qmd": (
+        PUBLICATION_ROOT / "_book" / "generated" / "concordancia.html"
+    ),
+    "matriz-evidencia.qmd": (
+        PUBLICATION_ROOT / "_book" / "generated" / "matriz-evidencia.html"
+    ),
+}
 RENDERED_FACSIMILE_HTML = (
     PUBLICATION_ROOT / "_book" / "generated" / "14-facsimil.html"
 )
@@ -983,6 +1007,7 @@ def validate_rendered_outputs() -> list[str]:
             "../../generated/14-facsimil.html#pagina-digital-12",
             "../../generated/15-transcripcion.html#folio-315v",
             "../../generated/16-edicion-modernizada.html#respuesta-17",
+            "../../generated/matriz-evidencia.html#evidencia-hid-001",
         ):
             if target not in chapter_nine_html:
                 errors.append(
@@ -1011,7 +1036,7 @@ def validate_rendered_outputs() -> list[str]:
             )
         html_text = RENDERED_HTML.read_text(encoding="utf-8")
         anchors = re.findall(r'<section id="([a-z0-9-]+)"', html_text)
-        expected_anchors = [spec.anchor for spec in specs]
+        expected_anchors = [published_unit_anchor(spec) for spec in specs]
         unit_anchors = [anchor for anchor in anchors if anchor in expected_anchors]
         if unit_anchors != expected_anchors:
             errors.append("El HTML del capítulo 15 no conserva las 35 anclas en orden")
@@ -1040,7 +1065,7 @@ def validate_rendered_outputs() -> list[str]:
         ):
             errors.append("La edición modernizada no aparece como capítulo 16")
         expected_anchors = (
-            "portada",
+            "modernizada-portada",
             "comparecencia",
             *(f"respuesta-{number}" for number in range(1, 41)),
             "ratificacion-edades-firmas",
@@ -1074,6 +1099,87 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append(f"El HTML del capítulo 16 pierde la cautela: {marker}")
         if "/home/" in modernized_html or "project/" in modernized_html:
             errors.append("El HTML del capítulo 16 expone una ruta fuente local")
+    rendered_apparatus = {
+        name: path.read_text(encoding="utf-8")
+        for name, path in RENDERED_APPARATUS_HTML.items()
+        if path.is_file()
+    }
+    missing_apparatus = [
+        str(path) for name, path in RENDERED_APPARATUS_HTML.items() if name not in rendered_apparatus
+    ]
+    if missing_apparatus:
+        errors.append("Faltan HTML de aparatos 4D: " + ", ".join(missing_apparatus))
+    else:
+        glossary_html = rendered_apparatus["glosario.qmd"]
+        glossary_anchors = re.findall(
+            r'<section id="(glosario-[a-z0-9-]+)"', glossary_html
+        )
+        glossary_anchors = [
+            anchor for anchor in glossary_anchors if anchor != "glosario-entradas"
+        ]
+        if len(glossary_anchors) != 22 or len(set(glossary_anchors)) != 22:
+            errors.append("El HTML del glosario no conserva 22 anclas únicas")
+        if glossary_html.count("15-transcripcion.html#") < 22:
+            errors.append("El glosario HTML pierde enlaces al capítulo 15")
+        if glossary_html.count("16-edicion-modernizada.html#") < 10:
+            errors.append("El glosario HTML pierde enlaces al capítulo 16")
+        for url in ("https://dle.rae.es/negrillo", "https://www.mapa.gob.es/"):
+            if url not in glossary_html:
+                errors.append(f"El glosario HTML pierde la fuente externa {url}")
+
+        quantitative_html = rendered_apparatus["cuadros-cuantitativos.qmd"]
+        if len(
+            re.findall(r'<section id="cuadro-[a-z]+-\d{3}"', quantitative_html)
+        ) != 13:
+            errors.append("El HTML cuantitativo no contiene sus 13 entradas C")
+        for marker in (
+            "93,13 %",
+            "72,16 %",
+            "Denominador: cultivada comparable",
+            "Denominador: total explícito principal",
+            "1.006 reales",
+            "2,49 %",
+        ):
+            if marker not in quantitative_html:
+                errors.append(f"El HTML cuantitativo pierde {marker}")
+
+        concordance_html = rendered_apparatus["concordancia.qmd"]
+        if concordance_html.count("14-facsimil.html#") < 75:
+            errors.append("La concordancia HTML pierde enlaces al capítulo 14")
+        if concordance_html.count("15-transcripcion.html#") != 100:
+            errors.append("La concordancia HTML pierde enlaces al capítulo 15")
+        if concordance_html.count("16-edicion-modernizada.html#") != 110:
+            errors.append("La concordancia HTML pierde enlaces al capítulo 16")
+        for marker in (
+            "Portada",
+            "Reverso de la portada",
+            "Comparecencia",
+            "Ratificación",
+            "Firmas",
+            "Hoja enfrentada posterior",
+        ):
+            if marker not in concordance_html:
+                errors.append(f"La concordancia HTML pierde la unidad {marker}")
+
+        matrix_html = rendered_apparatus["matriz-evidencia.qmd"]
+        matrix_anchors = re.findall(
+            r'<section id="evidencia-([a-z]+-\d{3})"', matrix_html
+        )
+        if len(matrix_anchors) != 112 or len(set(matrix_anchors)) != 112:
+            errors.append("La matriz HTML no conserva 112 identificadores únicos")
+        for level in ("D", "C", "I", "E", "L"):
+            if f"<code>{level}</code>" not in matrix_html:
+                errors.append(f"La matriz HTML no muestra el nivel {level}")
+        for marker in ("Admitida", "Condicionada", "Sorribas", "habitantes fiscales"):
+            if marker not in matrix_html:
+                errors.append(f"La matriz HTML pierde {marker}")
+        for name, html in rendered_apparatus.items():
+            if "header-section-number" in html:
+                errors.append(f"El aparato 4D se ha numerado indebidamente: {name}")
+            if ".qmd#" in html:
+                errors.append(f"El HTML 4D conserva un enlace QMD roto: {name}")
+            if "/home/" in html or "project/" in html:
+                errors.append(f"El HTML 4D expone una ruta fuente local: {name}")
     if not RENDERED_PDF.is_file():
         errors.append(f"Falta el PDF renderizado: {RENDERED_PDF}")
     else:
@@ -1115,6 +1221,27 @@ def validate_rendered_outputs() -> list[str]:
                 errors.append("El PDF no contiene el capítulo 15")
             if "El Catastro en español actual" not in normalized_pdf:
                 errors.append("El PDF no contiene el capítulo 16")
+            for title in (
+                "Glosario histórico",
+                "Cuadros cuantitativos",
+                "Concordancia general",
+                "Matriz de evidencia D/C/I/E/L",
+            ):
+                if title not in normalized_pdf:
+                    errors.append(f"El PDF no contiene el aparato 4D: {title}")
+            for heading in (
+                "Entradas",
+                "3.2. Territorio, medidas y usos agrarios",
+                "Vista por unidad",
+                "3.1. Localidad, jurisdicción y producción del expediente",
+            ):
+                if re.search(
+                    rf"\b16\.\d+(?:\.\d+)?\s+{re.escape(heading)}",
+                    normalized_pdf,
+                ):
+                    errors.append(
+                        f"El PDF numera indebidamente un encabezado 4D: {heading}"
+                    )
             for marker in ("avitadores", "venta", "dado a renta"):
                 if marker not in normalized_pdf:
                     errors.append(
@@ -3317,14 +3444,14 @@ def validate() -> list[str]:
         ),
         "transcription": ("#folio-315v", "lightbox: true"),
         "transcription_full": (
-            "#portada",
+            "#transcripcion-portada",
             "#folio-315v",
             "#hoja-enfrentada-posterior",
             "lightbox: true",
         ),
         "modernized": ("#respuesta-17",),
         "modernized_full": (
-            "#portada",
+            "#modernizada-portada",
             "#comparecencia",
             "#respuesta-1",
             "#respuesta-40",
@@ -3332,6 +3459,16 @@ def validate() -> list[str]:
             "#concordancia-material",
             "#notas",
             "#nota-de-uso",
+        ),
+        "glossary_full": ("#glosario-entradas", "#glosario-senorio"),
+        "quantitative_full": ("#cuadro-ter-007", "#cuadro-fis-011"),
+        "concordance_full": (
+            "#concordancia-unidades",
+            "#concordancia-respuestas",
+        ),
+        "evidence_matrix_full": (
+            "#evidencia-jur-001",
+            "#evidencia-lim-013",
         ),
         "apparatus": ("#cuadro-molinos", "#matriz-molinera"),
     }
@@ -3847,7 +3984,10 @@ def validate() -> list[str]:
                 canonical_units, generated_units, strict=False
             ):
                 label, anchor, sections = generated
-                if label != canonical.spec.label or anchor != canonical.spec.anchor:
+                if (
+                    label != canonical.spec.label
+                    or anchor != published_unit_anchor(canonical.spec)
+                ):
                     errors.append(
                         f"Unidad o ancla discordante en {canonical.spec.unit_id}"
                     )
@@ -3935,7 +4075,10 @@ def validate() -> list[str]:
             validate_generated_fidelity(
                 source_edition,
                 complete_modernized,
-                {spec.label: spec.anchor for spec in modernized_specs},
+                {
+                    spec.label: published_unit_anchor(spec)
+                    for spec in modernized_specs
+                },
             )
         except (
             OSError,
@@ -3958,6 +4101,75 @@ def validate() -> list[str]:
             ):
                 if marker not in complete_modernized:
                     errors.append(f"El capítulo 16 pierde la nota semántica {marker}")
+    apparatus_paths = {
+        name: PUBLICATION_ROOT / "generated" / name
+        for name in APPARATUS_OUTPUT_NAMES
+    }
+    if all(path.is_file() for path in apparatus_paths.values()):
+        try:
+            project_data = yaml.safe_load(
+                (
+                    REPOSITORY_ROOT / "project" / "00_CONTROL" / "proyecto.yaml"
+                ).read_text(encoding="utf-8")
+            )
+            manuscript_name = project_data["authorities"]["manuscript"]["name"]
+            apparatus_data = load_apparatus_data(
+                REPOSITORY_ROOT,
+                PUBLICATION_ROOT,
+                manuscript_name,
+            )
+            actual_apparatus = {
+                name: path.read_text(encoding="utf-8")
+                for name, path in apparatus_paths.items()
+            }
+            validate_apparatus_fidelity(apparatus_data, actual_apparatus)
+        except (
+            KeyError,
+            TypeError,
+            ApparatusSourceError,
+            ApparatusBuildError,
+        ) as exc:
+            errors.append(f"Aparatos 4D no aptos: {exc}")
+        else:
+            if len(apparatus_data.glossary.entries) != 22:
+                errors.append("El glosario 4D no contiene sus 22 entradas canónicas")
+            if len(apparatus_data.register.calculated_entries) != 13:
+                errors.append("Los cuadros 4D no derivan las 13 entradas de nivel C")
+            associated = {
+                calculation.identifier
+                for entry in apparatus_data.register.calculated_entries
+                for calculation in apparatus_data.register.associated_calculations(entry)
+            }
+            if len(associated) != 17:
+                errors.append("Los cuadros 4D no conservan los 17 CAL asociados")
+            if len(apparatus_data.register.entries) != 112:
+                errors.append("La matriz 4D no contiene las 112 entradas D/C/I/E/L")
+            concordance = actual_apparatus["concordancia.qmd"]
+            if concordance.count("15-transcripcion.qmd#") != 100:
+                errors.append("La concordancia no conserva sus enlaces al capítulo 15")
+            if concordance.count("16-edicion-modernizada.qmd#") != 110:
+                errors.append("La concordancia no conserva sus enlaces al capítulo 16")
+            for name, text in actual_apparatus.items():
+                if re.search(r"\]\([^)]*project/", text):
+                    errors.append(f"{name} enlaza directamente una fuente local project/")
+
+            phase_four_texts = (
+                GENERATED["facsimile_full"].read_text(encoding="utf-8"),
+                GENERATED["transcription_full"].read_text(encoding="utf-8"),
+                GENERATED["modernized_full"].read_text(encoding="utf-8"),
+                *actual_apparatus.values(),
+            )
+            phase_four_anchors = [
+                anchor
+                for text in phase_four_texts
+                for anchor in re.findall(
+                    r"^#{2,3} .+ \{#([a-z0-9-]+)\}$", text, re.MULTILINE
+                )
+            ]
+            if len(phase_four_anchors) != len(set(phase_four_anchors)):
+                errors.append("La Fase 4 conserva identificadores globales duplicados")
+            if "portada" in phase_four_anchors:
+                errors.append("La Fase 4 conserva el identificador ambiguo portada")
     if GENERATED["apparatus"].is_file():
         apparatus = GENERATED["apparatus"].read_text(encoding="utf-8")
         absent = sorted(identifier for identifier in expected_ids if identifier not in apparatus)
@@ -4031,6 +4243,10 @@ def validate() -> list[str]:
         "generated/14-facsimil.qmd",
         "generated/15-transcripcion.qmd",
         "generated/16-edicion-modernizada.qmd",
+        "generated/glosario.qmd",
+        "generated/cuadros-cuantitativos.qmd",
+        "generated/concordancia.qmd",
+        "generated/matriz-evidencia.qmd",
     )
     for item in expected_navigation:
         if navigation.count(item) != 1:
@@ -4038,7 +4254,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–16 en la navegación"
+            "Orden incorrecto de los capítulos 1–16 y aparatos 4D en la navegación"
         )
     for prototype_path in (
         "generated/14-facsimil-prototipo.qmd",
@@ -4068,7 +4284,9 @@ def validate() -> list[str]:
         if item in manifest_paths
     ]
     if manifest_positions != sorted(manifest_positions):
-        errors.append("Orden incorrecto de los capítulos 1–16 en meta/chapters.yml")
+        errors.append(
+            "Orden incorrecto de los capítulos 1–16 y aparatos 4D en meta/chapters.yml"
+        )
     if len(manifest_ids) != len(set(manifest_ids)):
         errors.append("Los chapter_id de meta/chapters.yml deben ser únicos")
 
@@ -4102,6 +4320,8 @@ def main(argv: list[str] | None = None) -> int:
         CriticalEditionError,
         ModernizedEditionError,
         ModernizedBuildError,
+        ApparatusSourceError,
+        ApparatusBuildError,
     ) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
@@ -4112,6 +4332,7 @@ def main(argv: list[str] | None = None) -> int:
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
         "PASS: capítulos 1–16, facsímil 4A, transcripción 4B, modernizada 4C, "
+        "aparatos reproducibles 4D, "
         "prototipo 2B, "
         "metadatos, anclas, "
         "evidencia y regresiones"

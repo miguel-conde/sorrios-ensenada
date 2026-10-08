@@ -248,6 +248,7 @@ def test_prepare_coordinates_source_check_prototype_and_facsimile(monkeypatch, t
     facsimile_output = tmp_path / "facsimile.qmd"
     transcription_output = tmp_path / "transcription.qmd"
     modernized_output = tmp_path / "modernized.qmd"
+    apparatus_output = tmp_path / "glossary.qmd"
     calls: list[str] = []
 
     monkeypatch.setattr(
@@ -278,11 +279,18 @@ def test_prepare_coordinates_source_check_prototype_and_facsimile(monkeypatch, t
         lambda repository, publication: calls.append("modernized")
         or (modernized_output,),
     )
+    monkeypatch.setattr(
+        preparation,
+        "build_apparatus",
+        lambda repository, publication, manuscript_name: calls.append("apparatus")
+        or (apparatus_output,),
+    )
 
     assert preparation.prepare() == (
         facsimile_output,
         transcription_output,
         modernized_output,
+        apparatus_output,
         prototype_output,
     )
     assert calls == [
@@ -290,6 +298,7 @@ def test_prepare_coordinates_source_check_prototype_and_facsimile(monkeypatch, t
         "facsimile",
         "transcription",
         "modernized",
+        "apparatus",
         "prototype",
     ]
 

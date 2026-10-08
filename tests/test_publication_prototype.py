@@ -2427,6 +2427,10 @@ def test_navigation_integrates_real_chapters_and_keeps_prototype_off_book():
         "generated/14-facsimil.qmd",
         "generated/15-transcripcion.qmd",
         "generated/16-edicion-modernizada.qmd",
+        "generated/glosario.qmd",
+        "generated/cuadros-cuantitativos.qmd",
+        "generated/concordancia.qmd",
+        "generated/matriz-evidencia.qmd",
     ]
 
     assert [item for item in navigation if item in expected_order] == expected_order
@@ -2435,7 +2439,7 @@ def test_navigation_integrates_real_chapters_and_keeps_prototype_off_book():
     assert all(manifest_paths.count(item) == 1 for item in expected_order)
     chapter_ids = [chapter["chapter_id"] for chapter in manifest["chapters"]]
     assert len(chapter_ids) == len(set(chapter_ids))
-    assert sum(item.startswith("generated/") for item in navigation) == 3
+    assert sum(item.startswith("generated/") for item in navigation) == 7
     assert not any("prototipo" in item for item in navigation)
     assert "generated/aparato-molinos.qmd" not in navigation
     index_path = ROOT / "publication" / "index.qmd"

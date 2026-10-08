@@ -1,5 +1,5 @@
 schema_version: 1
-purpose: "Orden de capítulos y vistas para la edición en desarrollo; integra la Parte I y conserva el prototipo vertical como regresión técnica."
+purpose: "Orden de capítulos y vistas para la edición en desarrollo; integra los capítulos 1–16, los aparatos reproducibles de 4D y conserva el prototipo vertical como regresión técnica."
 chapters:
   - chapter_id: portada
     path: index.qmd
@@ -56,6 +56,22 @@ chapters:
     generated: true
   - chapter_id: edicion-modernizada
     path: generated/16-edicion-modernizada.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: glosario-historico
+    path: generated/glosario.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: cuadros-cuantitativos
+    path: generated/cuadros-cuantitativos.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: concordancia-general
+    path: generated/concordancia.qmd
+    publication_status: generated
+    generated: true
+  - chapter_id: matriz-evidencia
+    path: generated/matriz-evidencia.qmd
     publication_status: generated
     generated: true
   - chapter_id: facsimil-pagina-12

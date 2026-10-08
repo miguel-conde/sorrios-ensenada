@@ -184,7 +184,7 @@ def test_generated_qmd_has_35_units_images_and_unique_anchors(canonical_units, t
     generated = validator._generated_transcription_units(text)
     assert len(generated) == 35
     assert [anchor for _, anchor, _ in generated] == [
-        unit.spec.anchor for unit in canonical_units
+        critical.published_unit_anchor(unit.spec) for unit in canonical_units
     ]
     assert text.count("assets/transcription/") == 35
 

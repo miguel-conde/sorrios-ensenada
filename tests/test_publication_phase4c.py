@@ -55,7 +55,7 @@ def specs() -> tuple[critical.UnitSpec, ...]:
 
 @pytest.fixture(scope="module")
 def unit_anchors(specs) -> dict[str, str]:
-    return {spec.label: spec.anchor for spec in specs}
+    return {spec.label: critical.published_unit_anchor(spec) for spec in specs}
 
 
 @pytest.fixture(scope="module")
@@ -205,7 +205,7 @@ def test_broken_missing_and_orphaned_notes_are_rejected(source_text):
 def test_generated_chapter_has_all_stable_unique_anchors(generated):
     anchors = re.findall(r"^## .+ \{#([^}]+)\}$", generated, re.MULTILINE)
     expected = [
-        "portada",
+        "modernizada-portada",
         "comparecencia",
         *(f"respuesta-{number}" for number in range(1, 41)),
         "ratificacion-edades-firmas",
@@ -300,7 +300,7 @@ def test_related_documents_become_book_navigation_without_internal_links(generat
     assert "](../../" not in generated
 
 
-def test_post_render_replaces_4c_prototype_and_removes_obsolete_apparatus_link(tmp_path):
+def test_post_render_replaces_4c_prototype_and_links_real_apparatus(tmp_path):
     html = tmp_path / "chapter.html"
     html.write_text(
         '<a href="../../generated/16-modernizada-prototipo.qmd#respuesta-17">'
@@ -312,7 +312,7 @@ def test_post_render_replaces_4c_prototype_and_removes_obsolete_apparatus_link(t
     assert rendered_links.fix_rendered_links(tmp_path) == 2
     updated = html.read_text(encoding="utf-8")
     assert "16-edicion-modernizada.html#respuesta-17" in updated
-    assert "aparato D/C/I/E/L" in updated
+    assert "matriz-evidencia.html#evidencia-hid-001" in updated
     assert ".qmd#" not in updated
 
 

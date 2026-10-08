@@ -6,6 +6,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+from build_apparatus import ApparatusBuildError, build_apparatus
 from build_facsimile import FacsimileBuildError, build_facsimile
 from build_modernized import ModernizedBuildError, build_modernized
 from build_transcription import TranscriptionBuildError, build_transcription
@@ -33,6 +34,11 @@ def prepare() -> tuple[Path, ...]:
         repository_root, publication_root, checked
     )
     modernized_outputs = build_modernized(repository_root, publication_root)
+    apparatus_outputs = build_apparatus(
+        repository_root,
+        publication_root,
+        checked.manuscript.name,
+    )
     prototype_outputs = build_vertical_prototype(
         repository_root,
         publication_root,
@@ -42,13 +48,16 @@ def prepare() -> tuple[Path, ...]:
         *facsimile_outputs,
         *transcription_outputs,
         *modernized_outputs,
+        *apparatus_outputs,
         *prototype_outputs,
     )
     print(
-        "Preparación completada: 4 fuentes, 35 unidades y manuscrito verificados; "
+        "Preparación completada: 5 fuentes declaradas, 35 unidades y manuscrito "
+        "verificados; "
         f"{len(facsimile_outputs)} salidas del facsímil, "
         f"{len(transcription_outputs)} salidas de la transcripción y "
-        f"{len(modernized_outputs)} salida de la edición modernizada, además de "
+        f"{len(modernized_outputs)} salida de la edición modernizada, "
+        f"{len(apparatus_outputs)} aparatos y "
         f"{len(prototype_outputs)} derivados del prototipo regenerados."
     )
     return tuple(outputs)
@@ -65,6 +74,7 @@ def main() -> int:
         FacsimileBuildError,
         TranscriptionBuildError,
         ModernizedBuildError,
+        ApparatusBuildError,
     ) as error:
         print(f"Error de preparación: {error}", file=sys.stderr)
         return 1

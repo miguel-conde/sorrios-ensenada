@@ -50,6 +50,12 @@ class CriticalUnit:
     sections: dict[str, str]
 
 
+def published_unit_anchor(spec: UnitSpec) -> str:
+    """Return the globally unique chapter-15 anchor for a material unit."""
+
+    return "transcripcion-portada" if spec.unit_id == "portada" else spec.anchor
+
+
 def load_unit_specs(path: Path) -> tuple[UnitSpec, ...]:
     """Load and validate the publication-facing fields of unidades.yaml."""
 
@@ -219,4 +225,5 @@ __all__ = [
     "line_block",
     "load_unit_specs",
     "parse_critical_edition",
+    "published_unit_anchor",
 ]

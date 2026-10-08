@@ -8,7 +8,7 @@ from pathlib import Path
 
 import yaml
 
-from critical_edition import load_unit_specs
+from critical_edition import load_unit_specs, published_unit_anchor
 from modernized_edition import (
     ModernizedEdition,
     ModernizedEditionError,
@@ -139,7 +139,7 @@ source-related-documents: {RELATED_DOCUMENTS_POLICY}
 
 {_namespace_notes(edition.introduction)}
 
-## Portada {{#portada}}
+## Portada {{#modernizada-portada}}
 
 {_namespace_notes(edition.portada)}
 
@@ -256,7 +256,7 @@ def validate_generated_fidelity(
             "El capítulo 16 generado altera el orden documental de sus secciones."
         )
     fixed = {
-        "Portada": ("portada", _namespace_notes(edition.portada)),
+        "Portada": ("modernizada-portada", _namespace_notes(edition.portada)),
         "Comparecencia y juramento": (
             "comparecencia",
             _namespace_notes(edition.comparecencia),
@@ -357,7 +357,7 @@ def build_modernized(repository_root: Path, publication_root: Path) -> tuple[Pat
         )
     except ModernizedEditionError as exc:
         raise ModernizedBuildError(str(exc)) from exc
-    unit_anchors = {spec.label: spec.anchor for spec in specs}
+    unit_anchors = {spec.label: published_unit_anchor(spec) for spec in specs}
     output = publication_root / "generated" / MODERNIZED_QMD
     generated_root = (publication_root / "generated").resolve()
     if output.resolve().parent != generated_root:

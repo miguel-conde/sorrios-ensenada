@@ -21,6 +21,7 @@ from critical_edition import (
     line_block,
     load_unit_specs,
     parse_critical_edition,
+    published_unit_anchor,
 )
 
 
@@ -207,7 +208,9 @@ autoridad propia; la autoridad textual permanece en `Edicion_Critica.md`.
 """.format(file_id=checked.manuscript.file_id).rstrip()
     ]
     for index, unit in enumerate(units):
-        chunks.append(f"## {unit.spec.label} {{#{unit.spec.anchor}}}")
+        chunks.append(
+            f"## {unit.spec.label} {{#{published_unit_anchor(unit.spec)}}}"
+        )
         chunks.append("### Imagen\n\n" + _image_markdown(unit))
         for name in TEXT_SECTION_NAMES:
             content = (

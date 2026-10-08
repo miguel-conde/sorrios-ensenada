@@ -56,3 +56,33 @@ table {
   color: #555;
   font-size: 0.9rem;
 }
+
+.evidence-entry {
+  border-left: 0.25rem solid #727272;
+  break-inside: avoid;
+  margin-block: 1rem;
+  padding: 0.35rem 0.9rem;
+}
+
+.evidence-state-admitida {
+  border-left-color: #38714b;
+}
+
+.evidence-state-condicionada {
+  border-left-color: #a66a00;
+  background: #fff9eb;
+}
+
+.evidence-state-excluida {
+  border-left-color: #9b2f2f;
+  background: #fff3f3;
+}
+
+.evidence-state-no-especificado {
+  border-left-color: #666;
+  background: #f6f6f6;
+}
+
+table {
+  overflow-wrap: anywhere;
+}

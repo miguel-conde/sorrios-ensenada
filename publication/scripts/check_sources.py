@@ -16,6 +16,13 @@ from pathlib import Path, PurePosixPath
 
 import yaml
 
+from apparatus_sources import (
+    ApparatusSourceError,
+    git_blob_oid,
+    load_evidence_register,
+    load_glossary,
+    validate_glossary_references,
+)
 from critical_edition import (
     CriticalEditionError,
     load_unit_specs,
@@ -29,7 +36,7 @@ from modernized_edition import (
 )
 
 
-EXPECTED_SOURCE_COUNT = 4
+EXPECTED_SOURCE_COUNT = 5
 EXPECTED_UNIT_COUNT = 35
 MANUSCRIPT_ENV = "SORRIOS_MANUSCRIPT_PDF"
 LOCAL_MANUSCRIPT_RELATIVE = Path("sorrios-ensenada") / "manuscript.pdf"
@@ -45,7 +52,8 @@ class SourceCheckError(RuntimeError):
 class Source:
     name: str
     path: str
-    version: str
+    version: str | None = None
+    git_blob: str | None = None
 
 
 @dataclass(frozen=True)
@@ -63,6 +71,9 @@ class CheckedSources:
     manuscript: ManuscriptMetadata
     sources: tuple[Source, ...]
     unit_count: int
+    glossary_count: int = 0
+    evidence_count: int = 0
+    calculation_count: int = 0
 
 
 def _read_yaml(path: Path) -> dict:
@@ -101,11 +112,28 @@ def _manifest_sources(manifest: dict) -> tuple[Source, ...]:
         )
     sources: list[Source] = []
     for name, fields in raw_sources.items():
-        if not isinstance(fields, dict) or not fields.get("path") or not fields.get("version"):
+        if not isinstance(fields, dict) or not fields.get("path"):
             raise SourceCheckError(
-                f"La fuente {name} debe declarar path y version en publication.yml."
+                f"La fuente {name} debe declarar path en publication.yml."
             )
-        sources.append(Source(str(name), str(fields["path"]), str(fields["version"])))
+        version = fields.get("version")
+        git_blob = fields.get("git_blob")
+        if bool(version) == bool(git_blob):
+            raise SourceCheckError(
+                f"La fuente {name} debe declarar version o git_blob, pero no ambos."
+            )
+        if git_blob and not re.fullmatch(r"[0-9a-f]{40}", str(git_blob)):
+            raise SourceCheckError(
+                f"La fuente {name} declara un git_blob inválido: {git_blob}."
+            )
+        sources.append(
+            Source(
+                str(name),
+                str(fields["path"]),
+                str(version) if version else None,
+                str(git_blob) if git_blob else None,
+            )
+        )
     return tuple(sources)
 
 
@@ -121,17 +149,30 @@ def _validate_source_versions(repository_root: Path, sources: tuple[Source, ...]
             text = path.read_text(encoding="utf-8")
         except (OSError, UnicodeError) as exc:
             raise SourceCheckError(f"No se pudo leer {source.path}: {exc}") from exc
-        match = VERSION_PATTERN.search(text)
-        if match is None:
-            raise SourceCheckError(
-                f"No se pudo comprobar la versión de {source.name} en {source.path}."
-            )
-        actual = match.group("version")
-        if actual != source.version:
-            raise SourceCheckError(
-                f"Versión discordante para {source.name}: publication.yml declara "
-                f"{source.version} y {source.path} contiene {actual}."
-            )
+        if source.version is not None:
+            match = VERSION_PATTERN.search(text)
+            if match is None:
+                raise SourceCheckError(
+                    f"No se pudo comprobar la versión de {source.name} en {source.path}."
+                )
+            actual = match.group("version")
+            if actual != source.version:
+                raise SourceCheckError(
+                    f"Versión discordante para {source.name}: publication.yml declara "
+                    f"{source.version} y {source.path} contiene {actual}."
+                )
+        else:
+            if VERSION_PATTERN.search(text):
+                raise SourceCheckError(
+                    f"La fuente {source.name} tiene versión explícita pero publication.yml "
+                    "la identifica solo mediante git_blob."
+                )
+            actual_blob = git_blob_oid(path.read_bytes())
+            if actual_blob != source.git_blob:
+                raise SourceCheckError(
+                    f"Snapshot Git discordante para {source.name}: publication.yml declara "
+                    f"{source.git_blob} y {source.path} produce {actual_blob}."
+                )
 
 
 def _manuscript_metadata(project: dict, publication: dict) -> ManuscriptMetadata:
@@ -355,6 +396,55 @@ def _validate_modernized_edition(repository_root: Path) -> None:
         raise SourceCheckError(f"Edición modernizada no apta para 4C: {exc}") from exc
 
 
+def _validate_apparatus_sources(repository_root: Path) -> tuple[int, int, int]:
+    """Validate the glossary, register and cross-document prerequisites for 4D."""
+
+    try:
+        glossary = load_glossary(
+            repository_root / "project" / "20_TRABAJO_EDITORIAL" / "Glosario.md"
+        )
+        if glossary.version is not None:
+            raise ApparatusSourceError(
+                "Glosario.md no debe recibir una versión inventada en publicación."
+            )
+        register = load_evidence_register(
+            repository_root
+            / "project"
+            / "30_RESULTADOS"
+            / "ESTUDIO_HISTORICO"
+            / "Registro_Afirmaciones_Calculos_v1.md"
+        )
+        specs = load_unit_specs(
+            repository_root / "project" / "00_CONTROL" / "unidades.yaml"
+        )
+        validate_glossary_references(
+            glossary,
+            tuple(spec.label for spec in specs),
+            source="project/20_TRABAJO_EDITORIAL/Glosario.md",
+        )
+        modernized = load_modernized_edition(
+            repository_root
+            / "project"
+            / "30_RESULTADOS"
+            / "EDICION_DIVULGATIVA"
+            / "Catastro_Sorrios_1752_Version_Modernizada.md"
+        )
+        validate_concordance_units(modernized, tuple(spec.label for spec in specs))
+        response_units = {
+            label
+            for response in modernized.responses
+            for label in re.findall(r"Folio \d{3}[rv]", response.folios)
+        }
+        unknown = sorted(response_units - {spec.label for spec in specs})
+        if unknown:
+            raise ApparatusSourceError(
+                "La modernizada remite a unidades desconocidas: " + ", ".join(unknown)
+            )
+    except (OSError, UnicodeError, CriticalEditionError, ModernizedEditionError, ApparatusSourceError) as exc:
+        raise SourceCheckError(f"Fuentes no aptas para 4D: {exc}") from exc
+    return len(glossary.entries), len(register.entries), len(register.calculations)
+
+
 def _validate_chapters(publication_root: Path, repository_root: Path) -> None:
     data = _read_yaml(publication_root / "meta" / "chapters.yml")
     chapters = data.get("chapters")
@@ -462,10 +552,21 @@ def check_sources(
     unit_count = _validate_units(repository_root, manuscript.pages)
     _validate_critical_edition(repository_root, manuscript)
     _validate_modernized_edition(repository_root)
+    glossary_count, evidence_count, calculation_count = _validate_apparatus_sources(
+        repository_root
+    )
     _validate_chapters(publication_root, repository_root)
     _validate_evidence_ids(publication_root, repository_root)
     _validate_assets(publication_root, manuscript)
-    return CheckedSources(manuscript_pdf, manuscript, sources, unit_count)
+    return CheckedSources(
+        manuscript_pdf,
+        manuscript,
+        sources,
+        unit_count,
+        glossary_count,
+        evidence_count,
+        calculation_count,
+    )
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -482,8 +583,11 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     print(
         "PASS: "
-        f"{len(checked.sources)} fuentes versionadas, {checked.unit_count} unidades, "
-        "40 preguntas/respuestas modernizadas y "
+        f"{len(checked.sources)} fuentes declaradas, {checked.unit_count} unidades, "
+        "40 preguntas/respuestas modernizadas, "
+        f"{checked.glossary_count} entradas de glosario, "
+        f"{checked.evidence_count} entradas D/C/I/E/L y "
+        f"{checked.calculation_count} cálculos; "
         f"manuscrito {checked.manuscript.name} verificado en "
         f"{checked.manuscript_pdf} ({checked.manuscript.pages} páginas; "
         f"SHA-256 {checked.manuscript.sha256})"

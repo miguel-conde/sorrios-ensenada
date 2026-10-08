@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rewrite legacy prototype links in rendered HTML to the real 4A–4C chapters."""
+"""Rewrite legacy prototype links in rendered HTML to the real Phase 4 views."""
 
 from __future__ import annotations
 
@@ -17,14 +17,9 @@ REPLACEMENTS = {
     "../../generated/16-modernizada-prototipo.qmd#respuesta-17": (
         "../../generated/16-edicion-modernizada.html#respuesta-17"
     ),
-}
-
-# The prototype evidence page has no reader-facing successor until Phase 4D.
-# Preserve the wording of chapter 9 but remove its obsolete hyperlink rather
-# than exposing a broken internal QMD path or anticipating the future apparatus.
-OBSOLETE_LINKS = {
-    '<a href="../../generated/aparato-molinos.qmd#matriz-molinera">'
-    "aparato D/C/I/E/L</a>": "aparato D/C/I/E/L",
+    "../../generated/aparato-molinos.qmd#matriz-molinera": (
+        "../../generated/matriz-evidencia.html#evidencia-hid-001"
+    ),
 }
 
 
@@ -36,10 +31,6 @@ def fix_rendered_links(output_root: Path) -> int:
         text = path.read_text(encoding="utf-8")
         updated = text
         for old, new in REPLACEMENTS.items():
-            occurrences = updated.count(old)
-            updated = updated.replace(old, new)
-            replacements += occurrences
-        for old, new in OBSOLETE_LINKS.items():
             occurrences = updated.count(old)
             updated = updated.replace(old, new)
             replacements += occurrences

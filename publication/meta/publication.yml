@@ -18,6 +18,9 @@ sources:
   modernized_edition:
     path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
     version: "1.3"
+  glossary:
+    path: project/20_TRABAJO_EDITORIAL/Glosario.md
+    git_blob: "0df18f89e2f39f8d75279d06e6f1b0bfa77362fe"
 
 manuscript:
   metadata_source: project/00_CONTROL/proyecto.yaml

@@ -27,6 +27,10 @@ book:
     - generated/14-facsimil.qmd
     - generated/15-transcripcion.qmd
     - generated/16-edicion-modernizada.qmd
+    - generated/glosario.qmd
+    - generated/cuadros-cuantitativos.qmd
+    - generated/concordancia.qmd
+    - generated/matriz-evidencia.qmd
   search: true
   downloads:
     - pdf
