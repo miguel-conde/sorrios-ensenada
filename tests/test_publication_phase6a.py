@@ -129,3 +129,31 @@ def test_rendered_candidate_passes_release_audit_when_artifacts_exist():
         assert "audit_release_candidate" in (
             SCRIPTS / "validate_publication.py"
         ).read_text(encoding="utf-8")
+
+
+def test_candidate_report_manifests_snapshot_outputs_hashes_and_limitations():
+    report = (ROOT / "docs/CANDIDATA_PUBLICACION_1_0.md").read_text(encoding="utf-8")
+    for value in (
+        "49ab2e1b1a58ca9201efab54b42a3125de7326f8",
+        CANONICAL_COMMIT,
+        "e32917763475ceebdfe7b54830e1fb43f6419dad",
+        MANUSCRIPT_SHA256,
+        "0f2a27a3294060552ee5dde8a9b4d61258e85fef049679f650e3d71465234da0",
+        "f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183",
+        "WCAG 2.1/2.2 AA",
+        "PDF/UA",
+        "PDF/A",
+    ):
+        assert value in report
+    assert "PENDIENTE DECISIÓN/CONFIGURACIÓN DE PROVEEDOR DE PREVIEW" in report
+    assert not re.search(r"(?:/home/|/tmp/|[A-Za-z]:\\\\)", report)
+
+
+def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance():
+    roadmap = (ROOT / "docs/ESTADO_PUBLICACION_QUARTO.md").read_text(
+        encoding="utf-8"
+    )
+    assert "| 6A | en curso; pendiente de proveedor |" in roadmap
+    assert "| 6B | pendiente |" in roadmap
+    assert "aceptación editorial humana" in roadmap
+    assert "No ejecutes 6B" in roadmap

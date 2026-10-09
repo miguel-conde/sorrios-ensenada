@@ -1,12 +1,12 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 9 de octubre de 2026<br>
-**Estado global:** Fase 5 completada; libro apto para iniciar la Fase 6<br>
-**Fase actual:** Fase 6 — preview y publicación 1.0 (pendiente)<br>
-**Base de concurrencia de 5B:** `13d157c4b5e2d5079122a83e612755f036e99d50`<br>
-**Upstream inicial de 5B:** `b91e65f61bf4be7052922a9d348efcc1df79e87d`<br>
-**Upstream comprobado antes del cierre técnico:** `13d157c4b5e2d5079122a83e612755f036e99d50`<br>
-**Upstream comprobado antes del cierre documental:** `e74ce3cb8bd27921f50db5a046a0851528297ced`
+**Estado global:** Fase 6 en curso; candidata local 1.0 validada<br>
+**Fase actual:** Fase 6A — candidata y preview (pendiente de proveedor remoto)<br>
+**Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
+**Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
+**Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
+**Commit de candidata técnica:** `49ab2e1b1a58ca9201efab54b42a3125de7326f8`
 
 ## Lectura de entrada
 
@@ -48,6 +48,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Fase 4D implementada en `f9a7bf9d9a7e8cb70516e41105a472d7d7f3eed2`; el glosario, los cuadros cuantitativos, la concordancia y la matriz D/C/I/E/L se generan como cuatro vistas reproducibles de sus fuentes estructuradas.
 - Fase 5A implementada en `16084c95691d879675859030059c9bf25af1c7dc`; los nueve índices se generan desde sus fuentes estructuradas y comparten destinos para localizadores HTML y páginas PDF resueltas por LaTeX.
 - Fase 5B implementada en `e74ce3cb8bd27921f50db5a046a0851528297ced`; el volumen completo queda auditado y corregido en estructura editorial, reproducibilidad, HTML, PDF y accesibilidad básica, sin modificar fuentes canónicas.
+- Candidata técnica 1.0 preparada en `49ab2e1b1a58ca9201efab54b42a3125de7326f8`; snapshot, reconstrucción, HTML, PDF, seguridad y preview local están validados. El informe reproducible está en `docs/CANDIDATA_PUBLICACION_1_0.md`.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -63,11 +64,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
+| 6. Preview y publicación 1.0 | en curso | candidata local validada; preview remoto y aceptación editorial pendientes antes de 6B |
 
 ## Siguiente tarea exacta
 
-Fase 6 — preview y publicación 1.0.
+Decidir y configurar el proveedor de preview remoto de la candidata 1.0; después, someter la URL real a aceptación editorial humana.
 
 ### Descomposición operativa de la Fase 4
 
@@ -84,6 +85,13 @@ Fase 6 — preview y publicación 1.0.
 |---|---|---|
 | 5A | completada | nueve índices reproducibles y localizadores HTML/PDF |
 | 5B | completada | calidad integral y accesibilidad |
+
+### Descomposición operativa de la Fase 6
+
+| Tarea | Estado | Alcance |
+|---|---|---|
+| 6A | en curso; pendiente de proveedor | candidata reproducible y validada, preview local comprobada; falta preview remoto para aceptación editorial humana |
+| 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
 
@@ -347,6 +355,19 @@ Fase 6 — preview y publicación 1.0.
 - Integridad: `project/`, `plugins/`, fuentes canónicas, manuscrito externo, PDF 0.6, `main` y `origin/main` permanecen intactos. Ningún PDF, PNG, `_book/`, derivado ni temporal está versionado. No se ejecutó preview, despliegue, publicación, etiqueta, release ni push.
 - Veredicto: `PASS`; no quedan bloqueantes conocidos. 5B y la Fase 5 quedan cerradas. La única tarea siguiente es Fase 6 — preview y publicación 1.0.
 
+## Estado comprobado de 6A
+
+- Candidata técnica: `49ab2e1b1a58ca9201efab54b42a3125de7326f8` (`chore(publication): prepare 1.0 release candidate`). `base.git_commit` identifica `main@e81dc9239ac8dbabfe77168a50ef98c4d3b79170`; los árboles `project/` de `main` y de la candidata coinciden en `e32917763475ceebdfe7b54830e1fb43f6419dad`.
+- Metadata: se conservan `0.1.0-dev` y `development`; no se inventó versión RC ni autoría, responsabilidad editorial, licencia, copyright, fecha, URL o ISBN. Las decisiones editoriales necesarias para 1.0 permanecen explícitamente pendientes de 6B.
+- Reproducibilidad: dos preparaciones completas consecutivas produjeron las mismas 75 salidas, 77.225.629 bytes y SHA-256 conjunto `0f2a27a3294060552ee5dde8a9b4d61258e85fef049679f650e3d71465234da0`; el informe `docs/CANDIDATA_PUBLICACION_1_0.md` registra los hashes de 4A, 4B, 4C, 4D, 5A y prototipo.
+- Salidas: 30 documentos HTML; bundle sin PDF de 77.085.904 bytes. PDF `sorribos-santibanez-ordas-1752.pdf`, 334 páginas, 73.994.496 bytes, SHA-256 `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183`. La descarga HTML sirve exactamente ese PDF.
+- Validación: diez pruebas 6A y 567 pruebas totales en PASS, sin `skip` ni `xfail`; colección SHA-256 `2707830a38956a186b7b4c5a377fadf59cfcd98894dafb48ed28df86d58f7fe7`. `check_sources.py`, dos preparaciones, validadores estático/profundo, `quarto check`, renders HTML/PDF/multiformato, enlaces/anclas, localizadores, Poppler, seguridad pública y `git diff --check` pasan.
+- Inspección: las 334 páginas superaron la comprobación geométrica y las muestras de release de portada, partes, capítulos 1/5/13, facsímil, transcripción, modernizada, aparatos, nueve índices y última página no muestran defectos. HTML se comprobó en escritorio y viewport estrecho.
+- Preview local: smoke test temporal en `http://127.0.0.1:4319/` con páginas, búsqueda, assets y PDF en `200`; el servidor quedó cerrado. No existe preview remoto ni URL persistente.
+- Proveedor: no hay `netlify.toml`, Pages, workflow de despliegue ni decisión inequívoca. Netlify sigue siendo la preferencia del Plan Maestro y GitHub Pages la alternativa; elegir y autorizar una opción es la única puerta pendiente de 6A.
+- Seguridad e integridad: la salida pública no contiene `project/`, manuscrito fuente, PDF 0.6, QMD, scripts, configuración sensible, secretos ni rutas locales. `project/`, `plugins/`, `main` y `origin/main` permanecen intactos. No se hizo push, despliegue, merge, tag, release ni publicación definitiva.
+- Estado: candidata técnicamente válida; 6A y Fase 6 permanecen abiertas. `CANDIDATA 1.0 LISTA — PENDIENTE DECISIÓN/CONFIGURACIÓN DE PROVEEDOR DE PREVIEW`.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -357,4 +378,4 @@ Fase 6 — preview y publicación 1.0.
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente Fase 6 — preview y publicación 1.0— conforme al plan maestro y a una autorización específica de despliegue; no reabras 5A/5B ni alteres fuentes canónicas. Confirma primero rama, upstream, decisiones editoriales pendientes y puerta de publicación.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/CANDIDATA_PUBLICACION_1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Continúa únicamente 6A: obtén una decisión humana explícita entre Netlify (preferencia del Plan Maestro) y GitHub Pages, configura y valida un preview remoto de la candidata `49ab2e1b1a58ca9201efab54b42a3125de7326f8`, y detente para aceptación editorial humana. No ejecutes 6B, no publiques 1.0, no crees tag/release y no alteres fuentes canónicas.
