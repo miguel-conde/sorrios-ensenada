@@ -4,7 +4,7 @@
 **Fase:** 6A.1 — revisión editorial final de la candidata 1.0<br>
 **Baseline de auditoría:** `088e4fcec91fa9723b5b0ffad4f65781a9c0af6c`<br>
 **Commit de la candidata técnica:** `49ab2e1b1a58ca9201efab54b42a3125de7326f8`<br>
-**Estado:** comparación editorial y funcional; las clasificaciones son propuestas pendientes de decisión humana.
+**Estado:** comparación editorial y funcional complementada por la primera ronda de observaciones del usuario; las clasificaciones consolidadas siguen pendientes de decisión humana.
 
 ## Conclusiones ejecutivas
 
@@ -14,10 +14,11 @@
 4. La principal pérdida material respecto a 0.6 es la cartografía. Las dos láminas de 0.6 cumplen una función de orientación regional, provincial y local que no tiene equivalente en la candidata.
 5. La principal carencia bibliográfica es de sistema, no de número bruto de enlaces. Quarto conserva 41 URL únicas frente a 42 en 0.6 y la matriz identifica numerosas fuentes externas, pero `references.bib` sigue vacío y el capítulo del topónimo no ofrece al lector llamadas o referencias próximas que lo conduzcan a esas entradas.
 6. La trazabilidad D/C/I/E/L es más robusta como dato estructurado: la matriz reproduce 112 entradas y la concordancia conecta respuestas, unidades, transcripción y facsímil. Sin embargo, las marcas del cuerpo no enlazan directamente con la matriz y solo son visibles de forma sistemática en los capítulos 9–13.
-7. Faltan componentes que el Plan Maestro situó entre los preliminares y los aparatos narrativos: créditos y responsabilidades editoriales definitivas, cartografía, una presentación o guía preliminar consolidada, cronología, cuestiones abiertas, fuentes/bibliografía, historia de versiones y modelos de cita.
+7. Faltan componentes que el Plan Maestro situó entre los preliminares y los aparatos narrativos: créditos y responsabilidades editoriales definitivas, cartografía, una presentación o guía preliminar consolidada, cronología visual, cuestiones abiertas, fuentes/bibliografía, historia de versiones y modelos de cita.
 8. La candidata conserva todavía metadatos de desarrollo: subtítulo «Edición en desarrollo», versión `0.1.0-dev`, estado `development`, autor PDF vacío y ausencia de licencia, copyright, fecha editorial y URL canónica. Estos valores no deben llegar sin decisión a una publicación 1.0.
 9. No debe restaurarse todo lo que aparecía en 0.6. Su facsímil solo por unidades, sus localizadores provisionales y varias formulaciones históricas superadas han sido sustituidos por soluciones equivalentes o mejores.
 10. La matriz de decisiones se mantiene separada en [REVISION_EDITORIAL_CANDIDATA_1_0.md](./REVISION_EDITORIAL_CANDIDATA_1_0.md). Ninguna clasificación B/M/F/N equivale a una decisión del usuario.
+11. Una revisión posterior del usuario amplió el alcance: detectó cuestiones de apertura y arquitectura, contexto del glosario, recursos gráficos y defectos visibles del TOC e índices PDF. Esta comparación no se presenta ya como inventario exhaustivo de todo recurso visual o problema de composición.
 
 ## 1. Alcance, autoridad y baseline
 
@@ -67,6 +68,8 @@ Se combinaron:
 
 No se hizo OCR porque ambos PDF ofrecen texto extraíble. No se realizó investigación histórica externa ni se verificó de nuevo la corrección científica de cada fuente citada. El recuento de «tablas» de 0.6 no es comparable de forma fiable porque ese PDF no expone estructura semántica; no se fuerza una cifra.
 
+El inventario de `pdfimages` cuenta imágenes incrustadas, pero no identifica necesariamente gráficos, esquemas o recuadros compuestos como recursos vectoriales. Por ello no permite por sí solo concluir que todos los recursos explicativos de 0.6 o del Plan de composición 0.5 hayan sido inventariados. Esa comparación visual específica queda pendiente en `REV-021`.
+
 Los recuentos de marcas se refieren a grupos visibles con forma `[D:`, `[C:`, `[I:`, `[E:`, `[L:` o combinaciones. Una marca puede contener varios identificadores y no equivale a una entrada de la matriz.
 
 ## 4. Comparación cuantitativa
@@ -82,7 +85,7 @@ Los recuentos de marcas se refieren a grupos visibles con forma `[D:`, `[C:`, `[
 | Aparatos narrativos adicionales | 4 | 0 | cuestiones abiertas, fuentes, versiones y modelos de cita |
 | Índices | 9 | 9 | índice general |
 | Entradas de los índices | 129 | 164 | recuento de entradas; los índices 6, 7 y 9 son más amplios en Quarto |
-| Imágenes incrustadas | 73 | 53 | `pdfimages -list`; 0.6 = 3 cartográficas + 35 facsimilares + 35 de transcripción; Quarto = 18 + 35 |
+| Imágenes incrustadas | 73 | 53 | `pdfimages -list`; 0.6 = 3 cartográficas + 35 facsimilares + 35 de transcripción; Quarto = 18 + 35; no incluye necesariamente recursos vectoriales |
 | Anotaciones URL | 154 | 91 | `pdfinfo -url`; incluye repeticiones |
 | URL externas únicas | 42 | 41 | normalización exacta de destinos URL |
 | Notas de la edición modernizada | 39 | 39 | 35 numéricas y 4 semánticas |
@@ -212,6 +215,8 @@ Quarto dedica 18 páginas a las imágenes digitales completas, con márgenes, bl
 
 La candidata mejora cobertura, orden y contexto. No se observa pérdida que justifique volver al modelo exclusivo por unidades de 0.6.
 
+Esta conclusión solo descarta recuperar el modelo antiguo. La ronda posterior del usuario abre una cuestión distinta: si la combinación actual de 18 páginas completas y 35 recortes de cotejo produce duplicación funcional, sobre todo en PDF. `REV-016` conserva abiertas varias soluciones sin elegir todavía ninguna.
+
 ## 13. Transcripción y aparato crítico
 
 Las dos versiones cubren las 35 unidades. Quarto conserva en cada una:
@@ -237,7 +242,7 @@ Ambas versiones presentan portada, comparecencia, preguntas y respuestas 1–40,
 
 | Aparato previsto | 0.6 | Quarto | Evaluación |
 |---|---|---|---|
-| Glosario | 22 entradas | 22 entradas enlazadas | equivalente; Quarto mejora navegación |
+| Glosario | 22 entradas | 22 entradas enlazadas | equivalente en inventario y navegación; su suficiencia como contexto histórico requiere la auditoría de `REV-020` |
 | Cuadros cuantitativos | presentes | 13 entradas C y 17 cálculos asociados | Quarto más estructurado y reproducible |
 | Concordancia | presente | dos vistas, 35 unidades, 40 respuestas y 65 relaciones | mejora clara |
 | Matriz D/C/I/E/L | 112 entradas | 112 entradas con estado, cautela y uso en el libro | mejora de estructura y navegación |
@@ -260,6 +265,8 @@ Quarto amplía especialmente:
 
 El índice de preguntas conserva 40 entradas. Los cinco índices basados en fuentes vivas mantienen 21, 9, 7, 12 y 12 entradas. Los localizadores visibles, variantes, remisiones y cautelas hacen que la candidata sea funcionalmente superior. No hay regresión que recuperar.
 
+La revisión visual posterior distingue esa mejora estructural de dos defectos actuales: numeraciones largas pegadas a títulos en el TOC PDF (`REV-023`) y separación insuficiente entre entradas de índices PDF (`REV-025`). También confirma que la ordenación determinista de los índices no se extiende al glosario, que conserva el orden de su fuente pese al requisito alfabético del Plan 0.5 (`REV-024`).
+
 ## 17. Metadatos editoriales
 
 | Elemento | 0.6 | Quarto | Evaluación |
@@ -281,6 +288,8 @@ La ausencia no autoriza a inventar datos. Sí obliga a obtener decisiones explí
 0.6 ofrece una identidad visual más terminada: portada compuesta, color, encabezados corridos, A4, mapas y aperturas de apéndice. Quarto usa una presentación LaTeX más sobria, Letter, mucho espacio blanco y una portada mínima. Las dos son legibles; no hay base para declarar A4 superior a Letter ni para reproducir la maqueta antigua.
 
 Quarto es mejor en navegación digital, enlaces internos, búsqueda HTML, estructura accesible básica, anclas, localizadores e índices. 0.6 es mejor en orientación inicial, cartografía, proximidad de fuentes en el capítulo del topónimo y señalización editorial de preliminares/apéndices.
+
+La primera ronda de observaciones del usuario añade problemas que la inspección general de 5B y 6A.1 no había convertido en entradas específicas: apertura aún propia de prepublicación, barra lateral inicialmente muy desplegada, numeración del TOC PDF y separación de entradas de índices PDF. Son cuestiones registradas para decisión o corrección posterior, no cambios ejecutados por este informe.
 
 Ninguna versión es PDF etiquetado. La candidata no declara PDF/UA, PDF/A ni conformidad WCAG formal; esta limitación conocida no invalida por sí sola la edición 1.0.
 
@@ -321,11 +330,13 @@ El informe del 4 de octubre describía un checkout de 68 páginas con capítulos
 
 Desde entonces se completaron los capítulos 12–16, los cuatro aparatos, los nueve índices, la auditoría integral 5B y la candidata 6A. El idioma público es español, la prueba técnica está fuera de navegación y el PDF tiene 334 páginas. Se conservan del análisis anterior únicamente los hallazgos que siguen verificados contra los dos PDF actuales.
 
+Después de 6A.1, el usuario realizó una primera ronda de revisión editorial y visual, consolidada en [ORDEN_DE_TRABAJO_PARA_V1_0.md](./ORDEN_DE_TRABAJO_PARA_V1_0.md). Sus observaciones no reescriben los datos comparativos, pero amplían el mapa de decisión a arquitectura de lectura, apertura, función del glosario, recursos vectoriales o explicativos y defectos concretos de composición.
+
 ## 22. Resultado
 
 La candidata supera a 0.6 en integridad documental, rigor histórico, reproducibilidad, navegación e índices. No se detecta pérdida de capítulos, unidades, respuestas, matriz, glosario ni temas históricos principales.
 
-Las pérdidas o carencias que requieren decisión se concentran en la terminación editorial: metadatos y créditos, cartografía, sistema bibliográfico visible, aparatos narrativos prometidos, orientación preliminar y cierre. La clasificación propuesta y las acciones posibles figuran en [REVISION_EDITORIAL_CANDIDATA_1_0.md](./REVISION_EDITORIAL_CANDIDATA_1_0.md).
+La comparación 0.6 identificó pérdidas o carencias de terminación editorial, pero no agotó todas las cuestiones relevantes para 1.0. La revisión del usuario añadió decisiones de arquitectura y apertura, auditorías todavía pendientes y tres defectos concretos de composición. La clasificación consolidada y el orden de trabajo figuran en [REVISION_EDITORIAL_CANDIDATA_1_0.md](./REVISION_EDITORIAL_CANDIDATA_1_0.md).
 
 ## Referencias internas
 
@@ -333,6 +344,7 @@ Las pérdidas o carencias que requieren decisión se concentran en la terminaci�
 - [Estado y roadmap](./ESTADO_PUBLICACION_QUARTO.md)
 - [Informe de candidata 1.0](./CANDIDATA_PUBLICACION_1_0.md)
 - [Matriz de revisión editorial](./REVISION_EDITORIAL_CANDIDATA_1_0.md)
+- [Orden de trabajo consolidado para 1.0](./ORDEN_DE_TRABAJO_PARA_V1_0.md)
 - [Instrucciones de publicación](../.github/instructions/publication.instructions.md)
 - [Configuración Quarto](../publication/_quarto.yml)
 - [Capítulo 3: expediente y topónimo](../publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd)
