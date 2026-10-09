@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 9 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; candidata local intacta y revisión editorial consolidada en 26 entradas REV-*<br>
-**Fase actual:** Fase 6A — decisiones de arquitectura y apertura previas a auditorías especializadas, correcciones y preview<br>
+**Estado global:** Fase 6 en curso; candidata local intacta y decisiones editoriales 6A.2 cerradas documentalmente<br>
+**Fase actual:** Fase 6A — auditorías especializadas previas a implementación, nueva candidata, correcciones y preview<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -19,9 +19,10 @@ Una sesión nueva de Copilot debe leer, en este orden:
 5. este roadmap;
 6. `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md`;
 7. `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md`;
-8. `.github/instructions/publication.instructions.md`;
-9. `publication/README.md`;
-10. `docs/ESPECIFICACION_BOOTSTRAP_PUBLICATION.md` como registro de aceptación de la Fase 2A.
+8. `docs/DECISIONES_EDITORIALES_6A_2.md`;
+9. `.github/instructions/publication.instructions.md`;
+10. `publication/README.md`;
+11. `docs/ESPECIFICACION_BOOTSTRAP_PUBLICATION.md` como registro de aceptación de la Fase 2A.
 
 ## Estado comprobado
 
@@ -51,7 +52,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Fase 5A implementada en `16084c95691d879675859030059c9bf25af1c7dc`; los nueve índices se generan desde sus fuentes estructuradas y comparten destinos para localizadores HTML y páginas PDF resueltas por LaTeX.
 - Fase 5B implementada en `e74ce3cb8bd27921f50db5a046a0851528297ced`; el volumen completo queda auditado y corregido en estructura editorial, reproducibilidad, HTML, PDF y accesibilidad básica, sin modificar fuentes canónicas.
 - Candidata técnica 1.0 preparada en `49ab2e1b1a58ca9201efab54b42a3125de7326f8`; snapshot, reconstrucción, HTML, PDF, seguridad y preview local están validados. El informe reproducible está en `docs/CANDIDATA_PUBLICACION_1_0.md`.
-- Revisión editorial 6A.1 completada contra la composición 0.6 y posteriormente consolidada con la primera ronda de observaciones del usuario. `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md` contiene 26 observaciones propuestas y ninguna decisión definitiva; `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md` es la referencia de trabajo consolidada, no una fuente histórica.
+- Revisión editorial 6A.1 completada contra la composición 0.6 y posteriormente consolidada con la primera ronda de observaciones del usuario. `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md` conserva 26 observaciones y `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md` la referencia de trabajo que originó la secuencia.
+- Decisiones 6A.2 registradas en `docs/DECISIONES_EDITORIALES_6A_2.md`: doce decisiones cerradas editorialmente, dos cerradas en principio con datos pendientes y F3 seleccionada únicamente para prototipo. Ninguna está implementada y la candidata permanece intacta.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -67,11 +69,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | candidata local validada e intacta; decisiones editoriales, tres auditorías especializadas, correcciones, preview remoto y aceptación pendientes antes de 6B |
+| 6. Preview y publicación 1.0 | en curso | candidata local validada e intacta; 6A.2 cerrada documentalmente; auditorías especializadas, datos finales, prototipo F3, implementación, nueva candidata, preview remoto y aceptación pendientes antes de 6B |
 
 ## Siguiente tarea exacta
 
-Decisiones editoriales de arquitectura y apertura de la candidata 1.0, antes de las tres auditorías especializadas y antes de cualquier modificación del libro.
+Auditoría A — Glosario / Estudio Histórico / necesidad real de nueva investigación.
 
 ### Descomposición operativa de la Fase 4
 
@@ -93,8 +95,12 @@ Decisiones editoriales de arquitectura y apertura de la candidata 1.0, antes de 
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso; pendiente de proveedor | candidata reproducible y validada; faltan decisiones editoriales, auditorías especializadas, implementación posterior y, finalmente, proveedor y preview remoto para aceptación humana |
-| 6A.1 | consolidada; decisiones pendientes | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modifica la candidata ni cierra 6A |
+| 6A | en curso | candidata reproducible y validada; faltan auditorías especializadas, datos finales, prototipo F3, implementación, nueva candidata y, finalmente, proveedor y preview remoto para aceptación humana |
+| 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
+| 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; doce cerradas, dos cerradas en principio con datos pendientes y F3 como hipótesis de prototipo; ninguna implementación iniciada |
+| Auditoría A | siguiente | glosario, Estudio Histórico y necesidad real de nueva investigación; no iniciada en 6A.2 |
+| Auditoría B | pendiente | gráficos, cartografía y recuadros |
+| Auditoría C | pendiente | fuentes, bibliografía y aparatos narrativos |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
@@ -362,7 +368,7 @@ Decisiones editoriales de arquitectura y apertura de la candidata 1.0, antes de 
 ## Estado comprobado de 6A
 
 - Candidata técnica: `49ab2e1b1a58ca9201efab54b42a3125de7326f8` (`chore(publication): prepare 1.0 release candidate`). `base.git_commit` identifica `main@e81dc9239ac8dbabfe77168a50ef98c4d3b79170`; los árboles `project/` de `main` y de la candidata coinciden en `e32917763475ceebdfe7b54830e1fb43f6419dad`.
-- Metadata: se conservan `0.1.0-dev` y `development`; no se inventó versión RC ni autoría, responsabilidad editorial, licencia, copyright, fecha, URL o ISBN. Las decisiones editoriales necesarias para 1.0 permanecen explícitamente pendientes de 6B.
+- Metadata: se conservan `0.1.0-dev` y `development`; 6A.2 aprueba T1 como identidad de trabajo y el modelo de créditos, pero no modifica aún la candidata. Autoría nominal, roles concretos, licencia, copyright, fecha y URL siguen pendientes; 1.0 no queda condicionada a ISBN.
 - Reproducibilidad: dos preparaciones completas consecutivas produjeron las mismas 75 salidas, 77.225.629 bytes y SHA-256 conjunto `0f2a27a3294060552ee5dde8a9b4d61258e85fef049679f650e3d71465234da0`; el informe `docs/CANDIDATA_PUBLICACION_1_0.md` registra los hashes de 4A, 4B, 4C, 4D, 5A y prototipo.
 - Salidas: 30 documentos HTML; bundle sin PDF de 77.085.904 bytes. PDF `sorribos-santibanez-ordas-1752.pdf`, 334 páginas, 73.994.496 bytes, SHA-256 `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183`. La descarga HTML sirve exactamente ese PDF.
 - Validación: diez pruebas 6A y 567 pruebas totales en PASS, sin `skip` ni `xfail`; colección SHA-256 `2707830a38956a186b7b4c5a377fadf59cfcd98894dafb48ed28df86d58f7fe7`. `check_sources.py`, dos preparaciones, validadores estático/profundo, `quarto check`, renders HTML/PDF/multiformato, enlaces/anclas, localizadores, Poppler, seguridad pública y `git diff --check` pasan.
@@ -370,7 +376,7 @@ Decisiones editoriales de arquitectura y apertura de la candidata 1.0, antes de 
 - Preview local: smoke test temporal en `http://127.0.0.1:4319/` con páginas, búsqueda, assets y PDF en `200`; el servidor quedó cerrado. No existe preview remoto ni URL persistente.
 - Proveedor: no hay `netlify.toml`, Pages, workflow de despliegue ni decisión inequívoca. Netlify sigue siendo la preferencia del Plan Maestro y GitHub Pages la alternativa; esta puerta permanece pendiente después de la decisión editorial sobre `REV-*`.
 - Seguridad e integridad: la salida pública no contiene `project/`, manuscrito fuente, PDF 0.6, QMD, scripts, configuración sensible, secretos ni rutas locales. `project/`, `plugins/`, `main` y `origin/main` permanecen intactos. No se hizo push, despliegue, merge, tag, release ni publicación definitiva.
-- Estado: candidata técnicamente válida; 6A y Fase 6 permanecen abiertas. La consolidación editorial ampliada pasa a ser la puerta inmediata antes de cualquier auditoría especializada, corrección o preview remoto.
+- Estado: candidata técnicamente válida; 6A y Fase 6 permanecen abiertas. Cerrada documentalmente 6A.2, la puerta inmediata es la Auditoría A antes de cualquier implementación, corrección o preview remoto.
 
 ## Estado comprobado de 6A.1
 
@@ -385,6 +391,19 @@ Decisiones editoriales de arquitectura y apertura de la candidata 1.0, antes de 
 - Integridad: `project/`, `publication/`, la candidata y los derivados permanecen intactos; solo cambió documentación de auditoría. No se inició 6B ni se hizo preview remoto, despliegue, push, tag o release.
 - Puerta inmediata: decisiones editoriales de arquitectura y apertura de la candidata 1.0. Las tres auditorías especializadas y cualquier modificación del libro quedan para pasos posteriores.
 
+## Cierre documental de 6A.2
+
+- Baseline: `4c9bc14222b79aca151e5f0ff58c325e1aebe823` (`docs(publication): consolidate 1.0 editorial review`), con rama `feature/quarto-book` inicialmente un commit por delante de `origin/feature/quarto-book` y árbol limpio.
+- Registro: `docs/DECISIONES_EDITORIALES_6A_2.md` fija `DEC-001`–`DEC-015` y enlaza cada decisión con las `REV-*` afectadas sin duplicar el dossier completo.
+- Cerradas editorialmente: `DEC-001`–`DEC-007`, `DEC-010`, `DEC-011` y `DEC-013`–`DEC-015`.
+- Cerradas en principio: `DEC-008`, con nombres y roles concretos pendientes; `DEC-009`, con titular y licencia concreta pendientes.
+- Prototipo: `DEC-012` selecciona F3 solo para una prueba posterior. No es una solución irreversible ni está implementada.
+- Arquitectura: P3 para preliminares; prólogo personal y firmado de unas 900–1.500 palabras después de créditos; introducción con rutas y convenciones separadas; capítulo 4 conservado; landing HTML y portada PDF diferenciadas; T1 como título/subtítulo de trabajo; colofón breve; macroorden actual con rutas histórica y documental; cierres específicos; parte activa desplegada y partes inactivas plegadas; 1.0 no condicionada a ISBN.
+- Datos pendientes: autoría nominal, roles, responsables de transcripción/modernización si deben acreditarse, colaboradores, titular de copyright, licencia, fecha editorial, URL canónica e identidad visible de proyecto.
+- Auditorías: A, B y C permanecen pendientes y no se inició ninguna. La puerta inmediata es la Auditoría A.
+- Integridad: no se modificaron `publication/`, `project/`, `plugins/`, `tests/` ni `.github/`; no se generó ni renderizó el libro y no se cambió la metadata de la candidata.
+- Etiqueta: no se creó tag. `49ab2e1b1a58ca9201efab54b42a3125de7326f8` sigue siendo una candidata técnica preeditorial. El tag final solo podrá plantearse después de auditorías, implementación, nueva candidata, preview, aceptación humana y 6B.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -395,4 +414,4 @@ Decisiones editoriales de arquitectura y apertura de la candidata 1.0, antes de 
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/CANDIDATA_PUBLICACION_1_0.md`, `docs/INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md`, `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md`, `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Continúa únicamente con las decisiones editoriales de arquitectura y apertura: prólogo, introducción, apertura, macroorden, duplicación funcional de imágenes, preliminares, cierres y navegación HTML. No ejecutes todavía las auditorías especializadas, no modifiques la candidata, no configures el preview remoto, no ejecutes 6B, no publiques 1.0, no crees tag/release y no alteres fuentes canónicas.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/CANDIDATA_PUBLICACION_1_0.md`, `docs/INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md`, `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md`, `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md`, `docs/DECISIONES_EDITORIALES_6A_2.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Auditoría A — Glosario / Estudio Histórico / necesidad real de nueva investigación. No inicies las auditorías B o C, no implementes las decisiones 6A.2, no modifiques la candidata, no configures el preview remoto, no ejecutes 6B, no publiques 1.0, no crees tag/release y no alteres fuentes canónicas salvo que una operación posterior sea expresamente autorizada.

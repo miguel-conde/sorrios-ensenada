@@ -1,16 +1,17 @@
 # Revisión editorial consolidada de la candidata 1.0
 
 **Fecha:** 9 de octubre de 2026<br>
-**Fase:** 6A.1 — consolidación posterior a la primera ronda de observaciones del usuario<br>
-**Estado:** cuestiones y clasificaciones propuestas; todas las decisiones permanecen pendientes<br>
+**Fase:** 6A.2 — decisiones editoriales de arquitectura y apertura registradas<br>
+**Estado:** decisiones 6A.2 cerradas documentalmente; datos, auditorías e implementación pendientes<br>
 **Informe de evidencia:** [INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md](./INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md)<br>
 **Referencia de trabajo consolidada:** [ORDEN_DE_TRABAJO_PARA_V1_0.md](./ORDEN_DE_TRABAJO_PARA_V1_0.md)
+**Registro de decisiones:** [DECISIONES_EDITORIALES_6A_2.md](./DECISIONES_EDITORIALES_6A_2.md)
 
 ## 1. Objeto
 
 Este documento consolida la comparación integral entre la composición 0.6 y la candidata Quarto, la primera ronda de observaciones personales del usuario y el orden de trabajo acordado. La referencia principal para esta consolidación es `ORDEN_DE_TRABAJO_PARA_V1_0.md`; ese documento organiza el trabajo editorial, pero no es una fuente histórica ni sustituye las autoridades canónicas de `project/`.
 
-La consolidación no modifica la candidata, no implementa correcciones, no inicia las auditorías especializadas y no decide qué solución debe entrar definitivamente en 1.0. La composición 0.6 continúa siendo referencia editorial, no autoridad histórica o textual.
+La consolidación 6A.1 no modificó la candidata ni inició las auditorías especializadas. La operación 6A.2 registra ahora las decisiones humanas de arquitectura y apertura sin implementar ninguna de ellas. La composición 0.6 continúa siendo referencia editorial, no autoridad histórica o textual.
 
 ## 2. Baseline
 
@@ -52,28 +53,28 @@ Todas son **clasificaciones propuestas**. Ninguna equivale a una decisión edito
 
 | ID | Origen | Área | Observación | Evidencia 0.6 | Estado Quarto | Evaluación | Clasificación propuesta | Acción propuesta | Decisión del usuario |
 |---|---|---|---|---|---|---|---|---|---|
-| REV-001 | Auditoría actual | Identidad, créditos y metadatos | La candidata mantiene `0.1.0-dev`, `development`, «Edición en desarrollo», autor PDF vacío y carece de varias decisiones editoriales de publicación. | 0.6 identifica proyecto, versión y año, aunque tampoco resuelve todos los créditos. | Las decisiones sobre autoría o responsabilidad, fecha, licencia, copyright, URL y demás metadatos siguen abiertas. | Bloqueante editorial que agrupa decisiones distintas y deberá descomponerse antes de implementar. | B | Resolver separadamente identidad, responsabilidades y metadatos; coordinar con REV-007, REV-015 y REV-022. No inventar valores. | PENDIENTE |
+| REV-001 | Auditoría actual | Identidad, créditos y metadatos | La candidata mantiene `0.1.0-dev`, `development`, «Edición en desarrollo», autor PDF vacío y carece de varias decisiones editoriales de publicación. | 0.6 identifica proyecto, versión y año, aunque tampoco resuelve todos los créditos. | 6A.2 aprueba T1 como identidad de trabajo, el modelo de créditos por roles, la resolución legal previa a la nueva candidata y que 1.0 no dependa de ISBN. Faltan nombres, roles concretos, titular, licencia, fecha, URL e identidad de proyecto. | Decisión editorial cerrada en principio, con datos humanos y legales pendientes. | B | Recabar los datos pendientes e implementar después de las auditorías; coordinar con REV-007, REV-015 y REV-022. No inventar valores. | APROBADA EN PRINCIPIO 6A.2 (`DEC-007`, `DEC-008`, `DEC-009`, `DEC-015`); datos e implementación pendientes |
 | REV-002 | Comparación 0.6 | Cartografía | No existe equivalente de las láminas de orientación regional, provincial y local. | Págs. 16–17: tres escalas, topónimos útiles y cautelas sobre límites/localizadores. | No hay mapas ni assets cartográficos. | Carencia reforzada por 0.6, Plan Maestro, Plan de composición 0.5 e índice rector. | B | Auditar y seleccionar cartografía con procedencia, licencia, leyenda, cautelas y alternativas accesibles antes de diseñarla. | PENDIENTE |
 | REV-003 | Comparación 0.6 | Fuentes externas y bibliografía | El sistema público de referencias es incompleto y la fuente queda a menudo alejada de la afirmación. | Pág. 15 y apéndice F: referencias identificables y enlaces visibles. | Existen URL y fuentes estructuradas, pero `references.bib` está vacío y no hay aparato bibliográfico público completo. | El problema es de sistema para el lector, no de número bruto de URL; requiere auditoría especializada. | B | Auditar fuentes, bibliografía y contextos E; definir después el sistema público de referencias. | PENDIENTE |
 | REV-004 | Comparación 0.6 | Aparatos narrativos | Faltan cuestiones abiertas, historia de versiones y modelos de cita como funciones visibles del libro. | Apéndices E, G y H; el apéndice F cubre fuentes. | Límites e historia están dispersos o fuera del libro; no hay modelos de cita. | Las funciones prometidas deben resolverse, aunque no necesariamente mediante tres apéndices extensos; deben descomponerse funcionalmente. | B | Incluir estas funciones en la auditoría especializada de fuentes y aparatos; decidir forma y ubicación después. | PENDIENTE |
-| REV-005 | Auditoría actual | Preliminares y orientación | Presentación, nota al lector, guía de uso, convenciones y cronología no forman unos preliminares consolidados. | 0.6 ofrece orientación inicial parcial. | Sus funciones están ausentes o repartidas entre capítulos y aparatos. | La ronda del usuario confirma que la apertura y orientación son cuestiones sustantivas para 1.0. | B | Definir la arquitectura de preliminares junto con REV-013–REV-015 y decidir qué funciones se reúnen antes del capítulo 1. | PENDIENTE |
+| REV-005 | Auditoría actual | Preliminares y orientación | Presentación, nota al lector, guía de uso, convenciones y cronología no forman unos preliminares consolidados. | 0.6 ofrece orientación inicial parcial. | 6A.2 aprueba P3: preliminares modulares multiformato, prólogo tras créditos, introducción con rutas y pieza compacta separada de convenciones. | Arquitectura editorial decidida; cronología, cartografía y otros recursos siguen sujetos a auditorías especializadas. | B | Implementar P3 solo después de las auditorías y de fijar los datos editoriales necesarios. | APROBADA 6A.2 (`DEC-001`, `DEC-003`, `DEC-004`); implementación pendiente |
 | REV-006 | Auditoría actual | D/C/I/E/L y navegación | Las marcas del cuerpo son texto plano y su presencia visible se concentra en capítulos 9–13. | 95 grupos visibles; resolución manual en el apéndice D. | 77 grupos; matriz completa con anclas y retornos, sin enlace directo desde cada marca. | La cadena funciona, pero su experiencia de consulta puede mejorar. | M | Decidir una política coherente de marcas y enlaces sin saturar la prosa. | PENDIENTE |
-| REV-007 | Comparación 0.6 | Cierre editorial | El volumen termina en el índice de materias sin colofón o declaración final de edición. | Pág. 259: colofón provisional. | El informe técnico de candidata queda fuera del libro. | Mejora conveniente, posiblemente absorbible por identidad, versiones o modelos de cita. | M | Valorar un cierre mínimo coordinado con REV-001 y REV-004. | PENDIENTE |
+| REV-007 | Comparación 0.6 | Cierre editorial | El volumen termina en el índice de materias sin colofón o declaración final de edición. | Pág. 259: colofón provisional. | 6A.2 aprueba un colofón breve técnico-editorial. Su contenido final depende de identidad, versión, URL y de la Auditoría C. | Decisión editorial cerrada; alcance concreto e implementación pendientes. | M | Definir el contenido final tras la Auditoría C e implementarlo coordinadamente con REV-001 y REV-004. | APROBADA 6A.2 (`DEC-010`); dependencias e implementación pendientes |
 | REV-008 | Auditoría actual | Accesibilidad formal | El PDF no está etiquetado y no existe validación PDF/UA o PDF/A. | 0.6 tampoco está etiquetado. | Accesibilidad básica validada; no se declara conformidad formal. | No es regresión ni bloqueante conocido para 1.0; requiere alcance y herramientas específicos. | F | Mantener la limitación declarada y estudiar conformidad formal en 1.1 o posterior. | PENDIENTE |
 | REV-009 | Comparación 0.6 | Contenido histórico superado | 0.6 contiene formulaciones demasiado fuertes sobre comunales, autoconsumo, clima, copropiedad, ruedas, habitantes fiscales y amortiguación. | Expresiones localizadas en la Parte II. | Quarto las elimina o reformula con límites y distinciones de autoridad. | Recuperarlas sería una regresión metodológica e histórica. | N | Conservar las formulaciones actuales; usar 0.6 solo como prueba negativa de regresión. | PENDIENTE |
 | REV-010 | Comparación 0.6 | Modelo antiguo de facsímil | 0.6 presenta el facsímil solo como 35 unidades con recortes grandes. | Págs. 64–98: 35 imágenes de unidad. | Quarto ofrece 18 páginas completas y 35 recortes de cotejo en la transcripción. | No debe recuperarse el modelo exclusivo de 0.6. Esta negativa no resuelve la duplicación funcional actual, tratada en REV-016. | N | No volver al facsímil exclusivo por unidades; decidir REV-016 de manera independiente. | PENDIENTE |
 | REV-011 | Comparación 0.6 | Modelo antiguo de índices | Los índices 6–9 de 0.6 son provisionales y carecen de páginas finales. | 129 entradas contadas y localizadores provisionales. | Quarto genera nueve índices más amplios con localizadores reales. | No deben recuperarse las listas antiguas. Los defectos actuales de composición están separados en REV-023 y REV-025. | N | Mantener la arquitectura generada; resolver por separado los defectos actuales. | PENDIENTE |
 | REV-012 | Comparación 0.6 | Formato y diseño antiguos | 0.6 usa A4, color y una maqueta más ornamental. | Portada, encabezados y aperturas más elaborados. | Quarto usa Letter y diseño sobrio multiformato. | No hay fundamento para copiar paginación o maqueta 0.6; esto tampoco declara Letter como solución definitiva para una eventual impresión. | N | No imitar 0.6; cualquier decisión futura de impresión deberá justificarse por su propio alcance. | PENDIENTE |
-| REV-013 | Observación del usuario | Preliminares y autoría personal | El usuario echa de menos un prólogo y probablemente lo escribirá personalmente para explicar origen, circunstancias y personas vinculadas al libro. | No es una recuperación automática de 0.6. | No existe esa pieza personal. | Es una función de apertura importante y no debe generarse como contenido histórico canónico. | B | Reservar una pieza preliminar personal; redacción del usuario y eventual revisión editorial posterior que preserve su voz. | PENDIENTE |
-| REV-014 | Observación del usuario | Introducción y guía de lectura | El volumen necesita explicar contenido, estructura, relación entre sus capas y posibles itinerarios de lectura. | 0.6 ofrecía orientación parcial. | La información está repartida y no existe una guía inicial consolidada. | Bloqueante editorial para orientar un volumen de seis partes y más de 300 páginas. | B | Decidir alcance y ubicación de una introducción/guía antes de redactarla. | PENDIENTE |
-| REV-015 | Observación del usuario | Apertura editorial | `index.qmd` continúa siendo una apertura de prepublicación y presenta como provisional la identidad visible del libro. | 0.6 tenía una apertura compuesta, sin ser modelo obligatorio. | El libro abre con «Edición en desarrollo» y declara estado de prepublicación. | Debe resolverse coordinadamente con título, subtítulo, prólogo, introducción, créditos y metadatos. | B | Definir primero el modelo de apertura; implementar después junto con REV-001, REV-005, REV-013, REV-014 y REV-022. | PENDIENTE |
-| REV-016 | Observación del usuario | Duplicación funcional del manuscrito | Parte III presenta 18 páginas completas y Parte IV vuelve a mostrar el manuscrito mediante 35 recortes. | 0.6 utilizaba solo recortes, modelo descartado por REV-010. | No hay duplicación técnica exacta, pero sí posible repetición perceptiva, especialmente en PDF; la imagen junto a la transcripción permite cotejo. | Bloqueante de decisión, no presupone eliminar ninguna vista. | B | Estudiar: mantener ambas vistas; diferenciarlas por formato; usar miniatura/enlace/referencia en PDF; u otra integración equivalente. No elegir todavía. | PENDIENTE |
-| REV-017 | Observación del usuario | Macroorden del volumen | El estudio histórico precede al facsímil, transcripción y modernizada. | 0.6 y el índice rector sostienen el orden contexto → estudio → documento. | El orden actual es deliberado y defendible, pero antepone interpretación a la lectura sistemática de la fuente. | Bloqueante de decisión arquitectónica. | B | Decidir después entre mantener el orden, adelantar el documento o mantenerlo con itinerarios de lectura explícitos. No reordenar ahora. | PENDIENTE |
-| REV-018 | Observación del usuario | Navegación HTML | La barra lateral aparece inicialmente demasiado desplegada para seis partes y unos treinta documentos. | No aplica. | La navegación funciona, pero su densidad inicial puede reducir usabilidad. | Mejora de alto valor y bajo alcance, candidata a 1.0. | M | Valorar partes inicialmente plegadas con expansión voluntaria; no modificar `_quarto.yml` en esta operación. | PENDIENTE |
-| REV-019 | Observación del usuario | Cierre de capítulos | Capítulos 5–13 tienen cierre funcional, pero solo 9–12 usan literalmente «Síntesis». | No aplica. | Los demás emplean títulos conclusivos específicos. | Es una cuestión de consistencia retórica, no ausencia de cierre; uniformidad funcional no implica título idéntico. | M | Revisar en conjunto los cierres y acordar una convención antes de editar capítulos. | PENDIENTE |
+| REV-013 | Observación del usuario | Preliminares y autoría personal | El usuario echa de menos un prólogo y probablemente lo escribirá personalmente para explicar origen, circunstancias y personas vinculadas al libro. | No es una recuperación automática de 0.6. | 6A.2 aprueba un prólogo personal y firmado, de unas 900–1.500 palabras, situado después de los créditos. | Función, extensión y posición decididas; el texto corresponde al usuario. | B | Reservar la pieza; redactarla el usuario y revisarla después preservando su voz. | APROBADA 6A.2 (`DEC-002`, `DEC-003`); texto e implementación pendientes |
+| REV-014 | Observación del usuario | Introducción y guía de lectura | El volumen necesita explicar contenido, estructura, relación entre sus capas y posibles itinerarios de lectura. | 0.6 ofrecía orientación parcial. | 6A.2 aprueba una introducción con rutas histórica y documental, una pieza compacta separada de convenciones y un resumen enlazado del capítulo 4. | Alcance, relación y ubicación decididos; redacción pendiente. | B | Redactar e implementar después de las auditorías, conservando el capítulo 4 como explicación metodológica detallada. | APROBADA 6A.2 (`DEC-004`, `DEC-005`, `DEC-011`); implementación pendiente |
+| REV-015 | Observación del usuario | Apertura editorial | `index.qmd` continúa siendo una apertura de prepublicación y presenta como provisional la identidad visible del libro. | 0.6 tenía una apertura compuesta, sin ser modelo obligatorio. | 6A.2 aprueba landing HTML breve, portada PDF propia y preliminares separados; T1 queda como título/subtítulo de trabajo. | Modelo de apertura decidido; metadata y candidata continúan intactas. | B | Implementar después junto con REV-001, REV-005, REV-013, REV-014 y REV-022. | APROBADA 6A.2 (`DEC-006`, `DEC-007`); implementación pendiente |
+| REV-016 | Observación del usuario | Duplicación funcional del manuscrito | Parte III presenta 18 páginas completas y Parte IV vuelve a mostrar el manuscrito mediante 35 recortes. | 0.6 utilizaba solo recortes, modelo descartado por REV-010. | 6A.2 selecciona F3 como hipótesis de prototipo: facsímil íntegro, recortes completos en HTML y miniaturas/localizadores enlazados en PDF. | Decisión de prototipo, no solución final irreversible. | B | Construir y validar un prototipo posterior; adoptar o revisar F3 solo tras comprobar cotejo, legibilidad, accesibilidad, paginación y peso. | PROTOTIPO APROBADO 6A.2 (`DEC-012`); validación, decisión final e implementación pendientes |
+| REV-017 | Observación del usuario | Macroorden del volumen | El estudio histórico precede al facsímil, transcripción y modernizada. | 0.6 y el índice rector sostienen el orden contexto → estudio → documento. | 6A.2 mantiene el macroorden actual y añade dos rutas explícitas, histórica y documental. | Decisión arquitectónica cerrada sin reordenar el volumen. | B | Implementar las rutas en introducción, landing y navegación después de las auditorías. | APROBADA 6A.2 (`DEC-011`); implementación pendiente |
+| REV-018 | Observación del usuario | Navegación HTML | La barra lateral aparece inicialmente demasiado desplegada para seis partes y unos treinta documentos. | No aplica. | 6A.2 aprueba parte activa desplegada y partes inactivas plegadas. | Decisión UX cerrada; requiere implementación y validación HTML. | M | Implementar y comprobar teclado, escritorio y viewport estrecho en una operación posterior. | APROBADA 6A.2 (`DEC-014`); implementación pendiente |
+| REV-019 | Observación del usuario | Cierre de capítulos | Capítulos 5–13 tienen cierre funcional, pero solo 9–12 usan literalmente «Síntesis». | No aplica. | 6A.2 aprueba títulos conclusivos específicos con función común y la sustitución de `Síntesis` cuando exista un título informativo adecuado. | Convención retórica decidida; los textos no se modifican todavía. | M | Revisar conjuntamente los títulos de cierre e implementarlos en una operación posterior. | APROBADA 6A.2 (`DEC-013`); implementación pendiente |
 | REV-020 | Observación del usuario | Glosario y contexto histórico | El ejemplo «Señorío» muestra que el glosario explica principalmente el sentido documental/local y no siempre el concepto históricamente. | 0.6 no decide la arquitectura correcta para la fuente vigente. | El generador reproduce correctamente `Glosario.md`, cuya autoridad evita interpretación histórica extensa. | Bloqueante de auditoría previa: la posible carencia puede estar aguas arriba, no ser solo de presentación. | B | Auditar Estudio, términos y huecos; distinguir contexto ya disponible, investigación nueva, contenido del Estudio y síntesis de glosario. No elegir solución todavía. | PENDIENTE |
 | REV-021 | Observación del usuario | Gráficos, esquemas y recuadros | El usuario echa de menos recursos explicativos presentes o previstos en composiciones anteriores. | El recuento de imágenes incrustadas puede omitir gráficos vectoriales; 0.6 y el Plan 0.5 requieren inventario específico. | Existen tablas, pero no se ha comparado de forma exhaustiva cronología visual, esquemas, recuadros y diagramas previstos. | Bloqueante de auditoría y selección; no toda pieza antigua debe recuperarse. | B | Inventariar `0.6 + Plan 0.5 + candidata` y clasificar cada recurso como conservar, reconstruir, sustituir o descartar. | PENDIENTE |
-| REV-022 | Observación del usuario | Estado visible de edición | «Edición en desarrollo» aparece en subtítulo, metadatos y apertura. | 0.6 mostraba una versión de composición, no una solución definitiva. | Es la identidad visible actual. | No puede permanecer como identidad final de una edición 1.0; depende funcionalmente de REV-001 y REV-015. | B | Resolver e implementar dentro del paquete de identidad y apertura, sin inventar una fórmula ahora. | PENDIENTE |
+| REV-022 | Observación del usuario | Estado visible de edición | «Edición en desarrollo» aparece en subtítulo, metadatos y apertura. | 0.6 mostraba una versión de composición, no una solución definitiva. | 6A.2 aprueba que esa fórmula no forme parte de la identidad final y adopta T1 como título/subtítulo de trabajo. La metadata actual no se modifica en esta operación. | Decisión editorial cerrada; retirada e identidad final pendientes de implementación. | B | Sustituir el estado visible únicamente al construir la nueva candidata, coordinado con REV-001 y REV-015. | APROBADA 6A.2 (`DEC-006`, `DEC-007`); implementación pendiente |
 | REV-023 | Observación del usuario | TOC PDF | Numeraciones largas aparecen pegadas a los títulos, por ejemplo `16.35Respuesta 32...`. | No aplica. | Defecto visual comprobado en la candidata. | Bloqueante técnico de composición; debe cubrir especialmente numeraciones largas del capítulo 16. | B | Corregir anchura o separación del número de sección en una operación posterior y probar los casos extremos. | PENDIENTE |
 | REV-024 | Observación del usuario | Orden del glosario | El Plan de composición 0.5 exige orden alfabético. | No aplica. | Los índices alfabéticos se ordenan de forma determinista; el glosario generado conserva el orden de `Glosario.md`. | Desviación técnica/editorial real. | B | Corregir preferentemente en generación/publicación, sin alterar innecesariamente la fuente canónica. | PENDIENTE |
 | REV-025 | Observación del usuario | Índices PDF | Las entradas del índice onomástico aparecen pegadas; el problema también se observa en lugares/topónimos. | No aplica a la recuperación de los índices antiguos. | HTML tiene estilo `.index-entry`; PDF carece de separación visual equivalente suficiente. | Bloqueante técnico; la arquitectura compartida exige comprobar los nueve índices. | B | Diseñar posteriormente el tratamiento PDF y validar separación, jerarquía y cortes en los nueve índices. | PENDIENTE |
@@ -83,40 +84,40 @@ Todas son **clasificaciones propuestas**. Ninguna equivale a una decisión edito
 
 La primera ronda de observaciones personales está incorporada como `REV-013`–`REV-025`, con `Origen: Observación del usuario`. Incluye los defectos visuales documentados mediante capturas y las dudas editoriales sobre apertura, arquitectura, glosario y recursos gráficos.
 
-Que una observación proceda del usuario no la convierte automáticamente en una decisión de implementación. Todas conservan `PENDIENTE`. Las observaciones futuras comenzarán en `REV-027`, sin renumerar ni reutilizar IDs.
+Que una observación proceda del usuario no la convierte automáticamente en una decisión de implementación. 6A.2 cierra las decisiones de `REV-013`–`REV-019` y `REV-022` con los matices registrados en [DECISIONES_EDITORIALES_6A_2.md](./DECISIONES_EDITORIALES_6A_2.md); ninguna está implementada. Las demás conservan su estado pendiente. Las observaciones futuras comenzarán en `REV-027`, sin renumerar ni reutilizar IDs.
 
 ## 6. Decisiones del usuario
 
 | ID | Decisión del usuario | Notas de decisión |
 |---|---|---|
-| REV-001 | PENDIENTE | — |
+| REV-001 | APROBADA EN PRINCIPIO 6A.2 | `DEC-007`, `DEC-008`, `DEC-009`, `DEC-015`; faltan datos concretos e implementación. |
 | REV-002 | PENDIENTE | — |
 | REV-003 | PENDIENTE | — |
 | REV-004 | PENDIENTE | — |
-| REV-005 | PENDIENTE | — |
+| REV-005 | APROBADA 6A.2 | P3, prólogo, introducción y convenciones; implementación pendiente. |
 | REV-006 | PENDIENTE | — |
-| REV-007 | PENDIENTE | — |
+| REV-007 | APROBADA 6A.2 | Colofón breve; depende de datos finales y parcialmente de la Auditoría C. |
 | REV-008 | PENDIENTE | — |
 | REV-009 | PENDIENTE | — |
 | REV-010 | PENDIENTE | — |
 | REV-011 | PENDIENTE | — |
 | REV-012 | PENDIENTE | — |
-| REV-013 | PENDIENTE | — |
-| REV-014 | PENDIENTE | — |
-| REV-015 | PENDIENTE | — |
-| REV-016 | PENDIENTE | — |
-| REV-017 | PENDIENTE | — |
-| REV-018 | PENDIENTE | — |
-| REV-019 | PENDIENTE | — |
+| REV-013 | APROBADA 6A.2 | Prólogo personal y firmado, 900–1.500 palabras, después de créditos; texto pendiente. |
+| REV-014 | APROBADA 6A.2 | Introducción con dos rutas y convenciones separadas; redacción e implementación pendientes. |
+| REV-015 | APROBADA 6A.2 | Landing HTML, portada PDF y preliminares separados; implementación pendiente. |
+| REV-016 | PROTOTIPO APROBADO 6A.2 | F3 debe validarse antes de una decisión final; no implementada. |
+| REV-017 | APROBADA 6A.2 | Macroorden actual con rutas histórica y documental; implementación pendiente. |
+| REV-018 | APROBADA 6A.2 | Parte activa desplegada y partes inactivas plegadas; implementación pendiente. |
+| REV-019 | APROBADA 6A.2 | Cierres específicos con función común; implementación pendiente. |
 | REV-020 | PENDIENTE | — |
 | REV-021 | PENDIENTE | — |
-| REV-022 | PENDIENTE | — |
+| REV-022 | APROBADA 6A.2 | T1 sustituirá la identidad visible de desarrollo al implementar la nueva candidata; metadata intacta por ahora. |
 | REV-023 | PENDIENTE | — |
 | REV-024 | PENDIENTE | — |
 | REV-025 | PENDIENTE | — |
 | REV-026 | PENDIENTE | — |
 
-No se asignarán `APROBADA`, `RECHAZADA`, `DIFERIDA`, `INCLUIR` o `NO INCORPORAR` sin una decisión explícita posterior.
+Las decisiones aprobadas en 6A.2 no equivalen a implementación. Las restantes `REV-*` mantienen sus clasificaciones propuestas y su decisión `PENDIENTE` hasta una decisión humana posterior.
 
 ## 7. Paquetes de decisión consolidados
 
@@ -124,13 +125,13 @@ No se asignarán `APROBADA`, `RECHAZADA`, `DIFERIDA`, `INCLUIR` o `NO INCORPORAR
 
 `REV-001`, `REV-005`, `REV-007`, `REV-013`, `REV-014`, `REV-015`, `REV-022`.
 
-Identidad, título y subtítulo, créditos, prólogo, introducción, orientación y posible colofón.
+6A.2 cierra la arquitectura del paquete: T1, P3, prólogo, introducción, apertura y colofón. Permanecen pendientes los datos concretos de créditos, copyright/licencia, fecha, URL e identidad de proyecto, además de la implementación y de dependencias de la Auditoría C.
 
 ### B. Arquitectura del volumen
 
 `REV-016`, `REV-017`.
 
-Duplicación funcional facsímil/transcripción y orden estudio/documento.
+El macroorden queda cerrado: se conserva el actual con dos rutas explícitas. F3 queda seleccionada únicamente para prototipo y validación antes de una decisión final sobre la duplicación funcional.
 
 ### C. Investigación y contexto histórico
 
@@ -154,7 +155,7 @@ Navegación D/C/I/E/L y glosario ordenado.
 
 `REV-018`, `REV-019`, `REV-023`, `REV-025`, `REV-026`.
 
-Sidebar, cierres, TOC PDF, índices PDF y tamaño de salidas.
+Sidebar y convención de cierres quedan decididos en 6A.2, sin implementar. TOC PDF, índices PDF y tamaño de salidas continúan pendientes.
 
 ### G. Trabajo futuro
 
@@ -170,8 +171,8 @@ Etiquetado PDF y validación formal PDF/UA o PDF/A.
 
 ## 8. Cinco bloques que deben resolverse antes de 1.0
 
-1. **Apertura e identidad editorial:** prólogo, introducción, portada/apertura, créditos, metadatos y cierre.
-2. **Arquitectura de lectura:** orden estudio/documento y repetición facsímil/transcripción.
+1. **Apertura e identidad editorial:** arquitectura decidida en 6A.2; quedan datos, dependencias e implementación.
+2. **Arquitectura de lectura:** macroorden decidido; F3 pendiente de prototipo y validación.
 3. **Aparato histórico y documental:** bibliografía/fuentes, cuestiones abiertas/modelos de cita y auditoría del glosario.
 4. **Orientación visual:** cartografía y auditoría de gráficos, esquemas y recuadros.
 5. **Defectos finales de composición:** TOC PDF, glosario alfabético e índices PDF.
@@ -196,8 +197,8 @@ investigación
 
 ## 10. Orden de trabajo acordado
 
-1. **Consolidación documental:** esta operación; fija REV-001–REV-026 sin modificar la candidata ni investigar.
-2. **Decisiones editoriales puras:** prólogo, introducción, apertura, orden general, duplicación de imágenes, estructura de preliminares, cierres y navegación HTML.
+1. **Consolidación documental:** completada en 6A.1; fijó REV-001–REV-026 sin modificar la candidata ni investigar.
+2. **Decisiones editoriales puras:** completadas documentalmente en 6A.2; quedan pendientes los datos señalados, el prototipo F3 y toda implementación.
 3. **Tres auditorías especializadas:**
    - glosario / Estudio Histórico / necesidad real de investigación;
    - gráficos, recuadros y cartografía: 0.6 + Plan 0.5 + candidata;
@@ -205,11 +206,11 @@ investigación
 4. **Decisión definitiva:** clasificar cada cuestión como 1.0, 1.1+, no incorporar o investigación previa.
 5. **Implementación:** plan de cambios, operaciones canónicas cuando procedan, cambios Quarto, nueva candidata, validación, preview, aceptación humana y, solo después, 6B.
 
-Esta operación ejecuta únicamente el paso 1.
+Esta operación cierra únicamente el paso 2. El siguiente trabajo es la primera auditoría especializada; no se inicia aquí.
 
 ## 11. Lista propuesta para 1.0
 
-La propuesta actual es resolver los cinco bloques del apartado 8 antes de decidir la publicación. `Resolver` puede significar elegir una opción, completar una auditoría previa, aprobar una corrección o decidir justificadamente no implementar una solución concreta. No significa que las dieciséis entradas B estén ya aprobadas como cambios.
+La propuesta actual es resolver los cinco bloques del apartado 8 antes de decidir la publicación. 6A.2 resuelve las decisiones puramente editoriales enumeradas en su registro, pero no aprueba todavía una implementación, no cierra las auditorías ni convierte F3 en solución definitiva. `Resolver` puede significar elegir una opción, completar una auditoría previa, aprobar una corrección o decidir justificadamente no implementar una solución concreta.
 
 Las mejoras M pueden incorporarse si el usuario lo decide y su coste/riesgo resulta razonable. Las entradas N son propuestas de no recuperar soluciones antiguas, no trabajo de implementación.
 
@@ -236,6 +237,28 @@ Las mejoras M pueden incorporarse si el usuario lo decide y su coste/riesgo resu
 
 ## 14. Puerta editorial
 
-La candidata no debe modificarse todavía. El siguiente trabajo consiste en resolver con el usuario las decisiones editoriales de arquitectura y apertura; solo después se ejecutarán las tres auditorías especializadas y se adoptarán decisiones definitivas de alcance 1.0.
+La candidata no debe modificarse todavía. Las decisiones editoriales 6A.2 quedan registradas, pero las tres auditorías especializadas, los datos humanos y legales, el prototipo F3, el alcance definitivo y toda implementación siguen pendientes.
 
-**SIGUIENTE PASO: decisiones editoriales de arquitectura y apertura de la candidata 1.0.**
+## 15. Datos editoriales pendientes del usuario
+
+Sin inventar valores, siguen pendientes:
+
+- nombre que debe figurar como autor;
+- roles editoriales concretos;
+- responsables de transcripción y modernización, si deben acreditarse de forma diferenciada;
+- colaboradores;
+- titular del copyright;
+- licencia concreta;
+- fecha editorial final;
+- URL canónica cuando exista;
+- identidad de proyecto que deba mostrarse.
+
+Estos datos no bloquean el cierre documental de 6A.2. Los que afecten a créditos o metadata deberán resolverse antes de construir la nueva candidata.
+
+## 16. Tag, versión e implementación
+
+No se crea tag ahora. La candidata técnica `49ab2e1b1a58ca9201efab54b42a3125de7326f8` no es 1.0 y la consolidación documental tampoco lo es. No habrá tag intermedio: el tag final solo podrá plantearse después de auditorías, implementación, nueva candidata, preview, aceptación humana y Fase 6B.
+
+Ninguna `REV-*` se marca como implementada en esta operación.
+
+**SIGUIENTE PASO: Auditoría A — Glosario / Estudio Histórico / necesidad real de nueva investigación.**
