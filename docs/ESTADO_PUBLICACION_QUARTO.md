@@ -1,11 +1,12 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 8 de octubre de 2026<br>
-**Estado global:** Fase 5 en curso; 5A cerrada<br>
-**Fase actual:** Fase 5 — índices, calidad integral y accesibilidad (en curso)<br>
-**Base de concurrencia de 5A:** `b91e65f61bf4be7052922a9d348efcc1df79e87d`<br>
-**Upstream inicial de 5A:** `99f647bed713ed51f12fa7c337c5f03119fbac82`<br>
-**Upstream comprobado antes del cierre técnico:** `b91e65f61bf4be7052922a9d348efcc1df79e87d`
+**Actualizado:** 9 de octubre de 2026<br>
+**Estado global:** Fase 5 completada; libro apto para iniciar la Fase 6<br>
+**Fase actual:** Fase 6 — preview y publicación 1.0 (pendiente)<br>
+**Base de concurrencia de 5B:** `13d157c4b5e2d5079122a83e612755f036e99d50`<br>
+**Upstream inicial de 5B:** `b91e65f61bf4be7052922a9d348efcc1df79e87d`<br>
+**Upstream comprobado antes del cierre técnico:** `13d157c4b5e2d5079122a83e612755f036e99d50`<br>
+**Upstream comprobado antes del cierre documental:** `e74ce3cb8bd27921f50db5a046a0851528297ced`
 
 ## Lectura de entrada
 
@@ -46,6 +47,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Fase 4C implementada en `84f31b4249b745fe50799b8cfce2682913100d8e`; el capítulo 16 presenta las 40 preguntas verificadas y sus respuestas locales en español actual, con notas, cautelas y navegación material hacia el capítulo 15.
 - Fase 4D implementada en `f9a7bf9d9a7e8cb70516e41105a472d7d7f3eed2`; el glosario, los cuadros cuantitativos, la concordancia y la matriz D/C/I/E/L se generan como cuatro vistas reproducibles de sus fuentes estructuradas.
 - Fase 5A implementada en `16084c95691d879675859030059c9bf25af1c7dc`; los nueve índices se generan desde sus fuentes estructuradas y comparten destinos para localizadores HTML y páginas PDF resueltas por LaTeX.
+- Fase 5B implementada en `e74ce3cb8bd27921f50db5a046a0851528297ced`; el volumen completo queda auditado y corregido en estructura editorial, reproducibilidad, HTML, PDF y accesibilidad básica, sin modificar fuentes canónicas.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -60,12 +62,12 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 2B. Prototipo vertical | completada | muestra vertical multiformato validada; trazabilidad, facsímil, paleografía, modernización y aparato integrados |
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
-| 5. Índices y calidad integral | en curso | 5A cerrada: nueve índices y localizadores HTML/PDF; 5B pendiente: calidad integral y accesibilidad |
+| 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
 | 6. Preview y publicación 1.0 | pendiente | snapshot, validación, preview aceptada, etiqueta y publicación con puerta editorial |
 
 ## Siguiente tarea exacta
 
-5B — calidad integral y accesibilidad.
+Fase 6 — preview y publicación 1.0.
 
 ### Descomposición operativa de la Fase 4
 
@@ -81,7 +83,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | Tarea | Estado | Alcance |
 |---|---|---|
 | 5A | completada | nueve índices reproducibles y localizadores HTML/PDF |
-| 5B | siguiente | calidad integral y accesibilidad |
+| 5B | completada | calidad integral y accesibilidad |
 
 ### Cierre comprobado de 2A
 
@@ -330,6 +332,21 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Integridad: `project/`, `plugins/`, fuentes canónicas, `main` y `origin/main` permanecen intactos; los QMD generados, PNG, PDF y `_book/` continúan ignorados y no se versionó ningún binario ni archivo temporal.
 - Estado: 5A queda cerrada; la Fase 5 continúa en curso. La única tarea siguiente es 5B — calidad integral y accesibilidad.
 
+## Cierre comprobado de 5B
+
+- Implementación atómica: `e74ce3cb8bd27921f50db5a046a0851528297ced` (`feat(publication): complete quality and accessibility review`). No se modificaron `project/`, `plugins/`, fuentes canónicas, paleografía, modernización, cifras, cálculos ni estados D/C/I/E/L.
+- Estructura editorial: 30 documentos HTML en seis partes; portada, capítulos numerados 1–16, cuatro aparatos y nueve índices en el orden del Plan Maestro. La prueba técnica permanece como regresión no publicada; portada, navegación y manifestación editorial ya no conservan afirmaciones obsoletas de bootstrap. Aparatos e índices son capítulos no numerados y no muestran marcadores Markdown.
+- Auditoría textual: `check_sources.py` verificó cinco fuentes, 35 unidades, 40 preguntas/respuestas, 22 entradas de glosario, 112 entradas D/C/I/E/L y 20 cálculos. Las guardas transversales confirmaron Sorribos/Sorrios/Sorribas, Concejo/municipio, uso común/propiedad, `avitadores`, ruedas y venturero, utilidad/producción, jornal/ingreso, dinero/monetización, diversidad/resiliencia, dependencia/daño y ausencia documental/histórica. No aparecieron contradicciones de cifras, unidades, denominadores, porcentajes o etiquetas.
+- HTML y accesibilidad básica: los 30 documentos declaran español, un H1 lógico y títulos únicos; se auditaron 3.405 enlaces, 2.282 identificadores, landmarks, jerarquía de encabezados, búsqueda, TOC, navegación, botones y fragmentos. Las 53 imágenes tienen alternativa; las 44 tablas tienen cabeceras, alcance, nombre accesible y región desplazable por teclado. Se añadieron foco visible, reflow y ajuste de textos; contraste, viewport estrecho y escala 200 % fueron comprobados con cálculo y Chrome Headless. No quedan rutas locales, enlaces QMD ni residuos de desarrollo en el contenido público.
+- PDF: 334 páginas, 73.994.496 bytes, título correcto, idioma de catálogo configurado como `es-ES`, texto editorial seleccionable, glifos críticos extraíbles, 14 variantes Latin Modern embebidas/subconjuntadas con Unicode, 53 imágenes, 90 URI y 1.100 destinos inspeccionables. Las seis partes, los capítulos 1–16 y los aparatos/índices aparecen con nombres editoriales; no hay URI `.qmd`, rutas locales ni destinos de scaffolding. Los localizadores de los nueve índices se revalidaron contra la paginación final.
+- Inspección visual: las 334 páginas se revisaron a nivel de geometría/composición y se ampliaron aperturas, cierres, tablas, facsímil, transcripción, modernizada, aparatos e índices. Se corrigieron un bloque final huérfano de referencias, la numeración impropia 17–29 y los marcadores `{.unnumbered}`/`#` visibles. No quedan cortes, colisiones, desbordes ni páginas corruptas conocidos.
+- Reproducibilidad: dos preparaciones finales consecutivas produjeron las mismas 75 salidas. SHA-256 de los manifiestos `sha256sum` ordenados: 4A `b3e99b6c4d307e0d84842a906f85bb695eea00597b5e8ab576c58ebdfa884e2a`; 4B `ccbc1db0e9549dc53af0bf9bb0b3f6539714a24b4d9300bc098c39da03a4ac3f`; 4C `824b1a794da01ab8d50616d92f5733846b05eb03e21de22ac10da4fd29052260`; 4D `bdeee6ff70d36a766da82ea838be2512872e0fcc407c55410fe527a52b5efae6`; 5A `b9f32dfa454e5c812c8733cc1da46e49af8e7fab8e71e40f82b6fc784dddffcf`; prototipo `31bd1932af1aeeba8bc6521fe06cd1df7839710b9d8ec2eb4173d4725cad9421`; conjunto `0f2a27a3294060552ee5dde8a9b4d61258e85fef049679f650e3d71465234da0`.
+- Validación: 11 pruebas específicas 5B y 557 pruebas totales en PASS, sin `skip` ni `xfail`; colección estable de 557 identificadores con SHA-256 `43daf422db8b3cbfb1c31f43c418052b9654dbbb8cddf5ba7c481a284f228552`. `check_sources.py`, validadores estático y profundo `--rendered`, `quarto check`, render HTML, PDF y multiformato, auditoría de enlaces/anclas, Poppler y `git diff --check` están en PASS. El render final no emite avisos propios del libro.
+- Herramientas y limitaciones: se usaron Quarto 1.7.31, LuaHBTeX/TinyTeX 2026, Chrome Headless y Poppler (`pdfinfo`, `pdffonts`, `pdftotext`, `pdfimages`, `pdftoppm`). No estaban disponibles axe, pa11y, Lighthouse, v.Nu, PAC, veraPDF, qpdf ni mutool y no se instaló nada. El PDF informa `Tagged: no`; por tanto se registra como limitación no bloqueante y no se declara PDF/UA. Tampoco se declaran WCAG 2.1/2.2 AA ni PDF/A. Autoría, editor, licencia, copyright e ISBN no se inventaron y podrán resolverse en la operación editorial correspondiente.
+- Incidencias de entorno resueltas: se activó `.venv` para Pillow y se aislaron en `/tmp` las cachés de Sass y LuaTeX exigidas por el sandbox. La ausencia de `babel-spanish` en TinyTeX se resolvió sin instalar paquetes mediante rótulos visibles y metadatos españoles locales. Los únicos mensajes residuales fueron informativos de disponibilidad de herramientas y D-Bus de Chrome, ajenos al libro.
+- Integridad: `project/`, `plugins/`, fuentes canónicas, manuscrito externo, PDF 0.6, `main` y `origin/main` permanecen intactos. Ningún PDF, PNG, `_book/`, derivado ni temporal está versionado. No se ejecutó preview, despliegue, publicación, etiqueta, release ni push.
+- Veredicto: `PASS`; no quedan bloqueantes conocidos. 5B y la Fase 5 quedan cerradas. La única tarea siguiente es Fase 6 — preview y publicación 1.0.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -340,4 +357,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente 5B — calidad integral y accesibilidad— conforme al plan maestro; no rehagas los nueve índices cerrados en 5A y no inicies la preview ni la publicación 1.0. Revisa el diff y publica cambios atómicos solo si la rama y el upstream conservan la base de concurrencia que se establezca al inicio.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente Fase 6 — preview y publicación 1.0— conforme al plan maestro y a una autorización específica de despliegue; no reabras 5A/5B ni alteres fuentes canónicas. Confirma primero rama, upstream, decisiones editoriales pendientes y puerta de publicación.
