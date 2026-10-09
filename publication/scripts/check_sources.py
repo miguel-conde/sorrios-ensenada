@@ -144,6 +144,50 @@ def _manifest_sources(manifest: dict) -> tuple[Source, ...]:
     return tuple(sources)
 
 
+def _git_project_tree(
+    repository_root: Path, revision: str, *, require_full_sha: bool = False
+) -> str:
+    if require_full_sha and not re.fullmatch(r"[0-9a-f]{40}", revision):
+        raise SourceCheckError(
+            "base.git_commit debe ser un SHA Git completo de cuarenta caracteres."
+        )
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", f"{revision}:project"],
+            cwd=repository_root,
+            check=True,
+            capture_output=True,
+            text=True,
+            shell=False,
+        )
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise SourceCheckError(
+            f"No se pudo resolver el árbol project/ de base.git_commit {revision}."
+        ) from exc
+    tree = result.stdout.strip()
+    if not re.fullmatch(r"[0-9a-f]{40}", tree):
+        raise SourceCheckError(
+            f"Git devolvió un árbol project/ inválido para {revision}: {tree!r}."
+        )
+    return tree
+
+
+def _validate_base_snapshot(repository_root: Path, publication: dict) -> None:
+    base = publication.get("base")
+    if not isinstance(base, dict) or not isinstance(base.get("git_commit"), str):
+        raise SourceCheckError("publication.yml debe declarar base.git_commit.")
+    canonical_commit = base["git_commit"]
+    canonical_tree = _git_project_tree(
+        repository_root, canonical_commit, require_full_sha=True
+    )
+    candidate_tree = _git_project_tree(repository_root, "HEAD")
+    if canonical_tree != candidate_tree:
+        raise SourceCheckError(
+            "El árbol project/ de base.git_commit no coincide con el snapshot de "
+            f"la rama de publicación: {canonical_tree} != {candidate_tree}."
+        )
+
+
 def _validate_source_versions(repository_root: Path, sources: tuple[Source, ...]) -> None:
     for source in sources:
         path = _safe_repository_path(repository_root, source.path, f"la fuente {source.name}")
@@ -587,6 +631,7 @@ def check_sources(
     publication_root = publication_root.resolve()
     project = _read_yaml(repository_root / "project" / "00_CONTROL" / "proyecto.yaml")
     publication = _read_yaml(publication_root / "meta" / "publication.yml")
+    _validate_base_snapshot(repository_root, publication)
     sources = _manifest_sources(publication)
     _validate_source_versions(repository_root, sources)
     manuscript = _manuscript_metadata(project, publication)

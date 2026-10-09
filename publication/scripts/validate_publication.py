@@ -64,6 +64,7 @@ from quality_audit import (
     audit_contrast,
     audit_html_book,
     audit_pdf,
+    audit_release_candidate,
 )
 
 
@@ -1413,6 +1414,7 @@ def validate_rendered_outputs() -> list[str]:
             errors.append("El índice 8 HTML no enlaza exactamente las 40 respuestas")
     errors.extend(_rendered_link_and_id_errors(PUBLICATION_ROOT / "_book"))
     errors.extend(audit_html_book(PUBLICATION_ROOT / "_book"))
+    errors.extend(audit_release_candidate(PUBLICATION_ROOT / "_book"))
     if not RENDERED_PDF.is_file():
         errors.append(f"Falta el PDF renderizado: {RENDERED_PDF}")
     else:

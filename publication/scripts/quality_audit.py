@@ -310,6 +310,71 @@ def audit_html_book(book_root: Path = BOOK_ROOT) -> list[str]:
     return errors
 
 
+def audit_release_candidate(book_root: Path = BOOK_ROOT) -> list[str]:
+    """Reject private inputs and require the validated PDF download in a 6A build."""
+
+    errors: list[str] = []
+    if not book_root.is_dir():
+        return [f"Falta la salida candidata: {book_root}"]
+
+    files = tuple(path for path in book_root.rglob("*") if path.is_file())
+    pdfs = tuple(path for path in files if path.suffix.casefold() == ".pdf")
+    if pdfs != (PDF_PATH,):
+        rendered = ", ".join(str(path.relative_to(book_root)) for path in pdfs)
+        errors.append(
+            "La candidata debe contener únicamente el PDF descargable validado; "
+            f"encontrados: {rendered or 'ninguno'}"
+        )
+
+    index_path = book_root / "index.html"
+    if index_path.is_file():
+        index = parse_html(index_path)
+        expected = PDF_PATH.name
+        if not any(
+            unquote(urlsplit(str(link.get("href", ""))).path).endswith(expected)
+            for link in index.links
+        ):
+            errors.append(f"La portada HTML no enlaza el PDF descargable {expected}")
+    else:
+        errors.append("Falta index.html en la candidata")
+
+    forbidden_names = {
+        ".env",
+        ".git",
+        "netlify.toml",
+        "sorrios_ensenada_orden_lectura_calidad_original.pdf",
+        "composition-0.6.pdf",
+    }
+    forbidden_suffixes = {".qmd", ".py", ".yml", ".yaml", ".toml"}
+    for path in files:
+        relative = path.relative_to(book_root)
+        if any(part in forbidden_names for part in relative.parts):
+            errors.append(f"Archivo privado o de configuración en la candidata: {relative}")
+        if path.suffix.casefold() in forbidden_suffixes:
+            errors.append(f"Fuente o configuración publicada accidentalmente: {relative}")
+
+    secret_patterns = (
+        re.compile(rb"ghp_[A-Za-z0-9]{20,}"),
+        re.compile(rb"github_pat_[A-Za-z0-9_]{20,}"),
+        re.compile(rb"(?i)authorization\s*:\s*bearer\s+[A-Za-z0-9._-]{16,}"),
+    )
+    local_home_prefix = b"/" + b"home/"
+    text_suffixes = {".html", ".css", ".js", ".json", ".xml", ".txt"}
+    for path in files:
+        if path.suffix.casefold() not in text_suffixes:
+            continue
+        payload = path.read_bytes()
+        if local_home_prefix in payload or re.search(rb"[A-Za-z]:\\\\", payload):
+            errors.append(
+                f"Ruta absoluta del sistema en {path.relative_to(book_root)}"
+            )
+        if any(pattern.search(payload) for pattern in secret_patterns):
+            errors.append(
+                f"Patrón de credencial en {path.relative_to(book_root)}"
+            )
+    return errors
+
+
 def _run(*command: str) -> str:
     result = subprocess.run(command, check=True, capture_output=True, text=True)
     return result.stdout + result.stderr

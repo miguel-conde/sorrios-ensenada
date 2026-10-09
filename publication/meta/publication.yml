@@ -3,7 +3,7 @@ publication:
   status: development
 
 base:
-  git_commit: "6b49be848c92c4772b37c46495135352821d50f8"
+  git_commit: "e81dc9239ac8dbabfe77168a50ef98c4d3b79170"
 
 sources:
   critical_edition:
