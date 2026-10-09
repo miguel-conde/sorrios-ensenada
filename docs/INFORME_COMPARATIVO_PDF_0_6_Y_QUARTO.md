@@ -1,215 +1,341 @@
-# Informe comparativo: composición 0.6 y libro Quarto en desarrollo
+# Informe comparativo: composición 0.6 y candidata Quarto 1.0
 
-**Fecha de revisión:** 4 de octubre de 2026 **Objeto:** comparación editorial entre el PDF «Sorribos y Santibáñez de Ordás en 1752», composición integral 0.6, y la edición Quarto presente en el checkout local. **Estado:** análisis comparativo; no es una auditoría de autoridad histórica ni una propuesta de cambiar fuentes canónicas.
+**Fecha de revisión:** 9 de octubre de 2026<br>
+**Fase:** 6A.1 — revisión editorial final de la candidata 1.0<br>
+**Baseline de auditoría:** `088e4fcec91fa9723b5b0ffad4f65781a9c0af6c`<br>
+**Commit de la candidata técnica:** `49ab2e1b1a58ca9201efab54b42a3125de7326f8`<br>
+**Estado:** comparación editorial y funcional; las clasificaciones son propuestas pendientes de decisión humana.
 
 ## Conclusiones ejecutivas
 
-1.  **La composición 0.6 es más completa como libro y ofrece más instrumentos de consulta visibles.** Integra estudio, facsímil, transcripción, edición modernizada, aparatos e índices en 259 páginas. Incluye dos mapas y un aparato bibliográfico visible que, en el ejemplo recibido de la página 15, coloca siete enlaces externos activos al final del tratamiento del topónimo.
-2.  **Quarto sigue siendo una obra en curso, no una versión completa comparable página por página.** El render local consultado tiene 68 páginas; incluye los capítulos 1–11, una prueba técnica y prototipos de facsímil, transcripción, edición modernizada y aparato de molinos. No contiene todavía los capítulos 12–13 ni los aparatos e índices previstos para las fases posteriores.
-3.  **En 0.6 los códigos tienen un uso editorial efectivo, no son solo una leyenda.** Se colocan al final de afirmaciones o párrafos para clasificar el tipo de afirmación y remitir por ID al Registro, cuyo apéndice D reproduce formulación, evidencia, estado y cautelas. Esto hace auditable el razonamiento, aunque el lector tenga que buscar manualmente el código.
-4.  **Quarto explica explícitamente el mismo propósito, pero lo implementa de forma desigual.** El capítulo 4 define D/C/I/E/L y explica que preservan procedencia y grado de afirmación. En el cuerpo actual, las marcas aparecen en los capítulos 9–11; los capítulos 3 y 5–8 tienen inventarios en YAML, pero no marcas junto a sus afirmaciones. Un aparato prototipo de molinos permite una comprobación parcial desde el capítulo 9.
-5.  **El recuento sigue mostrando una diferencia de cobertura visible.** En los capítulos que existen en ambas versiones (3 y 5–11), 0.6 presenta 68 grupos en el cuerpo y Quarto 41. Sin embargo, Quarto 9–11 tienen más marcas que sus equivalentes de 0.6; el vacío visible se concentra en el capítulo 3 y los capítulos 5–8.
-6.  **Quarto conserva además 151 apariciones de identificadores D/C/I/E/L en YAML para los capítulos 3 y 5–11.** El validador coteja esos inventarios con lo esperado y comprueba que sus IDs existan en el Registro. Es un control real para el equipo, pero no relaciona cada ID con un párrafo, no valida semánticamente la asignación de cada marca y no hace visible el inventario en el HTML/PDF.
-7.  **La composición 0.6 sí tiene enlaces bibliográficos externos activos, pero los códigos D/C/I/E/L no son hipervínculos al Registro.** Son dos mecanismos diferentes: las marcas epistemológicas se resuelven manualmente en el registro/apéndice; las URL bibliográficas sí son anotaciones de enlace. El capítulo 9 de Quarto enlaza a su aparato prototipo y a otras vistas, pero los códigos individuales tampoco son enlaces directos a filas.
-8.  **Quarto no carece por completo de enlaces externos, pero aún no ofrece una bibliografía editorial propiamente dicha.** Los capítulos 1 y 2 incluyen nueve URL enlazadas a recursos externos. No se encontraron citas bibliográficas con claves `[@…]` en los capítulos editoriales, ni notas a pie en los capítulos 1–11; `references.bib` solo contiene un comentario y cero entradas. Los `sources:` y `evidence:` del front matter documentan procedencia técnica/editorial, no sustituyen citas legibles por el público.
-9.  **El tratamiento del topónimo Sorrios se beneficia especialmente de las referencias más visibles de 0.6.** Quarto formula con prudencia la secuencia documental y los límites lingüísticos, pero su capítulo 3 no presenta junto al texto las fuentes externas que permiten comprobar los testimonios de 1215, 1267, 1715, 1768, 1831, 1836, 1848 y el uso actual. En 0.6, el ejemplo de página 15 combina las marcas E/I/L con una relación identificable de fuentes y enlaces.
-10. **Ninguna versión acredita claramente a una persona autora.** El PDF lleva como metadato de autor «Proyecto Sorríos - Catastro de Ensenada», sin autoría personal visible en la portada revisada. El PDF Quarto no contiene metadato de autor y la configuración/metadata editorial consultada no declara campo `author`.
-11. **Quarto tiene ventajas de método y control que no deben perderse al recuperar elementos del 0.6.** Su prosa reciente distingue con cuidado dato, cálculo, interpretación, contexto externo y límite; declara fuentes e identificadores por capítulo y somete contenido y procedencia a pruebas. El plan prevé generar la matriz D/C/I/E/L, los aparatos y los índices desde fuentes canónicas. La mejora consiste en hacer accesible al lector esa trazabilidad y las fuentes, no en reemplazar el modelo de trabajo ni copiar sin revisión el PDF antiguo.
+1. La candidata Quarto ya es un libro completo: contiene las seis partes, los capítulos 1–16, las 18 páginas facsimilares, las 35 unidades transcritas, las 40 respuestas modernizadas, cuatro aparatos generados y nueve índices. Las afirmaciones del informe anterior sobre capítulos o aparatos todavía inexistentes han quedado obsoletas.
+2. Quarto mejora de forma sustancial la fidelidad documental y la consulta: separa las 18 páginas completas de los 35 recortes, usa la Edición Crítica 3.6, conserva las seis secciones del aparato por unidad, genera una concordancia bidireccional y ofrece índices con enlaces HTML y páginas PDF reales.
+3. La Parte II de Quarto tiene mayor desarrollo y cautela que 0.6. Conserva la cobertura temática, aumenta de unas 15.122 a 15.758 palabras extraídas y elimina o reformula afirmaciones demasiado fuertes sobre comunales, autoconsumo, clima, copropiedad, ruedas y resiliencia.
+4. La principal pérdida material respecto a 0.6 es la cartografía. Las dos láminas de 0.6 cumplen una función de orientación regional, provincial y local que no tiene equivalente en la candidata.
+5. La principal carencia bibliográfica es de sistema, no de número bruto de enlaces. Quarto conserva 41 URL únicas frente a 42 en 0.6 y la matriz identifica numerosas fuentes externas, pero `references.bib` sigue vacío y el capítulo del topónimo no ofrece al lector llamadas o referencias próximas que lo conduzcan a esas entradas.
+6. La trazabilidad D/C/I/E/L es más robusta como dato estructurado: la matriz reproduce 112 entradas y la concordancia conecta respuestas, unidades, transcripción y facsímil. Sin embargo, las marcas del cuerpo no enlazan directamente con la matriz y solo son visibles de forma sistemática en los capítulos 9–13.
+7. Faltan componentes que el Plan Maestro situó entre los preliminares y los aparatos narrativos: créditos y responsabilidades editoriales definitivas, cartografía, una presentación o guía preliminar consolidada, cronología, cuestiones abiertas, fuentes/bibliografía, historia de versiones y modelos de cita.
+8. La candidata conserva todavía metadatos de desarrollo: subtítulo «Edición en desarrollo», versión `0.1.0-dev`, estado `development`, autor PDF vacío y ausencia de licencia, copyright, fecha editorial y URL canónica. Estos valores no deben llegar sin decisión a una publicación 1.0.
+9. No debe restaurarse todo lo que aparecía en 0.6. Su facsímil solo por unidades, sus localizadores provisionales y varias formulaciones históricas superadas han sido sustituidos por soluciones equivalentes o mejores.
+10. La matriz de decisiones se mantiene separada en [REVISION_EDITORIAL_CANDIDATA_1_0.md](./REVISION_EDITORIAL_CANDIDATA_1_0.md). Ninguna clasificación B/M/F/N equivale a una decisión del usuario.
 
-## Alcance y cautelas de la comparación
+## 1. Alcance, autoridad y baseline
 
--   El PDF 0.6 se consultó como referencia editorial externa, no como autoridad histórica. El estado canónico sigue siendo el de `project/` y el Registro vigente.
--   Se revisaron el PDF 0.6 localizado fuera del repositorio, el render local `publication/_book/`, los archivos QMD, el archivo de bibliografía, la configuración Quarto, el validador, el plan maestro y el roadmap. También se examinaron las capturas facilitadas por el usuario: la página 15 del capítulo 3 del PDF 0.6 y el apartado 4.4 del capítulo 4 Quarto.
--   Las cifras de marcas se obtuvieron buscando grupos con forma `[D:`, `[C:`, `[I:`, `[E:`, `[L:` o combinaciones como `[D/E/L:`. Un «grupo» es una aparición del conjunto de letras antes de los dos puntos; no equivale al número de identificadores que lo siguen.
--   La comparación principal de densidad usa solo capítulos disponibles en ambas versiones: 3 y 5–11. No se cuentan los capítulos 12–13 de 0.6 en ese total, pues todavía no están presentes en los QMD consultados. Tampoco se equiparan los 151 identificadores del YAML con marcas visibles del cuerpo.
--   El checkout examinado es la rama `feature/quarto-book`, diez commits por delante de `origin/feature/quarto-book`, con modificaciones locales preexistentes y un capítulo 11 sin seguimiento por Git. Por tanto, este informe describe ese estado local de trabajo, no una publicación final ni necesariamente el estado de `main`.
--   El informe no modifica `project/`, el roadmap, el PDF, los archivos generados ni el render. El PDF 0.6 y la captura no se incorporan al repositorio.
+La composición 0.6 se usa únicamente como referencia editorial. No prevalece sobre el manuscrito autoritativo, la Edición Crítica, el Manual Editorial, el Estudio Histórico, el Registro D/C/I/E/L ni los demás documentos canónicos de `project/`.
 
-## Comparativa general
+La auditoría partió de un árbol limpio en `feature/quarto-book`. Tras actualizar las referencias remotas se comprobó:
 
-| Aspecto | Composición 0.6 | Quarto local en desarrollo | Evaluación |
-|------------------|------------------|------------------|------------------|
-| Extensión y cierre editorial | 259 páginas; incluye preliminares, estudio, facsímil, transcripción, edición modernizada, aparatos e índices. | 68 páginas; capítulos 1–11, capítulo técnico, prototipos de capítulos documentales y aparato de molinos. Faltan capítulos 12–13 y productos de fases posteriores. | 0.6 es más completo. La diferencia es esperable por el estado del roadmap Quarto, no prueba por sí sola una decisión editorial de suprimir material. |
-| Guía y propósito de D/C/I/E/L | El capítulo 5 define los cinco niveles, declara que los corchetes remiten al Registro y formula restricciones metodológicas para el estudio. | El capítulo 4.4 define los cinco niveles y dice que conservan procedencia y grado de afirmación; el 4.5 describe la cadena de trazabilidad. | Ambos explican el propósito; el uso real debe juzgarse por cómo las etiquetas acompañan afirmaciones y llegan a su expediente de respaldo. |
-| Uso de las marcas en el cuerpo | Las marcas aparecen junto a afirmaciones, a menudo al final del párrafo; las entradas pueden combinar niveles y varios IDs. | Hay 41 grupos en el cuerpo de los capítulos 9–11; capítulos 3 y 5–8 no muestran grupos pese a tener `evidence:` en YAML. | 0.6 es más continuo entre capítulos ya escritos; Quarto 9–11 es más denso y operativo en el propio texto, pero el uso no se ha extendido aún a todo el libro. |
-| Resolución y control | El apéndice D reproduce el Registro completo; se busca manualmente el ID. El sistema aporta formulación, evidencia/respuesta/folio, estado y cautela o consecuencia. | El YAML se valida frente al inventario esperado y los IDs existentes. Un fragmento de matriz generado de molinos es accesible desde el capítulo 9, pero cubre solo una selección. | 0.6 ofrece una ruta de resolución más amplia y completa para el lector; Quarto combina validación del proyecto y un ejemplo de aparato navegable, pero aún no un resolutor general. |
-| Referencias externas | En el ejemplo de la página 15, tras el pasaje sobre el topónimo hay una sección «Fuentes externas» con referencias identificadas y siete URL activas. El PDF declara 154 anotaciones URL en total. | Nueve URL externas en los capítulos 1–2; no se encontraron citas bibliográficas con claves ni bibliografía sustantiva. El capítulo 3 no muestra la lista de fuentes externas del topónimo. | 0.6 proporciona más información bibliográfica visible y más enlaces; Quarto ya enlaza algunos recursos, pero de modo parcial y sin un sistema bibliográfico común. |
-| Notas | El ejemplo de página 15 no es una nota a pie: son marcas en el texto y una lista de fuentes al final del pasaje. | No se encontraron notas a pie en los capítulos editoriales 1–11. Hay una nota en el capítulo técnico de prueba, sin contenido histórico. | No debe describirse el ejemplo de 0.6 como prueba de que sus marcas D/C/I/E/L sean notas o enlaces. La comparación general de notas requiere revisar el PDF completo nota por nota. |
-| Mapas | Se observaron dos mapas: uno de ubicación regional/provincial y otro de detalle local. | No hay archivos de mapas en `publication/assets/` ni mapas incluidos en los capítulos QMD inspeccionados. | 0.6 facilita orientación territorial; Quarto debería recuperar cartografía con procedencia, leyenda y límites interpretativos, conforme avance su plan. |
-| Historia del nombre Sorrios | El capítulo 3 combina testimonios cronológicos, marcas de evidencia, referencias externas y URL activas en el ejemplo de página 15. | El capítulo 3 explica `Sorribios` → `Sorribos` → `Sorrios`, separa identificación histórica de reconstrucción fonética y declara fuentes internas en YAML; no presenta allí una lista visible equivalente de fuentes externas. | Quarto conserva cautelas interpretativas valiosas, pero 0.6 ofrece una ruta de comprobación bibliográfica más inmediata. |
-| Autoría | Metadato PDF: «Proyecto Sorríos - Catastro de Ensenada»; no se observó nombre personal en la portada revisada. | Metadato `Author` vacío; no hay campo `author` en la configuración editorial consultada. | Ambas carecen de atribución personal clara. La mención del proyecto en metadatos de 0.6 no identifica autoría individual ni responsabilidades editoriales. |
-| Formatos y composición | A4; 259 páginas. La paginación se declara provisional. | PDF local de 68 páginas en tamaño Letter; HTML generado declara `lang="en"` pese a que el contenido es español. | Hay cuestiones técnicas de localización/formato que revisar en Quarto antes de publicación; no invalidan su contenido ni implican por sí solas un defecto histórico. |
-| Control metodológico | Integra el tratamiento alcanzado en 0.6 y presenta los aparatos, pero algunos usos pueden requerir revisión frente a fuentes canónicas y criterios actualizados. | Distingue capas epistemológicas, declara procedencia, tiene validación semántica y controles de identificadores; el plan define fuentes canónicas y generación reproducible. | Quarto tiene una arquitectura de control más explícita. El PDF 0.6 es referencia editorial, no autoridad que deba copiarse sin auditoría. |
+| Elemento | Valor |
+|---|---|
+| Baseline documental de auditoría | `088e4fcec91fa9723b5b0ffad4f65781a9c0af6c` |
+| Candidata técnica | `49ab2e1b1a58ca9201efab54b42a3125de7326f8` |
+| Upstream al inicio | `e74ce3cb8bd27921f50db5a046a0851528297ced` |
+| Upstream final antes del commit | `088e4fcec91fa9723b5b0ffad4f65781a9c0af6c` |
+| Relación upstream/baseline final | 0 detrás, 0 delante; coincidencia exacta |
+| `main` y `origin/main` | `e81dc9239ac8dbabfe77168a50ef98c4d3b79170` |
+| Árbol `project/` en candidata y `main` | `e32917763475ceebdfe7b54830e1fb43f6419dad`; igualdad exacta |
+| Árbol `publication/` auditado | `cfcf349928fe3e1f2d3b33c005c31fa5621b1878` |
 
-## Marcas D/C/I/E/L: recuento y lectura correcta
+No se regeneró la candidata: el PDF disponible coincidía exactamente con el manifestado y bastaba para la auditoría. Los derivados se trataron como salidas de solo lectura.
 
-### Recuento del cuerpo
+## 2. PDFs comparados
 
-| Capítulo | PDF 0.6: grupos en el cuerpo | Quarto QMD: grupos en el cuerpo |
-|--------------------|-------------------------:|-------------------------:|
-| 3\. Expediente / topónimo | 7 | 0 |
-| 5\. Lugar, señorío y concejo | 10 | 0 |
-| 6\. Vecinos, hogares, viviendas y trabajo | 11 | 0 |
-| 7\. Tierra, sistema agrario y medidas | 10 | 0 |
-| 8\. Ganadería, montes y aprovechamientos comunales | 12 | 0 |
-| 9\. Río, molinos y recursos productivos | 5 | 17 |
-| 10\. Iglesia, señorío y fiscalidad | 8 | 12 |
-| 11\. Hacienda concejil y servicios colectivos | 5 | 12 |
-| **Total comparable: capítulos 3 y 5–11** | **68** | **41** |
+| Dato | Composición 0.6 | Candidata Quarto |
+|---|---|---|
+| Ubicación | réplica externa `~/.local/share/sorrios-ensenada/Sorrios_1752_Volumen_Completo_0_6_Lectura.pdf` | `publication/_book/sorribos-santibanez-ordas-1752.pdf` |
+| Páginas | 259 | 334 |
+| Bytes | 6.806.113 | 73.994.496 |
+| SHA-256 | `78551fc2bcc067634b97e6284b5a3b88b1916067851d51ee00b14e488e4187f4` | `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183` |
+| Tamaño de página | A4 | Letter |
+| Versión PDF | 1.4 | 1.7 |
+| Texto | seleccionable | seleccionable |
+| PDF etiquetado | no | no |
 
-En el PDF 0.6 se contaron además 15 grupos en el capítulo 12, seis en el 13 y seis en el capítulo 16. El total hallado en el PDF completo fue 95. Ese total completo no es una comparación justa con los QMD, que no tienen aún los capítulos 12–13 y cuya composición incluye prototipos documentales diferentes.
+La diferencia de tamaño procede principalmente de las 53 imágenes del manuscrito a 180 dpi incorporadas por Quarto; no indica por sí sola mayor contenido intelectual.
 
-La interpretación por tramo es más informativa que el total:
+## 3. Metodología y limitaciones
 
--   Los capítulos 3 y 5–8 de 0.6 suman 50 grupos visibles en el cuerpo (43 en 5–8 y siete en 3). Sus versiones QMD actuales no tienen marcas en el cuerpo.
--   Los capítulos 9–11 suman 18 grupos en 0.6 y 41 en Quarto. En ese tramo, Quarto no tiene menos marcas: los tres capítulos actuales están más anotados en el cuerpo.
--   En el render HTML observado, las marcas del cuerpo solo aparecen en las páginas/capítulos HTML 9, 10 y 11.
+Se combinaron:
 
-Por tanto, la formulación precisa es: **Quarto no aplica todavía las marcas visibles de forma uniforme a todo el contenido. Su déficit se concentra en capítulos anteriores, mientras que la anotación de los capítulos recientes es más densa que la de los capítulos equivalentes de 0.6.** No es correcto concluir que la práctica empezó en 9; empezó a estar visible allí, pero ya existían inventarios por capítulo en los metadatos de 3 y 5–8.
+- extracción de texto con preservación de páginas y disposición;
+- inventario de imágenes, fuentes y anotaciones URL con Poppler;
+- revisión del índice general y de los límites de cada parte;
+- inspección visual de portada, mapas, facsímil, transcripción, topónimo, aparatos e índices;
+- contraste con `_quarto.yml`, los manifiestos de `publication/meta/`, los QMD editoriales y los derivados ya generados;
+- recorridos funcionales por HTML y PDF para D/C/I/E/L, concordancia, respuestas, transcripción y facsímil;
+- lectura del Plan Maestro, el roadmap y el informe de candidata.
 
-### Qué aporta el YAML y qué no
+No se hizo OCR porque ambos PDF ofrecen texto extraíble. No se realizó investigación histórica externa ni se verificó de nuevo la corrección científica de cada fuente citada. El recuento de «tablas» de 0.6 no es comparable de forma fiable porque ese PDF no expone estructura semántica; no se fuerza una cifra.
 
-Los capítulos 3 y 5–11 declaran `evidence:` por categoría. En esos ocho archivos se contaron **151 apariciones de identificadores** en los inventarios. El validador de [publicación](../publication/scripts/validate_publication.py):
+Los recuentos de marcas se refieren a grupos visibles con forma `[D:`, `[C:`, `[I:`, `[E:`, `[L:` o combinaciones. Una marca puede contener varios identificadores y no equivale a una entrada de la matriz.
 
--   lee y normaliza el mapa `evidence`;
--   compara los inventarios de los capítulos con los esperados para cada fase;
--   comprueba que los identificadores declarados existan en el Registro vigente.
+## 4. Comparación cuantitativa
 
-Esto no significa que el libro actual ofrezca al lector una referencia individual en cada afirmación. La lista YAML describe el conjunto de evidencia usado por el capítulo, no una relación explícita entre cada frase y su código. Tampoco es una nota al pie ni una bibliografía y no genera por sí sola anclas navegables para el lector. Los capítulos 1 y 2 tienen `sources:` pero no `evidence:`; el capítulo 4 tiene fuentes declaradas, y el validador especifica que no debe declarar evidencia. El plan maestro formula el objetivo de manera compatible: la trazabilidad puede conservarse mediante metadatos, notas, cuadros y una matriz final; no hace falta una letra en cada párrafo, pero el diseño de lectura debe permitir encontrar la fuente.
+| Métrica | Composición 0.6 | Candidata Quarto | Método y lectura |
+|---|---:|---:|---|
+| Páginas PDF | 259 | 334 | `pdfinfo` |
+| Bloques funcionales equivalentes a capítulos 1–16 | 16 | 16 | índice general; 0.6 no numera todos como capítulos |
+| Páginas digitales completas del manuscrito | 0 como serie independiente | 18 | 0.6 muestra 35 unidades; Quarto separa páginas completas y recortes |
+| Unidades materiales con imagen y transcripción | 35 | 35 | índice y concordancia |
+| Preguntas/respuestas modernizadas | 40 | 40 | índice y contenido |
+| Aparatos principales generados | 4 | 4 | glosario, cuadros, concordancia y matriz |
+| Aparatos narrativos adicionales | 4 | 0 | cuestiones abiertas, fuentes, versiones y modelos de cita |
+| Índices | 9 | 9 | índice general |
+| Entradas de los índices | 129 | 164 | recuento de entradas; los índices 6, 7 y 9 son más amplios en Quarto |
+| Imágenes incrustadas | 73 | 53 | `pdfimages -list`; 0.6 = 3 cartográficas + 35 facsimilares + 35 de transcripción; Quarto = 18 + 35 |
+| Anotaciones URL | 154 | 91 | `pdfinfo -url`; incluye repeticiones |
+| URL externas únicas | 42 | 41 | normalización exacta de destinos URL |
+| Notas de la edición modernizada | 39 | 39 | 35 numéricas y 4 semánticas |
+| Grupos D/C/I/E/L visibles en el cuerpo | 95 | 77 | extracción textual; Quarto los concentra en capítulos 9–13 |
+| Entradas de la matriz D/C/I/E/L | 112 | 112 | Registro 1.2 reproducido |
+| Entradas de glosario | 22 | 22 | títulos de entrada |
+| Tablas accesibles auditadas | no comparable | 44 | cifra de la auditoría 5B; 0.6 carece de estructura semántica comparable |
 
-### Alcance de los códigos
+La mayor paginación de Quarto no expresa redundancia de contenido: dedica 18 páginas al facsímil íntegro, unas 103 a transcripción y aparato y 38 a índices desarrollados. La Parte II ocupa 53 páginas frente a 42 en 0.6.
 
-`[L: LIM-001]` significa que la afirmación se clasifica como límite y se identifica con la entrada `LIM-001` del Registro. El código no explica por sí mismo el límite, no es una URL y no garantiza que el PDF lo lleve a un enlace. En 0.6 el código se puede resolver buscando la entrada reproducida en el apéndice D; en Quarto los inventarios YAML ayudan a controlar los identificadores, pero el prototipo actual no los convierte en enlaces individuales del cuerpo al Registro.
+## 5. Arquitectura y cobertura intelectual
 
-Es necesario distinguir, por tanto:
+| Componente | 0.6 | Quarto | Evaluación |
+|---|---|---|---|
+| Portada | diseñada, con alcance y versión | tipográfica mínima, con subtítulo de desarrollo | pérdida de terminación editorial, no de contenido histórico |
+| Preliminares | créditos, guía D/C/I/E/L, índice y nota de composición | portada e índice; funciones metodológicas desplazadas a capítulos 1–4 | equivalencia parcial |
+| Parte I | cuatro capítulos funcionales | capítulos 1–4 | equivalente y algo más desarrollado |
+| Parte II | nueve capítulos temáticos | capítulos 5–13 | cobertura equivalente; Quarto es más granular y cauteloso |
+| Documento original | 35 recortes por unidad | 18 páginas completas | Quarto mejora materialidad; los recortes reaparecen en capítulo 15 |
+| Transcripción | 35 unidades y aparato | 35 unidades y seis secciones por unidad | equivalente en cobertura; Quarto mejora navegación y legibilidad |
+| Modernizada | 40 respuestas | 40 respuestas | equivalente; misma base 1.3 y 39 notas |
+| Aparatos | ocho, cuatro de ellos narrativos | cuatro generados | pérdida real de aparatos narrativos |
+| Índices | nueve, varios provisionales | nueve completos con localizadores reales | mejora clara de Quarto |
+| Cierre | colofón provisional | termina con el índice de materias | ausencia no bloqueante por sí sola, pero requiere decisión editorial |
 
-1.  **Marca epistemológica:** p. ej., `[L: LIM-001]`, que clasifica una afirmación e indica un identificador.
-2.  **Registro de evidencia:** la entrada que desarrolla afirmación, fuente, respuesta/folio, cautela y, si procede, cálculo.
-3.  **Referencia bibliográfica:** autor, título, publicación o archivo, fecha/localizador y URL de una fuente externa.
-4.  **Enlace digital:** una anotación de URL o un vínculo interno que permite navegación. No se deduce automáticamente de los otros tres elementos.
+La cobertura intelectual de Catastro, interrogatorio, expediente local, materialidad, jurisdicción, vecindad, tierra, producción, ganadería, recursos comunes, molinos, fiscalidad, hacienda, dinero, oficios, conexiones, vulnerabilidades y límites está presente en ambas versiones. No hay pérdida de un tema histórico principal.
 
-### Uso efectivo en la composición 0.6
+## 6. Profundidad del estudio histórico
 
-El capítulo 5 («Método, evidencia y alcance», página impresa 20) no se limita a enumerar las letras. Declara que las referencias entre corchetes remiten al `Registro_Afirmaciones_Calculos_v1.md`, explica qué debe preservar el análisis y añade diez restricciones metodológicas, entre ellas no sumar categorías vecinales como personas equivalentes, no estimar población total y no convertir escenarios causales en crisis ocurridas. Después, los capítulos emplean los códigos para marcar afirmaciones concretas y el apéndice D reproduce el Registro como una matriz extensa.
+La refundición Quarto preserva los nueve campos de la Parte II de 0.6 y los distribuye en capítulos más definidos. La extracción arroja unas 15.758 palabras en las páginas de la Parte II frente a 15.122 en 0.6; la diferencia es modesta en volumen, pero importante en método.
 
-El ejemplo más directo es `LIM-001`. En el estudio demográfico, 0.6 escribe que los 26 *avitadores* no son una cifra de población individual, que los ocho residentes no deben sumarse a ellos y que no consta el total de habitantes; cierra ese pasaje con `[L: LIM-001]`. El apéndice D permite buscar `LIM-001` y encontrar la formulación «No consta población total por individuos» y su consecuencia: R21 ofrece categorías fiscales y residentes, no un censo de almas. En la prosa cercana, otras marcas separan el contexto externo de la inferencia (`[E/I: DEM-005; LIM-001]`) o combinan dato y límite (`[D/L: ...]`). Así, el código ayuda a distinguir clases de afirmación, conservar cautelas y localizar el fundamento.
+Quarto mejora expresamente:
 
-La utilidad tiene límites prácticos: la etiqueta queda como texto, no como ancla clicable al apéndice; hay que ir al apéndice D y buscar el ID (en la copia digital puede usarse la búsqueda de texto del lector PDF). Una marca agrupada al final de un párrafo tampoco identifica necesariamente qué código respalda cada oración cuando allí se reúnen varias afirmaciones. Aun así, el Registro íntegro ofrece una ruta de auditoría concreta, más rica que una mera clave: entrada, formulación admitida, evidencia/localizador y estado o cautela.
+- la separación entre vecino, medio vecino, residente, hogar, vivienda y población;
+- los denominadores de cabida y porcentajes agrarios;
+- la distinción entre valoración, utilidad, producción, renta e ingreso;
+- el tratamiento de casa de molino, rueda, venturero, titular, operador y usuario;
+- la separación entre común, concejo, vecinos, propiedad y uso documentado;
+- la distinción entre dependencia, exposición, daño y resiliencia;
+- la visibilidad de ausencias y magnitudes no calculables.
 
-### Uso efectivo en Quarto
+La candidata no debe recuperar las formulaciones de 0.6 que presentan «bienes comunales» sin título probado, una «fuerte base de autoconsumo», `CLIMA` como nodo documental, copropiedad o redundancia como amortiguador demostrado, «ocho ruedas fijas» o los 26 *avitadores* como habitantes fiscales. Su retirada o reformulación es una mejora, no una regresión.
 
-La captura aportada corresponde al apartado 4.4 del capítulo 4, que explica correctamente los cinco tipos y afirma que las letras conservan «la procedencia y el grado de una afirmación». El mismo capítulo 4.5 presenta la cadena de trazabilidad imagen → unidad → transcripción/aparato → edición modernizada → Estudio → Registro, y dice que enlaces y anclas permiten recorrerla. También indica que las notas documentan decisiones y cautelas; sin embargo, no se encontraron notas a pie en los capítulos editoriales 1–11 (la única nota hallada está en el capítulo técnico de prueba). Estas frases describen el diseño pretendido, no prueban que cada mecanismo ya esté implementado.
+## 7. Preliminares previstos y reales
 
-En el cuerpo actual, las marcas sí están aplicadas de manera operativa en los capítulos 9–11: por ejemplo, en molinos `[D/C/L: HID-001, HID-002, HID-005, CAL-012, LIM-010]` acompaña una explicación que distingue el recuento de ruedas, la suma calculada y el número desconocido del venturero; las fórmulas hacen visibles los operandos del cálculo. En el capítulo 10, `[D/L: JUR-006, LIM-011]` acompaña el pasaje que separa el pago anual de alcabalas del título jurídico que no consta. Las combinaciones de letras son por párrafo y clasifican el contenido sin crear por sí solas una cita bibliográfica.
+| Elemento del Plan Maestro | Estado en la candidata | Evaluación |
+|---|---|---|
+| Portada | presente, mínima y aún marcada como desarrollo | requiere cierre editorial |
+| Créditos | ausentes del libro | carencia real |
+| Presentación | función repartida entre portada y capítulos 1–4 | cobertura parcial |
+| Nota al lector | ausente como pieza propia | mejora conveniente |
+| Guía de uso | función parcial en capítulos 4, 14–16 y aparatos | cobertura dispersa |
+| Convenciones | explicadas parcialmente en capítulo 4 y en cada derivado | cobertura parcial |
+| Guía D/C/I/E/L | capítulo 4 y matriz | presente con otro nombre y ubicación |
+| Cronología | presente en el capítulo 3, no como preliminar autónomo | cobertura funcional; su ubicación requiere decisión |
+| Cartografía | ausente | pérdida real respecto a 0.6 |
+| Índice general | presente, 18 páginas | presente y detallado |
+| Reproducciones y cuadros | presentes en capítulos 14–16 y aparatos | función cubierta fuera de preliminares |
 
-La práctica no está extendida a todos los capítulos. El caso de población muestra la diferencia con claridad: el capítulo 6 QMD formula en el cuerpo que 26 *avitadores* no son una población total, que no corresponde sumarles los ocho residentes y que faltan datos familiares; pero no coloca `[L: LIM-001]` junto al párrafo. El front matter sí incluye `LIM-001` en su lista `L`. Por tanto, allí el uso real del código es de control/procedencia del capítulo, no de señal visible para quien lee ese pasaje. Lo mismo ocurre en los capítulos 3 y 5, 7 y 8: hay IDs declarados, pero no marcas en el cuerpo.
+No es necesario duplicar en preliminares lo que funciona mejor dentro del libro. Sí debe resolverse qué orientación mínima necesita un lector antes del capítulo 1.
 
-Hay una excepción parcial relevante: el capítulo 9 enlaza al lector con un **aparato D/C/I/E/L prototipo**. La tabla del aparato-molinos presenta, para una selección de 13 IDs, nivel, formulación o regla, estado y cautela/límite, y permite volver al capítulo histórico. Esa salida realiza parte de la función del Registro y demuestra navegación en una sección concreta. Sin embargo, no es una matriz completa: no recoge todos los IDs del capítulo 9, no cubre los capítulos 3 y 5–8 o 10–11, y las marcas al final de los párrafos no enlazan directamente con las filas correspondientes. El lector llega al fragmento mediante un enlace expreso al final del capítulo 9, no siguiendo cada código.
+## 8. Cartografía
 
-El control automático también tiene un alcance específico. El validador compara el inventario YAML con la lista esperada para cada capítulo y verifica que los IDs existan en el Registro. No comprueba que cada afirmación del cuerpo tenga su marca, que el ID adjunto sea la categoría semánticamente correcta ni que cada marca visible resuelva a una fila enlazada. En consecuencia, el front matter es útil para el equipo y las pruebas, pero permanece oculto en la salida de lectura; no debe presentarse como equivalente funcional a una anotación visible junto al pasaje.
+0.6 contiene dos láminas:
 
-### Comparación práctica
+1. «Situación regional», con una vista peninsular y otra provincial que señalan Ordás y declaran que la circunferencia no representa límites históricos.
+2. «Sorribos (1752) y Sorrios actual», con Sorrios/Sorribos, Santibáñez de Ordás, Santa María de Ordás, Villapodambre, Tapia de la Ribera y Rioseco de Tapia; aclara que los círculos son localizadores puntuales.
 
-| Pregunta del lector/editor | PDF 0.6 | Quarto actual |
-|------------------------|------------------------|------------------------|
-| ¿Qué tipo de afirmación se está haciendo? | La marca visible D/C/I/E/L indica una o varias clases al cierre del pasaje; la guía metodológica define las categorías. | Lo indican las marcas visibles de los capítulos 9–11. En capítulos 3 y 5–8, el inventario existe solo en YAML y no se ve en el pasaje. |
-| ¿Cuál es el fundamento o límite concreto? | Buscar el ID en el apéndice D, que reproduce el Registro completo con formulación, evidencia/localizador, estado y cautela. | En general, el ID queda como texto visible en los capítulos 9–11, sin enlace individual al Registro. El aparato de molinos resuelve solo una selección de IDs del capítulo 9. |
-| ¿Se conserva el cálculo? | El código puede llevar a un `CAL-*`; el texto o el Registro declara la operación. La etiqueta sola no sustituye operandos ni regla. | En los capítulos 9–11 se muestra la operación en prosa/fórmula y se adjuntan IDs `CAL-*`; el inventario YAML también registra esos IDs. |
-| ¿Puede seguirse digitalmente la cadena? | Las marcas al Registro requieren búsqueda manual; enlaces bibliográficos externos son un mecanismo separado. | Hay enlaces internos entre capítulos y entre el capítulo 9 y sus vistas/aparato. La cadena no se implementa aún para cada marca o entrada de evidencia. |
+Su valor es editorial: orientan al lector en escalas sucesivas y sitúan los núcleos necesarios para entender el expediente sin convertir el mapa contemporáneo en reconstrucción territorial de 1752. La candidata no ofrece imagen ni componente equivalente. La prosa que advierte contra una precisión cartográfica indebida es correcta, pero no sustituye esa orientación.
 
-La afirmación del capítulo 4.5 de que «los enlaces y las anclas permiten recorrer esa cadena» está respaldada para algunas relaciones editoriales y el prototipo de molinos, pero sería demasiado amplia si se interpreta como navegación completa desde todas las marcas D/C/I/E/L hasta sus entradas del Registro. El sistema Quarto que se ve hoy es híbrido: **guía conceptual completa, inventario de IDs controlado para varios capítulos, anotación visible concentrada en los capítulos 9–11 y un aparato parcial enlazado desde el capítulo 9**.
+La ausencia cumple la definición de regresión real: estaba correctamente resuelta, sigue siendo deseable, el Plan Maestro la prometía y no existe una sustitución equivalente. Recuperarla exige revisar procedencia, licencia, fecha de consulta, base cartográfica, rotulación y texto alternativo; no autoriza a copiar las imágenes sin control.
 
-## Referencias: qué enseña el ejemplo de la página 15
+## 9. Historia de Sorribos y Sorrios
 
-La captura proporcionada muestra la página 15 del capítulo 3 de 0.6. Tras dos párrafos sobre testimonios de 1831, 1836 y 1848, el uso actual de `Sorrios` y la serie histórica `Sorribios` / `Sorribos` / `Sorrios`, aparecen marcas como `[E: TOP-009–TOP-011]` e `[I/L: TOP-002, TOP-003]`. A continuación se lee **«Fuentes externas»** y una relación de referencias que incluye, entre otros:
+Ambas versiones cubren 1215, 1267, 1715, 1752, 1768, 1831, 1836, 1848 y la identificación actual. Quarto formula con mayor claridad:
 
--   Cristina Jular Pérez-Alfaro, título de un estudio sobre tenentes, merinos y poder señorial/regio;
--   la edición de un documento de 1267 con referencia archivística `AHN, Clero, carp. 828, núm. 11`;
--   un nobiliario, un pleito de 1715 en PARES, una relación parroquial de 1768, la *Gaceta de Madrid* de 1864, un estudio de Fernando Álvarez-Balbuena García y la página del Ayuntamiento.
+- la secuencia `Sorribios` → `Sorribos` → `Sorrios`;
+- la diferencia entre continuidad de identificación y evolución fonética completa;
+- el alcance patrimonial concreto de los testimonios medievales;
+- que `Sorribas` es un error paleográfico descartado, no una variante histórica del núcleo de Ordás.
 
-El PDF ofrece siete anotaciones URL en esa página; `pdfinfo -url` encontró 154 anotaciones URL en todo el documento (repeticiones incluidas). Los hipervínculos conducen a los recursos citados. En cambio, las marcas D/C/I/E/L del pasaje siguen siendo referencias textuales al Registro: no se detectó que cada una sea un hipervínculo a su entrada.
+0.6, sin embargo, ofrece junto al pasaje una lista visible de siete referencias externas enlazadas y marcas E/I/L. En Quarto, el capítulo 3 presenta la cronología sin llamadas visibles; las referencias aparecen después en las entradas `TOP-004`–`TOP-011` de la matriz, pero el capítulo no conduce al lector hasta ellas. La información no se ha perdido, pero sí se ha debilitado su verificabilidad inmediata.
 
-Este ejemplo **no demuestra que el pasaje use notas a pie**. Es una relación bibliográfica de sección colocada inmediatamente después de los párrafos a los que da soporte. Su fortaleza es la proximidad y visibilidad: el lector encuentra autor/título o descripción documental y puede abrir los enlaces sin depender exclusivamente de un apéndice distante. No siempre es una cita normalizada autor-fecha y la asociación entre cada fuente y cada frase puede seguir requiriendo interpretación; la lista y el Registro deben coordinarse.
+No se reabre la decisión paleográfica: la lectura `Sorribos` y la rectificación de `Sorribas` son mejoras canónicas de Quarto.
 
-En Quarto, [references.bib](../publication/references.bib) contiene solamente un comentario de que la bibliografía se incorporará en fases posteriores y tiene cero entradas. La configuración [\_quarto.yml](../publication/_quarto.yml) sí declara ese archivo como bibliografía. En los capítulos 1–11 no se encontraron claves de cita `[@…]` ni notas a pie; el único ejemplo de nota a pie localizado pertenece a [00-prueba-tecnica.qmd](../publication/content/00-preliminares/00-prueba-tecnica.qmd) y es explícitamente técnico. Sí hay **nueve URL externas enlazadas** en los capítulos 1 y 2 (recursos de PARES y del Catastro). Son enlaces útiles, pero no constituyen todavía una bibliografía coherente de la obra: no van acompañados de una clave/cita formal y se concentran en la introducción. En particular, los pasajes históricos del capítulo 3 y varios contextos externos de los capítulos 5–11 carecen de referencias externas visibles junto a las afirmaciones, aunque algunos identificadores E y las fuentes internas estén declarados en YAML.
+## 10. Fuentes, bibliografía y enlaces externos
 
-### Balance de referencias
+La composición 0.6 presenta 154 anotaciones URL y 42 destinos únicos. Quarto presenta 91 anotaciones y 41 destinos únicos. La diferencia de anotaciones se debe sobre todo a repeticiones, no a una desaparición masiva de fuentes.
 
--   **0.6 es más sólido en referencias visibles al lector** en el ejemplo toponímico y en la distribución de enlaces externos por el PDF.
--   **Quarto tiene procedencia declarada y validable**: los campos `sources:` identifican archivos internos y localizadores; `evidence:` declara IDs del Registro y el validador comprueba las listas y la existencia de IDs. El aparato prototipo de molinos hace legible y navegable una selección de entradas.
--   **La debilidad actual de Quarto es la falta de cobertura y resolución general**, no la ausencia absoluta de uso. El lector no ve el YAML como aparato, no encuentra citas bibliográficas normalizadas ni una bibliografía completa en el `.bib`; los códigos visibles del cuerpo no tienen destino individual en el Registro.
--   **El PDF 0.6 tampoco resuelve todo automáticamente**: las marcas D/C/I/E/L requieren ir al Registro/apéndice y la relación entre un código y una fuente bibliográfica puede no ser evidente sin consultar la entrada completa. Sus URLs activas no convierten los códigos en enlaces.
+Quarto dispone de tres capas de procedencia:
 
-## Otros hallazgos de la comparación inicial
+1. `sources:` de cada capítulo, útil para el control editorial interno;
+2. identificadores `evidence:` y una matriz de 112 entradas;
+3. enlaces externos visibles en capítulos, transcripción, glosario, matriz e índices.
 
-### Cartografía
+Estas capas no equivalen a una bibliografía para el lector. `references.bib` contiene cero entradas; no hay citas bibliográficas Pandoc en los capítulos; varias entradas E ofrecen solo una descripción breve y una URL; y el libro no incluye el aparato narrativo «Fuentes y bibliografía» previsto por el Plan Maestro.
 
-En 0.6 se observaron dos mapas: una lámina de localización regional/provincial y otra de detalle local que sitúa Sorribos/Sorrios respecto de Tapia de la Ribera, Villapodambre, Santibáñez de Ordás y Rioseco de Tapia. En el árbol `publication/assets/` no se encontraron archivos; en los capítulos QMD actuales no se encontraron figuras cartográficas. El texto de Quarto incluso advierte que no se debe deducir un mapa más preciso del que permite el documento, lo cual es una cautela adecuada, pero no sustituye una cartografía editorial de orientación.
+La solución no tiene que copiar el apéndice F de 0.6 ni poner una nota en cada contexto E. Debe permitir identificar públicamente las fuentes, distinguir archivo/edición/estudio/recurso web y conectar las afirmaciones relevantes con referencias comprobables.
 
-La reincorporación debe pasar por la política de assets del proyecto: procedencia, fecha, escala, base cartográfica, transformación, leyenda y separación entre localización documentada e interpretación. La ausencia actual es coherente con que preliminares/cartografía y recursos gráficos estén previstos en el plan, no autoriza a reutilizar sin control una imagen antigua.
+## 11. Trazabilidad D/C/I/E/L
 
-### Historia del topónimo
+### Cobertura y experiencia real
 
-Quarto conserva una formulación históricamente prudente: distingue `Sorribios` medieval, `Sorribos` moderno y `Sorrios` actual; afirma la continuidad de identificación con cautela alta y niega que se disponga de una secuencia fonética completa. Esa disciplina debe conservarse.
+0.6 muestra 95 grupos de marcas en el cuerpo. Quarto muestra 77, concentrados en los capítulos 9–13; los capítulos 3 y 5–8 declaran evidencia en YAML, pero no muestran marcas junto a la prosa. Ambas versiones reproducen las 112 entradas de la matriz.
 
-La composición 0.6 resulta más verificable para el público en la página ilustrada porque acompaña ese relato con referencias externas identificables y enlaces. En Quarto, las fuentes del front matter del capítulo 3 son principalmente documentos internos del proyecto y Registro; no equivalen a la lista externa visible del PDF. Una mejora debería enlazar las entradas E del capítulo con referencias bibliográficas pertinentes, conservando la autoridad del Estudio y el Registro frente a cualquier discrepancia externa.
+En HTML, cada entrada de la matriz tiene ancla y enlaza a los capítulos que la usan. Las marcas del cuerpo, sin embargo, son texto plano: `[D: HID-001]` no enlaza a `#evidencia-hid-001`. En PDF la búsqueda textual permite resolver el ID, pero tampoco hay salto directo desde la marca.
 
-### Autoría y créditos
+### Recorridos comprobados
 
-La observación inicial de que «ninguno menciona al autor» se mantiene en lo sustancial, con un matiz: los metadatos del PDF 0.6 sí declaran como autor al «Proyecto Sorríos - Catastro de Ensenada», pero no identifican a una persona. El PDF Quarto local tiene campo `Author` vacío. Ninguna versión consultada ofrece un crédito personal inequívoco ni un bloque de responsabilidades editoriales suficientemente explícito. Conviene decidir e incorporar autoría, edición, transcripción, institución y fecha de versión solo con metadatos comprobados y autorización editorial; no inferirlos.
+Se siguió la misma cadena desde el capítulo 9 para los cinco niveles:
 
-### Estado de desarrollo y aspectos técnicos
+| Nivel | Afirmación / ID | Resolución en matriz | Evidencia y regreso al documento |
+|---|---|---|---|
+| D | cuatro casas de molinos, `HID-001` | entrada D, estado admitido | R17, ff. 315r–316r → concordancia → folios 315r, 315v y 316r → páginas digitales 11–12 |
+| C | 26 cargas de utilidad, `HID-004` | entrada C con cautela de unidades | R17 y `CAL-013` → respuesta 17 → los mismos folios y facsímil |
+| I | redundancia potencial, `INT-005` | entrada I condicionada | remite a `HID-001`–`HID-007`; la matriz separa interpretación de los datos de R17 |
+| E | contexto molinero, `HID-008` | entrada E/I admitida como comparación | dos referencias externas visibles; la cautela impide transferir caudales o meses a Sorribos |
+| L | ruedas desconocidas del venturero, `LIM-010` | entrada L | remite a `HID-005` → R17, ff. 315r–316r → transcripción y facsímil |
 
--   El [roadmap](./ESTADO_PUBLICACION_QUARTO.md) deja la fase 3J (capítulo 11) como siguiente, pero el checkout local contiene ya un QMD 11 sin seguimiento y un render de 68 páginas que lo incluye. Debe evitarse presentar ese estado local como publicación o como roadmap actualizado.
--   El PDF Quarto observado tiene 68 páginas y tamaño Letter (`612 × 792 pt`); el 0.6 tiene 259 páginas y tamaño A4 (`595.276 × 841.89 pt`). La decisión final de formato corresponde al diseño editorial; el tamaño no debe cambiarse solo por imitación.
--   El HTML Quarto declara `lang="en"` a pesar de que el contenido es español. Es un aspecto de metadatos/accesibilidad que conviene corregir antes de publicación.
--   El capítulo técnico [00-prueba-tecnica.qmd](../publication/content/00-preliminares/00-prueba-tecnica.qmd) sigue apareciendo en la configuración/render local. Debe retirarse o mantenerse fuera de la edición pública conforme a la fase y al control de regresión establecido.
--   El render de 68 páginas se trata aquí solo como evidencia del checkout observado. `_book/` es derivado regenerable y no autoridad editorial.
+La cadena es completa, pero requiere búsqueda manual y conocer la función de la concordancia. Quarto mejora los eslabones posteriores a la matriz; 0.6 hace más continuas las marcas del cuerpo. La mejora pendiente es de navegación y visibilidad, no de ausencia de evidencia.
 
-## Valoración y prioridades editoriales
+## 12. Facsímil
 
-### Qué conservar o aprovechar de 0.6
+0.6 dedica 35 páginas a recortes de unidades materiales. Son grandes, legibles y rotulados con unidad, página digital y posición, pero no conserva en una serie separada las 18 imágenes completas.
 
-1.  La cobertura integrada del libro y la navegación entre estudio, documento y aparatos.
-2.  La cartografía orientativa, tras verificar procedencia, datos cartográficos, licencias y límites de representación.
-3.  La práctica de colocar una relación visible de fuentes externas cerca del pasaje histórico al que sirve, con enlaces activos y datos bibliográficos suficientes.
-4.  La presentación visible y relativamente consistente de marcas D/C/I/E/L en el estudio histórico, sin confundirlas con notas a pie ni con hipervínculos.
+Quarto dedica 18 páginas a las imágenes digitales completas, con márgenes, blancos, sellos y materialidad; el capítulo 15 vuelve a mostrar los 35 recortes correspondientes. La imagen completa impresa es algo menor que el recorte de 0.6, pero sigue siendo legible con ampliación y la salida HTML permite una consulta más flexible.
 
-### Qué conservar o aprovechar de Quarto
+La candidata mejora cobertura, orden y contexto. No se observa pérdida que justifique volver al modelo exclusivo por unidades de 0.6.
 
-1.  La arquitectura que separa el workspace canónico `project/`, el texto editorial `publication/content/` y los derivados regenerables.
-2.  La distinción rigurosa entre dato, cálculo, interpretación, contexto externo y límite, especialmente en los capítulos 5–11, donde las etiquetas visibles acompañan los razonamientos.
-3.  La declaración de fuentes y de identificadores en metadatos, y su comprobación automatizada.
-4.  La cautela frente a equivalencias no documentadas, agregaciones y causalidades, así como la orientación a generar matriz, facsímil, transcripción, modernizada e índices desde fuentes canónicas.
-5.  Los enlaces internos y externos que ya funcionan en los capítulos iniciales.
+## 13. Transcripción y aparato crítico
 
-### Mejoras recomendadas para ambos
+Las dos versiones cubren las 35 unidades. Quarto conserva en cada una:
 
-1.  Definir una política editorial clara de citas, bibliografía y notas: qué requiere llamada en el cuerpo, cuándo procede nota, cómo se representa archivo/folio y cómo se presenta bibliografía web; evitar que una lista de URLs sin contexto sustituya una referencia completa.
-2.  Mantener alineados los identificadores D/C/I/E/L, las entradas del Registro y la bibliografía: toda marca debe conducir a una explicación localizable y toda fuente E debe poder identificarse sin búsquedas ambiguas. Distinguir además el control interno de front matter de la función de lectura de una marca impresa.
-3.  Revisar la correspondencia de cada fuente externa con afirmaciones concretas; que una bibliografía aparezca cerca no prueba automáticamente qué frase respalda.
-4.  Acreditar autoría y responsabilidades editoriales con información confirmada.
-5.  Revisar mapas y figuras con metadatos de procedencia y una leyenda que no prometa más precisión de la permitida por la fuente.
-6.  Preservar las cuatro formas de acceso definidas para el libro: facsímil, transcripción paleográfica y aparato, edición modernizada e interpretación histórica.
+- imagen;
+- transcripción paleográfica;
+- observaciones editoriales;
+- notas paleográficas;
+- notas históricas;
+- referencias cruzadas.
 
-### Próximo paso editorial recomendado
+La candidata aplica la Edición Crítica 3.6 vigente, mantiene lineación, abreviaturas y dudas, y enlaza unidades con respuestas y páginas facsimilares. Su composición ocupa más páginas y deja mayor aire tipográfico. 0.6 es más compacta y usa encabezados corridos más elaborados, pero no ofrece mayor fidelidad textual.
 
-Al completar el aparato previsto por el roadmap, tratar la salida visible de trazabilidad como requisito de lectura y no solo como control de build: desde una marca o una referencia externa debe poder alcanzarse el registro o la cita pertinente en HTML y encontrarse fácilmente en PDF. La implementación debe respetar el plan, la generación determinista y la autoridad del Registro; este informe no prescribe un filtro o una infraestructura particular.
+Las lecturas corregidas y las cautelas actuales son mejoras de Quarto. No debe recuperarse ninguna lectura antigua por el solo hecho de aparecer en 0.6.
 
-## Referencias de comprobación dentro del repositorio
+## 14. Edición modernizada
 
--   [Plan maestro de publicación Quarto](./PLAN_MAESTRO_PUBLICACION_QUARTO.md): arquitectura, criterios D/C/I/E/L, aparatos previstos y auditoría de la composición 0.6.
--   [Estado de publicación Quarto](./ESTADO_PUBLICACION_QUARTO.md): fase y siguiente tarea declarada.
--   [Instrucciones de publicación](../.github/instructions/publication.instructions.md): autoridades, metadatos, validación y política de assets.
--   [README de publicación](../publication/README.md): entradas, derivados y comandos.
--   [Registro de afirmaciones y cálculos v1.2](../project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md): autoridad del aparato D/C/I/E/L.
--   [Configuración Quarto](../publication/_quarto.yml): capítulos, bibliografía y render.
--   [Bibliografía BibTeX actual](../publication/references.bib): archivo actualmente vacío salvo comentario.
--   [Capítulo 3 QMD](../publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd): tratamiento Quarto del expediente y topónimo.
--   [Capítulo 4 QMD](../publication/content/01-catastro/04-manuscrito-volumen-actual.qmd): explicación de D/C/I/E/L y de la cadena de trazabilidad.
--   [Capítulo 6 QMD](../publication/content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd): ejemplo de cautela sobre vecinos, avitadores, residentes y población.
--   [Capítulo 9 QMD](../publication/content/02-estudio/09-rio-molinos-recursos.qmd): marcas visibles y enlace al aparato prototipo.
--   [Aparato de molinos QMD](../publication/generated/aparato-molinos.qmd): tabla parcial D/C/I/E/L del prototipo.
--   [Validador de publicación](../publication/scripts/validate_publication.py): comprobaciones de `sources`, `evidence` e identificadores.
+Ambas versiones presentan portada, comparecencia, preguntas y respuestas 1–40, ratificación, edades, firmas, concordancia y nota de uso. Ambas conservan 39 notas.
 
-**Nota de integridad:** las capturas de la página 15 del PDF 0.6 y del apartado 4.4 de Quarto fueron proporcionadas para esta comparación y no se copian a `docs/`. La composición 0.6 permanece fuera del checkout y no debe añadirse al repositorio.
+0.6 asigna aproximadamente una página a cada respuesta y reúne las notas al final. Quarto compone el texto en 24 páginas, coloca las notas a pie en el punto de lectura y añade enlaces materiales en HTML. La candidata es más compacta sin perder respuestas ni cautelas. La diferencia es de diseño, no una regresión.
+
+## 15. Aparatos
+
+| Aparato previsto | 0.6 | Quarto | Evaluación |
+|---|---|---|---|
+| Glosario | 22 entradas | 22 entradas enlazadas | equivalente; Quarto mejora navegación |
+| Cuadros cuantitativos | presentes | 13 entradas C y 17 cálculos asociados | Quarto más estructurado y reproducible |
+| Concordancia | presente | dos vistas, 35 unidades, 40 respuestas y 65 relaciones | mejora clara |
+| Matriz D/C/I/E/L | 112 entradas | 112 entradas con estado, cautela y uso en el libro | mejora de estructura y navegación |
+| Cuestiones abiertas | apéndice propio | solo dispersas en matriz y capítulos | ausencia prevista por el plan, no equivalencia plena |
+| Fuentes y bibliografía | apéndice propio y listas próximas | datos repartidos; `.bib` vacío | carencia de sistema público |
+| Historia de versiones | apéndice propio | informe técnico fuera del libro | ausencia en la experiencia del lector |
+| Modelos de cita | apéndice propio | ausentes | ausencia real |
+
+Los cuatro últimos aparatos no fueron asignados a la fase generadora 4D, pero sí permanecieron prometidos por el Plan Maestro. Su ausencia no puede tratarse como olvido técnico accidental: requiere decidir ahora su alcance para 1.0.
+
+## 16. Índices
+
+Las dos versiones contienen nueve índices. En 0.6 los índices 6, 7, 8 y 9 se declaran provisionales y remiten a capítulos o respuestas; los localizadores de página se posponen a una versión 0.8. Quarto genera los nueve desde fuentes estructuradas y resuelve páginas reales en PDF y destinos enlazados en HTML.
+
+Quarto amplía especialmente:
+
+- productos, cultivos, ganados y recursos: 9 → 27 entradas;
+- cargas, derechos, rentas y fiscalidad: 7 → 15;
+- materias: 12 → 21.
+
+El índice de preguntas conserva 40 entradas. Los cinco índices basados en fuentes vivas mantienen 21, 9, 7, 12 y 12 entradas. Los localizadores visibles, variantes, remisiones y cautelas hacen que la candidata sea funcionalmente superior. No hay regresión que recuperar.
+
+## 17. Metadatos editoriales
+
+| Elemento | 0.6 | Quarto | Evaluación |
+|---|---|---|---|
+| Título | título y subtítulo de alcance | título correcto | presente |
+| Subtítulo | describe estudio y cuatro accesos | «Edición en desarrollo» | debe resolverse antes de 1.0 |
+| Autor PDF | «Proyecto Sorríos - Catastro de Ensenada» | vacío | ninguna versión fija autoría personal; Quarto pierde incluso la atribución colectiva |
+| Responsabilidad editorial | crédito de proyecto, no roles personales | ausente | pendiente |
+| Versión/estado | 0.6, composición revisada | `0.1.0-dev`, `development` | bloqueante propuesto para 1.0 |
+| Fecha | 2026 | fecha de creación técnica, no fecha editorial fijada | pendiente |
+| Licencia/copyright | ausentes | ausentes | pendiente de decisión |
+| URL canónica | ausente | ausente | depende de publicación, pero debe decidirse |
+| ISBN | ausente | ausente | no bloqueante técnico; decisión separada |
+
+La ausencia no autoriza a inventar datos. Sí obliga a obtener decisiones explícitas antes de declarar publicada una edición 1.0.
+
+## 18. Diseño y experiencia de lectura
+
+0.6 ofrece una identidad visual más terminada: portada compuesta, color, encabezados corridos, A4, mapas y aperturas de apéndice. Quarto usa una presentación LaTeX más sobria, Letter, mucho espacio blanco y una portada mínima. Las dos son legibles; no hay base para declarar A4 superior a Letter ni para reproducir la maqueta antigua.
+
+Quarto es mejor en navegación digital, enlaces internos, búsqueda HTML, estructura accesible básica, anclas, localizadores e índices. 0.6 es mejor en orientación inicial, cartografía, proximidad de fuentes en el capítulo del topónimo y señalización editorial de preliminares/apéndices.
+
+Ninguna versión es PDF etiquetado. La candidata no declara PDF/UA, PDF/A ni conformidad WCAG formal; esta limitación conocida no invalida por sí sola la edición 1.0.
+
+## 19. Mejoras de Quarto respecto a 0.6
+
+- 16 capítulos completos en una única fuente multiformato.
+- Mayor cautela factual y eliminación de formulaciones superadas.
+- 18 páginas facsimilares completas más 35 recortes de unidad.
+- 35 unidades con seis secciones canónicas y navegación estable.
+- 40 respuestas verificadas con notas en contexto.
+- Glosario, cuadros, concordancia y matriz reproducibles.
+- Matriz completa de 112 entradas y estados/cautelas visibles.
+- Nueve índices enlazados con localizadores PDF automáticos.
+- Índices 6, 7 y 9 notablemente ampliados.
+- HTML con búsqueda, navegación, reflow y texto alternativo.
+- Generación idempotente, validación automatizada y separación entre fuentes, edición y derivados.
+- Distinciones más rigurosas entre dato, cálculo, interpretación, contexto y límite.
+
+## 20. Elementos de 0.6 no equivalentes en la candidata
+
+| Elemento de 0.6 | Aporte | Sustitución actual | ¿Genera REV-*? |
+|---|---|---|---|
+| Dos láminas cartográficas | orientación a tres escalas | ninguna | sí, `REV-002` |
+| Fuentes visibles junto al topónimo y apéndice bibliográfico | verificabilidad pública | matriz distante y URL dispersas | sí, `REV-003` |
+| Cuestiones abiertas | síntesis legible de límites | matriz L y cautelas dispersas | sí, `REV-004` |
+| Historia de versiones | identifica base y evolución | informe externo al libro | sí, `REV-004` |
+| Modelos de cita | facilita uso académico | ninguno | sí, `REV-004` |
+| Créditos y versión visibles | identidad de la edición | metadatos de desarrollo incompletos | sí, `REV-001` |
+| Colofón | cierre y fecha editorial | ninguno | sí, `REV-007` |
+| Facsímil solo por unidades | gran tamaño de recorte | páginas completas + recortes | no recuperar; `REV-010` |
+| Índices provisionales | consulta temática básica | índices completos y enlazados | no recuperar; `REV-011` |
+| Formulaciones históricas fuertes | síntesis, pero con exceso inferencial | prosa más cauta | no recuperar; `REV-009` |
+| Maqueta A4 y paginación | identidad visual | diseño Letter multiformato | diferencia neutral; `REV-012` |
+
+## 21. Evolución de esta comparación
+
+El informe del 4 de octubre describía un checkout de 68 páginas con capítulos 1–11, prototipos documentales, sin aparatos completos ni índices, y con idioma HTML incorrecto. Esa fotografía fue útil para detectar bibliografía, cartografía y trazabilidad, pero ya no representa la candidata.
+
+Desde entonces se completaron los capítulos 12–16, los cuatro aparatos, los nueve índices, la auditoría integral 5B y la candidata 6A. El idioma público es español, la prueba técnica está fuera de navegación y el PDF tiene 334 páginas. Se conservan del análisis anterior únicamente los hallazgos que siguen verificados contra los dos PDF actuales.
+
+## 22. Resultado
+
+La candidata supera a 0.6 en integridad documental, rigor histórico, reproducibilidad, navegación e índices. No se detecta pérdida de capítulos, unidades, respuestas, matriz, glosario ni temas históricos principales.
+
+Las pérdidas o carencias que requieren decisión se concentran en la terminación editorial: metadatos y créditos, cartografía, sistema bibliográfico visible, aparatos narrativos prometidos, orientación preliminar y cierre. La clasificación propuesta y las acciones posibles figuran en [REVISION_EDITORIAL_CANDIDATA_1_0.md](./REVISION_EDITORIAL_CANDIDATA_1_0.md).
+
+## Referencias internas
+
+- [Plan Maestro de publicación](./PLAN_MAESTRO_PUBLICACION_QUARTO.md)
+- [Estado y roadmap](./ESTADO_PUBLICACION_QUARTO.md)
+- [Informe de candidata 1.0](./CANDIDATA_PUBLICACION_1_0.md)
+- [Matriz de revisión editorial](./REVISION_EDITORIAL_CANDIDATA_1_0.md)
+- [Instrucciones de publicación](../.github/instructions/publication.instructions.md)
+- [Configuración Quarto](../publication/_quarto.yml)
+- [Capítulo 3: expediente y topónimo](../publication/content/01-catastro/03-expediente-sorribos-santibanez.qmd)
+- [Capítulo 4: del manuscrito al volumen](../publication/content/01-catastro/04-manuscrito-volumen-actual.qmd)
+
+**Nota de integridad:** los PDF comparados y las imágenes temporales de inspección permanecen fuera del repositorio. Esta auditoría no modifica la candidata ni las fuentes canónicas.
