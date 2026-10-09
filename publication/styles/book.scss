@@ -97,3 +97,45 @@ table {
 table {
   overflow-wrap: anywhere;
 }
+
+h1,
+h2,
+h3,
+.quarto-title .title,
+.quarto-page-breadcrumbs,
+.sidebar-navigation .sidebar-item-text {
+  overflow-wrap: anywhere;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 0.2rem solid #005fcc;
+  outline-offset: 0.2rem;
+}
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.table-scroll:focus-visible {
+  box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.4rem #005fcc;
+}
+
+@media (max-width: 48rem) {
+  .table-scroll table {
+    min-width: max-content;
+  }
+
+  .index-entry,
+  .evidence-entry,
+  .question-external,
+  .response-local,
+  .material-navigation {
+    overflow-wrap: anywhere;
+  }
+}

@@ -149,7 +149,6 @@ def _header(
         else "Las entradas siguen el orden numérico validado del interrogatorio."
     )
     return f'''---
-title: "{title} {{.unnumbered}}"
 subtitle: "Parte VI. Aparatos e índices"
 chapter-id: {chapter_id}
 publication-status: generated
@@ -158,6 +157,8 @@ number-sections: false
 sources:
 {source_lines}
 ---
+
+# {title} {{.unnumbered}}
 
 {ordering}
 '''

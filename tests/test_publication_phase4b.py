@@ -300,7 +300,7 @@ def test_real_navigation_replaces_visible_prototype_and_preserves_regression_man
     chapters = yaml.safe_load(
         (ROOT / "publication/meta/chapters.yml").read_text(encoding="utf-8")
     )["chapters"]
-    navigation = quarto["book"]["chapters"]
+    navigation = validator._navigation_paths(quarto["book"]["chapters"])
     assert navigation.count("generated/15-transcripcion.qmd") == 1
     assert "generated/15-transcripcion-prototipo.qmd" not in navigation
     assert sum(item.get("path") == "generated/15-transcripcion-prototipo.qmd" for item in chapters) == 1

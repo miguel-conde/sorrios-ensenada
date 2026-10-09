@@ -196,7 +196,8 @@ def test_exactly_nine_outputs_in_plan_order_with_correct_titles(data, generated)
     assert tuple(generated) == builder.OUTPUT_NAMES
     assert len(generated) == 9
     for name, expected_title in zip(builder.OUTPUT_NAMES, builder.INDEX_TITLES.values(), strict=True):
-        assert f'title: "{expected_title} {{.unnumbered}}"' in generated[name]
+        assert f'# {expected_title} {{.unnumbered}}' in generated[name]
+        assert not re.search(r"^title:", generated[name], re.MULTILINE)
     assert builder.index_entry_counts(data) == (21, 9, 7, 12, 12, 27, 15, 40, 21)
 
 
@@ -270,7 +271,9 @@ def test_build_is_idempotent_and_owns_only_nine_qmd_outputs(tmp_path):
 
 def test_navigation_integrates_exactly_nine_indexes_after_phase4d():
     quarto = yaml.safe_load((PUBLICATION / "_quarto.yml").read_text(encoding="utf-8"))
-    navigation = quarto["book"]["chapters"]
+    navigation = []
+    for item in quarto["book"]["chapters"]:
+        navigation.extend(item.get("chapters", []) if isinstance(item, dict) else [item])
     expected = [f"generated/indices/{name}" for name in builder.OUTPUT_NAMES]
     assert navigation[-9:] == expected
     assert navigation[-10] == "generated/matriz-evidencia.qmd"

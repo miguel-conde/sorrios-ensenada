@@ -59,6 +59,12 @@ from build_indexes import (
 )
 from index_sources import IndexSourceError
 from index_sources import response_index_entries, sort_key, unit_locator
+from quality_audit import (
+    audit_configuration,
+    audit_contrast,
+    audit_html_book,
+    audit_pdf,
+)
 
 
 PUBLICATION_ROOT = Path(__file__).resolve().parent.parent
@@ -1406,6 +1412,7 @@ def validate_rendered_outputs() -> list[str]:
         if response_html.count("16-edicion-modernizada.html#respuesta-") != 40:
             errors.append("El índice 8 HTML no enlaza exactamente las 40 respuestas")
     errors.extend(_rendered_link_and_id_errors(PUBLICATION_ROOT / "_book"))
+    errors.extend(audit_html_book(PUBLICATION_ROOT / "_book"))
     if not RENDERED_PDF.is_file():
         errors.append(f"Falta el PDF renderizado: {RENDERED_PDF}")
     else:
@@ -1486,6 +1493,7 @@ def validate_rendered_outputs() -> list[str]:
                         "El PDF no conserva la lineación paleográfica de "
                         f"{unit.spec.unit_id}"
                     )
+    errors.extend(audit_pdf(RENDERED_PDF, deep=True))
     return errors
 
 
@@ -3664,8 +3672,22 @@ def _all_publication_texts() -> list[tuple[Path, str]]:
     ]
 
 
+def _navigation_paths(items: list[object]) -> list[str]:
+    """Flatten Quarto chapter and part entries without losing book order."""
+
+    paths: list[str] = []
+    for item in items:
+        if isinstance(item, str):
+            paths.append(item)
+        elif isinstance(item, dict):
+            paths.extend(_navigation_paths(item.get("chapters", [])))
+    return paths
+
+
 def validate() -> list[str]:
     errors: list[str] = []
+    errors.extend(audit_configuration(PUBLICATION_ROOT))
+    errors.extend(audit_contrast())
     expected_ids = {item for group in EVIDENCE_GROUPS.values() for item in group}
     required_generated = {
         "facsimile": ("#pagina-digital-12", "lightbox: true"),
@@ -4498,9 +4520,9 @@ def validate() -> list[str]:
     quarto_data = yaml.safe_load(
         (PUBLICATION_ROOT / "_quarto.yml").read_text(encoding="utf-8")
     )
-    navigation = quarto_data.get("book", {}).get("chapters", [])
+    navigation_items = quarto_data.get("book", {}).get("chapters", [])
+    navigation = _navigation_paths(navigation_items)
     expected_navigation = (
-        "content/00-preliminares/00-prueba-tecnica.qmd",
         "content/01-catastro/01-catastro-ensenada.qmd",
         "content/01-catastro/02-respuestas-generales-interrogatorio.qmd",
         "content/01-catastro/03-expediente-sorribos-santibanez.qmd",

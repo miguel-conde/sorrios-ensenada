@@ -126,8 +126,8 @@ la [página digital 12](../../generated/14-facsimil-prototipo.qmd#pagina-digital
 el [folio 315v con su transcripción](../../generated/15-transcripcion-prototipo.qmd#folio-315v),
 la [respuesta 17 modernizada](../../generated/16-modernizada-prototipo.qmd#respuesta-17)
 y el [aparato D/C/I/E/L](../../generated/aparato-molinos.qmd#matriz-molinera).
-Estas vistas conservan la regresión del prototipo vertical sin reducir a ella el
-desarrollo histórico del capítulo.
+Estas vistas permiten contrastar el mismo caso en cuatro capas sin reducir a
+ellas el desarrollo histórico del capítulo.
 
 ## Agua, estacionalidad y puentes {#molinos-estacionalidad}
 

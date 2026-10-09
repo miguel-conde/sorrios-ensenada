@@ -2408,9 +2408,9 @@ def test_navigation_integrates_real_chapters_and_keeps_prototype_off_book():
         (ROOT / "publication" / "meta" / "chapters.yml").read_text(encoding="utf-8")
     )
     navigation = quarto["book"]["chapters"]
+    navigation = validator._navigation_paths(navigation)
     manifest_paths = [chapter["path"] for chapter in manifest["chapters"]]
     expected_order = [
-        "content/00-preliminares/00-prueba-tecnica.qmd",
         "content/01-catastro/01-catastro-ensenada.qmd",
         "content/01-catastro/02-respuestas-generales-interrogatorio.qmd",
         "content/01-catastro/03-expediente-sorribos-santibanez.qmd",
@@ -2442,6 +2442,7 @@ def test_navigation_integrates_real_chapters_and_keeps_prototype_off_book():
     assert sum(item.startswith("generated/") for item in navigation) == 16
     assert not any("prototipo" in item for item in navigation)
     assert "generated/aparato-molinos.qmd" not in navigation
+    assert "content/00-preliminares/00-prueba-tecnica.qmd" not in navigation
     index_path = ROOT / "publication" / "index.qmd"
     technical_path = (
         ROOT
@@ -2450,9 +2451,9 @@ def test_navigation_integrates_real_chapters_and_keeps_prototype_off_book():
         / "00-preliminares"
         / "00-prueba-tecnica.qmd"
     )
-    assert (
-        read_front_matter(index_path)["title"]
-        == "# Sorribos y Santibáñez de Ordás en 1752 {.unnumbered}"
+    assert "title" not in read_front_matter(index_path)
+    assert "# Sorribos y Santibáñez de Ordás en 1752 {.unnumbered}" in index_path.read_text(
+        encoding="utf-8"
     )
     assert (
         read_front_matter(technical_path)["title"]

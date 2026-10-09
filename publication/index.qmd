@@ -1,16 +1,22 @@
 ---
-title: "# Sorribos y Santibáñez de Ordás en 1752 {.unnumbered}"
 subtitle: "Edición en desarrollo"
 chapter-id: portada
 publication-status: development
 sources: []
 ---
 
-Esta publicación se encuentra en desarrollo. Esta portada y el [capítulo de
-prueba técnica](content/00-preliminares/00-prueba-tecnica.qmd) verifican
-únicamente la infraestructura de composición; no contienen ni sustituyen
-contenido histórico del proyecto.
+::: {.content-visible when-format="pdf"}
+# Sorribos y Santibáñez de Ordás en 1752 {.unnumbered}
+:::
 
-La prueba comprueba una fuente común para las salidas HTML y PDF, navegación
-entre páginas y presentación básica. El contenido editorial y los derivados
-documentales se incorporarán en fases posteriores del roadmap.
+Esta edición digital se encuentra en desarrollo. Reúne los dieciséis capítulos,
+el facsímil íntegro, la transcripción y el aparato crítico, la edición en español
+actual, cuatro aparatos reproducibles y nueve índices previstos en el plan
+editorial.
+
+La lectura puede comenzar por [el Catastro y su documento](content/01-catastro/01-catastro-ensenada.qmd),
+consultar el [manuscrito original](generated/14-facsimil.qmd), seguir la
+[transcripción](generated/15-transcripcion.qmd) o acceder a la
+[edición en español actual](generated/16-edicion-modernizada.qmd). El volumen
+permanece en estado de prepublicación hasta completar la fase separada de
+preview y publicación 1.0.

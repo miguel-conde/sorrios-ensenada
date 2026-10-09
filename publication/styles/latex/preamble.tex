@@ -1,3 +1,8 @@
 % Phase 5A: compare renderer-produced page labels so repeated targets on the
 % same physical page share one printed index locator.
 \usepackage{refcount}
+\AtBeginDocument{%
+  \hypersetup{pdflang={es-ES}}%
+  \renewcommand{\partname}{Parte}%
+  \renewcommand{\chaptername}{Capítulo}%
+}

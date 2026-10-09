@@ -18,6 +18,7 @@ import build_modernized as builder  # noqa: E402
 import critical_edition as critical  # noqa: E402
 import fix_rendered_links as rendered_links  # noqa: E402
 import modernized_edition as modernized  # noqa: E402
+import validate_publication as validator  # noqa: E402
 
 
 SOURCE = (
@@ -318,7 +319,7 @@ def test_post_render_replaces_4c_prototype_and_links_real_apparatus(tmp_path):
 
 def test_real_chapter_is_the_only_visible_chapter_16_and_prototype_is_regression():
     quarto = yaml.safe_load((ROOT / "publication/_quarto.yml").read_text(encoding="utf-8"))
-    navigation = quarto["book"]["chapters"]
+    navigation = validator._navigation_paths(quarto["book"]["chapters"])
     assert navigation.count("generated/16-edicion-modernizada.qmd") == 1
     assert "generated/16-modernizada-prototipo.qmd" not in navigation
     assert "generated/aparato-molinos.qmd" not in navigation

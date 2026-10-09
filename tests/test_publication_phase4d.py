@@ -374,7 +374,9 @@ def test_navigation_integrates_only_the_four_phase4d_apparatus():
     chapters = yaml.safe_load(
         (ROOT / "publication/meta/chapters.yml").read_text(encoding="utf-8")
     )["chapters"]
-    navigation = quarto["book"]["chapters"]
+    navigation = []
+    for item in quarto["book"]["chapters"]:
+        navigation.extend(item.get("chapters", []) if isinstance(item, dict) else [item])
     expected = [f"generated/{name}" for name in builder.OUTPUT_NAMES]
     assert navigation[-13:-9] == expected
     assert [item["path"] for item in chapters if item["path"] in expected] == expected
@@ -386,7 +388,8 @@ def test_all_four_outputs_declare_part_six_without_creating_numbered_chapters(ge
         assert 'subtitle: "Parte VI. Aparatos e índices"' in output
         assert "numbered: false" in output
         assert "number-sections: false" in output
-        assert '{.unnumbered}"' in output
+        assert not re.search(r"^title:", output, re.MULTILINE)
+        assert re.search(r"^# .+ \{\.unnumbered\}$", output, re.MULTILINE)
         headings = re.findall(r"^#{2,3} .+$", output, re.MULTILINE)
         assert headings
         assert all(".unnumbered}" in heading for heading in headings)

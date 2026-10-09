@@ -1,11 +1,8 @@
 schema_version: 1
-purpose: "Orden de capítulos y vistas para la edición en desarrollo; integra los capítulos 1–16, los aparatos reproducibles de 4D, los nueve índices de 5A y conserva el prototipo vertical como regresión técnica."
+purpose: "Orden de portada, seis partes, capítulos 1–16, aparatos reproducibles e índices para la edición en prepublicación; conserva fuera de la composición el prototipo vertical como regresión técnica."
 chapters:
   - chapter_id: portada
     path: index.qmd
-    publication_status: development
-  - chapter_id: prueba-tecnica
-    path: content/00-preliminares/00-prueba-tecnica.qmd
     publication_status: development
   - chapter_id: catastro-ensenada
     path: content/01-catastro/01-catastro-ensenada.qmd

@@ -4,42 +4,55 @@ project:
   pre-render: scripts/prepare.py
   post-render: scripts/fix_rendered_links.py
 
+lang: es
+
 book:
   title: "Sorribos y Santibáñez de Ordás en 1752"
   subtitle: "Edición en desarrollo"
   output-file: "sorribos-santibanez-ordas-1752"
   chapters:
     - index.qmd
-    - content/00-preliminares/00-prueba-tecnica.qmd
-    - content/01-catastro/01-catastro-ensenada.qmd
-    - content/01-catastro/02-respuestas-generales-interrogatorio.qmd
-    - content/01-catastro/03-expediente-sorribos-santibanez.qmd
-    - content/01-catastro/04-manuscrito-volumen-actual.qmd
-    - content/02-estudio/05-lugar-senorio-concejo-ordas.qmd
-    - content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd
-    - content/02-estudio/07-tierra-sistema-agrario-medidas.qmd
-    - content/02-estudio/08-ganaderia-montes-aprovechamientos-comunales.qmd
-    - content/02-estudio/09-rio-molinos-recursos.qmd
-    - content/02-estudio/10-iglesia-senorio-fiscalidad.qmd
-    - content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd
-    - content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd
-    - content/02-estudio/13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd
-    - generated/14-facsimil.qmd
-    - generated/15-transcripcion.qmd
-    - generated/16-edicion-modernizada.qmd
-    - generated/glosario.qmd
-    - generated/cuadros-cuantitativos.qmd
-    - generated/concordancia.qmd
-    - generated/matriz-evidencia.qmd
-    - generated/indices/01-indice-onomastico.qmd
-    - generated/indices/02-indice-toponimos.qmd
-    - generated/indices/03-indice-instituciones.qmd
-    - generated/indices/04-indice-oficios.qmd
-    - generated/indices/05-indice-medidas.qmd
-    - generated/indices/06-indice-productos-recursos.qmd
-    - generated/indices/07-indice-cargas-fiscalidad.qmd
-    - generated/indices/08-indice-preguntas-respuestas.qmd
-    - generated/indices/09-indice-materias.qmd
+    - part: "Parte I. El Catastro y su documento"
+      chapters:
+        - content/01-catastro/01-catastro-ensenada.qmd
+        - content/01-catastro/02-respuestas-generales-interrogatorio.qmd
+        - content/01-catastro/03-expediente-sorribos-santibanez.qmd
+        - content/01-catastro/04-manuscrito-volumen-actual.qmd
+    - part: "Parte II. Sorribos y Santibáñez en 1752"
+      chapters:
+        - content/02-estudio/05-lugar-senorio-concejo-ordas.qmd
+        - content/02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd
+        - content/02-estudio/07-tierra-sistema-agrario-medidas.qmd
+        - content/02-estudio/08-ganaderia-montes-aprovechamientos-comunales.qmd
+        - content/02-estudio/09-rio-molinos-recursos.qmd
+        - content/02-estudio/10-iglesia-senorio-fiscalidad.qmd
+        - content/02-estudio/11-hacienda-concejil-servicios-colectivos.qmd
+        - content/02-estudio/12-dinero-oficios-conexiones-exteriores.qmd
+        - content/02-estudio/13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd
+    - part: "Parte III. El manuscrito original"
+      chapters:
+        - generated/14-facsimil.qmd
+    - part: "Parte IV. Transcripción y aparato crítico"
+      chapters:
+        - generated/15-transcripcion.qmd
+    - part: "Parte V. El Catastro en español actual"
+      chapters:
+        - generated/16-edicion-modernizada.qmd
+    - part: "Parte VI. Aparatos e índices"
+      chapters:
+        - generated/glosario.qmd
+        - generated/cuadros-cuantitativos.qmd
+        - generated/concordancia.qmd
+        - generated/matriz-evidencia.qmd
+        - generated/indices/01-indice-onomastico.qmd
+        - generated/indices/02-indice-toponimos.qmd
+        - generated/indices/03-indice-instituciones.qmd
+        - generated/indices/04-indice-oficios.qmd
+        - generated/indices/05-indice-medidas.qmd
+        - generated/indices/06-indice-productos-recursos.qmd
+        - generated/indices/07-indice-cargas-fiscalidad.qmd
+        - generated/indices/08-indice-preguntas-respuestas.qmd
+        - generated/indices/09-indice-materias.qmd
   search: true
   downloads:
     - pdf
@@ -52,5 +65,16 @@ format:
       - cosmo
       - styles/book.scss
   pdf:
+    # TinyTeX lacks babel-spanish in this environment. Visible labels and the
+    # PDF language catalog remain Spanish through the local preamble.
+    lang: en
+    toc-title: "Índice general"
+    crossref:
+      fig-title: "Figura"
+      fig-prefix: "figura"
+      tbl-title: "Tabla"
+      tbl-prefix: "tabla"
     pdf-engine: lualatex
     include-in-header: styles/latex/preamble.tex
+    filters:
+      - scripts/pdf_internal_links.lua

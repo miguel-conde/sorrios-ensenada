@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Rewrite legacy prototype links in rendered HTML to the real Phase 4 views."""
+"""Repair rendered HTML links and add deterministic table semantics."""
 
 from __future__ import annotations
 
 import sys
+import html
+import re
 from pathlib import Path
 
 
@@ -22,6 +24,55 @@ REPLACEMENTS = {
     ),
 }
 
+HEADING_RE = re.compile(r"<h[1-6]\b[^>]*>(.*?)</h[1-6]>", re.DOTALL)
+TABLE_RE = re.compile(r"<table\b([^>]*)>(.*?)</table>", re.DOTALL)
+TAG_RE = re.compile(r"<[^>]+>")
+
+
+def _plain_text(fragment: str) -> str:
+    """Return compact visible text from a small trusted HTML fragment."""
+
+    return " ".join(html.unescape(TAG_RE.sub(" ", fragment)).split())
+
+
+def _table_accessibility(text: str) -> str:
+    """Name tables, scope column headers, and make overflow keyboard-scrollable."""
+
+    title_match = re.search(r"<title>(.*?)</title>", text, re.DOTALL)
+    document_title = _plain_text(title_match.group(1)) if title_match else "Documento"
+    chunks: list[str] = []
+    cursor = 0
+    table_number = 0
+    for match in TABLE_RE.finditer(text):
+        chunks.append(text[cursor : match.start()])
+        table_number += 1
+        headings = list(HEADING_RE.finditer(text, 0, match.start()))
+        heading = _plain_text(headings[-1].group(1)) if headings else document_title
+        label = f"Tabla de {heading}" if heading else f"Tabla {table_number} de {document_title}"
+        escaped_label = html.escape(label, quote=True)
+        attributes = match.group(1)
+        if not re.search(r"\baria-label=", attributes):
+            attributes += f' aria-label="{escaped_label}"'
+        body = re.sub(
+            r"<th\b(?![^>]*\bscope=)([^>]*)>",
+            r'<th scope="col"\1>',
+            match.group(2),
+        )
+        table = f"<table{attributes}>{body}</table>"
+        already_wrapped = re.search(
+            r'<div class="table-scroll"[^>]*>\s*$', text[: match.start()]
+        )
+        if already_wrapped:
+            chunks.append(table)
+        else:
+            chunks.append(
+                '<div class="table-scroll" role="region" '
+                f'aria-label="{escaped_label}" tabindex="0">{table}</div>'
+            )
+        cursor = match.end()
+    chunks.append(text[cursor:])
+    return "".join(chunks)
+
 
 def fix_rendered_links(output_root: Path) -> int:
     """Patch only Quarto HTML derivatives and return the replacement count."""
@@ -34,6 +85,7 @@ def fix_rendered_links(output_root: Path) -> int:
             occurrences = updated.count(old)
             updated = updated.replace(old, new)
             replacements += occurrences
+        updated = _table_accessibility(updated)
         if updated != text:
             path.write_text(updated, encoding="utf-8", newline="\n")
     return replacements

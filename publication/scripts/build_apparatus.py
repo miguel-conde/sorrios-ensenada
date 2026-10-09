@@ -238,7 +238,6 @@ def _link_glossary_text(text: str, data: ApparatusData) -> str:
 def glossary_qmd(data: ApparatusData) -> str:
     chunks = [
         f'''---
-title: "Glosario histórico {{.unnumbered}}"
 subtitle: "Parte VI. Aparatos e índices"
 chapter-id: glosario-historico
 publication-status: generated
@@ -248,6 +247,8 @@ sources:
   - {GLOSSARY_SOURCE.as_posix()}
 source-git-blob: "{data.glossary_git_blob}"
 ---
+
+# Glosario histórico {{.unnumbered}}
 
 Las definiciones, referencias y notas proceden íntegramente del Glosario
 canónico. Los enlaces de navegación se añaden sin modificar su contenido.
@@ -278,7 +279,6 @@ canónico. Los enlaces de navegación se añaden sin modificar su contenido.
 def quantitative_qmd(data: ApparatusData) -> str:
     chunks = [
         f'''---
-title: "Cuadros cuantitativos {{.unnumbered}}"
 subtitle: "Parte VI. Aparatos e índices"
 chapter-id: cuadros-cuantitativos
 publication-status: generated
@@ -289,6 +289,8 @@ sources:
   - {STUDY_SOURCE.as_posix()}
 source-version: "{data.register.version}"
 ---
+
+# Cuadros cuantitativos {{.unnumbered}}
 
 Esta vista reúne las entradas cuyo nivel canónico es `C` y los cálculos `CAL-*`
 a los que remiten. Los resultados se publican tal como figuran en el Registro:
@@ -364,7 +366,6 @@ def concordance_qmd(data: ApparatusData) -> str:
     unit_responses = _unit_response_map(data)
     chunks = [
         f'''---
-title: "Concordancia general {{.unnumbered}}"
 subtitle: "Parte VI. Aparatos e índices"
 chapter-id: concordancia-general
 publication-status: generated
@@ -375,6 +376,8 @@ sources:
   - {CRITICAL_SOURCE.as_posix()}
   - {MODERNIZED_SOURCE.as_posix()}
 ---
+
+# Concordancia general {{.unnumbered}}
 
 Las dos vistas proceden de una sola relación estructurada entre las 35 unidades
 materiales y las 40 respuestas. Conservan las correspondencias muchos-a-muchos.
@@ -448,7 +451,6 @@ def _status_class(status: str) -> str:
 def evidence_matrix_qmd(data: ApparatusData) -> str:
     chunks = [
         f'''---
-title: "Matriz de evidencia D/C/I/E/L {{.unnumbered}}"
 subtitle: "Parte VI. Aparatos e índices"
 chapter-id: matriz-evidencia
 publication-status: generated
@@ -459,6 +461,8 @@ sources:
 source-version: "{data.register.version}"
 usage-derived-from: chapter-evidence-metadata-5-13
 ---
+
+# Matriz de evidencia D/C/I/E/L {{.unnumbered}}
 
 La matriz reproduce el Registro 1.2; no convierte sus formulaciones en prosa
 narrativa ni corrige sus cautelas. `D` identifica dato documental; `C`, cálculo;
