@@ -2,7 +2,7 @@
 
 **Fecha:** 9 de octubre de 2026<br>
 **Fase:** 6A.2 — decisiones editoriales de arquitectura y apertura registradas<br>
-**Estado:** decisiones 6A.2 cerradas documentalmente; datos, auditorías e implementación pendientes<br>
+**Estado:** decisiones 6A.2 cerradas documentalmente y Auditoría A completada; decisiones, datos, auditorías B/C e implementación pendientes<br>
 **Informe de evidencia:** [INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md](./INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md)<br>
 **Referencia de trabajo consolidada:** [ORDEN_DE_TRABAJO_PARA_V1_0.md](./ORDEN_DE_TRABAJO_PARA_V1_0.md)
 **Registro de decisiones:** [DECISIONES_EDITORIALES_6A_2.md](./DECISIONES_EDITORIALES_6A_2.md)
@@ -72,7 +72,7 @@ Todas son **clasificaciones propuestas**. Ninguna equivale a una decisión edito
 | REV-017 | Observación del usuario | Macroorden del volumen | El estudio histórico precede al facsímil, transcripción y modernizada. | 0.6 y el índice rector sostienen el orden contexto → estudio → documento. | 6A.2 mantiene el macroorden actual y añade dos rutas explícitas, histórica y documental. | Decisión arquitectónica cerrada sin reordenar el volumen. | B | Implementar las rutas en introducción, landing y navegación después de las auditorías. | APROBADA 6A.2 (`DEC-011`); implementación pendiente |
 | REV-018 | Observación del usuario | Navegación HTML | La barra lateral aparece inicialmente demasiado desplegada para seis partes y unos treinta documentos. | No aplica. | 6A.2 aprueba parte activa desplegada y partes inactivas plegadas. | Decisión UX cerrada; requiere implementación y validación HTML. | M | Implementar y comprobar teclado, escritorio y viewport estrecho en una operación posterior. | APROBADA 6A.2 (`DEC-014`); implementación pendiente |
 | REV-019 | Observación del usuario | Cierre de capítulos | Capítulos 5–13 tienen cierre funcional, pero solo 9–12 usan literalmente «Síntesis». | No aplica. | 6A.2 aprueba títulos conclusivos específicos con función común y la sustitución de `Síntesis` cuando exista un título informativo adecuado. | Convención retórica decidida; los textos no se modifican todavía. | M | Revisar conjuntamente los títulos de cierre e implementarlos en una operación posterior. | APROBADA 6A.2 (`DEC-013`); implementación pendiente |
-| REV-020 | Observación del usuario | Glosario y contexto histórico | El ejemplo «Señorío» muestra que el glosario explica principalmente el sentido documental/local y no siempre el concepto históricamente. | 0.6 no decide la arquitectura correcta para la fuente vigente. | El generador reproduce correctamente `Glosario.md`, cuya autoridad evita interpretación histórica extensa. | Bloqueante de auditoría previa: la posible carencia puede estar aguas arriba, no ser solo de presentación. | B | Auditar Estudio, términos y huecos; distinguir contexto ya disponible, investigación nueva, contenido del Estudio y síntesis de glosario. No elegir solución todavía. | PENDIENTE |
+| REV-020 | Observación del usuario | Glosario y contexto histórico | El ejemplo «Señorío» muestra que el glosario explica principalmente el sentido documental/local y no siempre el concepto históricamente. | 0.6 no decide la arquitectura correcta para la fuente vigente. | La [Auditoría A](./AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md) revisa las 22 voces: G0 8, G1 7, G2 0, G3 4 y G4 3; propone GH-B selectivo y registra 6 candidatos provisionales. No se modificaron fuentes ni candidata. | La carencia es selectiva: `Señorío` y otros seis casos pueden mejorar con conocimiento existente; cuatro ampliaciones exigirían investigación externa y no hay G2. | B | Decidir el modelo GH, el alcance para 1.0, los candidatos y si se autoriza investigar algún G3. No implementar ni investigar hasta esa decisión. | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE |
 | REV-021 | Observación del usuario | Gráficos, esquemas y recuadros | El usuario echa de menos recursos explicativos presentes o previstos en composiciones anteriores. | El recuento de imágenes incrustadas puede omitir gráficos vectoriales; 0.6 y el Plan 0.5 requieren inventario específico. | Existen tablas, pero no se ha comparado de forma exhaustiva cronología visual, esquemas, recuadros y diagramas previstos. | Bloqueante de auditoría y selección; no toda pieza antigua debe recuperarse. | B | Inventariar `0.6 + Plan 0.5 + candidata` y clasificar cada recurso como conservar, reconstruir, sustituir o descartar. | PENDIENTE |
 | REV-022 | Observación del usuario | Estado visible de edición | «Edición en desarrollo» aparece en subtítulo, metadatos y apertura. | 0.6 mostraba una versión de composición, no una solución definitiva. | 6A.2 aprueba que esa fórmula no forme parte de la identidad final y adopta T1 como título/subtítulo de trabajo. La metadata actual no se modifica en esta operación. | Decisión editorial cerrada; retirada e identidad final pendientes de implementación. | B | Sustituir el estado visible únicamente al construir la nueva candidata, coordinado con REV-001 y REV-015. | APROBADA 6A.2 (`DEC-006`, `DEC-007`); implementación pendiente |
 | REV-023 | Observación del usuario | TOC PDF | Numeraciones largas aparecen pegadas a los títulos, por ejemplo `16.35Respuesta 32...`. | No aplica. | Defecto visual comprobado en la candidata. | Bloqueante técnico de composición; debe cubrir especialmente numeraciones largas del capítulo 16. | B | Corregir anchura o separación del número de sección en una operación posterior y probar los casos extremos. | PENDIENTE |
@@ -85,6 +85,8 @@ Todas son **clasificaciones propuestas**. Ninguna equivale a una decisión edito
 La primera ronda de observaciones personales está incorporada como `REV-013`–`REV-025`, con `Origen: Observación del usuario`. Incluye los defectos visuales documentados mediante capturas y las dudas editoriales sobre apertura, arquitectura, glosario y recursos gráficos.
 
 Que una observación proceda del usuario no la convierte automáticamente en una decisión de implementación. 6A.2 cierra las decisiones de `REV-013`–`REV-019` y `REV-022` con los matices registrados en [DECISIONES_EDITORIALES_6A_2.md](./DECISIONES_EDITORIALES_6A_2.md); ninguna está implementada. Las demás conservan su estado pendiente. Las observaciones futuras comenzarán en `REV-027`, sin renumerar ni reutilizar IDs.
+
+La Auditoría A de `REV-020` está realizada: clasificó 22 entradas en G0 8, G1 7, G2 0, G3 4 y G4 3; recomienda conceptualmente GH-B selectivo e identifica 6 candidatos provisionales a nueva entrada. Es un resultado diagnóstico: no cierra `REV-020`, no autoriza investigación o implementación y remite a `REV-003`, `REV-004` y `REV-021` solo por sus posibles efectos sobre bibliografía, aparatos y recursos explicativos.
 
 ## 6. Decisiones del usuario
 
@@ -109,7 +111,7 @@ Que una observación proceda del usuario no la convierte automáticamente en una
 | REV-017 | APROBADA 6A.2 | Macroorden actual con rutas histórica y documental; implementación pendiente. |
 | REV-018 | APROBADA 6A.2 | Parte activa desplegada y partes inactivas plegadas; implementación pendiente. |
 | REV-019 | APROBADA 6A.2 | Cierres específicos con función común; implementación pendiente. |
-| REV-020 | PENDIENTE | — |
+| REV-020 | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE | G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo recomendado; 6 candidatos provisionales; sin investigación ni implementación. |
 | REV-021 | PENDIENTE | — |
 | REV-022 | APROBADA 6A.2 | T1 sustituirá la identidad visible de desarrollo al implementar la nueva candidata; metadata intacta por ahora. |
 | REV-023 | PENDIENTE | — |
@@ -200,13 +202,13 @@ investigación
 1. **Consolidación documental:** completada en 6A.1; fijó REV-001–REV-026 sin modificar la candidata ni investigar.
 2. **Decisiones editoriales puras:** completadas documentalmente en 6A.2; quedan pendientes los datos señalados, el prototipo F3 y toda implementación.
 3. **Tres auditorías especializadas:**
-   - glosario / Estudio Histórico / necesidad real de investigación;
+   - glosario / Estudio Histórico / necesidad real de investigación: Auditoría A completada; decisiones pendientes;
    - gráficos, recuadros y cartografía: 0.6 + Plan 0.5 + candidata;
    - fuentes, bibliografía y aparatos narrativos.
 4. **Decisión definitiva:** clasificar cada cuestión como 1.0, 1.1+, no incorporar o investigación previa.
 5. **Implementación:** plan de cambios, operaciones canónicas cuando procedan, cambios Quarto, nueva candidata, validación, preview, aceptación humana y, solo después, 6B.
 
-Esta operación cierra únicamente el paso 2. El siguiente trabajo es la primera auditoría especializada; no se inicia aquí.
+La Auditoría A completa el primer componente del paso 3 sin ejecutar investigación ni implementación. El siguiente trabajo es la Auditoría B; no se inicia aquí.
 
 ## 11. Lista propuesta para 1.0
 
@@ -237,7 +239,7 @@ Las mejoras M pueden incorporarse si el usuario lo decide y su coste/riesgo resu
 
 ## 14. Puerta editorial
 
-La candidata no debe modificarse todavía. Las decisiones editoriales 6A.2 quedan registradas, pero las tres auditorías especializadas, los datos humanos y legales, el prototipo F3, el alcance definitivo y toda implementación siguen pendientes.
+La candidata no debe modificarse todavía. Las decisiones editoriales 6A.2 y el diagnóstico de la Auditoría A quedan registrados, pero la decisión sobre `REV-020`, las auditorías B y C, los datos humanos y legales, el prototipo F3, el alcance definitivo y toda implementación siguen pendientes.
 
 ## 15. Datos editoriales pendientes del usuario
 
@@ -261,4 +263,4 @@ No se crea tag ahora. La candidata técnica `49ab2e1b1a58ca9201efab54b42a3125de7
 
 Ninguna `REV-*` se marca como implementada en esta operación.
 
-**SIGUIENTE PASO: Auditoría A — Glosario / Estudio Histórico / necesidad real de nueva investigación.**
+**SIGUIENTE PASO: Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidata.**

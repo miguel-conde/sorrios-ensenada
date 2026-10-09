@@ -1,7 +1,7 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 9 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; candidata local intacta y decisiones editoriales 6A.2 cerradas documentalmente<br>
+**Estado global:** Fase 6 en curso; candidata local intacta, decisiones 6A.2 registradas y Auditoría A completada sin implementación<br>
 **Fase actual:** Fase 6A — auditorías especializadas previas a implementación, nueva candidata, correcciones y preview<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -54,6 +54,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Candidata técnica 1.0 preparada en `49ab2e1b1a58ca9201efab54b42a3125de7326f8`; snapshot, reconstrucción, HTML, PDF, seguridad y preview local están validados. El informe reproducible está en `docs/CANDIDATA_PUBLICACION_1_0.md`.
 - Revisión editorial 6A.1 completada contra la composición 0.6 y posteriormente consolidada con la primera ronda de observaciones del usuario. `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md` conserva 26 observaciones y `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md` la referencia de trabajo que originó la secuencia.
 - Decisiones 6A.2 registradas en `docs/DECISIONES_EDITORIALES_6A_2.md`: doce decisiones cerradas editorialmente, dos cerradas en principio con datos pendientes y F3 seleccionada únicamente para prototipo. Ninguna está implementada y la candidata permanece intacta.
+- Auditoría A completada en `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md`: 22 entradas clasificadas en G0 8, G1 7, G2 0, G3 4 y G4 3; recomendación conceptual GH-B selectiva y 6 candidatos provisionales. No se investigó fuera del repositorio, no se modificaron fuentes canónicas y las decisiones de `REV-020` permanecen pendientes.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -69,11 +70,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | candidata local validada e intacta; 6A.2 cerrada documentalmente; auditorías especializadas, datos finales, prototipo F3, implementación, nueva candidata, preview remoto y aceptación pendientes antes de 6B |
+| 6. Preview y publicación 1.0 | en curso | candidata local validada e intacta; 6A.2 y Auditoría A documentadas; quedan decisiones de A, auditorías B/C, datos finales, prototipo F3, implementación, nueva candidata, preview remoto y aceptación antes de 6B |
 
 ## Siguiente tarea exacta
 
-Auditoría A — Glosario / Estudio Histórico / necesidad real de nueva investigación.
+Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidata.
 
 ### Descomposición operativa de la Fase 4
 
@@ -95,11 +96,11 @@ Auditoría A — Glosario / Estudio Histórico / necesidad real de nueva investi
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | candidata reproducible y validada; faltan auditorías especializadas, datos finales, prototipo F3, implementación, nueva candidata y, finalmente, proveedor y preview remoto para aceptación humana |
+| 6A | en curso | candidata reproducible y validada; Auditoría A completada; faltan sus decisiones, auditorías B/C, datos finales, prototipo F3, implementación, nueva candidata y, finalmente, proveedor y preview remoto para aceptación humana |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; doce cerradas, dos cerradas en principio con datos pendientes y F3 como hipótesis de prototipo; ninguna implementación iniciada |
-| Auditoría A | siguiente | glosario, Estudio Histórico y necesidad real de nueva investigación; no iniciada en 6A.2 |
-| Auditoría B | pendiente | gráficos, cartografía y recuadros |
+| Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo recomendado; 6 candidatos provisionales; decisiones pendientes |
+| Auditoría B | siguiente | gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidata |
 | Auditoría C | pendiente | fuentes, bibliografía y aparatos narrativos |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
@@ -376,7 +377,7 @@ Auditoría A — Glosario / Estudio Histórico / necesidad real de nueva investi
 - Preview local: smoke test temporal en `http://127.0.0.1:4319/` con páginas, búsqueda, assets y PDF en `200`; el servidor quedó cerrado. No existe preview remoto ni URL persistente.
 - Proveedor: no hay `netlify.toml`, Pages, workflow de despliegue ni decisión inequívoca. Netlify sigue siendo la preferencia del Plan Maestro y GitHub Pages la alternativa; esta puerta permanece pendiente después de la decisión editorial sobre `REV-*`.
 - Seguridad e integridad: la salida pública no contiene `project/`, manuscrito fuente, PDF 0.6, QMD, scripts, configuración sensible, secretos ni rutas locales. `project/`, `plugins/`, `main` y `origin/main` permanecen intactos. No se hizo push, despliegue, merge, tag, release ni publicación definitiva.
-- Estado: candidata técnicamente válida; 6A y Fase 6 permanecen abiertas. Cerrada documentalmente 6A.2, la puerta inmediata es la Auditoría A antes de cualquier implementación, corrección o preview remoto.
+- Estado: candidata técnicamente válida; 6A y Fase 6 permanecen abiertas. Cerradas documentalmente 6A.2 y la Auditoría A, la puerta inmediata es la Auditoría B antes de cualquier implementación, corrección o preview remoto.
 
 ## Estado comprobado de 6A.1
 
@@ -404,6 +405,16 @@ Auditoría A — Glosario / Estudio Histórico / necesidad real de nueva investi
 - Integridad: no se modificaron `publication/`, `project/`, `plugins/`, `tests/` ni `.github/`; no se generó ni renderizó el libro y no se cambió la metadata de la candidata.
 - Etiqueta: no se creó tag. `49ab2e1b1a58ca9201efab54b42a3125de7326f8` sigue siendo una candidata técnica preeditorial. El tag final solo podrá plantearse después de auditorías, implementación, nueva candidata, preview, aceptación humana y 6B.
 
+## Cierre diagnóstico de la Auditoría A
+
+- Baseline: `8508bf358d720ca5f8f48cbb07d569d69750216f` (`docs(publication): record 6A.2 editorial decisions`), con `feature/quarto-book` y su upstream coincidentes al inicio; `main == origin/main == e81dc9239ac8dbabfe77168a50ef98c4d3b79170`.
+- Producto: `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md` audita una a una las 22 voces del glosario y documenta función, contexto interno, hueco, acción futura e impacto.
+- Resultado: G0 8, G1 7, G2 0, G3 4 y G4 3; prioridades aplicables: 3 altas, 7 medias y 1 baja. `Señorío` queda diagnosticado como G1 alta: el contexto básico ya existe y solo la reconstrucción del título y derechos concretos exigiría investigación adicional.
+- Arquitectura: GH-B selectivo queda recomendado, no decidido. Se registran 6 candidatos provisionales —`avitadores`, `utilidad`, `repartimiento`, `establecimiento del suelo`, `arenta` y `quartal`— sin añadir ninguna entrada.
+- Límites: no se realizó investigación externa, no se abrieron enlaces, no se modificaron Estudio, Registro, Glosario, Edición Crítica, `project/`, `publication/`, `plugins/`, `tests/` ni candidata, y no se ejecutó Quarto ni render alguno.
+- Decisiones pendientes: modelo GH, alcance para 1.0, selección de G1, tratamiento de G3 y candidatos. `REV-020` permanece abierto como «auditoría realizada; decisión pendiente»; `REV-003`, `REV-004` y `REV-021` conservan su decisión.
+- Puerta inmediata: Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidata.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -414,4 +425,4 @@ Auditoría A — Glosario / Estudio Histórico / necesidad real de nueva investi
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/CANDIDATA_PUBLICACION_1_0.md`, `docs/INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md`, `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md`, `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md`, `docs/DECISIONES_EDITORIALES_6A_2.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Auditoría A — Glosario / Estudio Histórico / necesidad real de nueva investigación. No inicies las auditorías B o C, no implementes las decisiones 6A.2, no modifiques la candidata, no configures el preview remoto, no ejecutes 6B, no publiques 1.0, no crees tag/release y no alteres fuentes canónicas salvo que una operación posterior sea expresamente autorizada.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/CANDIDATA_PUBLICACION_1_0.md`, `docs/INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md`, `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md`, `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md`, `docs/DECISIONES_EDITORIALES_6A_2.md`, `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidata. No inicies la Auditoría C, no implementes las decisiones 6A.2 ni las recomendaciones de la Auditoría A, no modifiques fuentes canónicas o la candidata, no configures el preview remoto, no ejecutes 6B, no publiques 1.0 y no crees tag/release.
