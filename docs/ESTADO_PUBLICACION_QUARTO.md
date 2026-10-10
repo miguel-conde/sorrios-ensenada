@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 10 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; candidata local intacta, decisiones 6A.2 y Auditorías A/B/C documentadas sin implementación<br>
-**Fase actual:** Fase 6A — consolidación final de alcance y decisiones previa a implementación, nueva candidata, correcciones y preview<br>
+**Estado global:** Fase 6 en curso; alcance 1.0 aprobado en 6A.4, candidata local intacta e implementación no iniciada<br>
+**Fase actual:** Fase 6A — PKG-00 y preparación de los pretrabajos PKG-01–PKG-05<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -57,9 +57,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Candidata técnica 1.0 preparada en `49ab2e1b1a58ca9201efab54b42a3125de7326f8`; snapshot, reconstrucción, HTML, PDF, seguridad y preview local están validados. El informe reproducible está en `docs/CANDIDATA_PUBLICACION_1_0.md`.
 - Revisión editorial 6A.1 completada contra la composición 0.6 y posteriormente consolidada con la primera ronda de observaciones del usuario. `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md` conserva 26 observaciones y `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md` la referencia de trabajo que originó la secuencia.
 - Decisiones 6A.2 registradas en `docs/DECISIONES_EDITORIALES_6A_2.md`: doce decisiones cerradas editorialmente, dos cerradas en principio con datos pendientes y F3 seleccionada únicamente para prototipo. Ninguna está implementada y la candidata permanece intacta.
-- Auditoría A completada en `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md`: 22 entradas clasificadas en G0 8, G1 7, G2 0, G3 4 y G4 3; recomendación conceptual GH-B selectiva y 6 candidatos provisionales. No se investigó fuera del repositorio, no se modificaron fuentes canónicas y las decisiones de `REV-020` permanecen pendientes.
-- Auditoría B completada en `docs/AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md`: 27 recursos funcionales clasificados en VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; cinco prioridades altas, una media y una baja. Recomienda como hipótesis para 1.0 cronología, mapa regional, mapa local y un diagrama integrado, sin crear recursos ni consultar fuentes externas. Las decisiones de `REV-002` y `REV-021` permanecen pendientes.
-- Auditoría C completada en `docs/AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md`: 40 referencias únicas representadas por 41 URL, 25 entradas E y 25 necesidades REF auditadas, 13 límites clasificados en QA y cuatro módulos de aparato propuestos. Recomienda un sistema híbrido CIT-B/C, sin consultar fuentes externas ni implementar bibliografía, citas o aparatos. Las decisiones de `REV-003`, `REV-004` y las dependencias de `REV-007` permanecen pendientes.
+- Auditoría A completada en `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md`: 22 entradas clasificadas en G0 8, G1 7, G2 0, G3 4 y G4 3; GH-B selectivo y su alcance para 1.0 quedaron decididos posteriormente en 6A.3. No se investigó fuera del repositorio ni se modificaron fuentes canónicas.
+- Auditoría B completada en `docs/AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md`: 27 recursos funcionales clasificados en VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; cinco prioridades altas, una media y una baja. El paquete visual definitivo quedó decidido en 6A.3, sin crear recursos ni consultar fuentes externas.
+- Auditoría C completada en `docs/AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md`: 40 referencias únicas representadas por 41 URL, 25 entradas E y 25 necesidades REF auditadas, 13 límites clasificados en QA y cuatro módulos de aparato propuestos. CIT-B/C y el alcance de fuentes/aparatos quedaron decididos en 6A.3, sin consulta externa ni implementación.
+- 6A.3 cerrada por el usuario en `docs/CIERRE_ALCANCE_V1_0.md`: `DEC-016`–`DEC-034` aprobadas, sin reabrir `DEC-001`–`DEC-015`.
+- 6A.4 completada documentalmente: `docs/ALCANCE_APROBADO_V1_0.md` normaliza el contrato de alcance y `docs/PLAN_EJECUCION_V1_0.md` fija PKG-00–PKG-13, GATE-00–GATE-05 y el control de cambios `CR-V1-*`. No se ha iniciado ningún paquete de ejecución.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -75,11 +77,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | candidata local validada e intacta; 6A.2 y Auditorías A/B/C documentadas; quedan consolidación de decisiones, datos finales, prototipo F3, implementación, nueva candidata, preview remoto y aceptación antes de 6B |
+| 6. Preview y publicación 1.0 | en curso | alcance 1.0 aprobado; quedan PKG-00–PKG-12, aceptación humana y PKG-13/Fase 6B |
 
 ## Siguiente tarea exacta
 
-Consolidación final de alcance 1.0 y decisiones del usuario tras Auditorías A/B/C.
+`SIGUIENTE PASO: PKG-00 y preparación de los pretrabajos PKG-01–PKG-05 conforme al PLAN_EJECUCION_V1_0.md.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -101,12 +103,14 @@ Consolidación final de alcance 1.0 y decisiones del usuario tras Auditorías A/
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | candidata reproducible y validada; Auditorías A/B/C completadas; faltan consolidación de decisiones, datos finales, prototipo F3, implementación, nueva candidata y, finalmente, proveedor y preview remoto para aceptación humana |
+| 6A | en curso | alcance aprobado y plan operativo cerrado; siguiente etapa PKG-00 y preparación de PKG-01–PKG-05 |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; doce cerradas, dos cerradas en principio con datos pendientes y F3 como hipótesis de prototipo; ninguna implementación iniciada |
-| Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo recomendado; 6 candidatos provisionales; decisiones pendientes |
-| Auditoría B | completada | 27 funciones: VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; 5 altas, 1 media y 1 baja; sin recursos generados ni investigación externa |
-| Auditoría C | completada | 40 referencias/41 URL; 25 entradas E; REF0 3, REF1 9, REF2 5, REF3 3, REF4 2, REF5 3; QA0 2, QA1 9, QA2 1, QA3 1; híbrido CIT-B/C recomendado; sin implementación ni consulta externa |
+| Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
+| Auditoría B | completada | 27 funciones: VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; paquete visual decidido en 6A.3; sin recursos generados ni investigación externa |
+| Auditoría C | completada | 40 referencias/41 URL; 25 entradas E; REF0 3, REF1 9, REF2 5, REF3 3, REF4 2, REF5 3; QA0 2, QA1 9, QA2 1, QA3 1; alcance CIT/aparatos cerrado en 6A.3 |
+| 6A.3 | completada por el usuario | DEC-016–DEC-034 cerradas en `CIERRE_ALCANCE_V1_0.md`; ninguna decisión reabierta |
+| 6A.4 | completada documentalmente | contrato de alcance, backlog, exclusiones, PKG-00–13, GATE-00–05 y control `CR-V1-*` registrados; candidata intacta |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
@@ -445,6 +449,27 @@ Consolidación final de alcance 1.0 y decisiones del usuario tras Auditorías A/
 - Decisiones pendientes: sistema CIT, alcance REF para 1.0, verificación de las 16 referencias incompletas, arquitectura de aparatos, selección QA1, estilo bibliográfico, historia, modelos de cita y datos del colofón. `REV-003` y `REV-004` quedan como «auditoría realizada; decisión pendiente»; `REV-007` conserva su aprobación con dependencias confirmadas.
 - Puerta inmediata: consolidación final de alcance 1.0 y decisiones del usuario tras Auditorías A/B/C.
 
+## Cierre documental de 6A.4
+
+- Baseline: `6a9301243a8fdd324173dafe3a2c5f72d7faee20`
+  (`docs(publication): audit sources bibliography and apparatus`).
+- Autoridad humana: `docs/CIERRE_ALCANCE_V1_0.md`, incorporada byte a byte sin
+  modificaciones.
+- Decisiones: `DEC-001`–`DEC-034` cubiertas; ninguna se reabre.
+- Alcance: 26 REV clasificadas en V1 12, VP 8, P 1, D 1 y N 4; DAT 10.
+- Contrato: `docs/ALCANCE_APROBADO_V1_0.md` fija alcance, backlog, exclusiones y
+  control de cambios `CR-V1-*`.
+- Ejecución: `docs/PLAN_EJECUCION_V1_0.md` fija PKG-00–PKG-13, GATE-00–GATE-05,
+  dependencias, autoridades, estrategia de commits y definición de DONE.
+- Corrección documental: la lista G3 errónea de la Auditoría C se alinea con la
+  Auditoría A: `añino`, `alcavalas`, `servicio ordinario y extraordinario` y
+  `pobre de solemnidad`.
+- Integridad: la candidata técnica preeditorial y `project/`, `publication/`,
+  `plugins/`, `tests/` y `.github/` permanecen intactos; no se ejecutaron Quarto,
+  render, investigación, verificación bibliográfica, cartografía ni prototipos.
+- Tag: prohibido hasta PKG-13, tras validación, preview, aceptación humana y
+  autorización explícita de Fase 6B.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -455,4 +480,4 @@ Consolidación final de alcance 1.0 y decisiones del usuario tras Auditorías A/
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/CANDIDATA_PUBLICACION_1_0.md`, `docs/INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md`, `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md`, `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md`, `docs/DECISIONES_EDITORIALES_6A_2.md`, `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md`, `docs/AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md`, `docs/AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Consolida el alcance 1.0 y las decisiones del usuario tras las Auditorías A/B/C. No implementes decisiones, no modifiques fuentes canónicas o la candidata, no configures el preview remoto, no ejecutes 6B, no publiques 1.0 y no crees tag/release.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_ALCANCE_V1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente PKG-00 o prepara, sin iniciar, uno de los pretrabajos PKG-01–PKG-05 conforme a su autoridad, dependencias y gate. No amplíes el alcance sin una CR-V1 aprobada; no hagas push ni tag.

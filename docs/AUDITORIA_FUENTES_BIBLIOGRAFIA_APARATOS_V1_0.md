@@ -346,7 +346,7 @@ La Auditoría C confirma para `REV-007` dependencias con autoría/roles, fecha, 
 
 Los siete G1 pueden enriquecerse con conocimiento ya presente. Si esa mejora reutiliza fuentes externas existentes —por ejemplo `boto`, `vecera`, `arenta` o apoyos léxicos— deberá enlazar con la misma bibliografía normalizada y, cuando formule contexto externo sustantivo, con su E correspondiente. No hace falta investigación nueva para decidir esa arquitectura.
 
-Las cuatro voces G3 (`entreparedes`, `fejes`, `pies de abejas` y `pobre de solemnidad`) requieren investigación externa antes de ampliar su contexto. Si se autoriza, cada resultado deberá evaluar nueva referencia, posible nueva entrada E, cita próxima, bibliografía e índices. Los candidatos de glosario siguen siendo provisionales y no justifican por sí solos nuevas referencias.
+Las cuatro voces G3 (`añino`, `alcavalas`, `servicio ordinario y extraordinario` y `pobre de solemnidad`) requieren investigación externa antes de ampliar su contexto. Si se autoriza, cada resultado deberá evaluar nueva referencia, posible nueva entrada E, cita próxima, bibliografía e índices. Los candidatos de glosario siguen siendo provisionales y no justifican por sí solos nuevas referencias.
 
 ## 18. Dependencias con Auditoría B
 

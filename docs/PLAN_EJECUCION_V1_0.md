@@ -1,0 +1,467 @@
+# Plan de ejecución de la edición 1.0
+
+**Fase de origen:** 6A.4<br>
+**Fecha:** 10 de octubre de 2026<br>
+**Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
+**Estado:** plan operativo; ejecución no iniciada
+
+## 1. Reglas generales
+
+- Este plan ejecuta el alcance aprobado; no lo amplía.
+- Cada paquete parte de un `base_sha`, comprueba rama/upstream y termina con
+  árbol limpio.
+- No se autorizan escrituras simultáneas conflictivas en un mismo worktree.
+- En ejecución secuencial, cada paquete lógico produce su propio commit.
+- En ejecución paralela futura, cada paquete usa rama/worktree separado y una
+  integración explícita.
+- Los cambios canónicos y los cambios de publicación nunca se mezclan.
+- No se hace push salvo orden del usuario.
+- No se crea tag antes de PKG-13.
+- Una necesidad fuera de alcance requiere una CR aprobada conforme a
+  `CR-V1-*`.
+
+## 2. Paquetes de ejecución
+
+### PKG-00 — Inputs editoriales del usuario
+
+**Objetivo:** obtener los datos humanos y textos que bloquean la edición.
+
+Incluye:
+
+- DAT-001 nombre de autor;
+- DAT-002 roles editoriales;
+- DAT-003 responsabilidad de transcripción;
+- DAT-004 responsabilidad de modernización;
+- DAT-005 colaboradores;
+- DAT-006 identidad visible del proyecto;
+- DAT-007 titular de copyright;
+- DAT-008 licencia;
+- prólogo personal firmado de 900–1.500 palabras.
+
+DAT-009, fecha editorial, y DAT-010, URL canónica, pueden cerrarse en PKG-09.
+
+**Autoridad:** usuario.<br>
+**Escritura:** no modifica `project/`; no inventa datos.<br>
+**Salida:** dossier de inputs aprobado y texto del prólogo listo para revisión.
+
+### PKG-01 — Glosario canónico GH-B
+
+**Objetivo:** ejecutar una operación canónica separada.
+
+Debe:
+
+- mejorar `Señorío`, `medio vecino`, `propios`, `arbitrio`, `boto`, `vecera` e
+  `hijo de familia` con conocimiento existente;
+- incorporar `avitadores`, `utilidad`, `repartimiento` y `quartal`;
+- auditar `establecimiento del suelo` y `arenta` durante la operación e
+  incorporarlas solo si cumplen los cuatro criterios aprobados;
+- no investigar G3;
+- mantener cautelas y la separación entre dato local, contexto e inferencia;
+- seguir el flujo canónico de la skill del Catastro.
+
+**Autoridad afectada:** `project/`.<br>
+**Salida:** fuentes canónicas validadas y commit canónico propio.<br>
+**Prohibición:** no editar directamente `publication/generated/`; la
+regeneración corresponde a PKG-10.
+
+### PKG-02 — EXT-A verificación bibliográfica
+
+**Objetivo:** verificar las 16 referencias parciales o mínimas.
+
+Es **verificación bibliográfica**, no investigación histórica. Debe comprobar:
+
+- autor o responsable;
+- título;
+- entidad o editor;
+- fecha y edición;
+- identificadores;
+- URL estable;
+- correspondencia entre fuente y uso.
+
+Si aparece una contradicción sustantiva con una afirmación E, se detiene esa
+incidencia. No se modifica silenciosamente `project/`.
+
+**Salida:** dossier de verificación, procedencia de cada dato, incidencias y
+registros listos para `references.bib`.
+
+### PKG-03 — EXT-B cartografía
+
+**Objetivo:** producir un mapa regional y un mapa local de orientación
+contemporánea/editorial.
+
+Debe resolver base, procedencia, licencia, atribución, escala, norte, leyenda,
+fecha, accesibilidad, texto alternativo, redistribución y reproducibilidad.
+
+**Prohibido:** reconstruir límites, caminos, términos o propiedades históricas
+no demostrados.
+
+**Salida:** assets, fuentes, metadatos, atribuciones y memoria de elaboración
+listos para revisión. No se integran antes de GATE-01.
+
+### PKG-04 — Prototipo F3
+
+**Objetivo:** comparar la política actual con F3 mediante una prueba
+multiformato.
+
+HTML debe probar recortes completos junto a la transcripción. PDF debe probar
+miniatura/localizador, enlace al facsímil completo y retorno adecuado.
+
+Debe medir:
+
+- capacidad de cotejo;
+- legibilidad;
+- navegación;
+- accesibilidad;
+- páginas;
+- tamaño;
+- complejidad;
+- reproducibilidad.
+
+**Salida:** recomendación F1/F3 o ajuste equivalente.<br>
+**Puerta:** no se integra definitivamente antes de una decisión humana en
+GATE-01.
+
+### PKG-05 — Correcciones técnicas y rendimiento
+
+Correcciones obligatorias:
+
+- REV-023, TOC PDF;
+- REV-024, orden alfabético del glosario;
+- REV-025, separación de entradas de los nueve índices PDF;
+- DEC-014, comportamiento de la sidebar.
+
+Optimización oportunista:
+
+- auditoría REV-026 del PDF y bundle web;
+- ensayos de optimización segura y reproducible.
+
+No se impone un objetivo de megabytes, no se degrada la paleografía y no se
+elimina contenido. Si no existe una mejora material y segura, el peso no bloquea
+1.0.
+
+**Salida:** correcciones validadas y dossier de medición antes/después.
+
+### Revisión de pretrabajos antes de GATE-01
+
+No se integra el libro final hasta revisar conjuntamente:
+
+- PKG-01;
+- PKG-02;
+- PKG-03;
+- PKG-04;
+- PKG-05;
+- inputs disponibles de PKG-00.
+
+Decisiones de salida:
+
+- aceptación final de F3 o alternativa;
+- aceptación o rechazo condicionado de `establecimiento del suelo`;
+- aceptación o rechazo condicionado de `arenta`;
+- resolución de incidencias bibliográficas;
+- aceptación de los dos mapas;
+- aceptación del resultado de optimización.
+
+### PKG-06 — Preliminares y arquitectura editorial
+
+Implementa, sin reabrirlas:
+
+- P3;
+- landing HTML;
+- portada PDF;
+- créditos disponibles;
+- prólogo;
+- introducción;
+- rutas histórica y documental;
+- convenciones compactas;
+- conservación del capítulo 4;
+- macroorden actual;
+- título y subtítulo;
+- cierres conclusivos;
+- retirada de la identidad de desarrollo.
+
+**Salida:** apertura y arquitectura completas en `publication/`.
+
+### PKG-07 — Aparato visual interno
+
+Integra:
+
+- cronología visual basada solo en hitos sustentados;
+- diagrama económico integrado basado exclusivamente en el capítulo 13;
+- mapas aprobados procedentes de PKG-03.
+
+No incluye esquema Concejo/municipio, esquema histórico del término ni antigua
+red de vulnerabilidades/amortiguadores.
+
+**Salida:** recursos visuales multiformato, accesibles y con procedencia.
+
+### PKG-08 — Fuentes, citas, trazabilidad y aparatos
+
+Implementa:
+
+- CIT-B/C;
+- `references.bib`;
+- bibliografía pública;
+- citas próximas selectivas;
+- enlaces E ↔ matriz;
+- política D/C/I/E/L;
+- aparato compacto con nueve QA1;
+- historia intelectual/editorial breve;
+- modelos de cita principales por familias, cubriendo los once objetos;
+- TOP-006 solo en la matriz.
+
+No convierte el libro en un sistema de notas excesivo ni modifica afirmaciones
+canónicas desde la bibliografía.
+
+### PKG-09 — Identidad final, metadatos y cierre
+
+Cierra:
+
+- DAT pendientes;
+- copyright;
+- licencia;
+- fecha editorial;
+- URL canónica;
+- versión final;
+- créditos definitivos;
+- colofón.
+
+No inventa ningún valor. El ISBN continúa sin ser requisito de 1.0.
+
+### PKG-10 — Regeneración reproducible y candidata
+
+Debe:
+
+- regenerar derivados;
+- construir HTML;
+- construir PDF;
+- registrar tamaños y hashes;
+- registrar versiones de fuentes;
+- comprobar reproducibilidad.
+
+**Salida:** nueva candidata 1.0. Todavía no es release.
+
+### PKG-11 — Validación integral
+
+Debe validar al menos:
+
+- suite completa;
+- integridad canónica;
+- reproducibilidad;
+- enlaces, citas, bibliografía y anclas;
+- D/C/I/E/L;
+- glosario, índices y TOC;
+- HTML y PDF;
+- navegación por teclado y vista estrecha;
+- imágenes y equivalentes accesibles;
+- mapas, cronología y diagrama;
+- facsímil, transcripción y F3 final;
+- peso;
+- no regresión histórica;
+- ausencia de identidad de desarrollo.
+
+**Salida:** informe PASS o incidencias. Una incidencia fuera de alcance sigue el
+mecanismo `CR-V1-*`.
+
+### PKG-12 — Preview y aceptación humana
+
+Despliega una preview según la decisión posterior de proveedor y realiza una
+revisión humana real. No crea tag.
+
+**Salida:** aceptación humana explícita o lista acotada de correcciones.
+
+### PKG-13 — Fase 6B / release 1.0
+
+Solo se inicia después de GATE-04 y GATE-05. Debe fijar versión, snapshot,
+hashes, manifiesto, documentación final, commit de release, tag `v1.0` —o la
+convención que se apruebe— y publicación según la política autorizada.
+
+El tag solo aparece en este paquete.
+
+## 3. DAG textual
+
+```text
+GATE-00
+   ├── PKG-00 ───────────────────────────────┐
+   ├── PKG-01 ───────────────────────────────┤
+   ├── PKG-02 ───────────────────────────────┤
+   ├── PKG-03 ───────────────────────────────┤
+   ├── PKG-04 ───────────────────────────────┤
+   └── PKG-05 ───────────────────────────────┘
+                                               ↓
+                                           GATE-01
+                                               ↓
+                         ┌───────── PKG-06 ─────────┐
+                         ├───────── PKG-07 ─────────┤
+                         ├───────── PKG-08 ─────────┤
+                         └───────── PKG-09 ─────────┘
+                                               ↓
+                                           GATE-02
+                                               ↓
+                                            PKG-10
+                                               ↓
+                                            PKG-11
+                                               ↓
+                                           GATE-03
+                                               ↓
+                                            PKG-12
+                                               ↓
+                                           GATE-04
+                                               ↓
+                                           GATE-05
+                                               ↓
+                                            PKG-13
+```
+
+PKG-00–PKG-05 son conceptualmente paralelizables, pero no autorizan escrituras
+simultáneas en un mismo worktree. PKG-06–PKG-09 pueden prepararse como ramas
+separadas solo cuando sus dependencias estén aceptadas y exista un plan explícito
+de integración.
+
+## 4. Tabla de dependencias
+
+| Paquete | Requiere | Puede avanzar en paralelo con | Bloquea |
+|---|---|---|---|
+| PKG-00 | GATE-00 | PKG-01–05 | PKG-06, PKG-09 y citas finales |
+| PKG-01 | GATE-00 | PKG-00, PKG-02–05 | Regeneración de glosario; GATE-01 |
+| PKG-02 | GATE-00 | PKG-00–01, PKG-03–05 | PKG-08; GATE-01 |
+| PKG-03 | GATE-00 | PKG-00–02, PKG-04–05 | PKG-07; GATE-01 |
+| PKG-04 | GATE-00 | PKG-00–03, PKG-05 | Política final del manuscrito; GATE-01 |
+| PKG-05 | GATE-00 | PKG-00–04 | GATE-01 y PKG-10 |
+| PKG-06 | GATE-01; inputs aplicables de PKG-00 | PKG-07–09 con ramas/worktrees separados | GATE-02 |
+| PKG-07 | GATE-01; PKG-03 aceptado | PKG-06, PKG-08–09 | GATE-02 |
+| PKG-08 | GATE-01; PKG-02 aceptado | PKG-06–07, PKG-09 | GATE-02 |
+| PKG-09 | GATE-01; DAT completos | PKG-06–08 | GATE-02 |
+| PKG-10 | GATE-02 | — | PKG-11 |
+| PKG-11 | PKG-10 | — | GATE-03 |
+| PKG-12 | GATE-03 | — | GATE-04 |
+| PKG-13 | GATE-04 y GATE-05 | — | Release 1.0 |
+
+## 5. Autoridad y ámbito de escritura
+
+| Paquete | Puede leer | Puede modificar | No puede modificar | Autoridad |
+|---|---|---|---|---|
+| PKG-00 | Documentos de alcance y formularios humanos | Dossier/input autorizado | `project/`, datos no proporcionados | Usuario |
+| PKG-01 | Controles, fuentes canónicas y documentación necesaria | `project/` dentro de una operación canónica | `publication/generated/` como fuente; historia no autorizada | Manual y fuentes canónicas |
+| PKG-02 | Inventario interno y, tras autorización, fuentes bibliográficas | Dossier de verificación; después datos bibliográficos de publicación | Afirmaciones históricas de `project/` | Fuentes bibliográficas para metadatos; Registro para el uso |
+| PKG-03 | Alcance, índice de lugares y bases autorizadas | Assets/metadatos cartográficos de trabajo | `project/`; reconstrucción histórica | Licencia/base cartográfica y datos canónicos de nombres |
+| PKG-04 | Facsímil, transcripción y configuración | Prototipo aislado en `publication/` | `project/`; integración definitiva | DEC-012 y autoridades documentales |
+| PKG-05 | Configuración, estilos, generadores y salidas | `publication/` técnico | `project/`, contenidos históricos | Contrato de publicación |
+| PKG-06 | Decisiones y contenido editorial vigente | `publication/content/`, configuración y metadatos aplicables | `project/` y derivados manuales | DEC-001–015 |
+| PKG-07 | Capítulos, Registro y assets aprobados | `publication/` visual y metadatos | `project/`; inferencias nuevas | DEC-020–024 |
+| PKG-08 | Registro, auditoría bibliográfica y decisiones | `publication/` editorial/bibliográfico | Hechos o lecturas canónicas | DEC-025–033 |
+| PKG-09 | DAT aprobados y resultados integrados | Metadatos, créditos y colofón de `publication/` | Datos humanos no declarados; `project/` | Usuario |
+| PKG-10 | Fuentes y configuración aceptadas | Solo derivados regenerables y salidas | Fuentes canónicas o editoriales manuales | Pipeline reproducible |
+| PKG-11 | Repositorio y candidata | Informes o correcciones autorizadas por incidencia | Ampliaciones silenciosas | Criterios de aceptación |
+| PKG-12 | Candidata validada | Configuración de preview autorizada | Contenido sin CR/paquete; tag | Usuario/proveedor aprobado |
+| PKG-13 | Snapshot aceptado e informes | Documentación y metadatos de release autorizados | Historia previa; fuentes fuera de alcance | Aceptación humana y política de release |
+
+PKG-06–PKG-09 nunca parchean un cambio canónico. Si detectan uno, detienen la
+incidencia y abren la operación correspondiente.
+
+## 6. Estrategia de commits
+
+- Un commit por paquete lógico aceptado.
+- PKG-01 produce un commit canónico propio.
+- Verificación/investigación e implementación no se mezclan salvo autorización
+  expresa del contrato de un paquete.
+- El árbol debe quedar limpio entre paquetes.
+- Los commits de integración PKG-06–09 pueden separarse si sus ámbitos son
+  independientes; no se fusionan artificialmente con PKG-01–05.
+- No se hace push sin orden del usuario.
+- No se crea tag antes de PKG-13.
+
+Mensajes sugeridos, sin ejecutarlos:
+
+```text
+docs(publication): record editorial inputs for 1.0
+feat(glossary): apply approved GH-B scope
+docs(publication): verify bibliography for 1.0
+feat(publication): add licensed orientation maps
+test(publication): prototype F3 document access
+fix(publication): resolve final composition defects
+feat(publication): integrate 1.0 preliminaries
+feat(publication): add approved visual apparatus
+feat(publication): integrate citations and narrative apparatus
+feat(publication): finalize 1.0 metadata and colophon
+chore(publication): build 1.0 release candidate
+docs(publication): validate 1.0 release candidate
+docs(publication): record preview acceptance
+chore(release): publish version 1.0
+```
+
+## 7. Puertas de control
+
+### GATE-00 — Alcance 1.0 aprobado
+
+- DEC-001–034 registradas.
+- REV-001–026 clasificadas.
+- Backlog, NO INCORPORAR y mecanismo `CR-V1-*` vigentes.
+- Plan PKG-00–13 aprobado documentalmente.
+
+### GATE-01 — Pretrabajos aceptados
+
+- PKG-01 canónico validado.
+- PKG-02 sin incidencias bibliográficas abiertas que bloqueen integración.
+- Mapas de PKG-03 aceptados y licenciados.
+- F3 decidido humanamente.
+- REV-023–025 tienen solución comprobada.
+- Resultado de peso documentado.
+- Inputs disponibles de PKG-00 revisados.
+
+### GATE-02 — Integración editorial completa
+
+- PKG-06–09 integrados.
+- No quedan datos obligatorios sin resolver.
+- No quedan cambios canónicos parcheados en `publication/`.
+- El alcance coincide con `ALCANCE_APROBADO_V1_0.md`.
+
+### GATE-03 — Nueva candidata validada técnicamente
+
+- PKG-10 reproducible.
+- PKG-11 en PASS.
+- Sin defectos críticos o altos abiertos.
+- Integridad de fuentes y ausencia de identidad de desarrollo comprobadas.
+
+### GATE-04 — Preview aceptado por el usuario
+
+- Preview real accesible por la vía autorizada.
+- Revisión humana completada.
+- Correcciones solicitadas resueltas y revalidadas.
+- Aceptación explícita registrada.
+
+### GATE-05 — Autorización explícita de 6B/release
+
+- Snapshot, versión y política de publicación confirmados.
+- Autorización humana expresa para PKG-13.
+- Ninguna CR o incidencia bloqueante abierta.
+
+## 8. Definición de DONE de 1.0
+
+- [ ] 1. Alcance aprobado.
+- [ ] 2. Inputs editoriales resueltos.
+- [ ] 3. Glosario canónico actualizado.
+- [ ] 4. Bibliografía verificada.
+- [ ] 5. Mapas documentados y licenciados.
+- [ ] 6. F3 decidido.
+- [ ] 7. Defectos REV-023–025 corregidos.
+- [ ] 8. Apertura y preliminares integrados.
+- [ ] 9. Aparato visual integrado.
+- [ ] 10. CIT, bibliografía, QA, historia y modelos de cita integrados.
+- [ ] 11. D/C/I/E/L navegable.
+- [ ] 12. Metadatos, licencia y copyright cerrados.
+- [ ] 13. Salidas reproducibles.
+- [ ] 14. Validación integral en PASS.
+- [ ] 15. Preview revisado.
+- [ ] 16. Aceptación humana registrada.
+- [ ] 17. Fase 6B completada.
+- [ ] 18. Tag 1.0 creado únicamente al final.
+
+## 9. Control de alcance durante la ejecución
+
+Un paquete no puede añadir trabajo por conveniencia. Cualquier necesidad nueva
+se registra como `CR-V1-NNN` con origen, motivo, impacto, tipo —defecto o
+ampliación—, recomendación y decisión humana. Una CR no aprobada no se ejecuta.
+
+Los defectos de validación pueden producir CR correctivas, pero no autorizan
+nuevos capítulos, investigaciones, visualizaciones o aparatos. La autoridad y el
+procedimiento de cada cambio siguen siendo los de su paquete.
