@@ -4,7 +4,7 @@
 **Fase:** 6A.1 — revisión editorial final de la candidata 1.0<br>
 **Baseline de auditoría:** `088e4fcec91fa9723b5b0ffad4f65781a9c0af6c`<br>
 **Commit de la candidata técnica:** `49ab2e1b1a58ca9201efab54b42a3125de7326f8`<br>
-**Estado:** comparación editorial y funcional precisada por la Auditoría B; las clasificaciones consolidadas siguen pendientes de decisión humana.
+**Estado:** comparación editorial y funcional precisada por las Auditorías B/C; las clasificaciones consolidadas siguen pendientes de decisión humana.
 
 ## Conclusiones ejecutivas
 
@@ -12,13 +12,13 @@
 2. Quarto mejora de forma sustancial la fidelidad documental y la consulta: separa las 18 páginas completas de los 35 recortes, usa la Edición Crítica 3.6, conserva las seis secciones del aparato por unidad, genera una concordancia bidireccional y ofrece índices con enlaces HTML y páginas PDF reales.
 3. La Parte II de Quarto tiene mayor desarrollo y cautela que 0.6. Conserva la cobertura temática, aumenta de unas 15.122 a 15.758 palabras extraídas y elimina o reformula afirmaciones demasiado fuertes sobre comunales, autoconsumo, clima, copropiedad, ruedas y resiliencia.
 4. La principal pérdida material respecto a 0.6 es la cartografía. Las dos láminas de 0.6 cumplen una función de orientación regional, provincial y local que no tiene equivalente en la candidata. La inspección visual exhaustiva identifica además dos diagramas vectoriales en las páginas 45 y 49; Quarto conserva mejor su materia en prosa y tablas, pero no su visión relacional.
-5. La principal carencia bibliográfica es de sistema, no de número bruto de enlaces. Quarto conserva 41 URL únicas frente a 42 en 0.6 y la matriz identifica numerosas fuentes externas, pero `references.bib` sigue vacío y el capítulo del topónimo no ofrece al lector llamadas o referencias próximas que lo conduzcan a esas entradas.
+5. La principal carencia bibliográfica es de sistema, no de número bruto de enlaces. Quarto conserva 41 URL únicas frente a 42 en 0.6; la Auditoría C las reduce a 40 referencias bibliográficas únicas —2 completas, 22 suficientes, 8 parciales y 8 mínimas—, pero `references.bib` sigue vacío y el capítulo del topónimo no ofrece al lector llamadas o referencias próximas que lo conduzcan a esas entradas.
 6. La trazabilidad D/C/I/E/L es más robusta como dato estructurado: la matriz reproduce 112 entradas y la concordancia conecta respuestas, unidades, transcripción y facsímil. Sin embargo, las marcas del cuerpo no enlazan directamente con la matriz y solo son visibles de forma sistemática en los capítulos 9–13.
 7. Faltan componentes que el Plan Maestro situó entre los preliminares y los aparatos narrativos: créditos y responsabilidades editoriales definitivas, cartografía, una presentación o guía preliminar consolidada, cronología visual, cuestiones abiertas, fuentes/bibliografía, historia de versiones y modelos de cita.
 8. La candidata conserva todavía metadatos de desarrollo: subtítulo «Edición en desarrollo», versión `0.1.0-dev`, estado `development`, autor PDF vacío y ausencia de licencia, copyright, fecha editorial y URL canónica. Estos valores no deben llegar sin decisión a una publicación 1.0.
 9. No debe restaurarse todo lo que aparecía en 0.6. Su facsímil solo por unidades, sus localizadores provisionales y varias formulaciones históricas superadas han sido sustituidos por soluciones equivalentes o mejores.
 10. La matriz de decisiones se mantiene separada en [REVISION_EDITORIAL_CANDIDATA_1_0.md](./REVISION_EDITORIAL_CANDIDATA_1_0.md). Ninguna clasificación B/M/F/N equivale a una decisión del usuario.
-11. Una revisión posterior del usuario amplió el alcance: detectó cuestiones de apertura y arquitectura, contexto del glosario, recursos gráficos y defectos visibles del TOC e índices PDF. La [Auditoría B](./AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md) contiene el inventario funcional exhaustivo de cartografía, cronología, diagramas, recuadros y tablas explicativas.
+11. Una revisión posterior del usuario amplió el alcance: detectó cuestiones de apertura y arquitectura, contexto del glosario, recursos gráficos y defectos visibles del TOC e índices PDF. La [Auditoría B](./AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md) contiene el inventario funcional exhaustivo de cartografía, cronología, diagramas, recuadros y tablas explicativas; la [Auditoría C](./AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md) precisa fuentes, entradas E, necesidades REF, cuestiones abiertas y aparatos narrativos.
 
 ## 1. Alcance, autoridad y baseline
 
@@ -184,6 +184,10 @@ Quarto dispone de tres capas de procedencia:
 
 Estas capas no equivalen a una bibliografía para el lector. `references.bib` contiene cero entradas; no hay citas bibliográficas Pandoc en los capítulos; varias entradas E ofrecen solo una descripción breve y una URL; y el libro no incluye el aparato narrativo «Fuentes y bibliografía» previsto por el Plan Maestro.
 
+La Auditoría C distingue 40 referencias bibliográficas detrás de las 41 URL: 2 completas, 22 suficientes para estructuración interna, 8 parciales y 8 mínimas. Por tanto, 24 podrían modelarse con la información ya disponible y 16 requieren comprobación de metadatos en fuentes externas. Ninguna queda reducida a una URL sin contexto identificador.
+
+Las 25 entradas E están presentes en la matriz. Trece muestran su ID en el cuerpo de al menos un capítulo; once sustentan prosa o preliminares sin ID visible y `TOP-006` solo aparece en la matriz. El caso toponímico concentra la pérdida de proximidad: siete de `TOP-004`–`TOP-011` se usan en el capítulo 3, pero allí no se exponen sus IDs y la matriz mantiene vacío su campo «Uso en el libro».
+
 La solución no tiene que copiar el apéndice F de 0.6 ni poner una nota en cada contexto E. Debe permitir identificar públicamente las fuentes, distinguir archivo/edición/estudio/recurso web y conectar las afirmaciones relevantes con referencias comprobables.
 
 ## 11. Trazabilidad D/C/I/E/L
@@ -339,7 +343,7 @@ Después de 6A.1, el usuario realizó una primera ronda de revisión editorial y
 
 La candidata supera a 0.6 en integridad documental, rigor histórico, reproducibilidad, navegación e índices. No se detecta pérdida de capítulos, unidades, respuestas, matriz, glosario ni temas históricos principales.
 
-La comparación 0.6 identificó pérdidas o carencias de terminación editorial, pero no agotó todas las cuestiones relevantes para 1.0. La revisión del usuario añadió decisiones de arquitectura y apertura, auditorías todavía pendientes y tres defectos concretos de composición. La clasificación consolidada y el orden de trabajo figuran en [REVISION_EDITORIAL_CANDIDATA_1_0.md](./REVISION_EDITORIAL_CANDIDATA_1_0.md).
+La comparación 0.6 identificó pérdidas o carencias de terminación editorial, pero no agotó todas las cuestiones relevantes para 1.0. La revisión del usuario añadió decisiones de arquitectura y apertura, tres auditorías especializadas ya completadas y tres defectos concretos de composición. La clasificación consolidada y el orden de trabajo figuran en [REVISION_EDITORIAL_CANDIDATA_1_0.md](./REVISION_EDITORIAL_CANDIDATA_1_0.md).
 
 ## Referencias internas
 

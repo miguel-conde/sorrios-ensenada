@@ -2,11 +2,12 @@
 
 **Fecha:** 10 de octubre de 2026<br>
 **Fase:** 6A.2 — decisiones editoriales de arquitectura y apertura registradas<br>
-**Estado:** decisiones 6A.2 cerradas documentalmente y Auditorías A/B completadas; decisiones, datos, Auditoría C e implementación pendientes<br>
+**Estado:** decisiones 6A.2 cerradas documentalmente y Auditorías A/B/C completadas; decisiones finales, datos e implementación pendientes<br>
 **Informe de evidencia:** [INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md](./INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md)<br>
 **Referencia de trabajo consolidada:** [ORDEN_DE_TRABAJO_PARA_V1_0.md](./ORDEN_DE_TRABAJO_PARA_V1_0.md)<br>
 **Registro de decisiones:** [DECISIONES_EDITORIALES_6A_2.md](./DECISIONES_EDITORIALES_6A_2.md)<br>
-**Auditoría visual:** [AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md](./AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md)
+**Auditoría visual:** [AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md](./AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md)<br>
+**Auditoría de fuentes y aparatos:** [AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md](./AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md)
 
 ## 1. Objeto
 
@@ -56,11 +57,11 @@ Todas son **clasificaciones propuestas**. Ninguna equivale a una decisión edito
 |---|---|---|---|---|---|---|---|---|---|
 | REV-001 | Auditoría actual | Identidad, créditos y metadatos | La candidata mantiene `0.1.0-dev`, `development`, «Edición en desarrollo», autor PDF vacío y carece de varias decisiones editoriales de publicación. | 0.6 identifica proyecto, versión y año, aunque tampoco resuelve todos los créditos. | 6A.2 aprueba T1 como identidad de trabajo, el modelo de créditos por roles, la resolución legal previa a la nueva candidata y que 1.0 no dependa de ISBN. Faltan nombres, roles concretos, titular, licencia, fecha, URL e identidad de proyecto. | Decisión editorial cerrada en principio, con datos humanos y legales pendientes. | B | Recabar los datos pendientes e implementar después de las auditorías; coordinar con REV-007, REV-015 y REV-022. No inventar valores. | APROBADA EN PRINCIPIO 6A.2 (`DEC-007`, `DEC-008`, `DEC-009`, `DEC-015`); datos e implementación pendientes |
 | REV-002 | Comparación 0.6 | Cartografía | No existe equivalente de las láminas de orientación regional, provincial y local. | Págs. 16–17: dos láminas y tres paneles con funciones regional, provincial y local. | No hay mapas ni assets cartográficos. | La Auditoría B clasifica mapa regional y local como VIS3 ALTA: son deseables para 1.0, pero requieren base, procedencia, licencia y atribución externas. El esquema del término es VIS4 con la evidencia actual por riesgo de falsa precisión. | B | Decidir el alcance cartográfico; después, en otra operación, obtener y validar bases externas sin copiar 0.6. No producir el esquema del término mientras no cambie la base probatoria. | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE |
-| REV-003 | Comparación 0.6 | Fuentes externas y bibliografía | El sistema público de referencias es incompleto y la fuente queda a menudo alejada de la afirmación. | Pág. 15 y apéndice F: referencias identificables y enlaces visibles. | Existen URL y fuentes estructuradas, pero `references.bib` está vacío y no hay aparato bibliográfico público completo. | El problema es de sistema para el lector, no de número bruto de URL; requiere auditoría especializada. | B | Auditar fuentes, bibliografía y contextos E; definir después el sistema público de referencias. | PENDIENTE |
-| REV-004 | Comparación 0.6 | Aparatos narrativos | Faltan cuestiones abiertas, historia de versiones y modelos de cita como funciones visibles del libro. | Apéndices E, G y H; el apéndice F cubre fuentes. | Límites e historia están dispersos o fuera del libro; no hay modelos de cita. | Las funciones prometidas deben resolverse, aunque no necesariamente mediante tres apéndices extensos; deben descomponerse funcionalmente. | B | Incluir estas funciones en la auditoría especializada de fuentes y aparatos; decidir forma y ubicación después. | PENDIENTE |
-| REV-005 | Auditoría actual | Preliminares y orientación | Presentación, nota al lector, guía de uso, convenciones y cronología no forman unos preliminares consolidados. | 0.6 ofrece orientación inicial parcial, pero no una cronología visual autónoma. | 6A.2 aprueba P3: preliminares modulares multiformato, prólogo tras créditos, introducción con rutas y pieza compacta separada de convenciones. | La Auditoría B clasifica la cronología como VIS1 ALTA, reconstruible con datos internos; su posición final debe coordinarse con P3 y la Auditoría C. | B | Implementar P3 solo después de la Auditoría C, las decisiones VIS y la fijación de los datos editoriales necesarios. | APROBADA 6A.2 (`DEC-001`, `DEC-003`, `DEC-004`); implementación pendiente |
+| REV-003 | Comparación 0.6 | Fuentes externas y bibliografía | El sistema público de referencias es incompleto y la fuente queda a menudo alejada de la afirmación. | Pág. 15 y apéndice F: referencias identificables y enlaces visibles. | La Auditoría C inventaría 40 referencias únicas mediante 41 URL: completas 2, suficientes 22, parciales 8, mínimas 8 y solo URL 0. Las 25 E están en la matriz, pero solo 13 muestran su ID en el cuerpo; `references.bib` sigue con cero entradas. | Auditoría realizada: REF0 3, REF1 9, REF2 5, REF3 3, REF4 2 y REF5 3. Se recomienda un híbrido CIT-B/C —cita próxima selectiva + ID/matriz + bibliografía—; quedan decisiones y verificación externa de 16 referencias. | B | Decidir el sistema CIT, densidad/forma, arquitectura del aparato, estilo y verificación posterior. No implementar ni completar metadatos por inferencia. | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE |
+| REV-004 | Comparación 0.6 | Aparatos narrativos | Faltan cuestiones abiertas, historia de versiones y modelos de cita como funciones visibles del libro. | Apéndices E, G y H; el apéndice F cubre fuentes. | La Auditoría C clasifica 13 límites: QA0 2, QA1 9, QA2 1 y QA3 1. La historia intelectual puede sintetizarse con versiones ya registradas y los once modelos de cita pueden estructurarse, pero sus fórmulas finales dependen de identidad, fecha, URL y versión 1.0. | Parecen necesarias para 1.0 una síntesis QA1, una historia intelectual breve y plantillas de cita; no deben convertirse en repetición de capítulos ni en changelog Git. | B | Decidir forma/ubicación de QA1, alcance de la historia y política de modelos; implementar solo tras la consolidación final. | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE |
+| REV-005 | Auditoría actual | Preliminares y orientación | Presentación, nota al lector, guía de uso, convenciones y cronología no forman unos preliminares consolidados. | 0.6 ofrece orientación inicial parcial, pero no una cronología visual autónoma. | 6A.2 aprueba P3: preliminares modulares multiformato, prólogo tras créditos, introducción con rutas y pieza compacta separada de convenciones. | La Auditoría B clasifica la cronología como VIS1 ALTA, reconstruible con datos internos; su posición final debe coordinarse con P3 y con el sistema de fuentes diagnosticado por la Auditoría C. | B | Implementar P3 solo después de la consolidación final, las decisiones VIS/CIT y la fijación de los datos editoriales necesarios. | APROBADA 6A.2 (`DEC-001`, `DEC-003`, `DEC-004`); implementación pendiente |
 | REV-006 | Auditoría actual | D/C/I/E/L y navegación | Las marcas del cuerpo son texto plano y su presencia visible se concentra en capítulos 9–13. | 95 grupos visibles; resolución manual en el apéndice D. | 77 grupos; matriz completa con anclas y retornos, sin enlace directo desde cada marca. | La cadena funciona, pero su experiencia de consulta puede mejorar. | M | Decidir una política coherente de marcas y enlaces sin saturar la prosa. | PENDIENTE |
-| REV-007 | Comparación 0.6 | Cierre editorial | El volumen termina en el índice de materias sin colofón o declaración final de edición. | Pág. 259: colofón provisional. | 6A.2 aprueba un colofón breve técnico-editorial. Su contenido final depende de identidad, versión, URL y de la Auditoría C. | Decisión editorial cerrada; alcance concreto e implementación pendientes. | M | Definir el contenido final tras la Auditoría C e implementarlo coordinadamente con REV-001 y REV-004. | APROBADA 6A.2 (`DEC-010`); dependencias e implementación pendientes |
+| REV-007 | Comparación 0.6 | Cierre editorial | El volumen termina en el índice de materias sin colofón o declaración final de edición. | Pág. 259: colofón provisional. | 6A.2 aprueba un colofón breve técnico-editorial. La Auditoría C confirma que depende de título/edición, autoría y roles, fecha, versión 1.0, URL, licencia cuando proceda y política de snapshot condensado. | Decisión editorial cerrada; el colofón no debe duplicar créditos, bibliografía, historia extensa ni dossier técnico. | M | Implementar después de fijar identidad y publicación, coordinado con REV-001 y REV-004. | APROBADA 6A.2 (`DEC-010`); dependencias confirmadas e implementación pendiente |
 | REV-008 | Auditoría actual | Accesibilidad formal | El PDF no está etiquetado y no existe validación PDF/UA o PDF/A. | 0.6 tampoco está etiquetado. | Accesibilidad básica validada; no se declara conformidad formal. | No es regresión ni bloqueante conocido para 1.0; requiere alcance y herramientas específicos. | F | Mantener la limitación declarada y estudiar conformidad formal en 1.1 o posterior. | PENDIENTE |
 | REV-009 | Comparación 0.6 | Contenido histórico superado | 0.6 contiene formulaciones demasiado fuertes sobre comunales, autoconsumo, clima, copropiedad, ruedas, habitantes fiscales y amortiguación. | Expresiones localizadas en la Parte II. | Quarto las elimina o reformula con límites y distinciones de autoridad. | Recuperarlas sería una regresión metodológica e histórica. | N | Conservar las formulaciones actuales; usar 0.6 solo como prueba negativa de regresión. | PENDIENTE |
 | REV-010 | Comparación 0.6 | Modelo antiguo de facsímil | 0.6 presenta el facsímil solo como 35 unidades con recortes grandes. | Págs. 64–98: 35 imágenes de unidad. | Quarto ofrece 18 páginas completas y 35 recortes de cotejo en la transcripción. | No debe recuperarse el modelo exclusivo de 0.6. Esta negativa no resuelve la duplicación funcional actual, tratada en REV-016. | N | No volver al facsímil exclusivo por unidades; decidir REV-016 de manera independiente. | PENDIENTE |
@@ -74,7 +75,7 @@ Todas son **clasificaciones propuestas**. Ninguna equivale a una decisión edito
 | REV-018 | Observación del usuario | Navegación HTML | La barra lateral aparece inicialmente demasiado desplegada para seis partes y unos treinta documentos. | No aplica. | 6A.2 aprueba parte activa desplegada y partes inactivas plegadas. | Decisión UX cerrada; requiere implementación y validación HTML. | M | Implementar y comprobar teclado, escritorio y viewport estrecho en una operación posterior. | APROBADA 6A.2 (`DEC-014`); implementación pendiente |
 | REV-019 | Observación del usuario | Cierre de capítulos | Capítulos 5–13 tienen cierre funcional, pero solo 9–12 usan literalmente «Síntesis». | No aplica. | 6A.2 aprueba títulos conclusivos específicos con función común y la sustitución de `Síntesis` cuando exista un título informativo adecuado. | Convención retórica decidida; los textos no se modifican todavía. | M | Revisar conjuntamente los títulos de cierre e implementarlos en una operación posterior. | APROBADA 6A.2 (`DEC-013`); implementación pendiente |
 | REV-020 | Observación del usuario | Glosario y contexto histórico | El ejemplo «Señorío» muestra que el glosario explica principalmente el sentido documental/local y no siempre el concepto históricamente. | 0.6 no decide la arquitectura correcta para la fuente vigente. | La [Auditoría A](./AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md) revisa las 22 voces: G0 8, G1 7, G2 0, G3 4 y G4 3; propone GH-B selectivo y registra 6 candidatos provisionales. No se modificaron fuentes ni candidata. | La carencia es selectiva: `Señorío` y otros seis casos pueden mejorar con conocimiento existente; cuatro ampliaciones exigirían investigación externa y no hay G2. | B | Decidir el modelo GH, el alcance para 1.0, los candidatos y si se autoriza investigar algún G3. No implementar ni investigar hasta esa decisión. | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE |
-| REV-021 | Observación del usuario | Gráficos, esquemas y recuadros | El usuario echa de menos recursos explicativos presentes o previstos en composiciones anteriores. | La inspección completa identifica dos láminas cartográficas, dos diagramas vectoriales y ocho familias de tablas/matrices; 0.6 no implementó la cronología visual ni los ocho recuadros como sistema diferenciado. | Quarto dispone de 44 tablas semánticas, pero no de mapas, cronología visual, diagramas conceptuales ni recuadros históricos diferenciados. | La Auditoría B clasifica 27 funciones: VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; prioridades: 5 altas, 1 media y 1 baja. Son altas la cronología, los dos mapas, límites/preguntas abiertas y el diagrama integrado. No deben recuperarse el esquema del término ni la red antigua de vulnerabilidades/amortiguadores. | B | Decidir el paquete 1.0 propuesto —cronología, mapa regional, mapa local y diagrama integrado—, la forma de límites/preguntas abiertas y el destino de los recursos opcionales. No implementar hasta cerrar Auditoría C y decisiones humanas. | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE |
+| REV-021 | Observación del usuario | Gráficos, esquemas y recuadros | El usuario echa de menos recursos explicativos presentes o previstos en composiciones anteriores. | La inspección completa identifica dos láminas cartográficas, dos diagramas vectoriales y ocho familias de tablas/matrices; 0.6 no implementó la cronología visual ni los ocho recuadros como sistema diferenciado. | Quarto dispone de 44 tablas semánticas, pero no de mapas, cronología visual, diagramas conceptuales ni recuadros históricos diferenciados. | La Auditoría B clasifica 27 funciones: VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; prioridades: 5 altas, 1 media y 1 baja. Son altas la cronología, los dos mapas, límites/preguntas abiertas y el diagrama integrado. No deben recuperarse el esquema del término ni la red antigua de vulnerabilidades/amortiguadores. | B | Decidir el paquete 1.0 propuesto —cronología, mapa regional, mapa local y diagrama integrado—, la forma de límites/preguntas abiertas y el destino de los recursos opcionales. No implementar hasta consolidar los resultados A/B/C y las decisiones humanas. | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE |
 | REV-022 | Observación del usuario | Estado visible de edición | «Edición en desarrollo» aparece en subtítulo, metadatos y apertura. | 0.6 mostraba una versión de composición, no una solución definitiva. | 6A.2 aprueba que esa fórmula no forme parte de la identidad final y adopta T1 como título/subtítulo de trabajo. La metadata actual no se modifica en esta operación. | Decisión editorial cerrada; retirada e identidad final pendientes de implementación. | B | Sustituir el estado visible únicamente al construir la nueva candidata, coordinado con REV-001 y REV-015. | APROBADA 6A.2 (`DEC-006`, `DEC-007`); implementación pendiente |
 | REV-023 | Observación del usuario | TOC PDF | Numeraciones largas aparecen pegadas a los títulos, por ejemplo `16.35Respuesta 32...`. | No aplica. | Defecto visual comprobado en la candidata. | Bloqueante técnico de composición; debe cubrir especialmente numeraciones largas del capítulo 16. | B | Corregir anchura o separación del número de sección en una operación posterior y probar los casos extremos. | PENDIENTE |
 | REV-024 | Observación del usuario | Orden del glosario | El Plan de composición 0.5 exige orden alfabético. | No aplica. | Los índices alfabéticos se ordenan de forma determinista; el glosario generado conserva el orden de `Glosario.md`. | Desviación técnica/editorial real. | B | Corregir preferentemente en generación/publicación, sin alterar innecesariamente la fuente canónica. | PENDIENTE |
@@ -91,17 +92,19 @@ La Auditoría A de `REV-020` está realizada: clasificó 22 entradas en G0 8, G1
 
 La [Auditoría B](./AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md) de `REV-002` y `REV-021` también está realizada. Inventaría 27 funciones y demuestra que 18 ya están resueltas en Quarto. Recomienda como hipótesis para 1.0 una cronología, dos mapas y un único diagrama integrado; clasifica como VIS4 el esquema del término con la evidencia actual y la red de vulnerabilidades/amortiguadores de 0.6. No crea recursos, no consulta fuentes externas y mantiene abiertas todas las decisiones.
 
+La [Auditoría C](./AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md) de `REV-003`, `REV-004` y las dependencias de `REV-007` queda igualmente completada. Distingue 40 referencias únicas representadas por 41 URL, comprueba las 25 entradas E y clasifica 25 necesidades REF y 13 límites QA. Recomienda un sistema híbrido CIT-B/C y define cuatro módulos de aparato; no completa metadatos externos, no implementa bibliografía o citas y mantiene abiertas las decisiones editoriales.
+
 ## 6. Decisiones del usuario
 
 | ID | Decisión del usuario | Notas de decisión |
 |---|---|---|
 | REV-001 | APROBADA EN PRINCIPIO 6A.2 | `DEC-007`, `DEC-008`, `DEC-009`, `DEC-015`; faltan datos concretos e implementación. |
 | REV-002 | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE | Mapa regional y local VIS3 ALTA; esquema del término VIS4; sin fuente externa seleccionada ni implementación. |
-| REV-003 | PENDIENTE | — |
-| REV-004 | PENDIENTE | — |
+| REV-003 | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE | 40 referencias/41 URL; 24 estructurables con datos internos y 16 sujetas a verificación externa; REF0 3, REF1 9, REF2 5, REF3 3, REF4 2, REF5 3; híbrido CIT-B/C recomendado. |
+| REV-004 | AUDITORÍA REALIZADA; DECISIÓN PENDIENTE | QA0 2, QA1 9, QA2 1, QA3 1; historia intelectual breve, modelos de cita y arquitectura del aparato pendientes de decisión. |
 | REV-005 | APROBADA 6A.2 | P3, prólogo, introducción y convenciones; implementación pendiente. |
 | REV-006 | PENDIENTE | — |
-| REV-007 | APROBADA 6A.2 | Colofón breve; depende de datos finales y parcialmente de la Auditoría C. |
+| REV-007 | APROBADA 6A.2 | Colofón breve; la Auditoría C confirma sus dependencias de identidad, roles, fecha, versión, URL, licencia y política de snapshot. |
 | REV-008 | PENDIENTE | — |
 | REV-009 | PENDIENTE | — |
 | REV-010 | PENDIENTE | — |
@@ -130,7 +133,7 @@ Las decisiones aprobadas en 6A.2 no equivalen a implementación. Las restantes `
 
 `REV-001`, `REV-005`, `REV-007`, `REV-013`, `REV-014`, `REV-015`, `REV-022`.
 
-6A.2 cierra la arquitectura del paquete: T1, P3, prólogo, introducción, apertura y colofón. Permanecen pendientes los datos concretos de créditos, copyright/licencia, fecha, URL e identidad de proyecto, además de la implementación y de dependencias de la Auditoría C.
+6A.2 cierra la arquitectura del paquete: T1, P3, prólogo, introducción, apertura y colofón. Permanecen pendientes los datos concretos de créditos, copyright/licencia, fecha, URL e identidad de proyecto, además de la implementación y de las decisiones derivadas de la Auditoría C.
 
 ### B. Arquitectura del volumen
 
@@ -142,7 +145,7 @@ El macroorden queda cerrado: se conserva el actual con dos rutas explícitas. F3
 
 `REV-003`, `REV-004`, `REV-020` y la parte histórica de `REV-021`.
 
-Fuentes, bibliografía, cuestiones abiertas, modelos de cita, glosario y posible investigación histórica.
+Auditorías A y C completadas: glosario, fuentes, bibliografía, cuestiones abiertas y modelos de cita están diagnosticados. Quedan las decisiones de alcance, las verificaciones externas expresamente autorizadas y la eventual investigación histórica.
 
 ### D. Orientación visual
 
@@ -179,7 +182,7 @@ Etiquetado PDF y validación formal PDF/UA o PDF/A.
 1. **Apertura e identidad editorial:** arquitectura decidida en 6A.2; quedan datos, dependencias e implementación.
 2. **Arquitectura de lectura:** macroorden decidido; F3 pendiente de prototipo y validación.
 3. **Aparato histórico y documental:** bibliografía/fuentes, cuestiones abiertas/modelos de cita y auditoría del glosario.
-4. **Orientación visual:** auditoría completada; quedan decisiones VIS, dependencias de la Auditoría C e implementación.
+4. **Orientación visual:** auditorías completadas; quedan decisiones VIS, requisitos bibliográficos y de atribución diagnosticados por la Auditoría C e implementación.
 5. **Defectos finales de composición:** TOC PDF, glosario alfabético e índices PDF.
 
 Son grupos de cuestiones que deben resolverse antes de decidir la publicación 1.0, no cinco tareas de implementación ya aprobadas.
@@ -204,14 +207,14 @@ investigación
 
 1. **Consolidación documental:** completada en 6A.1; fijó REV-001–REV-026 sin modificar la candidata ni investigar.
 2. **Decisiones editoriales puras:** completadas documentalmente en 6A.2; quedan pendientes los datos señalados, el prototipo F3 y toda implementación.
-3. **Tres auditorías especializadas:**
+3. **Tres auditorías especializadas:** completadas documentalmente, con decisiones pendientes:
    - glosario / Estudio Histórico / necesidad real de investigación: Auditoría A completada; decisiones pendientes;
    - gráficos, recuadros y cartografía: Auditoría B completada; decisiones pendientes;
-   - fuentes, bibliografía y aparatos narrativos.
+   - fuentes, bibliografía y aparatos narrativos: Auditoría C completada; decisiones pendientes.
 4. **Decisión definitiva:** clasificar cada cuestión como 1.0, 1.1+, no incorporar o investigación previa.
 5. **Implementación:** plan de cambios, operaciones canónicas cuando procedan, cambios Quarto, nueva candidata, validación, preview, aceptación humana y, solo después, 6B.
 
-Las Auditorías A y B completan los dos primeros componentes del paso 3 sin ejecutar investigación ni implementación. El siguiente trabajo es la Auditoría C; no se inicia aquí.
+Las Auditorías A, B y C completan el paso 3 sin ejecutar investigación ni implementación. El siguiente trabajo es la consolidación final de alcance y decisiones del usuario.
 
 ## 11. Lista propuesta para 1.0
 
@@ -242,7 +245,7 @@ Las mejoras M pueden incorporarse si el usuario lo decide y su coste/riesgo resu
 
 ## 14. Puerta editorial
 
-La candidata no debe modificarse todavía. Las decisiones editoriales 6A.2 y los diagnósticos de las Auditorías A/B quedan registrados, pero las decisiones sobre `REV-020`, `REV-002` y `REV-021`, la Auditoría C, los datos humanos y legales, el prototipo F3, el alcance definitivo y toda implementación siguen pendientes.
+La candidata no debe modificarse todavía. Las decisiones editoriales 6A.2 y los diagnósticos de las Auditorías A/B/C quedan registrados, pero las decisiones sobre `REV-002`–`REV-004`, `REV-020` y `REV-021`, los datos humanos y legales, el prototipo F3, el alcance definitivo y toda implementación siguen pendientes.
 
 ## 15. Datos editoriales pendientes del usuario
 
@@ -266,4 +269,4 @@ No se crea tag ahora. La candidata técnica `49ab2e1b1a58ca9201efab54b42a3125de7
 
 Ninguna `REV-*` se marca como implementada en esta operación.
 
-**SIGUIENTE PASO: Auditoría C — fuentes / bibliografía / aparatos narrativos.**
+**SIGUIENTE PASO: Consolidación final de alcance 1.0 y decisiones del usuario tras Auditorías A/B/C.**
