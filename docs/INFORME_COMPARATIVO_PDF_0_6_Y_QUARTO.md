@@ -1,24 +1,24 @@
 # Informe comparativo: composición 0.6 y candidata Quarto 1.0
 
-**Fecha de revisión:** 9 de octubre de 2026<br>
+**Fecha de revisión:** 10 de octubre de 2026<br>
 **Fase:** 6A.1 — revisión editorial final de la candidata 1.0<br>
 **Baseline de auditoría:** `088e4fcec91fa9723b5b0ffad4f65781a9c0af6c`<br>
 **Commit de la candidata técnica:** `49ab2e1b1a58ca9201efab54b42a3125de7326f8`<br>
-**Estado:** comparación editorial y funcional complementada por la primera ronda de observaciones del usuario; las clasificaciones consolidadas siguen pendientes de decisión humana.
+**Estado:** comparación editorial y funcional precisada por la Auditoría B; las clasificaciones consolidadas siguen pendientes de decisión humana.
 
 ## Conclusiones ejecutivas
 
 1. La candidata Quarto ya es un libro completo: contiene las seis partes, los capítulos 1–16, las 18 páginas facsimilares, las 35 unidades transcritas, las 40 respuestas modernizadas, cuatro aparatos generados y nueve índices. Las afirmaciones del informe anterior sobre capítulos o aparatos todavía inexistentes han quedado obsoletas.
 2. Quarto mejora de forma sustancial la fidelidad documental y la consulta: separa las 18 páginas completas de los 35 recortes, usa la Edición Crítica 3.6, conserva las seis secciones del aparato por unidad, genera una concordancia bidireccional y ofrece índices con enlaces HTML y páginas PDF reales.
 3. La Parte II de Quarto tiene mayor desarrollo y cautela que 0.6. Conserva la cobertura temática, aumenta de unas 15.122 a 15.758 palabras extraídas y elimina o reformula afirmaciones demasiado fuertes sobre comunales, autoconsumo, clima, copropiedad, ruedas y resiliencia.
-4. La principal pérdida material respecto a 0.6 es la cartografía. Las dos láminas de 0.6 cumplen una función de orientación regional, provincial y local que no tiene equivalente en la candidata.
+4. La principal pérdida material respecto a 0.6 es la cartografía. Las dos láminas de 0.6 cumplen una función de orientación regional, provincial y local que no tiene equivalente en la candidata. La inspección visual exhaustiva identifica además dos diagramas vectoriales en las páginas 45 y 49; Quarto conserva mejor su materia en prosa y tablas, pero no su visión relacional.
 5. La principal carencia bibliográfica es de sistema, no de número bruto de enlaces. Quarto conserva 41 URL únicas frente a 42 en 0.6 y la matriz identifica numerosas fuentes externas, pero `references.bib` sigue vacío y el capítulo del topónimo no ofrece al lector llamadas o referencias próximas que lo conduzcan a esas entradas.
 6. La trazabilidad D/C/I/E/L es más robusta como dato estructurado: la matriz reproduce 112 entradas y la concordancia conecta respuestas, unidades, transcripción y facsímil. Sin embargo, las marcas del cuerpo no enlazan directamente con la matriz y solo son visibles de forma sistemática en los capítulos 9–13.
 7. Faltan componentes que el Plan Maestro situó entre los preliminares y los aparatos narrativos: créditos y responsabilidades editoriales definitivas, cartografía, una presentación o guía preliminar consolidada, cronología visual, cuestiones abiertas, fuentes/bibliografía, historia de versiones y modelos de cita.
 8. La candidata conserva todavía metadatos de desarrollo: subtítulo «Edición en desarrollo», versión `0.1.0-dev`, estado `development`, autor PDF vacío y ausencia de licencia, copyright, fecha editorial y URL canónica. Estos valores no deben llegar sin decisión a una publicación 1.0.
 9. No debe restaurarse todo lo que aparecía en 0.6. Su facsímil solo por unidades, sus localizadores provisionales y varias formulaciones históricas superadas han sido sustituidos por soluciones equivalentes o mejores.
 10. La matriz de decisiones se mantiene separada en [REVISION_EDITORIAL_CANDIDATA_1_0.md](./REVISION_EDITORIAL_CANDIDATA_1_0.md). Ninguna clasificación B/M/F/N equivale a una decisión del usuario.
-11. Una revisión posterior del usuario amplió el alcance: detectó cuestiones de apertura y arquitectura, contexto del glosario, recursos gráficos y defectos visibles del TOC e índices PDF. Esta comparación no se presenta ya como inventario exhaustivo de todo recurso visual o problema de composición.
+11. Una revisión posterior del usuario amplió el alcance: detectó cuestiones de apertura y arquitectura, contexto del glosario, recursos gráficos y defectos visibles del TOC e índices PDF. La [Auditoría B](./AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md) contiene el inventario funcional exhaustivo de cartografía, cronología, diagramas, recuadros y tablas explicativas.
 
 ## 1. Alcance, autoridad y baseline
 
@@ -68,7 +68,7 @@ Se combinaron:
 
 No se hizo OCR porque ambos PDF ofrecen texto extraíble. No se realizó investigación histórica externa ni se verificó de nuevo la corrección científica de cada fuente citada. El recuento de «tablas» de 0.6 no es comparable de forma fiable porque ese PDF no expone estructura semántica; no se fuerza una cifra.
 
-El inventario de `pdfimages` cuenta imágenes incrustadas, pero no identifica necesariamente gráficos, esquemas o recuadros compuestos como recursos vectoriales. Por ello no permite por sí solo concluir que todos los recursos explicativos de 0.6 o del Plan de composición 0.5 hayan sido inventariados. Esa comparación visual específica queda pendiente en `REV-021`.
+El inventario de `pdfimages` cuenta imágenes incrustadas, pero no identifica gráficos, esquemas o recuadros compuestos como recursos vectoriales. La Auditoría B confirmó el límite: los dos diagramas explicativos de 0.6, en las páginas 45 y 49, no aparecen entre sus 73 imágenes. El inventario visual específico queda resuelto en `REV-021`, aunque su decisión e implementación continúan pendientes.
 
 Los recuentos de marcas se refieren a grupos visibles con forma `[D:`, `[C:`, `[I:`, `[E:`, `[L:` o combinaciones. Una marca puede contener varios identificadores y no equivale a una entrada de la matriz.
 
@@ -86,6 +86,7 @@ Los recuentos de marcas se refieren a grupos visibles con forma `[D:`, `[C:`, `[
 | Índices | 9 | 9 | índice general |
 | Entradas de los índices | 129 | 164 | recuento de entradas; los índices 6, 7 y 9 son más amplios en Quarto |
 | Imágenes incrustadas | 73 | 53 | `pdfimages -list`; 0.6 = 3 cartográficas + 35 facsimilares + 35 de transcripción; Quarto = 18 + 35; no incluye necesariamente recursos vectoriales |
+| Diagramas conceptuales vectoriales | 2 | 0 | inspección visual; 0.6 pp. 45 y 49; Quarto resuelve gran parte de su contenido en prosa y tablas |
 | Anotaciones URL | 154 | 91 | `pdfinfo -url`; incluye repeticiones |
 | URL externas únicas | 42 | 41 | normalización exacta de destinos URL |
 | Notas de la edición modernizada | 39 | 39 | 35 numéricas y 4 semánticas |
@@ -313,6 +314,8 @@ Ninguna versión es PDF etiquetado. La candidata no declara PDF/UA, PDF/A ni con
 | Elemento de 0.6 | Aporte | Sustitución actual | ¿Genera REV-*? |
 |---|---|---|---|
 | Dos láminas cartográficas | orientación a tres escalas | ninguna | sí, `REV-002` |
+| Modelo socioeconómico integrado vectorial | visión conjunta de relaciones | capítulo 13 y tablas, sin diagrama | sí, `REV-021`; rediseño, no copia |
+| Red de vulnerabilidades y amortiguadores | síntesis relacional visual | marco más riguroso en capítulo 13 | no recuperar en su forma 0.6; `REV-009`, `REV-021` |
 | Fuentes visibles junto al topónimo y apéndice bibliográfico | verificabilidad pública | matriz distante y URL dispersas | sí, `REV-003` |
 | Cuestiones abiertas | síntesis legible de límites | matriz L y cautelas dispersas | sí, `REV-004` |
 | Historia de versiones | identifica base y evolución | informe externo al libro | sí, `REV-004` |

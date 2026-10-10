@@ -1,7 +1,7 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 9 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; candidata local intacta, decisiones 6A.2 registradas y Auditoría A completada sin implementación<br>
+**Actualizado:** 10 de octubre de 2026<br>
+**Estado global:** Fase 6 en curso; candidata local intacta, decisiones 6A.2 registradas y Auditorías A/B completadas sin implementación<br>
 **Fase actual:** Fase 6A — auditorías especializadas previas a implementación, nueva candidata, correcciones y preview<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -20,9 +20,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 6. `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md`;
 7. `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md`;
 8. `docs/DECISIONES_EDITORIALES_6A_2.md`;
-9. `.github/instructions/publication.instructions.md`;
-10. `publication/README.md`;
-11. `docs/ESPECIFICACION_BOOTSTRAP_PUBLICATION.md` como registro de aceptación de la Fase 2A.
+9. `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md`;
+10. `docs/AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md`;
+11. `.github/instructions/publication.instructions.md`;
+12. `publication/README.md`;
+13. `docs/ESPECIFICACION_BOOTSTRAP_PUBLICATION.md` como registro de aceptación de la Fase 2A.
 
 ## Estado comprobado
 
@@ -55,6 +57,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Revisión editorial 6A.1 completada contra la composición 0.6 y posteriormente consolidada con la primera ronda de observaciones del usuario. `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md` conserva 26 observaciones y `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md` la referencia de trabajo que originó la secuencia.
 - Decisiones 6A.2 registradas en `docs/DECISIONES_EDITORIALES_6A_2.md`: doce decisiones cerradas editorialmente, dos cerradas en principio con datos pendientes y F3 seleccionada únicamente para prototipo. Ninguna está implementada y la candidata permanece intacta.
 - Auditoría A completada en `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md`: 22 entradas clasificadas en G0 8, G1 7, G2 0, G3 4 y G4 3; recomendación conceptual GH-B selectiva y 6 candidatos provisionales. No se investigó fuera del repositorio, no se modificaron fuentes canónicas y las decisiones de `REV-020` permanecen pendientes.
+- Auditoría B completada en `docs/AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md`: 27 recursos funcionales clasificados en VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; cinco prioridades altas, una media y una baja. Recomienda como hipótesis para 1.0 cronología, mapa regional, mapa local y un diagrama integrado, sin crear recursos ni consultar fuentes externas. Las decisiones de `REV-002` y `REV-021` permanecen pendientes.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -70,11 +73,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | candidata local validada e intacta; 6A.2 y Auditoría A documentadas; quedan decisiones de A, auditorías B/C, datos finales, prototipo F3, implementación, nueva candidata, preview remoto y aceptación antes de 6B |
+| 6. Preview y publicación 1.0 | en curso | candidata local validada e intacta; 6A.2 y Auditorías A/B documentadas; quedan decisiones de A/B, Auditoría C, datos finales, prototipo F3, implementación, nueva candidata, preview remoto y aceptación antes de 6B |
 
 ## Siguiente tarea exacta
 
-Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidata.
+Auditoría C — fuentes / bibliografía / aparatos narrativos.
 
 ### Descomposición operativa de la Fase 4
 
@@ -96,12 +99,12 @@ Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidat
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | candidata reproducible y validada; Auditoría A completada; faltan sus decisiones, auditorías B/C, datos finales, prototipo F3, implementación, nueva candidata y, finalmente, proveedor y preview remoto para aceptación humana |
+| 6A | en curso | candidata reproducible y validada; Auditorías A/B completadas; faltan sus decisiones, Auditoría C, datos finales, prototipo F3, implementación, nueva candidata y, finalmente, proveedor y preview remoto para aceptación humana |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; doce cerradas, dos cerradas en principio con datos pendientes y F3 como hipótesis de prototipo; ninguna implementación iniciada |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo recomendado; 6 candidatos provisionales; decisiones pendientes |
-| Auditoría B | siguiente | gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidata |
-| Auditoría C | pendiente | fuentes, bibliografía y aparatos narrativos |
+| Auditoría B | completada | 27 funciones: VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; 5 altas, 1 media y 1 baja; sin recursos generados ni investigación externa |
+| Auditoría C | siguiente | fuentes, bibliografía y aparatos narrativos |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
@@ -377,7 +380,7 @@ Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidat
 - Preview local: smoke test temporal en `http://127.0.0.1:4319/` con páginas, búsqueda, assets y PDF en `200`; el servidor quedó cerrado. No existe preview remoto ni URL persistente.
 - Proveedor: no hay `netlify.toml`, Pages, workflow de despliegue ni decisión inequívoca. Netlify sigue siendo la preferencia del Plan Maestro y GitHub Pages la alternativa; esta puerta permanece pendiente después de la decisión editorial sobre `REV-*`.
 - Seguridad e integridad: la salida pública no contiene `project/`, manuscrito fuente, PDF 0.6, QMD, scripts, configuración sensible, secretos ni rutas locales. `project/`, `plugins/`, `main` y `origin/main` permanecen intactos. No se hizo push, despliegue, merge, tag, release ni publicación definitiva.
-- Estado: candidata técnicamente válida; 6A y Fase 6 permanecen abiertas. Cerradas documentalmente 6A.2 y la Auditoría A, la puerta inmediata es la Auditoría B antes de cualquier implementación, corrección o preview remoto.
+- Estado: candidata técnicamente válida; 6A y Fase 6 permanecen abiertas. Cerradas documentalmente 6A.2 y las Auditorías A/B, la puerta inmediata es la Auditoría C antes de cualquier implementación, corrección o preview remoto.
 
 ## Estado comprobado de 6A.1
 
@@ -415,6 +418,18 @@ Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidat
 - Decisiones pendientes: modelo GH, alcance para 1.0, selección de G1, tratamiento de G3 y candidatos. `REV-020` permanece abierto como «auditoría realizada; decisión pendiente»; `REV-003`, `REV-004` y `REV-021` conservan su decisión.
 - Puerta inmediata: Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidata.
 
+## Cierre diagnóstico de la Auditoría B
+
+- Baseline: `7be36f60442e46bd5a4c74775e4ed5a5a8e7ba23` (`docs(publication): audit glossary historical context`), con `feature/quarto-book` y su upstream coincidentes al inicio; `main == origin/main == e81dc9239ac8dbabfe77168a50ef98c4d3b79170`.
+- Inspección: se cubrieron visualmente las 259 páginas de 0.6 y las 334 de la candidata. En 0.6 se identificaron dos láminas cartográficas con tres paneles, dos diagramas conceptuales vectoriales y ocho familias de tablas/matrices explicativas; la cronología visual y los ocho recuadros no estaban implementados como sistemas autónomos.
+- Producto: `docs/AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md` registra 27 funciones con IDs VIS-001–VIS-027 y una sola clase principal por recurso.
+- Resultado: VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; prioridades aplicables: cinco altas, una media y una baja. La candidata resuelve la mayoría de funciones mediante 44 tablas, prosa y aparatos más rigurosos.
+- Propuesta diagnóstica para 1.0: cronología VIS1, mapa regional VIS3, mapa local VIS3 y diagrama integrado VIS1; la forma de límites/preguntas abiertas VIS2 queda para decisión coordinada con Auditoría C. El esquema Concejo/municipio es VIS1 media y las listas de recursos VIS2 baja.
+- No recuperar: esquema del término con la evidencia actual y red antigua de vulnerabilidades/amortiguadores; tampoco gráficos que reintroduzcan propiedad comunal uniforme, autoconsumo, copropiedad amortiguadora, ocho ruedas fijas, población total, causalidad molinera o resiliencia observada.
+- Límites: no se creó mapa, cronología, gráfico, diagrama o recuadro; no se consultó web, cartografía, licencia ni bibliografía externa; no se ejecutó Quarto ni tests; no se modificaron `project/`, `publication/`, `plugins/`, `tests/`, `.github/`, los PDF ni la candidata.
+- Decisiones pendientes: alcance visual de 1.0, tratamiento de VIS-008, VIS-019 y VIS-006, y posterior selección de bases cartográficas. `REV-002` y `REV-021` quedan como «auditoría realizada; decisión pendiente».
+- Puerta inmediata: Auditoría C — fuentes / bibliografía / aparatos narrativos.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -425,4 +440,4 @@ Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidat
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/CANDIDATA_PUBLICACION_1_0.md`, `docs/INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md`, `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md`, `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md`, `docs/DECISIONES_EDITORIALES_6A_2.md`, `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Auditoría B — gráficos / cartografía / recuadros: 0.6 + Plan 0.5 + candidata. No inicies la Auditoría C, no implementes las decisiones 6A.2 ni las recomendaciones de la Auditoría A, no modifiques fuentes canónicas o la candidata, no configures el preview remoto, no ejecutes 6B, no publiques 1.0 y no crees tag/release.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/CANDIDATA_PUBLICACION_1_0.md`, `docs/INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md`, `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md`, `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md`, `docs/DECISIONES_EDITORIALES_6A_2.md`, `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md`, `docs/AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente la Auditoría C — fuentes / bibliografía / aparatos narrativos. No implementes las decisiones 6A.2 ni las recomendaciones de las Auditorías A/B, no modifiques fuentes canónicas o la candidata, no configures el preview remoto, no ejecutes 6B, no publiques 1.0 y no crees tag/release.
