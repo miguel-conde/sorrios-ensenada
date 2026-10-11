@@ -3,7 +3,7 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00 cerrado y PKG-01 completado e integrado
+**Estado:** plan operativo; PKG-00 cerrado y PKG-01–02 completados e integrados
 
 ## 1. Reglas generales
 
@@ -85,6 +85,14 @@ regeneración corresponde a PKG-10.
 
 **Objetivo:** verificar las 16 referencias parciales o mínimas.
 
+**Estado:** **COMPLETADO E INTEGRADO CON INCIDENCIAS ABIERTAS**. Las 16/16
+referencias fueron tratadas en
+[VERIFICACION_BIBLIOGRAFICA_PKG_02_V1_0.md](./VERIFICACION_BIBLIOGRAFICA_PKG_02_V1_0.md)
+y el cierre/triage consta en
+[CIERRE_PKG_02_VERIFICACION_BIBLIOGRAFICA.md](./CIERRE_PKG_02_VERIFICACION_BIBLIOGRAFICA.md).
+`INC-BIB-001` y `INC-BIB-002` permanecen abiertas conforme a
+[PLAN_RESOLUCION_INCIDENCIAS_PKG_02.md](./PLAN_RESOLUCION_INCIDENCIAS_PKG_02.md).
+
 Es **verificación bibliográfica**, no investigación histórica. Debe comprobar:
 
 - autor o responsable;
@@ -99,7 +107,11 @@ Si aparece una contradicción sustantiva con una afirmación E, se detiene esa
 incidencia. No se modifica silenciosamente `project/`.
 
 **Salida:** dossier de verificación, procedencia de cada dato, incidencias y
-registros listos para `references.bib`.
+registros preparados para `references.bib`. Resultado: catorce verificadas con
+ajustes, una verificación parcial y una incompatibilidad de uso; S1 = 13,
+S2 = 1, S3 = 1 y S4 = 1. `references.bib` continúa vacío y pendiente. La
+correspondencia final fuente/uso de las dos incidencias deberá cerrarse antes
+de GATE-01 y condiciona PKG-08, pero no bloquea iniciar PKG-03.
 
 ### PKG-03 — EXT-B cartografía
 
@@ -163,7 +175,7 @@ elimina contenido. Si no existe una mejora material y segura, el peso no bloquea
 | Paquete | Estado | Dependencia conservada |
 |---|---|---|
 | PKG-01 | **COMPLETADO E INTEGRADO** | Commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; propagación a publicación pendiente. |
-| PKG-02 | **READY** | Ninguna dependencia de los DAT para iniciar la verificación. |
+| PKG-02 | **COMPLETADO E INTEGRADO CON INCIDENCIAS ABIERTAS** | 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01; plan de resolución documentado; `references.bib` vacío y pendiente. |
 | PKG-03 | **READY CON DEPENDENCIA LEGAL/LICENCIA DE LA CARTOGRAFÍA** | Procedencia, licencia, atribución y redistribución de cada asset. |
 | PKG-04 | **READY** | Decisión humana posterior sobre F3 en GATE-01. |
 | PKG-05 | **READY CON RESULTADO CANÓNICO PKG-01; DEPENDENCIA F3 CONOCIDA** | Puede usar el Glosario canónico final de PKG-01; REV-024 y el orden alfabético publicado siguen sin implementar; medición coordinada con F3. |
@@ -183,7 +195,7 @@ Decisiones de salida:
 
 - aceptación final de F3 o alternativa;
 - aceptación registrada de `establecimiento del suelo` y `arenta` en PKG-01;
-- resolución de incidencias bibliográficas;
+- resolución de `INC-BIB-001` e `INC-BIB-002` conforme al plan aprobado;
 - aceptación de los dos mapas;
 - aceptación del resultado de optimización.
 
@@ -349,7 +361,7 @@ de integración.
 |---|---|---|---|
 | PKG-00 | GATE-00 — cerrado con diferimientos controlados | PKG-01–05 | PKG-06, PKG-09 y citas finales |
 | PKG-01 | GATE-00 — completado e integrado | PKG-00, PKG-02–05 | Regeneración de glosario; GATE-01 |
-| PKG-02 | GATE-00 | PKG-00–01, PKG-03–05 | PKG-08; GATE-01 |
+| PKG-02 | GATE-00 — completado e integrado con dos incidencias abiertas | PKG-03–05 | Cierre de correspondencia fuente/uso en PKG-08; GATE-01 |
 | PKG-03 | GATE-00 | PKG-00–02, PKG-04–05 | PKG-07; GATE-01 |
 | PKG-04 | GATE-00 | PKG-00–03, PKG-05 | Política final del manuscrito; GATE-01 |
 | PKG-05 | GATE-00 | PKG-00–04 | GATE-01 y PKG-10 |
@@ -427,7 +439,8 @@ chore(release): publish version 1.0
 ### GATE-01 — Pretrabajos aceptados
 
 - PKG-01 canónico validado.
-- PKG-02 sin incidencias bibliográficas abiertas que bloqueen integración.
+- PKG-02 integrado; `INC-BIB-001` e `INC-BIB-002` cerradas antes de aceptar
+  GATE-01 y de implementar la correspondencia final fuente/uso en PKG-08.
 - Mapas de PKG-03 aceptados y licenciados.
 - F3 decidido humanamente.
 - REV-023–025 tienen solución comprobada.
@@ -466,7 +479,8 @@ chore(release): publish version 1.0
 - [ ] 1. Alcance aprobado.
 - [ ] 2. Inputs editoriales resueltos.
 - [ ] 3. Glosario canónico actualizado.
-- [ ] 4. Bibliografía verificada.
+- [x] 4. Bibliografía verificada; dos incidencias de correspondencia abiertas
+  con resolución obligatoria antes de GATE-01.
 - [ ] 5. Mapas documentados y licenciados.
 - [ ] 6. F3 decidido.
 - [ ] 7. Defectos REV-023–025 corregidos.
@@ -492,4 +506,5 @@ Los defectos de validación pueden producir CR correctivas, pero no autorizan
 nuevos capítulos, investigaciones, visualizaciones o aparatos. La autoridad y el
 procedimiento de cada cambio siguen siendo los de su paquete.
 
-**SIGUIENTE PAQUETE RECOMENDADO: PKG-02 — Verificación bibliográfica.**
+**SIGUIENTE PAQUETE RECOMENDADO: PKG-03 — Cartografía, manteniendo
+INC-BIB-001 e INC-BIB-002 abiertas hasta su resolución antes de GATE-01.**

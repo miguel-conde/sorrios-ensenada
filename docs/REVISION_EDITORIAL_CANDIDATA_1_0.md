@@ -2,7 +2,7 @@
 
 **Fecha:** 10 de octubre de 2026<br>
 **Fase:** 6A — ejecución del alcance 1.0<br>
-**Estado:** DEC-001–DEC-034 cerradas; PKG-01 resuelto en fuente canónica y pendiente de propagación a candidata<br>
+**Estado:** DEC-001–DEC-034 cerradas; PKG-01 y PKG-02 integrados; propagación editorial, citas y bibliografía pendientes<br>
 **Cierre humano:** [CIERRE_ALCANCE_V1_0.md](./CIERRE_ALCANCE_V1_0.md)<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Plan operativo:** [PLAN_EJECUCION_V1_0.md](./PLAN_EJECUCION_V1_0.md)
@@ -33,7 +33,7 @@ intacto en esta operación documental.
 |---|---|---|---|---|
 | REV-001 | Identidad, créditos y metadatos | La candidata conserva identidad de desarrollo y carece de datos humanos y legales finales. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-007–009 y DEC-015. | DAT-001–010 según PKG-00/09; no inventar valores. |
 | REV-002 | Cartografía | Faltan orientación regional y local; el término histórico no puede reconstruirse. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-021; mapa regional y local. | PKG-03: base, procedencia, licencia, atribución, escala, leyenda y accesibilidad. |
-| REV-003 | Fuentes y bibliografía | Hay 40 referencias/41 URL; 16 necesitan verificación y `references.bib` está vacío. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-025–028 y DEC-032. | PKG-02 y PKG-08; CIT-B/C, bibliografía visible, citas próximas y TOP-006 solo en matriz. |
+| REV-003 | Fuentes y bibliografía | Las 16 referencias incompletas fueron tratadas en PKG-02: 14 verificadas con ajustes, una parcial y una incompatibilidad de uso; `INC-BIB-001` e `INC-BIB-002` siguen abiertas y `references.bib` continúa vacío. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-025–028 y DEC-032; verificación bibliográfica completada, correspondencia fuente/uso condicionada. | Resolver ambas incidencias antes de GATE-01; PKG-08 sigue pendiente para CIT-B/C, bibliografía visible, citas próximas y TOP-006 solo en matriz. |
 | REV-004 | Aparatos narrativos | Nueve QA1, historia intelectual y once objetos citables están diagnosticados. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-029–031. | QA1 compacto; historia breve; modelos por familias; datos finales de identidad/cita. |
 | REV-005 | Preliminares y orientación | P3, introducción y convenciones están decididos; la cronología es viable con datos internos. | **INCLUIR EN 1.0** — DEC-001, DEC-003–005 y DEC-020. | Implementación en PKG-06/07. |
 | REV-006 | D/C/I/E/L | La cadena existe, pero las marcas no enlazan de forma homogénea con la matriz. | **INCLUIR EN 1.0** — DEC-033. | Enlaces, retornos y política coherente sin saturación. |
@@ -73,7 +73,8 @@ intacto en esta operación documental.
 
 - DAT-001–DAT-010: valores humanos y editoriales concretos.
 - Resultado del prototipo F3 y su aceptación humana.
-- Incidencias que aparezcan al verificar las 16 referencias.
+- Cierre de `INC-BIB-001` e `INC-BIB-002` antes de GATE-01, sin sustituir
+  fuentes ni parchear afirmaciones canónicas desde `publication/`.
 - Selección y aceptación de bases cartográficas.
 - Resultado técnico de la optimización segura.
 
@@ -104,4 +105,5 @@ REV-024 continúa pendiente de PKG-05. El tag solo puede aparecer en PKG-13,
 después de candidata nueva, validación, preview, aceptación humana y autorización
 explícita de Fase 6B.
 
-**SIGUIENTE PASO: PKG-02 — Verificación bibliográfica.**
+**SIGUIENTE PASO: PKG-03 — Cartografía, manteniendo INC-BIB-001 e
+INC-BIB-002 abiertas hasta su resolución antes de GATE-01.**

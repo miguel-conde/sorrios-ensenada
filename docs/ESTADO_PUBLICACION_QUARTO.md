@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 11 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; PKG-00 cerrado y PKG-01 completado e integrado; la candidata anterior es baseline pre-PKG-01<br>
-**Fase actual:** Fase 6A — PKG-02, verificación bibliográfica<br>
+**Estado global:** Fase 6 en curso; PKG-00 cerrado y PKG-01–02 completados e integrados; la candidata anterior no está regenerada<br>
+**Fase actual:** Fase 6A — PKG-03, cartografía, con dos incidencias bibliográficas abiertas hasta GATE-01<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -30,6 +30,10 @@ Una sesión nueva de Copilot debe leer, en este orden:
     editoriales aprobados.
 16. `docs/CIERRE_PKG_01_GLOSARIO_CANONICO.md` para el cierre de la operación
     canónica y su propagación pendiente.
+17. `docs/CIERRE_PKG_02_VERIFICACION_BIBLIOGRAFICA.md` para el cierre, el
+    triage y la integración de PKG-02.
+18. `docs/PLAN_RESOLUCION_INCIDENCIAS_PKG_02.md` para conservar abiertas y
+    resolver antes de GATE-01 `INC-BIB-001` e `INC-BIB-002`.
 
 ## Estado comprobado
 
@@ -75,6 +79,19 @@ Una sesión nueva de Copilot debe leer, en este orden:
   El Glosario canónico tiene ahora 28 entradas: siete G1 mejoradas y seis altas,
   incluidas las condicionales `establecimiento del suelo` y `arenta`. No se
   investigó G3 y no se amplió G4.
+- PKG-02 completado e integrado mediante fast-forward en
+  `9dbc0f8e7147c5ffa637f819ba17cfad5d19309d`. El dossier trata 16/16
+  referencias: catorce verificadas con ajustes, una verificación parcial y una
+  incompatibilidad de uso; S1 = 13, S2 = 1, S3 = 1 y S4 = 1.
+- `INC-BIB-001` permanece abierta como BIB-A, severidad MEDIA y bloqueo de 1.0
+  CONDICIONAL. R29/`TRA-005` sostienen el dato local; la correspondencia externa
+  de `TRA-006` debe resolverse antes de GATE-01.
+- `INC-BIB-002` permanece abierta como MIX-B, severidad MEDIA y bloqueo de 1.0
+  CONDICIONAL. R21/`DEM-001` sostienen el dato local; `DEM-005` debe separar el
+  nivel D del contexto E/I antes de GATE-01.
+- Las dos incidencias tienen plan de resolución y no bloquean iniciar PKG-03.
+  No se buscaron fuentes sustitutivas ni se modificó ninguna autoridad
+  canónica.
 - Fuente canónica actual: `project/` incluye PKG-01. `publication/` no fue
   regenerada ni modificada, por lo que el aparato publicado aún no propaga el
   nuevo Glosario.
@@ -85,6 +102,9 @@ Una sesión nueva de Copilot debe leer, en este orden:
   vigente del estado canónico actual.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
+- El placeholder `references.bib` continúa vacío y sin registros; la
+  bibliografía final, CIT-B/C y las citas próximas siguen pendientes de
+  PKG-08. La publicación no fue regenerada en PKG-02.
 
 ## Fases
 
@@ -98,11 +118,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | PKG-00 cerrado y PKG-01 integrado; quedan PKG-02–PKG-12, aceptación humana y PKG-13/Fase 6B |
+| 6. Preview y publicación 1.0 | en curso | PKG-00 cerrado y PKG-01–02 integrados; quedan PKG-03–PKG-12, cierre de dos incidencias antes de GATE-01, aceptación humana y PKG-13/Fase 6B |
 
 ## Siguiente tarea exacta
 
-`SIGUIENTE PASO: PKG-02 — Verificación bibliográfica.`
+`SIGUIENTE PASO: PKG-03 — Cartografía, manteniendo INC-BIB-001 e INC-BIB-002 abiertas hasta su resolución antes de GATE-01.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -124,7 +144,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | alcance y plan aprobados; PKG-00 cerrado y PKG-01 integrado; siguiente paquete PKG-02 |
+| 6A | en curso | alcance y plan aprobados; PKG-00 cerrado y PKG-01–02 integrados; dos incidencias bibliográficas abiertas; siguiente paquete PKG-03 |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; doce cerradas, dos cerradas en principio con datos pendientes y F3 como hipótesis de prototipo; ninguna implementación iniciada |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
@@ -134,6 +154,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 6A.4 | completada documentalmente | contrato de alcance, backlog, exclusiones, PKG-00–13, GATE-00–05 y control `CR-V1-*` registrados; candidata intacta |
 | PKG-00 | completado | inventario, decisiones humanas y cierre documental completados; autoría y datos aplicables resueltos; diferimientos controlados |
 | PKG-01 | completado e integrado | commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; propagación a la publicación pendiente |
+| PKG-02 | completado e integrado con incidencias abiertas | commit `9dbc0f8e7147c5ffa637f819ba17cfad5d19309d`; 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01; `references.bib` vacío y pendiente |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
@@ -526,6 +547,26 @@ Una sesión nueva de Copilot debe leer, en este orden:
   candidata preeditorial permanecen intactos. No se ejecutaron investigación,
   verificación bibliográfica, cartografía, Quarto, render ni PKG-01–PKG-05.
 
+## Cierre documental de PKG-02
+
+- Base e integración: `pkg-02/verificacion-bibliografica-v1` partió de
+  `6e16d7aa12832ebd8fccc17f0988c90f00ad8357`; su único commit,
+  `9dbc0f8e7147c5ffa637f819ba17cfad5d19309d`, se integró en
+  `feature/quarto-book` mediante fast-forward estricto.
+- Cobertura: 16/16 referencias de Auditoría C tratadas; catorce verificadas con
+  ajustes, una parcial y una incompatibilidad de uso; S1 = 13, S2 = 1, S3 = 1
+  y S4 = 1.
+- Triage: `INC-BIB-001` = BIB-A y `INC-BIB-002` = MIX-B, ambas de severidad
+  MEDIA y bloqueo de 1.0 CONDICIONAL. Los datos locales de R29 y R21 permanecen
+  sustentados; las incidencias afectan a la correspondencia y separación de
+  las capas E/I.
+- Resolución: operación canónica independiente antes de GATE-01 y propagación
+  bibliográfica posterior en PKG-08. No requieren resolución inmediata antes
+  de PKG-03 ni autorizan nuevas fuentes o investigación histórica.
+- Integridad: no se modificaron `project/`, `publication/`, `plugins/`,
+  `tests/`, `.github/` ni los PDF; no se ejecutaron Quarto/render, push, tag o
+  release. El placeholder `references.bib` sigue vacío y sin cambios.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -536,4 +577,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_ALCANCE_V1_0.md`, `docs/CIERRE_PKG_00_INPUTS_EDITORIALES.md`, `docs/CIERRE_PKG_01_GLOSARIO_CANONICO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente PKG-02 — Verificación bibliográfica — sin convertirla en investigación histórica ni modificar silenciosamente `project/`. No amplíes el alcance sin una CR-V1 aprobada; no hagas push ni tag.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_ALCANCE_V1_0.md`, `docs/CIERRE_PKG_00_INPUTS_EDITORIALES.md`, `docs/CIERRE_PKG_01_GLOSARIO_CANONICO.md`, `docs/CIERRE_PKG_02_VERIFICACION_BIBLIOGRAFICA.md`, `docs/PLAN_RESOLUCION_INCIDENCIAS_PKG_02.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente PKG-03 — Cartografía — y conserva abiertas `INC-BIB-001` e `INC-BIB-002` hasta una operación canónica independiente antes de GATE-01. No amplíes el alcance sin una CR-V1 aprobada; no hagas push ni tag.
