@@ -125,7 +125,8 @@ fecha, accesibilidad, texto alternativo, redistribución y reproducibilidad.
 no demostrados.
 
 **Salida:** assets, fuentes, metadatos, atribuciones y memoria de elaboración
-listos para revisión. No se integran antes de GATE-01.
+completados e integrados en `feature/quarto-book` mediante PKG-03. Los mapas no
+se insertan en capítulos ni en las salidas antes de PKG-07, después de GATE-01.
 
 ### PKG-04 — Prototipo F3
 
@@ -176,8 +177,8 @@ elimina contenido. Si no existe una mejora material y segura, el peso no bloquea
 |---|---|---|
 | PKG-01 | **COMPLETADO E INTEGRADO** | Commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; propagación a publicación pendiente. |
 | PKG-02 | **COMPLETADO E INTEGRADO CON INCIDENCIAS ABIERTAS** | 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01; plan de resolución documentado; `references.bib` vacío y pendiente. |
-| PKG-03 | **READY CON DEPENDENCIA LEGAL/LICENCIA DE LA CARTOGRAFÍA** | Procedencia, licencia, atribución y redistribución de cada asset. |
-| PKG-04 | **READY** | Decisión humana posterior sobre F3 en GATE-01. |
+| PKG-03 | **COMPLETADO E INTEGRADO** | Mapas regional y local APTO; procedencia, licencia, atribución, redistribución, accesibilidad y reproducibilidad verificadas. Inserción editorial pendiente de PKG-07. |
+| PKG-04 | **BLOQUEADO POR CR-V1-001** | Restaurar primero la compatibilidad del analizador GH-B y la suite general; después prototipo F3 y decisión humana en GATE-01. |
 | PKG-05 | **READY CON RESULTADO CANÓNICO PKG-01; DEPENDENCIA F3 CONOCIDA** | Puede usar el Glosario canónico final de PKG-01; REV-024 y el orden alfabético publicado siguen sin implementar; medición coordinada con F3. |
 
 ### Revisión de pretrabajos antes de GATE-01
@@ -362,8 +363,8 @@ de integración.
 | PKG-00 | GATE-00 — cerrado con diferimientos controlados | PKG-01–05 | PKG-06, PKG-09 y citas finales |
 | PKG-01 | GATE-00 — completado e integrado | PKG-00, PKG-02–05 | Regeneración de glosario; GATE-01 |
 | PKG-02 | GATE-00 — completado e integrado con dos incidencias abiertas | PKG-03–05 | Cierre de correspondencia fuente/uso en PKG-08; GATE-01 |
-| PKG-03 | GATE-00 | PKG-00–02, PKG-04–05 | PKG-07; GATE-01 |
-| PKG-04 | GATE-00 | PKG-00–03, PKG-05 | Política final del manuscrito; GATE-01 |
+| PKG-03 | GATE-00 — completado e integrado | PKG-00–02, PKG-04–05 | PKG-07; GATE-01 |
+| PKG-04 | GATE-00; `CR-V1-001` cerrada | PKG-00–03, PKG-05 | Política final del manuscrito; GATE-01 |
 | PKG-05 | GATE-00 | PKG-00–04 | GATE-01 y PKG-10 |
 | PKG-06 | GATE-01; inputs aplicables de PKG-00 | PKG-07–09 con ramas/worktrees separados | GATE-02 |
 | PKG-07 | GATE-01; PKG-03 aceptado | PKG-06, PKG-08–09 | GATE-02 |
@@ -442,6 +443,7 @@ chore(release): publish version 1.0
 - PKG-02 integrado; `INC-BIB-001` e `INC-BIB-002` cerradas antes de aceptar
   GATE-01 y de implementar la correspondencia final fuente/uso en PKG-08.
 - Mapas de PKG-03 aceptados y licenciados.
+- `CR-V1-001` cerrada antes de iniciar PKG-04; suite general de nuevo en PASS.
 - F3 decidido humanamente.
 - REV-023–025 tienen solución comprobada.
 - Resultado de peso documentado.
@@ -481,7 +483,8 @@ chore(release): publish version 1.0
 - [ ] 3. Glosario canónico actualizado.
 - [x] 4. Bibliografía verificada; dos incidencias de correspondencia abiertas
   con resolución obligatoria antes de GATE-01.
-- [ ] 5. Mapas documentados y licenciados.
+- [x] 5. Mapas documentados y licenciados; assets preparados, integración
+  editorial pendiente de PKG-07.
 - [ ] 6. F3 decidido.
 - [ ] 7. Defectos REV-023–025 corregidos.
 - [ ] 8. Apertura y preliminares integrados.
@@ -506,5 +509,14 @@ Los defectos de validación pueden producir CR correctivas, pero no autorizan
 nuevos capítulos, investigaciones, visualizaciones o aparatos. La autoridad y el
 procedimiento de cada cambio siguen siendo los de su paquete.
 
-**SIGUIENTE PAQUETE RECOMENDADO: PKG-03 — Cartografía, manteniendo
-INC-BIB-001 e INC-BIB-002 abiertas hasta su resolución antes de GATE-01.**
+### CR-V1-001 — compatibilidad del analizador del Glosario GH-B
+
+- Tipo: corrección técnica, sin ampliación de alcance.
+- Estado: `EJECUCIÓN PENDIENTE`.
+- Origen: validación completa de PKG-03.
+- Condición: adaptar el consumidor técnico al GH-B aprobado sin modificar
+  `project/`, y recuperar tests específicos y suite completa en PASS.
+- Dependencia: debe cerrarse antes de iniciar PKG-04.
+
+**SIGUIENTE PAQUETE RECOMENDADO: CR-V1-001 — restaurar compatibilidad del
+analizador del glosario GH-B antes de PKG-04.**

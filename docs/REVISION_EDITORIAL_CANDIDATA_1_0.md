@@ -1,8 +1,8 @@
 # Revisión editorial consolidada de la candidata 1.0
 
-**Fecha:** 10 de octubre de 2026<br>
+**Fecha:** 11 de octubre de 2026<br>
 **Fase:** 6A — ejecución del alcance 1.0<br>
-**Estado:** DEC-001–DEC-034 cerradas; PKG-01 y PKG-02 integrados; propagación editorial, citas y bibliografía pendientes<br>
+**Estado:** DEC-001–DEC-034 cerradas; PKG-01–03 integrados; cartografía preparada como asset pero no insertada; CR-V1-001, propagación editorial, citas y bibliografía pendientes<br>
 **Cierre humano:** [CIERRE_ALCANCE_V1_0.md](./CIERRE_ALCANCE_V1_0.md)<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Plan operativo:** [PLAN_EJECUCION_V1_0.md](./PLAN_EJECUCION_V1_0.md)
@@ -15,8 +15,9 @@ decisiones `DEC-001`–`DEC-034` fijan el alcance. Un estado resuelto en fuente
 canónica no significa que el cambio esté ya propagado a PDF o HTML.
 
 La composición 0.6 continúa siendo referencia editorial, no autoridad textual o
-histórica. `project/` mantiene la autoridad canónica y `publication/` sigue
-intacto en esta operación documental.
+histórica. `project/` mantiene la autoridad canónica. `publication/` contiene ya
+los assets cartográficos de PKG-03, pero la candidata no se ha regenerado y los
+mapas no están integrados en capítulos, HTML ni PDF.
 
 ## 2. Estados de alcance
 
@@ -32,7 +33,7 @@ intacto en esta operación documental.
 | ID | Área | Diagnóstico consolidado | Decisión humana final | Trabajo pendiente / condición |
 |---|---|---|---|---|
 | REV-001 | Identidad, créditos y metadatos | La candidata conserva identidad de desarrollo y carece de datos humanos y legales finales. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-007–009 y DEC-015. | DAT-001–010 según PKG-00/09; no inventar valores. |
-| REV-002 | Cartografía | Faltan orientación regional y local; el término histórico no puede reconstruirse. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-021; mapa regional y local. | PKG-03: base, procedencia, licencia, atribución, escala, leyenda y accesibilidad. |
+| REV-002 | Cartografía | PKG-03 ha preparado y validado los mapas regional y local contemporáneos; no se reconstruye el término histórico. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-021; PKG-03 completado e integrado. | **ASSET PREPARADO / INTEGRACIÓN EN PUBLICACIÓN PENDIENTE**: insertar y validar ambos mapas en PKG-07; todavía no aparecen en PDF/HTML. |
 | REV-003 | Fuentes y bibliografía | Las 16 referencias incompletas fueron tratadas en PKG-02: 14 verificadas con ajustes, una parcial y una incompatibilidad de uso; `INC-BIB-001` e `INC-BIB-002` siguen abiertas y `references.bib` continúa vacío. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-025–028 y DEC-032; verificación bibliográfica completada, correspondencia fuente/uso condicionada. | Resolver ambas incidencias antes de GATE-01; PKG-08 sigue pendiente para CIT-B/C, bibliografía visible, citas próximas y TOP-006 solo en matriz. |
 | REV-004 | Aparatos narrativos | Nueve QA1, historia intelectual y once objetos citables están diagnosticados. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-029–031. | QA1 compacto; historia breve; modelos por familias; datos finales de identidad/cita. |
 | REV-005 | Preliminares y orientación | P3, introducción y convenciones están decididos; la cronología es viable con datos internos. | **INCLUIR EN 1.0** — DEC-001, DEC-003–005 y DEC-020. | Implementación en PKG-06/07. |
@@ -51,7 +52,7 @@ intacto en esta operación documental.
 | REV-018 | Sidebar HTML | La navegación inicial está demasiado desplegada. | **INCLUIR EN 1.0** — DEC-014. | Parte activa abierta; validar teclado y viewports. |
 | REV-019 | Cierres de capítulos | Se exige función conclusiva común con títulos específicos. | **INCLUIR EN 1.0** — DEC-013. | Revisión de capítulos 5–13. |
 | REV-020 | Glosario y contexto | A: G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo. | **RESUELTO EN FUENTE CANÓNICA** — DEC-016–019; commit `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`. | **PROPAGACIÓN A CANDIDATA PENDIENTE**: siete G1 mejoradas y seis altas canónicas; G3 no investigada y G4 no ampliada. PDF/HTML no regenerados. |
-| REV-021 | Aparato visual | B: cronología, dos mapas y diagrama aportan valor; dos recursos son inseguros. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-020–024 y DEC-029. | PKG-03/07/08; diferir Concejo/municipio y no producir término histórico. |
+| REV-021 | Aparato visual | B: cronología, dos mapas y diagrama aportan valor; los dos mapas están ya preparados y validados como assets. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-020–024 y DEC-029. | Mapas: asset preparado en PKG-03 e integración pendiente en PKG-07; cronología/diagrama pendientes; diferir Concejo/municipio y no producir término histórico. |
 | REV-022 | Identidad de desarrollo | `0.1.0-dev`, `development` y «Edición en desarrollo» no pueden llegar a 1.0. | **INCLUIR EN 1.0** — DEC-006–007. | Retirar al integrar la nueva candidata. |
 | REV-023 | TOC PDF | Numeraciones largas se pegan a los títulos. | **INCLUIR EN 1.0** — corrección obligatoria. | PKG-05; probar casos extremos del capítulo 16. |
 | REV-024 | Orden del glosario | La salida no respeta el orden alfabético previsto. | **INCLUIR EN 1.0** — corrección obligatoria. | PKG-05; ordenar en generación sin alterar innecesariamente la fuente. |
@@ -75,7 +76,10 @@ intacto en esta operación documental.
 - Resultado del prototipo F3 y su aceptación humana.
 - Cierre de `INC-BIB-001` e `INC-BIB-002` antes de GATE-01, sin sustituir
   fuentes ni parchear afirmaciones canónicas desde `publication/`.
-- Selección y aceptación de bases cartográficas.
+- Integración narrativa y multiformato de los assets cartográficos en PKG-07;
+  no marcarlos como presentes en la candidata antes de ese paquete.
+- `CR-V1-001`: adaptar el analizador al Glosario GH-B y recuperar la suite
+  completa antes de PKG-04, sin modificar la fuente canónica.
 - Resultado técnico de la optimización segura.
 
 Estas condiciones determinan cómo ejecutar decisiones ya cerradas; no vuelven a
@@ -105,5 +109,5 @@ REV-024 continúa pendiente de PKG-05. El tag solo puede aparecer en PKG-13,
 después de candidata nueva, validación, preview, aceptación humana y autorización
 explícita de Fase 6B.
 
-**SIGUIENTE PASO: PKG-03 — Cartografía, manteniendo INC-BIB-001 e
-INC-BIB-002 abiertas hasta su resolución antes de GATE-01.**
+**SIGUIENTE PASO: CR-V1-001 — restaurar compatibilidad del analizador del
+glosario GH-B antes de PKG-04.**
