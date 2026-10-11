@@ -1,8 +1,8 @@
 # Revisión editorial consolidada de la candidata 1.0
 
 **Fecha:** 10 de octubre de 2026<br>
-**Fase:** 6A.4 — alcance 1.0 aprobado y normalizado para ejecución<br>
-**Estado:** DEC-001–DEC-034 cerradas; implementación no iniciada<br>
+**Fase:** 6A — ejecución del alcance 1.0<br>
+**Estado:** DEC-001–DEC-034 cerradas; PKG-01 resuelto en fuente canónica y pendiente de propagación a candidata<br>
 **Cierre humano:** [CIERRE_ALCANCE_V1_0.md](./CIERRE_ALCANCE_V1_0.md)<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Plan operativo:** [PLAN_EJECUCION_V1_0.md](./PLAN_EJECUCION_V1_0.md)
@@ -11,8 +11,8 @@
 
 Este documento conserva las 26 observaciones REV de la candidata y registra su
 decisión humana final. Las Auditorías A/B/C aportan el diagnóstico; las
-decisiones `DEC-001`–`DEC-034` fijan el alcance. Ningún estado de esta matriz
-significa que el trabajo esté implementado.
+decisiones `DEC-001`–`DEC-034` fijan el alcance. Un estado resuelto en fuente
+canónica no significa que el cambio esté ya propagado a PDF o HTML.
 
 La composición 0.6 continúa siendo referencia editorial, no autoridad textual o
 histórica. `project/` mantiene la autoridad canónica y `publication/` sigue
@@ -50,7 +50,7 @@ intacto en esta operación documental.
 | REV-017 | Macroorden | Se conserva contexto → estudio → documento con rutas histórica y documental. | **INCLUIR EN 1.0** — DEC-011. | Implementar rutas; no reordenar. |
 | REV-018 | Sidebar HTML | La navegación inicial está demasiado desplegada. | **INCLUIR EN 1.0** — DEC-014. | Parte activa abierta; validar teclado y viewports. |
 | REV-019 | Cierres de capítulos | Se exige función conclusiva común con títulos específicos. | **INCLUIR EN 1.0** — DEC-013. | Revisión de capítulos 5–13. |
-| REV-020 | Glosario y contexto | A: G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-016–019. | PKG-01 canónico: siete G1, cuatro nuevas obligatorias y dos candidatas condicionadas; G3 no se investiga para 1.0. |
+| REV-020 | Glosario y contexto | A: G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo. | **RESUELTO EN FUENTE CANÓNICA** — DEC-016–019; commit `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`. | **PROPAGACIÓN A CANDIDATA PENDIENTE**: siete G1 mejoradas y seis altas canónicas; G3 no investigada y G4 no ampliada. PDF/HTML no regenerados. |
 | REV-021 | Aparato visual | B: cronología, dos mapas y diagrama aportan valor; dos recursos son inseguros. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-020–024 y DEC-029. | PKG-03/07/08; diferir Concejo/municipio y no producir término histórico. |
 | REV-022 | Identidad de desarrollo | `0.1.0-dev`, `development` y «Edición en desarrollo» no pueden llegar a 1.0. | **INCLUIR EN 1.0** — DEC-006–007. | Retirar al integrar la nueva candidata. |
 | REV-023 | TOC PDF | Numeraciones largas se pegan a los títulos. | **INCLUIR EN 1.0** — corrección obligatoria. | PKG-05; probar casos extremos del capítulo 16. |
@@ -73,7 +73,6 @@ intacto en esta operación documental.
 
 - DAT-001–DAT-010: valores humanos y editoriales concretos.
 - Resultado del prototipo F3 y su aceptación humana.
-- Resultado canónico de revisar `establecimiento del suelo` y `arenta`.
 - Incidencias que aparezcan al verificar las 16 referencias.
 - Selección y aceptación de bases cartográficas.
 - Resultado técnico de la optimización segura.
@@ -97,10 +96,12 @@ reconstrucción geográfica histórica.
 
 ## 8. Tag e implementación
 
-No se crea tag en 6A.4. La candidata técnica
-`49ab2e1b1a58ca9201efab54b42a3125de7326f8` sigue siendo preeditorial. Ninguna
-REV está implementada por este cierre. El tag solo puede aparecer en PKG-13,
+No se crea tag en 6A. La candidata técnica
+`49ab2e1b1a58ca9201efab54b42a3125de7326f8` se conserva como baseline
+pre-PKG-01 y no está sincronizada con la fuente canónica actual. REV-020 está
+resuelta en la fuente, pero su propagación a la candidata permanece pendiente;
+REV-024 continúa pendiente de PKG-05. El tag solo puede aparecer en PKG-13,
 después de candidata nueva, validación, preview, aceptación humana y autorización
 explícita de Fase 6B.
 
-**SIGUIENTE PASO: PKG-00 y preparación de los pretrabajos PKG-01–PKG-05 conforme al PLAN_EJECUCION_V1_0.md.**
+**SIGUIENTE PASO: PKG-02 — Verificación bibliográfica.**

@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 11 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; alcance 1.0 aprobado, PKG-00 cerrado con diferimientos controlados y candidata local intacta<br>
-**Fase actual:** Fase 6A — PKG-01, Glosario canónico GH-B<br>
+**Estado global:** Fase 6 en curso; PKG-00 cerrado y PKG-01 completado e integrado; la candidata anterior es baseline pre-PKG-01<br>
+**Fase actual:** Fase 6A — PKG-02, verificación bibliográfica<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -28,6 +28,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
 14. `docs/ESPECIFICACION_BOOTSTRAP_PUBLICATION.md` como registro de aceptación de la Fase 2A;
 15. `docs/CIERRE_PKG_00_INPUTS_EDITORIALES.md` para los datos humanos y
     editoriales aprobados.
+16. `docs/CIERRE_PKG_01_GLOSARIO_CANONICO.md` para el cierre de la operación
+    canónica y su propagación pendiente.
 
 ## Estado comprobado
 
@@ -63,12 +65,24 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Auditoría B completada en `docs/AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md`: 27 recursos funcionales clasificados en VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; cinco prioridades altas, una media y una baja. El paquete visual definitivo quedó decidido en 6A.3, sin crear recursos ni consultar fuentes externas.
 - Auditoría C completada en `docs/AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md`: 40 referencias únicas representadas por 41 URL, 25 entradas E y 25 necesidades REF auditadas, 13 límites clasificados en QA y cuatro módulos de aparato propuestos. CIT-B/C y el alcance de fuentes/aparatos quedaron decididos en 6A.3, sin consulta externa ni implementación.
 - 6A.3 cerrada por el usuario en `docs/CIERRE_ALCANCE_V1_0.md`: `DEC-016`–`DEC-034` aprobadas, sin reabrir `DEC-001`–`DEC-015`.
-- 6A.4 completada documentalmente: `docs/ALCANCE_APROBADO_V1_0.md` normaliza el contrato de alcance y `docs/PLAN_EJECUCION_V1_0.md` fija PKG-00–PKG-13, GATE-00–GATE-05 y el control de cambios `CR-V1-*`. No se ha iniciado ningún paquete de ejecución.
+- 6A.4 completada documentalmente: `docs/ALCANCE_APROBADO_V1_0.md` normaliza el contrato de alcance y `docs/PLAN_EJECUCION_V1_0.md` fija PKG-00–PKG-13, GATE-00–GATE-05 y el control de cambios `CR-V1-*`.
 - PKG-00 completado en sus tres pasos: inventario, decisiones humanas y cierre
   documental. `docs/CIERRE_PKG_00_INPUTS_EDITORIALES.md` registra autoría,
   responsabilidades, identidad, copyright y licencia del contenido original,
-  política de IA y diferimientos controlados. `project/` y `publication/`
-  permanecen intactos y no se ha iniciado PKG-01.
+  política de IA y diferimientos controlados.
+- PKG-01 completado e integrado mediante fast-forward en
+  `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`, con plugin y skill locales 2.0.2.
+  El Glosario canónico tiene ahora 28 entradas: siete G1 mejoradas y seis altas,
+  incluidas las condicionales `establecimiento del suelo` y `arenta`. No se
+  investigó G3 y no se amplió G4.
+- Fuente canónica actual: `project/` incluye PKG-01. `publication/` no fue
+  regenerada ni modificada, por lo que el aparato publicado aún no propaga el
+  nuevo Glosario.
+- Candidata Quarto anterior: la candidata técnica de 334 páginas y SHA-256
+  `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183` se conserva
+  como `baseline pre-PKG-01 / no sincronizada con las fuentes canónicas
+  actuales`. Su validación técnica histórica se mantiene; no es la candidata
+  vigente del estado canónico actual.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
 
@@ -84,11 +98,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | alcance 1.0 aprobado y PKG-00 cerrado; quedan PKG-01–PKG-12, aceptación humana y PKG-13/Fase 6B |
+| 6. Preview y publicación 1.0 | en curso | PKG-00 cerrado y PKG-01 integrado; quedan PKG-02–PKG-12, aceptación humana y PKG-13/Fase 6B |
 
 ## Siguiente tarea exacta
 
-`SIGUIENTE PASO: PKG-01 — Glosario canónico GH-B.`
+`SIGUIENTE PASO: PKG-02 — Verificación bibliográfica.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -110,7 +124,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | alcance y plan aprobados; PKG-00 cerrado con diferimientos controlados; siguiente paquete PKG-01 |
+| 6A | en curso | alcance y plan aprobados; PKG-00 cerrado y PKG-01 integrado; siguiente paquete PKG-02 |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; doce cerradas, dos cerradas en principio con datos pendientes y F3 como hipótesis de prototipo; ninguna implementación iniciada |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
@@ -119,6 +133,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 6A.3 | completada por el usuario | DEC-016–DEC-034 cerradas en `CIERRE_ALCANCE_V1_0.md`; ninguna decisión reabierta |
 | 6A.4 | completada documentalmente | contrato de alcance, backlog, exclusiones, PKG-00–13, GATE-00–05 y control `CR-V1-*` registrados; candidata intacta |
 | PKG-00 | completado | inventario, decisiones humanas y cierre documental completados; autoría y datos aplicables resueltos; diferimientos controlados |
+| PKG-01 | completado e integrado | commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; propagación a la publicación pendiente |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
@@ -521,4 +536,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_ALCANCE_V1_0.md`, `docs/CIERRE_PKG_00_INPUTS_EDITORIALES.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente PKG-01 — Glosario canónico GH-B — conforme a su autoridad canónica y su operación separada. No amplíes el alcance sin una CR-V1 aprobada; no hagas push ni tag.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_ALCANCE_V1_0.md`, `docs/CIERRE_PKG_00_INPUTS_EDITORIALES.md`, `docs/CIERRE_PKG_01_GLOSARIO_CANONICO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta únicamente PKG-02 — Verificación bibliográfica — sin convertirla en investigación histórica ni modificar silenciosamente `project/`. No amplíes el alcance sin una CR-V1 aprobada; no hagas push ni tag.

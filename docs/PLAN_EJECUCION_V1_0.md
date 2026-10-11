@@ -3,7 +3,7 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00 cerrado con diferimientos controlados
+**Estado:** plan operativo; PKG-00 cerrado y PKG-01 completado e integrado
 
 ## 1. Reglas generales
 
@@ -58,6 +58,10 @@ licencia del contenido original cerrados; prólogo definitivo diferido.
 
 **Objetivo:** ejecutar una operación canónica separada.
 
+**Estado:** **COMPLETADO E INTEGRADO** en el commit canónico
+`9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`. El cierre se documenta en
+[CIERRE_PKG_01_GLOSARIO_CANONICO.md](./CIERRE_PKG_01_GLOSARIO_CANONICO.md).
+
 Debe:
 
 - mejorar `Señorío`, `medio vecino`, `propios`, `arbitrio`, `boto`, `vecera` e
@@ -70,7 +74,10 @@ Debe:
 - seguir el flujo canónico de la skill del Catastro.
 
 **Autoridad afectada:** `project/`.<br>
-**Salida:** fuentes canónicas validadas y commit canónico propio.<br>
+**Salida:** fuentes canónicas validadas; siete G1 mejoradas y seis voces nuevas
+incorporadas —`avitadores`, `utilidad`, `repartimiento`, `quartal`,
+`establecimiento del suelo` y `arenta`—. No se investigó G3. La propagación a la
+publicación permanece pendiente.<br>
 **Prohibición:** no editar directamente `publication/generated/`; la
 regeneración corresponde a PKG-10.
 
@@ -155,11 +162,11 @@ elimina contenido. Si no existe una mejora material y segura, el peso no bloquea
 
 | Paquete | Estado | Dependencia conservada |
 |---|---|---|
-| PKG-01 | **READY** | Operación canónica separada y commit propio. |
+| PKG-01 | **COMPLETADO E INTEGRADO** | Commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; propagación a publicación pendiente. |
 | PKG-02 | **READY** | Ninguna dependencia de los DAT para iniciar la verificación. |
 | PKG-03 | **READY CON DEPENDENCIA LEGAL/LICENCIA DE LA CARTOGRAFÍA** | Procedencia, licencia, atribución y redistribución de cada asset. |
 | PKG-04 | **READY** | Decisión humana posterior sobre F3 en GATE-01. |
-| PKG-05 | **READY CON DEPENDENCIAS PKG-01/F3 YA CONOCIDAS** | Validación final de REV-024 tras PKG-01 y medición coordinada con F3. |
+| PKG-05 | **READY CON RESULTADO CANÓNICO PKG-01; DEPENDENCIA F3 CONOCIDA** | Puede usar el Glosario canónico final de PKG-01; REV-024 y el orden alfabético publicado siguen sin implementar; medición coordinada con F3. |
 
 ### Revisión de pretrabajos antes de GATE-01
 
@@ -175,8 +182,7 @@ No se integra el libro final hasta revisar conjuntamente:
 Decisiones de salida:
 
 - aceptación final de F3 o alternativa;
-- aceptación o rechazo condicionado de `establecimiento del suelo`;
-- aceptación o rechazo condicionado de `arenta`;
+- aceptación registrada de `establecimiento del suelo` y `arenta` en PKG-01;
 - resolución de incidencias bibliográficas;
 - aceptación de los dos mapas;
 - aceptación del resultado de optimización.
@@ -342,7 +348,7 @@ de integración.
 | Paquete | Requiere | Puede avanzar en paralelo con | Bloquea |
 |---|---|---|---|
 | PKG-00 | GATE-00 — cerrado con diferimientos controlados | PKG-01–05 | PKG-06, PKG-09 y citas finales |
-| PKG-01 | GATE-00 | PKG-00, PKG-02–05 | Regeneración de glosario; GATE-01 |
+| PKG-01 | GATE-00 — completado e integrado | PKG-00, PKG-02–05 | Regeneración de glosario; GATE-01 |
 | PKG-02 | GATE-00 | PKG-00–01, PKG-03–05 | PKG-08; GATE-01 |
 | PKG-03 | GATE-00 | PKG-00–02, PKG-04–05 | PKG-07; GATE-01 |
 | PKG-04 | GATE-00 | PKG-00–03, PKG-05 | Política final del manuscrito; GATE-01 |
@@ -486,4 +492,4 @@ Los defectos de validación pueden producir CR correctivas, pero no autorizan
 nuevos capítulos, investigaciones, visualizaciones o aparatos. La autoridad y el
 procedimiento de cada cambio siguen siendo los de su paquete.
 
-**SIGUIENTE PAQUETE RECOMENDADO: PKG-01 — Glosario canónico GH-B.**
+**SIGUIENTE PAQUETE RECOMENDADO: PKG-02 — Verificación bibliográfica.**
