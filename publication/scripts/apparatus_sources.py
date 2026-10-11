@@ -11,12 +11,21 @@ from pathlib import Path
 
 
 REGISTER_VERSION = "1.2"
-GLOSSARY_FIELDS = (
+REQUIRED_GLOSSARY_FIELDS = (
     "Término documentado",
     "Definición",
     "Primera unidad",
     "Referencias",
     "Notas",
+)
+OPTIONAL_GLOSSARY_FIELDS = ("Contexto histórico",)
+GLOSSARY_FIELD_SEQUENCES = (
+    REQUIRED_GLOSSARY_FIELDS,
+    (
+        *REQUIRED_GLOSSARY_FIELDS[:-1],
+        *OPTIONAL_GLOSSARY_FIELDS,
+        REQUIRED_GLOSSARY_FIELDS[-1],
+    ),
 )
 ALLOWED_LEVELS = frozenset({"D", "C", "I", "E", "L"})
 RECOGNIZED_STATES = ("Admitida", "Condicionada", "Excluida", "Mantener cautela")
@@ -34,6 +43,7 @@ class GlossaryEntry:
     first_unit: str
     references: str
     notes: str
+    historical_context: str | None = None
 
     @property
     def anchor(self) -> str:
@@ -124,6 +134,14 @@ def parse_glossary(text: str, *, source: str = "Glosario.md") -> Glossary:
             f"{source}: debe existir un único bloque «Entradas» del Glosario."
         )
     region = text.split(marker, 1)[1]
+    headings = re.findall(r"^#{3,}.*$", region, re.MULTILINE)
+    malformed_headings = [
+        heading for heading in headings if re.fullmatch(r"### [^\n]+", heading) is None
+    ]
+    if malformed_headings:
+        raise ApparatusSourceError(
+            f"{source}: encabezado de entrada mal formado {malformed_headings[0]!r}."
+        )
     matches = list(re.finditer(r"^### (?P<term>[^\n]+)\s*$", region, re.MULTILINE))
     if not matches:
         raise ApparatusSourceError(f"{source}: el bloque de entradas está vacío.")
@@ -138,10 +156,11 @@ def parse_glossary(text: str, *, source: str = "Glosario.md") -> Glossary:
             re.MULTILINE,
         )
         labels = tuple(label.strip() for label, _ in fields)
-        if labels != GLOSSARY_FIELDS:
+        if labels not in GLOSSARY_FIELD_SEQUENCES:
             raise ApparatusSourceError(
                 f"{source}, entrada {term!r}: campos {labels or 'ausentes'}; "
-                f"se exigen {GLOSSARY_FIELDS}."
+                "se exigen los cinco campos base en su orden canónico y se admite "
+                "únicamente «Contexto histórico» antes de «Notas»."
             )
         values = {label.strip(): value.strip() for label, value in fields}
         empty = [label for label, value in values.items() if not value]
@@ -157,6 +176,7 @@ def parse_glossary(text: str, *, source: str = "Glosario.md") -> Glossary:
                 first_unit=values["Primera unidad"],
                 references=values["Referencias"],
                 notes=values["Notas"],
+                historical_context=values.get("Contexto histórico"),
             )
         )
     folded = [entry.term.casefold() for entry in entries]
@@ -376,6 +396,9 @@ __all__ = [
     "EvidenceRegister",
     "Glossary",
     "GlossaryEntry",
+    "GLOSSARY_FIELD_SEQUENCES",
+    "OPTIONAL_GLOSSARY_FIELDS",
+    "REQUIRED_GLOSSARY_FIELDS",
     "REGISTER_VERSION",
     "git_blob_oid",
     "load_evidence_register",

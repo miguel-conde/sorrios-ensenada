@@ -17,7 +17,10 @@ import check_sources  # noqa: E402
 import quality_audit as quality  # noqa: E402
 
 
-CANONICAL_COMMIT = "e81dc9239ac8dbabfe77168a50ef98c4d3b79170"
+CURRENT_CANONICAL_COMMIT = "9ae4d1fd46d9f2d7bca685de861bff2a554a7a39"
+PHASE6A_HISTORICAL_CANONICAL_COMMIT = (
+    "e81dc9239ac8dbabfe77168a50ef98c4d3b79170"
+)
 MANUSCRIPT_SHA256 = "d2acfde35e4d539844ea52faff8f090449090a82e0ad9ec9db383aae6d5bcc24"
 
 
@@ -41,7 +44,7 @@ def test_candidate_keeps_development_semantics_without_inventing_release_metadat
         "version": "0.1.0-dev",
         "status": "development",
     }
-    assert publication["base"]["git_commit"] == CANONICAL_COMMIT
+    assert publication["base"]["git_commit"] == CURRENT_CANONICAL_COMMIT
     forbidden = {"author", "editor", "license", "copyright", "isbn", "url"}
     assert forbidden.isdisjoint(publication)
     assert "published" not in (PUBLICATION / "meta/publication.yml").read_text(
@@ -50,7 +53,7 @@ def test_candidate_keeps_development_semantics_without_inventing_release_metadat
 
 
 def test_candidate_freezes_the_exact_canonical_project_snapshot():
-    canonical_tree = _git("rev-parse", f"{CANONICAL_COMMIT}:project")
+    canonical_tree = _git("rev-parse", f"{CURRENT_CANONICAL_COMMIT}:project")
     candidate_tree = _git("rev-parse", "HEAD:project")
     assert re.fullmatch(r"[0-9a-f]{40}", canonical_tree)
     assert canonical_tree == candidate_tree
@@ -135,7 +138,7 @@ def test_candidate_report_manifests_snapshot_outputs_hashes_and_limitations():
     report = (ROOT / "docs/CANDIDATA_PUBLICACION_1_0.md").read_text(encoding="utf-8")
     for value in (
         "49ab2e1b1a58ca9201efab54b42a3125de7326f8",
-        CANONICAL_COMMIT,
+        PHASE6A_HISTORICAL_CANONICAL_COMMIT,
         "e32917763475ceebdfe7b54830e1fb43f6419dad",
         MANUSCRIPT_SHA256,
         "0f2a27a3294060552ee5dde8a9b4d61258e85fef049679f650e3d71465234da0",
@@ -153,7 +156,17 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
     roadmap = (ROOT / "docs/ESTADO_PUBLICACION_QUARTO.md").read_text(
         encoding="utf-8"
     )
-    assert "| 6A | en curso; pendiente de proveedor |" in roadmap
-    assert "| 6B | pendiente |" in roadmap
-    assert "aceptación editorial humana" in roadmap
-    assert "No ejecutes 6B" in roadmap
+    for expectation in (
+        "**Estado global:** Fase 6 en curso;",
+        "| 6A | en curso |",
+        "| PKG-00 | completado |",
+        "| PKG-01 | completado e integrado |",
+        "| PKG-02 | completado e integrado con incidencias abiertas |",
+        "| PKG-03 | completado e integrado |",
+        "| CR-V1-001 | ejecución pendiente |",
+        "bloquea el inicio de PKG-04",
+        "`INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01",
+        "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
+        "prohibida antes de la aceptación humana del preview |",
+    ):
+        assert expectation in roadmap

@@ -57,6 +57,29 @@ def _glossary_block(text: str, entry: sources.GlossaryEntry) -> str:
     return text[start : following if following >= 0 else len(text)]
 
 
+def _glossary_entry(
+    term: str,
+    *,
+    historical_context: str | None = None,
+) -> str:
+    fields = [
+        ("Término documentado", f"`{term}`"),
+        ("Definición", f"Definición de {term}."),
+        ("Primera unidad", "folio 307r."),
+        ("Referencias", "folio 307r; respuesta 1.ª."),
+    ]
+    if historical_context is not None:
+        fields.append(("Contexto histórico", historical_context))
+    fields.append(("Notas", f"Notas de {term}."))
+    return "\n".join(
+        [f"### {term}", "", *(f"- **{label}:** {value}" for label, value in fields)]
+    )
+
+
+def _glossary_document(*entries: str) -> str:
+    return "# Glosario histórico\n\n## Entradas\n\n" + "\n\n".join(entries) + "\n"
+
+
 def _isolated_tree(tmp_path: Path) -> tuple[Path, Path]:
     repository = tmp_path / "repository"
     publication = repository / "publication"
@@ -90,9 +113,86 @@ def _hashes(paths: tuple[Path, ...]) -> dict[str, str]:
 
 def test_glossary_has_no_invented_version_and_all_unique_entries(glossary):
     assert glossary.version is None
-    assert len(glossary.entries) == 22
-    assert len({entry.term for entry in glossary.entries}) == 22
-    assert len({entry.anchor for entry in glossary.entries}) == 22
+    assert len(glossary.entries) == 28
+    assert len({entry.term for entry in glossary.entries}) == 28
+    assert len({entry.anchor for entry in glossary.entries}) == 28
+
+
+def test_glossary_accepts_entry_with_five_required_fields():
+    glossary = sources.parse_glossary(
+        _glossary_document(_glossary_entry("cinco campos"))
+    )
+    assert glossary.entries[0].historical_context is None
+
+
+def test_glossary_accepts_and_preserves_optional_historical_context():
+    context = "Contexto canónico breve y sustentado."
+    glossary = sources.parse_glossary(
+        _glossary_document(
+            _glossary_entry("seis campos", historical_context=context)
+        )
+    )
+    assert glossary.entries[0].historical_context == context
+
+
+def test_glossary_accepts_mixed_five_and_six_field_entries():
+    glossary = sources.parse_glossary(
+        _glossary_document(
+            _glossary_entry("entrada base"),
+            _glossary_entry(
+                "entrada contextual",
+                historical_context="Contexto selectivo.",
+            ),
+        )
+    )
+    assert [entry.historical_context for entry in glossary.entries] == [
+        None,
+        "Contexto selectivo.",
+    ]
+
+
+def test_glossary_rejects_missing_required_field():
+    entry = _glossary_entry("sin definición").replace(
+        "- **Definición:** Definición de sin definición.\n", ""
+    )
+    with pytest.raises(sources.ApparatusSourceError, match="cinco campos base"):
+        sources.parse_glossary(_glossary_document(entry))
+
+
+def test_glossary_rejects_unknown_field():
+    entry = _glossary_entry("campo desconocido").replace(
+        "- **Notas:**", "- **Campo desconocido:** valor\n- **Notas:**"
+    )
+    with pytest.raises(sources.ApparatusSourceError, match="cinco campos base"):
+        sources.parse_glossary(_glossary_document(entry))
+
+
+def test_glossary_rejects_duplicate_optional_field():
+    entry = _glossary_entry(
+        "contexto duplicado", historical_context="Primer contexto."
+    ).replace(
+        "- **Notas:**",
+        "- **Contexto histórico:** Segundo contexto.\n- **Notas:**",
+    )
+    with pytest.raises(sources.ApparatusSourceError, match="Contexto histórico"):
+        sources.parse_glossary(_glossary_document(entry))
+
+
+def test_glossary_keeps_rejecting_duplicate_required_field():
+    entry = _glossary_entry("definición duplicada").replace(
+        "- **Primera unidad:**",
+        "- **Definición:** Otra definición.\n- **Primera unidad:**",
+    )
+    with pytest.raises(sources.ApparatusSourceError, match="cinco campos base"):
+        sources.parse_glossary(_glossary_document(entry))
+
+
+def test_glossary_rejects_malformed_entry_heading():
+    text = _glossary_document(_glossary_entry("encabezado")).replace(
+        "### encabezado", "#### encabezado"
+    )
+    with pytest.raises(sources.ApparatusSourceError, match="encabezado.*mal formado"):
+        sources.parse_glossary(text)
 
 
 def test_glossary_manifest_uses_verified_git_blob_not_version(glossary):
@@ -102,6 +202,24 @@ def test_glossary_manifest_uses_verified_git_blob_not_version(glossary):
     declared = manifest["sources"]["glossary"]
     assert "version" not in declared
     assert declared["git_blob"] == sources.git_blob_oid(GLOSSARY.read_bytes())
+
+
+def test_glossary_manifest_rejects_incorrect_git_blob(tmp_path):
+    repository, publication = _isolated_tree(tmp_path)
+    manifest_path = publication / "meta/publication.yml"
+    manifest = manifest_path.read_text(encoding="utf-8")
+    actual = sources.git_blob_oid(
+        (repository / builder.GLOSSARY_SOURCE).read_bytes()
+    )
+    manifest_path.write_text(
+        manifest.replace(actual, "0" * 40),
+        encoding="utf-8",
+    )
+    with pytest.raises(
+        builder.ApparatusBuildError,
+        match="no declara el blob Git vigente del Glosario",
+    ):
+        builder.load_apparatus_data(repository, publication, MANUSCRIPT_NAME)
 
 
 def test_glossary_preserves_every_field_and_external_source(glossary, generated):
@@ -116,6 +234,7 @@ def test_glossary_preserves_every_field_and_external_source(glossary, generated)
             ("Notas", entry.notes),
         ):
             assert f"**{label}:** {value}" in block, (entry.term, label)
+        assert "**Contexto histórico:**" not in block
     assert "https://www.mapa.gob.es/" in output
     assert "https://dle.rae.es/negrillo" in output
 

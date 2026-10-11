@@ -1313,9 +1313,9 @@ def validate_rendered_outputs() -> list[str]:
         glossary_anchors = [
             anchor for anchor in glossary_anchors if anchor != "glosario-entradas"
         ]
-        if len(glossary_anchors) != 22 or len(set(glossary_anchors)) != 22:
-            errors.append("El HTML del glosario no conserva 22 anclas únicas")
-        if glossary_html.count("15-transcripcion.html#") < 22:
+        if len(glossary_anchors) != 28 or len(set(glossary_anchors)) != 28:
+            errors.append("El HTML del glosario no conserva 28 anclas únicas")
+        if glossary_html.count("15-transcripcion.html#") < 28:
             errors.append("El glosario HTML pierde enlaces al capítulo 15")
         if glossary_html.count("16-edicion-modernizada.html#") < 10:
             errors.append("El glosario HTML pierde enlaces al capítulo 16")
@@ -4387,8 +4387,8 @@ def validate() -> list[str]:
         ) as exc:
             errors.append(f"Aparatos 4D no aptos: {exc}")
         else:
-            if len(apparatus_data.glossary.entries) != 22:
-                errors.append("El glosario 4D no contiene sus 22 entradas canónicas")
+            if len(apparatus_data.glossary.entries) != 28:
+                errors.append("El glosario 4D no contiene sus 28 entradas canónicas")
             if len(apparatus_data.register.calculated_entries) != 13:
                 errors.append("Los cuadros 4D no derivan las 13 entradas de nivel C")
             associated = {
