@@ -3,7 +3,7 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; ejecución no iniciada
+**Estado:** plan operativo; PKG-00 cerrado con diferimientos controlados
 
 ## 1. Reglas generales
 
@@ -26,6 +26,10 @@
 
 **Objetivo:** obtener los datos humanos y textos que bloquean la edición.
 
+**Estado:** **CERRADO CON DIFERIMIENTOS CONTROLADOS**. Las decisiones humanas
+están normalizadas en
+[CIERRE_PKG_00_INPUTS_EDITORIALES.md](./CIERRE_PKG_00_INPUTS_EDITORIALES.md).
+
 Incluye:
 
 - DAT-001 nombre de autor;
@@ -38,11 +42,17 @@ Incluye:
 - DAT-008 licencia;
 - prólogo personal firmado de 900–1.500 palabras.
 
-DAT-009, fecha editorial, y DAT-010, URL canónica, pueden cerrarse en PKG-09.
+DAT-001–DAT-008 y DAT-AI-01 están resueltos. DAT-009 tiene resuelto el modelo
+de fecha, con su valor final diferido hasta la publicación; DAT-010 está
+diferido hasta PKG-12/PKG-13. El prólogo es obligatorio y su texto definitivo
+permanece diferido. También permanecen controlados los agradecimientos
+eventuales, la nota final de derechos por componentes y los asuntos
+`LEGAL-PENDIENTE` relativos a materiales externos.
 
 **Autoridad:** usuario.<br>
 **Escritura:** no modifica `project/`; no inventa datos.<br>
-**Salida:** dossier de inputs aprobado y texto del prólogo listo para revisión.
+**Salida:** dossier de inputs aprobado; autoría, roles, identidad, copyright y
+licencia del contenido original cerrados; prólogo definitivo diferido.
 
 ### PKG-01 — Glosario canónico GH-B
 
@@ -141,6 +151,16 @@ elimina contenido. Si no existe una mejora material y segura, el peso no bloquea
 
 **Salida:** correcciones validadas y dossier de medición antes/después.
 
+### Preparación tras el cierre de PKG-00
+
+| Paquete | Estado | Dependencia conservada |
+|---|---|---|
+| PKG-01 | **READY** | Operación canónica separada y commit propio. |
+| PKG-02 | **READY** | Ninguna dependencia de los DAT para iniciar la verificación. |
+| PKG-03 | **READY CON DEPENDENCIA LEGAL/LICENCIA DE LA CARTOGRAFÍA** | Procedencia, licencia, atribución y redistribución de cada asset. |
+| PKG-04 | **READY** | Decisión humana posterior sobre F3 en GATE-01. |
+| PKG-05 | **READY CON DEPENDENCIAS PKG-01/F3 YA CONOCIDAS** | Validación final de REV-024 tras PKG-01 y medición coordinada con F3. |
+
 ### Revisión de pretrabajos antes de GATE-01
 
 No se integra el libro final hasta revisar conjuntamente:
@@ -216,7 +236,7 @@ canónicas desde la bibliografía.
 
 Cierra:
 
-- DAT pendientes;
+- valores finales diferidos de DAT-009 y, cuando ya exista, DAT-010;
 - copyright;
 - licencia;
 - fecha editorial;
@@ -321,7 +341,7 @@ de integración.
 
 | Paquete | Requiere | Puede avanzar en paralelo con | Bloquea |
 |---|---|---|---|
-| PKG-00 | GATE-00 | PKG-01–05 | PKG-06, PKG-09 y citas finales |
+| PKG-00 | GATE-00 — cerrado con diferimientos controlados | PKG-01–05 | PKG-06, PKG-09 y citas finales |
 | PKG-01 | GATE-00 | PKG-00, PKG-02–05 | Regeneración de glosario; GATE-01 |
 | PKG-02 | GATE-00 | PKG-00–01, PKG-03–05 | PKG-08; GATE-01 |
 | PKG-03 | GATE-00 | PKG-00–02, PKG-04–05 | PKG-07; GATE-01 |
@@ -330,7 +350,7 @@ de integración.
 | PKG-06 | GATE-01; inputs aplicables de PKG-00 | PKG-07–09 con ramas/worktrees separados | GATE-02 |
 | PKG-07 | GATE-01; PKG-03 aceptado | PKG-06, PKG-08–09 | GATE-02 |
 | PKG-08 | GATE-01; PKG-02 aceptado | PKG-06–07, PKG-09 | GATE-02 |
-| PKG-09 | GATE-01; DAT completos | PKG-06–08 | GATE-02 |
+| PKG-09 | GATE-01; DAT resueltos o con diferimiento autorizado | PKG-06–08 | GATE-02 |
 | PKG-10 | GATE-02 | — | PKG-11 |
 | PKG-11 | PKG-10 | — | GATE-03 |
 | PKG-12 | GATE-03 | — | GATE-04 |
@@ -465,3 +485,5 @@ ampliación—, recomendación y decisión humana. Una CR no aprobada no se ejec
 Los defectos de validación pueden producir CR correctivas, pero no autorizan
 nuevos capítulos, investigaciones, visualizaciones o aparatos. La autoridad y el
 procedimiento de cada cambio siguen siendo los de su paquete.
+
+**SIGUIENTE PAQUETE RECOMENDADO: PKG-01 — Glosario canónico GH-B.**

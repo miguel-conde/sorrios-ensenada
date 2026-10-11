@@ -26,7 +26,8 @@ Categorías:
   se adopta hasta validar el prototipo.
 - **D — diferido a 1.1+:** no bloquea 1.0.
 - **N — no incorporar:** queda deliberadamente fuera.
-- **DAT — dato humano pendiente:** no es investigación ni implementación.
+- **DAT — dato humano/editorial:** su estado se registra en PKG-00; no es
+  investigación ni implementación.
 
 ## 2. Matriz maestra REV-001–REV-026
 
@@ -101,22 +102,33 @@ marcada como implementada.
 - `DEC-034`: auditar e intentar optimización segura; el peso no es un bloqueo si
   no existe reducción material, reproducible y sin pérdida apreciable.
 
-## 4. Datos humanos pendientes — DAT
+## 4. Datos humanos y editoriales — DAT
 
-| ID | Dato | Momento límite | Bloquea |
+PKG-00 quedó cerrado con diferimientos controlados. La autoridad humana y la
+formulación ejecutiva completa se conservan en
+[CIERRE_PKG_00_INPUTS_EDITORIALES.md](./CIERRE_PKG_00_INPUTS_EDITORIALES.md).
+
+| ID | Valor aprobado | Estado | Momento de uso/cierre |
 |---|---|---|---|
-| DAT-001 | Nombre de autor | PKG-00 | Portada, créditos, metadatos, colofón y citas |
-| DAT-002 | Roles editoriales del autor | PKG-00 | Créditos y responsabilidad intelectual |
-| DAT-003 | Responsabilidad de transcripción paleográfica | PKG-00 | Créditos y modelos de cita |
-| DAT-004 | Responsabilidad de edición modernizada | PKG-00 | Créditos y modelos de cita |
-| DAT-005 | Colaboradores | Cierre de PKG-09 | Créditos definitivos |
-| DAT-006 | Identidad visible del proyecto | PKG-00 | Landing, portada y créditos |
-| DAT-007 | Titular de copyright | PKG-00 | Aviso legal y colofón |
-| DAT-008 | Licencia | PKG-00 | Distribución, reutilización y candidata |
-| DAT-009 | Fecha editorial | PKG-09 | Metadatos, colofón y cita final |
-| DAT-010 | URL canónica | PKG-09 | Citas, colofón y publicación |
+| DAT-001 | Miguel Conde de Simón; forma bibliográfica `Conde de Simón, Miguel`; sin ORCID ni afiliación | **RESUELTO** | Portada, créditos, metadatos, colofón y citas |
+| DAT-002 | Autor, investigación y dirección editorial; edición crítica: Miguel Conde de Simón | **RESUELTO** | Créditos y responsabilidad intelectual |
+| DAT-003 | Transcripción paleográfica y revisión: Miguel Conde de Simón | **RESUELTO** | Créditos y modelos de cita |
+| DAT-004 | Edición modernizada y revisión: Miguel Conde de Simón | **RESUELTO** | Créditos y modelos de cita |
+| DAT-005 | Ningún colaborador humano | **RESUELTO** | Agradecimientos eventuales, sin alterar autoría, al redactar el prólogo |
+| DAT-006 | Línea secundaria `Proyecto Sorríos — Catastro de Ensenada`; título y subtítulo aprobados; autor Miguel Conde de Simón | **RESUELTO** | Landing, portada, créditos y metadatos |
+| DAT-007 | Miguel Conde de Simón, limitado al contenido original | **RESUELTO PARA CONTENIDO ORIGINAL** | Aviso de copyright y colofón; materiales externos bajo régimen propio |
+| DAT-008 | CC BY 4.0, limitada al contenido original que el autor pueda licenciar | **RESUELTO PARA CONTENIDO ORIGINAL** | Distribución y reutilización; sin relicenciar materiales externos |
+| DAT-009 | Modelo F1: año efectivo de publicación visible y fecha completa en metadatos/colofón/release | **MODELO RESUELTO — VALOR FINAL DIFERIDO HASTA PUBLICACIÓN** | Publicación efectiva |
+| DAT-010 | No existe URL pública canónica aprobada | **DIFERIDO HASTA PKG-12/PKG-13** | Mecanismo real de publicación |
 
-Recuento DAT: **10**. No se infiere ninguno.
+Recuento DAT: **10**. DAT-001–DAT-008 están resueltos; DAT-009 conserva solo el
+valor final diferido y DAT-010 se cierra con la publicación. Ningún valor se
+infiere.
+
+Diferimientos adicionales controlados de PKG-00: texto definitivo del prólogo,
+agradecimientos eventuales, nota final de derechos por componentes y asuntos
+`LEGAL-PENDIENTE` sobre facsímil, reproducciones, cartografía e imágenes
+externas. No impiden iniciar PKG-01–PKG-05.
 
 ## 5. Backlog 1.1+
 
