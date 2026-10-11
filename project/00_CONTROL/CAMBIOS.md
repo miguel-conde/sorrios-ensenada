@@ -1,3 +1,13 @@
+## 11 de octubre de 2026 — PKG-01: Glosario canónico GH-B
+
+- Aplicado el modelo GH-B selectivo al Glosario canónico con conocimiento ya consolidado en la Edición Crítica 3.6, el Estudio Histórico 1.2 y el Registro D/C/I/E/L 1.2.
+- Mejoradas las siete voces G1 aprobadas: `Señorío`, `medio vecino`, `propios`, `arbitrio`, `boto`, `vecera` e `hijo de familia`.
+- Incorporadas las voces `avitadores`, `utilidad`, `repartimiento` y `quartal`.
+- Evaluadas e incorporadas las dos candidatas condicionales `establecimiento del suelo` y `arenta`, ambas con dictamen `INCORPORAR` y cautelas explícitas.
+- Conservadas sin investigación ni ampliación las voces G3 y G4 excluidas de PKG-01; el resto del Glosario permanece sin cambios.
+- No se modifican Edición Crítica, Estudio Histórico, Registro D/C/I/E/L, Manual Editorial, índices, `proyecto.yaml`, `estado.yaml`, `unidades.yaml` ni PDF autoritativo; `operation.status` permanece `clean`.
+- Operación aislada en `pkg-01/glosario-gh-b-v1` desde `da2c596b20abd5447c11c83955d18a99ad9af9a6`, sin investigación externa ni integración en la rama de publicación.
+
 ## 19 de septiembre de 2026 — Muestra de diseño revisada 0.4
 
 - Generadas las variantes de alta calidad y lectura de la muestra 0.4 a partir de una composición única de veinte páginas.

@@ -20,7 +20,8 @@ No contendrá interpretación histórica extensa.
 - **Definición:** condición jurisdiccional que los declarantes atribuyen al lugar o concejo en la segunda respuesta, indicando que pertenece al `Conde De Luna`.
 - **Primera unidad:** folio 307r.
 - **Referencias:** folio 307r; folio 318r; `Conde De Luna`; `Concejo de Ordas`.
-- **Notas:** la entrada describe únicamente lo declarado en las unidades y no identifica ni reconstruye aquí el régimen señorial fuera del expediente. En folio 318r reaparece la forma `Señorio` al comienzo de la respuesta 22.ª; su frase continúa materialmente en folio 318v, por lo que no se anticipa aquí la interpretación de esa continuación.
+- **Contexto histórico:** en este expediente, `Señorío` expresa una relación jurisdiccional e institucional y no demuestra por sí solo que el señor fuese propietario de todas las tierras, recursos o rentas. La respuesta 22.ª niega un pago al señor por el `establecim[ien]to. De el suelo`, pero las respuestas 28.ª y 29.ª documentan por separado las alcabalas enajenadas a favor del conde de Luna y un pozo de pesca de su propiedad. El contexto canónico identifica externamente al titular de 1752 con Francisco Alfonso Pimentel, XV conde de Luna, manteniendo separado ese dato del tenor del manuscrito (`JUR-005`, `JUR-006`, `JUR-008`).
+- **Notas:** no se reconstruyen por inferencia el origen, el título jurídico ni el alcance de otros derechos señoriales.
 
 ### medio vecino
 
@@ -28,7 +29,8 @@ No contendrá interpretación histórica extensa.
 - **Definición:** categoría vecinal usada en la respuesta 21.ª junto a `vecinos`; el expediente cuenta dieciocho vecinos y ocho medios vecinos —incluidas dos viudas— como veintiséis `avitadores`, y distingue además ocho `residentes` a los que no considera vecinos porque no contribuyen con los `tributos reales`.
 - **Primera unidad:** folio 318r.
 - **Referencias:** folio 318r; respuesta 21.ª.
-- **Notas:** se registra únicamente la distinción interna del expediente. No se fija aquí una definición fiscal o jurídica general de `medio vecino` fuera de esta respuesta.
+- **Contexto histórico:** el contexto canónico sitúa `medio vecino` como una categoría fiscal o vecinal, no como media persona ni como un coeficiente fijo de hogar o población; documenta además que las viudas podían computarse así en distintos lugares, sin convertir esa práctica comparada en una regla universal (`DEM-001`, `DEM-002`, `DEM-005`; `LIM-001`).
+- **Notas:** no se deducen de la categoría edad, composición doméstica, fracción de propiedad ni equivalencia demográfica.
 
 ### propios
 
@@ -36,7 +38,8 @@ No contendrá interpretación histórica extensa.
 - **Definición:** categoría de recursos del común mencionada en la respuesta 23.ª; el expediente declara que `este comun no tiene propios algunos`.
 - **Primera unidad:** folio 318v.
 - **Referencias:** folio 318v; respuesta 23.ª; Glosario: `arbitrio`.
-- **Notas:** se registra únicamente la categoría tal como funciona en el expediente; no se reconstruye aquí un régimen general de bienes o rentas de propios.
+- **Contexto histórico:** el contexto canónico sitúa `propios` y `arbitrios` como categorías de la hacienda local. En Sorribos, la ausencia declarada de propios, arbitrios y renta explica que los gastos enumerados en la respuesta 25.ª se cubran mediante repartimiento entre los vecinos (`FIS-005`–`FIS-007`, `FIS-016`, `INT-006`).
+- **Notas:** la ausencia de propios no demuestra pobreza absoluta ni permite inferir la propiedad o administración del común sobre otros recursos.
 
 ### arbitrio
 
@@ -44,7 +47,8 @@ No contendrá interpretación histórica extensa.
 - **Definición:** categoría de recurso o ingreso del común mencionada en la respuesta 24.ª; el expediente declara que `el comun no disfruta arbitrio, ni renta alguna`.
 - **Primera unidad:** folio 318v.
 - **Referencias:** folio 318v; respuesta 24.ª; Glosario: `propios`.
-- **Notas:** se conserva el uso documental sin fijar en esta fase una definición fiscal más amplia fuera del expediente.
+- **Contexto histórico:** el contexto canónico sitúa `arbitrio` junto a `propios` dentro de la hacienda local. Su ausencia, unida a la de propios y renta, permite entender el recurso al repartimiento para los gastos declarados, pero no acredita la inexistencia de cualquier otro recurso fuera del alcance del interrogatorio (`FIS-005`–`FIS-007`, `FIS-016`, `INT-006`).
+- **Notas:** no se fija una definición fiscal general ni se equipara automáticamente `arbitrio` con `propios`.
 
 ### Ferrañales
 
@@ -108,7 +112,8 @@ No contendrá interpretación histórica extensa.
 - **Definición:** prestación eclesiástica que la respuesta 15.ª atribuye a la `fabrica De el Apostol Santiago`.
 - **Primera unidad:** folio 314v.
 - **Referencias:** folio 314v; folio 315r; `fabrica De el Apostol Santiago`.
-- **Notas:** la forma `boto` se conserva en la transcripción. La identificación con el Voto de Santiago se apoya en la atribución interna al Apóstol Santiago y en documentación archivística de la prestación. El Archivo Histórico Provincial de Granada, en una ficha de la Junta de Andalucía sobre un documento de 1727, la denomina expresamente `Voto de Santiago`: <https://www.juntadeandalucia.es/organismos/culturapatrimoniohistoricoydeporte/areas/cultura/archivos/archivos-consejeria/archivo-historico-provincial-granada/ahpg-recomienda/paginas/documento-ahpg-sep-2012.html>. En folio 315r se declara `a veinte, y quatro el boto` dentro de la misma serie cuantitativa que la primicia; al no repetirse explícitamente la unidad tras la cifra, no se añade una equivalencia que el manuscrito no formule. No se determina aquí una administración receptora más precisa que la indicada por el manuscrito.
+- **Contexto histórico:** la identificación con el Voto de Santiago se apoya en la atribución interna al Apóstol Santiago y en el contexto canónico, que lo sitúa como renta eclesiástica de origen medieval, con variantes locales y extensión desigual en León (`FIS-013`). Se conserva asimismo el apoyo archivístico ya registrado por el proyecto: <https://www.juntadeandalucia.es/organismos/culturapatrimoniohistoricoydeporte/areas/cultura/archivos/archivos-consejeria/archivo-historico-provincial-granada/ahpg-recomienda/paginas/documento-ahpg-sep-2012.html>.
+- **Notas:** la forma documental `boto`, el receptor declarado y la cuantía local prevalecen sobre el contexto general. En folio 315r se declara `a veinte, y quatro el boto` dentro de la misma serie cuantitativa que la primicia; al no repetirse explícitamente la unidad ni el producto, no se completan por inferencia. No se determina una administración receptora más precisa que la indicada por el manuscrito.
 
 ### fejes
 
@@ -164,7 +169,8 @@ No contendrá interpretación histórica extensa.
 - **Definición:** turno o rotación entre los vecinos por el que, según la respuesta 29.ª, funciona la taberna cuando no hay quien la arriende.
 - **Primera unidad:** folio 319v.
 - **Referencias:** folio 319v; respuesta 29.ª.
-- **Notas:** el expediente declara que la taberna `anda por vecera entre los vecinos` y que por esa razón no rinde utilidad al común ni a particular. La definición se limita a esta función contextual y no fija una acepción general fuera del expediente.
+- **Contexto histórico:** ordenanzas concejiles leonesas ya incorporadas al contexto canónico usan `andar por vecera` para servicios que pasan por turno entre vecinos cuando nadie los arrienda; el paralelo confirma el sentido rotatorio de la expresión local (`TRA-005`, `TRA-006`).
+- **Notas:** el expediente declara que la taberna `anda por vecera entre los vecinos` y que por esa razón no rinde utilidad al común ni a particular. No se extiende el turno a otras actividades no mencionadas.
 
 ### servicio ordinario y extraordinario
 
@@ -180,7 +186,8 @@ No contendrá interpretación histórica extensa.
 - **Definición:** categoría usada en la respuesta 35.ª para catorce de los dieciocho jornaleros declarados, a quienes el expediente identifica como hijos que están en compañía de sus padres.
 - **Primera unidad:** folio 320r.
 - **Referencias:** folio 320r; respuesta 35.ª; Índice de oficios: `jornalero`.
-- **Notas:** se registra únicamente la función de la expresión dentro del expediente; no se fija aquí una definición jurídica o fiscal general fuera de esta respuesta.
+- **Contexto histórico:** en el análisis canónico, la expresión documenta una posición doméstica y laboral de dependencia en casos concretos y ayuda a explicar la composición de los jornaleros (`TRA-001`, `INT-008`, `DEM-005`).
+- **Notas:** no se infieren edad, estado civil, hogar independiente, exclusividad laboral ni una definición jurídica o fiscal general.
 
 ### pobre de solemnidad
 
@@ -189,3 +196,57 @@ No contendrá interpretación histórica extensa.
 - **Primera unidad:** folio 320v.
 - **Referencias:** folio 320v; respuesta 36.ª.
 - **Notas:** se registra únicamente la categoría tal como aparece en el expediente; no se fija aquí una definición jurídica o asistencial general fuera de esta respuesta.
+
+### avitadores
+
+- **Término documentado:** `avitadores`.
+- **Definición:** resultado con el que la respuesta 21.ª designa conjuntamente a dieciocho vecinos y ocho medios vecinos, cuya suma declarada es veintiséis.
+- **Primera unidad:** folio 318r.
+- **Referencias:** folio 318r; respuesta 21.ª; Glosario: `medio vecino`.
+- **Contexto histórico:** el cómputo pertenece a las categorías fiscales y vecinales del expediente; no constituye una cifra de población individual ni incluye automáticamente a los ocho residentes que la propia respuesta separa de los vecinos (`DEM-001`, `DEM-002`; `CAL-019`; `LIM-001`).
+- **Notas:** se conserva la grafía documental y no se normaliza como un censo de habitantes.
+
+### utilidad
+
+- **Término documentado:** `utilidad`; variantes de contexto `utilidad annual` y `De utilidad`.
+- **Definición:** valoración o rendimiento que el expediente atribuye o niega a bienes, actividades, animales, trabajo y derechos en distintas respuestas; puede expresarse en dinero o en especie.
+- **Primera unidad:** folio 309r.
+- **Referencias:** folio 309r; folios 315v–320v; respuestas 6.ª, 17.ª–20.ª, 29.ª, 33.ª y 35.ª.
+- **Contexto histórico:** las utilidades del expediente son regulaciones fiscales o periciales ligadas al interrogatorio; no equivalen por sí solas a producción observada, beneficio empresarial, renta familiar ni ingreso efectivamente cobrado (`GAN-001`, `HID-004`, `HID-005`, `FIS-012`; `LIM-002`, `INT-010`).
+- **Notas:** cada aparición debe leerse con su sujeto, periodo y unidad; no se agregan cantidades heterogéneas.
+
+### repartimiento
+
+- **Término documentado:** `repartimi-` / `ento`.
+- **Definición:** mecanismo declarado en la respuesta 25.ª para pagar entre los vecinos los gastos del común enumerados, al no disponer este de recursos propios para esas cantidades.
+- **Primera unidad:** folio 319r.
+- **Referencias:** folios 318v–319r; respuesta 25.ª; Glosario: `propios`; `arbitrio`.
+- **Contexto histórico:** en Sorribos, la secuencia documentada es gasto del común, ausencia de propios para cubrirlo y repartimiento vecinal; el contexto canónico la interpreta como dependencia de ese mecanismo para los gastos declarados (`FIS-005`–`FIS-007`, `INT-006`).
+- **Notas:** no constan en esta respuesta la cuota de cada vecino, el criterio de distribución ni un presupuesto exhaustivo.
+
+### quartal
+
+- **Término documentado:** `quartal`; plural `quartales`.
+- **Definición:** medida empleada en el expediente para expresar sembradura y cabida estimada, rendimientos de frutos y determinadas prestaciones o utilidades en especie.
+- **Primera unidad:** folio 309v.
+- **Referencias:** folios 309v–318r; respuestas 9.ª–17.ª y 20.ª; Índice de medidas: `quartal` / `quartales`.
+- **Contexto histórico:** la respuesta 9.ª declara que las tierras de pan llevar se entienden por el grano que pueden admitir y que `Cada quatro quartales componen vna fanega`; el mismo quartal de sembradura ocupa más o menos terreno según la calidad de la tierra (`TER-003`–`TER-005`, `TER-011`).
+- **Notas:** la relación interna con la fanega no autoriza una conversión moderna de superficie ni establece equivalencia con el celemín de la respuesta 10.ª o con las cargas de las respuestas 16.ª–17.ª (`LIM-004`, `LIM-005`).
+
+### establecimiento del suelo
+
+- **Término documentado:** `establecim[ien]to. De el suelo`.
+- **Definición:** concepto concreto de la respuesta 22.ª por el que los declarantes afirman que, aunque el lugar es de señorío, no pagan cosa alguna al señor.
+- **Primera unidad:** folio 318v.
+- **Referencias:** folios 318r–318v; respuesta 22.ª; Glosario: `Señorío`.
+- **Contexto histórico:** la ausencia de ese pago tiene alcance limitado al concepto nombrado y no equivale a ausencia general de derechos señoriales; las respuestas 28.ª y 29.ª documentan separadamente alcabalas y un pozo de pesca vinculados al conde de Luna (`JUR-005`, `JUR-006`, `FIS-012`).
+- **Notas:** se mantiene la locución completa y no se reconstruyen por inferencia su naturaleza jurídica general, origen o forma de cálculo.
+
+### arenta
+
+- **Término documentado:** `arenta`, en la expresión `dado arenta`.
+- **Definición:** forma usada en la respuesta 20.ª al valorar el buey y la vaca dados bajo ese régimen en cinco y cuatro quartales de centeno, respectivamente.
+- **Primera unidad:** folio 318r.
+- **Referencias:** folio 318r; respuesta 20.ª; Índice de medidas: `quartal` / `quartales`.
+- **Contexto histórico:** el contexto canónico sobre la ganadería leonesa permite interpretar cautamente la forma en relación con ganado dado a renta o aparcería a cambio de pagos; las prestaciones concretas de Sorribos proceden solo del manuscrito (`GAN-001`, `GAN-008`).
+- **Notas:** se respeta la forma documental `arenta` sin normalizarla a `a renta`; no constan las partes, duración, reparto de riesgos ni otras condiciones del acuerdo.
