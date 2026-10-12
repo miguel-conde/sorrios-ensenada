@@ -1,8 +1,8 @@
 # Revisión editorial consolidada de la candidata 1.0
 
-**Fecha:** 11 de octubre de 2026<br>
+**Fecha:** 12 de octubre de 2026<br>
 **Fase:** 6A — ejecución del alcance 1.0<br>
-**Estado:** DEC-001–DEC-034 cerradas; PKG-01–03 integrados; cartografía preparada como asset pero no insertada; CR-V1-001, propagación editorial, citas y bibliografía pendientes<br>
+**Estado:** DEC-001–DEC-034 cerradas; PKG-01–03 y CR-V1-001 integrados; cartografía preparada como asset pero no insertada; presentación editorial, citas y bibliografía pendientes<br>
 **Cierre humano:** [CIERRE_ALCANCE_V1_0.md](./CIERRE_ALCANCE_V1_0.md)<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Plan operativo:** [PLAN_EJECUCION_V1_0.md](./PLAN_EJECUCION_V1_0.md)
@@ -15,9 +15,11 @@ decisiones `DEC-001`–`DEC-034` fijan el alcance. Un estado resuelto en fuente
 canónica no significa que el cambio esté ya propagado a PDF o HTML.
 
 La composición 0.6 continúa siendo referencia editorial, no autoridad textual o
-histórica. `project/` mantiene la autoridad canónica. `publication/` contiene ya
-los assets cartográficos de PKG-03, pero la candidata no se ha regenerado y los
-mapas no están integrados en capítulos, HTML ni PDF.
+histórica. `project/` mantiene la autoridad canónica. CR-V1-001 sincronizó
+técnicamente el Glosario GH-B de 28 entradas con la publicación y
+`publication/` contiene ya los assets cartográficos de PKG-03, pero la candidata
+no se ha regenerado: el contexto histórico y los mapas no están integrados en la
+presentación final HTML/PDF.
 
 ## 2. Estados de alcance
 
@@ -51,7 +53,7 @@ mapas no están integrados en capítulos, HTML ni PDF.
 | REV-017 | Macroorden | Se conserva contexto → estudio → documento con rutas histórica y documental. | **INCLUIR EN 1.0** — DEC-011. | Implementar rutas; no reordenar. |
 | REV-018 | Sidebar HTML | La navegación inicial está demasiado desplegada. | **INCLUIR EN 1.0** — DEC-014. | Parte activa abierta; validar teclado y viewports. |
 | REV-019 | Cierres de capítulos | Se exige función conclusiva común con títulos específicos. | **INCLUIR EN 1.0** — DEC-013. | Revisión de capítulos 5–13. |
-| REV-020 | Glosario y contexto | A: G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo. | **RESUELTO EN FUENTE CANÓNICA** — DEC-016–019; commit `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`. | **PROPAGACIÓN A CANDIDATA PENDIENTE**: siete G1 mejoradas y seis altas canónicas; G3 no investigada y G4 no ampliada. PDF/HTML no regenerados. |
+| REV-020 | Glosario y contexto | A: G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo. | **RESUELTO EN FUENTE CANÓNICA Y SINCRONIZADO TÉCNICAMENTE** — DEC-016–019; commits `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39` y `c07bc011a42952f64622e3f78e8d759ad361cf29`. | **PRESENTACIÓN EDITORIAL PENDIENTE**: el derivado contiene 28 entradas y el modelo conserva el contexto selectivo, pero `Contexto histórico` aún no se presenta, REV-024 sigue abierta y PDF/HTML no se han regenerado. |
 | REV-021 | Aparato visual | B: cronología, dos mapas y diagrama aportan valor; los dos mapas están ya preparados y validados como assets. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-020–024 y DEC-029. | Mapas: asset preparado en PKG-03 e integración pendiente en PKG-07; cronología/diagrama pendientes; diferir Concejo/municipio y no producir término histórico. |
 | REV-022 | Identidad de desarrollo | `0.1.0-dev`, `development` y «Edición en desarrollo» no pueden llegar a 1.0. | **INCLUIR EN 1.0** — DEC-006–007. | Retirar al integrar la nueva candidata. |
 | REV-023 | TOC PDF | Numeraciones largas se pegan a los títulos. | **INCLUIR EN 1.0** — corrección obligatoria. | PKG-05; probar casos extremos del capítulo 16. |
@@ -78,8 +80,8 @@ mapas no están integrados en capítulos, HTML ni PDF.
   fuentes ni parchear afirmaciones canónicas desde `publication/`.
 - Integración narrativa y multiformato de los assets cartográficos en PKG-07;
   no marcarlos como presentes en la candidata antes de ese paquete.
-- `CR-V1-001`: adaptar el analizador al Glosario GH-B y recuperar la suite
-  completa antes de PKG-04, sin modificar la fuente canónica.
+- PKG-04 está desbloqueado tras el cierre de `CR-V1-001`, pero el prototipo F3
+  todavía no se ha iniciado ni decidido humanamente.
 - Resultado técnico de la optimización segura.
 
 Estas condiciones determinan cómo ejecutar decisiones ya cerradas; no vuelven a
@@ -104,10 +106,10 @@ reconstrucción geográfica histórica.
 No se crea tag en 6A. La candidata técnica
 `49ab2e1b1a58ca9201efab54b42a3125de7326f8` se conserva como baseline
 pre-PKG-01 y no está sincronizada con la fuente canónica actual. REV-020 está
-resuelta en la fuente, pero su propagación a la candidata permanece pendiente;
-REV-024 continúa pendiente de PKG-05. El tag solo puede aparecer en PKG-13,
-después de candidata nueva, validación, preview, aceptación humana y autorización
-explícita de Fase 6B.
+resuelta en la fuente y sincronizada en el flujo técnico, pero su presentación
+editorial y la regeneración de la candidata permanecen pendientes; REV-024
+continúa pendiente de PKG-05. El tag solo puede aparecer en PKG-13, después de
+candidata nueva, validación, preview, aceptación humana y autorización explícita
+de Fase 6B.
 
-**SIGUIENTE PASO: CR-V1-001 — restaurar compatibilidad del analizador del
-glosario GH-B antes de PKG-04.**
+**SIGUIENTE PASO: PKG-04 — prototipo F3.**

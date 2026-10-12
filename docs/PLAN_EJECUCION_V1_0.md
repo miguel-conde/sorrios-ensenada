@@ -3,7 +3,7 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00 cerrado y PKG-01–02 completados e integrados
+**Estado:** plan operativo; PKG-00 cerrado, PKG-01–03 integrados y CR-V1-001 cerrada
 
 ## 1. Reglas generales
 
@@ -76,8 +76,9 @@ Debe:
 **Autoridad afectada:** `project/`.<br>
 **Salida:** fuentes canónicas validadas; siete G1 mejoradas y seis voces nuevas
 incorporadas —`avitadores`, `utilidad`, `repartimiento`, `quartal`,
-`establecimiento del suelo` y `arenta`—. No se investigó G3. La propagación a la
-publicación permanece pendiente.<br>
+`establecimiento del suelo` y `arenta`—. No se investigó G3. CR-V1-001 completó
+la sincronización técnica con la publicación; la presentación editorial final y
+la regeneración de la candidata permanecen pendientes.<br>
 **Prohibición:** no editar directamente `publication/generated/`; la
 regeneración corresponde a PKG-10.
 
@@ -175,10 +176,10 @@ elimina contenido. Si no existe una mejora material y segura, el peso no bloquea
 
 | Paquete | Estado | Dependencia conservada |
 |---|---|---|
-| PKG-01 | **COMPLETADO E INTEGRADO** | Commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; propagación a publicación pendiente. |
+| PKG-01 | **COMPLETADO E INTEGRADO** | Commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; sincronización técnica completada por CR-V1-001; presentación editorial y candidata pendientes. |
 | PKG-02 | **COMPLETADO E INTEGRADO CON INCIDENCIAS ABIERTAS** | 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01; plan de resolución documentado; `references.bib` vacío y pendiente. |
 | PKG-03 | **COMPLETADO E INTEGRADO** | Mapas regional y local APTO; procedencia, licencia, atribución, redistribución, accesibilidad y reproducibilidad verificadas. Inserción editorial pendiente de PKG-07. |
-| PKG-04 | **BLOQUEADO POR CR-V1-001** | Restaurar primero la compatibilidad del analizador GH-B y la suite general; después prototipo F3 y decisión humana en GATE-01. |
+| PKG-04 | **LISTO PARA INICIAR** | CR-V1-001 cerrada y suite completa en PASS; siguiente operación: prototipo F3, sin integración definitiva antes de GATE-01. |
 | PKG-05 | **READY CON RESULTADO CANÓNICO PKG-01; DEPENDENCIA F3 CONOCIDA** | Puede usar el Glosario canónico final de PKG-01; REV-024 y el orden alfabético publicado siguen sin implementar; medición coordinada con F3. |
 
 ### Revisión de pretrabajos antes de GATE-01
@@ -443,7 +444,7 @@ chore(release): publish version 1.0
 - PKG-02 integrado; `INC-BIB-001` e `INC-BIB-002` cerradas antes de aceptar
   GATE-01 y de implementar la correspondencia final fuente/uso en PKG-08.
 - Mapas de PKG-03 aceptados y licenciados.
-- `CR-V1-001` cerrada antes de iniciar PKG-04; suite general de nuevo en PASS.
+- `CR-V1-001` cerrada e integrada; suite general en PASS y PKG-04 desbloqueado.
 - F3 decidido humanamente.
 - REV-023–025 tienen solución comprobada.
 - Resultado de peso documentado.
@@ -512,11 +513,12 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 ### CR-V1-001 — compatibilidad del analizador del Glosario GH-B
 
 - Tipo: corrección técnica, sin ampliación de alcance.
-- Estado: `EJECUCIÓN PENDIENTE`.
+- Estado: `CERRADA E INTEGRADA`.
 - Origen: validación completa de PKG-03.
-- Condición: adaptar el consumidor técnico al GH-B aprobado sin modificar
-  `project/`, y recuperar tests específicos y suite completa en PASS.
-- Dependencia: debe cerrarse antes de iniciar PKG-04.
+- Implementación: `c07bc011a42952f64622e3f78e8d759ad361cf29` adapta el
+  consumidor técnico al GH-B aprobado sin modificar `project/`.
+- Validación: suite completa en PASS; cuatro aparatos reproducibles bajo
+  `publication/generated/`, ignorados y con cero archivos versionados.
+- Resultado: bloqueo técnico eliminado; PKG-04 queda listo para iniciar.
 
-**SIGUIENTE PAQUETE RECOMENDADO: CR-V1-001 — restaurar compatibilidad del
-analizador del glosario GH-B antes de PKG-04.**
+**SIGUIENTE PAQUETE RECOMENDADO: PKG-04 — prototipo F3.**

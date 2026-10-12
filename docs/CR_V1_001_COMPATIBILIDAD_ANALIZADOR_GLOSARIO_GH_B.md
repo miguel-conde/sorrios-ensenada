@@ -3,101 +3,94 @@
 ## Identificación
 
 - **ID:** `CR-V1-001`.
-- **Fecha:** 11 de octubre de 2026.
+- **Fecha de apertura:** 11 de octubre de 2026.
+- **Fecha de cierre:** 12 de octubre de 2026.
 - **Origen:** validación completa durante la revisión e integración de PKG-03.
-- **Estado:** `APROBADA COMO CORRECCIÓN NECESARIA — EJECUCIÓN PENDIENTE`.
-- **Tipo:** `CORRECCIÓN TÉCNICA / NO AMPLIACIÓN DE ALCANCE`.
+- **Estado:** `CERRADA E INTEGRADA`.
+- **Tipo:** `TECH-A — CORRECCIÓN TÉCNICA / NO AMPLIACIÓN DE ALCANCE`.
+- **Commit final integrado:** `c07bc011a42952f64622e3f78e8d759ad361cf29`.
 
-## Evidencia
+## Problema y autoridad
 
-### Test y error
+PKG-01 amplió el Glosario canónico GH-B de 22 a 28 entradas y añadió
+selectivamente `Contexto histórico` conforme a `DEC-016`–`DEC-019`. El consumidor
+`publication/scripts/apparatus_sources.py` conservaba un contrato exacto de
+cinco campos y rechazaba las entradas enriquecidas con el sexto campo.
 
-- Test:
-  `tests/test_publication_phase4d.py::test_glossary_has_no_invented_version_and_all_unique_entries`.
-- Fixture: `glossary`, en `tests/test_publication_phase4d.py:30–32`.
-- Consumidor: `load_glossary()` → `parse_glossary()` en
-  `publication/scripts/apparatus_sources.py`.
-- Excepción: `apparatus_sources.ApparatusSourceError`.
-- Condición exacta: la entrada `Señorío` contiene los campos
-  `Término documentado`, `Definición`, `Primera unidad`, `Referencias`,
-  `Contexto histórico` y `Notas`, mientras `GLOSSARY_FIELDS` exige exactamente
-  los cinco anteriores salvo `Contexto histórico`.
+El Glosario canónico integrado en
+`9ae4d1fd46d9f2d7bca685de861bff2a554a7a39` era la autoridad; por tanto, la
+corrección debía adaptar el consumidor técnico sin revertir, empobrecer ni
+modificar `project/`.
 
-### Comparación base / PKG-03
+## Solución integrada
 
-Se ejecutó exactamente el mismo test en dos worktrees/estados aislados:
+El parser acepta ahora:
 
-| Estado | Commit | Resultado | Condición |
-|---|---|---|---|
-| A — base previa a PKG-03 | `ddfa2adb9f06f7b50585dbc80f156e62c968f570` | ERROR | mismo `ApparatusSourceError`, primera entrada `Señorío`, seis campos recibidos frente a cinco exigidos |
-| B — PKG-03 | `4d0210f5f127933ac7a059bb029cde04ecd6d28b` | ERROR | misma excepción, parser y condición semántica |
+- cinco campos base obligatorios;
+- `Contexto histórico` como `str | None`;
+- el campo opcional únicamente entre `Referencias` y `Notas`;
+- entradas de cinco campos, de seis campos y mezclas de ambas.
 
-Los blobs de `apparatus_sources.py`, `test_publication_phase4d.py` y
-`Glosario.md` son idénticos entre A y B. El diff de PKG-03 añade únicamente el
-dossier, los assets/datos cartográficos, el generador y sus tests; no modifica
-el Glosario, el parser ni las pruebas de Fase 4D.
+Mantiene controles estrictos: rechaza campos desconocidos, duplicados,
+obligatorios ausentes y encabezados inválidos. No se introdujo tolerancia
+genérica basada en el mero número de campos.
 
-Resultado: `FALLO PREEXISTENTE A PKG-03`.
+El snapshot técnico quedó sincronizado con:
 
-### Relación con PKG-01
+- `base.git_commit`:
+  `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`;
+- blob del Glosario:
+  `5f1e78adee096f5d5752d6fe1af866ca5e5c8b17`;
+- conteo vigente: 28 entradas.
 
-- Antes de PKG-01, en `da2c596b20abd5447c11c83955d18a99ad9af9a6`,
-  el mismo test pasa (`1 passed`).
-- PKG-01, commit `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`,
-  modificó el Glosario canónico e incorporó selectivamente el campo
-  `Contexto histórico` conforme a `DEC-016`–`DEC-019`.
-- PKG-01 no modificó `apparatus_sources.py` ni
-  `test_publication_phase4d.py`; ambos conservan los mismos blobs anteriores.
-- El parser exige igualdad exacta con una tupla fija de cinco campos y por ello
-  no reconoce el sexto campo canónico en las entradas GH-B enriquecidas.
+Fase 6A distingue la procedencia canónica vigente del registro histórico de
+la candidata: el SHA `e81dc9239ac8dbabfe77168a50ef98c4d3b79170` se conserva
+solo donde documenta legítimamente aquel estado histórico.
 
-## Autoridad
+## Derivados y diagnóstico GEN-C
 
-El Glosario canónico GH-B, aprobado por decisión humana e integrado mediante
-PKG-01, es la autoridad. `apparatus_sources.py` es un consumidor técnico
-derivado. La fuente canónica no debe revertirse ni empobrecerse para satisfacer
-un parser que conserva el contrato anterior.
+La primera validación también detectó aparatos locales obsoletos. La solución
+final no los versiona ni crea una excepción a la arquitectura existente:
 
-## Clasificación
+`fuentes versionadas → prepare.py → generated/ ignorado → validate_publication.py`
 
-`TECH-A — Parser/test obsoleto respecto al contrato canónico GH-B ya aprobado.`
+Los cuatro aparatos se reconstruyen desde sus fuentes, permanecen bajo
+`publication/generated/` y no aparecen en el índice de Git. `.gitignore` y
+`publication/README.md` permanecen intactos. El intento intermedio
+`a10823c...` se descartó y no se integró.
 
-La incidencia es un **DEFECTO TÉCNICO**. No constituye una nueva función ni un
-cambio de alcance.
+Clasificación final: `GEN-C RESUELTA` mediante restauración del flujo
+reproducible normal.
 
-## Solución prevista
+## Verificación y cierre
 
-Adaptar el parser, el modelo de datos derivado y las pruebas al contrato GH-B
-vigente, donde `Contexto histórico` es un campo selectivo: debe conservarse
-cuando existe sin obligarlo a todas las entradas. La ejecución deberá comprobar
-también que los generadores consumidores propagan el campo sin mezclarlo con la
-definición documental.
+- Phase 4D: `51 passed`.
+- Phase 6A: `10 passed` tras la integración y el cierre documental.
+- `check_sources.py`: PASS con 28 entradas y procedencia correcta.
+- `validate_publication.py`: PASS integral tras `prepare.py`.
+- Suite completa preintegración: `585 passed`.
+- Suite completa posintegración y tras el cierre documental: `585 passed`.
+- `validate_project.py`, cartografía `--check`, compilación Python y
+  `git diff --check`: PASS.
+- `publication/generated/`: cero archivos versionados.
+- `project/`: árbol idéntico al de la base de la operación.
 
-Esta solución se ejecutará en una operación técnica posterior; este registro no
-modifica código ni tests.
+La rama `feature/quarto-book` incorporó el commit final mediante fast-forward
+estricto. El cierre detallado queda en
+[CIERRE_CR_V1_001_GLOSARIO_GH_B.md](./CIERRE_CR_V1_001_GLOSARIO_GH_B.md).
 
-## Límites
+## Límites conservados
 
-La futura corrección no podrá:
+Este cierre no:
 
-- cambiar contenido del Glosario;
-- eliminar o degradar `Contexto histórico`;
-- modificar las decisiones GH-B;
-- introducir entradas nuevas;
-- modificar `project/`;
-- reabrir PKG-01;
-- iniciar PKG-04 antes de recuperar una suite general verde.
+- inicia PKG-04;
+- resuelve REV-024 ni presenta editorialmente `Contexto histórico`;
+- resuelve `INC-BIB-001` o `INC-BIB-002`;
+- regenera la candidata HTML/PDF;
+- modifica el Glosario canónico, la cartografía, los capítulos o la
+  bibliografía;
+- autoriza push, tag o release.
 
-## Criterio de cierre
+## Estado final
 
-- Parser compatible con la estructura GH-B real y selectiva.
-- Campo `Contexto histórico` preservado en los derivados cuando exista.
-- Tests específicos del parser y Fase 4D en PASS.
-- Suite completa en PASS.
-- Ninguna regresión de las entradas legítimas de cinco campos ni de otros
-  formatos anteriores todavía vigentes.
-- `project/` byte a byte intacto durante la corrección técnica.
-
-## Estado
-
-`APROBADA COMO CORRECCIÓN NECESARIA — EJECUCIÓN PENDIENTE`
+`CERRADA E INTEGRADA`

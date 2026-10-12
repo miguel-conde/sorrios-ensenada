@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 11 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; PKG-00 cerrado y PKG-01–03 completados e integrados; la candidata anterior no está regenerada<br>
-**Fase actual:** Fase 6A — CR-V1-001, compatibilidad del analizador GH-B, previa a PKG-04; dos incidencias bibliográficas siguen abiertas hasta GATE-01<br>
+**Actualizado:** 12 de octubre de 2026<br>
+**Estado global:** Fase 6 en curso; PKG-00 cerrado, PKG-01–03 y CR-V1-001 completados e integrados; la candidata anterior no está regenerada<br>
+**Fase actual:** Fase 6A — PKG-04 desbloqueado y listo para iniciar; dos incidencias bibliográficas siguen abiertas hasta GATE-01<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -36,8 +36,10 @@ Una sesión nueva de Copilot debe leer, en este orden:
     resolver antes de GATE-01 `INC-BIB-001` e `INC-BIB-002`.
 19. `docs/CIERRE_PKG_03_CARTOGRAFIA.md` para el cierre y la integración de los
     assets cartográficos.
-20. `docs/CR_V1_001_COMPATIBILIDAD_ANALIZADOR_GLOSARIO_GH_B.md` para la
-    siguiente corrección técnica obligatoria.
+20. `docs/CR_V1_001_COMPATIBILIDAD_ANALIZADOR_GLOSARIO_GH_B.md` para el
+    diagnóstico consolidado y la solución técnica integrada.
+21. `docs/CIERRE_CR_V1_001_GLOSARIO_GH_B.md` para el cierre verificable de la
+    corrección y sus límites.
 
 ## Estado comprobado
 
@@ -101,16 +103,15 @@ Una sesión nueva de Copilot debe leer, en este orden:
   APTO, reproducibles y redistribuibles con las atribuciones IGN/CNIG/SCN
   incorporadas. Los assets están preparados, pero todavía no se han insertado
   en capítulos ni en HTML/PDF; esa integración pertenece a PKG-07.
-- `CR-V1-001` permanece abierta como corrección técnica de tipo TECH-A. La
-  suite general no está verde porque el parser del Glosario conserva el
-  contrato anterior de cinco campos y rechaza `Contexto histórico`. El mismo
-  fallo se reproduce en la base anterior a PKG-03, no tiene relación causal con
-  la cartografía y debe corregirse antes de iniciar PKG-04, sin modificar
-  `project/` ni reabrir PKG-01.
-- Fuente canónica actual: `project/` incluye PKG-01. El aparato publicado no fue
-  regenerado y aún no propaga el nuevo Glosario; en `publication/` solo se
-  añadieron los assets cartográficos aislados de PKG-03, sin insertarlos en el
-  libro.
+- `CR-V1-001` se cerró e integró mediante
+  `c07bc011a42952f64622e3f78e8d759ad361cf29`. El parser acepta los cinco campos
+  base y `Contexto histórico` opcional, el snapshot y la procedencia apuntan al
+  Glosario GH-B vigente de 28 entradas, y la suite completa está en PASS.
+- La sincronización técnica del Glosario está completada. Los cuatro aparatos
+  son reproducibles mediante `prepare.py`, permanecen ignorados bajo
+  `publication/generated/` y ninguno está versionado. La candidata HTML/PDF no
+  se ha regenerado, REV-024 sigue pendiente y `Contexto histórico` todavía no
+  se presenta editorialmente.
 - Candidata Quarto anterior: la candidata técnica de 334 páginas y SHA-256
   `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183` se conserva
   como `baseline pre-PKG-01 / no sincronizada con las fuentes canónicas
@@ -134,11 +135,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | PKG-00 cerrado y PKG-01–03 integrados; CR-V1-001 precede a PKG-04; quedan PKG-04–PKG-12, cierre de dos incidencias antes de GATE-01, aceptación humana y PKG-13/Fase 6B |
+| 6. Preview y publicación 1.0 | en curso | PKG-00 cerrado, PKG-01–03 y CR-V1-001 integrados; PKG-04 listo para iniciar; quedan PKG-04–PKG-12, cierre de dos incidencias antes de GATE-01, aceptación humana y PKG-13/Fase 6B |
 
 ## Siguiente tarea exacta
 
-`SIGUIENTE PASO: CR-V1-001 — restaurar compatibilidad del analizador del glosario GH-B antes de PKG-04.`
+`SIGUIENTE PASO: PKG-04 — prototipo F3.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -160,7 +161,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | alcance y plan aprobados; PKG-00 cerrado y PKG-01–03 integrados; CR-V1-001 y dos incidencias bibliográficas abiertas; siguiente operación CR-V1-001 |
+| 6A | en curso | alcance y plan aprobados; PKG-00 cerrado, PKG-01–03 y CR-V1-001 integrados; dos incidencias bibliográficas abiertas; siguiente operación PKG-04 |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; doce cerradas, dos cerradas en principio con datos pendientes y F3 como hipótesis de prototipo; ninguna implementación iniciada |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
@@ -169,10 +170,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 6A.3 | completada por el usuario | DEC-016–DEC-034 cerradas en `CIERRE_ALCANCE_V1_0.md`; ninguna decisión reabierta |
 | 6A.4 | completada documentalmente | contrato de alcance, backlog, exclusiones, PKG-00–13, GATE-00–05 y control `CR-V1-*` registrados; candidata intacta |
 | PKG-00 | completado | inventario, decisiones humanas y cierre documental completados; autoría y datos aplicables resueltos; diferimientos controlados |
-| PKG-01 | completado e integrado | commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; propagación a la publicación pendiente |
+| PKG-01 | completado e integrado | commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; sincronización técnica completada; presentación editorial y candidata pendientes |
 | PKG-02 | completado e integrado con incidencias abiertas | commit `9dbc0f8e7147c5ffa637f819ba17cfad5d19309d`; 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01; `references.bib` vacío y pendiente |
 | PKG-03 | completado e integrado | commit `4d0210f5f127933ac7a059bb029cde04ecd6d28b`; mapas regional y local APTO, licenciados, accesibles y reproducibles; assets todavía no insertados en la publicación |
-| CR-V1-001 | ejecución pendiente | TECH-A: adaptar el analizador al contrato canónico GH-B sin modificar `project/`; bloquea el inicio de PKG-04 mientras la suite general permanezca roja |
+| CR-V1-001 | cerrada e integrada | commit `c07bc011a42952f64622e3f78e8d759ad361cf29`; contrato GH-B sincronizado, generated/ ignorado y suite completa en PASS |
+| PKG-04 | listo para iniciar | prototipo multiformato F3; desbloqueado por el cierre de CR-V1-001, sin integración definitiva antes de GATE-01 |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
@@ -608,6 +610,29 @@ Una sesión nueva de Copilot debe leer, en este orden:
   parser y tests de Fase 4D permanecieron intactos; no hubo render completo,
   push, tag o release. `INC-BIB-001` e `INC-BIB-002` siguen abiertas.
 
+## Cierre comprobado de CR-V1-001
+
+- Revisión e integración: el commit
+  `c07bc011a42952f64622e3f78e8d759ad361cf29`, hijo directo de
+  `0d31d64023603e7713b5def51ab0275ed727de2f`, se declaró APTO y se integró en
+  `feature/quarto-book` mediante fast-forward estricto.
+- Contrato: el parser conserva cinco campos obligatorios y admite `Contexto
+  histórico` como campo opcional situado antes de `Notas`, sin relajar el rechazo
+  de campos desconocidos, duplicados, ausentes o mal encabezados.
+- Snapshot: `base.git_commit` apunta al commit canónico de PKG-01 y el blob del
+  Glosario es `5f1e78adee096f5d5752d6fe1af866ca5e5c8b17`; el conteo vigente es 28.
+- Procedencia: el estado canónico actual queda separado del SHA histórico de la
+  candidata anterior.
+- Generación: `prepare.py` reconstruyó dos veces con hashes idénticos los cuatro
+  aparatos. `publication/generated/` sigue ignorado, no contiene archivos
+  versionados y `GEN-C` queda resuelta sin cambiar `.gitignore` ni el README.
+- Validación: Phase 4D `51 passed`, Phase 6A `10 passed`, fuentes y publicación
+  en PASS, y suite completa pre y posintegración `585 passed`.
+- Integridad: `project/`, Glosario canónico, mapas, capítulos y bibliografía
+  permanecen intactos; no se regeneraron HTML/PDF ni se inició PKG-04.
+- Pendientes: REV-024, presentación editorial de `Contexto histórico`,
+  `INC-BIB-001`, `INC-BIB-002` y nueva candidata HTML/PDF.
+
 ## Reglas para actualizar este roadmap
 
 - Solo marcar una fase como completada cuando cumpla todos sus criterios.
@@ -618,4 +643,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_ALCANCE_V1_0.md`, `docs/CIERRE_PKG_01_GLOSARIO_CANONICO.md`, `docs/CIERRE_PKG_03_CARTOGRAFIA.md`, `docs/CR_V1_001_COMPATIBILIDAD_ANALIZADOR_GLOSARIO_GH_B.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta exclusivamente CR-V1-001: adapta el consumidor técnico al Glosario GH-B sin modificar `project/`, recupera la suite completa y no inicies PKG-04. Conserva abiertas `INC-BIB-001` e `INC-BIB-002`; no hagas push ni tag.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_ALCANCE_V1_0.md`, `docs/CIERRE_PKG_01_GLOSARIO_CANONICO.md`, `docs/CIERRE_PKG_03_CARTOGRAFIA.md`, `docs/CIERRE_CR_V1_001_GLOSARIO_GH_B.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta exclusivamente PKG-04: prototipo F3, sin integración definitiva antes de GATE-01. Conserva abiertas `INC-BIB-001` e `INC-BIB-002`; no hagas push ni tag.
