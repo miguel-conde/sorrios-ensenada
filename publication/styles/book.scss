@@ -31,6 +31,55 @@ table {
   cursor: zoom-in;
 }
 
+.f3-facsimile-page,
+.f3-html-crop,
+.f3-pdf-locator {
+  margin-block: 1.25rem;
+  text-align: center;
+}
+
+.f3-prototype,
+.f3-source-card,
+.f3-html-crop,
+.f3-prototype .line-block {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.f3-prototype .line-block {
+  overflow-x: auto;
+}
+
+@media (max-width: 48rem) {
+  .f3-source-card {
+    overflow-wrap: anywhere;
+  }
+
+  .f3-html-crop img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+.f3-facsimile-page img,
+.f3-html-crop img {
+  cursor: zoom-in;
+  height: auto;
+  max-height: 82vh;
+}
+
+.f3-source-card {
+  background: #f6f2ed;
+  border-left: 0.25rem solid #6b3f20;
+  margin-block: 1rem;
+  padding: 0.7rem 1rem;
+}
+
+.f3-pdf-locator {
+  break-inside: avoid;
+  font-size: 0.92rem;
+}
+
 #matriz-molinera + table {
   font-size: 0.9rem;
 }

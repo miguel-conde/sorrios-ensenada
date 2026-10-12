@@ -8,6 +8,7 @@ from pathlib import Path
 
 from build_apparatus import ApparatusBuildError, build_apparatus
 from build_facsimile import FacsimileBuildError, build_facsimile
+from build_f3_prototype import F3PrototypeBuildError, build_f3_prototype
 from build_indexes import IndexBuildError, build_indexes
 from build_modernized import ModernizedBuildError, build_modernized
 from build_transcription import TranscriptionBuildError, build_transcription
@@ -34,6 +35,7 @@ def prepare() -> tuple[Path, ...]:
     transcription_outputs = build_transcription(
         repository_root, publication_root, checked
     )
+    f3_outputs = build_f3_prototype(repository_root, publication_root, checked)
     modernized_outputs = build_modernized(repository_root, publication_root)
     apparatus_outputs = build_apparatus(
         repository_root,
@@ -49,6 +51,7 @@ def prepare() -> tuple[Path, ...]:
     outputs = (
         *facsimile_outputs,
         *transcription_outputs,
+        *f3_outputs,
         *modernized_outputs,
         *apparatus_outputs,
         *index_outputs,
@@ -59,6 +62,7 @@ def prepare() -> tuple[Path, ...]:
         "verificados; "
         f"{len(facsimile_outputs)} salidas del facsímil, "
         f"{len(transcription_outputs)} salidas de la transcripción y "
+        f"{len(f3_outputs)} salidas del prototipo F3, "
         f"{len(modernized_outputs)} salida de la edición modernizada, "
         f"{len(apparatus_outputs)} aparatos y "
         f"{len(index_outputs)} índices, "
@@ -77,6 +81,7 @@ def main() -> int:
         PrototypeBuildError,
         FacsimileBuildError,
         TranscriptionBuildError,
+        F3PrototypeBuildError,
         ModernizedBuildError,
         ApparatusBuildError,
         IndexBuildError,
