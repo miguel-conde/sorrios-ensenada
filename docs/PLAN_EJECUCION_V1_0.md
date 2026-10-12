@@ -3,7 +3,7 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00 cerrado, PKG-01–03 integrados y CR-V1-001 cerrada
+**Estado:** plan operativo; PKG-00 cerrado, PKG-01–04 integrados y CR-V1-001 cerrada
 
 ## 1. Reglas generales
 
@@ -134,6 +134,10 @@ se insertan en capítulos ni en las salidas antes de PKG-07, después de GATE-01
 **Objetivo:** comparar la política actual con F3 mediante una prueba
 multiformato.
 
+**Estado:** **PROTOTIPO APROBADO E INTEGRADO**. La revisión humana registró
+H1–H5 y P1–P8 en **Sí**, con decisión `F3-APROBAR`. El despliegue global sobre
+las 35 unidades es la siguiente operación y no forma parte de este cierre.
+
 HTML debe probar recortes completos junto a la transcripción. PDF debe probar
 miniatura/localizador, enlace al facsímil completo y retorno adecuado.
 
@@ -148,9 +152,11 @@ Debe medir:
 - complejidad;
 - reproducibilidad.
 
-**Salida:** recomendación F1/F3 o ajuste equivalente.<br>
-**Puerta:** no se integra definitivamente antes de una decisión humana en
-GATE-01.
+**Salida:** F3 aprobada: HTML con recorte al 74 %, lightbox y navegación
+bidireccional; PDF con localizador al 28 %, página/posición textual y navegación
+bidireccional.<br>
+**Puerta:** decisión humana satisfecha para F3; GATE-01 permanece abierto por
+las demás dependencias del plan.
 
 ### PKG-05 — Correcciones técnicas y rendimiento
 
@@ -179,7 +185,7 @@ elimina contenido. Si no existe una mejora material y segura, el peso no bloquea
 | PKG-01 | **COMPLETADO E INTEGRADO** | Commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; sincronización técnica completada por CR-V1-001; presentación editorial y candidata pendientes. |
 | PKG-02 | **COMPLETADO E INTEGRADO CON INCIDENCIAS ABIERTAS** | 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01; plan de resolución documentado; `references.bib` vacío y pendiente. |
 | PKG-03 | **COMPLETADO E INTEGRADO** | Mapas regional y local APTO; procedencia, licencia, atribución, redistribución, accesibilidad y reproducibilidad verificadas. Inserción editorial pendiente de PKG-07. |
-| PKG-04 | **LISTO PARA INICIAR** | CR-V1-001 cerrada y suite completa en PASS; siguiente operación: prototipo F3, sin integración definitiva antes de GATE-01. |
+| PKG-04 | **PROTOTIPO APROBADO E INTEGRADO — DESPLIEGUE GLOBAL PENDIENTE** | Commit `7c6d6870214cac19b799d57b392bb1b9d347edd1`; `F3-APROBAR`; H1–H5 y P1–P8 en Sí; PKG-05 no iniciado. |
 | PKG-05 | **READY CON RESULTADO CANÓNICO PKG-01; DEPENDENCIA F3 CONOCIDA** | Puede usar el Glosario canónico final de PKG-01; REV-024 y el orden alfabético publicado siguen sin implementar; medición coordinada con F3. |
 
 ### Revisión de pretrabajos antes de GATE-01
@@ -195,7 +201,8 @@ No se integra el libro final hasta revisar conjuntamente:
 
 Decisiones de salida:
 
-- aceptación final de F3 o alternativa;
+- F3 aprobada humanamente; verificar su despliegue global antes de aceptar
+  GATE-01;
 - aceptación registrada de `establecimiento del suelo` y `arenta` en PKG-01;
 - resolución de `INC-BIB-001` e `INC-BIB-002` conforme al plan aprobado;
 - aceptación de los dos mapas;
@@ -365,7 +372,7 @@ de integración.
 | PKG-01 | GATE-00 — completado e integrado | PKG-00, PKG-02–05 | Regeneración de glosario; GATE-01 |
 | PKG-02 | GATE-00 — completado e integrado con dos incidencias abiertas | PKG-03–05 | Cierre de correspondencia fuente/uso en PKG-08; GATE-01 |
 | PKG-03 | GATE-00 — completado e integrado | PKG-00–02, PKG-04–05 | PKG-07; GATE-01 |
-| PKG-04 | GATE-00; `CR-V1-001` cerrada | PKG-00–03, PKG-05 | Política final del manuscrito; GATE-01 |
+| PKG-04 | GATE-00; `CR-V1-001` cerrada; prototipo aprobado e integrado | PKG-00–03, PKG-05 | Despliegue global de la política final del manuscrito; GATE-01 |
 | PKG-05 | GATE-00 | PKG-00–04 | GATE-01 y PKG-10 |
 | PKG-06 | GATE-01; inputs aplicables de PKG-00 | PKG-07–09 con ramas/worktrees separados | GATE-02 |
 | PKG-07 | GATE-01; PKG-03 aceptado | PKG-06, PKG-08–09 | GATE-02 |
@@ -486,7 +493,8 @@ chore(release): publish version 1.0
   con resolución obligatoria antes de GATE-01.
 - [x] 5. Mapas documentados y licenciados; assets preparados, integración
   editorial pendiente de PKG-07.
-- [ ] 6. F3 decidido.
+- [x] 6. F3 decidido; prototipo aprobado e integrado, con despliegue global
+  pendiente.
 - [ ] 7. Defectos REV-023–025 corregidos.
 - [ ] 8. Apertura y preliminares integrados.
 - [ ] 9. Aparato visual integrado.
@@ -519,6 +527,8 @@ procedimiento de cada cambio siguen siendo los de su paquete.
   consumidor técnico al GH-B aprobado sin modificar `project/`.
 - Validación: suite completa en PASS; cuatro aparatos reproducibles bajo
   `publication/generated/`, ignorados y con cero archivos versionados.
-- Resultado: bloqueo técnico eliminado; PKG-04 queda listo para iniciar.
+- Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
+  aprobado e integrado posteriormente.
 
-**SIGUIENTE PAQUETE RECOMENDADO: PKG-04 — prototipo F3.**
+**SIGUIENTE OPERACIÓN RECOMENDADA: despliegue global de F3 sobre las 35 unidades
+con los parámetros aprobados (HTML 74 %; PDF 28 %).**
