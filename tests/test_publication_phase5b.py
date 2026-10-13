@@ -111,6 +111,7 @@ def test_post_render_table_semantics_are_named_scoped_responsive_and_idempotent(
 def test_pdf_filter_removes_only_internal_qmd_uri_annotations():
     source = (SCRIPTS / "pdf_internal_links.lua").read_text(encoding="utf-8")
     assert 'path:match("%.qmd$")' in source
+    assert 'link.target = "#" .. fragment' in source
     assert "return link.content" in source
     assert "http" not in source
 
@@ -126,7 +127,7 @@ def test_generated_document_counts_and_accessible_alternatives():
     assert len(re.findall(r"^## Página digital \d{2}", facsimile, re.MULTILINE)) == 18
     assert facsimile.count('fig-alt="Página digital ') == 18
     assert len(re.findall(r"^## .+ \{#[a-z0-9-]+\}$", transcription, re.MULTILINE)) == 35
-    assert transcription.count("fig-alt=") == 35
+    assert transcription.count("fig-alt=") == 70
     assert len(re.findall(r"^## Respuesta \d+\.", modernized, re.MULTILINE)) == 40
     assert modernized.count("{.question-external}") == 40
 

@@ -23,6 +23,7 @@ from critical_edition import (
     parse_critical_edition,
     published_unit_anchor,
 )
+from f3_model import F3ModelError, page_anchor, unit_image_markdown
 
 
 TRANSCRIPTION_ASSET_ID = "critical-edition-unit-images"
@@ -174,18 +175,24 @@ def _crop_units(
 
 def _image_markdown(unit: CriticalUnit) -> str:
     spec = unit.spec
-    location = POSITION_LABELS[spec.position]
-    alt = (
-        f"{spec.label}, {location} de la página digital {spec.pdf_page} "
-        "del manuscrito autoritativo."
-    )
-    width = "48%" if spec.position == "complete" else "62%"
-    return (
-        "::: {.transcription-unit-image}\n"
-        f"![{alt}](assets/transcription/{spec.unit_id}.png)"
-        f'{{#fig-{spec.anchor} fig-alt="{alt}" fig-pos="H" width="{width}"}}\n'
-        ":::"
-    )
+    asset_path = f"assets/transcription/{spec.unit_id}.png"
+    facsimile_target = f"14-facsimil.qmd#{page_anchor(spec.pdf_page)}"
+    try:
+        html = unit_image_markdown(
+            spec,
+            output="html",
+            asset_path=asset_path,
+            facsimile_target=facsimile_target,
+        )
+        pdf = unit_image_markdown(
+            spec,
+            output="pdf",
+            asset_path=asset_path,
+            facsimile_target=facsimile_target,
+        )
+    except F3ModelError as exc:
+        raise TranscriptionBuildError(str(exc)) from exc
+    return html + "\n\n" + pdf
 
 
 def transcription_qmd(units: tuple[CriticalUnit, ...], checked: CheckedSources) -> str:
@@ -210,6 +217,15 @@ autoridad propia; la autoridad textual permanece en `Edicion_Critica.md`.
     for index, unit in enumerate(units):
         chunks.append(
             f"## {unit.spec.label} {{#{published_unit_anchor(unit.spec)}}}"
+        )
+        position = POSITION_LABELS[unit.spec.position]
+        chunks.append(
+            "::: {.f3-source-card}\n"
+            f"**Facsímil:** página digital {unit.spec.pdf_page}; "
+            f"**posición:** {position}. "
+            "[Ver la página completa y sus unidades]"
+            f"(14-facsimil.qmd#{page_anchor(unit.spec.pdf_page)}).\n"
+            ":::"
         )
         chunks.append("### Imagen\n\n" + _image_markdown(unit))
         for name in TEXT_SECTION_NAMES:

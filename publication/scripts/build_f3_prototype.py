@@ -20,25 +20,25 @@ from critical_edition import (
     parse_critical_edition,
     published_unit_anchor,
 )
+from f3_model import (
+    F3ModelError,
+    HTML_CROP_WIDTH,
+    PDF_LOCATOR_WIDTH,
+    page_unit_links,
+    unit_image_markdown,
+    units_for_page,
+)
 
 
 F3_PAGE = 12
 F3_UNIT_IDS = ("folio_315v", "folio_316r")
 F3_PROJECT_DIR = "f3-prototype"
-HTML_CROP_WIDTH = "74%"
-PDF_LOCATOR_WIDTH = "28%"
 CRITICAL_EDITION = Path("project/20_TRABAJO_EDITORIAL/Edicion_Critica.md")
 UNITS_MANIFEST = Path("project/00_CONTROL/unidades.yaml")
 
 
 class F3PrototypeBuildError(RuntimeError):
     """Report an actionable failure while generating the F3 prototype."""
-
-
-def units_for_page(specs: tuple[UnitSpec, ...], page: int) -> tuple[UnitSpec, ...]:
-    """Return every material unit mapped to one manuscript page, in order."""
-
-    return tuple(spec for spec in specs if spec.pdf_page == page)
 
 
 def select_f3_sample(specs: tuple[UnitSpec, ...]) -> tuple[UnitSpec, ...]:
@@ -57,10 +57,9 @@ def select_f3_sample(specs: tuple[UnitSpec, ...]) -> tuple[UnitSpec, ...]:
 
 
 def _facsimile_qmd(sample: tuple[UnitSpec, ...], checked: CheckedSources) -> str:
-    links = "\n".join(
-        f"- [{spec.label} — {POSITION_LABELS[spec.position]}]"
-        f"(transcripcion-f3.qmd#{published_unit_anchor(spec)})"
-        for spec in sample
+    links = page_unit_links(
+        sample,
+        transcription_target="transcripcion-f3.qmd",
     )
     return f'''---
 title: "F3 — Facsímil de la muestra"
@@ -88,32 +87,15 @@ textual propia.
 
 
 def _unit_image(unit: CriticalUnit, *, output: str) -> str:
-    spec = unit.spec
-    anchor = published_unit_anchor(spec)
-    position = POSITION_LABELS[spec.position]
-    alt = (
-        f"{spec.label}, mitad {position} de la página digital {spec.pdf_page} "
-        "del manuscrito autoritativo."
-    )
-    if output == "html":
-        return f'''::: {{.content-visible when-format="html"}}
-::: {{.f3-html-crop}}
-![{alt}](assets/{spec.unit_id}.png){{#fig-f3-html-{anchor} fig-alt="{alt}" width="{HTML_CROP_WIDTH}"}}
-
-[Ampliar el recorte completo de {spec.label}](assets/{spec.unit_id}.png){{target="_blank" aria-label="Abrir el recorte completo de {spec.label} en una pestaña nueva"}}.
-:::
-:::'''
-    if output == "pdf":
-        return f'''::: {{.content-visible when-format="pdf"}}
-::: {{.f3-pdf-locator}}
-![Localizador documental de {spec.label}, {position} de la página digital {spec.pdf_page}.](assets/{spec.unit_id}.png){{#fig-f3-pdf-{anchor} fig-alt="Localizador de {spec.label}: {position} de la página digital {spec.pdf_page}." fig-pos="H" width="{PDF_LOCATOR_WIDTH}"}}
-
-**Localización:** página digital {spec.pdf_page}, {position}. El localizador
-sirve para reconocer la zona; la reproducción documental principal permanece
-en el [facsímil de la página completa](index.qmd#pagina-digital-12).
-:::
-:::'''
-    raise F3PrototypeBuildError(f"Formato F3 desconocido: {output}")
+    try:
+        return unit_image_markdown(
+            unit.spec,
+            output=output,
+            asset_path=f"assets/{unit.spec.unit_id}.png",
+            facsimile_target="index.qmd#pagina-digital-12",
+        )
+    except F3ModelError as exc:
+        raise F3PrototypeBuildError(str(exc)) from exc
 
 
 def _transcription_qmd(

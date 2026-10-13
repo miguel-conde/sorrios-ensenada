@@ -13,6 +13,8 @@ import yaml
 from PIL import Image
 
 from check_sources import CheckedSources
+from critical_edition import UnitSpec
+from f3_model import F3ModelError, page_unit_links, validate_f3_mapping
 
 
 FACSIMILE_ASSET_ID = "manuscript-pages-1-18"
@@ -162,7 +164,15 @@ def _render_pages(
     return tuple(outputs)
 
 
-def _facsimile_qmd(checked: CheckedSources, config: FacsimileConfig) -> str:
+def _facsimile_qmd(
+    checked: CheckedSources,
+    config: FacsimileConfig,
+    specs: tuple[UnitSpec, ...],
+) -> str:
+    try:
+        mapping = validate_f3_mapping(specs, config.page_count)
+    except F3ModelError as exc:
+        raise FacsimileBuildError(str(exc)) from exc
     chunks = [
         """---
 title: "Facsímil íntegro del expediente"
@@ -179,7 +189,8 @@ manuscrito autoritativo. Son derivados de publicación sin autoridad propia: no
 recortan unidades, no incorporan OCR ni sustituyen la transcripción paleográfica.
 """.format(file_id=checked.manuscript.file_id).rstrip()
     ]
-    for page in range(1, config.page_count + 1):
+    for item in mapping:
+        page = item.page
         filename = PurePosixPath(config.destination_pattern.format(page=page)).name
         # La primera página digital es vertical; una anchura menor evita que su
         # nota de procedencia desborde a una hoja separada en la salida PDF.
@@ -192,6 +203,10 @@ recortan unidades, no incorporan OCR ni sustituyen la transcripción paleográfi
 :::
 
 Página {page} de {config.page_count}; rasterización completa a {config.dpi} dpi desde el PDF autoritativo verificado.
+
+### Unidades transcritas en esta página
+
+{page_unit_links(item.units, transcription_target="15-transcripcion.qmd")}
 """.rstrip()
         )
         if page != config.page_count:
@@ -209,6 +224,7 @@ def _write_qmd(path: Path, content: str) -> None:
 def build_facsimile(
     publication_root: Path,
     checked: CheckedSources,
+    specs: tuple[UnitSpec, ...],
     *,
     pdftoppm: Path | None = None,
 ) -> tuple[Path, ...]:
@@ -239,7 +255,7 @@ def build_facsimile(
         images = tuple(output_dir / path.name for path in staged)
 
     qmd = publication_root / "generated" / FACSIMILE_QMD
-    _write_qmd(qmd, _facsimile_qmd(checked, config))
+    _write_qmd(qmd, _facsimile_qmd(checked, config, specs))
     return (qmd, *images)
 
 

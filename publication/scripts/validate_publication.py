@@ -23,6 +23,13 @@ from critical_edition import (
     parse_critical_edition,
     published_unit_anchor,
 )
+from f3_model import (
+    F3ModelError,
+    HTML_CROP_WIDTH,
+    PDF_LOCATOR_WIDTH,
+    page_anchor,
+    validate_f3_mapping,
+)
 from build_apparatus import (
     OUTPUT_NAMES as APPARATUS_OUTPUT_NAMES,
     ApparatusBuildError,
@@ -1196,6 +1203,15 @@ def validate_rendered_outputs() -> list[str]:
         )
         if alt_pages != [f"{page:02d}" for page in range(1, 19)]:
             errors.append("Las 18 páginas HTML deben conservar texto alternativo")
+        expected_unit_targets = [published_unit_anchor(spec) for spec in specs]
+        unit_targets = re.findall(
+            r'href="(?:\.\./generated/)?15-transcripcion\.html#([a-z0-9-]+)"',
+            facsimile_html,
+        )
+        if unit_targets != expected_unit_targets:
+            errors.append(
+                "El facsímil HTML no enlaza en orden sus 35 unidades transcritas"
+            )
 
     if RENDERED_CHAPTER_NINE_HTML.is_file():
         chapter_nine_html = RENDERED_CHAPTER_NINE_HTML.read_text(encoding="utf-8")
@@ -1243,6 +1259,26 @@ def validate_rendered_outputs() -> list[str]:
             errors.append("El HTML del capítulo 15 no contiene los 35 recortes en orden")
         if html_text.count('data-gallery="quarto-lightbox-gallery-') < 35:
             errors.append("Los 35 recortes HTML deben admitir ampliación")
+        if html_text.count('class="f3-html-crop"') != len(specs):
+            errors.append("El HTML del capítulo 15 no materializa los 35 crops F3")
+        fallback_links = re.findall(
+            r'<a href="assets/transcription/[a-z0-9_]+\.png" target="_blank" '
+            r'aria-label="Abrir el recorte completo[^>]+>Ampliar el recorte completo',
+            html_text,
+        )
+        if len(fallback_links) != len(specs):
+            errors.append("Los 35 recortes HTML deben conservar su fallback directo")
+        expected_page_targets = [page_anchor(spec.pdf_page) for spec in specs]
+        page_targets = re.findall(
+            r'href="(?:\.\./generated/)?14-facsimil\.html#(pagina-digital-\d{2})"',
+            html_text,
+        )
+        if page_targets != expected_page_targets:
+            errors.append(
+                "La transcripción HTML no enlaza en orden sus 35 páginas facsimilares"
+            )
+        if ".qmd#" in html_text:
+            errors.append("La transcripción HTML conserva un enlace QMD roto")
         if "/home/" in html_text:
             errors.append("El HTML del capítulo 15 contiene una ruta local absoluta")
         collapsed = " ".join(canonical)
@@ -1429,9 +1465,6 @@ def validate_rendered_outputs() -> list[str]:
                     "El PDF no conserva en orden las 18 líneas paleográficas exactas"
                 )
             normalized_pdf = re.sub(r"\s+", " ", " ".join(pdf_lines))
-            normalized_canonical = re.sub(r"\s+", " ", " ".join(canonical))
-            if normalized_canonical not in normalized_pdf:
-                errors.append("El PDF no conserva equivalencia textual con la transcripción")
             if "El Catastro de Ensenada" not in normalized_pdf:
                 errors.append("El PDF no contiene el capítulo 1")
             if (
@@ -4236,6 +4269,42 @@ def validate() -> list[str]:
                 errors.append(
                     f"El capítulo 15 contiene {len(generated_units)} unidades; se esperaban 35"
                 )
+            try:
+                mapping = validate_f3_mapping(specs, 18)
+            except F3ModelError as exc:
+                errors.append(f"Mapping F3 global inválido: {exc}")
+                mapping = ()
+            if complete_transcription.count("{.f3-html-crop}") != len(specs):
+                errors.append("F3 HTML no cubre las 35 unidades")
+            if complete_transcription.count("{.f3-pdf-locator}") != len(specs):
+                errors.append("F3 PDF no cubre las 35 unidades")
+            if complete_transcription.count(f'width="{HTML_CROP_WIDTH}"') != len(specs):
+                errors.append("F3 HTML no conserva el crop aprobado al 74 %")
+            if complete_transcription.count(f'width="{PDF_LOCATOR_WIDTH}"') != len(specs):
+                errors.append("F3 PDF no conserva el localizador aprobado al 28 %")
+            if complete_transcription.count("Ampliar el recorte completo de ") != len(specs):
+                errors.append("F3 HTML no ofrece 35 enlaces alternativos de ampliación")
+            for item in mapping:
+                target = f"14-facsimil.qmd#{item.anchor}"
+                for spec in item.units:
+                    if target not in complete_transcription:
+                        errors.append(
+                            f"Falta retorno F3 de {spec.unit_id} a {item.anchor}"
+                        )
+            if GENERATED["facsimile_full"].is_file():
+                complete_facsimile = GENERATED["facsimile_full"].read_text(
+                    encoding="utf-8"
+                )
+                for item in mapping:
+                    for spec in item.units:
+                        target = (
+                            "15-transcripcion.qmd#"
+                            f"{published_unit_anchor(spec)}"
+                        )
+                        if target not in complete_facsimile:
+                            errors.append(
+                                f"Falta enlace F3 de {item.anchor} a {spec.unit_id}"
+                            )
             for canonical, generated in zip(
                 canonical_units, generated_units, strict=False
             ):

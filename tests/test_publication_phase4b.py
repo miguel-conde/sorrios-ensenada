@@ -49,6 +49,20 @@ def _hashes(paths: tuple[Path, ...]) -> dict[str, str]:
     }
 
 
+def test_pdf_text_fidelity_allows_page_headers_between_exact_lines() -> None:
+    canonical = ("primera línea", "segunda línea", "tercera línea")
+    extracted = (
+        "primera línea",
+        "Sorríos — Catastro de Ensenada",
+        "42",
+        "segunda línea",
+        "tercera línea",
+    )
+
+    assert validator._contains_ordered_lines(extracted, canonical)
+    assert not validator._contains_ordered_lines(extracted, tuple(reversed(canonical)))
+
+
 def _checked(tmp_path: Path) -> source_check.CheckedSources:
     pdf = tmp_path / "outside" / "manuscript.pdf"
     pdf.parent.mkdir(parents=True)
@@ -186,7 +200,10 @@ def test_generated_qmd_has_35_units_images_and_unique_anchors(canonical_units, t
     assert [anchor for _, anchor, _ in generated] == [
         critical.published_unit_anchor(unit.spec) for unit in canonical_units
     ]
-    assert text.count("assets/transcription/") == 35
+    assert text.count("{.f3-html-crop}") == 35
+    assert text.count("{.f3-pdf-locator}") == 35
+    assert text.count('width="74%"') == 35
+    assert text.count('width="28%"') == 35
 
 
 def test_all_five_text_sections_are_explicitly_equivalent(canonical_units):

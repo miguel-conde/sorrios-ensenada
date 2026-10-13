@@ -16,7 +16,11 @@ sys.path.insert(0, str(SCRIPTS))
 
 import build_facsimile as facsimile  # noqa: E402
 import check_sources as source_check  # noqa: E402
+import critical_edition as critical  # noqa: E402
 import prepare as preparation  # noqa: E402
+
+
+UNITS = ROOT / "project/00_CONTROL/unidades.yaml"
 
 
 def manuscript_metadata(data: bytes = b"authoritative") -> source_check.ManuscriptMetadata:
@@ -190,7 +194,10 @@ def test_facsimile_generates_complete_ordered_unique_pages_and_provenance(
     project_marker.parent.mkdir()
     project_marker.write_text("intacto", encoding="utf-8")
 
-    outputs = facsimile.build_facsimile(root, checked, pdftoppm=executable)
+    specs = critical.load_unit_specs(UNITS)
+    outputs = facsimile.build_facsimile(
+        root, checked, specs, pdftoppm=executable
+    )
 
     assert len(outputs) == 19
     assert len(commands) == 18
@@ -231,11 +238,12 @@ def test_facsimile_is_idempotent_and_rebuilds_only_its_own_outputs(
     unrelated.parent.mkdir(parents=True)
     unrelated.write_text("regresión", encoding="utf-8")
 
-    first = facsimile.build_facsimile(root, checked, pdftoppm=executable)
+    specs = critical.load_unit_specs(UNITS)
+    first = facsimile.build_facsimile(root, checked, specs, pdftoppm=executable)
     first_hashes = output_hashes(first)
     stale = root / "generated" / "assets" / "facsimile" / "page-99.png"
     stale.write_bytes(b"stale")
-    second = facsimile.build_facsimile(root, checked, pdftoppm=executable)
+    second = facsimile.build_facsimile(root, checked, specs, pdftoppm=executable)
 
     assert output_hashes(second) == first_hashes
     assert not stale.exists()
@@ -272,7 +280,8 @@ def test_prepare_coordinates_source_check_prototype_and_facsimile(monkeypatch, t
     monkeypatch.setattr(
         preparation,
         "build_facsimile",
-        lambda publication, result: calls.append("facsimile") or (facsimile_output,),
+        lambda publication, result, specs: calls.append("facsimile")
+        or (facsimile_output,),
     )
     monkeypatch.setattr(
         preparation,

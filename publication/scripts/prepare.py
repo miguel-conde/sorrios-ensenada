@@ -20,6 +20,7 @@ from check_sources import (
     check_sources,
     resolve_manuscript_pdf,
 )
+from critical_edition import CriticalEditionError, load_unit_specs
 
 
 PreparationError = SourceCheckError
@@ -31,7 +32,8 @@ def prepare() -> tuple[Path, ...]:
     publication_root = script_path.parent.parent
     repository_root = publication_root.parent
     checked = check_sources(repository_root, publication_root)
-    facsimile_outputs = build_facsimile(publication_root, checked)
+    specs = load_unit_specs(repository_root / "project/00_CONTROL/unidades.yaml")
+    facsimile_outputs = build_facsimile(publication_root, checked, specs)
     transcription_outputs = build_transcription(
         repository_root, publication_root, checked
     )
@@ -85,6 +87,7 @@ def main() -> int:
         ModernizedBuildError,
         ApparatusBuildError,
         IndexBuildError,
+        CriticalEditionError,
     ) as error:
         print(f"Error de preparación: {error}", file=sys.stderr)
         return 1

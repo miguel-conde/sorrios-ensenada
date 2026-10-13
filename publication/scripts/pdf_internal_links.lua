@@ -3,7 +3,12 @@
 -- LaTeX page links generated for the nine indexes.
 
 function Link(link)
-  local path = link.target:match("^([^#?]+)")
+  local path, fragment = link.target:match("^([^#?]+)#([A-Za-z0-9_-]+)$")
+  if path and path:match("%.qmd$") and fragment then
+    link.target = "#" .. fragment
+    return link
+  end
+  path = link.target:match("^([^#?]+)")
   if path and path:match("%.qmd$") then
     return link.content
   end
