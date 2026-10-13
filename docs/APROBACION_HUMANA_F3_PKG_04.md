@@ -81,3 +81,12 @@ Esta aprobación:
 
 No ejecuta todavía el despliegue global y no autoriza la aceptación final de la
 candidata, Fase 6B, etiqueta o release. Tampoco cierra GATE-01 ni inicia PKG-05.
+
+## 9. Estado posterior de implementación
+
+Sin alterar las respuestas H1–H5 y P1–P8 ni la decisión `F3-APROBAR`, el
+modelo se desplegó posteriormente sobre 18/18 páginas y 35/35 unidades en el
+commit `61a50987a4ce3d05721834043d4e1c5c6c611a39`. La implementación global
+fue validada e integrada en `feature/quarto-book` mediante fast-forward
+estricto. Este estado posterior no convierte los renders de validación en una
+nueva candidata formal.

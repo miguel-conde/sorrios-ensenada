@@ -2,7 +2,7 @@
 
 **Fecha:** 12 de octubre de 2026<br>
 **Fase:** 6A — ejecución del alcance 1.0<br>
-**Estado:** DEC-001–DEC-034 cerradas; PKG-01–04 y CR-V1-001 integrados; F3 aprobada en prototipo y pendiente de despliegue global; cartografía preparada como asset pero no insertada; presentación editorial, citas y bibliografía pendientes<br>
+**Estado:** DEC-001–DEC-034 cerradas; PKG-01–04 y CR-V1-001 integrados; F3 desplegada globalmente en la rama de publicación; cartografía preparada como asset pero no insertada; candidata formal, presentación editorial, citas y bibliografía pendientes<br>
 **Cierre humano:** [CIERRE_ALCANCE_V1_0.md](./CIERRE_ALCANCE_V1_0.md)<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Plan operativo:** [PLAN_EJECUCION_V1_0.md](./PLAN_EJECUCION_V1_0.md)
@@ -26,8 +26,8 @@ presentación final HTML/PDF.
 - **INCLUIR EN 1.0:** implementación obligatoria.
 - **INCLUIR EN 1.0 CON PRETRABAJO:** forma parte de 1.0, pero depende de inputs,
   verificación, operación canónica o assets aprobados.
-- **RESUELTA EDITORIALMENTE TRAS PROTOTIPO:** prueba y decisión humana
-  completadas; implementación global pendiente.
+- **RESUELTA E IMPLEMENTADA:** decisión humana e implementación en la rama de
+  publicación completadas; candidata formal pendiente de regeneración.
 - **DIFERIR A 1.1+:** no bloquea 1.0.
 - **NO INCORPORAR:** exclusión deliberada.
 
@@ -50,7 +50,7 @@ presentación final HTML/PDF.
 | REV-013 | Prólogo personal | Prólogo firmado de 900–1.500 palabras después de créditos. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-002–003. | Texto del usuario y revisión que preserve su voz. |
 | REV-014 | Introducción y guía | Dos rutas y convenciones compactas sin sustituir el capítulo 4. | **INCLUIR EN 1.0** — DEC-004–005 y DEC-011. | Redacción e implementación en PKG-06. |
 | REV-015 | Apertura editorial | Landing HTML, portada PDF y preliminares separados. | **INCLUIR EN 1.0** — DEC-006–007. | Implementación coordinada con REV-001/005/013/014/022. |
-| REV-016 | Duplicación funcional | El prototipo confirmó que F3 reduce satisfactoriamente la duplicación PDF sin perder orientación o comprobación. | **RESUELTA EDITORIALMENTE — F3 APROBADA** — DEC-012; H1–H5 y P1–P8 en Sí. | Prototipo integrado; despliegue global sobre las 35 unidades pendiente. La candidata actual todavía no incorpora F3. |
+| REV-016 | Duplicación funcional | El prototipo confirmó que F3 reduce satisfactoriamente la duplicación PDF sin perder orientación o comprobación. | **RESUELTA E IMPLEMENTADA** — DEC-012; H1–H5 y P1–P8 en Sí. | Prototipo `7c6d687`, aprobación y despliegue global `61a5098` integrados. La implementación está en la rama de publicación; la candidata formal se regenerará posteriormente. |
 | REV-017 | Macroorden | Se conserva contexto → estudio → documento con rutas histórica y documental. | **INCLUIR EN 1.0** — DEC-011. | Implementar rutas; no reordenar. |
 | REV-018 | Sidebar HTML | La navegación inicial está demasiado desplegada. | **INCLUIR EN 1.0** — DEC-014. | Parte activa abierta; validar teclado y viewports. |
 | REV-019 | Cierres de capítulos | Se exige función conclusiva común con títulos específicos. | **INCLUIR EN 1.0** — DEC-013. | Revisión de capítulos 5–13. |
@@ -68,7 +68,7 @@ presentación final HTML/PDF.
 |---|---:|
 | INCLUIR EN 1.0 | 12 |
 | INCLUIR EN 1.0 CON PRETRABAJO | 8 |
-| RESUELTA EDITORIALMENTE TRAS PROTOTIPO | 1 |
+| RESUELTA E IMPLEMENTADA | 1 |
 | DIFERIR A 1.1+ | 1 |
 | NO INCORPORAR | 4 |
 | **Total** | **26** |
@@ -76,13 +76,15 @@ presentación final HTML/PDF.
 ## 5. Condiciones que continúan abiertas sin reabrir decisiones
 
 - DAT-001–DAT-010: valores humanos y editoriales concretos.
-- Despliegue global del modelo F3 ya aprobado sobre las 35 unidades.
+- Regeneración posterior de la candidata formal para incorporar la
+  implementación F3 ya integrada en la rama de publicación.
 - Cierre de `INC-BIB-001` e `INC-BIB-002` antes de GATE-01, sin sustituir
   fuentes ni parchear afirmaciones canónicas desde `publication/`.
 - Integración narrativa y multiformato de los assets cartográficos en PKG-07;
   no marcarlos como presentes en la candidata antes de ese paquete.
-- PKG-04 está aprobado e integrado; el prototipo F3 recibió la decisión
-  `F3-APROBAR`, pero la candidata completa todavía no incorpora el despliegue.
+- PKG-04 está completado e integrado: prototipo, decisión `F3-APROBAR` y
+  despliegue 18/18 páginas y 35/35 unidades. La candidata formal todavía no se
+  ha regenerado.
 - Resultado técnico de la optimización segura.
 
 Estas condiciones determinan cómo ejecutar decisiones ya cerradas; no vuelven a
@@ -109,9 +111,9 @@ No se crea tag en 6A. La candidata técnica
 pre-PKG-01 y no está sincronizada con la fuente canónica actual. REV-020 está
 resuelta en la fuente y sincronizada en el flujo técnico, pero su presentación
 editorial y la regeneración de la candidata permanecen pendientes; REV-024
-continúa pendiente de PKG-05. El tag solo puede aparecer en PKG-13, después de
+continúa pendiente de PKG-05. F3 está implementada en la rama, no en una nueva
+candidata formal. El tag solo puede aparecer en PKG-13, después de
 candidata nueva, validación, preview, aceptación humana y autorización explícita
 de Fase 6B.
 
-**SIGUIENTE PASO: desplegar globalmente F3 sobre las 35 unidades con los
-parámetros aprobados (HTML 74 %; PDF 28 %).**
+**SIGUIENTE PASO: PKG-05 — correcciones técnicas y rendimiento.**

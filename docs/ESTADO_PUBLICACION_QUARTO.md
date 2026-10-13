@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 12 de octubre de 2026<br>
+**Actualizado:** 13 de octubre de 2026<br>
 **Estado global:** Fase 6 en curso; PKG-00 cerrado, PKG-01–04 y CR-V1-001 completados e integrados; la candidata anterior no está regenerada<br>
-**Fase actual:** Fase 6A — prototipo F3 aprobado; despliegue global sobre las 35 unidades pendiente; dos incidencias bibliográficas siguen abiertas hasta GATE-01<br>
+**Fase actual:** Fase 6A — PKG-04 completo y F3 global integrado; PKG-05 es el siguiente paquete; dos incidencias bibliográficas siguen abiertas hasta GATE-01<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -44,6 +44,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
     parámetros multiformato.
 23. `docs/CIERRE_PROTOTIPO_F3_PKG_04.md` para el cierre técnico, la integración
     y los límites de PKG-04.
+24. `docs/CIERRE_PKG_04_F3_GLOBAL.md` para el cierre definitivo del despliegue
+    F3 sobre 18 páginas y 35 unidades.
 
 ## Estado comprobado
 
@@ -75,8 +77,9 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Candidata técnica 1.0 preparada en `49ab2e1b1a58ca9201efab54b42a3125de7326f8`; snapshot, reconstrucción, HTML, PDF, seguridad y preview local están validados. El informe reproducible está en `docs/CANDIDATA_PUBLICACION_1_0.md`.
 - Revisión editorial 6A.1 completada contra la composición 0.6 y posteriormente consolidada con la primera ronda de observaciones del usuario. `docs/REVISION_EDITORIAL_CANDIDATA_1_0.md` conserva 26 observaciones y `docs/ORDEN_DE_TRABAJO_PARA_V1_0.md` la referencia de trabajo que originó la secuencia.
 - Decisiones 6A.2 registradas en `docs/DECISIONES_EDITORIALES_6A_2.md`: DEC-012
-  quedó cerrada mediante `F3-APROBAR` tras el prototipo; su despliegue global
-  permanece pendiente y la candidata completa sigue intacta.
+  quedó implementada mediante prototipo, `F3-APROBAR`, despliegue global,
+  validación e integración. La candidata formal sigue pendiente de
+  regeneración.
 - Auditoría A completada en `docs/AUDITORIA_GLOSARIO_ESTUDIO_HISTORICO_V1_0.md`: 22 entradas clasificadas en G0 8, G1 7, G2 0, G3 4 y G4 3; GH-B selectivo y su alcance para 1.0 quedaron decididos posteriormente en 6A.3. No se investigó fuera del repositorio ni se modificaron fuentes canónicas.
 - Auditoría B completada en `docs/AUDITORIA_GRAFICOS_CARTOGRAFIA_RECUADROS_V1_0.md`: 27 recursos funcionales clasificados en VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; cinco prioridades altas, una media y una baja. El paquete visual definitivo quedó decidido en 6A.3, sin crear recursos ni consultar fuentes externas.
 - Auditoría C completada en `docs/AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md`: 40 referencias únicas representadas por 41 URL, 25 entradas E y 25 necesidades REF auditadas, 13 límites clasificados en QA y cuatro módulos de aparato propuestos. CIT-B/C y el alcance de fuentes/aparatos quedaron decididos en 6A.3, sin consulta externa ni implementación.
@@ -118,13 +121,15 @@ Una sesión nueva de Copilot debe leer, en este orden:
   `publication/generated/` y ninguno está versionado. La candidata HTML/PDF no
   se ha regenerado, REV-024 sigue pendiente y `Contexto histórico` todavía no
   se presenta editorialmente.
-- PKG-04 completado e integrado mediante fast-forward en
+- El prototipo de PKG-04 se integró mediante fast-forward en
   `7c6d6870214cac19b799d57b392bb1b9d347edd1`. El prototipo de la página 12 y
   las unidades `folio_315v` y `folio_316r` validó HTML al 74 % y PDF al 28 %;
   la revisión humana respondió Sí a H1–H5 y P1–P8 y registró `F3-APROBAR`.
-- El prototipo está integrado, pero F3 todavía no se ha desplegado sobre las 35
-  unidades y la candidata completa no se ha regenerado. Los HTML/PDF completos
-  todavía no se han revisado con F3 global. No se inició PKG-05 y GATE-01
+- PKG-04 quedó completado e integrado mediante fast-forward con el despliegue
+  global `61a50987a4ce3d05721834043d4e1c5c6c611a39`: 18/18 páginas, 35/35
+  unidades, HTML al 74 % y PDF al 28 %, con navegación bidireccional. Los
+  renders completos HTML/PDF fueron artefactos de validación y no una nueva
+  candidata formal; esta corresponde a PKG-10. No se inició PKG-05 y GATE-01
   continúa abierto por sus demás dependencias, incluidas `INC-BIB-001` e
   `INC-BIB-002`.
 - Candidata Quarto anterior: la candidata técnica de 334 páginas y SHA-256
@@ -150,11 +155,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | PKG-00 cerrado, PKG-01–04 y CR-V1-001 integrados; F3 aprobada en prototipo y pendiente de despliegue global; quedan PKG-05–PKG-12, cierre de dos incidencias antes de GATE-01, aceptación humana del preview y PKG-13/Fase 6B |
+| 6. Preview y publicación 1.0 | en curso | PKG-00 cerrado, PKG-01–04 y CR-V1-001 integrados; F3 global completada; quedan PKG-05–PKG-12, cierre de dos incidencias antes de GATE-01, aceptación humana del preview y PKG-13/Fase 6B |
 
 ## Siguiente tarea exacta
 
-`SIGUIENTE PASO: desplegar globalmente F3 sobre las 35 unidades con los parámetros aprobados (HTML 74 %; PDF 28 %).`
+`SIGUIENTE PASO: PKG-05 — correcciones técnicas y rendimiento.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -176,9 +181,9 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | alcance y plan aprobados; PKG-00 cerrado, PKG-01–04 y CR-V1-001 integrados; F3 aprobada en prototipo; dos incidencias bibliográficas abiertas; siguiente operación: despliegue global F3 |
+| 6A | en curso | alcance y plan aprobados; PKG-00 cerrado, PKG-01–04 y CR-V1-001 integrados; F3 global en PASS; dos incidencias bibliográficas abiertas; siguiente operación: PKG-05 |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
-| 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; DEC-012 actualizada tras `F3-APROBAR`; prototipo integrado y despliegue global pendiente |
+| 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; DEC-012 implementada tras prototipo, `F3-APROBAR` y despliegue global integrado |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
 | Auditoría B | completada | 27 funciones: VIS0 18, VIS1 3, VIS2 2, VIS3 2 y VIS4 2; paquete visual decidido en 6A.3; sin recursos generados ni investigación externa |
 | Auditoría C | completada | 40 referencias/41 URL; 25 entradas E; REF0 3, REF1 9, REF2 5, REF3 3, REF4 2, REF5 3; QA0 2, QA1 9, QA2 1, QA3 1; alcance CIT/aparatos cerrado en 6A.3 |
@@ -189,7 +194,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | PKG-02 | completado e integrado con incidencias abiertas | commit `9dbc0f8e7147c5ffa637f819ba17cfad5d19309d`; 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01; `references.bib` vacío y pendiente |
 | PKG-03 | completado e integrado | commit `4d0210f5f127933ac7a059bb029cde04ecd6d28b`; mapas regional y local APTO, licenciados, accesibles y reproducibles; assets todavía no insertados en la publicación |
 | CR-V1-001 | cerrada e integrada | commit `c07bc011a42952f64622e3f78e8d759ad361cf29`; contrato GH-B sincronizado, generated/ ignorado y suite completa en PASS |
-| PKG-04 | prototipo aprobado e integrado — despliegue global pendiente | commit `7c6d6870214cac19b799d57b392bb1b9d347edd1`; H1–H5 y P1–P8 en Sí; `F3-APROBAR`; PKG-05 no iniciado |
+| PKG-04 | completado e integrado | prototipo `7c6d687`; `F3-APROBAR`; despliegue global `61a5098`; 18/18 páginas, 35/35 unidades y suite completa en PASS |
+| PKG-05 | siguiente — listo para iniciar | REV-023–026 y DEC-014 permanecen pendientes; este paquete todavía no se ha iniciado |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
@@ -495,7 +501,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
   pendientes. PKG-00 resolvió después esos datos para el contenido original.
 - Prototipo: en el cierre histórico de 6A.2, `DEC-012` seleccionó F3 solo para
   una prueba posterior. PKG-04 completó después esa prueba y la decisión quedó
-  actualizada a `F3-APROBAR`; el despliegue global aún no está ejecutado.
+  actualizada a `F3-APROBAR`; el despliegue global, entonces pendiente, quedó
+  completado e integrado posteriormente en `61a5098`.
 - Arquitectura: P3 para preliminares; prólogo personal y firmado de unas 900–1.500 palabras después de créditos; introducción con rutas y convenciones separadas; capítulo 4 conservado; landing HTML y portada PDF diferenciadas; T1 como título/subtítulo de trabajo; colofón breve; macroorden actual con rutas histórica y documental; cierres específicos; parte activa desplegada y partes inactivas plegadas; 1.0 no condicionada a ISBN.
 - Datos pendientes: autoría nominal, roles, responsables de transcripción/modernización si deben acreditarse, colaboradores, titular de copyright, licencia, fecha editorial, URL canónica e identidad visible de proyecto.
 - Auditorías: A, B y C permanecen pendientes y no se inició ninguna. La puerta inmediata es la Auditoría A.
@@ -650,7 +657,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Pendientes: REV-024, presentación editorial de `Contexto histórico`,
   `INC-BIB-001`, `INC-BIB-002` y nueva candidata HTML/PDF.
 
-## Cierre comprobado de PKG-04
+## Cierre comprobado del prototipo de PKG-04
 
 - Base e integración: `pkg-04/prototipo-f3-v1` partió de
   `5d90b280af8a2fe7185737f3342245cde8e6fac8`; su commit
@@ -669,8 +676,32 @@ Una sesión nueva de Copilot debe leer, en este orden:
   y `git diff --check` en PASS.
 - Integridad: `project/` intacto, cero derivados versionados, candidata completa
   no regenerada y ningún push, tag, release o inicio de Fase 6B.
-- Pendientes: despliegue F3 sobre las 35 unidades, REV-024, PKG-05,
-  `INC-BIB-001`, `INC-BIB-002` y las demás dependencias de GATE-01.
+- Pendientes en ese cierre histórico: despliegue F3 sobre las 35 unidades,
+  REV-024, PKG-05, `INC-BIB-001`, `INC-BIB-002` y las demás dependencias de
+  GATE-01.
+
+## Cierre definitivo de PKG-04 — F3 global
+
+- Estado: `COMPLETADO E INTEGRADO`.
+- Implementación: `pkg-04/f3-global-v1` partió de `18e596b`; el commit
+  `61a50987a4ce3d05721834043d4e1c5c6c611a39` se revisó e integró en
+  `feature/quarto-book` mediante fast-forward estricto.
+- Cobertura: 18/18 páginas, 35/35 unidades y 35/35 relaciones, sin huérfanas,
+  duplicados ni anchors duplicados.
+- Modelo final: HTML con crop al 74 %, lightbox, fallback y navegación
+  bidireccional; PDF con localizador al 28 %, página/posición textual y
+  navegación bidireccional.
+- Reproducibilidad: dos preparaciones, 141 archivos y hashes idénticos; cero
+  derivados versionados.
+- Render de validación: 30 HTML y PDF de 335 páginas y 74.041.686 bytes. No es
+  una nueva candidata formal; la candidata consolidada corresponde a PKG-10.
+- Validación: 126 tests focales y 616 tests totales en PASS; validadores de
+  proyecto, fuentes, publicación estática/renderizada, cartografía,
+  compilación y diff en PASS.
+- Integridad: `project/`, manuscrito, Glosario, Edición Crítica, Estudio
+  Histórico, Registro, cartografía y bibliografía permanecen intactos.
+- Pendientes ajenos a PKG-04: `INC-BIB-001`, `INC-BIB-002`, REV-024,
+  presentación editorial de `Contexto histórico` y los paquetes restantes.
 
 ## Reglas para actualizar este roadmap
 
@@ -682,4 +713,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_ALCANCE_V1_0.md`, `docs/APROBACION_HUMANA_F3_PKG_04.md`, `docs/CIERRE_PROTOTIPO_F3_PKG_04.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta exclusivamente el despliegue global de F3 sobre las 35 unidades con los parámetros aprobados: HTML 74 % y PDF 28 %, facsímil completo y navegación bidireccional. Conserva abiertas `INC-BIB-001` e `INC-BIB-002`; no inicies PKG-05 ni regeneres la candidata completa salvo autorización expresa; no hagas push ni tag.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_ALCANCE_V1_0.md`, `docs/CIERRE_PKG_04_F3_GLOBAL.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta exclusivamente PKG-05 — correcciones técnicas y rendimiento. Conserva abiertas `INC-BIB-001` e `INC-BIB-002`; no resuelvas REV-024 fuera del alcance exacto de PKG-05, no regeneres una candidata formal, no hagas push ni tag y no inicies Fase 6B.

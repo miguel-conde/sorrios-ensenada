@@ -4,7 +4,7 @@
 **Fase:** 6A.2 — arquitectura y apertura de la candidata 1.0<br>
 **Baseline documental:** `4c9bc14222b79aca151e5f0ff58c325e1aebe823`<br>
 **Candidata técnica de referencia:** `49ab2e1b1a58ca9201efab54b42a3125de7326f8`<br>
-**Estado:** decisiones humanas registradas; DEC-012 cerrada tras el prototipo F3
+**Estado:** decisiones humanas registradas; DEC-012 implementada mediante F3 global
 
 ## 1. Objeto y alcance
 
@@ -32,7 +32,7 @@ La implementación global de las decisiones permanece pendiente.
 | DEC-009 | A | Cerrada en principio; información pendiente | Resolver copyright y licencia antes de construir la nueva candidata. | Titular y licencia concreta pendientes; no se inventan. |
 | DEC-010 | A | Cerrada editorialmente | Cerrar el volumen con un colofón breve técnico-editorial. | Contenido definitivo e implementación pendientes. |
 | DEC-011 | C | Cerrada editorialmente | Mantener el macroorden actual y ofrecer dos rutas explícitas: histórica y documental. | Implementación pendiente. |
-| DEC-012 | C / F3 | Cerrada editorialmente tras prototipo | Adoptar facsímil completo, recorte al 74 % y lightbox con navegación bidireccional en HTML; en PDF, facsímil completo como reproducción principal y localizador al 28 % con página/posición textual y navegación bidireccional. | `F3-APROBAR` registrado; despliegue global sobre las 35 unidades pendiente. |
+| DEC-012 | C / F3 | **IMPLEMENTADA** | Adoptar facsímil completo, recorte al 74 % y lightbox con navegación bidireccional en HTML; en PDF, facsímil completo como reproducción principal y localizador al 28 % con página/posición textual y navegación bidireccional. | Prototipo, aprobación humana, despliegue global, validación e integración completados; candidata formal pendiente de regeneración posterior. |
 | DEC-013 | B | Cerrada editorialmente | Dar a los capítulos 5–13 títulos conclusivos específicos con función común y sustituir `Síntesis` cuando exista un título informativo adecuado. | Revisión e implementación pendientes. |
 | DEC-014 | A | Cerrada editorialmente | Mostrar la parte activa desplegada y las partes inactivas plegadas en HTML. | Implementación y validación pendientes. |
 | DEC-015 | A | Cerrada editorialmente | No condicionar 1.0 a disponer de ISBN y no usar nunca un ISBN provisional o inventado. | Ninguno para cerrar 6A.2. |
@@ -53,14 +53,15 @@ La implementación global de las decisiones permanece pendiente.
 
 Estos pendientes no reabren globalmente 6A.2.
 
-### Decisión cerrada tras prototipo
+### Decisión implementada tras prototipo
 
-`DEC-012` queda cerrada mediante `F3-APROBAR` tras la revisión humana del
-prototipo del commit `7c6d6870214cac19b799d57b392bb1b9d347edd1`.
-H1–H5 y P1–P8 obtuvieron **Sí**. Los parámetros aprobados son 74 % para el
-recorte HTML y 28 % para el localizador PDF, con facsímil completo y navegación
-bidireccional en ambos formatos. La decisión autoriza el despliegue global
-posterior, todavía no ejecutado.
+`DEC-012` siguió la secuencia completa: hipótesis F3, prototipo del commit
+`7c6d6870214cac19b799d57b392bb1b9d347edd1`, aprobación humana
+`F3-APROBAR`, despliegue global, validación e integración. H1–H5 y P1–P8
+obtuvieron **Sí**. El commit global
+`61a50987a4ce3d05721834043d4e1c5c6c611a39` aplica a 18/18 páginas y
+35/35 unidades los parámetros aprobados —74 % en HTML y 28 % en PDF— con
+facsímil completo y navegación bidireccional. **DEC-012 queda implementada.**
 
 ## 4. Relación con REV-*
 
@@ -72,7 +73,7 @@ posterior, todavía no ejecutado.
 | REV-013 | DEC-002, DEC-003 | Prólogo personal, firmado y situado después de créditos. | No iniciada; texto pendiente del usuario. |
 | REV-014 | DEC-004, DEC-005, DEC-011 | Introducción con rutas, convenciones separadas y frontera con el capítulo 4 acordadas. | No iniciada. |
 | REV-015 | DEC-006, DEC-007 | Landing HTML, portada PDF y preliminares separados, con T1 como identidad de trabajo. | No iniciada. |
-| REV-016 | DEC-012 | F3 aprobada tras prototipo y revisión humana. | Decisión editorial resuelta; despliegue global pendiente. |
+| REV-016 | DEC-012 | F3 aprobada tras prototipo y revisión humana. | **Resuelta e implementada** en la rama de publicación mediante el despliegue global integrado. |
 | REV-017 | DEC-011 | Macroorden actual conservado con rutas histórica y documental. | No iniciada. |
 | REV-018 | DEC-014 | Parte activa desplegada y partes inactivas plegadas. | No iniciada. |
 | REV-019 | DEC-013 | Cierres específicos con función común. | No iniciada. |
@@ -108,8 +109,8 @@ metadatos o créditos, pero no bloquean el cierre documental de 6A.2.
    resultados condicionarán parte del colofón y de los metadatos finales.
 4. Solo después se fijará el alcance definitivo de 1.0 y se preparará una
    implementación atómica.
-5. F3 completó el prototipo comparativo y recibió aprobación humana; queda
-   pendiente su despliegue global sobre las 35 unidades.
+5. F3 completó el prototipo, la aprobación humana, el despliegue sobre las 35
+   unidades, la validación y la integración en la rama de publicación.
 
 ## 7. Versión, etiqueta e integridad
 
@@ -121,9 +122,10 @@ metadatos o créditos, pero no bloquean el cierre documental de 6A.2.
 - La etiqueta final solo podrá plantearse después de auditorías, implementación,
   nueva candidata, preview, aceptación humana y Fase 6B.
 
-La candidata y sus metadatos permanecen intactos. El prototipo F3 está
-integrado, pero la solución aprobada todavía no se ha desplegado globalmente.
+La candidata formal y sus metadatos permanecen intactos. F3 está desplegada e
+integrada en la rama de publicación; la candidata consolidada se regenerará en
+un paquete posterior.
 
 ## 8. Siguiente paso
 
-`Despliegue global de F3 sobre las 35 unidades con los parámetros aprobados.`
+`PKG-05 — correcciones técnicas y rendimiento.`

@@ -99,3 +99,10 @@ merge y no se hizo `push` durante el cierre.
 ## Siguiente operación
 
 `Despliegue global F3 sobre las 35 unidades.`
+
+## Continuidad histórica
+
+El modelo posteriormente se desplegó globalmente en PKG-04; véase
+[CIERRE_PKG_04_F3_GLOBAL.md](./CIERRE_PKG_04_F3_GLOBAL.md). Este enlace no
+altera el hecho histórico de que el despliegue estaba pendiente al cerrar el
+prototipo.
