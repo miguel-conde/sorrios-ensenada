@@ -3,8 +3,8 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00–05 completados e integrados y CR-V1-001
-cerrada; GATE-01 espera la resolución canónica de INC-BIB-001 e INC-BIB-002
+**Estado:** plan operativo; PKG-00–05 completados e integrados, CR-V1-001
+cerrada e INC-BIB-001/002 cerradas canónicamente; GATE-01 listo para evaluación
 
 ## 1. Reglas generales
 
@@ -87,13 +87,15 @@ regeneración corresponde a PKG-10.
 
 **Objetivo:** verificar las 16 referencias parciales o mínimas.
 
-**Estado:** **COMPLETADO E INTEGRADO CON INCIDENCIAS ABIERTAS**. Las 16/16
+**Estado:** **COMPLETADO E INTEGRADO; INCIDENCIAS CANÓNICAS CERRADAS;
+PROPAGACIÓN PKG-08 PENDIENTE**. Las 16/16
 referencias fueron tratadas en
 [VERIFICACION_BIBLIOGRAFICA_PKG_02_V1_0.md](./VERIFICACION_BIBLIOGRAFICA_PKG_02_V1_0.md)
 y el cierre/triage consta en
 [CIERRE_PKG_02_VERIFICACION_BIBLIOGRAFICA.md](./CIERRE_PKG_02_VERIFICACION_BIBLIOGRAFICA.md).
-`INC-BIB-001` y `INC-BIB-002` permanecen abiertas conforme a
-[PLAN_RESOLUCION_INCIDENCIAS_PKG_02.md](./PLAN_RESOLUCION_INCIDENCIAS_PKG_02.md).
+`INC-BIB-001` y `INC-BIB-002` fueron cerradas mediante el commit canónico
+`a162fad1792aa9b3804a5499d348ab355e5ce574`; la revisión e integración constan
+en [CIERRE_RESOLUCION_CANONICA_INC_BIB_001_002.md](./CIERRE_RESOLUCION_CANONICA_INC_BIB_001_002.md).
 
 Es **verificación bibliográfica**, no investigación histórica. Debe comprobar:
 
@@ -112,8 +114,9 @@ incidencia. No se modifica silenciosamente `project/`.
 registros preparados para `references.bib`. Resultado: catorce verificadas con
 ajustes, una verificación parcial y una incompatibilidad de uso; S1 = 13,
 S2 = 1, S3 = 1 y S4 = 1. `references.bib` continúa vacío y pendiente. La
-correspondencia final fuente/uso de las dos incidencias deberá cerrarse antes
-de GATE-01 y condiciona PKG-08, pero no bloquea iniciar PKG-03.
+correspondencia canónica fuente/uso de las dos incidencias está cerrada. Su
+propagación editorial y bibliográfica condiciona PKG-08, no la evaluación de
+GATE-01.
 
 ### PKG-03 — EXT-B cartografía
 
@@ -193,7 +196,7 @@ PASS. El render no constituye candidata formal.
 | Paquete | Estado | Dependencia conservada |
 |---|---|---|
 | PKG-01 | **COMPLETADO E INTEGRADO** | Commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; sincronización técnica completada por CR-V1-001; presentación editorial y candidata pendientes. |
-| PKG-02 | **COMPLETADO E INTEGRADO CON INCIDENCIAS ABIERTAS** | 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01; plan de resolución documentado; `references.bib` vacío y pendiente. |
+| PKG-02 | **COMPLETADO E INTEGRADO; INCIDENCIAS CANÓNICAS CERRADAS; PROPAGACIÓN PKG-08 PENDIENTE** | 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` cerradas en `a162fad`; `references.bib` vacío y propagación editorial pendiente. |
 | PKG-03 | **COMPLETADO E INTEGRADO** | Mapas regional y local APTO; procedencia, licencia, atribución, redistribución, accesibilidad y reproducibilidad verificadas. Inserción editorial pendiente de PKG-07. |
 | PKG-04 | **COMPLETADO E INTEGRADO** | Prototipo `7c6d687`; `F3-APROBAR`; despliegue global `61a5098`; 18/18 páginas, 35/35 unidades y suite completa en PASS. |
 | PKG-05 | **COMPLETADO E INTEGRADO** | REV-023–026 y DEC-014 resueltas en `0be55e6`; auditoría A/B sin pérdida, 630 pruebas y validadores en PASS. |
@@ -380,7 +383,7 @@ de integración.
 |---|---|---|---|
 | PKG-00 | GATE-00 — cerrado con diferimientos controlados | PKG-01–05 | PKG-06, PKG-09 y citas finales |
 | PKG-01 | GATE-00 — completado e integrado | PKG-00, PKG-02–05 | Regeneración de glosario; GATE-01 |
-| PKG-02 | GATE-00 — completado e integrado con dos incidencias abiertas | PKG-03–05 | Cierre de correspondencia fuente/uso en PKG-08; GATE-01 |
+| PKG-02 | GATE-00 — completado e integrado; dos incidencias cerradas canónicamente | PKG-03–05 | Propagación editorial y bibliográfica en PKG-08 |
 | PKG-03 | GATE-00 — completado e integrado | PKG-00–02, PKG-04–05 | PKG-07; GATE-01 |
 | PKG-04 | GATE-00; `CR-V1-001` cerrada; prototipo, aprobación y despliegue global completados | PKG-00–03, PKG-05 | Política final del manuscrito integrada; GATE-01 |
 | PKG-05 | GATE-00 — completado e integrado | PKG-00–04 | GATE-01 y PKG-10 |
@@ -540,6 +543,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**Bloqueante restante para GATE-01: resolución de INC-BIB-001 e INC-BIB-002.**
+**GATE-01: LISTO PARA EVALUACIÓN FORMAL; NO DECLARADO PASS.**
 
-**SIGUIENTE PASO: resolver canónicamente INC-BIB-001 e INC-BIB-002 antes de evaluar GATE-01.**
+**SIGUIENTE PASO: evaluar formalmente GATE-01 con PKG-00–05 aceptados, INC-BIB-001/002 cerradas canónicamente y la propagación editorial controlada para PKG-08.**

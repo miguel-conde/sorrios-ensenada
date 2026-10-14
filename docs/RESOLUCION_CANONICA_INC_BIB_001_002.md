@@ -177,14 +177,15 @@ deberán regenerarse cuando PKG-08 sincronice procedencia y derivados.
 - `publication/`: sin cambios.
 - `operation.status`: `clean`.
 
-La suite general obtiene 586 pruebas superadas, ocho fallos y 36 errores, todos
+La suite general obtiene 585 pruebas superadas, nueve fallos y 36 errores, todos
 limitados a `publication/` desincronizada por diseño:
 
 - `apparatus_sources.py` exige aún el Registro 1.2 y rechaza la versión 1.3;
 - `publication.yml` conserva el blob anterior del Glosario, lo que bloquea las
   pruebas de generación de aparatos y las comprobaciones PKG-05 asociadas;
 - los capítulos 11 y 13 todavía declaran `TRA-006`, ya retirado del Registro
-  vigente.
+  vigente;
+- la candidata conserva el snapshot exacto del árbol canónico anterior.
 
 No existe un fallo adicional de contenido o controles canónicos. Resolver esos
 contratos, regenerar aparatos y sincronizar procedencia pertenece a PKG-08.

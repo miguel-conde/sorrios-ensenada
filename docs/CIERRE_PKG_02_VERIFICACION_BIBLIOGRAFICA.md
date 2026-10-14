@@ -142,3 +142,21 @@ PKG-02 queda integrado y permite continuar los pretrabajos con PKG-03. GATE-01
 permanece abierto: `INC-BIB-001` e `INC-BIB-002` deberán estar resueltas porque
 afectan a la correspondencia final fuente/uso y a formulaciones canónicas que
 PKG-08 deberá propagar.
+
+## 10. Resolución posterior de incidencias
+
+Las dos incidencias fueron resueltas después de este cierre de verificación en
+una operación canónica independiente. El commit
+`a162fad1792aa9b3804a5499d348ab355e5ce574` fue revisado con veredicto
+**APTO PARA INTEGRACIÓN** e integrado por fast-forward en
+`feature/quarto-book`.
+
+- `INC-BIB-001`: **CERRADA CANÓNICAMENTE** mediante la retirada de `TRA-006`
+  y del paralelo E/I no demostrado, sin alterar R29 ni `TRA-005`.
+- `INC-BIB-002`: **CERRADA CANÓNICAMENTE** mediante la reducción de `DEM-005`
+  al contexto sustentado por BIB-015 y la separación expresa respecto del dato
+  local de R21/`DEM-001`.
+
+La resolución no modificó `publication/` ni `references.bib`. Su propagación
+editorial y bibliográfica continúa pendiente de PKG-08. GATE-01 queda listo
+para evaluación formal, sin que este documento lo declare `PASS`.

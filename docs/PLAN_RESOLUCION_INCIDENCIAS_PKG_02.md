@@ -131,3 +131,26 @@ BIB-015 no podrá citarse como soporte de `medio vecino`.
 No se añaden registros al placeholder preexistente `references.bib`, no se
 corrigen ahora las entradas canónicas, no se regenera Quarto y no se abre una
 investigación externa dirigida.
+
+## 5. Ejecución y cierre canónico
+
+La operación prevista se ejecutó en la rama
+`canonical/inc-bib-001-002-v1` y produjo el commit
+`a162fad1792aa9b3804a5499d348ab355e5ce574`, revisado independientemente e
+integrado en `feature/quarto-book` mediante fast-forward estricto.
+
+- `INC-BIB-001`: **CERRADA CANÓNICAMENTE**. Se retiró `TRA-006` y sus
+  propagaciones E/I no demostradas, conservando íntegros R29 y `TRA-005` como
+  soporte del funcionamiento local de la vecera.
+- `INC-BIB-002`: **CERRADA CANÓNICAMENTE**. `DEM-005` quedó limitado al
+  contexto efectivamente respaldado por BIB-015; R21 y `DEM-001` conservan el
+  dato local de las viudas sin convertirlo en regla general.
+- Integridad: no se modificaron la Edición Crítica, los cálculos `CAL-*`, los
+  controles YAML ni `publication/`.
+- Validación: validador canónico y 32 pruebas focalizadas en PASS. La suite
+  general registra 585 pruebas superadas, nueve fallos y 36 errores, todos
+  clasificados como desincronización editorial esperada hasta PKG-08.
+
+La propagación a capítulos, aparatos, citas y bibliografía permanece pendiente
+y pertenece exclusivamente a PKG-08. Este cierre deja GATE-01 listo para su
+evaluación formal, pero no lo declara aprobado.

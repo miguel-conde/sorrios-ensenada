@@ -2,7 +2,7 @@
 
 **Fecha:** 12 de octubre de 2026<br>
 **Fase:** 6A — ejecución del alcance 1.0<br>
-**Estado:** DEC-001–DEC-034 cerradas; PKG-01–05 y CR-V1-001 integrados; F3 desplegada globalmente y correcciones técnicas cerradas en la rama de publicación; cartografía preparada como asset pero no insertada; candidata formal, presentación editorial, citas y bibliografía pendientes<br>
+**Estado:** DEC-001–DEC-034 cerradas; PKG-01–05, CR-V1-001 e INC-BIB-001/002 integrados; F3 desplegada globalmente y correcciones técnicas cerradas en la rama de publicación; cartografía preparada como asset pero no insertada; candidata formal, presentación editorial, citas y bibliografía pendientes<br>
 **Cierre humano:** [CIERRE_ALCANCE_V1_0.md](./CIERRE_ALCANCE_V1_0.md)<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Plan operativo:** [PLAN_EJECUCION_V1_0.md](./PLAN_EJECUCION_V1_0.md)
@@ -37,7 +37,7 @@ presentación final HTML/PDF.
 |---|---|---|---|---|
 | REV-001 | Identidad, créditos y metadatos | La candidata conserva identidad de desarrollo y carece de datos humanos y legales finales. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-007–009 y DEC-015. | DAT-001–010 según PKG-00/09; no inventar valores. |
 | REV-002 | Cartografía | PKG-03 ha preparado y validado los mapas regional y local contemporáneos; no se reconstruye el término histórico. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-021; PKG-03 completado e integrado. | **ASSET PREPARADO / INTEGRACIÓN EN PUBLICACIÓN PENDIENTE**: insertar y validar ambos mapas en PKG-07; todavía no aparecen en PDF/HTML. |
-| REV-003 | Fuentes y bibliografía | Las 16 referencias incompletas fueron tratadas en PKG-02: 14 verificadas con ajustes, una parcial y una incompatibilidad de uso; `INC-BIB-001` e `INC-BIB-002` siguen abiertas y `references.bib` continúa vacío. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-025–028 y DEC-032; verificación bibliográfica completada, correspondencia fuente/uso condicionada. | Resolver ambas incidencias antes de GATE-01; PKG-08 sigue pendiente para CIT-B/C, bibliografía visible, citas próximas y TOP-006 solo en matriz. |
+| REV-003 | Fuentes y bibliografía | Las 16 referencias incompletas fueron tratadas en PKG-02: 14 verificadas con ajustes, una parcial y una incompatibilidad de uso; `INC-BIB-001` e `INC-BIB-002` están cerradas canónicamente y `references.bib` continúa vacío. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-025–028 y DEC-032; verificación y resolución canónica completadas, propagación editorial pendiente. | PKG-08 debe propagar la resolución a CIT-B/C, bibliografía visible, citas próximas, aparatos y TOP-006 solo en matriz. |
 | REV-004 | Aparatos narrativos | Nueve QA1, historia intelectual y once objetos citables están diagnosticados. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-029–031. | QA1 compacto; historia breve; modelos por familias; datos finales de identidad/cita. |
 | REV-005 | Preliminares y orientación | P3, introducción y convenciones están decididos; la cronología es viable con datos internos. | **INCLUIR EN 1.0** — DEC-001, DEC-003–005 y DEC-020. | Implementación en PKG-06/07. |
 | REV-006 | D/C/I/E/L | La cadena existe, pero las marcas no enlazan de forma homogénea con la matriz. | **INCLUIR EN 1.0** — DEC-033. | Enlaces, retornos y política coherente sin saturación. |
@@ -78,8 +78,9 @@ presentación final HTML/PDF.
 - DAT-001–DAT-010: valores humanos y editoriales concretos.
 - Regeneración posterior de la candidata formal para incorporar las
   implementaciones F3 y PKG-05 ya integradas en la rama de publicación.
-- Cierre de `INC-BIB-001` e `INC-BIB-002` antes de GATE-01, sin sustituir
-  fuentes ni parchear afirmaciones canónicas desde `publication/`.
+- Propagación en PKG-08 de `INC-BIB-001` e `INC-BIB-002`, ya cerradas
+  canónicamente, sin sustituir fuentes ni parchear la autoridad desde
+  `publication/`.
 - Integración narrativa y multiformato de los assets cartográficos en PKG-07;
   no marcarlos como presentes en la candidata antes de ese paquete.
 - PKG-04 está completado e integrado: prototipo, decisión `F3-APROBAR` y
@@ -115,6 +116,6 @@ F3, pero no forman aún una nueva candidata formal. El tag solo puede aparecer e
 candidata nueva, validación, preview, aceptación humana y autorización explícita
 de Fase 6B.
 
-**Bloqueante restante para GATE-01: resolución de INC-BIB-001 e INC-BIB-002.**
+**GATE-01: LISTO PARA EVALUACIÓN FORMAL; NO DECLARADO PASS.**
 
-**SIGUIENTE PASO: resolver canónicamente INC-BIB-001 e INC-BIB-002 antes de evaluar GATE-01.**
+**SIGUIENTE PASO: evaluar formalmente GATE-01 con PKG-00–05 aceptados, INC-BIB-001/002 cerradas canónicamente y la propagación editorial controlada para PKG-08.**
