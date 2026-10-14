@@ -1,10 +1,10 @@
 # Estudio histórico de Sorribos y Santibáñez de Ordás en 1752
 
-## Versión canónica 1.2
+## Versión canónica 1.3
 
 **Estado:** activo  
-**Versión:** 1.2  
-**Fecha:** 19 de septiembre de 2026  
+**Versión:** 1.3
+**Fecha:** 14 de octubre de 2026
 **Base documental primaria:** `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md`, versión 3.6  
 **Registro de control:** `Registro_Afirmaciones_Calculos_v1.md`  
 **Auditoría de origen:** `Auditoria_Coherencia_0_1_0_6.md`  
@@ -102,7 +102,9 @@ La respuesta 21 declara 18 vecinos y ocho medios vecinos —incluidas dos viudas
 
 Los 26 `avitadores` no constituyen una cifra de población individual, y los ocho residentes no deben sumarse como si todas las categorías representaran personas u hogares equivalentes. El expediente no ofrece tamaño familiar, edades ni número total de habitantes. [L: LIM-001]
 
-La cautela tiene apoyo en el modo de formación del Catastro. Los libros personales se ordenaban en torno a cabezas de casa y familias e incluían cónyuges, hijos, criados y otros convivientes; en varios lugares las viudas podían computarse como medio vecino. Por ello, `vecino` no equivale a individuo, `medio vecino` expresa una categoría fiscal o vecinal y `residente` puede designar a quien vive en el lugar sin la misma condición contributiva. Los hijos de familia o criados pueden aparecer, además, bajo categorías laborales. Este marco aclara el vocabulario del expediente, pero no permite reconstruir una población total. [E/I: DEM-005; LIM-001]
+En Sorribos, que dos viudas estén incluidas entre los ocho medios vecinos es exclusivamente un dato local de la respuesta 21. No establece una regla general que equipare viuda y medio vecino. [D/L: DEM-001; R21, f. 318r]
+
+Como contexto externo, los libros personales del Catastro se ordenaban en torno a cabezas de casa o familias y registraban cónyuges, hijos, criados y otros convivientes; las viudas con casa abierta podían figurar como cabezas de casa. Este marco aclara la organización doméstica general de los libros, pero no convierte `vecino`, `medio vecino` o `residente` en individuos, hogares o coeficientes demográficos equivalentes ni permite reconstruir una población total. Los hijos de familia o criados pueden aparecer, además, bajo categorías laborales. [E/I/L: DEM-005; LIM-001]
 
 El dato de 137 habitantes atribuido en 1768 a la parroquia de Santibáñez de Sorribos constituye una observación posterior y de distinta escala. No se usa como coeficiente vecinos→habitantes ni como estimación de Sorribos en 1752. [E/L: DEM-006]
 
@@ -330,11 +332,9 @@ El común declara además no tener cargo de justicia ni estar cargado de servici
 
 La taberna funciona por vecera entre los vecinos porque no encuentra arrendatario y no produce utilidad al común ni a particular. Es un servicio rotatorio documentado, pero no una prueba suficiente para generalizar una forma de gobierno económico a todas las actividades. [D/I: TRA-005; R29, f. 319v]
 
-Ordenanzas concejiles leonesas conservan fórmulas según las cuales, cuando nadie toma en arriendo taberna, carnicería, panadería o mesón, el servicio `anda por vecera`: pasa por turno entre vecinos. El paralelo confirma el sentido institucional del término empleado en Sorribos, sin extender el turno a servicios que el expediente no menciona. [E/I: TRA-006]
-
 La secuencia `necesidad colectiva → gasto → repartimiento → vecinos` resume una dependencia explícita. La ausencia de propios, arbitrios y rentas hace visible esa dependencia, aunque no autoriza a afirmar insolvencia o falta de otros recursos no preguntados. [D/I: INT-006]
 
-Fuentes externas: Hospital de Inocentes de Valladolid, <https://uvadoc.uva.es/bitstream/handle/10324/21203/Investigaciones-1982-03-Pobreza-Hospitalidad-Publica-Ciudad-Valladolid.pdf>; PARES, Honrado Concejo de la Mesta, <https://pares.mcu.es/ParesBusquedas20/catalogo/description/172318>; estudio sobre propios y arbitrios, <https://dialnet.unirioja.es/descarga/articulo/785131.pdf>; ordenanzas concejiles leonesas sobre servicios por vecera, <https://www.cuadrosleon.com/old/el%20concejo.htm>; ejemplo leonés de gastos de Corpus en respuestas catastrales, <https://caboalles.wordpress.com/2008/09/29/catastro-de-ensenada-ano-1752/>.
+Fuentes externas: Hospital de Inocentes de Valladolid, <https://uvadoc.uva.es/bitstream/handle/10324/21203/Investigaciones-1982-03-Pobreza-Hospitalidad-Publica-Ciudad-Valladolid.pdf>; PARES, Honrado Concejo de la Mesta, <https://pares.mcu.es/ParesBusquedas20/catalogo/description/172318>; estudio sobre propios y arbitrios, <https://dialnet.unirioja.es/descarga/articulo/785131.pdf>; ejemplo leonés de gastos de Corpus en respuestas catastrales, <https://caboalles.wordpress.com/2008/09/29/catastro-de-ensenada-ano-1752/>.
 
 ## 14. Monetización y conexiones exteriores
 
@@ -423,7 +423,7 @@ Las vulnerabilidades más claras proceden del predominio cerealista, los ciclos 
 
 El resultado canónico es, por tanto, una explicación trazable de cómo se conectan producción, trabajo, recursos y derechos en 1752, acompañada de una declaración explícita de aquello que no puede medirse. [I: INT-010]
 
-La documentación externa amplía esta imagen sin sustituirla: sitúa el nombre del lugar en una serie que arranca en 1215; muestra una venta patrimonial detallada en 1267; precisa el marco del Concejo de Ordás y del condado de Luna; y da sentido regional a medidas de sembradura, lino, prados, ganado a renta, molinos, vecera y cargas institucionales. Allí donde esa documentación no alcanza —título de algunos derechos señoriales, pago al Hospital de Inocentes y derecho de Mesta— el estudio conserva abierta la pregunta. [E/I/L: TOP-004–TOP-011; JUR-007–JUR-009; TER-011; AGR-011–AGR-013; GAN-008; HID-008; TRA-006; FIS-013–FIS-017; LIM-011–LIM-013]
+La documentación externa amplía esta imagen sin sustituirla: sitúa el nombre del lugar en una serie que arranca en 1215; muestra una venta patrimonial detallada en 1267; precisa el marco del Concejo de Ordás y del condado de Luna; y da sentido regional a medidas de sembradura, lino, prados, ganado a renta, molinos y cargas institucionales. Allí donde esa documentación no alcanza —título de algunos derechos señoriales, pago al Hospital de Inocentes y derecho de Mesta— el estudio conserva abierta la pregunta. [E/I/L: TOP-004–TOP-011; JUR-007–JUR-009; TER-011; AGR-011–AGR-013; GAN-008; HID-008; FIS-013–FIS-017; LIM-011–LIM-013]
 
 ---
 

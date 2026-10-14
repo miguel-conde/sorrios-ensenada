@@ -2,8 +2,8 @@
 
 ## Sorribos y Santibáñez de Ordás en 1752
 
-**Versión:** 1.2  
-**Fecha:** 19 de septiembre de 2026  
+**Versión:** 1.3
+**Fecha:** 14 de octubre de 2026
 **Naturaleza:** instrumento de control previo; no sustituye al `Estudio_Historico.md` canónico  
 **Base documental primaria:** `project/20_TRABAJO_EDITORIAL/Edicion_Critica.md`, versión 3.6  
 **Capa contextual:** fuentes externas identificadas en las entradas de nivel E  
@@ -140,7 +140,7 @@ Estados:
 | FIS-011 | Esos 25 reales equivalen al 10,73 % de los 233 reales explícitos de R25 y al 2,49 % del mínimo monetario de 1.006 reales. | C | R16, R25, R28; CAL-016 y CAL-017 | Condicionada por sus respectivos denominadores. |
 | FIS-012 | El pozo de pesca del conde de Luna está arrendado en nueve reales, declarados como utilidad. | D | R29, f. 319v | Admitida. |
 
-### 3.8. Contexto externo incorporado en la versión 1.2
+### 3.8. Contexto externo incorporado en la versión 1.3
 
 #### Topónimo y continuidad territorial
 
@@ -162,7 +162,7 @@ Estados:
 | JUR-007 | En 1768 y 1789 el Concejo de Ordás comprendía un núcleo de cinco lugares; el municipio posterior reunió además lugares de otras jurisdicciones históricas. | E/I | Relación de 1768 y Álvarez-Balbuena: <https://buleria.unileon.es/handle/10612/12285> | Admitida; distinguir concejo histórico y municipio contemporáneo. |
 | JUR-008 | Ordás figura entre las jurisdicciones del conde de Luna y PARES identifica a Francisco Alfonso Pimentel como XV conde de Luna en correspondencia de 1742–1753. | E/I | <https://fh.mdp.edu.ar/revistas/index.php/magallanica/article/view/6817>; <https://pares.mcu.es/ParesBusquedas20/catalogo/description/3925721> | Admitida para identificar al titular en 1752; el manuscrito solo dice `Conde de Luna`. |
 | JUR-009 | `Abogado de los Reales Consejos` era un título o habilitación profesional obtenido mediante examen y expedición, no prueba de empleo permanente en un consejo. | E/I | PARES, expedientes de examen y título: <https://pares.mcu.es/ParesBusquedas20/catalogo/description/1547060> | Admitida para explicar el título de Joaquín Aguado; no atribuirle un puesto no documentado. |
-| DEM-005 | Los libros personales del Catastro se articulaban en torno a cabezas de casa y familias, con cónyuges, hijos, criados y otros convivientes; en diversos lugares las viudas podían computarse como medio vecino. | E/I | Estudio general del Catastro: <https://www.researchgate.net/publication/28109852_El_Catastro_de_Ensenada_1749-1759_diez_anos_de_intenso_trabajo_y_80000_volumenes_manuscritos> | Admitida para explicar categorías; no convertir automáticamente `vecino`, `medio vecino` o `residente` en individuos u hogares equivalentes. |
+| DEM-005 | Los libros personales del Catastro se articulaban en torno a cabezas de casa o familias y registraban cónyuges, hijos, criados y otros convivientes; las viudas con casa abierta podían figurar como cabezas de casa. | E/I | Concepción Camarero Bullón, estudio general del Catastro, edición institucional: <https://www.catastro.hacienda.gob.es/documentos/publicaciones/ct/ct46/06.%20Concepcion%20Camarero.pdf> | Admitida solo como contexto general de la organización doméstica de los libros personales. No usar como soporte de `medio vecino`, de una equivalencia viuda → medio vecino, de coeficientes vecinos → habitantes, de equivalencias de hogar ni de reglas generales aplicables a Sorribos. |
 | DEM-006 | La relación parroquial de 1768 atribuye 137 habitantes a Santibáñez de Sorribos. | E/L | <https://scrinia.org/wp-content/uploads/2021/12/Memoria-Ecclesiae-28.pdf> | Condicionada: dato posterior y de otra unidad; prohibido usarlo como coeficiente o estimación de Sorribos en 1752. |
 
 #### Sistema agrario, ganado y molinos
@@ -175,7 +175,6 @@ Estados:
 | AGR-013 | El léxico histórico leonés documenta `ferrenales`, `ferrainales` o `ferrañales` para cercados destinados a cereal verde de alimento ganadero. | E/I | Estudio de la Valduerna: <https://idus.us.es/server/api/core/bitstreams/f727d611-1345-4de8-84ed-a60f90ab56fe/content> | Admitida como apoyo léxico; no imponer a Sorribos todos los detalles de la Valduerna. |
 | GAN-008 | La bibliografía sobre León documenta bueyes y vacas dados a renta o aparcería a cambio de pagos. | E/I | <https://reunido.uniovi.es/index.php/RCG/article/download/894/824> | Admitida para interpretar `arenta`; las prestaciones concretas de Sorribos proceden solo de R20. |
 | HID-008 | El molino hidráulico tuvo amplia presencia en el Catastro leonés y la molienda estacional por falta de caudal aparece en otros territorios del siglo XVIII. | E/I | <https://uvadoc.uva.es/handle/10324/22081>; <https://www.researchgate.net/publication/330029888_Recursos_naturales_y_molienda_a_mediados_del_siglo_XVIII_la_Tierra_de_Campos> | Admitida como contexto; no cuantificar capacidad, caudal ni meses de trabajo de Sorribos fuera de R17. |
-| TRA-006 | Ordenanzas concejiles leonesas usan `andar por vecera` para servicios que pasan por turno entre vecinos cuando nadie los arrienda. | E/I | <https://www.cuadrosleon.com/old/el%20concejo.htm> | Admitida para explicar la taberna de R29; no generalizar el turno a otras actividades. |
 
 #### Derechos y hacienda del común
 

@@ -1,3 +1,12 @@
+## 14 de octubre de 2026 — Resolución canónica de INC-BIB-001 e INC-BIB-002
+
+- Retirado del Registro vigente el paralelo externo `TRA-006`, sin renumerar los demás identificadores; R29 y `TRA-005` permanecen como autoridad suficiente para el funcionamiento local de la taberna por vecera.
+- Restringido `DEM-005` al contexto que BIB-015 acredita sobre libros personales, composición doméstica y viudas con casa abierta como cabezas de casa; se prohíbe usarlo para sostener `medio vecino`, equivalencias demográficas o reglas generales aplicables a Sorribos.
+- Promovidos a v1.3 el Registro de afirmaciones y cálculos y el Estudio Histórico; corregidos los contextos de `medio vecino` y `vecera` en el Glosario.
+- Conservados íntegros R21, R29, `DEM-001`, `TRA-005`, los cálculos, las cifras y la lineación paleográfica.
+- No se modifica `publication/`: capítulos, aparatos generados, validadores y futura bibliografía se propagarán exclusivamente en PKG-08.
+- Operación aislada en `canonical/inc-bib-001-002-v1` desde `d4153c60489f4df24cdadf75d7740ec85b9406dd`; `operation.status` permanece `clean` y no se avanza ninguna unidad.
+
 ## 11 de octubre de 2026 — PKG-01: Glosario canónico GH-B
 
 - Aplicado el modelo GH-B selectivo al Glosario canónico con conocimiento ya consolidado en la Edición Crítica 3.6, el Estudio Histórico 1.2 y el Registro D/C/I/E/L 1.2.

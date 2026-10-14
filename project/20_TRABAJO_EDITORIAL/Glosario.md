@@ -29,7 +29,7 @@ No contendrá interpretación histórica extensa.
 - **Definición:** categoría vecinal usada en la respuesta 21.ª junto a `vecinos`; el expediente cuenta dieciocho vecinos y ocho medios vecinos —incluidas dos viudas— como veintiséis `avitadores`, y distingue además ocho `residentes` a los que no considera vecinos porque no contribuyen con los `tributos reales`.
 - **Primera unidad:** folio 318r.
 - **Referencias:** folio 318r; respuesta 21.ª.
-- **Contexto histórico:** el contexto canónico sitúa `medio vecino` como una categoría fiscal o vecinal, no como media persona ni como un coeficiente fijo de hogar o población; documenta además que las viudas podían computarse así en distintos lugares, sin convertir esa práctica comparada en una regla universal (`DEM-001`, `DEM-002`, `DEM-005`; `LIM-001`).
+- **Contexto histórico:** en este expediente, `medio vecino` es una categoría fiscal o vecinal, no media persona ni un coeficiente fijo de hogar o población; la respuesta 21.ª incluye expresamente a dos viudas entre los ocho medios vecinos, sin que ese dato local establezca una equivalencia general entre viuda y medio vecino (`DEM-001`, `DEM-002`; `LIM-001`).
 - **Notas:** no se deducen de la categoría edad, composición doméstica, fracción de propiedad ni equivalencia demográfica.
 
 ### propios
@@ -169,7 +169,7 @@ No contendrá interpretación histórica extensa.
 - **Definición:** turno o rotación entre los vecinos por el que, según la respuesta 29.ª, funciona la taberna cuando no hay quien la arriende.
 - **Primera unidad:** folio 319v.
 - **Referencias:** folio 319v; respuesta 29.ª.
-- **Contexto histórico:** ordenanzas concejiles leonesas ya incorporadas al contexto canónico usan `andar por vecera` para servicios que pasan por turno entre vecinos cuando nadie los arrienda; el paralelo confirma el sentido rotatorio de la expresión local (`TRA-005`, `TRA-006`).
+- **Contexto histórico:** la respuesta 29.ª documenta directamente que la taberna funciona por turno entre los vecinos cuando no hay quien la arriende (`TRA-005`).
 - **Notas:** el expediente declara que la taberna `anda por vecera entre los vecinos` y que por esa razón no rinde utilidad al común ni a particular. No se extiende el turno a otras actividades no mencionadas.
 
 ### servicio ordinario y extraordinario
