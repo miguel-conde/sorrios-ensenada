@@ -176,6 +176,13 @@ textarea:focus-visible,
 }
 
 @media (max-width: 48rem) {
+  a.uri,
+  code {
+    overflow-wrap: anywhere;
+    white-space: break-spaces;
+    word-break: break-word;
+  }
+
   .table-scroll table {
     min-width: max-content;
   }

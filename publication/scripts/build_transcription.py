@@ -153,7 +153,10 @@ def _crop_units(
                     if spec.position == "complete"
                     else page.crop(_crop_box(page, spec.position))
                 )
-                crop.save(destination, format="PNG")
+                # Lossless maximum DEFLATE compression materially reduces both
+                # the web bundle and the embedded PDF image streams. Pixel data,
+                # dimensions and the approved F3 presentation remain unchanged.
+                crop.save(destination, format="PNG", compress_level=9)
                 crop.close()
             with Image.open(destination) as generated:
                 generated.verify()

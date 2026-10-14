@@ -9,6 +9,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from PIL import Image
+
 from check_sources import (
     ManuscriptMetadata,
     SourceCheckError,
@@ -222,6 +224,12 @@ def _render_images(
             dpi=RENDER_DPI,
             pdftoppm=executable,
         )
+        prototype_crop = assets / "folio-315v.png"
+        compressed_crop = assets / "folio-315v.compressed.png"
+        with Image.open(prototype_crop) as image:
+            image.load()
+            image.save(compressed_crop, format="PNG", compress_level=9)
+        compressed_crop.replace(prototype_crop)
     except (OSError, subprocess.CalledProcessError, RuntimeError) as exc:
         raise PrototypeBuildError(f"No se pudieron generar las imágenes: {exc}") from exc
 

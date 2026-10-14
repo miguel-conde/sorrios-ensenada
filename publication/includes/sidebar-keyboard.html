@@ -1,0 +1,12 @@
+<script>
+document.querySelectorAll(".sidebar-item-toggle[data-bs-toggle='collapse']").forEach((toggle) => {
+  toggle.setAttribute("role", "button");
+  toggle.setAttribute("tabindex", "0");
+  toggle.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      toggle.click();
+    }
+  });
+});
+</script>

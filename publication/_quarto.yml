@@ -10,6 +10,8 @@ book:
   title: "Sorribos y Santibáñez de Ordás en 1752"
   subtitle: "Edición en desarrollo"
   output-file: "sorribos-santibanez-ordas-1752"
+  sidebar:
+    collapse-level: 1
   chapters:
     - index.qmd
     - part: "Parte I. El Catastro y su documento"
@@ -64,6 +66,7 @@ format:
     theme:
       - cosmo
       - styles/book.scss
+    include-after-body: includes/sidebar-keyboard.html
   pdf:
     # TinyTeX lacks babel-spanish in this environment. Visible labels and the
     # PDF language catalog remain Spanish through the local preamble.
@@ -78,3 +81,4 @@ format:
     include-in-header: styles/latex/preamble.tex
     filters:
       - scripts/pdf_internal_links.lua
+      - scripts/pdf_index_entries.lua

@@ -1,6 +1,20 @@
 % Phase 5A: compare renderer-produced page labels so repeated targets on the
 % same physical page share one printed index locator.
 \usepackage{refcount}
+% PKG-05: reserve enough width for multi-digit section numbers in the PDF TOC.
+% This changes only the TOC number box, not headings or numbering elsewhere.
+\RedeclareSectionCommand[tocnumwidth=4.2em]{section}
+
+% PKG-05: Pandoc's native LaTeX writer discards fenced-Div classes. The
+% companion Lua filter wraps every generated index entry in this PDF-only
+% environment so entries have a consistent boundary and avoid bad splits.
+\newenvironment{PublicationIndexEntry}{%
+  \par\addvspace{0.65\baselineskip}%
+  \noindent\begin{minipage}{\linewidth}%
+}{%
+  \end{minipage}%
+  \par
+}
 \AtBeginDocument{%
   \hypersetup{pdflang={es-ES}}%
   \renewcommand{\partname}{Parte}%

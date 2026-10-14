@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from collections import defaultdict
 from dataclasses import dataclass
 from itertools import zip_longest
@@ -235,7 +236,34 @@ def _link_glossary_text(text: str, data: ApparatusData) -> str:
     )
 
 
+def glossary_sort_key(value: str) -> tuple[tuple[tuple[str, int], ...], str]:
+    """Return a deterministic, locale-independent Spanish alphabetical key.
+
+    Case and vowel diacritics do not affect the primary order. The Spanish
+    letter ñ remains distinct and sorts after every ordinary n word and before
+    o. Visible spelling is retained as a deterministic tie-breaker.
+    """
+
+    normalized = unicodedata.normalize("NFC", " ".join(value.split())).casefold()
+    primary: list[tuple[str, int]] = []
+    for character in normalized:
+        if character == "ñ":
+            primary.append(("n", 1))
+            continue
+        decomposed = unicodedata.normalize("NFD", character)
+        bases = "".join(item for item in decomposed if not unicodedata.combining(item))
+        for base in bases:
+            if base.isalnum():
+                primary.append((base, 0))
+            elif base.isspace() and primary and primary[-1] != (" ", 0):
+                primary.append((" ", 0))
+    while primary and primary[-1] == (" ", 0):
+        primary.pop()
+    return tuple(primary), normalized
+
+
 def glossary_qmd(data: ApparatusData) -> str:
+    entries = tuple(sorted(data.glossary.entries, key=lambda entry: glossary_sort_key(entry.term)))
     chunks = [
         f'''---
 subtitle: "Parte VI. Aparatos e índices"
@@ -256,10 +284,10 @@ canónico. Los enlaces de navegación se añaden sin modificar su contenido.
 ## Entradas {{#glosario-entradas .unnumbered}}
 
 ''' + " · ".join(
-            f"[{entry.term}](#{entry.anchor})" for entry in data.glossary.entries
+            f"[{entry.term}](#{entry.anchor})" for entry in entries
         )
     ]
-    for entry in data.glossary.entries:
+    for entry in entries:
         chunks.append(
             f"""### {entry.term} {{#{entry.anchor} .unnumbered}}
 
