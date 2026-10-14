@@ -4,7 +4,10 @@
 
 - Rama de partida: `feature/quarto-book`.
 - Base exacta: `53979945eede54b7a10cd151bc92b71926b7fadc`.
-- Rama aislada: `pkg-05/technical-fixes-performance-v1`, sin upstream.
+- Rama aislada: `pkg-05/technical-fixes-performance-v1`. Durante la revisión
+  final se comprobó que el usuario la había publicado deliberadamente como
+  `origin/pkg-05/technical-fixes-performance-v1`; se preservó el commit remoto
+  sin reescribirlo.
 - Árbol inicial limpio; `feature/quarto-book` estaba 4 commits por delante y 0
   por detrás de `origin/feature/quarto-book` (`5d90b280af8a2fe7185737f3342245cde8e6fac8`).
 - `main == origin/main == e81dc9239ac8dbabfe77168a50ef98c4d3b79170`.
@@ -174,17 +177,26 @@ adaptador, estado de las seis partes y comportamiento responsive/teclado.
 
 ## 6. REV-026 — auditoría de peso
 
-### PDF baseline
+### Baseline A/B comparable
 
-El render intermedio ya contenía las cuatro correcciones obligatorias:
+La revisión final reconstruyó dos checkouts desde el mismo commit y los
+renderizó con idéntica configuración. La única diferencia entre A y B fue el
+nivel de compresión al guardar los 35 recortes PNG:
 
-PDF: 341 páginas; 74.039.786 bytes; SHA-256
-`2f7028fb6c0e77144d9db0f3d8539d2a28a94a9322a2e702db1138580652d8c4`.
+- A, `compress_level` predeterminado: PDF de 333 páginas y 74.035.908 bytes;
+  web sin PDF de 77.144.851 bytes.
+- B, `compress_level=9`: PDF de 333 páginas y 70.802.128 bytes; web sin PDF de
+  73.910.522 bytes.
 
-### Web baseline
+El PDF de 341 páginas y 74.039.786 bytes no es una baseline de compresión
+comparable: corresponde al ensayo intermedio que todavía usaba `samepage`. La
+revisión independiente lo reprodujo exactamente en páginas y bytes al restaurar
+solo ese entorno sobre A.
 
-30 documentos HTML; 77.144.770 bytes sin PDF: imágenes 73.290.652; HTML
-2.097.354; CSS 616.877; JavaScript 393.315; fuentes 176.200; otros 570.372.
+### Web baseline A
+
+30 documentos HTML; 77.144.851 bytes sin PDF: imágenes 73.290.652; HTML
+2.097.354; CSS 616.958; JavaScript 393.315; fuentes 176.200; otros 570.372.
 
 ### Desglose gráfico y tipográfico
 
@@ -203,15 +215,16 @@ PDF: 341 páginas; 74.039.786 bytes; SHA-256
 
 | ID | Técnica | PDF antes | PDF después | Web antes | Web después | Calidad | Reproducible | Decisión |
 |---|---|---:|---:|---:|---:|---|---|---|
-| OPT-01 | Pillow `optimize=True` en las 53 imágenes | 74.039.786 | N/E: rechazada en puerta de activos | 77.144.770 | 73.956.075 en árbol experimental | Sin pérdida, identidad de píxeles | Sí | RECHAZAR: empeora los 18 facsímiles en 46.308 bytes y añade búsqueda/coste innecesarios |
-| OPT-02 | PNG `compress_level=9` solo en los 35 recortes | 74.039.786 | 70.802.128 | 77.144.770 | 73.910.522 | Sin pérdida, identidad de píxeles | Sí | ACEPTAR |
+| OPT-01 | Pillow `optimize=True` en las 53 imágenes | N/E: ensayo de activos | N/E: rechazada en puerta de activos | N/E: ensayo de activos | 73.956.075 en árbol experimental | Sin pérdida, identidad de píxeles | Sí | RECHAZAR: empeora los 18 facsímiles en 46.308 bytes y añade búsqueda/coste innecesarios |
+| OPT-02 | PNG `compress_level=9` solo en los 35 recortes | 74.035.908 | 70.802.128 | 77.144.851 | 73.910.522 | Sin pérdida, identidad de píxeles | Sí | ACEPTAR |
 
 OPT-01 redujo el conjunto temporal de imágenes de 73.290.652 a 70.101.957
 bytes (−3.188.695; −4,3508 %), pero se detuvo antes del render PDF. OPT-02
 reduce aisladamente los recortes de 38.226.819 a 34.992.490 bytes
-(−3.234.329; −8,4609 %). En la comparación PDF completa de OPT-02 también
-interviene la sustitución final de `samepage` por `minipage`; el A/B exacto de
-activos y del bundle web aísla la ganancia de compresión.
+(−3.234.329; −8,4609 %). El A/B final aísla también la ganancia en los formatos
+completos: −3.233.780 bytes (−4,3679 %) en PDF y −3.234.329 bytes
+(−4,1925 %) en web. Los 51 archivos web no PNG son idénticos byte a byte; los
+35 únicos archivos distintos son los recortes comprimidos.
 
 No se aplican reducciones de resolución, conversión con pérdida ni mutaciones
 posteriores al render. El entorno no ofrece `qpdf`, Ghostscript, MuPDF ni
@@ -230,9 +243,9 @@ verifica la regla. Las dimensiones, color, alpha y matriz de píxeles no cambian
 
 - PDF final: 333 páginas; **70.802.128 bytes**; SHA-256
   `c966f68784c9a3426ef451bf3ef679073ebb4891cac294e7d4174032f541e1c4`.
-- Reducción frente a la baseline corregida: 3.237.658 bytes (4,3729 %).
+- Reducción frente a la baseline A/B comparable: 3.233.780 bytes (4,3679 %).
 - Reducción frente al PDF de partida PKG-04/F3: 3.239.558 bytes (4,3753 %).
-- Web final sin PDF: **73.910.522 bytes**, 3.234.248 bytes menos (4,1924 %).
+- Web final sin PDF: **73.910.522 bytes**, 3.234.329 bytes menos (4,1925 %).
 - Desglose web final: imágenes 70.056.323; HTML 2.097.354; CSS 616.958;
   JavaScript 393.315; fuentes 176.200; otros 570.372 bytes.
 - Imágenes PDF finales, aproximación por objetos: 69.991.424 bytes; facsímiles
@@ -242,19 +255,30 @@ verifica la regla. Las dimensiones, color, alpha y matriz de píxeles no cambian
 Este render de validación no constituye candidata formal.
 
 La diferencia de 341 a 333 páginas procede de la corrección final del modelo de
-entradas de índices (`samepage` intermedio frente a `minipage` final), no de una
-supresión de contenido.
+entradas de índices (`samepage` intermedio frente a `minipage` final), no de la
+compresión ni de una supresión de contenido. Los dos PDF A/B con `minipage`
+tienen 333 páginas; el tercero, con la misma A no optimizada y únicamente
+`samepage`, recupera las 341 páginas y los 74.039.786 bytes del ensayo
+intermedio. Las ocho páginas de diferencia se localizan en los nueve índices,
+que empiezan en 298/304/307/310/314/318/323/326/330 con `minipage`, frente a
+298/306/309/313/318/323/329/333/337 con `samepage`.
 
 ## 10. Reproducibilidad
 
-Dos preparaciones consecutivas anteriores a la última adaptación del prototipo
-ya produjeron 83 salidas con el mismo manifiesto SHA-256
-`8c7bf0d89f442fd2b5f35a9fd61d3d4dc2b2d967213ebbeefbbbb391394be3b2`.
-Tras armonizar la compresión del prototipo se repitió la preparación y se
-comparó el árbol derivado completo antes/después: 111 archivos, manifiesto
-SHA-256 `3d2e76872d1028c5407d742cf62609047af36f6d8ca531e30eee3b8850f6aa82`,
-idéntico byte a byte. Los directorios temporales ocultos preexistentes quedan
-fuera del manifiesto y no se publican.
+La revisión final ejecutó dos preparaciones completas consecutivas desde el
+commit integrado y comparó todo `publication/generated/`: 141 archivos y huella
+conjunta SHA-256
+`7a89da427c30722aad32e169579bd511a47f88219a68103c75a1fa270dc93e08`,
+idéntica en ambas pasadas. Los derivados permanecen ignorados y no se publican.
+
+El A/B de formatos confirmó además que ambos PDF tienen texto extraído,
+coordenadas de texto, destinos, URL, fuentes, geometría y posición de imágenes
+idénticos. Los 35 recortes conservan dimensiones, modo RGB, orientación,
+metadatos vacíos y matriz de píxeles; solo cambia la codificación IDAT. Las
+páginas representativas 89, 109, 171, 208 y 330 son idénticas píxel a píxel al
+rasterizarlas a 150 ppp. Los SHA-256 del contenedor PDF no son estables entre
+renders separados porque LuaTeX incorpora `CreationDate` y `ModDate`; los bytes,
+hashes y comparaciones A/B aquí citados proceden de una misma ejecución.
 
 ## 11. Tests
 
@@ -281,15 +305,17 @@ fuera del manifiesto y no se publican.
 ## 13. Integridad y alcance
 
 - `project/` permanece byte a byte fuera del diff.
-- No se modifican bibliografía, contenido histórico, cartografía ni documentos
-  generales de estado.
+- No se modifican bibliografía, contenido histórico ni cartografía.
 - No se incorporan PDF, credenciales, manuscritos ni fuentes restringidas al
   control de versiones.
 - `publication/generated/` sigue sin archivos rastreados; sus salidas se
   regeneran mediante la preparación.
 - No se abren INC-BIB-001/002, Contexto histórico, PKG-06, despliegue global ni
   fase 6B.
-- No se integra, publica, etiqueta ni crea release. Esta rama no constituye una
+- El commit de implementación
+  `0be55e60cd25d1965eac9b4e421f5b8dda948650` fue revisado de forma
+  independiente e integrado por avance rápido en `feature/quarto-book`. No se
+  hizo push, no se creó etiqueta ni release y el render no constituye una
   candidata formal.
 
 ## 14. Resultado
@@ -300,5 +326,5 @@ fuera del manifiesto y no se publican.
 - REV-018 / DEC-014: **RESUELTA**.
 - REV-026 / DEC-034: **RESUELTA CON OPTIMIZACIÓN**.
 
-PKG-05 queda técnicamente cerrado en su rama aislada y pendiente únicamente de
-revisión e integración por la autoridad correspondiente.
+PKG-05 queda técnicamente revisado, cerrado e integrado. GATE-01 permanece
+abierto exclusivamente por `INC-BIB-001` e `INC-BIB-002`.

@@ -3,7 +3,8 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00 cerrado, PKG-01–04 integrados y CR-V1-001 cerrada; PKG-05 es el siguiente paquete
+**Estado:** plan operativo; PKG-00–05 completados e integrados y CR-V1-001
+cerrada; GATE-01 espera la resolución canónica de INC-BIB-001 e INC-BIB-002
 
 ## 1. Reglas generales
 
@@ -162,8 +163,10 @@ las demás dependencias del plan.
 
 ### PKG-05 — Correcciones técnicas y rendimiento
 
-**Estado:** **SIGUIENTE — LISTO PARA INICIAR**. Este cierre no inicia el
-paquete ni modifica REV-023–026.
+**Estado:** **COMPLETADO E INTEGRADO**. El commit
+`0be55e60cd25d1965eac9b4e421f5b8dda948650` fue revisado e integrado por
+avance rápido. El cierre detallado consta en
+[CIERRE_PKG_05_CORRECCIONES_TECNICAS_RENDIMIENTO.md](./CIERRE_PKG_05_CORRECCIONES_TECNICAS_RENDIMIENTO.md).
 
 Correcciones obligatorias:
 
@@ -181,7 +184,9 @@ No se impone un objetivo de megabytes, no se degrada la paleografía y no se
 elimina contenido. Si no existe una mejora material y segura, el peso no bloquea
 1.0.
 
-**Salida:** correcciones validadas y dossier de medición antes/después.
+**Salida:** REV-023–026 y DEC-014 resueltas; PDF de validación de 333 páginas y
+70.802.128 bytes; web sin PDF de 73.910.522 bytes; 630 pruebas y validadores en
+PASS. El render no constituye candidata formal.
 
 ### Preparación tras el cierre de PKG-00
 
@@ -191,7 +196,7 @@ elimina contenido. Si no existe una mejora material y segura, el peso no bloquea
 | PKG-02 | **COMPLETADO E INTEGRADO CON INCIDENCIAS ABIERTAS** | 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01; plan de resolución documentado; `references.bib` vacío y pendiente. |
 | PKG-03 | **COMPLETADO E INTEGRADO** | Mapas regional y local APTO; procedencia, licencia, atribución, redistribución, accesibilidad y reproducibilidad verificadas. Inserción editorial pendiente de PKG-07. |
 | PKG-04 | **COMPLETADO E INTEGRADO** | Prototipo `7c6d687`; `F3-APROBAR`; despliegue global `61a5098`; 18/18 páginas, 35/35 unidades y suite completa en PASS. |
-| PKG-05 | **SIGUIENTE — LISTO PARA INICIAR** | Puede usar el Glosario canónico final y F3 global; REV-024 y el orden alfabético publicado siguen sin implementar. |
+| PKG-05 | **COMPLETADO E INTEGRADO** | REV-023–026 y DEC-014 resueltas en `0be55e6`; auditoría A/B sin pérdida, 630 pruebas y validadores en PASS. |
 
 ### Revisión de pretrabajos antes de GATE-01
 
@@ -378,7 +383,7 @@ de integración.
 | PKG-02 | GATE-00 — completado e integrado con dos incidencias abiertas | PKG-03–05 | Cierre de correspondencia fuente/uso en PKG-08; GATE-01 |
 | PKG-03 | GATE-00 — completado e integrado | PKG-00–02, PKG-04–05 | PKG-07; GATE-01 |
 | PKG-04 | GATE-00; `CR-V1-001` cerrada; prototipo, aprobación y despliegue global completados | PKG-00–03, PKG-05 | Política final del manuscrito integrada; GATE-01 |
-| PKG-05 | GATE-00 | PKG-00–04 | GATE-01 y PKG-10 |
+| PKG-05 | GATE-00 — completado e integrado | PKG-00–04 | GATE-01 y PKG-10 |
 | PKG-06 | GATE-01; inputs aplicables de PKG-00 | PKG-07–09 con ramas/worktrees separados | GATE-02 |
 | PKG-07 | GATE-01; PKG-03 aceptado | PKG-06, PKG-08–09 | GATE-02 |
 | PKG-08 | GATE-01; PKG-02 aceptado | PKG-06–07, PKG-09 | GATE-02 |
@@ -499,7 +504,8 @@ chore(release): publish version 1.0
 - [x] 5. Mapas documentados y licenciados; assets preparados, integración
   editorial pendiente de PKG-07.
 - [x] 6. F3 decidido, aprobado, desplegado globalmente e integrado.
-- [ ] 7. Defectos REV-023–025 corregidos.
+- [x] 7. Defectos REV-023–025 corregidos; REV-026 optimizada sin pérdida y
+  DEC-014 implementada.
 - [ ] 8. Apertura y preliminares integrados.
 - [ ] 9. Aparato visual integrado.
 - [ ] 10. CIT, bibliografía, QA, historia y modelos de cita integrados.
@@ -534,5 +540,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**SIGUIENTE OPERACIÓN RECOMENDADA: PKG-05 — correcciones técnicas y
-rendimiento.**
+**Bloqueante restante para GATE-01: resolución de INC-BIB-001 e INC-BIB-002.**
+
+**SIGUIENTE PASO: resolver canónicamente INC-BIB-001 e INC-BIB-002 antes de evaluar GATE-01.**

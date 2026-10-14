@@ -165,8 +165,12 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
         "| PKG-03 | completado e integrado |",
         "| CR-V1-001 | cerrada e integrada |",
         "| PKG-04 | completado e integrado |",
-        "| PKG-05 | siguiente — listo para iniciar |",
+        "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` deben cerrarse antes de GATE-01",
+        "Bloqueante restante para GATE-01: resolución de INC-BIB-001 e "
+        "INC-BIB-002.",
+        "SIGUIENTE PASO: resolver canónicamente INC-BIB-001 e INC-BIB-002 "
+        "antes de evaluar GATE-01.",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
         "prohibida antes de la aceptación humana del preview |",
     ):

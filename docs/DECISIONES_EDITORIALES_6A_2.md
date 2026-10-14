@@ -4,7 +4,7 @@
 **Fase:** 6A.2 — arquitectura y apertura de la candidata 1.0<br>
 **Baseline documental:** `4c9bc14222b79aca151e5f0ff58c325e1aebe823`<br>
 **Candidata técnica de referencia:** `49ab2e1b1a58ca9201efab54b42a3125de7326f8`<br>
-**Estado:** decisiones humanas registradas; DEC-012 implementada mediante F3 global
+**Estado:** decisiones humanas registradas; DEC-012 y DEC-014 implementadas
 
 ## 1. Objeto y alcance
 
@@ -15,7 +15,7 @@ navegación HTML.
 
 No modifica la candidata Quarto, no resuelve datos personales o legales que el
 usuario todavía no ha proporcionado y no inicia las auditorías especializadas.
-La implementación global de las decisiones permanece pendiente.
+La implementación de las decisiones restantes continúa por paquetes.
 
 ## 2. Registro DEC-001–DEC-015
 
@@ -34,7 +34,7 @@ La implementación global de las decisiones permanece pendiente.
 | DEC-011 | C | Cerrada editorialmente | Mantener el macroorden actual y ofrecer dos rutas explícitas: histórica y documental. | Implementación pendiente. |
 | DEC-012 | C / F3 | **IMPLEMENTADA** | Adoptar facsímil completo, recorte al 74 % y lightbox con navegación bidireccional en HTML; en PDF, facsímil completo como reproducción principal y localizador al 28 % con página/posición textual y navegación bidireccional. | Prototipo, aprobación humana, despliegue global, validación e integración completados; candidata formal pendiente de regeneración posterior. |
 | DEC-013 | B | Cerrada editorialmente | Dar a los capítulos 5–13 títulos conclusivos específicos con función común y sustituir `Síntesis` cuando exista un título informativo adecuado. | Revisión e implementación pendientes. |
-| DEC-014 | A | Cerrada editorialmente | Mostrar la parte activa desplegada y las partes inactivas plegadas en HTML. | Implementación y validación pendientes. |
+| DEC-014 | A | **IMPLEMENTADA** | Mostrar la parte activa desplegada y las partes inactivas plegadas en HTML. | PKG-05 completó implementación, accesibilidad por teclado y validación en escritorio y móvil. |
 | DEC-015 | A | Cerrada editorialmente | No condicionar 1.0 a disponer de ISBN y no usar nunca un ISBN provisional o inventado. | Ninguno para cerrar 6A.2. |
 
 ## 3. Estado consolidado
@@ -53,7 +53,7 @@ La implementación global de las decisiones permanece pendiente.
 
 Estos pendientes no reabren globalmente 6A.2.
 
-### Decisión implementada tras prototipo
+### Decisiones implementadas
 
 `DEC-012` siguió la secuencia completa: hipótesis F3, prototipo del commit
 `7c6d6870214cac19b799d57b392bb1b9d347edd1`, aprobación humana
@@ -62,6 +62,11 @@ obtuvieron **Sí**. El commit global
 `61a50987a4ce3d05721834043d4e1c5c6c611a39` aplica a 18/18 páginas y
 35/35 unidades los parámetros aprobados —74 % en HTML y 28 % en PDF— con
 facsímil completo y navegación bidireccional. **DEC-012 queda implementada.**
+
+`DEC-014` se implementó en PKG-05 mediante el plegado nativo de Quarto: solo
+la parte activa queda abierta, los alternadores admiten foco, Enter y Espacio y
+no hay desbordamiento a 1440 o 390 px. La revisión cubrió una página de cada una
+de las seis partes. **DEC-014 queda implementada.**
 
 ## 4. Relación con REV-*
 
@@ -75,7 +80,7 @@ facsímil completo y navegación bidireccional. **DEC-012 queda implementada.**
 | REV-015 | DEC-006, DEC-007 | Landing HTML, portada PDF y preliminares separados, con T1 como identidad de trabajo. | No iniciada. |
 | REV-016 | DEC-012 | F3 aprobada tras prototipo y revisión humana. | **Resuelta e implementada** en la rama de publicación mediante el despliegue global integrado. |
 | REV-017 | DEC-011 | Macroorden actual conservado con rutas histórica y documental. | No iniciada. |
-| REV-018 | DEC-014 | Parte activa desplegada y partes inactivas plegadas. | No iniciada. |
+| REV-018 | DEC-014 | Parte activa desplegada y partes inactivas plegadas. | **Resuelta e implementada** en PKG-05. |
 | REV-019 | DEC-013 | Cierres específicos con función común. | No iniciada. |
 | REV-022 | DEC-006, DEC-007 | La identidad final no usará «Edición en desarrollo»; T1 es la fórmula de trabajo aprobada. | No iniciada; metadata intacta hasta la implementación. |
 
@@ -128,4 +133,6 @@ un paquete posterior.
 
 ## 8. Siguiente paso
 
-`PKG-05 — correcciones técnicas y rendimiento.`
+**Bloqueante restante para GATE-01: resolución de INC-BIB-001 e INC-BIB-002.**
+
+**SIGUIENTE PASO: resolver canónicamente INC-BIB-001 e INC-BIB-002 antes de evaluar GATE-01.**

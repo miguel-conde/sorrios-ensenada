@@ -2,7 +2,7 @@
 
 **Fecha:** 12 de octubre de 2026<br>
 **Fase:** 6A — ejecución del alcance 1.0<br>
-**Estado:** DEC-001–DEC-034 cerradas; PKG-01–04 y CR-V1-001 integrados; F3 desplegada globalmente en la rama de publicación; cartografía preparada como asset pero no insertada; candidata formal, presentación editorial, citas y bibliografía pendientes<br>
+**Estado:** DEC-001–DEC-034 cerradas; PKG-01–05 y CR-V1-001 integrados; F3 desplegada globalmente y correcciones técnicas cerradas en la rama de publicación; cartografía preparada como asset pero no insertada; candidata formal, presentación editorial, citas y bibliografía pendientes<br>
 **Cierre humano:** [CIERRE_ALCANCE_V1_0.md](./CIERRE_ALCANCE_V1_0.md)<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Plan operativo:** [PLAN_EJECUCION_V1_0.md](./PLAN_EJECUCION_V1_0.md)
@@ -52,23 +52,23 @@ presentación final HTML/PDF.
 | REV-015 | Apertura editorial | Landing HTML, portada PDF y preliminares separados. | **INCLUIR EN 1.0** — DEC-006–007. | Implementación coordinada con REV-001/005/013/014/022. |
 | REV-016 | Duplicación funcional | El prototipo confirmó que F3 reduce satisfactoriamente la duplicación PDF sin perder orientación o comprobación. | **RESUELTA E IMPLEMENTADA** — DEC-012; H1–H5 y P1–P8 en Sí. | Prototipo `7c6d687`, aprobación y despliegue global `61a5098` integrados. La implementación está en la rama de publicación; la candidata formal se regenerará posteriormente. |
 | REV-017 | Macroorden | Se conserva contexto → estudio → documento con rutas histórica y documental. | **INCLUIR EN 1.0** — DEC-011. | Implementar rutas; no reordenar. |
-| REV-018 | Sidebar HTML | La navegación inicial está demasiado desplegada. | **INCLUIR EN 1.0** — DEC-014. | Parte activa abierta; validar teclado y viewports. |
+| REV-018 | Sidebar HTML | La navegación inicial estaba demasiado desplegada. | **RESUELTA E IMPLEMENTADA** — DEC-014. | PKG-05 deja abierta solo la parte activa y valida teclado, foco, escritorio y móvil. |
 | REV-019 | Cierres de capítulos | Se exige función conclusiva común con títulos específicos. | **INCLUIR EN 1.0** — DEC-013. | Revisión de capítulos 5–13. |
-| REV-020 | Glosario y contexto | A: G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo. | **RESUELTO EN FUENTE CANÓNICA Y SINCRONIZADO TÉCNICAMENTE** — DEC-016–019; commits `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39` y `c07bc011a42952f64622e3f78e8d759ad361cf29`. | **PRESENTACIÓN EDITORIAL PENDIENTE**: el derivado contiene 28 entradas y el modelo conserva el contexto selectivo, pero `Contexto histórico` aún no se presenta, REV-024 sigue abierta y PDF/HTML no se han regenerado. |
+| REV-020 | Glosario y contexto | A: G0 8, G1 7, G2 0, G3 4, G4 3; GH-B selectivo. | **RESUELTO EN FUENTE CANÓNICA Y SINCRONIZADO TÉCNICAMENTE** — DEC-016–019; commits `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39` y `c07bc011a42952f64622e3f78e8d759ad361cf29`. | **PRESENTACIÓN EDITORIAL PENDIENTE**: el derivado contiene 28 entradas y PKG-05 resolvió su orden alfabético, pero `Contexto histórico` aún no se presenta y la candidata formal no se ha regenerado. |
 | REV-021 | Aparato visual | B: cronología, dos mapas y diagrama aportan valor; los dos mapas están ya preparados y validados como assets. | **INCLUIR EN 1.0 CON PRETRABAJO** — DEC-020–024 y DEC-029. | Mapas: asset preparado en PKG-03 e integración pendiente en PKG-07; cronología/diagrama pendientes; diferir Concejo/municipio y no producir término histórico. |
 | REV-022 | Identidad de desarrollo | `0.1.0-dev`, `development` y «Edición en desarrollo» no pueden llegar a 1.0. | **INCLUIR EN 1.0** — DEC-006–007. | Retirar al integrar la nueva candidata. |
-| REV-023 | TOC PDF | Numeraciones largas se pegan a los títulos. | **INCLUIR EN 1.0** — corrección obligatoria. | PKG-05; probar casos extremos del capítulo 16. |
-| REV-024 | Orden del glosario | La salida no respeta el orden alfabético previsto. | **INCLUIR EN 1.0** — corrección obligatoria. | PKG-05; ordenar en generación sin alterar innecesariamente la fuente. |
-| REV-025 | Índices PDF | Las entradas carecen de separación visual suficiente. | **INCLUIR EN 1.0** — corrección obligatoria. | PKG-05; validar los nueve índices. |
-| REV-026 | Peso PDF/web | El tamaño procede principalmente del manuscrito y no es por sí solo una regresión. | **INCLUIR EN 1.0** — DEC-034. | Auditar y ensayar optimización segura; sin objetivo arbitrario y sin gate por tamaño si no hay mejora segura. |
+| REV-023 | TOC PDF | Numeraciones largas se pegaban a los títulos. | **RESUELTA E IMPLEMENTADA**. | PKG-05 fija la caja numérica y valida las páginas 2–19. |
+| REV-024 | Orden del glosario | La salida no respetaba el orden alfabético previsto. | **RESUELTA E IMPLEMENTADA**. | PKG-05 ordena 28/28 lemas mediante clave española determinista sin alterar `project/`. |
+| REV-025 | Índices PDF | Las entradas carecían de separación visual suficiente. | **RESUELTA E IMPLEMENTADA**. | PKG-05 valida separación, cortes y localizadores en los nueve índices. |
+| REV-026 | Peso PDF/web | El tamaño procede principalmente del manuscrito y no es por sí solo una regresión. | **RESUELTA CON OPTIMIZACIÓN E IMPLEMENTADA** — DEC-034. | Compresión PNG sin pérdida de 35 recortes: PDF −4,3679 % y web −4,1925 % en A/B comparable. |
 
 ## 4. Recuento de alcance
 
 | Estado | REV |
 |---|---:|
-| INCLUIR EN 1.0 | 12 |
+| INCLUIR EN 1.0 | 7 |
 | INCLUIR EN 1.0 CON PRETRABAJO | 8 |
-| RESUELTA E IMPLEMENTADA | 1 |
+| RESUELTA E IMPLEMENTADA | 6 |
 | DIFERIR A 1.1+ | 1 |
 | NO INCORPORAR | 4 |
 | **Total** | **26** |
@@ -76,8 +76,8 @@ presentación final HTML/PDF.
 ## 5. Condiciones que continúan abiertas sin reabrir decisiones
 
 - DAT-001–DAT-010: valores humanos y editoriales concretos.
-- Regeneración posterior de la candidata formal para incorporar la
-  implementación F3 ya integrada en la rama de publicación.
+- Regeneración posterior de la candidata formal para incorporar las
+  implementaciones F3 y PKG-05 ya integradas en la rama de publicación.
 - Cierre de `INC-BIB-001` e `INC-BIB-002` antes de GATE-01, sin sustituir
   fuentes ni parchear afirmaciones canónicas desde `publication/`.
 - Integración narrativa y multiformato de los assets cartográficos en PKG-07;
@@ -85,7 +85,6 @@ presentación final HTML/PDF.
 - PKG-04 está completado e integrado: prototipo, decisión `F3-APROBAR` y
   despliegue 18/18 páginas y 35/35 unidades. La candidata formal todavía no se
   ha regenerado.
-- Resultado técnico de la optimización segura.
 
 Estas condiciones determinan cómo ejecutar decisiones ya cerradas; no vuelven a
 convertirlas en `PENDIENTE`.
@@ -110,10 +109,12 @@ No se crea tag en 6A. La candidata técnica
 `49ab2e1b1a58ca9201efab54b42a3125de7326f8` se conserva como baseline
 pre-PKG-01 y no está sincronizada con la fuente canónica actual. REV-020 está
 resuelta en la fuente y sincronizada en el flujo técnico, pero su presentación
-editorial y la regeneración de la candidata permanecen pendientes; REV-024
-continúa pendiente de PKG-05. F3 está implementada en la rama, no en una nueva
-candidata formal. El tag solo puede aparecer en PKG-13, después de
+editorial y la regeneración de la candidata permanecen pendientes. REV-024 y
+las restantes correcciones de PKG-05 están implementadas en la rama, igual que
+F3, pero no forman aún una nueva candidata formal. El tag solo puede aparecer en PKG-13, después de
 candidata nueva, validación, preview, aceptación humana y autorización explícita
 de Fase 6B.
 
-**SIGUIENTE PASO: PKG-05 — correcciones técnicas y rendimiento.**
+**Bloqueante restante para GATE-01: resolución de INC-BIB-001 e INC-BIB-002.**
+
+**SIGUIENTE PASO: resolver canónicamente INC-BIB-001 e INC-BIB-002 antes de evaluar GATE-01.**
