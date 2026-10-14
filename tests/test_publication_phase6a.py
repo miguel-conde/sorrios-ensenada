@@ -168,10 +168,14 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
         "| PKG-04 | completado e integrado |",
         "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` **CERRADAS CANÓNICAMENTE**",
-        "GATE-01: LISTO PARA EVALUACIÓN FORMAL; NO DECLARADO PASS.",
+        "GATE-01 = PASS. PKG-06–PKG-09 HABILITADOS. GATE-02 = PENDIENTE.",
         "la propagación editorial permanece pendiente de PKG-08",
-        "PKG-06 no se ha iniciado.",
-        "SIGUIENTE PASO: evaluar formalmente GATE-01",
+        "| PKG-06 | habilitado — no iniciado |",
+        "| PKG-07 | habilitado — no iniciado |",
+        "| PKG-08 | habilitado — no iniciado; siguiente recomendado |",
+        "| PKG-09 | habilitado — no iniciado, sujeto a DAT |",
+        "su propagación obligatoria pertenece a PKG-08",
+        "SIGUIENTE PASO RECOMENDADO: PKG-08",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
         "prohibida antes de la aceptación humana del preview |",
     ):
@@ -179,4 +183,4 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
     assert "| CR-V1-001 | ejecución pendiente |" not in roadmap
     assert "bloquea el inicio de PKG-04" not in roadmap
     assert "| PKG-04 | prototipo aprobado e integrado — despliegue global pendiente |" not in roadmap
-    assert "GATE-01 = PASS" not in roadmap
+    assert "GATE-02 = PENDIENTE" in roadmap

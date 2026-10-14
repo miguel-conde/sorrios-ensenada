@@ -2,7 +2,7 @@
 
 **Fecha:** 12 de octubre de 2026<br>
 **Fase:** 6A — ejecución del alcance 1.0<br>
-**Estado:** DEC-001–DEC-034 cerradas; PKG-01–05, CR-V1-001 e INC-BIB-001/002 integrados; F3 desplegada globalmente y correcciones técnicas cerradas en la rama de publicación; cartografía preparada como asset pero no insertada; candidata formal, presentación editorial, citas y bibliografía pendientes<br>
+**Estado:** DEC-001–DEC-034 cerradas; PKG-01–05, CR-V1-001 e INC-BIB-001/002 integrados; `GATE-01 = PASS`; PKG-06–PKG-09 habilitados y no iniciados; candidata formal, presentación editorial, citas y bibliografía pendientes<br>
 **Cierre humano:** [CIERRE_ALCANCE_V1_0.md](./CIERRE_ALCANCE_V1_0.md)<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Plan operativo:** [PLAN_EJECUCION_V1_0.md](./PLAN_EJECUCION_V1_0.md)
@@ -116,6 +116,6 @@ F3, pero no forman aún una nueva candidata formal. El tag solo puede aparecer e
 candidata nueva, validación, preview, aceptación humana y autorización explícita
 de Fase 6B.
 
-**GATE-01: LISTO PARA EVALUACIÓN FORMAL; NO DECLARADO PASS.**
+**GATE-01 = PASS. PKG-06–PKG-09 HABILITADOS Y NO INICIADOS. GATE-02 = PENDIENTE.**
 
-**SIGUIENTE PASO: evaluar formalmente GATE-01 con PKG-00–05 aceptados, INC-BIB-001/002 cerradas canónicamente y la propagación editorial controlada para PKG-08.**
+**SIGUIENTE PASO RECOMENDADO: PKG-08, para propagar el nuevo estado canónico y restaurar la sincronización de `publication/`.**

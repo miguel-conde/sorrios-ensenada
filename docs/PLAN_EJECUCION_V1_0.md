@@ -3,8 +3,9 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00–05 completados e integrados, CR-V1-001
-cerrada e INC-BIB-001/002 cerradas canónicamente; GATE-01 listo para evaluación
+**Estado:** plan operativo; PKG-00–05 aceptados; CR-V1-001 e
+INC-BIB-001/002 cerradas; GATE-01 en PASS; PKG-06–09 habilitados y GATE-02
+pendiente
 
 ## 1. Reglas generales
 
@@ -223,6 +224,8 @@ Decisiones de salida:
 
 ### PKG-06 — Preliminares y arquitectura editorial
 
+**Estado:** **HABILITADO — NO INICIADO** tras `GATE-01 = PASS`.
+
 Implementa, sin reabrirlas:
 
 - P3;
@@ -243,6 +246,8 @@ Implementa, sin reabrirlas:
 
 ### PKG-07 — Aparato visual interno
 
+**Estado:** **HABILITADO — NO INICIADO** tras `GATE-01 = PASS`.
+
 Integra:
 
 - cronología visual basada solo en hitos sustentados;
@@ -255,6 +260,9 @@ red de vulnerabilidades/amortiguadores.
 **Salida:** recursos visuales multiformato, accesibles y con procedencia.
 
 ### PKG-08 — Fuentes, citas, trazabilidad y aparatos
+
+**Estado:** **HABILITADO — NO INICIADO** tras `GATE-01 = PASS`. Es la primera
+operación recomendada para restaurar la sincronización canonical → publication.
 
 Implementa:
 
@@ -273,6 +281,9 @@ No convierte el libro en un sistema de notas excesivo ni modifica afirmaciones
 canónicas desde la bibliografía.
 
 ### PKG-09 — Identidad final, metadatos y cierre
+
+**Estado:** **HABILITADO — NO INICIADO**, sujeto a sus DAT aplicables, tras
+`GATE-01 = PASS`.
 
 Cierra:
 
@@ -373,9 +384,9 @@ GATE-00
 ```
 
 PKG-00–PKG-05 son conceptualmente paralelizables, pero no autorizan escrituras
-simultáneas en un mismo worktree. PKG-06–PKG-09 pueden prepararse como ramas
-separadas solo cuando sus dependencias estén aceptadas y exista un plan explícito
-de integración.
+simultáneas en un mismo worktree. `GATE-01 = PASS` habilita PKG-06–PKG-09;
+pueden prepararse como ramas separadas solo cuando exista un plan explícito de
+integración.
 
 ## 4. Tabla de dependencias
 
@@ -387,10 +398,10 @@ de integración.
 | PKG-03 | GATE-00 — completado e integrado | PKG-00–02, PKG-04–05 | PKG-07; GATE-01 |
 | PKG-04 | GATE-00; `CR-V1-001` cerrada; prototipo, aprobación y despliegue global completados | PKG-00–03, PKG-05 | Política final del manuscrito integrada; GATE-01 |
 | PKG-05 | GATE-00 — completado e integrado | PKG-00–04 | GATE-01 y PKG-10 |
-| PKG-06 | GATE-01; inputs aplicables de PKG-00 | PKG-07–09 con ramas/worktrees separados | GATE-02 |
-| PKG-07 | GATE-01; PKG-03 aceptado | PKG-06, PKG-08–09 | GATE-02 |
-| PKG-08 | GATE-01; PKG-02 aceptado | PKG-06–07, PKG-09 | GATE-02 |
-| PKG-09 | GATE-01; DAT resueltos o con diferimiento autorizado | PKG-06–08 | GATE-02 |
+| PKG-06 | GATE-01 — PASS; inputs aplicables de PKG-00 | PKG-07–09 con ramas/worktrees separados | GATE-02 |
+| PKG-07 | GATE-01 — PASS; PKG-03 aceptado | PKG-06, PKG-08–09 | GATE-02 |
+| PKG-08 | GATE-01 — PASS; PKG-02 aceptado | PKG-06–07, PKG-09 | GATE-02 |
+| PKG-09 | GATE-01 — PASS; DAT resueltos o con diferimiento autorizado | PKG-06–08 | GATE-02 |
 | PKG-10 | GATE-02 | — | PKG-11 |
 | PKG-11 | PKG-10 | — | GATE-03 |
 | PKG-12 | GATE-03 | — | GATE-04 |
@@ -460,6 +471,10 @@ chore(release): publish version 1.0
 
 ### GATE-01 — Pretrabajos aceptados
 
+**Decisión:** `GATE-01 = PASS` el 14 de octubre de 2026, sobre el HEAD evaluado
+`9678856cff35d7cd2398a74590429180ef969bcc`. Evidencia completa en
+[GATE_01_PRETRABAJOS_ACEPTADOS.md](./GATE_01_PRETRABAJOS_ACEPTADOS.md).
+
 - PKG-01 canónico validado.
 - PKG-02 integrado; `INC-BIB-001` e `INC-BIB-002` cerradas antes de aceptar
   GATE-01 y de implementar la correspondencia final fuente/uso en PKG-08.
@@ -471,6 +486,8 @@ chore(release): publish version 1.0
 - Inputs disponibles de PKG-00 revisados.
 
 ### GATE-02 — Integración editorial completa
+
+**Estado:** `PENDIENTE`; permanece cerrado hasta integrar PKG-06–PKG-09.
 
 - PKG-06–09 integrados.
 - No quedan datos obligatorios sin resolver.
@@ -499,11 +516,11 @@ chore(release): publish version 1.0
 
 ## 8. Definición de DONE de 1.0
 
-- [ ] 1. Alcance aprobado.
+- [x] 1. Alcance aprobado.
 - [ ] 2. Inputs editoriales resueltos.
-- [ ] 3. Glosario canónico actualizado.
-- [x] 4. Bibliografía verificada; dos incidencias de correspondencia abiertas
-  con resolución obligatoria antes de GATE-01.
+- [x] 3. Glosario canónico actualizado.
+- [x] 4. Bibliografía verificada; dos incidencias de correspondencia cerradas
+  canónicamente y propagación editorial asignada a PKG-08.
 - [x] 5. Mapas documentados y licenciados; assets preparados, integración
   editorial pendiente de PKG-07.
 - [x] 6. F3 decidido, aprobado, desplegado globalmente e integrado.
@@ -543,6 +560,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01: LISTO PARA EVALUACIÓN FORMAL; NO DECLARADO PASS.**
+**GATE-01 — PASS. PKG-06–PKG-09 HABILITADOS; GATE-02 PENDIENTE.**
 
-**SIGUIENTE PASO: evaluar formalmente GATE-01 con PKG-00–05 aceptados, INC-BIB-001/002 cerradas canónicamente y la propagación editorial controlada para PKG-08.**
+**SIGUIENTE PASO RECOMENDADO: PKG-08 — Fuentes, citas, trazabilidad y aparatos, para propagar el nuevo estado canónico y restaurar la sincronización de publication.**
