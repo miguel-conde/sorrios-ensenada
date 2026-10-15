@@ -1,0 +1,33 @@
+---
+chapter-id: convenciones-lectura
+publication-status: development
+numbered: false
+number-sections: false
+sources:
+  - path: project/00_CONTROL/Manual_Editorial.md
+    locator: "versión 1.6, convenciones editoriales y niveles de evidencia"
+  - path: publication/content/01-catastro/04-manuscrito-volumen-actual.qmd
+    locator: "método editorial desarrollado"
+---
+
+# Convenciones de lectura {.unnumbered}
+
+- **Grafía histórica y modernizada.** La transcripción conserva las grafías del
+  manuscrito y marca los desarrollos editoriales; la edición modernizada
+  actualiza ortografía y puntuación sin alterar nombres, cifras, medidas,
+  instituciones, dudas ni anomalías.
+- **Páginas y folios.** «Página digital» designa la secuencia de imágenes del
+  archivo; «folio» conserva la referencia archivística, con recto (`r`) y vuelto
+  (`v`). Una misma página puede contener más de una posición documental.
+- **Preguntas y respuestas.** Las preguntas proceden del interrogatorio general
+  de 1749; las respuestas pertenecen al expediente local. Se presentan juntas
+  para facilitar la lectura, pero mantienen autoridades distintas.
+- **D/C/I/E/L.** `D` identifica un dato explícito; `C`, un cálculo reproducible;
+  `I`, una interpretación; `E`, contexto externo; y `L`, un límite o una
+  imposibilidad que debe permanecer visible.
+- **Enlaces.** Los enlaces internos permiten pasar entre estudio, facsímil,
+  transcripción, modernización y aparatos. En HTML se navega directamente; en
+  PDF se conserva la referencia de página, posición, folio o respuesta para
+  volver al pasaje correspondiente.
+
+Para los criterios completos, véase [el capítulo 4](../01-catastro/04-manuscrito-volumen-actual.qmd).

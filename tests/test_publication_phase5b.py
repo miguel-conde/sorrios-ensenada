@@ -22,7 +22,7 @@ def _navigation() -> tuple[list[object], list[str]]:
     return items, quality.navigation_paths(items)
 
 
-def test_final_book_has_six_parts_sixteen_chapters_four_apparatus_and_nine_indexes():
+def test_final_book_has_four_preliminaries_six_parts_sixteen_chapters_four_apparatus_and_nine_indexes():
     items, paths = _navigation()
     assert tuple(item["part"] for item in items if isinstance(item, dict)) == quality.PARTS
     numbered = [
@@ -32,13 +32,14 @@ def test_final_book_has_six_parts_sixteen_chapters_four_apparatus_and_nine_index
         and "indices/" not in path
     ]
     assert len(numbered) == 16
-    assert paths[14:17] == [
+    assert paths[1:5] == [path.replace(".html", ".qmd") for path in quality.PRELIMINARIES]
+    assert paths[18:21] == [
         "generated/14-facsimil.qmd",
         "generated/15-transcripcion.qmd",
         "generated/16-edicion-modernizada.qmd",
     ]
-    assert paths[17:21] == [path.replace(".html", ".qmd") for path in quality.APPARATUS]
-    assert paths[21:25] == [
+    assert paths[21:25] == [path.replace(".html", ".qmd") for path in quality.APPARATUS]
+    assert paths[25:29] == [
         path.replace(".html", ".qmd") for path in quality.NARRATIVE_APPARATUS
     ]
     assert paths[-9:] == [path.replace(".html", ".qmd") for path in quality.INDEXES]

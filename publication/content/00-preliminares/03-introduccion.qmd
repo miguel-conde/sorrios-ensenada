@@ -1,0 +1,56 @@
+---
+chapter-id: introduccion-general
+publication-status: development
+numbered: false
+number-sections: false
+sources:
+  - path: docs/ALCANCE_APROBADO_V1_0.md
+    locator: "DEC-001–DEC-011 y DEC-013"
+  - path: docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md
+    locator: "arquitectura, rutas de lectura y macroorden"
+---
+
+# Introducción general {.unnumbered}
+
+Este libro reúne dos operaciones que conviene leer juntas sin confundirlas. La
+primera estudia históricamente Sorribos y Santibáñez de Ordás a partir del
+expediente de 1752. La segunda publica el documento mediante imágenes,
+transcripción, edición crítica y versión modernizada. Sus seis partes conservan
+ese doble propósito y permiten avanzar de la explicación al testimonio o del
+testimonio a la explicación.
+
+Los cuatro primeros capítulos presentan el Catastro de Ensenada, el formulario
+de las Respuestas Generales, el expediente local y el paso del manuscrito al
+volumen actual. Los capítulos 5–13 desarrollan el estudio histórico. Después se
+ofrecen el facsímil, la transcripción y la edición modernizada, seguidos por el
+glosario, los cuadros, la concordancia, la matriz de evidencia, las cuestiones
+abiertas, la historia editorial, los modelos de cita, la bibliografía y los
+índices.
+
+## Dos rutas de lectura {.unnumbered}
+
+La **ruta histórica** comienza en [el marco del Catastro](../01-catastro/01-catastro-ensenada.qmd)
+y continúa por el expediente local y los capítulos temáticos. Es la entrada
+más directa para reconstruir comunidad, hogares, tierras, ganados, recursos,
+fiscalidad, hacienda, trabajo y conexiones exteriores, siempre dentro de los
+límites declarados por la fuente.
+
+La **ruta documental** puede comenzar por el [facsímil](../../generated/14-facsimil.qmd),
+seguir por la [transcripción paleográfica](../../generated/15-transcripcion.qmd)
+y pasar a la [edición en español actual](../../generated/16-edicion-modernizada.qmd).
+Los enlaces entre página, posición, unidad, folio y respuesta permiten volver
+en ambos sentidos y contrastar una lectura con su testimonio.
+
+## Cómo se relacionan las capas {.unnumbered}
+
+El facsímil conserva la materialidad; la transcripción fija la lectura; la
+edición modernizada facilita la consulta sin borrar nombres, cifras, dudas o
+términos históricos; el estudio interpreta con cautela. El glosario y los
+índices abren accesos temáticos, mientras la concordancia y la matriz de
+evidencia hacen visible la trazabilidad. Los marcadores D/C/I/E/L distinguen
+datos, cálculos, interpretaciones, contexto y límites.
+
+La explicación detallada del método, las autoridades textuales y la separación
+entre contenido editorial y derivados reproducibles se mantiene en el
+[capítulo 4, «Del manuscrito al volumen actual»](../01-catastro/04-manuscrito-volumen-actual.qmd).
+Esta introducción solo orienta el recorrido y no duplica esa metodología.

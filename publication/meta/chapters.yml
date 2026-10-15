@@ -4,6 +4,18 @@ chapters:
   - chapter_id: portada
     path: index.qmd
     publication_status: development
+  - chapter_id: creditos-derechos
+    path: content/00-preliminares/01-creditos.qmd
+    publication_status: development
+  - chapter_id: prologo
+    path: content/00-preliminares/02-prologo.qmd
+    publication_status: placeholder
+  - chapter_id: introduccion-general
+    path: content/00-preliminares/03-introduccion.qmd
+    publication_status: development
+  - chapter_id: convenciones-lectura
+    path: content/00-preliminares/04-convenciones.qmd
+    publication_status: development
   - chapter_id: catastro-ensenada
     path: content/01-catastro/01-catastro-ensenada.qmd
     publication_status: development

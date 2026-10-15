@@ -4594,6 +4594,10 @@ def validate() -> list[str]:
     navigation_items = quarto_data.get("book", {}).get("chapters", [])
     navigation = _navigation_paths(navigation_items)
     expected_navigation = (
+        "content/00-preliminares/01-creditos.qmd",
+        "content/00-preliminares/02-prologo.qmd",
+        "content/00-preliminares/03-introduccion.qmd",
+        "content/00-preliminares/04-convenciones.qmd",
         "content/01-catastro/01-catastro-ensenada.qmd",
         "content/01-catastro/02-respuestas-generales-interrogatorio.qmd",
         "content/01-catastro/03-expediente-sorribos-santibanez.qmd",
@@ -4626,7 +4630,7 @@ def validate() -> list[str]:
     positions = [navigation.index(item) for item in expected_navigation if item in navigation]
     if positions != sorted(positions):
         errors.append(
-            "Orden incorrecto de los capítulos 1–16, aparatos 4D e índices 5A en la navegación"
+            "Orden incorrecto de preliminares, capítulos 1–16, aparatos 4D e índices 5A en la navegación"
         )
     explicit_anchors: list[str] = []
     for item in navigation:
@@ -4724,7 +4728,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     scope = " y artefactos HTML/PDF" if args.rendered else ""
     print(
-        "PASS: capítulos 1–16, facsímil 4A, transcripción 4B, modernizada 4C, "
+        "PASS: preliminares, capítulos 1–16, facsímil 4A, transcripción 4B, modernizada 4C, "
         "aparatos reproducibles 4D, nueve índices reproducibles 5A, "
         "prototipo 2B, "
         "metadatos, anclas, "

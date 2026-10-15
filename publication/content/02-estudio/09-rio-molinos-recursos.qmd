@@ -232,7 +232,7 @@ mercado. Sin ellos no pueden calcularse producción total, autosuficiencia,
 excedente, rentabilidad comparada o cobertura local. [L: LIM-005, LIM-008,
 LIM-009, LIM-010, LIM-011]
 
-## Síntesis {#recursos-sintesis}
+## Recursos documentados, capacidad no calculable {#recursos-sintesis}
 
 El río sostiene una infraestructura productiva plural, pero documentalmente
 acotada: cuatro casas con ocho ruedas descritas, otro molino venturero sin

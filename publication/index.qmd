@@ -1,22 +1,40 @@
 ---
-subtitle: "Edición en desarrollo"
 chapter-id: portada
 publication-status: development
 sources: []
+page-layout: full
 ---
 
 ::: {.content-visible when-format="pdf"}
 # Sorribos y Santibáñez de Ordás en 1752 {.unnumbered}
 :::
 
-Esta edición digital se encuentra en desarrollo. Reúne los dieciséis capítulos,
-el facsímil íntegro, la transcripción y el aparato crítico, la edición en español
-actual, cuatro aparatos reproducibles y nueve índices previstos en el plan
-editorial.
+::: {.content-visible when-format="html"}
+::: {.book-landing}
+**Proyecto Sorríos — Catastro de Ensenada**
 
-La lectura puede comenzar por [el Catastro y su documento](content/01-catastro/01-catastro-ensenada.qmd),
-consultar el [manuscrito original](generated/14-facsimil.qmd), seguir la
-[transcripción](generated/15-transcripcion.qmd) o acceder a la
-[edición en español actual](generated/16-edicion-modernizada.qmd). El volumen
-permanece en estado de prepublicación hasta completar la fase separada de
-preview y publicación 1.0.
+Un estudio histórico de Sorribos y Santibáñez de Ordás a partir del expediente
+de 1752, acompañado por el facsímil íntegro, la transcripción paleográfica, la
+edición crítica y una lectura en español actual.
+
+::: {.reading-routes}
+::: {.reading-route}
+## Ruta histórica
+
+Comience por [el Catastro y su documento](content/01-catastro/01-catastro-ensenada.qmd)
+y continúe con el estudio de la comunidad, sus recursos y sus límites.
+:::
+
+::: {.reading-route}
+## Ruta documental
+
+Acceda al [facsímil íntegro](generated/14-facsimil.qmd), contraste la
+[transcripción](generated/15-transcripcion.qmd) y consulte la
+[edición en español actual](generated/16-edicion-modernizada.qmd).
+:::
+:::
+
+La [introducción general](content/00-preliminares/03-introduccion.qmd) explica
+la arquitectura del volumen y cómo alternar ambas rutas.
+:::
+:::

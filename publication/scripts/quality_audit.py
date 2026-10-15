@@ -26,6 +26,12 @@ PARTS = (
     "Parte V. El Catastro en español actual",
     "Parte VI. Aparatos e índices",
 )
+PRELIMINARIES = (
+    "content/00-preliminares/01-creditos.html",
+    "content/00-preliminares/02-prologo.html",
+    "content/00-preliminares/03-introduccion.html",
+    "content/00-preliminares/04-convenciones.html",
+)
 APPARATUS = (
     "generated/glosario.html",
     "generated/cuadros-cuantitativos.html",
@@ -192,15 +198,29 @@ def audit_configuration(publication_root: Path = PUBLICATION_ROOT) -> list[str]:
     quarto = yaml.safe_load((publication_root / "_quarto.yml").read_text(encoding="utf-8"))
     if not str(quarto.get("lang", "")).startswith("es"):
         errors.append("La configuración Quarto no declara español como idioma")
-    items = quarto.get("book", {}).get("chapters", [])
+    book = quarto.get("book", {})
+    for field, expected in (
+        ("title", "Sorribos y Santibáñez de Ordás en 1752"),
+        ("subtitle", "Estudio histórico y edición integral del Catastro de Ensenada"),
+        ("author", "Miguel Conde de Simón"),
+    ):
+        if book.get(field) != expected:
+            errors.append(f"Identidad editorial incorrecta en book.{field}")
+    items = book.get("chapters", [])
     parts = tuple(item.get("part") for item in items if isinstance(item, dict))
     if parts != PARTS:
         errors.append("Las seis partes no coinciden con el Plan Maestro")
     paths = navigation_paths(items)
     if "content/00-preliminares/00-prueba-tecnica.qmd" in paths:
         errors.append("La prueba técnica continúa publicada")
-    if len(paths) != 34 or paths[0] != "index.qmd":
-        errors.append(f"La composición debe contener 34 documentos públicos, no {len(paths)}")
+    expected_preliminaries = tuple(
+        path.replace(".html", ".qmd") for path in PRELIMINARIES
+    )
+    if len(paths) != 38 or tuple(paths[:5]) != ("index.qmd", *expected_preliminaries):
+        errors.append(
+            "La composición debe contener 38 documentos públicos y comenzar "
+            "por portada, créditos, prólogo, introducción y convenciones"
+        )
     manifest = yaml.safe_load(
         (publication_root / "meta/chapters.yml").read_text(encoding="utf-8")
     )["chapters"]
@@ -208,7 +228,12 @@ def audit_configuration(publication_root: Path = PUBLICATION_ROOT) -> list[str]:
     if public_manifest != paths:
         errors.append("El manifiesto y la navegación pública no conservan el mismo orden")
     index = (publication_root / "index.qmd").read_text(encoding="utf-8").casefold()
-    for residue in ("prueba técnica", "se incorporarán en fases posteriores"):
+    for residue in (
+        "prueba técnica",
+        "se incorporarán en fases posteriores",
+        "edición en desarrollo",
+        "estado de prepublicación",
+    ):
         if residue in index:
             errors.append(f"La portada conserva el residuo: {residue}")
     styles = (publication_root / "styles/book.scss").read_text(encoding="utf-8")
@@ -229,8 +254,8 @@ def _local_target(source: Path, href: str) -> tuple[Path, str] | None:
 def audit_html_book(book_root: Path = BOOK_ROOT) -> list[str]:
     errors: list[str] = []
     html_paths = sorted(book_root.rglob("*.html"))
-    if len(html_paths) != 34:
-        errors.append(f"Se esperaban 34 documentos HTML y existen {len(html_paths)}")
+    if len(html_paths) != 38:
+        errors.append(f"Se esperaban 38 documentos HTML y existen {len(html_paths)}")
     parsed = {path.resolve(): parse_html(path) for path in html_paths}
     titles: dict[str, Path] = {}
     ids = {path: set(parser.ids) for path, parser in parsed.items()}
@@ -310,7 +335,7 @@ def audit_html_book(book_root: Path = BOOK_ROOT) -> list[str]:
     technical = book_root / "content/00-preliminares/00-prueba-tecnica.html"
     if technical.exists():
         errors.append("La salida HTML conserva el capítulo técnico")
-    for relative in (*APPARATUS, *NARRATIVE_APPARATUS, *INDEXES):
+    for relative in (*PRELIMINARIES, *APPARATUS, *NARRATIVE_APPARATUS, *INDEXES):
         if not (book_root / relative).is_file():
             errors.append(f"Falta el documento público {relative}")
     return errors

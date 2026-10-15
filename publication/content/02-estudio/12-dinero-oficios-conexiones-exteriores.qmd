@@ -257,7 +257,7 @@ dependencia, vulnerabilidad o resiliencia del sistema. El capítulo 13 realizar�
 la síntesis integrada manteniendo separados los hechos, los mecanismos
 posibles y los resultados que no pueden observarse.
 
-## Síntesis {#dinero-sintesis}
+## Dinero y conexiones sin mercado reconstruible {#dinero-sintesis}
 
 El dinero aparece en el expediente como lenguaje de valoración y como medio
 de determinados pagos, gastos y utilidades. Convive con cereal, lino,

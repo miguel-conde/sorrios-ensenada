@@ -1,0 +1,28 @@
+---
+chapter-id: prologo
+publication-status: placeholder
+numbered: false
+number-sections: false
+sources:
+  - path: docs/CIERRE_PKG_00_INPUTS_EDITORIALES.md
+    locator: "sección 6, PROLOGO-01"
+---
+
+# Prólogo {.unnumbered}
+
+::: {.callout-warning appearance="simple" icon="false"}
+## PENDIENTE DE REDACCIÓN PERSONAL DEL AUTOR {.unnumbered}
+
+Este bloque no es un prólogo terminado ni imita la voz de Miguel Conde de
+Simón. Debe sustituirse por un texto personal del autor, firmado y de unas
+900–1.500 palabras, antes de `GATE-02` y de cualquier candidata formal.
+
+Guion aprobado para la redacción:
+
+1. origen del proyecto;
+2. relación personal con Sorríos/Sorribos, Santibáñez, Ordás o el manuscrito;
+3. motivación;
+4. evolución del trabajo;
+5. personas y apoyos que el autor quiera agradecer;
+6. invitación al lector.
+:::

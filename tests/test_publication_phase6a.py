@@ -79,7 +79,7 @@ def test_complete_structure_and_pdf_download_contract_are_stable():
     quarto = _yaml(PUBLICATION / "_quarto.yml")
     assert quarto["book"]["downloads"] == ["pdf"]
     assert quarto["book"]["output-file"] == "sorribos-santibanez-ordas-1752"
-    assert len(quality.navigation_paths(quarto["book"]["chapters"])) == 34
+    assert len(quality.navigation_paths(quarto["book"]["chapters"])) == 38
 
 
 def test_no_preview_provider_or_deployment_has_been_chosen_by_phase6a():

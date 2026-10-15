@@ -497,7 +497,7 @@ def test_navigation_integrates_only_the_four_phase4d_apparatus():
     for item in quarto["book"]["chapters"]:
         navigation.extend(item.get("chapters", []) if isinstance(item, dict) else [item])
     expected = [f"generated/{name}" for name in builder.OUTPUT_NAMES]
-    assert navigation[17:21] == expected
+    assert navigation[21:25] == expected
     assert [item["path"] for item in chapters if item["path"] in expected] == expected
     assert len([item for item in navigation if "indices/" in item]) == 9
 

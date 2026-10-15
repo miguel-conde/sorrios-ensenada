@@ -1,0 +1,35 @@
+---
+chapter-id: creditos-derechos
+publication-status: development
+numbered: false
+number-sections: false
+sources:
+  - path: docs/CIERRE_PKG_00_INPUTS_EDITORIALES.md
+    locator: "secciones 3–5, 7–8"
+---
+
+# Créditos y derechos {.unnumbered}
+
+**Autor, investigación y dirección editorial:** Miguel Conde de Simón  
+**Edición crítica:** Miguel Conde de Simón  
+**Transcripción paleográfica y revisión:** Miguel Conde de Simón  
+**Edición modernizada y revisión:** Miguel Conde de Simón
+
+Miguel Conde de Simón es el único participante humano en la elaboración
+intelectual del volumen. Las herramientas digitales empleadas durante la
+producción no son autoras, editoras intelectuales, revisoras humanas ni
+colaboradoras humanas.
+
+## Derechos {.unnumbered}
+
+© Miguel Conde de Simón, para el contenido original.
+
+El contenido original que el autor puede licenciar se ofrece bajo
+[CC BY 4.0 — Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/deed.es).
+Esta licencia no se extiende automáticamente al facsímil, las reproducciones
+documentales, la cartografía, las imágenes, las citas ni otros materiales de
+terceros. Cada componente conserva las condiciones de uso, atribución y
+reproducción que le correspondan.
+
+**Proyecto Sorríos — Catastro de Ensenada** es la denominación del proyecto;
+no designa una editorial, empresa o sello.

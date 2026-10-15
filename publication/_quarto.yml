@@ -8,12 +8,17 @@ lang: es
 
 book:
   title: "Sorribos y Santibáñez de Ordás en 1752"
-  subtitle: "Edición en desarrollo"
+  subtitle: "Estudio histórico y edición integral del Catastro de Ensenada"
+  author: "Miguel Conde de Simón"
   output-file: "sorribos-santibanez-ordas-1752"
   sidebar:
     collapse-level: 1
   chapters:
     - index.qmd
+    - content/00-preliminares/01-creditos.qmd
+    - content/00-preliminares/02-prologo.qmd
+    - content/00-preliminares/03-introduccion.qmd
+    - content/00-preliminares/04-convenciones.qmd
     - part: "Parte I. El Catastro y su documento"
       chapters:
         - content/01-catastro/01-catastro-ensenada.qmd
