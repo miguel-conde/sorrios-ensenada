@@ -57,6 +57,33 @@ OUTPUT_NAMES = (
     "matriz-evidencia.qmd",
 )
 
+EVIDENCE_CITATIONS = {
+    "TOP-004": ("jularconflictos",),
+    "TOP-005": ("santanovalbuena2022documentos",),
+    "TOP-006": ("sanchezbadiola2019nobiliario",),
+    "TOP-007": ("pares1715santibanez",),
+    "TOP-008": ("relacionparroquial1768",),
+    "TOP-009": ("gaceta1864sorribos",),
+    "TOP-010": ("alvarezbalbuenatoponimia",),
+    "TOP-011": ("ayuntamientosantamariaordassantibanez",),
+    "JUR-007": ("relacionparroquial1768", "alvarezbalbuenatoponimia"),
+    "JUR-008": ("pousadieguez2022juzgados", "paresconde1742"),
+    "JUR-009": ("parestituloabogado",),
+    "DEM-005": ("camarerobullon2002catastro",),
+    "DEM-006": ("relacionparroquial1768",),
+    "TER-011": ("castanoalvarez2017apuntes",),
+    "AGR-011": ("bartolomebartolome2001comercio",),
+    "AGR-012": ("sanchezlopezdevinuesa2001cultivos",),
+    "AGR-013": ("riescochueca2013lexico",),
+    "GAN-008": ("cortizoalvarez1984ganado",),
+    "HID-008": ("zapicogutierrez2016molinos", "hernandezcubero2018recursos"),
+    "FIS-013": ("reycastelao1985voto",),
+    "FIS-014": ("mazazorrilla1982pobreza",),
+    "FIS-015": ("paresmesta",),
+    "FIS-016": ("garciagarcia1986haciendas",),
+    "FIS-017": ("caputvallis2008catastro",),
+}
+
 
 class ApparatusBuildError(RuntimeError):
     """Report one actionable Phase 4D generation or fidelity failure."""
@@ -67,6 +94,7 @@ class ChapterUse:
     number: int
     title: str
     path: str
+    anchor: str
 
 
 @dataclass(frozen=True)
@@ -87,7 +115,7 @@ def _read_text(path: Path) -> str:
         raise ApparatusBuildError(f"No se pudo leer {path}: {exc}") from exc
 
 
-def _front_matter(path: Path) -> dict:
+def _front_matter_and_body(path: Path) -> tuple[dict, str]:
     text = _read_text(path)
     if not text.startswith("---\n"):
         raise ApparatusBuildError(f"{path}: falta el front matter.")
@@ -100,33 +128,55 @@ def _front_matter(path: Path) -> dict:
         raise ApparatusBuildError(f"{path}: front matter inválido: {exc}") from exc
     if not isinstance(metadata, dict):
         raise ApparatusBuildError(f"{path}: el front matter debe ser un mapa.")
-    return metadata
+    return metadata, text[closing + 5 :]
+
+
+def _front_matter(path: Path) -> dict:
+    return _front_matter_and_body(path)[0]
+
+
+def _evidence_anchor(body: str, identifier: str) -> str:
+    """Return the nearest explicit section anchor for one chapter use."""
+
+    current = ""
+    first = ""
+    for line in body.splitlines():
+        heading = re.match(r"^##\s+.+\{#([a-z0-9-]+)(?:\s+[^}]*)?\}\s*$", line)
+        if heading:
+            current = heading.group(1)
+            first = first or current
+        if identifier in line:
+            return current or first
+    return first
 
 
 def _evidence_usage(
     publication_root: Path, register: EvidenceRegister
 ) -> dict[str, tuple[ChapterUse, ...]]:
-    """Derive use only from existing chapter 5–13 evidence metadata."""
+    """Derive uses and return anchors from chapter evidence metadata and bodies."""
 
     matrix_ids = {entry.identifier for entry in register.entries}
     registered = matrix_ids | set(register.calculation_map)
     usage: dict[str, list[ChapterUse]] = defaultdict(list)
     study_root = publication_root / "content" / "02-estudio"
-    for path in sorted(study_root.glob("[0-9][0-9]-*.qmd")):
+    chapter_three = (
+        publication_root
+        / "content/01-catastro/03-expediente-sorribos-santibanez.qmd"
+    )
+    chapter_paths = [
+        *([chapter_three] if chapter_three.is_file() else []),
+        *sorted(study_root.glob("[0-9][0-9]-*.qmd")),
+    ]
+    for path in chapter_paths:
         number = int(path.name[:2])
-        if not 5 <= number <= 13:
+        if number != 3 and not 5 <= number <= 13:
             continue
-        metadata = _front_matter(path)
+        metadata, body = _front_matter_and_body(path)
         evidence = metadata.get("evidence")
         if not isinstance(evidence, dict):
             raise ApparatusBuildError(
                 f"{path}: el capítulo {number} no declara evidencia estructurada."
             )
-        chapter = ChapterUse(
-            number=number,
-            title=str(metadata.get("title", f"Capítulo {number}")),
-            path="../" + path.relative_to(publication_root).as_posix(),
-        )
         for values in evidence.values():
             if not isinstance(values, list):
                 raise ApparatusBuildError(
@@ -138,8 +188,15 @@ def _evidence_usage(
                     raise ApparatusBuildError(
                         f"{path}: uso de evidencia inexistente {identifier}."
                     )
-                if identifier in matrix_ids and chapter not in usage[identifier]:
-                    usage[identifier].append(chapter)
+                if identifier in matrix_ids:
+                    chapter = ChapterUse(
+                        number=number,
+                        title=str(metadata.get("title", f"Capítulo {number}")),
+                        path="../" + path.relative_to(publication_root).as_posix(),
+                        anchor=_evidence_anchor(body, identifier),
+                    )
+                    if chapter not in usage[identifier]:
+                        usage[identifier].append(chapter)
     return {identifier: tuple(chapters) for identifier, chapters in usage.items()}
 
 
@@ -487,12 +544,12 @@ number-sections: false
 sources:
   - {REGISTER_SOURCE.as_posix()}
 source-version: "{data.register.version}"
-usage-derived-from: chapter-evidence-metadata-5-13
+usage-derived-from: chapter-evidence-metadata-3-and-5-13
 ---
 
 # Matriz de evidencia D/C/I/E/L {{.unnumbered}}
 
-La matriz reproduce el Registro 1.2; no convierte sus formulaciones en prosa
+La matriz reproduce el Registro {data.register.version}; no convierte sus formulaciones en prosa
 narrativa ni corrige sus cautelas. `D` identifica dato documental; `C`, cálculo;
 `I`, interpretación; `E`, contexto externo; y `L`, límite. Los niveles compuestos
 se conservan literalmente. Los estados admitido, condicionado y excluido se
@@ -515,13 +572,20 @@ columna separada de estado y cautela.
         uses = data.evidence_usage.get(entry.identifier, ())
         usage = (
             "; ".join(
-                f"[cap. {chapter.number}: {chapter.title}]({chapter.path})"
+                f"[cap. {chapter.number}: {chapter.title}]({chapter.path}"
+                f"#{chapter.anchor if chapter.anchor else ''})"
                 for chapter in uses
             )
             if uses
             else "—"
         )
         status = entry.status_caution or "—"
+        citation_keys = EVIDENCE_CITATIONS.get(entry.identifier, ())
+        bibliography = (
+            "[" + "; ".join(f"@{key}" for key in citation_keys) + "]"
+            if citation_keys
+            else "—"
+        )
         chunks.append(
             f"""::: {{.evidence-entry .evidence-state-{_status_class(entry.status_caution)}}}
 ### {entry.identifier} {{#evidencia-{entry.identifier.casefold()} .unnumbered}}
@@ -531,6 +595,8 @@ columna separada de estado y cautela.
 **Nivel:** `{entry.level}`
 
 **Evidencia:** {entry.evidence}
+
+**Referencia bibliográfica:** {bibliography}
 
 **Estado y cautela:** {status}
 
@@ -614,6 +680,7 @@ __all__ = [
     "ApparatusBuildError",
     "ApparatusData",
     "ChapterUse",
+    "EVIDENCE_CITATIONS",
     "OUTPUT_NAMES",
     "build_apparatus",
     "concordance_qmd",

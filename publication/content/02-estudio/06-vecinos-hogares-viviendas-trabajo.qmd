@@ -6,9 +6,9 @@ sources:
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
     locator: "versión 1.5, Parte II, capítulo 6"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
-    locator: "versión 1.2, secciones 3–4, 16–17 y anexo A, CAL-018–CAL-019"
+    locator: "versión 1.3, secciones 3–4, 16–17 y anexo A, CAL-018–CAL-019"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
-    locator: "versión 1.2, entradas DEM-001–DEM-006, GAN-007, TRA-001–TRA-005, FIS-007, INT-002, INT-008, INT-010, LIM-001, LIM-002, LIM-008 y CAL-018–CAL-019"
+    locator: "versión 1.3, entradas DEM-001–DEM-006, GAN-007, TRA-001–TRA-005, FIS-007, INT-002, INT-008, INT-010, LIM-001, LIM-002, LIM-008 y CAL-018–CAL-019"
   - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
     locator: "versión 3.6, respuestas 18, 21–22, 29 y 33–39; folios 316r y 318r–321r"
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
@@ -73,16 +73,18 @@ externo, no una cifra observada para el lugar.
 
 Una relación parroquial atribuye **137 habitantes a Santibáñez de Sorribos en
 1768**. Por su fecha y unidad distintas, es solo contexto externo: no comprueba
-ni estima la población local de 1752.
+ni estima la población local de 1752. [@relacionparroquial1768] [E/L: DEM-006]
 
 ## Personas, familias y hogares {#personas-hogares}
 
 Una **persona** es un individuo, pero la respuesta 21 no presenta una lista
 completa. En la práctica general del Catastro, los libros personales se
-articulaban en torno a cabezas de casa y familias e incluían cónyuges, hijos,
-criados y otros convivientes; en distintos lugares las viudas podían contarse
-como medios vecinos. Este contexto explica las categorías, pero no identifica
-aquí un hogar por cada vecino o medio vecino.
+articulaban en torno a cabezas de casa o familias y registraban cónyuges, hijos,
+criados y otros convivientes; las viudas con casa abierta podían figurar como
+cabezas de casa. Este contexto explica la organización doméstica de esos
+libros, pero no sustenta una regla sobre el *medio vecino*, no identifica aquí
+un hogar por cada vecino o medio vecino y no autoriza coeficientes de población.
+[@camarerobullon2002catastro] [E/I: DEM-005]
 
 Sí aparecen relaciones domésticas. De los 18 jornaleros, 14 son **hijos de
 familia que viven en compañía de sus padres** y tres son **criados

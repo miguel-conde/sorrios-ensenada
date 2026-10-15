@@ -191,6 +191,7 @@ subdelegado de la operación. El título acredita una habilitación profesional,
 no un empleo permanente en un consejo, un origen exterior conocido ni una
 relación comercial. Su conexión es administrativa y documental, no un flujo
 económico del lugar. [E: JUR-009]
+[@parestituloabogado]
 
 ## Destinos y relaciones exteriores {#conexiones-exteriores}
 
@@ -224,7 +225,7 @@ el origen jurídico de la obligación vallisoletana ni la naturaleza precisa del
 derecho pagado en León. La mención de las ciudades acredita destino y marco
 institucional en esos pagos concretos; no demuestra desplazamiento habitual,
 una ruta comercial o una red mercantil estable. [E/L: FIS-014, FIS-015,
-LIM-012, LIM-013]
+LIM-012, LIM-013] [@mazazorrilla1982pobreza; @paresmesta]
 
 Hay otras relaciones que cruzan la escala local sin ser intercambios de mercado.
 Cinco fanegas de trigo de algunos vecinos proceden de siembras fuera del

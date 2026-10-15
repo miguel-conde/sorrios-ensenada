@@ -18,7 +18,7 @@ sources:
   - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md
     locator: "carga, quartal y real"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md
-    locator: "secciones sobre molinos y pies de abejas; cifras contrastadas con el Registro 1.2"
+    locator: "secciones sobre molinos y pies de abejas; cifras contrastadas con el Registro 1.3"
 evidence:
   D: [HID-001, HID-003, HID-005, HID-006, GAN-003, GAN-004, FIS-012]
   C: [HID-002, HID-004, GAN-005, GAN-006, CAL-010, CAL-011, CAL-012, CAL-013, CAL-020]
@@ -150,7 +150,7 @@ El contexto comparativo registrado confirma que los molinos hidráulicos eran
 frecuentes en el Catastro leonés y que en otras zonas del siglo XVIII se
 documenta estacionalidad por falta de agua. Ayuda a hacer inteligible el caso,
 pero no asigna a Sorribos caudales, meses, rendimientos ni capacidad. [E:
-HID-008]
+HID-008] [@zapicogutierrez2016molinos; @hernandezcubero2018recursos]
 
 ## Molienda y sistema cerealista {#molinos-cereal}
 

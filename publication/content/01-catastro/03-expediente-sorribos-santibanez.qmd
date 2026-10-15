@@ -12,9 +12,9 @@ sources:
   - path: project/00_CONTROL/unidades.yaml
     locator: "schema 1, secuencia completa de 35 unidades"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
-    locator: "versión 1.2, secciones 0 y 2.1–2.3"
+    locator: "versión 1.3, secciones 0 y 2.1–2.3"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
-    locator: "versión 1.2, entradas JUR-001–JUR-004, TOP-001–TOP-002, TOP-004–TOP-005, TOP-007–TOP-011 y JUR-009"
+    locator: "versión 1.3, entradas JUR-001–JUR-004, TOP-001–TOP-002, TOP-004–TOP-005, TOP-007–TOP-011 y JUR-009"
 evidence:
   D: [JUR-001, JUR-002, JUR-003, JUR-004, TOP-001]
   I: [TOP-002]
@@ -98,7 +98,7 @@ La historia documentada del nombre se expresa mediante una secuencia positiva:
 En **1215**, una pesquisa patrimonial de Alfonso IX distinguía `Sorribios`
 dentro de Ordás entre heredades reconocidas a la Iglesia de León. El testimonio
 sitúa el nombre en una controversia patrimonial concreta; no describe todavía
-el expediente ni la organización local de 1752.
+el expediente ni la organización local de 1752. [@jularconflictos] [E: TOP-004]
 
 El **1 de julio de 1267**, Miasol y su hija Teresa Pérez vendieron a Ruy
 Fernández, juez de León, por ochenta maravedís, su heredamiento en `Sorribios de
@@ -106,6 +106,7 @@ Ordás e en sos términos`. La relación incluía casas, solares, tierras, huert
 prados, pastos, palomares, molinos, sotos, montes, fuentes y aguas. Es una
 evidencia patrimonial medieval y acredita una transmisión determinada; **no
 demuestra continuidad económica automática hasta 1752**.
+[@santanovalbuena2022documentos] [E: TOP-005]
 
 La forma **Sorribos** está documentada después en la Edad Moderna. Un pleito de
 1715 menciona al concejo y vecinos del lugar de Santibáñez de Sorribos. El
@@ -114,6 +115,8 @@ nombre entre líneas como `Sorri-` / `bos`. En 1768 aparece la parroquia de
 Santibáñez de Sorribos dentro del Concejo de Ordás; una escritura de 1831 habla
 del barrio de Sorribos; y el arreglo municipal de 1836 y Madoz en 1848 conservan
 esa forma entre los lugares del Ayuntamiento de Santa María de Ordás.
+[@pares1715santibanez; @relacionparroquial1768; @gaceta1864sorribos;
+@alvarezbalbuenatoponimia] [E: TOP-007, TOP-008, TOP-009, TOP-010]
 
 El Ayuntamiento identifica hoy **Sorrios** como barrio de Santibáñez de Ordás.
 La convergencia de los testimonios permite identificar con seguridad muy alta
@@ -121,6 +124,7 @@ el Sorribos de 1752 con el Sorrios actual. La documentación, sin embargo, **no
 proporciona una secuencia fonética completa** ni permite fechar todos los pasos
 del cambio. La continuidad de identificación no equivale a una explicación
 lingüística exhaustiva.
+[@ayuntamientosantamariaordassantibanez] [E: TOP-011]
 
 ## Dos nombres dentro de un mismo expediente {#expediente-dos-lugares}
 

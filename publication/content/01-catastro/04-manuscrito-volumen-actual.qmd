@@ -16,9 +16,9 @@ sources:
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Criterios_Edicion_Modernizada.md
     locator: "versión 1.2, secciones 1–7"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
-    locator: "versión 1.2, sección 0"
+    locator: "versión 1.3, sección 0"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
-    locator: "versión 1.2, secciones 1–2, 4–5 y 8"
+    locator: "versión 1.3, secciones 1–2, 4–5 y 8"
   - path: docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md
     locator: "secciones 3–5, 8–9 y 12–15"
   - path: publication/README.md
@@ -105,7 +105,7 @@ documento sin convertir dos autoridades distintas en un solo texto.
 
 La transcripción establece qué dice la fuente; la interpretación pregunta qué
 puede significar históricamente. Entre ambas se sitúan el **Estudio Histórico
-1.2** y el **Registro 1.2**, que organizan las afirmaciones mediante cinco tipos
+1.3** y el **Registro 1.3**, que organizan las afirmaciones mediante cinco tipos
 de evidencia:
 
 - **D — dato:** contenido explícito de la Edición Crítica;

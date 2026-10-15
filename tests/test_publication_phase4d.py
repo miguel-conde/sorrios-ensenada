@@ -259,10 +259,10 @@ def test_glossary_rejects_duplicate_or_missing_required_field():
 
 
 def test_register_is_complete_unique_and_preserves_compound_levels(register):
-    assert register.version == "1.2"
-    assert len(register.entries) == 112
+    assert register.version == "1.3"
+    assert len(register.entries) == 111
     assert len(register.calculations) == 20
-    assert len({entry.identifier for entry in register.entries}) == 112
+    assert len({entry.identifier for entry in register.entries}) == 111
     assert {component for entry in register.entries for component in entry.level_components} == {
         "D", "C", "I", "E", "L"
     }
@@ -271,7 +271,7 @@ def test_register_is_complete_unique_and_preserves_compound_levels(register):
 
 def test_register_states_are_preserved_without_silent_exclusion(register):
     counts = Counter(entry.state for entry in register.entries)
-    assert counts == {"Admitida": 88, "Condicionada": 10, "Mantener cautela": 1, None: 13}
+    assert counts == {"Admitida": 87, "Condicionada": 10, "Mantener cautela": 1, None: 13}
     assert not any(entry.state == "Excluida" for entry in register.entries)
 
 
@@ -404,7 +404,7 @@ def test_matrix_keeps_problematic_canonical_entries_as_apparatus_not_narrative(g
     output = generated["matriz-evidencia.qmd"]
     assert "como 26 habitantes fiscales" in output
     assert "`Sorribas` no se trata como variante histórica" in output
-    assert "La matriz reproduce el Registro 1.2" in output
+    assert "La matriz reproduce el Registro 1.3" in output
     assert "no convierte sus formulaciones en prosa" in output
 
 
@@ -497,7 +497,7 @@ def test_navigation_integrates_only_the_four_phase4d_apparatus():
     for item in quarto["book"]["chapters"]:
         navigation.extend(item.get("chapters", []) if isinstance(item, dict) else [item])
     expected = [f"generated/{name}" for name in builder.OUTPUT_NAMES]
-    assert navigation[-13:-9] == expected
+    assert navigation[17:21] == expected
     assert [item["path"] for item in chapters if item["path"] in expected] == expected
     assert len([item for item in navigation if "indices/" in item]) == 9
 

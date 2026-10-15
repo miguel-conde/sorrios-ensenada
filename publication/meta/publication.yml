@@ -3,7 +3,7 @@ publication:
   status: development
 
 base:
-  git_commit: "9ae4d1fd46d9f2d7bca685de861bff2a554a7a39"
+  git_commit: "a162fad1792aa9b3804a5499d348ab355e5ce574"
 
 sources:
   critical_edition:
@@ -11,16 +11,16 @@ sources:
     version: "3.6"
   historical_study:
     path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
-    version: "1.2"
+    version: "1.3"
   evidence_register:
     path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
-    version: "1.2"
+    version: "1.3"
   modernized_edition:
     path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
     version: "1.3"
   glossary:
     path: project/20_TRABAJO_EDITORIAL/Glosario.md
-    git_blob: "5f1e78adee096f5d5752d6fe1af866ca5e5c8b17"
+    git_blob: "29089c7bbc2a60e4459b9ffc0e86de1f3363edeb"
 
 manuscript:
   metadata_source: project/00_CONTROL/proyecto.yaml

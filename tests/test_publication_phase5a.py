@@ -276,7 +276,7 @@ def test_navigation_integrates_exactly_nine_indexes_after_phase4d():
         navigation.extend(item.get("chapters", []) if isinstance(item, dict) else [item])
     expected = [f"generated/indices/{name}" for name in builder.OUTPUT_NAMES]
     assert navigation[-9:] == expected
-    assert navigation[-10] == "generated/matriz-evidencia.qmd"
+    assert navigation[-14] == "generated/matriz-evidencia.qmd"
     chapters = yaml.safe_load(
         (PUBLICATION / "meta/chapters.yml").read_text(encoding="utf-8")
     )["chapters"]

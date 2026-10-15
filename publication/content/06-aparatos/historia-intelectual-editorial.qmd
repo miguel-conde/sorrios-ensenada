@@ -1,0 +1,39 @@
+---
+chapter-id: historia-intelectual-editorial
+publication-status: development
+numbered: false
+number-sections: false
+sources:
+  - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
+    locator: "versión 1.5, arquitectura del volumen"
+  - path: docs/AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md
+    locator: "sección 14, historia de versiones"
+---
+
+# Historia intelectual y editorial {.unnumbered}
+
+Este libro nace de un manuscrito de 1752. La imagen conserva su materialidad;
+la transcripción paleográfica fija la lectura sin modernizarla; y la Edición
+Crítica 3.6 hace visibles decisiones, dudas, notas y relaciones entre sus 35
+unidades. Ninguna de esas capas atribuye al documento conclusiones que fueron
+elaboradas después.
+
+La edición modernizada 1.3 ofrece las cuarenta respuestas en español actual
+sin convertir medidas antiguas ni completar silencios. A partir de esa base,
+el Estudio Histórico 1.3 organiza la investigación y el Registro 1.3 distingue
+datos, cálculos, interpretaciones, contextos externos y límites. La matriz
+D/C/I/E/L publicada permite volver desde la explicación a la formulación
+controlada y a su cautela.
+
+La composición 0.6 reunió estas capas y sirvió como antecedente intelectual y
+visual, pero no es autoridad textual. La edición Quarto preparada para 1.0
+recompone una misma fuente para HTML y PDF, incorpora navegación bidireccional,
+bibliografía y aparatos, y mantiene separados fuente histórica, edición,
+interpretación y publicación.
+
+Durante esta evolución se rectificaron identificaciones cuando la evidencia lo
+exigió. El caso más visible es la lectura **Sorribas → Sorribos**: la forma
+rechazada no se presenta como variante histórica, mientras la secuencia
+documentada `Sorribios → Sorribos → Sorrios` conserva sus fuentes y límites.
+La historia editorial explica así cómo cambió la comprensión de la obra, no la
+historia técnica de su repositorio.

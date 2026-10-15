@@ -6,9 +6,9 @@ sources:
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
     locator: "versión 1.5, Parte II, capítulo 5"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
-    locator: "versión 1.2, secciones 0, 2.2–2.3 y sección 5 solo para la respuesta 3"
+    locator: "versión 1.3, secciones 0, 2.2–2.3 y sección 5 solo para la respuesta 3"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
-    locator: "versión 1.2, decisiones terminológicas y entradas JUR-001, JUR-002, JUR-005–JUR-008, FIS-012 y LIM-011"
+    locator: "versión 1.3, decisiones terminológicas y entradas JUR-001, JUR-002, JUR-005–JUR-008, FIS-012 y LIM-011"
   - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
     locator: "versión 3.6, preámbulo, respuestas 2–3, 22 y 28–29; folios 306r–307v y 318r–319v"
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Introduccion_Catastro_Ensenada_Sorrios.md
@@ -60,6 +60,7 @@ proyectarlo hacia atrás. En **1768** y **1789**, el Concejo de Ordás comprend�
 un núcleo de cinco lugares: Adrados, Callejo, Ordás, Santibáñez de Sorribos y
 Villarrodrigo. Esos datos describen sus fechas respectivas; no sustituyen la
 declaración local de 1752.
+[@relacionparroquial1768; @alvarezbalbuenatoponimia] [E/I: JUR-007]
 
 El arreglo de **1836** y la descripción de **1848** corresponden ya al
 municipio de Santa María de Ordás, que reunió también lugares antes
@@ -78,7 +79,8 @@ Una identificación externa permite situar en 1752 a **Francisco Alfonso
 Pimentel como XV conde de Luna**. La identificación nominal procede de
 documentación externa registrada, no del tenor literal del expediente. La
 separación entre ambas autoridades evita que un dato contextual se presente
-como si estuviera escrito en la respuesta.
+como si estuviera escrito en la respuesta. [@pousadieguez2022juzgados;
+@paresconde1742] [E/I: JUR-008]
 
 ## Derechos diferenciados {#lugar-derechos}
 

@@ -32,6 +32,12 @@ APPARATUS = (
     "generated/concordancia.html",
     "generated/matriz-evidencia.html",
 )
+NARRATIVE_APPARATUS = (
+    "content/06-aparatos/cuestiones-abiertas.html",
+    "content/06-aparatos/historia-intelectual-editorial.html",
+    "content/06-aparatos/como-citar.html",
+    "content/06-aparatos/bibliografia.html",
+)
 INDEXES = tuple(
     f"generated/indices/{number:02d}-{slug}.html"
     for number, slug in enumerate(
@@ -193,8 +199,8 @@ def audit_configuration(publication_root: Path = PUBLICATION_ROOT) -> list[str]:
     paths = navigation_paths(items)
     if "content/00-preliminares/00-prueba-tecnica.qmd" in paths:
         errors.append("La prueba técnica continúa publicada")
-    if len(paths) != 30 or paths[0] != "index.qmd":
-        errors.append(f"La composición debe contener 30 documentos públicos, no {len(paths)}")
+    if len(paths) != 34 or paths[0] != "index.qmd":
+        errors.append(f"La composición debe contener 34 documentos públicos, no {len(paths)}")
     manifest = yaml.safe_load(
         (publication_root / "meta/chapters.yml").read_text(encoding="utf-8")
     )["chapters"]
@@ -223,8 +229,8 @@ def _local_target(source: Path, href: str) -> tuple[Path, str] | None:
 def audit_html_book(book_root: Path = BOOK_ROOT) -> list[str]:
     errors: list[str] = []
     html_paths = sorted(book_root.rglob("*.html"))
-    if len(html_paths) != 30:
-        errors.append(f"Se esperaban 30 documentos HTML y existen {len(html_paths)}")
+    if len(html_paths) != 34:
+        errors.append(f"Se esperaban 34 documentos HTML y existen {len(html_paths)}")
     parsed = {path.resolve(): parse_html(path) for path in html_paths}
     titles: dict[str, Path] = {}
     ids = {path: set(parser.ids) for path, parser in parsed.items()}
@@ -304,7 +310,7 @@ def audit_html_book(book_root: Path = BOOK_ROOT) -> list[str]:
     technical = book_root / "content/00-preliminares/00-prueba-tecnica.html"
     if technical.exists():
         errors.append("La salida HTML conserva el capítulo técnico")
-    for relative in (*APPARATUS, *INDEXES):
+    for relative in (*APPARATUS, *NARRATIVE_APPARATUS, *INDEXES):
         if not (book_root / relative).is_file():
             errors.append(f"Falta el documento público {relative}")
     return errors

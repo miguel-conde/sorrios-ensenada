@@ -46,6 +46,10 @@ book:
         - generated/cuadros-cuantitativos.qmd
         - generated/concordancia.qmd
         - generated/matriz-evidencia.qmd
+        - content/06-aparatos/cuestiones-abiertas.qmd
+        - content/06-aparatos/historia-intelectual-editorial.qmd
+        - content/06-aparatos/como-citar.qmd
+        - content/06-aparatos/bibliografia.qmd
         - generated/indices/01-indice-onomastico.qmd
         - generated/indices/02-indice-toponimos.qmd
         - generated/indices/03-indice-instituciones.qmd
@@ -67,6 +71,8 @@ format:
       - cosmo
       - styles/book.scss
     include-after-body: includes/sidebar-keyboard.html
+    filters:
+      - scripts/evidence_links.lua
   pdf:
     # TinyTeX lacks babel-spanish in this environment. Visible labels and the
     # PDF language catalog remain Spanish through the local preamble.
@@ -80,5 +86,6 @@ format:
     pdf-engine: lualatex
     include-in-header: styles/latex/preamble.tex
     filters:
+      - scripts/evidence_links.lua
       - scripts/pdf_internal_links.lua
       - scripts/pdf_index_entries.lua

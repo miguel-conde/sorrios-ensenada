@@ -1,0 +1,89 @@
+---
+chapter-id: cuestiones-abiertas
+publication-status: development
+numbered: false
+number-sections: false
+sources:
+  - path: docs/AUDITORIA_FUENTES_BIBLIOGRAFIA_APARATOS_V1_0.md
+    locator: "sección 13, nueve cuestiones QA1"
+  - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
+    locator: "versión 1.3, entradas LIM-001–LIM-013"
+---
+
+# Cuestiones abiertas {.unnumbered}
+
+Estas nueve preguntas no son lagunas que la edición rellene por analogía. Son
+los límites de investigación clasificados como QA1: el expediente permite
+formularlos con precisión, pero no resolverlos con la documentación utilizada.
+
+## Población y hogares {.unnumbered}
+
+### QA-001 — ¿Cuál era la población total por individuos? {.unnumbered}
+
+**Qué sabemos:** la respuesta 21 distingue vecinos, medios vecinos y
+residentes. **Qué no sabemos:** cuántas personas componían la población total.
+Véanse el [capítulo 6](../02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd#avitadores-poblacion)
+y [LIM-001](../../generated/matriz-evidencia.qmd#evidencia-lim-001).
+
+### QA-002 — ¿Cuál era la renta anual de los hogares? {.unnumbered}
+
+**Qué sabemos:** constan valores regulados, trabajos y activos parciales.
+**Qué no sabemos:** jornadas efectivas, distribución completa de activos,
+autoconsumo, deudas y renta anual. Véanse el
+[capítulo 6](../02-estudio/06-vecinos-hogares-viviendas-trabajo.qmd#trabajo-utilidades)
+y [LIM-002](../../generated/matriz-evidencia.qmd#evidencia-lim-002).
+
+## Producción y mercado {.unnumbered}
+
+### QA-003 — ¿Cuál era el producto agrario total? {.unnumbered}
+
+**Qué sabemos:** el expediente regula cabidas y rendimientos por clases.
+**Qué no sabemos:** su asignación anual efectiva y un producto agrario total.
+Véanse el [capítulo 7](../02-estudio/07-tierra-sistema-agrario-medidas.qmd#tierra-produccion-limites)
+y [LIM-003](../../generated/matriz-evidencia.qmd#evidencia-lim-003).
+
+### QA-009 — ¿Predominaban el autoconsumo o el mercado? {.unnumbered}
+
+**Qué sabemos:** hay precios, pagos, prestaciones y algunos destinos.
+**Qué no sabemos:** comercio neto ni destino predominante de la producción.
+Véanse el [capítulo 12](../02-estudio/12-dinero-oficios-conexiones-exteriores.qmd#dinero-mercado-limites)
+y [LIM-009](../../generated/matriz-evidencia.qmd#evidencia-lim-009).
+
+## Metrología {.unnumbered}
+
+### QA-004 — ¿Cómo se relaciona el celemín con el sistema quartal/fanega? {.unnumbered}
+
+**Qué sabemos:** la respuesta 10 consigna siete celemines y la 9 relaciona
+*quartal* y fanega. **Qué no sabemos:** una equivalencia interna que permita
+convertirlos. Véanse el [capítulo 7](../02-estudio/07-tierra-sistema-agrario-medidas.qmd#tierra-medidas)
+y [LIM-004](../../generated/matriz-evidencia.qmd#evidencia-lim-004).
+
+### QA-005 — ¿Qué equivalencia tienen carga, fanega y quartal? {.unnumbered}
+
+**Qué sabemos:** esas unidades aparecen en productos y obligaciones concretos.
+**Qué no sabemos:** una escala común aplicable a las respuestas 16–17. Véanse
+el [capítulo 7](../02-estudio/07-tierra-sistema-agrario-medidas.qmd#tierra-medidas)
+y [LIM-005](../../generated/matriz-evidencia.qmd#evidencia-lim-005).
+
+## Derechos y obligaciones pendientes {.unnumbered}
+
+### QA-011 — ¿Cuál era el título jurídico de alcabalas y pozo? {.unnumbered}
+
+**Qué sabemos:** las respuestas 28–29 acreditan derechos e importes.
+**Qué no sabemos:** su origen jurídico concreto. Véanse el
+[capítulo 10](../02-estudio/10-iglesia-senorio-fiscalidad.qmd#fiscal-derechos-senoriales)
+y [LIM-011](../../generated/matriz-evidencia.qmd#evidencia-lim-011).
+
+### QA-012 — ¿De dónde procedía la obligación de quince reales al Hospital? {.unnumbered}
+
+**Qué sabemos:** la respuesta 25 identifica receptor e importe y el contexto
+identifica la institución. **Qué no sabemos:** el origen jurídico del pago.
+Véanse el [capítulo 11](../02-estudio/11-hacienda-concejil-servicios-colectivos.qmd#hacienda-destinos)
+y [LIM-012](../../generated/matriz-evidencia.qmd#evidencia-lim-012).
+
+### QA-013 — ¿Qué naturaleza tenía el derecho de Mesta de diez reales? {.unnumbered}
+
+**Qué sabemos:** la respuesta 25 da concepto e importe y el contexto sitúa la
+institución. **Qué no sabemos:** si era tasa, servicio, reparto u otra clase de
+pago. Véanse el [capítulo 11](../02-estudio/11-hacienda-concejil-servicios-colectivos.qmd#hacienda-destinos)
+y [LIM-013](../../generated/matriz-evidencia.qmd#evidencia-lim-013).

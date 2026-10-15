@@ -183,6 +183,15 @@ textarea:focus-visible,
     word-break: break-word;
   }
 
+  #refs,
+  #refs .csl-entry,
+  #refs a {
+    max-width: 100%;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
   .table-scroll table {
     min-width: max-content;
   }

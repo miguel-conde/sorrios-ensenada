@@ -38,6 +38,9 @@ def test_final_book_has_six_parts_sixteen_chapters_four_apparatus_and_nine_index
         "generated/16-edicion-modernizada.qmd",
     ]
     assert paths[17:21] == [path.replace(".html", ".qmd") for path in quality.APPARATUS]
+    assert paths[21:25] == [
+        path.replace(".html", ".qmd") for path in quality.NARRATIVE_APPARATUS
+    ]
     assert paths[-9:] == [path.replace(".html", ".qmd") for path in quality.INDEXES]
 
 
@@ -135,6 +138,7 @@ def test_generated_document_counts_and_accessible_alternatives():
 def test_four_apparatus_nine_indexes_and_levels_are_explicit():
     _, paths = _navigation()
     assert len([path for path in paths if path in {p.replace('.html', '.qmd') for p in quality.APPARATUS}]) == 4
+    assert len([path for path in paths if path in {p.replace('.html', '.qmd') for p in quality.NARRATIVE_APPARATUS}]) == 4
     assert len([path for path in paths if path in {p.replace('.html', '.qmd') for p in quality.INDEXES}]) == 9
     matrix = (PUBLICATION / "generated/matriz-evidencia.qmd").read_text(encoding="utf-8")
     for level in "DCIEL":
@@ -157,6 +161,7 @@ def test_rendered_book_passes_phase5b_audits_when_artifacts_exist():
         quality.BOOK_ROOT.is_dir()
         and quality.PDF_PATH.is_file()
         and not technical_html.exists()
+        and (quality.BOOK_ROOT / "content/06-aparatos/bibliografia.html").is_file()
         and 'lang="es"' in (quality.BOOK_ROOT / "index.html").read_text(encoding="utf-8")
     )
     if current_html:

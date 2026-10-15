@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 
-REGISTER_VERSION = "1.2"
+REGISTER_VERSION = "1.3"
 REQUIRED_GLOSSARY_FIELDS = (
     "Término documentado",
     "Definición",

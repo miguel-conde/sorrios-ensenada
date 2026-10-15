@@ -24,7 +24,7 @@ sources:
   - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md
     locator: "carga, fanega, quartal, libra y real"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md
-    locator: "secciones sobre diezmos, primicia, voto y alcabalas; cifras contrastadas con el Registro 1.2"
+    locator: "secciones sobre diezmos, primicia, voto y alcabalas; cifras contrastadas con el Registro 1.3"
 evidence:
   D: [JUR-005, JUR-006, FIS-001, FIS-002, FIS-003, FIS-004, FIS-008, FIS-012]
   C: [CAL-009]
@@ -109,6 +109,7 @@ implantación y modalidades variaron territorialmente, también en León. Ese
 contexto explica la denominación y el destino institucional, pero no sustituye
 el dato local, no identifica un producto ausente ni demuestra cómo se repartió
 la obligación entre los vecinos de Sorribos. [E: FIS-013]
+[@reycastelao1985voto]
 
 Diezmo, primicia y voto aparecen juntos en la descripción de las cargas sobre
 las tierras, pero no son sinónimos. Difieren en destinatario, composición y

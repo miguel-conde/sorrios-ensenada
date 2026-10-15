@@ -17,7 +17,7 @@ import check_sources  # noqa: E402
 import quality_audit as quality  # noqa: E402
 
 
-CURRENT_CANONICAL_COMMIT = "9ae4d1fd46d9f2d7bca685de861bff2a554a7a39"
+CURRENT_CANONICAL_COMMIT = "a162fad1792aa9b3804a5499d348ab355e5ce574"
 PHASE6A_HISTORICAL_CANONICAL_COMMIT = (
     "e81dc9239ac8dbabfe77168a50ef98c4d3b79170"
 )
@@ -79,7 +79,7 @@ def test_complete_structure_and_pdf_download_contract_are_stable():
     quarto = _yaml(PUBLICATION / "_quarto.yml")
     assert quarto["book"]["downloads"] == ["pdf"]
     assert quarto["book"]["output-file"] == "sorribos-santibanez-ordas-1752"
-    assert len(quality.navigation_paths(quarto["book"]["chapters"])) == 30
+    assert len(quality.navigation_paths(quarto["book"]["chapters"])) == 34
 
 
 def test_no_preview_provider_or_deployment_has_been_chosen_by_phase6a():
@@ -162,7 +162,7 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
         "| PKG-00 | completado |",
         "| PKG-01 | completado e integrado |",
         "| PKG-02 | completado e integrado; incidencias canónicas cerradas; "
-        "propagación PKG-08 pendiente |",
+        "propagación ejecutada en la rama de PKG-08 |",
         "| PKG-03 | completado e integrado |",
         "| CR-V1-001 | cerrada e integrada |",
         "| PKG-04 | completado e integrado |",
@@ -172,10 +172,10 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
         "la propagación editorial permanece pendiente de PKG-08",
         "| PKG-06 | habilitado — no iniciado |",
         "| PKG-07 | habilitado — no iniciado |",
-        "| PKG-08 | habilitado — no iniciado; siguiente recomendado |",
+        "| PKG-08 | completado en rama aislada; pendiente de revisión/integración |",
         "| PKG-09 | habilitado — no iniciado, sujeto a DAT |",
         "su propagación obligatoria pertenece a PKG-08",
-        "SIGUIENTE PASO RECOMENDADO: PKG-08",
+        "SIGUIENTE PASO RECOMENDADO: revisar e integrar la rama aislada de PKG-08",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
         "prohibida antes de la aceptación humana del preview |",
     ):

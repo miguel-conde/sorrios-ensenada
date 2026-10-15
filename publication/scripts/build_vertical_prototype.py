@@ -125,7 +125,7 @@ def read_evidence_rows(register_text: str) -> dict[str, list[str]]:
     missing = sorted(expected - rows.keys())
     if missing:
         raise PrototypeBuildError(
-            "Faltan identificadores en el Registro 1.2: " + ", ".join(missing)
+            "Faltan identificadores en el Registro vigente: " + ", ".join(missing)
         )
     return rows
 

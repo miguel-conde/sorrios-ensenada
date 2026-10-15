@@ -201,7 +201,7 @@ CHAPTER_ELEVEN_EVIDENCE = {
     "D": ("FIS-005", "FIS-006", "FIS-007", "FIS-008", "GAN-002", "TRA-005"),
     "C": (),
     "I": ("INT-004", "INT-006"),
-    "E": ("FIS-014", "FIS-015", "FIS-016", "FIS-017", "TRA-006"),
+    "E": ("FIS-014", "FIS-015", "FIS-016", "FIS-017"),
     "L": ("LIM-012", "LIM-013"),
 }
 CHAPTER_TWELVE_SOURCES = {
@@ -275,7 +275,7 @@ CHAPTER_THIRTEEN_EVIDENCE = {
     ),
     "E": (
         "TER-011", "AGR-011", "AGR-012", "AGR-013", "GAN-008",
-        "HID-008", "TRA-006", "FIS-013", "FIS-014", "FIS-015",
+        "HID-008", "FIS-013", "FIS-014", "FIS-015",
         "FIS-016", "FIS-017",
     ),
     "L": (
@@ -495,7 +495,7 @@ def test_chapter_four_separates_editorial_layers_and_provenance():
         "35 unidades documentales", "facsímil",
         "transcripción paleográfica semidiplomática", "edición crítica 3.6",
         "edición modernizada 1.3", "preguntas externas", "respuestas locales",
-        "estudio histórico 1.2", "registro 1.2", "front matter",
+        "estudio histórico 1.3", "registro 1.3", "front matter",
         "libro quarto", "publication/content/", "publication/generated/", "referencia editorial",
         "no es una autoridad textual", "permanece fuera de github",
     )

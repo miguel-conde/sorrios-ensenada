@@ -1,0 +1,34 @@
+---
+chapter-id: como-citar
+publication-status: development
+numbered: false
+number-sections: false
+---
+
+# Cómo citar {.unnumbered}
+
+La responsabilidad autoral aprobada es **Miguel Conde de Simón**; en una lista
+bibliográfica se ordena como **Conde de Simón, Miguel**. La fecha, la versión
+aceptada y la URL canónica se completarán cuando la edición se publique. Los
+marcadores entre corchetes deben sustituirse entonces por los datos finales;
+no representan valores ya asignados.
+
+## Siete familias para once objetos {.unnumbered}
+
+| Objeto citable | Familia | Modelo |
+|---|---|---|
+| Volumen completo | Volumen | Conde de Simón, Miguel. *Sorribos y Santibáñez de Ordás en 1752*. [versión y fecha de publicación pendientes]. [URL canónica pendiente]. |
+| Facsímil | Localización documental | Conde de Simón, Miguel, ed. *Sorribos y Santibáñez de Ordás en 1752*, «Facsímil», [página digital], [versión/fecha y URL pendientes]. |
+| Página del manuscrito | Localización documental | …, «Facsímil», página digital [1–18], [URL canónica pendiente]#pagina-digital-[nn]. |
+| Folio | Localización documental | …, «Transcripción paleográfica», folio [306r–321v], [versión/fecha y URL pendientes]. |
+| Unidad | Localización documental | …, unidad [ID o etiqueta], orden [1–35], página/posición [localizador], [URL canónica pendiente]. |
+| Respuesta | Localización documental | …, «Edición modernizada», respuesta [1–40], folio(s) [localizador], [URL canónica pendiente]. |
+| Transcripción paleográfica | Transcripción | Conde de Simón, Miguel, ed. «Transcripción paleográfica», folio/unidad [localizador], en *Sorribos y Santibáñez de Ordás en 1752*, [versión/fecha y URL pendientes]. |
+| Edición modernizada | Modernizada | Conde de Simón, Miguel, ed. «Edición modernizada», respuesta [n], versión 1.3, en *Sorribos y Santibáñez de Ordás en 1752*, [fecha y URL pendientes]. |
+| Capítulo histórico | Estudio | Conde de Simón, Miguel. «[Título del capítulo]», cap. [5–13], en *Sorribos y Santibáñez de Ordás en 1752*, [versión/fecha y URL pendientes]. |
+| Entrada D/C/I/E/L | Matriz | Conde de Simón, Miguel. «[ID canónico]», *Matriz de evidencia D/C/I/E/L*, Registro 1.3, [fecha y URL pendientes]#evidencia-[id]. |
+| Fuente externa | Bibliográfica | Cítese con la referencia normalizada de la bibliografía y, cuando corresponda, con el ID E enlazado a la matriz. |
+
+Los localizadores estables —página, folio, unidad, respuesta, capítulo o ID—
+deben conservarse aunque una composición posterior cambie la paginación. No se
+añade ISBN ni se anticipan fecha, versión final o URL.

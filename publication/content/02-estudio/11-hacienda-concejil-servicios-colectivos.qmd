@@ -10,7 +10,7 @@ sources:
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
     locator: "sección 13, Hacienda del común y servicios colectivos"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
-    locator: "FIS-005–FIS-008; FIS-014–FIS-017; GAN-002; TRA-005–TRA-006; INT-004; INT-006; LIM-012–LIM-013"
+    locator: "FIS-005–FIS-008; FIS-014–FIS-017; GAN-002; TRA-005; INT-004; INT-006; LIM-012–LIM-013"
   - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
     locator: "respuestas 23–27, 29–30 y 39; folios 318v–321r"
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
@@ -29,7 +29,7 @@ evidence:
   D: [FIS-005, FIS-006, FIS-007, FIS-008, GAN-002, TRA-005]
   C: []
   I: [INT-004, INT-006]
-  E: [FIS-014, FIS-015, FIS-016, FIS-017, TRA-006]
+  E: [FIS-014, FIS-015, FIS-016, FIS-017]
   L: [LIM-012, LIM-013]
 ---
 
@@ -69,6 +69,7 @@ control institucional se reforzó en 1760 con la Contaduría General de Propios
 y Arbitrios. Este contexto ya incorporado ayuda a entender el significado de
 las respuestas, pero no convierte el común de 1752 en un ayuntamiento posterior
 ni le atribuye un patrimonio que el expediente niega. [E: FIS-016]
+[@garciagarcia1986haciendas]
 
 El uso colectivo tampoco resuelve esa ausencia. El
 [capítulo 8](08-ganaderia-montes-aprovechamientos-comunales.qmd#uso-comun)
@@ -120,17 +121,20 @@ Dos partidas se sitúan fuera del lugar. El Hospital de Inocentes de Valladolid
 fue una institución asistencial fundada en 1489 y activa a mediados del siglo
 XVIII. El contexto identifica al receptor de quince reales, pero no explica el
 origen jurídico de la obligación de Sorribos. [E/L: FIS-014, LIM-012]
+[@mazazorrilla1982pobreza]
 
 La mención del derecho de Mesta remite al Honrado Concejo de la Mesta y a su
 ámbito ganadero leonés. Identifica la institución relacionada con los diez
 reales, pero no permite decidir si el concepto local era tasa, servicio,
 reparto u otra clase de pago. [E/L: FIS-015, LIM-013]
+[@paresmesta]
 
 La festividad del Corpus y la limpieza de fuentes permanecen en la escala que
 declara la respuesta. Otros catastros leoneses registran gastos de Corpus junto
 con caminos, puentes u otras atenciones, pero esa comparación tipológica no
 autoriza a comparar importes sin poblaciones y cuentas equivalentes ni a añadir
 partidas ausentes en Sorribos. [E: FIS-017]
+[@caputvallis2008catastro]
 
 ## Ausencias específicas {#hacienda-ausencias}
 
@@ -154,12 +158,6 @@ producía utilidad al común ni a particular. Quedan documentados la existencia,
 la falta de arrendatario, el turno vecinal y la ausencia de utilidad declarada;
 no la propiedad del local, sus cuentas, frecuencia de apertura, cobertura,
 precios o calidad del servicio. [D: TRA-005]
-
-Ordenanzas concejiles leonesas emplean «andar por vecera» para servicios que
-pasan por turno entre vecinos cuando nadie los arrienda. El paralelo confirma
-el sentido institucional de la expresión, pero no extiende el turno a otras
-actividades de Sorribos ni demuestra una plantilla, financiación estable,
-gratuidad o funcionamiento permanente. [E: TRA-006]
 
 La taberna puede describirse como una prestación rotatoria documentada. No
 basta para definir un sistema general de servicios públicos ni una forma de

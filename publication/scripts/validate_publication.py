@@ -561,7 +561,7 @@ CHAPTER_ELEVEN_EVIDENCE = {
     "D": ("FIS-005", "FIS-006", "FIS-007", "FIS-008", "GAN-002", "TRA-005"),
     "C": (),
     "I": ("INT-004", "INT-006"),
-    "E": ("FIS-014", "FIS-015", "FIS-016", "FIS-017", "TRA-006"),
+    "E": ("FIS-014", "FIS-015", "FIS-016", "FIS-017"),
     "L": ("LIM-012", "LIM-013"),
 }
 CHAPTER_ELEVEN_ANCHORS = (
@@ -659,7 +659,7 @@ CHAPTER_THIRTEEN_EVIDENCE = {
     ),
     "E": (
         "TER-011", "AGR-011", "AGR-012", "AGR-013", "GAN-008",
-        "HID-008", "TRA-006", "FIS-013", "FIS-014", "FIS-015",
+        "HID-008", "FIS-013", "FIS-014", "FIS-015",
         "FIS-016", "FIS-017",
     ),
     "L": (
@@ -1397,8 +1397,8 @@ def validate_rendered_outputs() -> list[str]:
         matrix_anchors = re.findall(
             r'<section id="evidencia-([a-z]+-\d{3})"', matrix_html
         )
-        if len(matrix_anchors) != 112 or len(set(matrix_anchors)) != 112:
-            errors.append("La matriz HTML no conserva 112 identificadores únicos")
+        if len(matrix_anchors) != 111 or len(set(matrix_anchors)) != 111:
+            errors.append("La matriz HTML no conserva 111 identificadores únicos")
         for level in ("D", "C", "I", "E", "L"):
             if f"<code>{level}</code>" not in matrix_html:
                 errors.append(f"La matriz HTML no muestra el nivel {level}")
@@ -2314,7 +2314,8 @@ def _validate_chapter_six_body(body: str) -> list[str]:
         ),
         "personas-hogares": (
             "persona es un individuo",
-            "cabezas de casa y familias",
+            "cabezas de casa o familias",
+            "no sustenta una regla sobre el medio vecino",
             "14 son hijos de familia",
             "tres son criados sirvientes",
             "indicios de convivencia y trabajo doméstico",
@@ -3195,7 +3196,6 @@ def _validate_chapter_eleven_body(body: str) -> list[str]:
             "funcionaba por vecera entre los vecinos",
             "no producía utilidad al común ni a particular",
             "no la propiedad del local",
-            "no extiende el turno a otras actividades",
             "no basta para definir un sistema general de servicios públicos",
         ),
         "hacienda-infraestructuras": (
@@ -3972,7 +3972,7 @@ def validate() -> list[str]:
             "35 unidades documentales", "facsímil",
             "transcripción paleográfica semidiplomática", "edición crítica 3.6",
             "edición modernizada 1.3", "preguntas externas", "respuestas locales",
-            "estudio histórico 1.2", "registro 1.2", "front matter",
+            "estudio histórico 1.3", "registro 1.3", "front matter",
             "libro quarto", "publication/content/", "publication/generated/",
             "referencia editorial", "no es una autoridad textual",
             "permanece fuera de github",
@@ -4122,7 +4122,7 @@ def validate() -> list[str]:
         - registered
     )
     if missing_registry:
-        errors.append("Identificadores ausentes del Registro 1.2: " + ", ".join(missing_registry))
+        errors.append("Identificadores ausentes del Registro vigente: " + ", ".join(missing_registry))
 
     chapter_text = CHAPTER_NINE.read_text(encoding="utf-8")
     chapter_normalized = re.sub(r"\s+", " ", chapter_text)
@@ -4467,8 +4467,8 @@ def validate() -> list[str]:
             }
             if len(associated) != 17:
                 errors.append("Los cuadros 4D no conservan los 17 CAL asociados")
-            if len(apparatus_data.register.entries) != 112:
-                errors.append("La matriz 4D no contiene las 112 entradas D/C/I/E/L")
+            if len(apparatus_data.register.entries) != 111:
+                errors.append("La matriz 4D no contiene las 111 entradas D/C/I/E/L")
             concordance = actual_apparatus["concordancia.qmd"]
             if concordance.count("15-transcripcion.qmd#") != 100:
                 errors.append("La concordancia no conserva sus enlaces al capítulo 15")
@@ -4614,6 +4614,10 @@ def validate() -> list[str]:
         "generated/cuadros-cuantitativos.qmd",
         "generated/concordancia.qmd",
         "generated/matriz-evidencia.qmd",
+        "content/06-aparatos/cuestiones-abiertas.qmd",
+        "content/06-aparatos/historia-intelectual-editorial.qmd",
+        "content/06-aparatos/como-citar.qmd",
+        "content/06-aparatos/bibliografia.qmd",
         *(f"generated/indices/{name}" for name in INDEX_OUTPUT_NAMES),
     )
     for item in expected_navigation:

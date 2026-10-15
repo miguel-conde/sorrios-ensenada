@@ -1,0 +1,18 @@
+---
+chapter-id: bibliografia
+publication-status: development
+numbered: false
+number-sections: false
+nocite: |
+  @*
+---
+
+# Bibliografía {.unnumbered}
+
+Esta bibliografía se genera desde el registro único `references.bib`. Reúne
+las fuentes externas activas de las entradas E vigentes; las fuentes
+institucionales enlazadas solo como ayuda de consulta permanecen en su lugar de
+uso y no se duplican aquí como un sistema paralelo.
+
+::: {#refs}
+:::

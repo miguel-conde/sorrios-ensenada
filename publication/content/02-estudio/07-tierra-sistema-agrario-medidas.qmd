@@ -8,9 +8,9 @@ sources:
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Plan_Composicion_Volumen_0_5.md
     locator: "versión 0.5, secciones 12.1–12.3"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Estudio_Historico.md
-    locator: "versión 1.2, secciones 0, 5–8, 14–15, 17–18 y anexo A, CAL-001–CAL-009"
+    locator: "versión 1.3, secciones 0, 5–8, 14–15, 17–18 y anexo A, CAL-001–CAL-009"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Registro_Afirmaciones_Calculos_v1.md
-    locator: "versión 1.2, entradas TER-001–TER-011, AGR-001–AGR-013, INT-001, INT-003, LIM-003–LIM-007, LIM-009 y CAL-001–CAL-009"
+    locator: "versión 1.3, entradas TER-001–TER-011, AGR-001–AGR-013, INT-001, INT-003, LIM-003–LIM-007, LIM-009 y CAL-001–CAL-009"
   - path: project/20_TRABAJO_EDITORIAL/Edicion_Critica.md
     locator: "versión 3.6, respuestas 4–14 y 16; folios 307v–315r"
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md
@@ -18,7 +18,7 @@ sources:
   - path: project/20_TRABAJO_EDITORIAL/INDICES/Indice_Medidas.md
     locator: "entradas legua, baras, quartal, fanega, celemin, carga, libras, monton, carro, real y maravedís"
   - path: project/30_RESULTADOS/ESTUDIO_HISTORICO/Analisis_Cuantitativo.md
-    locator: "versión 0.2, secciones 0, 2–4 y 10–11; uso auxiliar sujeto al Estudio y al Registro 1.2"
+    locator: "versión 0.2, secciones 0, 2–4 y 10–11; uso auxiliar sujeto al Estudio y al Registro 1.3"
 evidence:
   D: [TER-001, TER-002, TER-003, TER-004, TER-005, TER-006, TER-010, AGR-001, AGR-002, AGR-003, AGR-007, AGR-008, AGR-010]
   C: [TER-007, TER-008, AGR-004, AGR-005, AGR-006, AGR-009, CAL-001, CAL-002, CAL-003, CAL-004, CAL-005, CAL-006, CAL-007, CAL-008, CAL-009]
@@ -106,7 +106,7 @@ menos terreno según su calidad.
 La metrología leonesa ofrece paralelos para esta forma de expresar extensión
 agraria mediante la cantidad de simiente admitida. Ese contexto explica la
 lógica de la respuesta; no fija cuántas hectáreas, áreas o metros cuadrados
-tenía el *quartal* de Sorribos.
+tenía el *quartal* de Sorribos. [@castanoalvarez2017apuntes] [E/I: TER-011]
 
 | Unidad o expresión | Magnitud o función en el expediente | Relación interna segura | Límite |
 |---|---|---|---|
@@ -242,7 +242,8 @@ Los cuatro montones que componen un carro permiten comparar los rendimientos
 de yerba entre sí, pero no con los *quartales* de cereal o las libras de lino.
 Los paralelos regionales ayudan a entender los prados de uno o dos pelos y el
 sentido léxico de *ferrañal*; no transfieren a Sorribos rendimientos ni usos no
-declarados.
+declarados. [@sanchezlopezdevinuesa2001cultivos; @riescochueca2013lexico]
+[E/I: AGR-012, AGR-013]
 
 ## Regulación, producción y valor {#tierra-produccion-limites}
 
@@ -267,7 +268,8 @@ suficiencia alimentaria, productividad por trabajador, productividad por
 hogar ni nivel de vida. El contexto regional del lino acredita una actividad
 conocida en las riberas septentrionales de León, incluida Luna; no demuestra
 que la producción concreta de Sorribos siguiera un circuito comercial
-determinado. Precios, conexiones y monetización se desarrollarán en el
+determinado. [@bartolomebartolome2001comercio] [E/I: AGR-011] Precios,
+conexiones y monetización se desarrollarán en el
 capítulo 12.
 
 ## Un sistema agrario desigual y mensurable con cautela {#tierra-sintesis}
