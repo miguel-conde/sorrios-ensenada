@@ -3,7 +3,7 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00–05 y PKG-08 completados e integrados;
+**Estado:** plan operativo; PKG-00–06 y PKG-08 completados e integrados;
 CR-V1-001 e INC-BIB-001/002 cerradas; GATE-01 en PASS y GATE-02 pendiente
 
 ## 1. Reglas generales
@@ -226,7 +226,8 @@ Decisiones de salida:
 
 ### PKG-06 — Preliminares y arquitectura editorial
 
-**Estado:** **HABILITADO — NO INICIADO** tras `GATE-01 = PASS`.
+**Estado:** **COMPLETADO E INTEGRADO** en
+`6040015edba077a530cd3dbbd63825faf7d90833`.
 
 Implementa, sin reabrirlas:
 
@@ -245,6 +246,8 @@ Implementa, sin reabrirlas:
 - retirada de la identidad de desarrollo.
 
 **Salida:** apertura y arquitectura completas en `publication/`.
+El prólogo permanece como **PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN
+PERSONAL** antes de `GATE-02`.
 
 ### PKG-07 — Aparato visual interno
 
@@ -529,7 +532,7 @@ chore(release): publish version 1.0
 - [x] 6. F3 decidido, aprobado, desplegado globalmente e integrado.
 - [x] 7. Defectos REV-023–025 corregidos; REV-026 optimizada sin pérdida y
   DEC-014 implementada.
-- [ ] 8. Apertura y preliminares integrados.
+- [x] 8. Apertura y preliminares integrados.
 - [ ] 9. Aparato visual integrado.
 - [x] 10. CIT, bibliografía, QA, historia y modelos de cita integrados.
 - [x] 11. D/C/I/E/L navegable.
@@ -563,6 +566,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01 — PASS. PKG-08 INTEGRADO; PKG-06, PKG-07 Y PKG-09 HABILITADOS; GATE-02 PENDIENTE.**
+**GATE-01 — PASS. PKG-06 Y PKG-08 INTEGRADOS; PKG-07 Y PKG-09 PENDIENTES; GATE-02 PENDIENTE.**
 
-**SIGUIENTE PASO RECOMENDADO: racionalizar y formalizar el protocolo permanente de ejecución antes de iniciar PKG-06, PKG-07 o PKG-09.**
+**SIGUIENTE PASO RECOMENDADO: PKG-07 — aparato visual interno.**
