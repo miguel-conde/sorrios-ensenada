@@ -20,6 +20,10 @@ CR-V1-001 e INC-BIB-001/002 cerradas; GATE-01 en PASS y GATE-02 pendiente
 - No se crea tag antes de PKG-13.
 - Una necesidad fuera de alcance requiere una CR aprobada conforme a
   `CR-V1-*`.
+- Los paquetes posteriores a GATE-01 se ejecutan conforme a
+  [PROTOCOLO_EJECUCION_AGENTES.md](./PROTOCOLO_EJECUCION_AGENTES.md). Sus
+  prompts son diferenciales y no repiten el contrato común de entorno, Git,
+  validación, renders e informe.
 
 ## 2. Paquetes de ejecución
 
