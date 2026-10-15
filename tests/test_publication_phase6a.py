@@ -162,20 +162,22 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
         "| PKG-00 | completado |",
         "| PKG-01 | completado e integrado |",
         "| PKG-02 | completado e integrado; incidencias canónicas cerradas; "
-        "propagación ejecutada en la rama de PKG-08 |",
+        "propagación completada por PKG-08 |",
         "| PKG-03 | completado e integrado |",
         "| CR-V1-001 | cerrada e integrada |",
         "| PKG-04 | completado e integrado |",
         "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` **CERRADAS CANÓNICAMENTE**",
-        "GATE-01 = PASS. PKG-06–PKG-09 HABILITADOS. GATE-02 = PENDIENTE.",
-        "la propagación editorial permanece pendiente de PKG-08",
+        "GATE-01 = PASS. PKG-08 INTEGRADO. PKG-06, PKG-07 Y PKG-09 "
+        "HABILITADOS. GATE-02 = PENDIENTE.",
+        "la propagación editorial quedó completada por PKG-08",
         "| PKG-06 | habilitado — no iniciado |",
         "| PKG-07 | habilitado — no iniciado |",
-        "| PKG-08 | completado en rama aislada; pendiente de revisión/integración |",
+        "| PKG-08 | completado e integrado |",
         "| PKG-09 | habilitado — no iniciado, sujeto a DAT |",
-        "su propagación obligatoria pertenece a PKG-08",
-        "SIGUIENTE PASO RECOMENDADO: revisar e integrar la rama aislada de PKG-08",
+        "su propagación obligatoria se asignó a PKG-08 y quedó completada",
+        "SIGUIENTE PASO RECOMENDADO: racionalizar y formalizar el protocolo "
+        "permanente de ejecución antes de iniciar PKG-06, PKG-07 o PKG-09",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
         "prohibida antes de la aceptación humana del preview |",
     ):

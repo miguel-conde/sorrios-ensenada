@@ -3,9 +3,8 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00–05 aceptados; CR-V1-001 e
-INC-BIB-001/002 cerradas; GATE-01 en PASS; PKG-06–09 habilitados y GATE-02
-pendiente
+**Estado:** plan operativo; PKG-00–05 y PKG-08 completados e integrados;
+CR-V1-001 e INC-BIB-001/002 cerradas; GATE-01 en PASS y GATE-02 pendiente
 
 ## 1. Reglas generales
 
@@ -89,7 +88,7 @@ regeneración corresponde a PKG-10.
 **Objetivo:** verificar las 16 referencias parciales o mínimas.
 
 **Estado:** **COMPLETADO E INTEGRADO; INCIDENCIAS CANÓNICAS CERRADAS;
-PROPAGACIÓN PKG-08 PENDIENTE**. Las 16/16
+PROPAGACIÓN PKG-08 COMPLETADA**. Las 16/16
 referencias fueron tratadas en
 [VERIFICACION_BIBLIOGRAFICA_PKG_02_V1_0.md](./VERIFICACION_BIBLIOGRAFICA_PKG_02_V1_0.md)
 y el cierre/triage consta en
@@ -114,10 +113,9 @@ incidencia. No se modifica silenciosamente `project/`.
 **Salida:** dossier de verificación, procedencia de cada dato, incidencias y
 registros preparados para `references.bib`. Resultado: catorce verificadas con
 ajustes, una verificación parcial y una incompatibilidad de uso; S1 = 13,
-S2 = 1, S3 = 1 y S4 = 1. `references.bib` continúa vacío y pendiente. La
-correspondencia canónica fuente/uso de las dos incidencias está cerrada. Su
-propagación editorial y bibliográfica condiciona PKG-08, no la evaluación de
-GATE-01.
+S2 = 1, S3 = 1 y S4 = 1. La correspondencia canónica fuente/uso de las dos
+incidencias está cerrada y su propagación editorial y bibliográfica quedó
+integrada mediante PKG-08.
 
 ### PKG-03 — EXT-B cartografía
 
@@ -197,7 +195,7 @@ PASS. El render no constituye candidata formal.
 | Paquete | Estado | Dependencia conservada |
 |---|---|---|
 | PKG-01 | **COMPLETADO E INTEGRADO** | Commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; sincronización técnica completada por CR-V1-001; presentación editorial y candidata pendientes. |
-| PKG-02 | **COMPLETADO E INTEGRADO; INCIDENCIAS CANÓNICAS CERRADAS; PROPAGACIÓN PKG-08 PENDIENTE** | 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` cerradas en `a162fad`; `references.bib` vacío y propagación editorial pendiente. |
+| PKG-02 | **COMPLETADO E INTEGRADO; INCIDENCIAS CANÓNICAS CERRADAS; PROPAGACIÓN PKG-08 COMPLETADA** | 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` cerradas en `a162fad`; 24 referencias activas integradas mediante PKG-08. |
 | PKG-03 | **COMPLETADO E INTEGRADO** | Mapas regional y local APTO; procedencia, licencia, atribución, redistribución, accesibilidad y reproducibilidad verificadas. Inserción editorial pendiente de PKG-07. |
 | PKG-04 | **COMPLETADO E INTEGRADO** | Prototipo `7c6d687`; `F3-APROBAR`; despliegue global `61a5098`; 18/18 páginas, 35/35 unidades y suite completa en PASS. |
 | PKG-05 | **COMPLETADO E INTEGRADO** | REV-023–026 y DEC-014 resueltas en `0be55e6`; auditoría A/B sin pérdida, 630 pruebas y validadores en PASS. |
@@ -261,8 +259,9 @@ red de vulnerabilidades/amortiguadores.
 
 ### PKG-08 — Fuentes, citas, trazabilidad y aparatos
 
-**Estado:** **HABILITADO — NO INICIADO** tras `GATE-01 = PASS`. Es la primera
-operación recomendada para restaurar la sincronización canonical → publication.
+**Estado:** **COMPLETADO E INTEGRADO** en
+`c38bb87073362a8a100e7e91106b08f2a1592acb`. La revisión y el cierre constan en
+[CIERRE_PKG_08_FUENTES_CITAS_TRAZABILIDAD_APARATOS.md](./CIERRE_PKG_08_FUENTES_CITAS_TRAZABILIDAD_APARATOS.md).
 
 Implementa:
 
@@ -528,8 +527,8 @@ chore(release): publish version 1.0
   DEC-014 implementada.
 - [ ] 8. Apertura y preliminares integrados.
 - [ ] 9. Aparato visual integrado.
-- [ ] 10. CIT, bibliografía, QA, historia y modelos de cita integrados.
-- [ ] 11. D/C/I/E/L navegable.
+- [x] 10. CIT, bibliografía, QA, historia y modelos de cita integrados.
+- [x] 11. D/C/I/E/L navegable.
 - [ ] 12. Metadatos, licencia y copyright cerrados.
 - [ ] 13. Salidas reproducibles.
 - [ ] 14. Validación integral en PASS.
@@ -560,6 +559,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01 — PASS. PKG-06–PKG-09 HABILITADOS; GATE-02 PENDIENTE.**
+**GATE-01 — PASS. PKG-08 INTEGRADO; PKG-06, PKG-07 Y PKG-09 HABILITADOS; GATE-02 PENDIENTE.**
 
-**SIGUIENTE PASO RECOMENDADO: PKG-08 — Fuentes, citas, trazabilidad y aparatos, para propagar el nuevo estado canónico y restaurar la sincronización de publication.**
+**SIGUIENTE PASO RECOMENDADO: racionalizar y formalizar el protocolo permanente de ejecución antes de iniciar PKG-06, PKG-07 o PKG-09.**

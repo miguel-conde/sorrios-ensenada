@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 15 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; GATE-01 en PASS; PKG-08 completado en rama aislada y pendiente de revisión/integración; la candidata anterior no está regenerada<br>
-**Fase actual:** Fase 6A — PKG-08 técnicamente completado en `pkg-08/sources-traceability-apparatus-v1`; GATE-02 pendiente<br>
+**Estado global:** Fase 6 en curso; GATE-01 en PASS; PKG-08 completado e integrado; la candidata anterior no está regenerada<br>
+**Fase actual:** Fase 6A — PKG-08 integrado en `feature/quarto-book`; GATE-02 pendiente<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -51,11 +51,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
     F3 sobre 18 páginas y 35 unidades.
 26. `docs/CIERRE_PKG_05_CORRECCIONES_TECNICAS_RENDIMIENTO.md` para la revisión,
     integración y límites de PKG-05.
+27. `docs/CIERRE_PKG_08_FUENTES_CITAS_TRAZABILIDAD_APARATOS.md` para la revisión,
+    integración y cierre de PKG-08.
 
 ## Estado comprobado
 
 - `main` y `origin/main` comprobados en `e81dc9239ac8dbabfe77168a50ef98c4d3b79170`; permanecen intactos.
-- Edición Crítica 3.6, Estudio Histórico 1.2, Registro 1.2 y edición modernizada 1.3 vigentes.
+- Edición Crítica 3.6, Estudio Histórico 1.3, Registro 1.3 y edición modernizada 1.3 vigentes.
 - Índice rector 1.5 y Plan de composición 0.5 vigentes.
 - Manuscrito: PDF autoritativo de 18 páginas en Drive, solo lectura; no está en GitHub.
 - PDF completo 0.6: referencia editorial externa, no autoridad ni archivo del repositorio.
@@ -110,8 +112,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
   BIB-015.
 - El commit `a162fad1792aa9b3804a5499d348ab355e5ce574` fue revisado e integrado
   por fast-forward. No se buscaron fuentes sustitutivas; la propagación a
-  `publication/`, citas y bibliografía quedó ejecutada en la rama aislada de
-  PKG-08 y permanece pendiente de revisión/integración.
+  `publication/`, citas y bibliografía quedó integrada mediante PKG-08.
 - PKG-03 completado e integrado mediante fast-forward en
   `4d0210f5f127933ac7a059bb029cde04ecd6d28b`. Los mapas regional y local son
   APTO, reproducibles y redistribuibles con las atribuciones IGN/CNIG/SCN
@@ -146,18 +147,19 @@ Una sesión nueva de Copilot debe leer, en este orden:
   `9678856cff35d7cd2398a74590429180ef969bcc`. PKG-00–05 cumplen sus criterios,
   `INC-BIB-001/002` están cerradas y la suite actual —585 passed, 9 failed y
   36 errors— representa una desincronización controlada asignada a PKG-08, no
-  una regresión bloqueante. PKG-06–09 quedan habilitados y no iniciados;
-  GATE-02 permanece pendiente.
-- PKG-08 quedó completado técnicamente en la rama aislada
-  `pkg-08/sources-traceability-apparatus-v1`: `publication/` volvió a quedar
+  una regresión bloqueante. En ese momento PKG-06–09 quedaron habilitados y
+  no iniciados; GATE-02 permanece pendiente.
+- PKG-08 quedó completado e integrado por avance rápido en
+  `c38bb87073362a8a100e7e91106b08f2a1592acb`: `publication/` volvió a quedar
   sincronizada con el estado canónico de `a162fad...`; la bibliografía pública
   reúne 24 fuentes activas para 24 entradas E/E-I; CIT-B/C, 111 anchors y
   retornos D/C/I/E/L, nueve QA1, historia intelectual/editorial y modelos de
   cita 11/11 están implementados. `TOP-006` permanece solo en la matriz,
   `TRA-006` está ausente y BIB-015 conserva su alcance restringido. El cierre
   verificable está en
-  `docs/PKG_08_FUENTES_CITAS_TRAZABILIDAD_APARATOS_V1_0.md`; falta revisar e
-  integrar la rama y no se ha regenerado una candidata formal.
+  `docs/PKG_08_FUENTES_CITAS_TRAZABILIDAD_APARATOS_V1_0.md` y
+  `docs/CIERRE_PKG_08_FUENTES_CITAS_TRAZABILIDAD_APARATOS.md`; no se ha
+  regenerado una candidata formal.
 - Candidata Quarto anterior: la candidata técnica de 334 páginas y SHA-256
   `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183` se conserva
   como `baseline pre-PKG-01 / no sincronizada con las fuentes canónicas
@@ -165,9 +167,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
   vigente del estado canónico actual.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque ni configuración de despliegue.
-- El antiguo placeholder `references.bib` contiene ahora, en la rama aislada
-  de PKG-08, 24 registros activos. La bibliografía pública, CIT-B/C y las citas
-  próximas están implementadas y pendientes de revisión/integración. La
+- El antiguo placeholder `references.bib` contiene ahora 24 registros activos.
+  La bibliografía pública, CIT-B/C y las citas próximas están integradas. La
   publicación no fue regenerada durante PKG-02.
 
 ## Fases
@@ -182,13 +183,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | GATE-01 en PASS; PKG-06–09 habilitados; quedan GATE-02, PKG-10–12, aceptación humana del preview y PKG-13/Fase 6B |
+| 6. Preview y publicación 1.0 | en curso | GATE-01 en PASS; PKG-08 integrado; PKG-06, PKG-07 y PKG-09 habilitados; quedan GATE-02, PKG-10–12, aceptación humana del preview y PKG-13/Fase 6B |
 
 ## Siguiente tarea exacta
 
-`GATE-01 = PASS. PKG-06–PKG-09 HABILITADOS. GATE-02 = PENDIENTE.`
+`GATE-01 = PASS. PKG-08 INTEGRADO. PKG-06, PKG-07 Y PKG-09 HABILITADOS. GATE-02 = PENDIENTE.`
 
-`SIGUIENTE PASO RECOMENDADO: revisar e integrar la rama aislada de PKG-08.`
+`SIGUIENTE PASO RECOMENDADO: racionalizar y formalizar el protocolo permanente de ejecución antes de iniciar PKG-06, PKG-07 o PKG-09.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -210,7 +211,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | GATE-01 en PASS; PKG-08 completado en rama aislada y pendiente de revisión/integración; GATE-02 pendiente |
+| 6A | en curso | GATE-01 en PASS; PKG-08 completado e integrado; GATE-02 pendiente |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; DEC-012 y DEC-014 implementadas e integradas |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
@@ -220,7 +221,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 6A.4 | completada documentalmente | contrato de alcance, backlog, exclusiones, PKG-00–13, GATE-00–05 y control `CR-V1-*` registrados; candidata intacta |
 | PKG-00 | completado | inventario, decisiones humanas y cierre documental completados; autoría y datos aplicables resueltos; diferimientos controlados |
 | PKG-01 | completado e integrado | commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; sincronización técnica completada; presentación editorial y candidata pendientes |
-| PKG-02 | completado e integrado; incidencias canónicas cerradas; propagación ejecutada en la rama de PKG-08 | commit bibliográfico `9dbc0f8e7147c5ffa637f819ba17cfad5d19309d` y resolución canónica `a162fad1792aa9b3804a5499d348ab355e5ce574`; 16/16 tratadas; 24 referencias activas implementadas por PKG-08 |
+| PKG-02 | completado e integrado; incidencias canónicas cerradas; propagación completada por PKG-08 | commit bibliográfico `9dbc0f8e7147c5ffa637f819ba17cfad5d19309d` y resolución canónica `a162fad1792aa9b3804a5499d348ab355e5ce574`; 16/16 tratadas; 24 referencias activas integradas por PKG-08 |
 | PKG-03 | completado e integrado | commit `4d0210f5f127933ac7a059bb029cde04ecd6d28b`; mapas regional y local APTO, licenciados, accesibles y reproducibles; assets todavía no insertados en la publicación |
 | CR-V1-001 | cerrada e integrada | commit `c07bc011a42952f64622e3f78e8d759ad361cf29`; contrato GH-B sincronizado, generated/ ignorado y suite completa en PASS |
 | PKG-04 | completado e integrado | prototipo `7c6d687`; `F3-APROBAR`; despliegue global `61a5098`; 18/18 páginas, 35/35 unidades y suite completa en PASS |
@@ -228,7 +229,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | GATE-01 | PASS | evaluación formal sobre `9678856cff35d7cd2398a74590429180ef969bcc`; desincronización de publication aceptada como diferimiento contractual de PKG-08 |
 | PKG-06 | habilitado — no iniciado | preliminares y arquitectura editorial; depende de inputs aplicables de PKG-00 |
 | PKG-07 | habilitado — no iniciado | inserción de mapas y aparato visual aprobado |
-| PKG-08 | completado en rama aislada; pendiente de revisión/integración | propagación canónica, fuentes, citas, bibliografía, provenance y aparatos implementados; candidata formal no regenerada |
+| PKG-08 | completado e integrado | commit `c38bb87073362a8a100e7e91106b08f2a1592acb`; propagación canónica, fuentes, citas, bibliografía, provenance y aparatos integrados; candidata formal no regenerada |
 | PKG-09 | habilitado — no iniciado, sujeto a DAT | identidad final, metadatos y cierre |
 | GATE-02 | pendiente | cerrado hasta integrar PKG-06–09 |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
@@ -644,7 +645,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
   de PKG-03 ni autorizan nuevas fuentes o investigación histórica.
 - Integridad: no se modificaron `project/`, `publication/`, `plugins/`,
   `tests/`, `.github/` ni los PDF; no se ejecutaron Quarto/render, push, tag o
-  release. El placeholder `references.bib` sigue vacío y sin cambios.
+  release. En ese cierre, el placeholder `references.bib` permaneció vacío y
+  sin cambios.
 
 ## Cierre de la resolución canónica de INC-BIB-001/002
 
@@ -785,7 +787,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - Cierre verificable:
   `docs/CIERRE_PKG_05_CORRECCIONES_TECNICAS_RENDIMIENTO.md`.
 - Situación posterior: `INC-BIB-001` e `INC-BIB-002` están cerradas
-  canónicamente; la propagación editorial permanece pendiente de PKG-08.
+  canónicamente; la propagación editorial quedó completada por PKG-08.
 
 ## Cierre formal de GATE-01 — pretrabajos aceptados
 
@@ -798,13 +800,15 @@ Una sesión nueva de Copilot debe leer, en este orden:
   suite general arroja 585 pruebas superadas, nueve fallos y 36 errores.
 - Clasificación: los 45 no-PASS corresponden de forma exhaustiva a la
   desincronización controlada entre el nuevo estado canónico y `publication/`;
-  su propagación obligatoria pertenece a PKG-08. No constituyen regresión ni
+  su propagación obligatoria se asignó a PKG-08 y quedó completada. No
+  constituyeron regresión ni
   criterio incumplido de GATE-01.
 - Integridad: `project/`, `publication/`, `references.bib`, manuscrito,
   cartografía y contenido histórico no fueron modificados durante la
   evaluación; no se generó candidata ni se inició ningún paquete posterior.
-- Consecuencia: PKG-06–PKG-09 están habilitados y no iniciados; GATE-02
-  permanece pendiente y Fase 6B continúa prohibida antes de GATE-04/GATE-05.
+- Consecuencia en la fecha de GATE-01: PKG-06–PKG-09 quedaron habilitados y no
+  iniciados; GATE-02 permanece pendiente y Fase 6B continúa prohibida antes de
+  GATE-04/GATE-05.
 - Dossier verificable:
   `docs/GATE_01_PRETRABAJOS_ACEPTADOS.md`.
 
@@ -818,4 +822,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/GATE_01_PRETRABAJOS_ACEPTADOS.md`, `docs/CIERRE_RESOLUCION_CANONICA_INC_BIB_001_002.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta exclusivamente PKG-08 — Fuentes, citas, trazabilidad y aparatos, para propagar el nuevo estado canónico y restaurar la sincronización de `publication/`. Parte de `GATE-01 = PASS`; no inicies otros paquetes, no hagas push ni tag y no inicies Fase 6B.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_PKG_08_FUENTES_CITAS_TRAZABILIDAD_APARATOS.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Racionaliza y formaliza el protocolo permanente de ejecución antes de iniciar PKG-06, PKG-07 o PKG-09. No inicies esos paquetes, no hagas push ni tag y no inicies Fase 6B.
