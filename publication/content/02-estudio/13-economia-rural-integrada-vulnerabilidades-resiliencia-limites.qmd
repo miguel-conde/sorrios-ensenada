@@ -2,6 +2,7 @@
 title: "Una economía rural integrada: vulnerabilidades, resiliencia y límites"
 chapter-id: economia-rural-integrada-vulnerabilidades-resiliencia-limites
 publication-status: development
+lightbox: true
 sources:
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
     locator: "versión 1.5, Parte II, capítulo 13"
@@ -83,6 +84,19 @@ La tabla expresa conexiones, no una contabilidad de entradas y salidas. Cada
 fila mantiene la naturaleza fijada en los capítulos 5–12 y en el Registro:
 valor no equivale a producción, utilidad no equivale a ingreso, uso no equivale
 a propiedad y obligación no equivale a gasto ejecutado.
+
+### Lectura visual de las relaciones {#economia-diagrama-relaciones}
+
+El diagrama traduce esa misma tabla a una lectura relacional. Sus líneas no
+tienen flechas porque expresan conexiones documentadas o interpretaciones
+acotadas, no direcciones causales, intensidades, flujos o balances.
+
+![Relaciones funcionales e institucionales de la economía rural local y límites que impiden leerlas como cuenta, flujo o balance.](../../assets/visual/diagrama-economia-rural.svg){#fig-diagrama-economia-rural .visual-apparatus fig-alt="Diagrama sin flechas con ocho componentes relacionados: tierra, ganado, trabajo, agua y molinos, común y servicios, derechos y fiscalidad, dinero y prestaciones, y dos pagos exteriores. Mantiene explícitos los límites de cálculo e interpretación del capítulo 13." fig-pos="H" width="100%"}
+
+::: {.visual-source}
+**Fuente:** síntesis aceptada del capítulo 13, en especial la tabla anterior.
+No incorpora cifras, causalidades ni relaciones ajenas a este capítulo.
+:::
 
 ## Base agraria y complementariedades {#economia-base-agraria}
 

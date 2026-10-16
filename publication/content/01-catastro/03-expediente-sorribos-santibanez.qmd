@@ -2,6 +2,7 @@
 title: "El expediente de Sorribos y Santibáñez de Ordás"
 chapter-id: expediente-sorribos-santibanez
 publication-status: development
+lightbox: true
 sources:
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
     locator: "versión 1.5, Parte I, capítulo 3"
@@ -126,6 +127,21 @@ del cambio. La continuidad de identificación no equivale a una explicación
 lingüística exhaustiva.
 [@ayuntamientosantamariaordassantibanez] [E: TOP-011]
 
+## Cronología documental del nombre {#expediente-cronologia}
+
+La cronología reúne los hitos que orientan la lectura del topónimo. Distingue
+los testimonios anteriores, el documento local de 1752 y el contexto posterior:
+la posición en la línea no convierte esas noticias en una secuencia fonética
+completa ni fecha los pasos intermedios del cambio.
+
+![Cronología documental de Sorribios, Sorribos y Sorrios: testimonios de 1215, 1267 y 1715; expediente local de 1752; referencias posteriores de 1768, 1831 —publicada en 1864—, 1836 y 1848; e identificación actual.](../../assets/visual/cronologia-documental.svg){#fig-cronologia-documental .visual-apparatus fig-alt="Línea temporal con ocho hitos documentales. Separa testimonios anteriores, el expediente local del 17 de septiembre de 1752, contexto posterior e identificación actual; advierte que no forman una secuencia fonética completa." fig-pos="H" width="100%"}
+
+::: {.visual-source}
+**Fuente:** síntesis visual del relato y de las fuentes citadas en este capítulo;
+evidencia externa [E: TOP-004, TOP-005, TOP-007, TOP-008, TOP-009, TOP-010,
+TOP-011].
+:::
+
 ## Dos nombres dentro de un mismo expediente {#expediente-dos-lugares}
 
 Sorribos y Santibáñez aparecen unidos en el título, en la comparecencia y en la
@@ -140,6 +156,16 @@ barrio relacionado con un vecino de Santibáñez; y hoy Sorrios se identifica
 como barrio de Santibáñez de Ordás. Cada referencia pertenece a su propia fecha
 y función. Juntas sostienen la identificación histórica, pero no convierten las
 formas administrativas de épocas distintas en equivalentes perfectos.
+
+![Entorno contemporáneo de Sorrios —Sorribos en el expediente de 1752— y Santibáñez de Ordás. El río y los límites municipales representados son actuales.](../../assets/cartography/mapa-local.svg){#fig-mapa-local .visual-apparatus fig-alt="Mapa contemporáneo del entorno de Ordás con Sorrios, identificado como Sorribos en el expediente de 1752, Santibáñez de Ordás, Santa María de Ordás, Villapodambre, Rioseco de Tapia y Tapia de la Ribera. Incluye el río Luna y límites municipales actuales; no representa límites históricos." fig-pos="H" width="100%"}
+
+::: {.visual-source}
+**Procedencia cartográfica:** elaboración editorial reproducible a partir de
+BDLJE y NGBE (IGN/CNIG) e IGR_HIDROGRAFIA v1 2023 (SCN/IGN), bajo CC BY 4.0.
+Mapa contemporáneo de orientación; no reconstruye límites, caminos, términos,
+propiedades ni jurisdicciones de 1752. Consulta y snapshot: 11 de octubre de
+2026.
+:::
 
 ## Lo que pertenece a otros capítulos {#expediente-fronteras}
 

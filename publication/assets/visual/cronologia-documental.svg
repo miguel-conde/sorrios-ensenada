@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="timeline-title timeline-desc">
+  <title id="timeline-title">Cronología documental de Sorribios, Sorribos y Sorrios</title>
+  <desc id="timeline-desc">Ocho hitos documentales entre 1215 y la actualidad. Distingue los testimonios anteriores, el expediente local de 1752 y el contexto posterior, sin proponer una secuencia fonética completa.</desc>
+  <metadata>Fuente editorial: capítulo 3 y entradas TOP-004, TOP-005 y TOP-007 a TOP-011 del Registro de afirmaciones y cálculos.</metadata>
+  <defs>
+    <pattern id="document-hatch" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="12" height="12" fill="#f3e7d7"/>
+      <path d="M0 0V12" stroke="#c8a780" stroke-width="3"/>
+    </pattern>
+    <style>
+      text{font-family:'Noto Sans','DejaVu Sans',sans-serif;fill:#20252a}
+      .title{font-size:34px;font-weight:700}.subtitle{font-size:21px;fill:#4b5157}
+      .year{font-size:25px;font-weight:700;text-anchor:end}.kind{font-size:16px;font-weight:700;letter-spacing:1.1px}
+      .body{font-size:20px}.caution{font-size:18px;font-style:italic;fill:#474d52}
+      .axis{stroke:#4d5358;stroke-width:5}.prior{fill:#fff;stroke:#4d5358;stroke-width:3}
+      .document{fill:url(#document-hatch);stroke:#6b3f20;stroke-width:5}
+      .later{fill:#fff;stroke:#174d5f;stroke-width:3;stroke-dasharray:12 7}
+      .current{fill:#fff;stroke:#20252a;stroke-width:4}
+      .card-prior{fill:#fbfaf7;stroke:#74787c;stroke-width:2}
+      .card-document{fill:url(#document-hatch);stroke:#6b3f20;stroke-width:4}
+      .card-later{fill:#f5f9fa;stroke:#517482;stroke-width:2;stroke-dasharray:10 6}
+      .card-current{fill:#fff;stroke:#20252a;stroke-width:3}
+      .legend{font-size:17px}.footer{font-size:18px;font-weight:650}
+    </style>
+  </defs>
+
+  <rect width="1200" height="1200" fill="#fff"/>
+  <text class="title" x="55" y="56">Cronología documental del nombre</text>
+  <text class="subtitle" x="55" y="91">Testimonios anteriores · expediente local de 1752 · contexto posterior</text>
+  <path class="axis" d="M270 145V1035"/>
+
+  <text class="year" x="225" y="189">1215</text>
+  <circle class="prior" cx="270" cy="181" r="13"/>
+  <rect class="card-prior" x="320" y="132" width="820" height="96" rx="8"/>
+  <text class="kind" x="350" y="162">TESTIMONIO ANTERIOR</text>
+  <text class="body" x="350" y="195">Una pesquisa patrimonial sitúa Sorribios dentro de Ordás.</text>
+
+  <text class="year" x="225" y="307">1267</text>
+  <circle class="prior" cx="270" cy="299" r="13"/>
+  <rect class="card-prior" x="320" y="250" width="820" height="96" rx="8"/>
+  <text class="kind" x="350" y="280">TESTIMONIO ANTERIOR</text>
+  <text class="body" x="350" y="313">Venta de un heredamiento en Sorribios de Ordás y sus términos.</text>
+
+  <text class="year" x="225" y="425">1715</text>
+  <circle class="prior" cx="270" cy="417" r="13"/>
+  <rect class="card-prior" x="320" y="368" width="820" height="96" rx="8"/>
+  <text class="kind" x="350" y="398">TESTIMONIO ANTERIOR</text>
+  <text class="body" x="350" y="431">Un pleito menciona al concejo y vecinos de Santibáñez de Sorribos.</text>
+
+  <text class="year" x="225" y="543">17·09·1752</text>
+  <rect class="document" x="256" y="521" width="28" height="28"/>
+  <rect class="card-document" x="320" y="486" width="820" height="104" rx="8"/>
+  <text class="kind" x="350" y="518">DOCUMENTO LOCAL</text>
+  <text class="body" x="350" y="552">Comparecencia de Sorribos y Santibáñez de Ordás.</text>
+  <text class="caution" x="350" y="579">El manuscrito escribe Sorribos cuatro veces.</text>
+
+  <text class="year" x="225" y="669">1768</text>
+  <path class="later" d="M270 652l15 15-15 15-15-15z"/>
+  <rect class="card-later" x="320" y="612" width="820" height="96" rx="8"/>
+  <text class="kind" x="350" y="642">CONTEXTO POSTERIOR</text>
+  <text class="body" x="350" y="675">Santibáñez de Sorribos figura como parroquia del Concejo de Ordás.</text>
+
+  <text class="year" x="225" y="787">1831 / 1864</text>
+  <path class="later" d="M270 770l15 15-15 15-15-15z"/>
+  <rect class="card-later" x="320" y="730" width="820" height="96" rx="8"/>
+  <text class="kind" x="350" y="760">CONTEXTO POSTERIOR</text>
+  <text class="body" x="350" y="793">Una escritura de 1831, publicada en 1864, habla del barrio de Sorribos.</text>
+
+  <text class="year" x="225" y="905">1836 / 1848</text>
+  <path class="later" d="M270 888l15 15-15 15-15-15z"/>
+  <rect class="card-later" x="320" y="848" width="820" height="96" rx="8"/>
+  <text class="kind" x="350" y="878">CONTEXTO POSTERIOR</text>
+  <text class="body" x="350" y="911">El arreglo municipal y Madoz conservan Sorribos entre los lugares.</text>
+
+  <text class="year" x="225" y="1023">Hoy</text>
+  <rect class="current" x="257" y="1002" width="26" height="26" rx="13"/>
+  <rect class="card-current" x="320" y="966" width="820" height="96" rx="8"/>
+  <text class="kind" x="350" y="996">IDENTIFICACIÓN ACTUAL</text>
+  <text class="body" x="350" y="1029">Sorrios es identificado como barrio de Santibáñez de Ordás.</text>
+
+  <g transform="translate(55 1090)">
+    <circle class="prior" cx="14" cy="14" r="11"/><text class="legend" x="34" y="20">anterior</text>
+    <rect class="document" x="177" y="2" width="24" height="24"/><text class="legend" x="217" y="20">expediente de 1752</text>
+    <path class="later" d="M475 1l13 13-13 13-13-13z"/><text class="legend" x="502" y="20">posterior</text>
+    <rect class="current" x="665" y="2" width="24" height="24" rx="12"/><text class="legend" x="705" y="20">identificación actual</text>
+  </g>
+  <text class="footer" x="55" y="1161">Testimonios separados: no forman una secuencia fonética completa ni permiten fechar todos los cambios.</text>
+</svg>

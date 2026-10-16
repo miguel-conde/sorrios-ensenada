@@ -2,6 +2,7 @@
 title: "Un lugar de señorío en el Concejo de Ordás"
 chapter-id: lugar-senorio-concejo-ordas
 publication-status: development
+lightbox: true
 sources:
   - path: project/30_RESULTADOS/EDICION_DIVULGATIVA/Indice_Referencia_Volumen_Final.md
     locator: "versión 1.5, Parte II, capítulo 5"
@@ -31,6 +32,15 @@ identidad documental y la serie histórica del topónimo; el
 [capítulo 4](../01-catastro/04-manuscrito-volumen-actual.qmd) explicó el método
 editorial y la trazabilidad. Aquí esos resultados sirven como punto de partida,
 sin repetirlos.
+
+![Situación contemporánea del ámbito del volumen: provincia de León y área de Ordás. Los límites representados son actuales.](../../assets/cartography/mapa-regional.svg){#fig-mapa-regional .visual-apparatus fig-alt="Mapa contemporáneo en dos escalas: España con la provincia de León destacada, y la provincia de León con el municipio actual de Santa María de Ordás y el ámbito de Sorrios y Santibáñez señalado. No representa límites históricos de 1752." fig-pos="H" width="100%"}
+
+::: {.visual-source}
+**Procedencia cartográfica:** elaboración editorial reproducible a partir de
+BDLJE y NGBE (IGN/CNIG), bajo CC BY 4.0. Mapa contemporáneo de orientación; no
+reconstruye límites, caminos, términos, propiedades ni jurisdicciones de 1752.
+Consulta y snapshot: 11 de octubre de 2026.
+:::
 
 ## Lugar, común, vecinos y Concejo {#lugar-actores}
 

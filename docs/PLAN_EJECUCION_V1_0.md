@@ -251,7 +251,8 @@ PERSONAL** antes de `GATE-02`.
 
 ### PKG-07 — Aparato visual interno
 
-**Estado:** **HABILITADO — NO INICIADO** tras `GATE-01 = PASS`.
+**Estado:** **COMPLETADO EN RAMA AISLADA — PENDIENTE DE REVISIÓN E
+INTEGRACIÓN** tras `GATE-01 = PASS`.
 
 Integra:
 
@@ -566,6 +567,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01 — PASS. PKG-06 Y PKG-08 INTEGRADOS; PKG-07 Y PKG-09 PENDIENTES; GATE-02 PENDIENTE.**
+**GATE-01 — PASS. PKG-06 Y PKG-08 INTEGRADOS; PKG-07 COMPLETADO EN RAMA AISLADA Y PENDIENTE DE REVISIÓN E INTEGRACIÓN; PKG-09 PENDIENTE; GATE-02 PENDIENTE.**
 
-**SIGUIENTE PASO RECOMENDADO: PKG-07 — aparato visual interno.**
+**SIGUIENTE PASO RECOMENDADO: revisar e integrar PKG-07 — aparato visual interno.**

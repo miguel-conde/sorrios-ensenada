@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1250" viewBox="0 0 1200 1250" role="img" aria-labelledby="economy-title economy-desc">
+  <title id="economy-title">Relaciones documentadas de la economía rural local</title>
+  <desc id="economy-desc">Diagrama sin flechas que relaciona tierra, ganado, trabajo, agua y molinos, común, derechos, dinero y conexiones exteriores. Conserva los límites del capítulo 13 y no representa causalidad, flujos ni balances.</desc>
+  <metadata>Fuente editorial exclusiva: síntesis aceptada del capítulo 13, especialmente la tabla Un sistema de relaciones internas.</metadata>
+  <defs>
+    <pattern id="center-hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="14" height="14" fill="#f3e7d7"/>
+      <path d="M0 0V14" stroke="#d6b792" stroke-width="3"/>
+    </pattern>
+    <style>
+      text{font-family:'Noto Sans','DejaVu Sans',sans-serif;fill:#20252a}
+      .title{font-size:34px;font-weight:700}.subtitle{font-size:21px;fill:#4b5157}
+      .connector{fill:none;stroke:#666d72;stroke-width:4;stroke-dasharray:11 8}
+      .box{fill:#fbfaf7;stroke:#4d5358;stroke-width:2}.box-alt{fill:#f5f9fa;stroke:#174d5f;stroke-width:2}
+      .center{fill:url(#center-hatch);stroke:#6b3f20;stroke-width:5}
+      .box-title{font-size:24px;font-weight:700}.box-body{font-size:21px}.limit{font-size:20px;font-style:italic;fill:#4b5157}
+      .center-title{font-size:28px;font-weight:700;text-anchor:middle}.center-body{font-size:22px;text-anchor:middle}
+      .legend{font-size:19px}.limits-title{font-size:21px;font-weight:700}.limits{font-size:20px}
+      .source{font-size:17px;fill:#454b50}
+    </style>
+  </defs>
+
+  <rect width="1200" height="1250" fill="#fff"/>
+  <text class="title" x="55" y="55">Economía rural: relaciones y límites</text>
+  <text class="subtitle" x="55" y="88">Síntesis funcional e institucional del capítulo 13</text>
+
+  <rect class="center" x="350" y="125" width="500" height="172" rx="14"/>
+  <text class="center-title" x="600" y="168">SÍNTESIS INTEGRADA</text>
+  <text class="center-body" x="600" y="207">Relaciones funcionales e institucionales</text>
+  <path d="M415 230H785" stroke="#6b3f20" stroke-width="2"/>
+  <text class="center-body" x="600" y="264">No es cuenta, flujo ni balance</text>
+
+  <path class="connector" d="M600 297V1007"/>
+  <path class="connector" d="M565 417H635M565 607H635M565 797H635M565 987H635"/>
+
+  <rect class="box" x="55" y="342" width="510" height="150" rx="10"/>
+  <text class="box-title" x="82" y="379">Tierra, cultivos y prados</text>
+  <text class="box-body" x="82" y="414">Base cerealista; lino, cebada, forraje</text>
+  <text class="box-body" x="82" y="443">y ritmos distintos.</text>
+  <text class="limit" x="82" y="474">No equivale a producto total.</text>
+
+  <rect class="box-alt" x="635" y="342" width="510" height="150" rx="10"/>
+  <text class="box-title" x="662" y="379">Común y servicios</text>
+  <text class="box-body" x="662" y="414">Repartimiento, vecera y partidas</text>
+  <text class="box-body" x="662" y="443">concretas.</text>
+  <text class="limit" x="662" y="474">Sin presupuesto completo.</text>
+
+  <rect class="box-alt" x="55" y="532" width="510" height="150" rx="10"/>
+  <text class="box-title" x="82" y="569">Ganado y aprovechamientos</text>
+  <text class="box-body" x="82" y="604">Labor, pasto, forraje y prestaciones</text>
+  <text class="box-body" x="82" y="633">en centeno.</text>
+  <text class="limit" x="82" y="664">Sin stocks ni balance alimentario.</text>
+
+  <rect class="box" x="635" y="532" width="510" height="150" rx="10"/>
+  <text class="box-title" x="662" y="569">Derechos, fiscalidad y rentas</text>
+  <text class="box-body" x="662" y="604">Cargas, pagos y servicios unen vecinos,</text>
+  <text class="box-body" x="662" y="633">común, Iglesia y señorío.</text>
+  <text class="limit" x="662" y="664">Sin presión fiscal total ni balance.</text>
+
+  <rect class="box" x="55" y="722" width="510" height="150" rx="10"/>
+  <text class="box-title" x="82" y="759">Trabajo y espacio doméstico</text>
+  <text class="box-body" x="82" y="794">Labranza, jornal, servicio, esquileo</text>
+  <text class="box-body" x="82" y="823">y oficio documentados.</text>
+  <text class="limit" x="82" y="854">Sin población activa ni renta familiar.</text>
+
+  <rect class="box-alt" x="635" y="722" width="510" height="150" rx="10"/>
+  <text class="box-title" x="662" y="759">Dinero, especie y servicio</text>
+  <text class="box-body" x="662" y="794">Coexisten en valoraciones, obligaciones</text>
+  <text class="box-body" x="662" y="823">y prestaciones.</text>
+  <text class="limit" x="662" y="854">Sin monetización total.</text>
+
+  <rect class="box-alt" x="55" y="912" width="510" height="150" rx="10"/>
+  <text class="box-title" x="82" y="949">Agua y molinos</text>
+  <text class="box-body" x="82" y="984">Recurso, molienda harinera y</text>
+  <text class="box-body" x="82" y="1013">funcionamiento temporal.</text>
+  <text class="limit" x="82" y="1044">Sin producción, capacidad o suficiencia.</text>
+
+  <rect class="box" x="635" y="912" width="510" height="150" rx="10"/>
+  <text class="box-title" x="662" y="949">Conexiones exteriores</text>
+  <text class="box-body" x="662" y="984">Dos pagos con destino a Valladolid</text>
+  <text class="box-body" x="662" y="1013">y León.</text>
+  <text class="limit" x="662" y="1044">No prueban comercio regular.</text>
+
+  <rect x="55" y="1094" width="1090" height="92" rx="8" fill="#f3f3f1" stroke="#74787c" stroke-width="2"/>
+  <text class="limits-title" x="82" y="1128">Límites conservados</text>
+  <text class="limits" x="82" y="1162">No representa producción total, renta familiar, presión fiscal total, comercio neto ni autosuficiencia.</text>
+  <path class="connector" d="M55 1211H145"/>
+  <text class="legend" x="160" y="1218">línea sin flecha = relación sin dirección causal, intensidad, flujo o balance</text>
+  <text class="source" x="55" y="1242">Fuente: síntesis aceptada del capítulo 13; no incorpora relaciones ni cifras ajenas.</text>
+</svg>

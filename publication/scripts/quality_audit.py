@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import html
+import hashlib
 import re
 import subprocess
 import tempfile
@@ -62,6 +63,10 @@ INDEXES = tuple(
     )
 )
 LOCAL_HOME_PREFIX = "/" + "home/"
+APPROVED_MAP_SHA256 = {
+    "mapa-regional.svg": "2c6f3c76293a3c67aa698b9abd8b6ad184ad35c4fae3d80de6ec2f176ce99a1d",
+    "mapa-local.svg": "ebc54b6593eab73778860a41db66221e78b6b83028b51602769d02a523fd15df",
+}
 
 
 @dataclass
@@ -193,6 +198,102 @@ def navigation_paths(items: list[object]) -> list[str]:
     return paths
 
 
+def audit_visual_apparatus(publication_root: Path = PUBLICATION_ROOT) -> list[str]:
+    """Validate the bounded, accessible visual apparatus approved for PKG-07."""
+
+    errors: list[str] = []
+    chapters = {
+        "content/01-catastro/03-expediente-sorribos-santibanez.qmd": (
+            "../../assets/visual/cronologia-documental.svg",
+            "../../assets/cartography/mapa-local.svg",
+        ),
+        "content/02-estudio/05-lugar-senorio-concejo-ordas.qmd": (
+            "../../assets/cartography/mapa-regional.svg",
+        ),
+        "content/02-estudio/13-economia-rural-integrada-vulnerabilidades-resiliencia-limites.qmd": (
+            "../../assets/visual/diagrama-economia-rural.svg",
+        ),
+    }
+    all_chapter_text = ""
+    for relative, references in chapters.items():
+        path = publication_root / relative
+        if not path.is_file():
+            errors.append(f"Falta el capítulo que integra aparato visual: {relative}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        all_chapter_text += text
+        for reference in references:
+            if text.count(f"]({reference})") != 1:
+                errors.append(f"{relative} debe integrar una sola vez {reference}")
+        for figure in re.findall(r"!\[[^\]]+\]\([^\)]+\.svg\)\{[^}]+\}", text):
+            if ".visual-apparatus" not in figure or not re.search(
+                r'fig-alt="[^"]{40,}"', figure
+            ):
+                errors.append(f"Figura SVG sin clase o texto alternativo suficiente en {relative}")
+
+    for name, expected in APPROVED_MAP_SHA256.items():
+        path = publication_root / "assets" / "cartography" / name
+        if not path.is_file():
+            errors.append(f"Falta el mapa aprobado: {name}")
+            continue
+        actual = hashlib.sha256(path.read_bytes()).hexdigest()
+        if actual != expected:
+            errors.append(f"El mapa aprobado fue modificado: {name}")
+
+    asset_paths = (
+        publication_root / "assets" / "visual" / "cronologia-documental.svg",
+        publication_root / "assets" / "visual" / "diagrama-economia-rural.svg",
+        publication_root / "assets" / "cartography" / "mapa-regional.svg",
+        publication_root / "assets" / "cartography" / "mapa-local.svg",
+    )
+    for path in asset_paths:
+        if not path.is_file():
+            errors.append(f"Falta el recurso visual: {path.name}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        if (
+            'role="img"' not in text
+            or "aria-labelledby=" not in text
+            or "<title id=" not in text
+            or "<desc id=" not in text
+        ):
+            errors.append(f"SVG sin estructura accesible: {path.name}")
+
+    timeline = asset_paths[0]
+    if timeline.is_file():
+        text = timeline.read_text(encoding="utf-8")
+        for value in ("1215", "1267", "1715", "17·09·1752", "1768", "1831 / 1864", "1836 / 1848", "Hoy"):
+            if value not in text:
+                errors.append(f"La cronología no conserva el hito {value}")
+        if "TOP-006" in text or "TOP-006" in all_chapter_text:
+            errors.append("TOP-006 no puede salir de la matriz de evidencia")
+
+    diagram = asset_paths[1]
+    if diagram.is_file():
+        text = diagram.read_text(encoding="utf-8")
+        for label in (
+            "Tierra, cultivos y prados",
+            "Ganado y aprovechamientos",
+            "Trabajo y espacio doméstico",
+            "Agua y molinos",
+            "Común y servicios",
+            "Derechos, fiscalidad y rentas",
+            "Dinero, especie y servicio",
+            "Conexiones exteriores",
+            "No es cuenta, flujo",
+        ):
+            if label not in text:
+                errors.append(f"El diagrama económico no conserva: {label}")
+        if "marker-end" in text or "<marker" in text:
+            errors.append("El diagrama económico introduce dirección causal mediante flechas")
+
+    styles_path = publication_root / "styles" / "book.scss"
+    styles = styles_path.read_text(encoding="utf-8") if styles_path.is_file() else ""
+    if ".visual-apparatus" not in styles or ".visual-source" not in styles:
+        errors.append("Faltan estilos responsivos del aparato visual")
+    return errors
+
+
 def audit_configuration(publication_root: Path = PUBLICATION_ROOT) -> list[str]:
     errors: list[str] = []
     quarto = yaml.safe_load((publication_root / "_quarto.yml").read_text(encoding="utf-8"))
@@ -239,6 +340,7 @@ def audit_configuration(publication_root: Path = PUBLICATION_ROOT) -> list[str]:
     styles = (publication_root / "styles/book.scss").read_text(encoding="utf-8")
     if ":focus-visible" not in styles or "table-scroll" not in styles:
         errors.append("Los estilos no cubren foco visible y reflow de tablas")
+    errors.extend(audit_visual_apparatus(publication_root))
     return errors
 
 

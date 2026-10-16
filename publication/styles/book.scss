@@ -203,7 +203,49 @@ textarea:focus-visible,
   box-shadow: 0 0 0 0.2rem #fff, 0 0 0 0.4rem #005fcc;
 }
 
+.visual-apparatus {
+  break-inside: avoid;
+  height: auto;
+  max-width: 100%;
+}
+
+figure.visual-apparatus {
+  margin-block: 1.5rem 1rem;
+}
+
+.visual-apparatus img,
+img.visual-apparatus {
+  display: block;
+  height: auto;
+  margin-inline: auto;
+  max-width: 100%;
+}
+
+.visual-source {
+  border-left: 0.18rem solid #727272;
+  color: #4b4b4b;
+  font-size: 0.88rem;
+  margin-block: 0.5rem 1.5rem;
+  padding: 0.15rem 0.8rem;
+}
+
 @media (max-width: 48rem) {
+  body,
+  #quarto-content,
+  .page-columns {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  main.content {
+    max-width: calc(100vw - 2rem);
+    min-width: 0;
+  }
+
   a.uri,
   code {
     overflow-wrap: anywhere;
@@ -229,6 +271,12 @@ textarea:focus-visible,
   .question-external,
   .response-local,
   .material-navigation {
+    overflow-wrap: anywhere;
+  }
+
+  .visual-apparatus,
+  .visual-source {
+    max-width: 100%;
     overflow-wrap: anywhere;
   }
 }
