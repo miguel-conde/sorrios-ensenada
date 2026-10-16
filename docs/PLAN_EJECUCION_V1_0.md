@@ -320,7 +320,10 @@ fase y será sustituido antes del cierre/release de 1.0.
 
 ### PKG-10 — Regeneración reproducible y candidata
 
-**Estado:** **HABILITADO — NO INICIADO** tras `GATE-02 = PASS`.
+**Estado:** **CANDIDATA 1.0 GENERADA Y TÉCNICAMENTE APTA EN RAMA AISLADA —
+PENDIENTE DE REVISIÓN E INTEGRACIÓN**. Construida desde
+`a666e878eb6672bee337ac4a2b6f0410ae8e0872`; manifest y evidencia en
+[PKG_10_CANDIDATA_1_0.md](./PKG_10_CANDIDATA_1_0.md).
 
 Debe:
 
@@ -585,6 +588,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01 Y GATE-02 — PASS. PKG-06, PKG-07, PKG-08 Y PKG-09 COMPLETADOS, INTEGRADOS Y ACEPTADOS.**
+**GATE-01 Y GATE-02 — PASS. PKG-10 HA GENERADO UNA CANDIDATA 1.0 TÉCNICAMENTE APTA EN RAMA AISLADA.**
 
-**SIGUIENTE PASO RECOMENDADO: ejecutar PKG-10 — regeneración reproducible y candidata 1.0.**
+**SIGUIENTE PASO RECOMENDADO: revisar e integrar PKG-10 antes de iniciar PKG-11.**

@@ -1,5 +1,10 @@
 # Candidata de publicación 1.0
 
+> **Referencia histórica sustituida.** Esta candidata técnica de
+> `49ab2e1b1a58ca9201efab54b42a3125de7326f8` queda conservada como baseline
+> preeditorial. La candidata formal vigente se documenta en
+> [PKG_10_CANDIDATA_1_0.md](./PKG_10_CANDIDATA_1_0.md).
+
 **Fase:** 6A — candidata a publicación 1.0 y preview para aceptación editorial<br>
 **Fecha de construcción:** 9 de octubre de 2026<br>
 **Commit de candidata:** `49ab2e1b1a58ca9201efab54b42a3125de7326f8`<br>
