@@ -4623,6 +4623,7 @@ def validate() -> list[str]:
         "content/06-aparatos/como-citar.qmd",
         "content/06-aparatos/bibliografia.qmd",
         *(f"generated/indices/{name}" for name in INDEX_OUTPUT_NAMES),
+        "content/06-aparatos/colofon.qmd",
     )
     for item in expected_navigation:
         if navigation.count(item) != 1:

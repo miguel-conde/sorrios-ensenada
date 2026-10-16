@@ -162,7 +162,7 @@ def test_visual_layout_is_responsive_and_not_dependent_on_colour_alone():
     assert "relación sin dirección causal" in diagram
 
 
-def test_pkg07_preserves_canonical_generated_and_controlled_pkg06_content():
+def test_pkg07_preserves_canonical_generated_and_content_not_owned_by_pkg09():
     assert _git("diff", "--quiet", BASE_COMMIT, "--", "project/").returncode == 0
     assert _git(
         "diff", "--quiet", BASE_COMMIT, "--", "publication/generated/"
@@ -171,7 +171,6 @@ def test_pkg07_preserves_canonical_generated_and_controlled_pkg06_content():
     for relative in (
         "publication/content/00-preliminares/02-prologo.qmd",
         "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd",
-        "publication/meta/publication.yml",
     ):
         expected = _git("show", f"{BASE_COMMIT}:{relative}")
         assert expected.returncode == 0

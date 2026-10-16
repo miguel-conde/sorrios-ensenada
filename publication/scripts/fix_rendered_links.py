@@ -27,6 +27,9 @@ REPLACEMENTS = {
 HEADING_RE = re.compile(r"<h[1-6]\b[^>]*>(.*?)</h[1-6]>", re.DOTALL)
 TABLE_RE = re.compile(r"<table\b([^>]*)>(.*?)</table>", re.DOTALL)
 TAG_RE = re.compile(r"<[^>]+>")
+YEAR_ONLY_DATE_META_RE = re.compile(
+    r'(<meta\s+name="dcterms\.date"\s+content=")(?P<year>\d{4})-01-01(\">)'
+)
 
 
 def _plain_text(fragment: str) -> str:
@@ -85,6 +88,10 @@ def fix_rendered_links(output_root: Path) -> int:
             occurrences = updated.count(old)
             updated = updated.replace(old, new)
             replacements += occurrences
+        # Quarto normalizes a year-only book date to 1 January in Dublin Core
+        # metadata. Preserve the approved year without inventing an exact
+        # publication day; the visible date is already formatted as YYYY.
+        updated = YEAR_ONLY_DATE_META_RE.sub(r"\g<1>\g<year>\g<3>", updated)
         updated = _table_accessibility(updated)
         if updated != text:
             path.write_text(updated, encoding="utf-8", newline="\n")

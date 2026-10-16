@@ -16,13 +16,16 @@ sources:
 **Edición modernizada y revisión:** Miguel Conde de Simón
 
 Miguel Conde de Simón es el único participante humano en la elaboración
-intelectual del volumen. Las herramientas digitales empleadas durante la
-producción no son autoras, editoras intelectuales, revisoras humanas ni
-colaboradoras humanas.
+intelectual del volumen. Se utilizaron herramientas digitales y sistemas de
+inteligencia artificial como apoyo en tareas de transcripción, revisión,
+análisis, estructuración, comprobación y preparación editorial. No tienen
+autoría ni responsabilidad intelectual: las decisiones históricas,
+paleográficas, editoriales y de publicación fueron revisadas y asumidas por
+Miguel Conde de Simón.
 
 ## Derechos {.unnumbered}
 
-© Miguel Conde de Simón, para el contenido original.
+© 2026 Miguel Conde de Simón, para el contenido original.
 
 El contenido original que el autor puede licenciar se ofrece bajo
 [CC BY 4.0 — Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/deed.es).

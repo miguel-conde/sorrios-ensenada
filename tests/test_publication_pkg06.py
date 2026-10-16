@@ -65,7 +65,8 @@ def test_preliminaries_precede_the_unchanged_six_part_macroorder():
     paths = quality.navigation_paths(items)
     assert tuple(paths[:5]) == ("index.qmd", *PRELIMINARIES)
     assert tuple(item["part"] for item in items if isinstance(item, dict)) == quality.PARTS
-    assert len(paths) == 38
+    assert len(paths) == 39
+    assert paths[-1] == "content/06-aparatos/colofon.qmd"
 
 
 def test_manifest_registers_the_four_preliminaries_in_public_order():
@@ -165,10 +166,9 @@ def test_informative_closure_titles_preserve_the_stable_anchors():
         assert f"## Síntesis {{#{anchor}}}" not in text
 
 
-def test_pkg06_does_not_modify_canonical_sources_generated_outputs_or_release_metadata():
+def test_pkg06_does_not_modify_canonical_sources_or_generated_outputs():
     assert _git("diff", "--quiet", BASE_COMMIT, "--", "project/") == ""
     assert _git("diff", "--quiet", BASE_COMMIT, "--", "publication/generated/") == ""
-    assert _git("diff", "--quiet", BASE_COMMIT, "--", "publication/meta/publication.yml") == ""
 
 
 def test_static_publication_audit_accepts_the_pkg06_architecture():

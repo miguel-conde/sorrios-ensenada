@@ -131,6 +131,9 @@ chapters:
     path: generated/indices/09-indice-materias.qmd
     publication_status: generated
     generated: true
+  - chapter_id: colofon
+    path: content/06-aparatos/colofon.qmd
+    publication_status: prepublication
   - chapter_id: facsimil-pagina-12
     path: generated/14-facsimil-prototipo.qmd
     publication_status: prototype

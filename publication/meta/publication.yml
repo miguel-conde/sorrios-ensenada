@@ -1,6 +1,29 @@
 publication:
-  version: "0.1.0-dev"
-  status: development
+  version: "1.0"
+  status: prepublication
+  identity:
+    title: "Sorribos y Santibáñez de Ordás en 1752"
+    subtitle: "Estudio histórico y edición integral del Catastro de Ensenada"
+    project: "Proyecto Sorríos — Catastro de Ensenada"
+    author:
+      display: "Miguel Conde de Simón"
+      bibliographic: "Conde de Simón, Miguel"
+    language: es
+    year: 2026
+  rights:
+    copyright: "© 2026 Miguel Conde de Simón"
+    holder: "Miguel Conde de Simón"
+    license: "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    scope: "contenido original que el autor puede licenciar"
+    third_party: "el facsímil, las reproducciones documentales, la cartografía, las imágenes, las citas y otros materiales de terceros conservan sus condiciones propias"
+  pending:
+    before_candidate:
+      - texto definitivo del prólogo personal
+    at_release:
+      - fecha exacta de publicación
+      - URL canónica
+    non_blocking:
+      - ISBN solo si llega a existir
 
 base:
   git_commit: "a162fad1792aa9b3804a5499d348ab355e5ce574"

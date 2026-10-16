@@ -44,6 +44,7 @@ NARRATIVE_APPARATUS = (
     "content/06-aparatos/historia-intelectual-editorial.html",
     "content/06-aparatos/como-citar.html",
     "content/06-aparatos/bibliografia.html",
+    "content/06-aparatos/colofon.html",
 )
 INDEXES = tuple(
     f"generated/indices/{number:02d}-{slug}.html"
@@ -304,6 +305,8 @@ def audit_configuration(publication_root: Path = PUBLICATION_ROOT) -> list[str]:
         ("title", "Sorribos y Santibáñez de Ordás en 1752"),
         ("subtitle", "Estudio histórico y edición integral del Catastro de Ensenada"),
         ("author", "Miguel Conde de Simón"),
+        ("date", "2026"),
+        ("date-format", "YYYY"),
     ):
         if book.get(field) != expected:
             errors.append(f"Identidad editorial incorrecta en book.{field}")
@@ -317,10 +320,15 @@ def audit_configuration(publication_root: Path = PUBLICATION_ROOT) -> list[str]:
     expected_preliminaries = tuple(
         path.replace(".html", ".qmd") for path in PRELIMINARIES
     )
-    if len(paths) != 38 or tuple(paths[:5]) != ("index.qmd", *expected_preliminaries):
+    if (
+        len(paths) != 39
+        or tuple(paths[:5]) != ("index.qmd", *expected_preliminaries)
+        or paths[-1] != "content/06-aparatos/colofon.qmd"
+    ):
         errors.append(
-            "La composición debe contener 38 documentos públicos y comenzar "
-            "por portada, créditos, prólogo, introducción y convenciones"
+            "La composición debe contener 39 documentos públicos, comenzar "
+            "por portada, créditos, prólogo, introducción y convenciones y "
+            "terminar con el colofón"
         )
     manifest = yaml.safe_load(
         (publication_root / "meta/chapters.yml").read_text(encoding="utf-8")
@@ -356,8 +364,8 @@ def _local_target(source: Path, href: str) -> tuple[Path, str] | None:
 def audit_html_book(book_root: Path = BOOK_ROOT) -> list[str]:
     errors: list[str] = []
     html_paths = sorted(book_root.rglob("*.html"))
-    if len(html_paths) != 38:
-        errors.append(f"Se esperaban 38 documentos HTML y existen {len(html_paths)}")
+    if len(html_paths) != 39:
+        errors.append(f"Se esperaban 39 documentos HTML y existen {len(html_paths)}")
     parsed = {path.resolve(): parse_html(path) for path in html_paths}
     titles: dict[str, Path] = {}
     ids = {path: set(parser.ids) for path, parser in parsed.items()}
@@ -528,6 +536,8 @@ def audit_pdf(pdf_path: Path = PDF_PATH, *, deep: bool = False) -> list[str]:
         return [f"No se pudo inspeccionar el PDF con Poppler: {exc}"]
     if "Title:           Sorribos y Santibáñez de Ordás en 1752" not in info:
         errors.append("Título PDF ausente o incorrecto")
+    if not re.search(r"^Author:\s+Miguel Conde de Simón$", info, re.MULTILINE):
+        errors.append("Autor PDF ausente o incorrecto")
     if not re.search(r"^Pages:\s+\d+$", info, re.MULTILINE):
         errors.append("Número de páginas PDF no inspeccionable")
     font_rows = [line.split() for line in fonts.splitlines()[2:] if line.strip()]

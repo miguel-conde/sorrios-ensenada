@@ -10,6 +10,8 @@ book:
   title: "Sorribos y Santibáñez de Ordás en 1752"
   subtitle: "Estudio histórico y edición integral del Catastro de Ensenada"
   author: "Miguel Conde de Simón"
+  date: "2026"
+  date-format: "YYYY"
   output-file: "sorribos-santibanez-ordas-1752"
   sidebar:
     collapse-level: 1
@@ -64,11 +66,16 @@ book:
         - generated/indices/07-indice-cargas-fiscalidad.qmd
         - generated/indices/08-indice-preguntas-respuestas.qmd
         - generated/indices/09-indice-materias.qmd
+        - content/06-aparatos/colofon.qmd
   search: true
   downloads:
     - pdf
 
 bibliography: references.bib
+project-identity: "Proyecto Sorríos — Catastro de Ensenada"
+author-bibliographic: "Conde de Simón, Miguel"
+copyright: "© 2026 Miguel Conde de Simón — contenido original"
+license: "Creative Commons Attribution 4.0 International (CC BY 4.0), aplicada solo al contenido original; los materiales de terceros conservan su régimen propio"
 
 format:
   html:

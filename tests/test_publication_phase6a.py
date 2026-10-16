@@ -38,18 +38,23 @@ def _git(*arguments: str) -> str:
     ).stdout.strip()
 
 
-def test_candidate_keeps_development_semantics_without_inventing_release_metadata():
+def test_final_identity_metadata_preserves_controlled_release_deferrals():
     publication = _yaml(PUBLICATION / "meta/publication.yml")
-    assert publication["publication"] == {
-        "version": "0.1.0-dev",
-        "status": "development",
+    metadata = publication["publication"]
+    assert metadata["version"] == "1.0"
+    assert metadata["status"] == "prepublication"
+    assert metadata["identity"]["author"] == {
+        "display": "Miguel Conde de Simón",
+        "bibliographic": "Conde de Simón, Miguel",
     }
+    assert metadata["identity"]["year"] == 2026
+    assert metadata["pending"]["at_release"] == [
+        "fecha exacta de publicación",
+        "URL canónica",
+    ]
     assert publication["base"]["git_commit"] == CURRENT_CANONICAL_COMMIT
-    forbidden = {"author", "editor", "license", "copyright", "isbn", "url"}
-    assert forbidden.isdisjoint(publication)
-    assert "published" not in (PUBLICATION / "meta/publication.yml").read_text(
-        encoding="utf-8"
-    ).casefold()
+    assert "isbn" not in metadata
+    assert "url" not in metadata
 
 
 def test_candidate_freezes_the_exact_canonical_project_snapshot():
@@ -79,7 +84,7 @@ def test_complete_structure_and_pdf_download_contract_are_stable():
     quarto = _yaml(PUBLICATION / "_quarto.yml")
     assert quarto["book"]["downloads"] == ["pdf"]
     assert quarto["book"]["output-file"] == "sorribos-santibanez-ordas-1752"
-    assert len(quality.navigation_paths(quarto["book"]["chapters"])) == 38
+    assert len(quality.navigation_paths(quarto["book"]["chapters"])) == 39
 
 
 def test_no_preview_provider_or_deployment_has_been_chosen_by_phase6a():
@@ -169,16 +174,18 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
         "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` **CERRADAS CANÓNICAMENTE**",
         "GATE-01 = PASS. PKG-06, PKG-07 Y PKG-08 INTEGRADOS. PKG-09 "
-        "PENDIENTE. GATE-02 = PENDIENTE.",
+        "COMPLETADO EN RAMA AISLADA Y PENDIENTE DE REVISIÓN E INTEGRACIÓN. "
+        "GATE-02 = PENDIENTE.",
         "la propagación editorial quedó completada por PKG-08",
         "| PKG-06 | completado e integrado |",
         "| PKG-07 | completado e integrado |",
         "| PKG-08 | completado e integrado |",
-        "| PKG-09 | habilitado — no iniciado, sujeto a DAT |",
+        "| PKG-09 | completado en rama aislada — pendiente de revisión e "
+        "integración |",
         "su propagación obligatoria se asignó a PKG-08 y quedó completada",
         "PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN PERSONAL",
-        "SIGUIENTE PASO RECOMENDADO: PKG-09 — identidad final, metadatos y "
-        "colofón",
+        "SIGUIENTE PASO RECOMENDADO: revisión e integración de PKG-09 — "
+        "identidad final, metadatos y colofón",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
         "prohibida antes de la aceptación humana del preview |",
     ):
@@ -189,4 +196,5 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
     assert "| PKG-06 | habilitado — no iniciado |" not in roadmap
     assert "| PKG-07 | habilitado — no iniciado |" not in roadmap
     assert "PKG-07 COMPLETADO EN RAMA AISLADA" not in roadmap
+    assert "| PKG-09 | habilitado — no iniciado, sujeto a DAT |" not in roadmap
     assert "GATE-02 = PENDIENTE" in roadmap

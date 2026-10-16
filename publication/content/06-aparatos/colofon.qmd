@@ -1,0 +1,37 @@
+---
+chapter-id: colofon
+publication-status: prepublication
+numbered: false
+number-sections: false
+sources:
+  - path: docs/CIERRE_PKG_00_INPUTS_EDITORIALES.md
+    locator: "secciones 3–5, DAT-001–DAT-010 y DAT-AI-01"
+---
+
+# Colofón {.unnumbered}
+
+*Sorribos y Santibáñez de Ordás en 1752: Estudio histórico y edición integral
+del Catastro de Ensenada*, de **Miguel Conde de Simón**, forma parte del
+**Proyecto Sorríos — Catastro de Ensenada**.
+
+Esta edición reúne estudio histórico, edición crítica, transcripción
+paleográfica revisada, edición modernizada, facsímil y aparatos de consulta. La
+investigación, la dirección editorial, la edición crítica, la transcripción, la
+modernización y su revisión corresponden a Miguel Conde de Simón.
+
+© 2026 Miguel Conde de Simón para el contenido original, ofrecido bajo
+[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.es).
+La licencia no se extiende automáticamente al facsímil, las reproducciones
+documentales, la cartografía, las imágenes, las citas ni otros materiales de
+terceros, que conservan sus condiciones de uso, atribución y reproducción.
+
+El volumen se elaboró y compuso digitalmente mediante procesos reproducibles.
+Se utilizaron herramientas informáticas y sistemas de inteligencia artificial
+como apoyo en tareas de transcripción, revisión, análisis, estructuración,
+comprobación y preparación editorial. Estas herramientas no tienen autoría. Las
+decisiones editoriales, históricas y de publicación fueron revisadas y asumidas
+por Miguel Conde de Simón, a quien corresponde la responsabilidad final de la
+obra.
+
+**Año editorial:** 2026. La fecha exacta de publicación y la URL canónica se
+fijarán en el release; no se anticipan en esta edición previa a candidata.
