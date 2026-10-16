@@ -3,9 +3,9 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00–09 completados e integrados; CR-V1-001 e
-INC-BIB-001/002 cerradas; GATE-01 y GATE-02 en PASS; PKG-10 habilitado y no
-iniciado
+**Estado:** plan operativo; PKG-00–10 completados e integrados; CR-V1-001 e
+INC-BIB-001/002 cerradas; GATE-01 y GATE-02 en PASS; PKG-11 es la siguiente
+operación
 
 ## 1. Reglas generales
 
@@ -320,10 +320,11 @@ fase y será sustituido antes del cierre/release de 1.0.
 
 ### PKG-10 — Regeneración reproducible y candidata
 
-**Estado:** **CANDIDATA 1.0 GENERADA Y TÉCNICAMENTE APTA EN RAMA AISLADA —
-PENDIENTE DE REVISIÓN E INTEGRACIÓN**. Construida desde
+**Estado:** **COMPLETADO E INTEGRADO** en
+`d02b9fbf0e17625f87d19ebe12bf36c1ce633c80`. Construida desde
 `a666e878eb6672bee337ac4a2b6f0410ae8e0872`; manifest y evidencia en
-[PKG_10_CANDIDATA_1_0.md](./PKG_10_CANDIDATA_1_0.md).
+[PKG_10_CANDIDATA_1_0.md](./PKG_10_CANDIDATA_1_0.md) y cierre en
+[CIERRE_PKG_10_CANDIDATA_1_0.md](./CIERRE_PKG_10_CANDIDATA_1_0.md).
 
 Debe:
 
@@ -588,6 +589,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01 Y GATE-02 — PASS. PKG-10 HA GENERADO UNA CANDIDATA 1.0 TÉCNICAMENTE APTA EN RAMA AISLADA.**
+**GATE-01 Y GATE-02 — PASS. PKG-10 COMPLETADO E INTEGRADO; CANDIDATA TÉCNICA 1.0 GENERADA Y REGISTRADA.**
 
-**SIGUIENTE PASO RECOMENDADO: revisar e integrar PKG-10 antes de iniciar PKG-11.**
+**SIGUIENTE PASO RECOMENDADO: ejecutar PKG-11 — validación integral de la candidata 1.0.**

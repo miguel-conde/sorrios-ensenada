@@ -157,7 +157,7 @@ def test_candidate_report_manifests_snapshot_outputs_hashes_and_limitations():
     assert not re.search(r"(?:/home/|/tmp/|[A-Za-z]:\\\\)", report)
 
 
-def test_roadmap_records_pkg10_candidate_and_keeps_phase6b_forbidden():
+def test_roadmap_closes_pkg10_and_keeps_phase6b_forbidden():
     roadmap = (ROOT / "docs/ESTADO_PUBLICACION_QUARTO.md").read_text(
         encoding="utf-8"
     )
@@ -173,8 +173,8 @@ def test_roadmap_records_pkg10_candidate_and_keeps_phase6b_forbidden():
         "| PKG-04 | completado e integrado |",
         "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` **CERRADAS CANÓNICAMENTE**",
-        "GATE-01 = PASS. GATE-02 = PASS. PKG-10: CANDIDATA 1.0 GENERADA Y "
-        "TÉCNICAMENTE APTA EN RAMA AISLADA.",
+        "GATE-01 = PASS. GATE-02 = PASS. PKG-10 COMPLETADO E INTEGRADO; "
+        "CANDIDATA TÉCNICA 1.0 GENERADA Y REGISTRADA.",
         "la propagación editorial quedó completada por PKG-08",
         "| PKG-06 | completado e integrado |",
         "| PKG-07 | completado e integrado |",
@@ -182,9 +182,9 @@ def test_roadmap_records_pkg10_candidate_and_keeps_phase6b_forbidden():
         "| PKG-09 | completado e integrado |",
         "su propagación obligatoria se asignó a PKG-08 y quedó completada",
         "PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN PERSONAL",
-        "PKG-10: CANDIDATA 1.0 GENERADA Y TÉCNICAMENTE APTA EN RAMA AISLADA",
-        "SIGUIENTE PASO RECOMENDADO: revisar e integrar PKG-10 antes de "
-        "iniciar PKG-11",
+        "PKG-10 completado e integrado",
+        "SIGUIENTE PASO RECOMENDADO: ejecutar PKG-11 — validación integral "
+        "de la candidata 1.0",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
         "prohibida antes de la aceptación humana del preview |",
     ):
@@ -197,8 +197,8 @@ def test_roadmap_records_pkg10_candidate_and_keeps_phase6b_forbidden():
     assert "PKG-07 COMPLETADO EN RAMA AISLADA" not in roadmap
     assert "| PKG-09 | habilitado — no iniciado, sujeto a DAT |" not in roadmap
     assert "| GATE-02 | PASS |" in roadmap
-    assert "| PKG-10 | candidata técnicamente apta en rama aislada |" in roadmap
-    assert "PKG-11 no se ha iniciado" in roadmap
+    assert "| PKG-10 | completado e integrado |" in roadmap
+    assert "siguiente operación: PKG-11, validación integral" in roadmap
     gate02 = (ROOT / "docs/GATE_02_IMPLEMENTACION_1_0_ACEPTADA.md").read_text(
         encoding="utf-8"
     )
@@ -225,3 +225,14 @@ def test_roadmap_records_pkg10_candidate_and_keeps_phase6b_forbidden():
         "PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN PERSONAL",
     ):
         assert value in candidate
+    closure = (ROOT / "docs/CIERRE_PKG_10_CANDIDATA_1_0.md").read_text(
+        encoding="utf-8"
+    )
+    for value in (
+        "COMPLETADO E INTEGRADO",
+        "d02b9fbf0e17625f87d19ebe12bf36c1ce633c80",
+        "74b49ecd3f9261bf8153a499ef0bbe59ffd78d24935b7647c3e65be0d37f047e",
+        "7361b491c8095f55a6bb6add3445924b52db6518f49610342cfbbf5a946f4771",
+        "PKG-11 — Validación integral de la candidata 1.0",
+    ):
+        assert value in closure

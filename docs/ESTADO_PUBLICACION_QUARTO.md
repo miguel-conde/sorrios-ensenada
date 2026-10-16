@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 16 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; GATE-01 y GATE-02 en PASS; PKG-10 ha generado una candidata 1.0 técnicamente apta en rama aislada, pendiente de revisión e integración; PKG-11 no iniciado<br>
-**Fase actual:** Fase 6A — candidata formal regenerada por PKG-10; siguiente operación: revisión e integración de PKG-10<br>
+**Estado global:** Fase 6 en curso; GATE-01 y GATE-02 en PASS; PKG-10 completado e integrado; candidata técnica 1.0 generada y registrada; PKG-11 no iniciado<br>
+**Fase actual:** Fase 6A — candidata formal regenerada e integrada por PKG-10; siguiente operación: PKG-11, validación integral<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -57,6 +57,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
     la decisión `GATE-02 = PASS`.
 29. `docs/PKG_10_CANDIDATA_1_0.md` para el manifest y la evidencia de la nueva
     candidata formal.
+30. `docs/CIERRE_PKG_10_CANDIDATA_1_0.md` para la revisión, integración y
+    cierre de PKG-10.
 
 ## Estado comprobado
 
@@ -198,7 +200,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
   bytes y SHA-256
   `7361b491c8095f55a6bb6add3445924b52db6518f49610342cfbbf5a946f4771`.
   La suite completa registra `678 passed`; los validadores y la revisión
-  técnica están en PASS. La rama queda pendiente de revisión e integración y
+  técnica están en PASS. El commit
+  `d02b9fbf0e17625f87d19ebe12bf36c1ce633c80` está integrado por avance rápido;
   PKG-11 no se ha iniciado.
 - Candidata Quarto anterior: la candidata técnica de 334 páginas y SHA-256
   `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183` se conserva
@@ -223,13 +226,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | GATE-01 y GATE-02 en PASS; candidata PKG-10 técnicamente apta en rama aislada; quedan su revisión/integración, PKG-11–12, aceptación humana del preview y PKG-13/Fase 6B |
+| 6. Preview y publicación 1.0 | en curso | GATE-01 y GATE-02 en PASS; PKG-10 completado e integrado; quedan PKG-11–12, aceptación humana del preview y PKG-13/Fase 6B |
 
 ## Siguiente tarea exacta
 
-`GATE-01 = PASS. GATE-02 = PASS. PKG-10: CANDIDATA 1.0 GENERADA Y TÉCNICAMENTE APTA EN RAMA AISLADA.`
+`GATE-01 = PASS. GATE-02 = PASS. PKG-10 COMPLETADO E INTEGRADO; CANDIDATA TÉCNICA 1.0 GENERADA Y REGISTRADA.`
 
-`SIGUIENTE PASO RECOMENDADO: revisar e integrar PKG-10 antes de iniciar PKG-11.`
+`SIGUIENTE PASO RECOMENDADO: ejecutar PKG-11 — validación integral de la candidata 1.0.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -251,7 +254,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | GATE-01 y GATE-02 en PASS; candidata PKG-10 técnicamente apta en rama aislada y pendiente de revisión/integración; PKG-11 no iniciado |
+| 6A | en curso | GATE-01 y GATE-02 en PASS; PKG-10 completado e integrado; PKG-11 no iniciado |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; DEC-012 y DEC-014 implementadas e integradas |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
@@ -272,7 +275,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | PKG-08 | completado e integrado | commit `c38bb87073362a8a100e7e91106b08f2a1592acb`; propagación canónica, fuentes, citas, bibliografía, provenance y aparatos integrados; candidata formal no regenerada |
 | PKG-09 | completado e integrado | commit `25fb7dcf9a477efe74c178d108d6f182d33a406e`; identidad final, metadatos, licencia y colofón consolidados; prólogo, fecha exacta y URL canónica diferidos de forma controlada |
 | GATE-02 | PASS | evaluación formal sobre `3eda91015802928eca0ec919391986c08d52dbbc`; PKG-06–PKG-09 aceptados; PKG-10 habilitado y no iniciado |
-| PKG-10 | candidata técnicamente apta en rama aislada | 39 HTML; PDF 355 páginas / 71.020.397 bytes / SHA-256 `7361b491c8095f55a6bb6add3445924b52db6518f49610342cfbbf5a946f4771`; pendiente de revisión e integración |
+| PKG-10 | completado e integrado | commit `d02b9fbf0e17625f87d19ebe12bf36c1ce633c80`; 39 HTML; PDF 355 páginas / 71.020.397 bytes / SHA-256 `7361b491c8095f55a6bb6add3445924b52db6518f49610342cfbbf5a946f4771` |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
@@ -864,4 +867,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/GATE_02_IMPLEMENTACION_1_0_ACEPTADA.md`, `docs/PKG_10_CANDIDATA_1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Revisa e integra PKG-10 conforme al protocolo permanente, sin repetir renders ni suite completa si el SHA y los artefactos documentados no han cambiado, sin iniciar PKG-11 ni Fase 6B y sin push ni tag.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/PKG_10_CANDIDATA_1_0.md`, `docs/CIERRE_PKG_10_CANDIDATA_1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta PKG-11 — validación integral de la candidata 1.0 — conforme al protocolo permanente, sin iniciar PKG-12 ni Fase 6B y sin push, tag ni release.
