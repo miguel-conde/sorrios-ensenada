@@ -3,9 +3,9 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00–08 completados e integrados; PKG-09
-completado en rama aislada y pendiente de revisión e integración; CR-V1-001 e
-INC-BIB-001/002 cerradas; GATE-01 en PASS y GATE-02 pendiente
+**Estado:** plan operativo; PKG-00–09 completados e integrados; CR-V1-001 e
+INC-BIB-001/002 cerradas; GATE-01 en PASS y GATE-02 pendiente de evaluación
+formal
 
 ## 1. Reglas generales
 
@@ -292,9 +292,12 @@ canónicas desde la bibliografía.
 
 ### PKG-09 — Identidad final, metadatos y cierre
 
-**Estado:** **COMPLETADO EN RAMA AISLADA — PENDIENTE DE REVISIÓN E
-INTEGRACIÓN**. El dossier verificable está en
-[PKG_09_IDENTIDAD_METADATOS_COLOFON_V1_0.md](./PKG_09_IDENTIDAD_METADATOS_COLOFON_V1_0.md).
+**Estado:** **COMPLETADO E INTEGRADO** en
+`25fb7dcf9a477efe74c178d108d6f182d33a406e`. El dossier de implementación está
+en
+[PKG_09_IDENTIDAD_METADATOS_COLOFON_V1_0.md](./PKG_09_IDENTIDAD_METADATOS_COLOFON_V1_0.md)
+y la revisión e integración constan en
+[CIERRE_PKG_09_IDENTIDAD_METADATOS_COLOFON.md](./CIERRE_PKG_09_IDENTIDAD_METADATOS_COLOFON.md).
 
 Cierra:
 
@@ -502,7 +505,8 @@ chore(release): publish version 1.0
 
 ### GATE-02 — Integración editorial completa
 
-**Estado:** `PENDIENTE`; permanece cerrado hasta integrar PKG-06–PKG-09.
+**Estado:** `PENDIENTE DE EVALUACIÓN FORMAL`; PKG-06–PKG-09 están integrados,
+pero esta puerta todavía no ha sido evaluada.
 
 - PKG-06–09 integrados.
 - No quedan datos obligatorios sin resolver.
@@ -575,6 +579,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01 — PASS. PKG-06, PKG-07 Y PKG-08 INTEGRADOS; PKG-09 COMPLETADO EN RAMA AISLADA Y PENDIENTE DE REVISIÓN E INTEGRACIÓN; GATE-02 PENDIENTE.**
+**GATE-01 — PASS. PKG-06, PKG-07, PKG-08 Y PKG-09 COMPLETADOS E INTEGRADOS; GATE-02 PENDIENTE DE EVALUACIÓN FORMAL.**
 
-**SIGUIENTE PASO RECOMENDADO: revisión e integración de PKG-09 — identidad final, metadatos y colofón.**
+**SIGUIENTE PASO RECOMENDADO: evaluar formalmente GATE-02 antes de iniciar PKG-10.**
