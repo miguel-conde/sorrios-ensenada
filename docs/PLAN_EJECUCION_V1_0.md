@@ -200,7 +200,7 @@ PASS. El render no constituye candidata formal.
 |---|---|---|
 | PKG-01 | **COMPLETADO E INTEGRADO** | Commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; sincronización técnica completada por CR-V1-001; presentación editorial y candidata pendientes. |
 | PKG-02 | **COMPLETADO E INTEGRADO; INCIDENCIAS CANÓNICAS CERRADAS; PROPAGACIÓN PKG-08 COMPLETADA** | 16/16 tratadas; `INC-BIB-001` y `INC-BIB-002` cerradas en `a162fad`; 24 referencias activas integradas mediante PKG-08. |
-| PKG-03 | **COMPLETADO E INTEGRADO** | Mapas regional y local APTO; procedencia, licencia, atribución, redistribución, accesibilidad y reproducibilidad verificadas. Inserción editorial pendiente de PKG-07. |
+| PKG-03 | **COMPLETADO E INTEGRADO** | Mapas regional y local APTO; procedencia, licencia, atribución, redistribución, accesibilidad y reproducibilidad verificadas. Inserción editorial completada por PKG-07. |
 | PKG-04 | **COMPLETADO E INTEGRADO** | Prototipo `7c6d687`; `F3-APROBAR`; despliegue global `61a5098`; 18/18 páginas, 35/35 unidades y suite completa en PASS. |
 | PKG-05 | **COMPLETADO E INTEGRADO** | REV-023–026 y DEC-014 resueltas en `0be55e6`; auditoría A/B sin pérdida, 630 pruebas y validadores en PASS. |
 
@@ -251,8 +251,10 @@ PERSONAL** antes de `GATE-02`.
 
 ### PKG-07 — Aparato visual interno
 
-**Estado:** **COMPLETADO EN RAMA AISLADA — PENDIENTE DE REVISIÓN E
-INTEGRACIÓN** tras `GATE-01 = PASS`.
+**Estado:** **COMPLETADO E INTEGRADO** en
+`93e745b8d4ee733b6a3e33e60caca79d93b0ecd0` tras `GATE-01 = PASS`. La
+revisión y el cierre constan en
+[CIERRE_PKG_07_APARATO_VISUAL_INTERNO.md](./CIERRE_PKG_07_APARATO_VISUAL_INTERNO.md).
 
 Integra:
 
@@ -528,13 +530,13 @@ chore(release): publish version 1.0
 - [x] 3. Glosario canónico actualizado.
 - [x] 4. Bibliografía verificada; dos incidencias de correspondencia cerradas
   canónicamente y propagación editorial asignada a PKG-08.
-- [x] 5. Mapas documentados y licenciados; assets preparados, integración
-  editorial pendiente de PKG-07.
+- [x] 5. Mapas documentados, licenciados e integrados editorialmente por
+  PKG-07.
 - [x] 6. F3 decidido, aprobado, desplegado globalmente e integrado.
 - [x] 7. Defectos REV-023–025 corregidos; REV-026 optimizada sin pérdida y
   DEC-014 implementada.
 - [x] 8. Apertura y preliminares integrados.
-- [ ] 9. Aparato visual integrado.
+- [x] 9. Aparato visual integrado.
 - [x] 10. CIT, bibliografía, QA, historia y modelos de cita integrados.
 - [x] 11. D/C/I/E/L navegable.
 - [ ] 12. Metadatos, licencia y copyright cerrados.
@@ -567,6 +569,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01 — PASS. PKG-06 Y PKG-08 INTEGRADOS; PKG-07 COMPLETADO EN RAMA AISLADA Y PENDIENTE DE REVISIÓN E INTEGRACIÓN; PKG-09 PENDIENTE; GATE-02 PENDIENTE.**
+**GATE-01 — PASS. PKG-06, PKG-07 Y PKG-08 INTEGRADOS; PKG-09 PENDIENTE; GATE-02 PENDIENTE.**
 
-**SIGUIENTE PASO RECOMENDADO: revisar e integrar PKG-07 — aparato visual interno.**
+**SIGUIENTE PASO RECOMENDADO: PKG-09 — identidad final, metadatos y colofón.**

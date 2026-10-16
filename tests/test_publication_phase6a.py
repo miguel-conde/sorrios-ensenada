@@ -168,19 +168,17 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
         "| PKG-04 | completado e integrado |",
         "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` **CERRADAS CANÓNICAMENTE**",
-        "GATE-01 = PASS. PKG-06 Y PKG-08 INTEGRADOS. PKG-07 COMPLETADO EN "
-        "RAMA AISLADA Y PENDIENTE DE REVISIÓN E INTEGRACIÓN. PKG-09 "
+        "GATE-01 = PASS. PKG-06, PKG-07 Y PKG-08 INTEGRADOS. PKG-09 "
         "PENDIENTE. GATE-02 = PENDIENTE.",
         "la propagación editorial quedó completada por PKG-08",
         "| PKG-06 | completado e integrado |",
-        "| PKG-07 | completado en rama aislada — pendiente de revisión e "
-        "integración |",
+        "| PKG-07 | completado e integrado |",
         "| PKG-08 | completado e integrado |",
         "| PKG-09 | habilitado — no iniciado, sujeto a DAT |",
         "su propagación obligatoria se asignó a PKG-08 y quedó completada",
         "PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN PERSONAL",
-        "SIGUIENTE PASO RECOMENDADO: revisar e integrar PKG-07 — aparato "
-        "visual interno",
+        "SIGUIENTE PASO RECOMENDADO: PKG-09 — identidad final, metadatos y "
+        "colofón",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
         "prohibida antes de la aceptación humana del preview |",
     ):
@@ -190,4 +188,5 @@ def test_roadmap_keeps_phase6_open_and_forbids_phase6b_before_human_acceptance()
     assert "| PKG-04 | prototipo aprobado e integrado — despliegue global pendiente |" not in roadmap
     assert "| PKG-06 | habilitado — no iniciado |" not in roadmap
     assert "| PKG-07 | habilitado — no iniciado |" not in roadmap
+    assert "PKG-07 COMPLETADO EN RAMA AISLADA" not in roadmap
     assert "GATE-02 = PENDIENTE" in roadmap

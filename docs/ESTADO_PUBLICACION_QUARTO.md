@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 16 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; GATE-01 en PASS; PKG-06 y PKG-08 integrados; PKG-07 completado en rama aislada y pendiente de revisión e integración; la candidata anterior no está regenerada<br>
-**Fase actual:** Fase 6A — PKG-06 y PKG-08 integrados en `feature/quarto-book`; PKG-07 completado en rama aislada; GATE-02 pendiente<br>
+**Estado global:** Fase 6 en curso; GATE-01 en PASS; PKG-06, PKG-07 y PKG-08 completados e integrados; la candidata anterior no está regenerada<br>
+**Fase actual:** Fase 6A — PKG-06, PKG-07 y PKG-08 integrados en `feature/quarto-book`; PKG-09 y GATE-02 pendientes<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -116,8 +116,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - PKG-03 completado e integrado mediante fast-forward en
   `4d0210f5f127933ac7a059bb029cde04ecd6d28b`. Los mapas regional y local son
   APTO, reproducibles y redistribuibles con las atribuciones IGN/CNIG/SCN
-  incorporadas. PKG-07 los ha insertado sin modificarlos en su rama aislada;
-  esa implementación permanece pendiente de revisión e integración.
+  incorporadas. PKG-07 los ha insertado sin modificarlos y esa implementación
+  está integrada en `feature/quarto-book`.
 - `CR-V1-001` se cerró e integró mediante
   `c07bc011a42952f64622e3f78e8d759ad361cf29`. El parser acepta los cinco campos
   base y `Contexto histórico` opcional, el snapshot y la procedencia apuntan al
@@ -164,15 +164,14 @@ Una sesión nueva de Copilot debe leer, en este orden:
   `6040015edba077a530cd3dbbd63825faf7d90833`: preliminares P3, landing HTML,
   portada PDF, créditos, introducción, rutas, convenciones y cierres
   informativos están incorporados. El prólogo conserva el estado
-  **PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN PERSONAL**; PKG-07 está
-  completado en rama aislada y pendiente de revisión e integración, PKG-09 no
-  se ha iniciado y `GATE-02` continúa cerrado.
-- PKG-07 está completado en la rama aislada
-  `pkg-07/visual-apparatus-v1`: integra cronología documental, diagrama de
-  relaciones de la economía rural y los dos mapas aprobados de PKG-03, sin
-  ampliar la evidencia histórica. Su revisión e integración siguen
-  pendientes; el dossier verificable está en
-  `docs/PKG_07_APARATO_VISUAL_INTERNO_V1_0.md`.
+  **PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN PERSONAL**; PKG-09 no se ha
+  iniciado y `GATE-02` continúa cerrado.
+- PKG-07 quedó completado e integrado por avance rápido en
+  `93e745b8d4ee733b6a3e33e60caca79d93b0ecd0`: incorpora cronología documental,
+  diagrama de relaciones de la economía rural y los dos mapas aprobados de
+  PKG-03, sin ampliar la evidencia histórica. DEC-020–022 están implementadas
+  y las exclusiones DEC-023–024 permanecen preservadas. El cierre verificable
+  está en `docs/CIERRE_PKG_07_APARATO_VISUAL_INTERNO.md`.
 - Candidata Quarto anterior: la candidata técnica de 334 páginas y SHA-256
   `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183` se conserva
   como `baseline pre-PKG-01 / no sincronizada con las fuentes canónicas
@@ -196,13 +195,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | GATE-01 en PASS; PKG-06 y PKG-08 integrados; PKG-07 completado en rama aislada y pendiente de revisión e integración; PKG-09 pendiente; quedan GATE-02, PKG-10–12, aceptación humana del preview y PKG-13/Fase 6B |
+| 6. Preview y publicación 1.0 | en curso | GATE-01 en PASS; PKG-06, PKG-07 y PKG-08 integrados; PKG-09 pendiente; quedan GATE-02, PKG-10–12, aceptación humana del preview y PKG-13/Fase 6B |
 
 ## Siguiente tarea exacta
 
-`GATE-01 = PASS. PKG-06 Y PKG-08 INTEGRADOS. PKG-07 COMPLETADO EN RAMA AISLADA Y PENDIENTE DE REVISIÓN E INTEGRACIÓN. PKG-09 PENDIENTE. GATE-02 = PENDIENTE.`
+`GATE-01 = PASS. PKG-06, PKG-07 Y PKG-08 INTEGRADOS. PKG-09 PENDIENTE. GATE-02 = PENDIENTE.`
 
-`SIGUIENTE PASO RECOMENDADO: revisar e integrar PKG-07 — aparato visual interno.`
+`SIGUIENTE PASO RECOMENDADO: PKG-09 — identidad final, metadatos y colofón.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -224,7 +223,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | GATE-01 en PASS; PKG-06 y PKG-08 integrados; PKG-07 completado en rama aislada y pendiente de revisión e integración; GATE-02 pendiente |
+| 6A | en curso | GATE-01 en PASS; PKG-06, PKG-07 y PKG-08 completados e integrados; PKG-09 y GATE-02 pendientes |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; DEC-012 y DEC-014 implementadas e integradas |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
@@ -235,13 +234,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | PKG-00 | completado | inventario, decisiones humanas y cierre documental completados; autoría y datos aplicables resueltos; diferimientos controlados |
 | PKG-01 | completado e integrado | commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; sincronización técnica completada; presentación editorial y candidata pendientes |
 | PKG-02 | completado e integrado; incidencias canónicas cerradas; propagación completada por PKG-08 | commit bibliográfico `9dbc0f8e7147c5ffa637f819ba17cfad5d19309d` y resolución canónica `a162fad1792aa9b3804a5499d348ab355e5ce574`; 16/16 tratadas; 24 referencias activas integradas por PKG-08 |
-| PKG-03 | completado e integrado | commit `4d0210f5f127933ac7a059bb029cde04ecd6d28b`; mapas regional y local APTO, licenciados, accesibles y reproducibles; insertados sin modificación por PKG-07 en su rama aislada |
+| PKG-03 | completado e integrado | commit `4d0210f5f127933ac7a059bb029cde04ecd6d28b`; mapas regional y local APTO, licenciados, accesibles y reproducibles; insertados sin modificación por PKG-07 |
 | CR-V1-001 | cerrada e integrada | commit `c07bc011a42952f64622e3f78e8d759ad361cf29`; contrato GH-B sincronizado, generated/ ignorado y suite completa en PASS |
 | PKG-04 | completado e integrado | prototipo `7c6d687`; `F3-APROBAR`; despliegue global `61a5098`; 18/18 páginas, 35/35 unidades y suite completa en PASS |
 | PKG-05 | completado e integrado | commit `0be55e60cd25d1965eac9b4e421f5b8dda948650`; REV-023–026 y DEC-014 resueltas; A/B sin pérdida, 630 pruebas y validadores en PASS |
 | GATE-01 | PASS | evaluación formal sobre `9678856cff35d7cd2398a74590429180ef969bcc`; desincronización de publication aceptada como diferimiento contractual de PKG-08 |
 | PKG-06 | completado e integrado | commit `6040015edba077a530cd3dbbd63825faf7d90833`; preliminares y arquitectura editorial incorporados; prólogo como placeholder controlado pendiente de redacción personal |
-| PKG-07 | completado en rama aislada — pendiente de revisión e integración | cronología documental, diagrama económico y mapas aprobados, sin ampliación de evidencia histórica |
+| PKG-07 | completado e integrado | commit `93e745b8d4ee733b6a3e33e60caca79d93b0ecd0`; cronología documental, diagrama económico y mapas aprobados, sin ampliación de evidencia histórica |
 | PKG-08 | completado e integrado | commit `c38bb87073362a8a100e7e91106b08f2a1592acb`; propagación canónica, fuentes, citas, bibliografía, provenance y aparatos integrados; candidata formal no regenerada |
 | PKG-09 | habilitado — no iniciado, sujeto a DAT | identidad final, metadatos y cierre |
 | GATE-02 | pendiente | cerrado hasta integrar PKG-06–09 |
@@ -695,8 +694,9 @@ Una sesión nueva de Copilot debe leer, en este orden:
   visibles incorporadas.
 - Validación: `9 passed`, generador y `--check` en PASS, refresco WFS sin cambios
   de hashes, y revisión visual en color, escala de grises y ancho de página.
-- Integración editorial: pendiente de PKG-07; los mapas no aparecen todavía en
-  los capítulos, HTML o PDF y la candidata anterior no fue regenerada.
+- Integración editorial: en el cierre de PKG-03 quedó diferida a PKG-07; este
+  paquete la completó posteriormente sin modificar los mapas aprobados. La
+  candidata anterior no fue regenerada.
 - Incidencia: la validación general reveló `CR-V1-001`, defecto TECH-A
   preexistente a PKG-03. El analizador del Glosario conserva el contrato previo
   de cinco campos y debe adaptarse al GH-B aprobado antes de PKG-04, sin tocar
@@ -835,4 +835,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/PKG_07_APARATO_VISUAL_INTERNO_V1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Revisa e integra PKG-07 conforme al protocolo permanente, sin iniciar PKG-09, GATE-02 ni Fase 6B, y sin push ni tag.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/ALCANCE_APROBADO_V1_0.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CIERRE_PKG_07_APARATO_VISUAL_INTERNO.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta PKG-09 conforme al protocolo permanente, sin iniciar GATE-02 ni Fase 6B, y sin push ni tag.
