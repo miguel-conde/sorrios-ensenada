@@ -4,8 +4,8 @@
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Estado:** plan operativo; PKG-00–09 completados e integrados; CR-V1-001 e
-INC-BIB-001/002 cerradas; GATE-01 en PASS y GATE-02 pendiente de evaluación
-formal
+INC-BIB-001/002 cerradas; GATE-01 y GATE-02 en PASS; PKG-10 habilitado y no
+iniciado
 
 ## 1. Reglas generales
 
@@ -248,7 +248,8 @@ Implementa, sin reabrirlas:
 
 **Salida:** apertura y arquitectura completas en `publication/`.
 El prólogo permanece como **PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN
-PERSONAL** antes de `GATE-02`.
+PERSONAL** por diferimiento humano expreso durante `GATE-02`; Miguel Conde de
+Simón lo sustituirá posteriormente y antes del cierre/release de 1.0.
 
 ### PKG-07 — Aparato visual interno
 
@@ -314,9 +315,12 @@ No inventa ningún valor. El año editorial queda fijado en 2026; la fecha
 exacta y la URL canónica se conservan como diferimientos controlados para el
 release. El ISBN continúa sin ser requisito de 1.0 y solo se consignará si
 llega a existir. El prólogo definitivo permanece pendiente de redacción
-personal antes de la candidata.
+personal; por decisión humana expresa puede seguir como placeholder en esta
+fase y será sustituido antes del cierre/release de 1.0.
 
 ### PKG-10 — Regeneración reproducible y candidata
+
+**Estado:** **HABILITADO — NO INICIADO** tras `GATE-02 = PASS`.
 
 Debe:
 
@@ -505,13 +509,15 @@ chore(release): publish version 1.0
 
 ### GATE-02 — Integración editorial completa
 
-**Estado:** `PENDIENTE DE EVALUACIÓN FORMAL`; PKG-06–PKG-09 están integrados,
-pero esta puerta todavía no ha sido evaluada.
+**Decisión:** `GATE-02 = PASS` el 16 de octubre de 2026, sobre el HEAD evaluado
+`3eda91015802928eca0ec919391986c08d52dbbc`. Evidencia completa en
+[GATE_02_IMPLEMENTACION_1_0_ACEPTADA.md](./GATE_02_IMPLEMENTACION_1_0_ACEPTADA.md).
 
-- PKG-06–09 integrados.
-- No quedan datos obligatorios sin resolver.
-- No quedan cambios canónicos parcheados en `publication/`.
-- El alcance coincide con `ALCANCE_APROBADO_V1_0.md`.
+- PKG-06–09 integrados: PASS.
+- No quedan datos obligatorios sin resolver: PASS, con diferimientos previstos
+  de prólogo, fecha exacta y URL; ISBN no obligatorio.
+- No quedan cambios canónicos parcheados en `publication/`: PASS.
+- El alcance coincide con `ALCANCE_APROBADO_V1_0.md`: PASS.
 
 ### GATE-03 — Nueva candidata validada técnicamente
 
@@ -579,6 +585,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01 — PASS. PKG-06, PKG-07, PKG-08 Y PKG-09 COMPLETADOS E INTEGRADOS; GATE-02 PENDIENTE DE EVALUACIÓN FORMAL.**
+**GATE-01 Y GATE-02 — PASS. PKG-06, PKG-07, PKG-08 Y PKG-09 COMPLETADOS, INTEGRADOS Y ACEPTADOS.**
 
-**SIGUIENTE PASO RECOMENDADO: evaluar formalmente GATE-02 antes de iniciar PKG-10.**
+**SIGUIENTE PASO RECOMENDADO: ejecutar PKG-10 — regeneración reproducible y candidata 1.0.**
