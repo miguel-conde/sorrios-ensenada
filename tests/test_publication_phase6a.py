@@ -52,6 +52,7 @@ def test_final_identity_metadata_preserves_controlled_release_deferrals():
         "fecha exacta de publicación",
         "URL canónica",
     ]
+    assert "before_candidate" not in metadata["pending"]
     assert publication["base"]["git_commit"] == CURRENT_CANONICAL_COMMIT
     assert "isbn" not in metadata
     assert "url" not in metadata
@@ -174,18 +175,18 @@ def test_roadmap_closes_pkg11_and_keeps_phase6b_forbidden():
         "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` **CERRADAS CANÓNICAMENTE**",
         "GATE-01 = PASS. GATE-02 = PASS. PKG-10 Y PKG-11 COMPLETADOS E "
-        "INTEGRADOS; CANDIDATA 1.0 VALIDADA.",
+        "INTEGRADOS; HUM-01B COMPLETADO.",
         "la propagación editorial quedó completada por PKG-08",
         "| PKG-06 | completado e integrado |",
         "| PKG-07 | completado e integrado |",
         "| PKG-08 | completado e integrado |",
         "| PKG-09 | completado e integrado |",
         "su propagación obligatoria se asignó a PKG-08 y quedó completada",
-        "PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN PERSONAL",
         "PKG-10 y PKG-11 completados e integrados",
-        "SIGUIENTE PASO RECOMENDADO: cerrar los inputs editoriales humanos "
-        "finales — prólogo y revisión de la declaración sobre IA — antes de "
-        "iniciar PKG-12",
+        "SIGUIENTE PASO RECOMENDADO: resolver las observaciones editoriales "
+        "humanas restantes antes de iniciar PKG-12; la validación integral y "
+        "los renders siguen diferidos.",
+        "| HUM-01B | completado |",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
         "prohibida antes de la aceptación humana del preview |",
     ):
@@ -200,7 +201,7 @@ def test_roadmap_closes_pkg11_and_keeps_phase6b_forbidden():
     assert "| GATE-02 | PASS |" in roadmap
     assert "| PKG-10 | completado e integrado |" in roadmap
     assert "| PKG-11 | completado e integrado |" in roadmap
-    assert "PKG-12 queda técnicamente\n  habilitado" in roadmap
+    assert "PKG-12 no iniciado" in roadmap
     gate02 = (ROOT / "docs/GATE_02_IMPLEMENTACION_1_0_ACEPTADA.md").read_text(
         encoding="utf-8"
     )

@@ -1,6 +1,6 @@
 ---
 chapter-id: prologo
-publication-status: placeholder
+publication-status: prepublication
 numbered: false
 number-sections: false
 sources:
@@ -10,19 +10,67 @@ sources:
 
 # Prólogo {.unnumbered}
 
-::: {.callout-warning appearance="simple" icon="false"}
-## PENDIENTE DE REDACCIÓN PERSONAL DEL AUTOR {.unnumbered}
+Hace ya casi veinte años que una parte importante de nuestras vacaciones familiares de verano transcurre en Sorríos. Es el lugar de origen de la familia paterna de mi esposa y, con el paso del tiempo, ha acabado convirtiéndose también para mí en uno de esos lugares a los que uno siente que pertenece un poco, aunque haya llegado a ellos de adulto.
 
-Este bloque no es un prólogo terminado ni imita la voz de Miguel Conde de
-Simón. Debe sustituirse por un texto personal del autor, firmado y de unas
-900–1.500 palabras, antes de `GATE-02` y de cualquier candidata formal.
+Sorríos - *Sorribos* en el expediente de 1752 - es hoy un pequeño grupo de casas situado al norte de Santibáñez de Ordás, en el municipio leonés de Santa María de Ordás. Son casas recias, construidas con gruesos muros de piedra y la mampostería tradicional de la zona. Sus paredes mantienen el interior fresco durante el verano y lo protegen del frío en invierno. En muchas de ellas, la vivienda ocupaba la parte superior, mientras que la planta baja, más húmeda, se destinaba a los animales, los aperos y las labores propias de una economía agrícola y ganadera.
 
-Guion aprobado para la redacción:
+En una de esas casas empezamos a pasar nuestros veranos. Hoy, gracias también a las posibilidades del teletrabajo, nuestras estancias son a veces bastante más prolongadas. La casa forma parte de un conjunto de construcciones que pertenecieron a miembros de una misma familia: viviendas, pajares y cuadras muy próximos entre sí, reflejo de una forma de vida en la que familia, trabajo y explotación agraria constituían casi una misma realidad.
 
-1. origen del proyecto;
-2. relación personal con Sorríos/Sorribos, Santibáñez, Ordás o el manuscrito;
-3. motivación;
-4. evolución del trabajo;
-5. personas y apoyos que el autor quiera agradecer;
-6. invitación al lector.
-:::
+Sorríos pertenece a esa extensa geografía que hemos acabado llamando la «España vaciada». Durante el invierno ya no reside aquí prácticamente nadie; quizá algún vecino permanece una parte de la temporada, pero durante meses el lugar queda casi deshabitado. En verano, en cambio, se transforma. Regresan familias que hoy viven en Asturias, Madrid, Barcelona, Sevilla, León y otros muchos lugares, en su inmensa mayoría descendientes de quienes habitaron estas casas de manera permanente.
+
+La primera vez que conocí Sorríos, poco después de casarnos en 1994, la impresión era muy distinta. Muchas casas estaban abandonadas y algunas presentaban ya un estado de conservación preocupante. Sus habitantes habían emigrado durante décadas en busca de trabajo y oportunidades que el medio rural difícilmente podía ofrecerles.
+
+Con los años, sin embargo, he podido contemplar una cierta inversión de ese proceso. No es, naturalmente, una recuperación demográfica en sentido estricto, pero sí una especie de retorno temporal a los orígenes. Hijos, nietos y bisnietos de quienes abandonaron el pueblo han rehabilitado antiguas casas familiares y vuelven a ocuparlas durante el verano o durante temporadas cada vez más largas. El deseo de regresar a los lugares familiares, la búsqueda de una vida más tranquila, el cansancio de la ciudad y, probablemente, el impulso adicional que supuso la pandemia de COVID-19 han contribuido a ese fenómeno. Incluso se ha emprendido recientemente la restauración de la ermita, otra de esas pequeñas piezas materiales que conectan el presente con la historia del lugar.
+
+Entre las familias que mantienen una vinculación especialmente estrecha con Sorríos está la de Nieves. Aunque reside actualmente en Gijón, pasa aquí buena parte del año. Sus hijos, Mari Nieves, Julita y Alfonso, regresan también con frecuencia. Mari Nieves, en particular, conserva una gran afición por la historia de la zona, sus edificios, sus tradiciones y sus leyendas.
+
+Fue ella quien, durante el verano de 2026, me habló del Catastro de Ensenada.
+
+Sorríos y Santibáñez aparecían en él. El documento podía consultarse públicamente a través de PARES y, al menos en principio, estaba al alcance de cualquiera. Otra cosa muy distinta era leerlo. Había sido redactado en 1752. La caligrafía, las abreviaturas, las formas gráficas y el castellano de la época convertían lo que sobre la pantalla parecía simplemente un conjunto de páginas antiguas en un texto considerablemente difícil de descifrar para quien, como yo, carece de formación paleográfica.
+
+Ahí apareció la conexión con mi propia profesión.
+
+Mi actividad profesional ha estado siempre vinculada a la tecnología y, durante los últimos años, de manera muy especial a la inteligencia artificial. La aparición de los grandes modelos de lenguaje y de los sistemas de inteligencia artificial generativa y multimodal había abierto posibilidades que muy poco tiempo antes parecían difíciles de imaginar. Me pregunté entonces si aquellas tecnologías podían ayudarnos a leer el manuscrito.
+
+La pregunta inicial era bastante modesta. Se trataba de comprobar hasta qué punto una inteligencia artificial era capaz de enfrentarse a aquellas páginas manuscritas y ayudarnos a descifrar su contenido.
+
+El resultado fue mucho más lejos de lo que esperaba.
+
+Pronto quedó claro que no bastaba con pedir a un sistema que «leyera» una página. La lectura de un documento de estas características exigía establecer criterios paleográficos, distinguir lo que realmente podía verse de aquello que solo podía inferirse, conservar las dudas, contrastar unas páginas con otras y evitar que una interpretación plausible terminase convirtiéndose inadvertidamente en una lectura supuestamente cierta.
+
+Lo que comenzó como una prueba fue convirtiéndose así en un proyecto.
+
+Fui desarrollando progresivamente un procedimiento de transcripción, revisión y control cada vez más estricto. La transcripción paleográfica debía permanecer diferenciada de cualquier modernización posterior. Las dudas tenían que conservarse como dudas. Las correcciones debían quedar justificadas. Cuando una lectura planteaba problemas, era necesario contrastarla con el resto del manuscrito y, cuando procedía, con documentación histórica externa.
+
+A esa primera capa paleográfica se añadió pronto una segunda pregunta: ¿qué nos estaba contando realmente el Catastro sobre Sorríos y Santibáñez en 1752?
+
+El documento ofrecía mucho más que una sucesión de nombres y cantidades. Hablaba de vecinos y hogares, tierras y cultivos, ganados, molinos, montes, cargas, rentas, oficios, obligaciones fiscales y formas de organización colectiva. Permitía acercarse, con todas las cautelas necesarias, a la estructura económica y social de aquellas pequeñas comunidades a mediados del siglo XVIII.
+
+Eso obligó a desarrollar también un método de investigación histórica. Desde el principio procuré separar cuatro cosas que con demasiada facilidad pueden confundirse: lo que dice el documento, lo que puede calcularse directamente a partir de sus datos, lo que puede interpretarse razonablemente y aquello que procede de fuentes externas utilizadas para proporcionar contexto.
+
+Esa distinción acabó siendo uno de los principios centrales de todo el proyecto.
+
+La inteligencia artificial desempeñó en este proceso un papel que, para mí, ha sido un auténtico descubrimiento. Su capacidad para colaborar en la lectura de grafías difíciles, comparar fragmentos, organizar grandes cantidades de información, localizar posibles fuentes, detectar inconsistencias y ayudar a estructurar una investigación de esta naturaleza resulta extraordinaria.
+
+Pero también aprendimos pronto sus límites.
+
+Una respuesta convincente no es necesariamente una respuesta correcta. Una lectura paleográfica plausible puede ser falsa. Una referencia aparentemente pertinente puede no sostener exactamente la afirmación que se pretende hacer con ella. Y una interpretación histórica necesita distinguir siempre entre evidencia, cálculo e inferencia.
+
+Por eso el proyecto fue adquiriendo una arquitectura cada vez más rigurosa: fuentes canónicas, edición crítica, registro de afirmaciones y cálculos, niveles explícitos de evidencia, validaciones automáticas, controles de coherencia y una clara separación entre los materiales originales, su interpretación y los productos editoriales derivados.
+
+No soy paleógrafo ni historiador de profesión. Este libro no pretende ocultarlo.
+
+Mi formación y mi actividad profesional pertenecen a otro ámbito. Precisamente por ello he intentado compensar esa limitación mediante procedimientos explícitos, trazabilidad, comprobaciones y una especial prudencia ante todo aquello que no podía afirmarse con suficiente fundamento. Es muy posible que, pese a ello, subsistan errores. Si es así, son responsabilidad mía, y agradeceré cualquier corrección documentada que permita mejorar futuras versiones de esta obra.
+
+El resultado de estos meses de trabajo es el volumen que el lector tiene ahora ante sí. He querido conservar conjuntamente el facsímil, la transcripción paleográfica, una versión modernizada, el estudio histórico y los aparatos que permiten comprobar de dónde procede cada afirmación relevante. La publicación en Internet y la existencia de una versión completa en PDF responden a la misma idea: que el trabajo pueda consultarse, comprobarse y conservarse con facilidad.
+
+Pero, por encima de la tecnología y del método, el verdadero objeto de este libro son Sorríos, Santibáñez y las personas que vivieron allí.
+
+Las respuestas redactadas en 1752 nos permiten asomarnos durante unas páginas a un mundo que desapareció hace mucho tiempo y que, sin embargo, dejó huellas todavía reconocibles en los pueblos, en las casas, en los caminos, en las tierras y en las familias que regresan cada verano.
+
+Quizá este libro sirva para conservar alguna de esas huellas.
+
+Si además consigue que quienes hoy tienen algún vínculo con Sorríos, Santibáñez o la Tierra de Ordás conozcan un poco mejor la vida de quienes ocuparon estos lugares hace casi tres siglos, el esfuerzo habrá merecido la pena.
+
+**Miguel Conde de Simón**<br>
+Sorríos, 2026

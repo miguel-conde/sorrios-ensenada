@@ -17,8 +17,6 @@ publication:
     scope: "contenido original que el autor puede licenciar"
     third_party: "el facsímil, las reproducciones documentales, la cartografía, las imágenes, las citas y otros materiales de terceros conservan sus condiciones propias"
   pending:
-    before_candidate:
-      - texto definitivo del prólogo personal
     at_release:
       - fecha exacta de publicación
       - URL canónica

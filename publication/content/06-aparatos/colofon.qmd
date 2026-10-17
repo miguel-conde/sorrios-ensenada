@@ -25,13 +25,34 @@ La licencia no se extiende automáticamente al facsímil, las reproducciones
 documentales, la cartografía, las imágenes, las citas ni otros materiales de
 terceros, que conservan sus condiciones de uso, atribución y reproducción.
 
-El volumen se elaboró y compuso digitalmente mediante procesos reproducibles.
-Se utilizaron herramientas informáticas y sistemas de inteligencia artificial
-como apoyo en tareas de transcripción, revisión, análisis, estructuración,
-comprobación y preparación editorial. Estas herramientas no tienen autoría. Las
-decisiones editoriales, históricas y de publicación fueron revisadas y asumidas
-por Miguel Conde de Simón, a quien corresponde la responsabilidad final de la
-obra.
+### Herramientas digitales e inteligencia artificial
+
+En la elaboración de esta obra se utilizaron herramientas digitales y sistemas
+de inteligencia artificial como apoyo auxiliar en tareas de transcripción y
+análisis paleográfico; localización, contraste y organización de fuentes;
+investigación histórica; análisis y estructuración de información; revisión de
+consistencia; preparación editorial; programación y automatización de
+controles; y tareas técnicas y documentales asociadas a una composición
+reproducible.
+
+Entre las principales herramientas utilizadas se encuentran **ChatGPT**,
+**Codex** y **GitHub Copilot** como sistemas de asistencia basados en
+inteligencia artificial, y **Python** y **Quarto** para los procesos de
+tratamiento, validación, generación reproducible y composición de las versiones
+HTML y PDF. El proyecto se ha gestionado mediante infraestructura de control de
+versiones y repositorio, cuya descripción técnica detallada se conserva en la
+documentación del proyecto.
+
+Los sistemas de inteligencia artificial **no se utilizaron como fuentes
+históricas**. Las afirmaciones de la obra se fundamentan en el manuscrito, en
+los cálculos reproducibles derivados de él o en las fuentes externas
+identificadas y citadas.
+
+Estas herramientas no son autoras de la obra ni sustituyen el juicio histórico,
+paleográfico o editorial. Las lecturas del manuscrito, la selección y valoración
+de las fuentes, las interpretaciones históricas y las decisiones editoriales y
+de publicación fueron revisadas y validadas por **Miguel Conde de Simón**, que
+asume la responsabilidad intelectual y final de la obra.
 
 **Año editorial:** 2026. La fecha exacta de publicación y la URL canónica se
 fijarán en el release; no se anticipan en esta edición previa a candidata.

@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
 **Actualizado:** 17 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; candidata 1.0 validada integralmente; PKG-12 técnicamente habilitado<br>
-**Fase actual:** Fase 6A — candidata formal validada; antes de PKG-12 se recomienda cerrar el prólogo y revisar humanamente la declaración sobre IA<br>
+**Estado global:** Fase 6 en curso; GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; HUM-01B cierra prólogo y declaración sobre IA/herramientas; validación integral diferida<br>
+**Fase actual:** Fase 6A — quedan observaciones editoriales humanas por resolver antes de iniciar PKG-12<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -63,6 +63,9 @@ Una sesión nueva de Copilot debe leer, en este orden:
     independiente de la candidata.
 32. `docs/CIERRE_PKG_11_VALIDACION_INTEGRAL_CANDIDATA_1_0.md` para la revisión,
     integración y cierre de PKG-11.
+33. `docs/HUM_01B_CIERRE_INPUTS_EDITORIALES_HUMANOS.md` para el cierre del
+    prólogo y la declaración pública sobre IA/herramientas, con validación
+    integral diferida.
 
 ## Estado comprobado
 
@@ -211,9 +214,11 @@ Una sesión nueva de Copilot debe leer, en este orden:
   `526304867e2bba16b745f3477fb63d44be49bd19`: suite `678 passed`,
   validadores integrales en PASS y cero defectos bloqueantes. Las diferencias
   de hash HTML y PDF quedaron demostradas como nondeterminismo técnico inocuo
-  —orden de atributos; timestamps e IDs internos—. PKG-12 queda técnicamente
-  habilitado, con prólogo y revisión humana de la declaración sobre IA como
-  inputs editoriales finales recomendados antes de iniciarlo.
+  —orden de atributos; timestamps e IDs internos—.
+- HUM-01B cerró el prólogo personal y la declaración pública sobre
+  IA/herramientas. Quedan observaciones editoriales humanas adicionales; la
+  suite integral, los renders y una candidata actualizada se difieren hasta
+  resolverlas. PKG-12 no se ha iniciado.
 - Candidata Quarto anterior: la candidata técnica de 334 páginas y SHA-256
   `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183` se conserva
   como `baseline pre-PKG-01 / no sincronizada con las fuentes canónicas
@@ -237,13 +242,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; quedan inputs editoriales humanos finales, PKG-12, aceptación del preview y PKG-13/Fase 6B |
+| 6. Preview y publicación 1.0 | en curso | GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; HUM-01B completado; quedan observaciones editoriales humanas, PKG-12, aceptación del preview y PKG-13/Fase 6B |
 
 ## Siguiente tarea exacta
 
-`GATE-01 = PASS. GATE-02 = PASS. PKG-10 Y PKG-11 COMPLETADOS E INTEGRADOS; CANDIDATA 1.0 VALIDADA.`
+`GATE-01 = PASS. GATE-02 = PASS. PKG-10 Y PKG-11 COMPLETADOS E INTEGRADOS; HUM-01B COMPLETADO.`
 
-`SIGUIENTE PASO RECOMENDADO: cerrar los inputs editoriales humanos finales — prólogo y revisión de la declaración sobre IA — antes de iniciar PKG-12.`
+`SIGUIENTE PASO RECOMENDADO: resolver las observaciones editoriales humanas restantes antes de iniciar PKG-12; la validación integral y los renders siguen diferidos.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -265,7 +270,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; candidata 1.0 validada; PKG-12 técnicamente habilitado |
+| 6A | en curso | GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; HUM-01B completado; validación integral diferida; PKG-12 no iniciado |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; DEC-012 y DEC-014 implementadas e integradas |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
@@ -288,6 +293,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | GATE-02 | PASS | evaluación formal sobre `3eda91015802928eca0ec919391986c08d52dbbc`; PKG-06–PKG-09 aceptados; PKG-10 habilitado y no iniciado |
 | PKG-10 | completado e integrado | commit `d02b9fbf0e17625f87d19ebe12bf36c1ce633c80`; 39 HTML; PDF 355 páginas / 71.020.397 bytes / SHA-256 `7361b491c8095f55a6bb6add3445924b52db6518f49610342cfbbf5a946f4771` |
 | PKG-11 | completado e integrado | commit `526304867e2bba16b745f3477fb63d44be49bd19`; candidata validada integralmente; `678 passed`; 0 bloqueantes; dos observaciones de nondeterminismo inocuo |
+| HUM-01B | completado | prólogo definitivo y declaración sobre IA/herramientas cerrados; otras observaciones humanas, validación integral y renders pendientes |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
@@ -879,4 +885,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/PKG_11_VALIDACION_INTEGRAL_CANDIDATA_1_0.md`, `docs/CIERRE_PKG_11_VALIDACION_INTEGRAL_CANDIDATA_1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Cierra los inputs editoriales humanos finales —prólogo y revisión de la declaración sobre IA— antes de iniciar PKG-12, sin iniciar Fase 6B y sin push, tag ni release.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/HUM_01B_CIERRE_INPUTS_EDITORIALES_HUMANOS.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Resuelve únicamente las observaciones editoriales humanas que el usuario formule antes de iniciar PKG-12; conserva diferidas la validación integral y los renders, sin iniciar Fase 6B y sin push, tag ni release.

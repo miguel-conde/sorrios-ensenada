@@ -93,17 +93,18 @@ def test_credits_assign_only_the_approved_human_responsibilities_and_rights():
     assert "contenido original" in text
     for component in ("facsímil", "reproducciones", "cartografía"):
         assert component in text
-    assert "único participante humano" in text
+    assert "Estas herramientas no son autoras" in text
+    assert "responsabilidad intelectual y final de la obra" in text
 
 
-def test_prologue_is_an_explicit_controlled_placeholder_with_six_topics():
+def test_prologue_is_final_signed_human_text_without_placeholder_residue():
     metadata, body = _front_matter(PUBLICATION / PRELIMINARIES[1])
-    assert metadata["publication-status"] == "placeholder"
-    assert "PENDIENTE DE REDACCIÓN PERSONAL DEL AUTOR" in body
-    assert "no es un prólogo terminado" in body
-    assert "antes de `GATE-02`" in body
-    assert len(re.findall(r"^\d\. ", body, re.MULTILINE)) == 6
-    assert not re.search(r"\b(?:yo|mi|mis|me)\b", body.casefold())
+    assert metadata["publication-status"] == "prepublication"
+    assert "# Prólogo {.unnumbered}" in body
+    assert "**Miguel Conde de Simón**<br>\nSorríos, 2026" in body
+    assert "PENDIENTE DE REDACCIÓN PERSONAL DEL AUTOR" not in body
+    assert "callout-warning" not in body
+    assert 900 <= len(body.split()) <= 1_500
 
 
 def test_introduction_is_compact_and_connects_both_routes_to_chapter_four():

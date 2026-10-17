@@ -5,8 +5,8 @@
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Estado:** plan operativo; PKG-00–11 completados e integrados; CR-V1-001 e
 INC-BIB-001/002 cerradas; GATE-01 y GATE-02 en PASS; candidata 1.0 validada;
-PKG-12 técnicamente habilitado, con inputs editoriales humanos finales aún
-pendientes
+HUM-01B ha cerrado el prólogo y la declaración sobre IA/herramientas; quedan
+observaciones editoriales humanas adicionales y PKG-12 no se inicia todavía
 
 ## 1. Reglas generales
 
@@ -51,15 +51,16 @@ Incluye:
 
 DAT-001–DAT-008 y DAT-AI-01 están resueltos. DAT-009 tiene resuelto el modelo
 de fecha, con su valor final diferido hasta la publicación; DAT-010 está
-diferido hasta PKG-12/PKG-13. El prólogo es obligatorio y su texto definitivo
-permanece diferido. También permanecen controlados los agradecimientos
-eventuales, la nota final de derechos por componentes y los asuntos
-`LEGAL-PENDIENTE` relativos a materiales externos.
+diferido hasta PKG-12/PKG-13. HUM-01B cerró el prólogo definitivo y la
+declaración pública sobre IA/herramientas. Permanecen pendientes otras
+observaciones editoriales humanas, la fecha exacta, la URL canónica y, solo si
+llega a existir, el ISBN no bloqueante.
 
 **Autoridad:** usuario.<br>
 **Escritura:** no modifica `project/`; no inventa datos.<br>
 **Salida:** dossier de inputs aprobado; autoría, roles, identidad, copyright y
-licencia del contenido original cerrados; prólogo definitivo diferido.
+licencia del contenido original cerrados; prólogo definitivo y declaración
+sobre IA/herramientas cerrados por HUM-01B.
 
 ### PKG-01 — Glosario canónico GH-B
 
@@ -599,4 +600,4 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 
 **GATE-01 Y GATE-02 — PASS. PKG-10 Y PKG-11 COMPLETADOS E INTEGRADOS; CANDIDATA 1.0 VALIDADA.**
 
-**SIGUIENTE PASO RECOMENDADO: cerrar los inputs editoriales humanos finales — prólogo y revisión de la declaración sobre IA — antes de iniciar PKG-12.**
+**SIGUIENTE PASO RECOMENDADO: resolver las observaciones editoriales humanas restantes antes de iniciar PKG-12; el prólogo y la declaración sobre IA/herramientas ya están cerrados por HUM-01B.**

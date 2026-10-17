@@ -9,7 +9,7 @@ chapters:
     publication_status: development
   - chapter_id: prologo
     path: content/00-preliminares/02-prologo.qmd
-    publication_status: placeholder
+    publication_status: prepublication
   - chapter_id: introduccion-general
     path: content/00-preliminares/03-introduccion.qmd
     publication_status: development

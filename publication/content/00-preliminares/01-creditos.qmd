@@ -15,13 +15,15 @@ sources:
 **Transcripción paleográfica y revisión:** Miguel Conde de Simón  
 **Edición modernizada y revisión:** Miguel Conde de Simón
 
-Miguel Conde de Simón es el único participante humano en la elaboración
-intelectual del volumen. Se utilizaron herramientas digitales y sistemas de
-inteligencia artificial como apoyo en tareas de transcripción, revisión,
-análisis, estructuración, comprobación y preparación editorial. No tienen
-autoría ni responsabilidad intelectual: las decisiones históricas,
-paleográficas, editoriales y de publicación fueron revisadas y asumidas por
-Miguel Conde de Simón.
+En la elaboración de esta obra se utilizaron herramientas digitales y
+sistemas de inteligencia artificial como apoyo auxiliar en tareas de
+transcripción y análisis paleográfico, localización y contraste de fuentes,
+investigación histórica, análisis y estructuración de información, revisión
+de consistencia y preparación editorial. Estas herramientas no son autoras ni
+sustituyen el juicio histórico, paleográfico o editorial. Las lecturas, las
+fuentes utilizadas, las interpretaciones y las decisiones editoriales y de
+publicación fueron revisadas y validadas por Miguel Conde de Simón, que asume
+la responsabilidad intelectual y final de la obra.
 
 ## Derechos {.unnumbered}
 

@@ -11,6 +11,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATION = ROOT / "publication"
 BASE_COMMIT = "61f91b1a6b378fb66c31fdecb4628815efec9b1d"
+PKG09_COMMIT = "25fb7dcf9a477efe74c178d108d6f182d33a406e"
 TITLE = "Sorribos y Santibáñez de Ordás en 1752"
 SUBTITLE = "Estudio histórico y edición integral del Catastro de Ensenada"
 AUTHOR = "Miguel Conde de Simón"
@@ -76,7 +77,6 @@ def test_publication_manifest_normalizes_identity_rights_and_deferrals():
         for component in ("facsímil", "reproducciones", "cartografía")
     )
     assert publication["pending"] == {
-        "before_candidate": ["texto definitivo del prólogo personal"],
         "at_release": ["fecha exacta de publicación", "URL canónica"],
         "non_blocking": ["ISBN solo si llega a existir"],
     }
@@ -95,9 +95,11 @@ def test_credits_are_exact_and_ai_tools_have_no_authorship():
     ):
         assert f"**{role}:** {AUTHOR}" in credits
     assert f"© 2026 {AUTHOR}" in credits
-    assert "sistemas de\ninteligencia artificial" in credits
-    assert "No tienen\nautoría" in credits
-    assert "revisadas y asumidas por\nMiguel Conde de Simón" in credits
+    normalized = " ".join(credits.split())
+    assert "sistemas de inteligencia artificial" in normalized
+    assert "Estas herramientas no son autoras" in credits
+    assert "revisadas y validadas por Miguel Conde de Simón" in normalized
+    assert "responsabilidad intelectual y final de la obra" in normalized
     for forbidden in ("ORCID", "afiliación", "coautor", "colaborador humano"):
         assert forbidden.casefold() not in credits.casefold()
 
@@ -106,7 +108,7 @@ def test_colophon_is_compact_complete_and_not_a_technical_changelog():
     text = COLOPHON.read_text(encoding="utf-8")
     body = text.split("---", 2)[-1]
     normalized = " ".join(body.split())
-    assert len(body.split()) < 260
+    assert len(body.split()) < 450
     for value in (
         TITLE,
         SUBTITLE,
@@ -117,13 +119,32 @@ def test_colophon_is_compact_complete_and_not_a_technical_changelog():
         "contenido original",
         "materiales de terceros",
         "sistemas de inteligencia artificial",
-        "no tienen autoría",
-        "responsabilidad final",
+        "no se utilizaron como fuentes históricas",
+        "no son autoras de la obra",
+        "responsabilidad intelectual y final",
+        "ChatGPT",
+        "Codex",
+        "GitHub Copilot",
+        "Python",
+        "Quarto",
         "fecha exacta de publicación",
         "URL canónica",
     ):
         assert value in normalized
-    for residue in ("commit", "SHA-256", "GitHub", "ChatGPT", "Codex", "Copilot"):
+    for residue in (
+        "commit",
+        "SHA-256",
+        "Visual Studio Code",
+        "Codex CLI",
+        "GPT-",
+        "Pandoc",
+        "LuaHBTeX",
+        "TinyTeX",
+        "Google Drive",
+        "Poppler",
+        "rsvg-convert",
+        "pytest",
+    ):
         assert residue not in body
 
 
@@ -170,22 +191,28 @@ def test_year_only_html_metadata_does_not_invent_an_exact_date(tmp_path):
     assert "2026-01-01" not in rendered
 
 
-def test_prologue_project_and_prior_packages_remain_untouched():
+def test_project_and_prior_assets_remain_untouched_and_prologue_history_is_preserved():
     assert _git("diff", "--quiet", BASE_COMMIT, "--", "project/").returncode == 0
     assert _git(
         "diff",
         "--quiet",
         BASE_COMMIT,
         "--",
-        "publication/content/00-preliminares/02-prologo.qmd",
         "publication/assets/",
         "publication/references.bib",
     ).returncode == 0
+    historical = _git(
+        "show",
+        f"{PKG09_COMMIT}:publication/content/00-preliminares/02-prologo.qmd",
+    ).stdout
+    assert "publication-status: placeholder" in historical
+    assert "PENDIENTE DE REDACCIÓN PERSONAL DEL AUTOR" in historical
     prologue = (
         PUBLICATION / "content/00-preliminares/02-prologo.qmd"
     ).read_text(encoding="utf-8")
-    assert "publication-status: placeholder" in prologue
-    assert "PENDIENTE DE REDACCIÓN PERSONAL DEL AUTOR" in prologue
+    assert "publication-status: prepublication" in prologue
+    assert "PENDIENTE DE REDACCIÓN PERSONAL DEL AUTOR" not in prologue
+    assert "**Miguel Conde de Simón**<br>\nSorríos, 2026" in prologue
 
 
 def test_pkg09_does_not_publish_or_version_generated_outputs():
