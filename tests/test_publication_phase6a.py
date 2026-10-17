@@ -157,7 +157,7 @@ def test_candidate_report_manifests_snapshot_outputs_hashes_and_limitations():
     assert not re.search(r"(?:/home/|/tmp/|[A-Za-z]:\\\\)", report)
 
 
-def test_roadmap_closes_pkg10_and_keeps_phase6b_forbidden():
+def test_roadmap_closes_pkg11_and_keeps_phase6b_forbidden():
     roadmap = (ROOT / "docs/ESTADO_PUBLICACION_QUARTO.md").read_text(
         encoding="utf-8"
     )
@@ -173,8 +173,8 @@ def test_roadmap_closes_pkg10_and_keeps_phase6b_forbidden():
         "| PKG-04 | completado e integrado |",
         "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` **CERRADAS CANÓNICAMENTE**",
-        "GATE-01 = PASS. GATE-02 = PASS. PKG-10 COMPLETADO E INTEGRADO; "
-        "CANDIDATA TÉCNICA 1.0 GENERADA Y REGISTRADA.",
+        "GATE-01 = PASS. GATE-02 = PASS. PKG-10 Y PKG-11 COMPLETADOS E "
+        "INTEGRADOS; CANDIDATA 1.0 VALIDADA.",
         "la propagación editorial quedó completada por PKG-08",
         "| PKG-06 | completado e integrado |",
         "| PKG-07 | completado e integrado |",
@@ -182,9 +182,10 @@ def test_roadmap_closes_pkg10_and_keeps_phase6b_forbidden():
         "| PKG-09 | completado e integrado |",
         "su propagación obligatoria se asignó a PKG-08 y quedó completada",
         "PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN PERSONAL",
-        "PKG-10 completado e integrado",
-        "SIGUIENTE PASO RECOMENDADO: ejecutar PKG-11 — validación integral "
-        "de la candidata 1.0",
+        "PKG-10 y PKG-11 completados e integrados",
+        "SIGUIENTE PASO RECOMENDADO: cerrar los inputs editoriales humanos "
+        "finales — prólogo y revisión de la declaración sobre IA — antes de "
+        "iniciar PKG-12",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
         "prohibida antes de la aceptación humana del preview |",
     ):
@@ -198,7 +199,8 @@ def test_roadmap_closes_pkg10_and_keeps_phase6b_forbidden():
     assert "| PKG-09 | habilitado — no iniciado, sujeto a DAT |" not in roadmap
     assert "| GATE-02 | PASS |" in roadmap
     assert "| PKG-10 | completado e integrado |" in roadmap
-    assert "siguiente operación: PKG-11, validación integral" in roadmap
+    assert "| PKG-11 | completado e integrado |" in roadmap
+    assert "PKG-12 queda técnicamente\n  habilitado" in roadmap
     gate02 = (ROOT / "docs/GATE_02_IMPLEMENTACION_1_0_ACEPTADA.md").read_text(
         encoding="utf-8"
     )
@@ -236,3 +238,24 @@ def test_roadmap_closes_pkg10_and_keeps_phase6b_forbidden():
         "PKG-11 — Validación integral de la candidata 1.0",
     ):
         assert value in closure
+    validation = (
+        ROOT / "docs/PKG_11_VALIDACION_INTEGRAL_CANDIDATA_1_0.md"
+    ).read_text(encoding="utf-8")
+    pkg11_closure = (
+        ROOT / "docs/CIERRE_PKG_11_VALIDACION_INTEGRAL_CANDIDATA_1_0.md"
+    ).read_text(encoding="utf-8")
+    for value in (
+        "PKG-11: CANDIDATA 1.0 VALIDADA INTEGRALMENTE",
+        "678 passed",
+        "86f32e8b48e6ee46ebd30feb0d96bc85439f034485cbbd6a00db3ebd7b55b9d9",
+        "8862d2e3020f23b57e79b7331a7d6f5ba69d829455e5076f8058d2701020c1fb",
+        "No se detectaron defectos bloqueantes",
+    ):
+        assert value in validation
+    for value in (
+        "COMPLETADO E INTEGRADO",
+        "526304867e2bba16b745f3477fb63d44be49bd19",
+        "cero defectos bloqueantes",
+        "PKG-12 queda técnicamente habilitado",
+    ):
+        assert value in pkg11_closure

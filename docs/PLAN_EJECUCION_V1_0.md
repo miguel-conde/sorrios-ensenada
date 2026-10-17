@@ -3,9 +3,10 @@
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00–10 completados e integrados; CR-V1-001 e
-INC-BIB-001/002 cerradas; GATE-01 y GATE-02 en PASS; PKG-11 es la siguiente
-operación
+**Estado:** plan operativo; PKG-00–11 completados e integrados; CR-V1-001 e
+INC-BIB-001/002 cerradas; GATE-01 y GATE-02 en PASS; candidata 1.0 validada;
+PKG-12 técnicamente habilitado, con inputs editoriales humanos finales aún
+pendientes
 
 ## 1. Reglas generales
 
@@ -339,6 +340,13 @@ Debe:
 
 ### PKG-11 — Validación integral
 
+**Estado:** **COMPLETADO E INTEGRADO** en
+`526304867e2bba16b745f3477fb63d44be49bd19`. La auditoría integral y sus dos
+observaciones de nondeterminismo técnico inocuo constan en
+[PKG_11_VALIDACION_INTEGRAL_CANDIDATA_1_0.md](./PKG_11_VALIDACION_INTEGRAL_CANDIDATA_1_0.md)
+y el cierre en
+[CIERRE_PKG_11_VALIDACION_INTEGRAL_CANDIDATA_1_0.md](./CIERRE_PKG_11_VALIDACION_INTEGRAL_CANDIDATA_1_0.md).
+
 Debe validar al menos:
 
 - suite completa;
@@ -560,8 +568,8 @@ chore(release): publish version 1.0
 - [x] 10. CIT, bibliografía, QA, historia y modelos de cita integrados.
 - [x] 11. D/C/I/E/L navegable.
 - [x] 12. Metadatos, licencia y copyright cerrados.
-- [ ] 13. Salidas reproducibles.
-- [ ] 14. Validación integral en PASS.
+- [x] 13. Salidas reproducibles.
+- [x] 14. Validación integral en PASS.
 - [ ] 15. Preview revisado.
 - [ ] 16. Aceptación humana registrada.
 - [ ] 17. Fase 6B completada.
@@ -589,6 +597,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01 Y GATE-02 — PASS. PKG-10 COMPLETADO E INTEGRADO; CANDIDATA TÉCNICA 1.0 GENERADA Y REGISTRADA.**
+**GATE-01 Y GATE-02 — PASS. PKG-10 Y PKG-11 COMPLETADOS E INTEGRADOS; CANDIDATA 1.0 VALIDADA.**
 
-**SIGUIENTE PASO RECOMENDADO: ejecutar PKG-11 — validación integral de la candidata 1.0.**
+**SIGUIENTE PASO RECOMENDADO: cerrar los inputs editoriales humanos finales — prólogo y revisión de la declaración sobre IA — antes de iniciar PKG-12.**
