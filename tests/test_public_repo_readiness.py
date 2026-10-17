@@ -73,7 +73,7 @@ def test_public_readme_and_issue_templates_cover_reader_routes():
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     normalized = " ".join(readme.split())
     assert "Sorribos y Santibáñez de Ordás en 1752" in normalized
-    assert "EMAIL DE CONTACTO — PLACEHOLDER PENDIENTE" in readme
+    assert "miguelco2000@gmail.com" in readme
     assert "no declara todavía publicada la edición 1.0" in readme
     assert not re.search(r"\b(?:PKG|GATE)-\d+\b", readme)
 

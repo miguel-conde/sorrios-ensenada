@@ -99,7 +99,7 @@ def test_contact_section_is_localized_and_repository_remains_future_tense():
     contact = PUBLICATION / "content/06-aparatos/correcciones-contacto.qmd"
     body = _body(contact)
     assert "# Correcciones y contacto" in body
-    assert "EMAIL DE CONTACTO — PLACEHOLDER PENDIENTE" in body
+    assert "<miguelco2000@gmail.com>" in body
     assert "Cuando el repositorio público esté disponible" in body
     assert not re.search(r"https?://[^\s)]*github\.com", body)
     quarto = yaml.safe_load((PUBLICATION / "_quarto.yml").read_text(encoding="utf-8"))

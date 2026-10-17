@@ -56,9 +56,9 @@ estén bajo MIT.
 
 Las erratas, propuestas de corrección y problemas técnicos pueden comunicarse
 mediante GitHub Issues, usando las plantillas disponibles. El canal principal
-de contacto se completará antes de la publicación definitiva:
+de contacto es:
 
-`EMAIL DE CONTACTO — PLACEHOLDER PENDIENTE`
+`miguelco2000@gmail.com`
 
 ## Estado
 

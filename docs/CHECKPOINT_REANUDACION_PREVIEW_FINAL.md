@@ -13,6 +13,9 @@
 - E1 — REV-LECTOR-01 está **COMPLETADA**.
 - E2 — LINK-01 está **COMPLETADA**.
 - E3 — REV-LECTOR-02 está **COMPLETADA E INTEGRADA**.
+- R4 — AUD-REPO-02 resultó **PASS** sobre `f41ad6a536fbda24696406723345e695fa531e3f`.
+- R5A — preparación final del remoto está **COMPLETADA**; R5B permanece
+  **PENDIENTE**.
 - La validación integral y los renders posteriores a HUM-01B están
   deliberadamente diferidos.
 - PKG-12 **NO** se ha iniciado.
@@ -54,7 +57,7 @@ facsímil ↔ transcripción y matriz/retornos. Debe comprobar expresamente
 Aplicación conjunta de las correcciones resultantes de E1 y E2. Debe incluir:
 
 - sección pública «Correcciones y contacto»;
-- `EMAIL DE CONTACTO — PLACEHOLDER PENDIENTE`;
+- `miguelco2000@gmail.com` como correo público aprobado;
 - GitHub Issues como canal complementario;
 - referencia al repositorio público si ya está preparado.
 
@@ -96,11 +99,10 @@ visibilidad del repositorio y dependencia externa del manuscrito.
 ### R2A — Decisiones humanas de privacidad
 
 **COMPLETADA.** Se conservan las menciones familiares del prólogo y el correo
-histórico del autor en Git; no se reescribe el historial. Antes de R5, las
-personas nombradas deberán haber podido revisar el prólogo y cualquier objeción
-deberá quedar resuelta.
+histórico del autor en Git; no se reescribe el historial. Las personas
+nombradas han revisado el prólogo y aceptan que se mantenga tal como está.
 
-`REVISIÓN FAMILIAR DEL PRÓLOGO PENDIENTE`
+`REVISIÓN FAMILIAR DEL PRÓLOGO = COMPLETADA`
 
 ### R2B — Decisión humana de licencias
 
@@ -109,16 +111,23 @@ herramientas: MIT; materiales de terceros y exclusiones: NOTICE.
 
 ### R3 — PUB-REPO-01
 
-**COMPLETADA EN RAMA AISLADA.** Preparación controlada del repositorio para su
+**COMPLETADA E INTEGRADA.** Preparación controlada del repositorio para su
 revisión. **No** cambia todavía su visibilidad.
 
 ### R4 — AUD-REPO-02
 
-Nueva auditoría de HEAD e historial. Debe resultar `APTO` antes de la apertura.
+**PASS.** Auditoría final de HEAD e historial completada sobre
+`f41ad6a536fbda24696406723345e695fa531e3f`.
 
-### R5 — Cambio de visibilidad
+### R5A — Preparación final del remoto
 
-Operación explícita, separada y únicamente con autorización humana.
+**COMPLETADA.** Revisión familiar cerrada, correo público resuelto como
+`miguelco2000@gmail.com` y remoto privado normalizado para la apertura.
+
+### R5B — Cambio de visibilidad
+
+**PENDIENTE.** Operación explícita, separada y únicamente con autorización
+humana.
 
 ## Relación entre líneas
 
@@ -143,7 +152,7 @@ Operación explícita, separada y únicamente con autorización humana.
 8. La declaración IA/herramientas ya fue revisada en HUM-01B.
 9. Añadir un canal para reportar errores.
 10. Añadir una referencia al repositorio público.
-11. Mantener el email como placeholder hasta decisión humana.
+11. Correo público resuelto como `miguelco2000@gmail.com` por decisión humana.
 
 Nuevas observaciones humanas pueden incorporarse antes de REV-FINAL-PREVIEW.
 
@@ -152,6 +161,6 @@ Nuevas observaciones humanas pueden incorporarse antes de REV-FINAL-PREVIEW.
 - **Siguiente operación de la línea principal:** `E4 — REV-FINAL-PREVIEW`
   (**PENDIENTE** y deliberadamente diferida).
 - **Siguiente operación posible de la línea paralela:**
-  `R4 — AUD-REPO-02`.
+  `R5B — cambio controlado de visibilidad a pública`.
 
 Ninguna de estas operaciones se inicia en este checkpoint.
