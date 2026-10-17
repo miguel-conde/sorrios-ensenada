@@ -8,6 +8,10 @@ INC-BIB-001/002 cerradas; GATE-01 y GATE-02 en PASS; candidata 1.0 validada;
 HUM-01B ha cerrado el prólogo y la declaración sobre IA/herramientas; quedan
 observaciones editoriales humanas adicionales y PKG-12 no se inicia todavía
 
+Antes de PKG-12, la secuencia editorial y la preparación paralela del
+repositorio público se controlan mediante
+[CHECKPOINT_REANUDACION_PREVIEW_FINAL.md](./CHECKPOINT_REANUDACION_PREVIEW_FINAL.md).
+
 ## 1. Reglas generales
 
 - Este plan ejecuta el alcance aprobado; no lo amplía.
