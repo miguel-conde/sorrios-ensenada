@@ -40,11 +40,9 @@ leyendo en cada parte del volumen.
 
 ## La fuente y su orden material {#volumen-fuente-material}
 
-El punto de partida es el **PDF manuscrito autoritativo**. Contiene 18 páginas
-digitales y permanece fuera de GitHub. La copia local externa usada durante la
-composición es solamente una réplica técnica de lectura: se verifica antes de
-generar derivados, pero no adquiere autoridad propia ni sustituye al original
-declarado por el proyecto.
+El punto de partida es el **manuscrito digitalizado autoritativo**, compuesto
+por 18 páginas digitales. Las imágenes preparadas para esta edición son
+derivados de lectura: no adquieren autoridad propia ni sustituyen el original.
 
 Las páginas fueron ordenadas como **35 unidades documentales**. La portada
 ocupa una página completa; después se alternan reverso, rectos y vueltos desde
@@ -71,7 +69,7 @@ lineal; desarrolla únicamente las abreviaturas mediante signos explícitos.
 Facilita citar y buscar sin ocultar las dificultades de lectura, pero tampoco
 sustituye la imagen de la que procede.
 
-La **Edición Crítica 3.6** reúne para cada unidad seis secciones estables:
+La **edición crítica** reúne para cada unidad seis secciones estables:
 **Imagen**, **Transcripción paleográfica**, **Observaciones editoriales**,
 **Notas paleográficas**, **Notas históricas** y **Referencias cruzadas**. Las
 observaciones explican la relación material y las decisiones adoptadas; las
@@ -79,7 +77,7 @@ notas aclaran grafías o identificaciones puntuales; las referencias enlazan
 personas, topónimos, instituciones y unidades. Esta arquitectura hace visible
 la intervención editorial en vez de fundirla con el texto.
 
-La **edición modernizada 1.3** ofrece una lectura continua en español actual.
+La **edición modernizada** ofrece una lectura continua en español actual.
 Actualiza ortografía, acentuación, mayúsculas y puntuación; une palabras
 partidas y presenta sin corchetes las abreviaturas ya desarrolladas. Conserva,
 en cambio, nombres, cantidades, medidas, monedas, instituciones, términos
@@ -104,9 +102,8 @@ documento sin convertir dos autoridades distintas en un solo texto.
 ## De la transcripción a la interpretación {#volumen-evidencia}
 
 La transcripción establece qué dice la fuente; la interpretación pregunta qué
-puede significar históricamente. Entre ambas se sitúan el **Estudio Histórico
-1.3** y el **Registro 1.3**, que organizan las afirmaciones mediante cinco tipos
-de evidencia:
+puede significar históricamente. El **estudio histórico** y la **matriz de
+evidencia** organizan las afirmaciones mediante cinco tipos de evidencia:
 
 - **D — dato:** contenido explícito de la Edición Crítica;
 - **C — cálculo:** operación reproducible con datos y reglas declarados;
@@ -126,10 +123,9 @@ rellenar por analogía lo que la fuente no ofrece.
 ## Una cadena de trazabilidad {#volumen-trazabilidad}
 
 La trazabilidad comienza en la imagen y sigue por la unidad, la transcripción y
-el aparato de la Edición Crítica. Desde allí alcanza la edición modernizada, el
-Estudio Histórico y las afirmaciones controladas por el Registro. En la capa
-editorial de este libro Quarto, el front matter de cada capítulo declara sus
-fuentes y, cuando utiliza entradas registradas, sus identificadores de
+el aparato de la edición crítica. Desde allí alcanza la edición modernizada, el
+estudio histórico y las formulaciones controladas de la matriz. Cada capítulo
+declara las fuentes que utiliza y, cuando corresponde, sus identificadores de
 evidencia. Los enlaces y las anclas permiten recorrer esa cadena sin confundir
 una capa con otra.
 
@@ -141,18 +137,15 @@ dónde procede y qué transformación ha recibido.
 
 ## Contenido editorial y derivados {#volumen-content-generated}
 
-Los capítulos que seleccionan, ordenan y explican fuentes para el lector se
-editan manualmente en **publication/content/**. En cambio, las vistas que pueden
-reconstruirse de manera determinista —facsímil preparado, transcripción,
-modernización y aparatos derivados— se regeneran en
-**publication/generated/**. Esos derivados no se corrigen a mano ni se
-convierten en nuevas autoridades.
+El contenido que selecciona, ordena y explica las fuentes para el lector se
+revisa editorialmente. En cambio, las vistas que pueden reconstruirse de forma
+reproducible —facsímil preparado, transcripción, modernización y aparatos
+derivados— se generan desde las fuentes declaradas. Esos derivados no se
+corrigen de manera aislada ni se convierten en nuevas autoridades.
 
-La salida HTML y PDF procede de una misma composición. El PDF completo 0.6
-puede servir como **referencia editorial** para comparar soluciones alcanzadas,
-pero no es una autoridad textual ni una entrada de generación. Tampoco se
-incorporan al repositorio el manuscrito autoritativo, su réplica técnica ni los
-PDF producidos durante la composición.
+Las ediciones HTML y PDF proceden de una misma composición y mantienen la misma
+arquitectura documental. Esta unidad de origen permite comprobar los derivados
+sin otorgarles autoridad textual propia.
 
 ## Límites de la intervención {#volumen-limites}
 

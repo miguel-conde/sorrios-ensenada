@@ -34,6 +34,7 @@ from modernized_edition import (
     response_unit_labels,
     validate_concordance_units,
 )
+from reader_text import reader_facing_source_text
 
 
 GLOSSARY_SOURCE = Path("project/20_TRABAJO_EDITORIAL/Glosario.md")
@@ -335,8 +336,8 @@ source-git-blob: "{data.glossary_git_blob}"
 
 # Glosario histórico {{.unnumbered}}
 
-Las definiciones, referencias y notas proceden íntegramente del Glosario
-canónico. Los enlaces de navegación se añaden sin modificar su contenido.
+Las definiciones, referencias y notas proceden del glosario editorial. Los
+enlaces de navegación se añaden sin modificar su sentido.
 
 ## Entradas {{#glosario-entradas .unnumbered}}
 
@@ -348,15 +349,15 @@ canónico. Los enlaces de navegación se añaden sin modificar su contenido.
         chunks.append(
             f"""### {entry.term} {{#{entry.anchor} .unnumbered}}
 
-**Término documentado:** {_link_glossary_text(entry.documented_term, data)}
+**Término documentado:** {reader_facing_source_text(_link_glossary_text(entry.documented_term, data))}
 
-**Definición:** {_link_glossary_text(entry.definition, data)}
+**Definición:** {reader_facing_source_text(_link_glossary_text(entry.definition, data))}
 
-**Primera unidad:** {_link_glossary_text(entry.first_unit, data)}
+**Primera unidad:** {reader_facing_source_text(_link_glossary_text(entry.first_unit, data))}
 
-**Referencias:** {_link_glossary_text(entry.references, data)}
+**Referencias:** {reader_facing_source_text(_link_glossary_text(entry.references, data))}
 
-**Notas:** {_link_glossary_text(entry.notes, data)}"""
+**Notas:** {reader_facing_source_text(_link_glossary_text(entry.notes, data))}"""
         )
     return "\n\n".join(chunks).rstrip() + "\n"
 
@@ -377,9 +378,9 @@ source-version: "{data.register.version}"
 
 # Cuadros cuantitativos {{.unnumbered}}
 
-Esta vista reúne las entradas cuyo nivel canónico es `C` y los cálculos `CAL-*`
-a los que remiten. Los resultados se publican tal como figuran en el Registro:
-no se recalculan, convierten ni agregan.
+Los cuadros reúnen los cálculos clasificados como `C` y muestran sus
+operaciones, resultados y condiciones de uso. No se recalculan, convierten ni
+agregan.
 '''
     ]
     current_section = None
@@ -549,8 +550,8 @@ usage-derived-from: chapter-evidence-metadata-3-and-5-13
 
 # Matriz de evidencia D/C/I/E/L {{.unnumbered}}
 
-La matriz reproduce el Registro {data.register.version}; no convierte sus formulaciones en prosa
-narrativa ni corrige sus cautelas. `D` identifica dato documental; `C`, cálculo;
+La matriz reúne las formulaciones controladas empleadas por el libro y conserva
+sus cautelas. No las convierte en prosa narrativa. `D` identifica dato documental; `C`, cálculo;
 `I`, interpretación; `E`, contexto externo; y `L`, límite. Los niveles compuestos
 se conservan literalmente. Los estados admitido, condicionado y excluido se
 distinguen visualmente; un guion indica que la tabla canónica no declara una
@@ -590,15 +591,15 @@ columna separada de estado y cautela.
             f"""::: {{.evidence-entry .evidence-state-{_status_class(entry.status_caution)}}}
 ### {entry.identifier} {{#evidencia-{entry.identifier.casefold()} .unnumbered}}
 
-**Formulación canónica:** {entry.statement}
+**Formulación controlada:** {reader_facing_source_text(entry.statement)}
 
 **Nivel:** `{entry.level}`
 
-**Evidencia:** {entry.evidence}
+**Evidencia:** {reader_facing_source_text(entry.evidence)}
 
 **Referencia bibliográfica:** {bibliography}
 
-**Estado y cautela:** {status}
+**Estado y cautela:** {reader_facing_source_text(status)}
 
 **Uso en el libro:** {usage}
 :::

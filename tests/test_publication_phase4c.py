@@ -301,7 +301,7 @@ def test_related_documents_become_book_navigation_without_internal_links(generat
     assert "](../../" not in generated
 
 
-def test_post_render_replaces_4c_prototype_and_links_real_apparatus(tmp_path):
+def test_post_render_does_not_carry_obsolete_prototype_mappings(tmp_path):
     html = tmp_path / "chapter.html"
     html.write_text(
         '<a href="../../generated/16-modernizada-prototipo.qmd#respuesta-17">'
@@ -310,11 +310,10 @@ def test_post_render_replaces_4c_prototype_and_links_real_apparatus(tmp_path):
         "aparato D/C/I/E/L</a>",
         encoding="utf-8",
     )
-    assert rendered_links.fix_rendered_links(tmp_path) == 2
+    assert rendered_links.fix_rendered_links(tmp_path) == 0
     updated = html.read_text(encoding="utf-8")
-    assert "16-edicion-modernizada.html#respuesta-17" in updated
-    assert "matriz-evidencia.html#evidencia-hid-001" in updated
-    assert ".qmd#" not in updated
+    assert "16-modernizada-prototipo.qmd#respuesta-17" in updated
+    assert "aparato-molinos.qmd#matriz-molinera" in updated
 
 
 def test_real_chapter_is_the_only_visible_chapter_16_and_prototype_is_regression():

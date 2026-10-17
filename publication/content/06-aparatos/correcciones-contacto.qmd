@@ -1,0 +1,22 @@
+---
+chapter-id: correcciones-contacto
+publication-status: development
+numbered: false
+number-sections: false
+---
+
+# Correcciones y contacto {.unnumbered}
+
+Se agradece el envío de correcciones documentadas relativas a erratas,
+transcripción paleográfica, referencias, datos o interpretaciones
+contrastables.
+
+**Correo electrónico:** EMAIL DE CONTACTO — PLACEHOLDER PENDIENTE
+
+Cuando el repositorio público esté disponible, GitHub Issues podrá utilizarse
+como vía complementaria. Para facilitar la revisión, conviene indicar el
+capítulo o apartado, el pasaje afectado, la corrección propuesta y, cuando
+corresponda, la fuente que la respalda.
+
+Las observaciones recibidas serán revisadas antes de incorporarse a futuras
+versiones de la obra.

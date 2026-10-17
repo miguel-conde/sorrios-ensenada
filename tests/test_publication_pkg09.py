@@ -87,19 +87,13 @@ def test_credits_are_exact_and_ai_tools_have_no_authorship():
     credits = (
         PUBLICATION / "content/00-preliminares/01-creditos.qmd"
     ).read_text(encoding="utf-8")
-    for role in (
-        "Autor, investigación y dirección editorial",
-        "Edición crítica",
-        "Transcripción paleográfica y revisión",
-        "Edición modernizada y revisión",
-    ):
-        assert f"**{role}:** {AUTHOR}" in credits
+    assert f"**{AUTHOR}**" in credits
+    assert "Autor, investigación y dirección editorial; edición crítica;" in credits
+    assert "transcripción\npaleográfica y revisión; edición modernizada y revisión." in credits
     assert f"© 2026 {AUTHOR}" in credits
     normalized = " ".join(credits.split())
     assert "sistemas de inteligencia artificial" in normalized
-    assert "Estas herramientas no son autoras" in credits
-    assert "revisadas y validadas por Miguel Conde de Simón" in normalized
-    assert "responsabilidad intelectual y final de la obra" in normalized
+    assert "se detallan en el [colofón]" in normalized
     for forbidden in ("ORCID", "afiliación", "coautor", "colaborador humano"):
         assert forbidden.casefold() not in credits.casefold()
 
@@ -199,7 +193,6 @@ def test_project_and_prior_assets_remain_untouched_and_prologue_history_is_prese
         BASE_COMMIT,
         "--",
         "publication/assets/",
-        "publication/references.bib",
     ).returncode == 0
     historical = _git(
         "show",

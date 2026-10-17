@@ -118,15 +118,14 @@ sin más para épocas anteriores o posteriores.
 ## Dos planos de lectura
 
 Este libro separa el dato local del contexto externo. Para lo que afirma el
-expediente de Sorribos y Santibáñez, la autoridad reside en el manuscrito y en
-las fuentes canónicas del proyecto: la Edición Crítica, sus controles y los
-resultados derivados con trazabilidad. Las fuentes externas sirven para situar
-instituciones, términos y procedimientos; no corrigen por sí mismas el dato
-local ni autorizan a proyectar sobre Sorribos rasgos documentados en otros
-lugares.
+expediente de Sorribos y Santibáñez, la autoridad reside en el manuscrito, en
+la edición crítica y en los resultados derivados con trazabilidad. Las fuentes
+externas sirven para situar instituciones, términos y procedimientos; no
+corrigen por sí mismas el dato local ni autorizan a proyectar sobre Sorribos
+rasgos documentados en otros lugares.
 
 En este capítulo, ese contexto procede únicamente de recursos institucionales
-ya identificados por el proyecto: PARES y el [fondo editorial de la Dirección
+ya identificados para esta edición: PARES y el [fondo editorial de la Dirección
 General del
 Catastro](https://www.catastro.hacienda.gob.es/es-ES/fondo_editorial.html).
 La separación continuará en los capítulos siguientes: formulario general,

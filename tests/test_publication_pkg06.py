@@ -65,7 +65,7 @@ def test_preliminaries_precede_the_unchanged_six_part_macroorder():
     paths = quality.navigation_paths(items)
     assert tuple(paths[:5]) == ("index.qmd", *PRELIMINARIES)
     assert tuple(item["part"] for item in items if isinstance(item, dict)) == quality.PARTS
-    assert len(paths) == 39
+    assert len(paths) == 40
     assert paths[-1] == "content/06-aparatos/colofon.qmd"
 
 
@@ -82,19 +82,14 @@ def test_manifest_registers_the_four_preliminaries_in_public_order():
 
 def test_credits_assign_only_the_approved_human_responsibilities_and_rights():
     text = (PUBLICATION / PRELIMINARIES[0]).read_text(encoding="utf-8")
-    for role in (
-        "Autor, investigación y dirección editorial",
-        "Edición crítica",
-        "Transcripción paleográfica y revisión",
-        "Edición modernizada y revisión",
-    ):
-        assert f"**{role}:** Miguel Conde de Simón" in text
+    assert "**Miguel Conde de Simón**" in text
+    assert "Autor, investigación y dirección editorial; edición crítica;" in text
+    assert "transcripción\npaleográfica y revisión; edición modernizada y revisión." in text
     assert "CC BY 4.0" in text
     assert "contenido original" in text
     for component in ("facsímil", "reproducciones", "cartografía"):
         assert component in text
-    assert "Estas herramientas no son autoras" in text
-    assert "responsabilidad intelectual y final de la obra" in text
+    assert "se detallan en el [colofón]" in text
 
 
 def test_prologue_is_final_signed_human_text_without_placeholder_residue():
@@ -135,10 +130,14 @@ def test_conventions_cover_spelling_locators_answers_evidence_and_links():
     assert len(body.split()) < 300
 
 
-def test_detailed_methodology_chapter_is_byte_identical_to_the_base():
+def test_detailed_methodology_chapter_preserves_method_without_workflow_residue():
     relative = "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
-    expected = _git("show", f"{BASE_COMMIT}:{relative}")
-    assert (ROOT / relative).read_text(encoding="utf-8") == expected
+    text = (ROOT / relative).read_text(encoding="utf-8")
+    assert "D — dato" in text and "L — límite" in text
+    assert "contenido que selecciona" in text
+    assert "derivados" in text and "autoridad" in text
+    for residue in ("publication/content/", "publication/generated/", "libro Quarto", "0.6"):
+        assert residue not in text
 
 
 def test_informative_closure_titles_preserve_the_stable_anchors():

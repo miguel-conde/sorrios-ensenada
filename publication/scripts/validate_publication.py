@@ -73,6 +73,7 @@ from quality_audit import (
     audit_pdf,
     audit_release_candidate,
 )
+from reader_text import reader_facing_source_text
 
 
 PUBLICATION_ROOT = Path(__file__).resolve().parent.parent
@@ -1909,12 +1910,13 @@ _HUMAN_MAINTENANCE = (
     r"\bmanual(?:mente)?\b",
     r"\bhuman\w*\b",
     r"\bpor\s+personas\b",
+    r"\beditorialmente\b",
 )
 _REGENERABLE_OUTPUT = (
     r"\b(?:derivad\w*|salidas?|productos?|vistas?|directorio)\b",
 )
 _REGENERATION = (
-    r"\b(?:regener\w*|reproduc\w*|reconstru\w*|determinista\w*|automátic\w*)\b",
+    r"\b(?:gener\w*|regener\w*|reproduc\w*|reconstru\w*|determinista\w*|automátic\w*)\b",
 )
 _AUTHORITY = (
     r"\bautoridad(?:es)?(?:\s+canónica)?(?:\s+propia)?\b",
@@ -2132,6 +2134,21 @@ def _validate_chapter_four_body(body: str) -> list[str]:
         False in _authority_polarities(item)
         for item in generated_propositions
     )
+    if "publication/content/" not in generated and "publication/generated/" not in generated:
+        normalized_generated = _normalized_text(generated)
+        separates_directories = all(
+            phrase in normalized_generated
+            for phrase in (
+                "contenido que selecciona",
+                "se revisa editorialmente",
+                "vistas que pueden reconstruirse",
+                "se generan desde las fuentes declaradas",
+            )
+        )
+        generated_lacks_authority = (
+            "no se corrigen de manera aislada ni se convierten en nuevas autoridades"
+            in normalized_generated
+        )
     if not separates_directories or not generated_lacks_authority:
         errors.append(
             "C4_CONTENT_GENERATED_FUNCTIONS: falta separar el contenido editorial "
@@ -3968,14 +3985,13 @@ def validate() -> list[str]:
         chapter_four_text = chapter_bodies.get(4, "")
         normalized_four = _normalized_text(chapter_four_text)
         required_four = (
-            "pdf manuscrito autoritativo", "18 páginas digitales",
+            "manuscrito digitalizado autoritativo", "18 páginas digitales",
             "35 unidades documentales", "facsímil",
-            "transcripción paleográfica semidiplomática", "edición crítica 3.6",
-            "edición modernizada 1.3", "preguntas externas", "respuestas locales",
-            "estudio histórico 1.3", "registro 1.3", "front matter",
-            "libro quarto", "publication/content/", "publication/generated/",
-            "referencia editorial", "no es una autoridad textual",
-            "permanece fuera de github",
+            "transcripción paleográfica semidiplomática", "edición crítica",
+            "edición modernizada", "preguntas externas", "respuestas locales",
+            "estudio histórico", "matriz de evidencia", "fuentes que utiliza",
+            "contenido que selecciona", "derivados", "misma composición",
+            "autoridad textual propia",
         )
         for phrase in required_four:
             if phrase not in normalized_four:
@@ -4329,9 +4345,12 @@ def validate() -> list[str]:
                     )
                 for section_name in SECTION_NAMES[1:]:
                     actual = sections[section_name]
+                    expected = canonical.sections[section_name]
                     if section_name == PALEOGRAPHIC_SECTION:
                         actual = _decode_line_block(actual)
-                    if actual != canonical.sections[section_name]:
+                    else:
+                        expected = reader_facing_source_text(expected)
+                    if actual != expected:
                         errors.append(
                             "Fidelidad textual rota en "
                             f"{canonical.spec.unit_id} / {section_name}"
@@ -4621,6 +4640,7 @@ def validate() -> list[str]:
         "content/06-aparatos/cuestiones-abiertas.qmd",
         "content/06-aparatos/historia-intelectual-editorial.qmd",
         "content/06-aparatos/como-citar.qmd",
+        "content/06-aparatos/correcciones-contacto.qmd",
         "content/06-aparatos/bibliografia.qmd",
         *(f"generated/indices/{name}" for name in INDEX_OUTPUT_NAMES),
         "content/06-aparatos/colofon.qmd",

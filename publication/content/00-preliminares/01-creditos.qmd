@@ -10,20 +10,13 @@ sources:
 
 # Créditos y derechos {.unnumbered}
 
-**Autor, investigación y dirección editorial:** Miguel Conde de Simón  
-**Edición crítica:** Miguel Conde de Simón  
-**Transcripción paleográfica y revisión:** Miguel Conde de Simón  
-**Edición modernizada y revisión:** Miguel Conde de Simón
+**Miguel Conde de Simón**
 
-En la elaboración de esta obra se utilizaron herramientas digitales y
-sistemas de inteligencia artificial como apoyo auxiliar en tareas de
-transcripción y análisis paleográfico, localización y contraste de fuentes,
-investigación histórica, análisis y estructuración de información, revisión
-de consistencia y preparación editorial. Estas herramientas no son autoras ni
-sustituyen el juicio histórico, paleográfico o editorial. Las lecturas, las
-fuentes utilizadas, las interpretaciones y las decisiones editoriales y de
-publicación fueron revisadas y validadas por Miguel Conde de Simón, que asume
-la responsabilidad intelectual y final de la obra.
+Autor, investigación y dirección editorial; edición crítica; transcripción
+paleográfica y revisión; edición modernizada y revisión.
+
+El uso de herramientas digitales y sistemas de inteligencia artificial, sus
+límites y la responsabilidad humana final se detallan en el [colofón](../06-aparatos/colofon.qmd).
 
 ## Derechos {.unnumbered}
 

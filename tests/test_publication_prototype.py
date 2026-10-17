@@ -491,13 +491,13 @@ def test_chapter_four_separates_editorial_layers_and_provenance():
     assert all(source["locator"] for source in metadata["sources"])
     assert "evidence" not in metadata
     required = (
-        "pdf manuscrito autoritativo", "18 páginas digitales",
+        "manuscrito digitalizado autoritativo", "18 páginas digitales",
         "35 unidades documentales", "facsímil",
-        "transcripción paleográfica semidiplomática", "edición crítica 3.6",
-        "edición modernizada 1.3", "preguntas externas", "respuestas locales",
-        "estudio histórico 1.3", "registro 1.3", "front matter",
-        "libro quarto", "publication/content/", "publication/generated/", "referencia editorial",
-        "no es una autoridad textual", "permanece fuera de github",
+        "transcripción paleográfica semidiplomática", "edición crítica",
+        "edición modernizada", "preguntas externas", "respuestas locales",
+        "estudio histórico", "matriz de evidencia", "fuentes que utiliza",
+        "contenido que selecciona", "derivados", "misma composición",
+        "autoridad textual propia",
     )
     assert all(phrase in normalized for phrase in required)
     assert all(heading.casefold() in normalized for heading in validator.UNIT_HEADINGS)
@@ -510,6 +510,12 @@ def test_chapter_four_separates_editorial_layers_and_provenance():
     assert not any(name in body for name in ("Joaquín Aguado", "Remirio Rodríguez"))
     assert not re.search(r"(?:/home/|/tmp/|[A-Za-z]:\\\\)", body)
     assert "base64" not in normalized
+    for residue in (
+        "edición crítica 3.6", "edición modernizada 1.3", "registro 1.3",
+        "front matter", "libro quarto", "publication/content/",
+        "publication/generated/", "pdf completo 0.6",
+    ):
+        assert residue not in normalized
     assert not re.search(r"<[A-Za-z][^>]*>", body)
     assert validator._validate_chapter_four_body(body) == []
 

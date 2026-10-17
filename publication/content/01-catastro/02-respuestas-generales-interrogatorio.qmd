@@ -118,7 +118,7 @@ Catastro](https://www.catastro.hacienda.gob.es/documentos/publicaciones/catalogo
 conserva también la referencia al término, la titularidad de los
 establecimientos y su utilidad anual.
 
-El proyecto adoptó la formulación completa con ese respaldo institucional. La
+Esta edición adopta la formulación completa con ese respaldo institucional. La
 incidencia afecta a la transmisión moderna del formulario, no a la identificación
 ni al orden de sus cuarenta preguntas. Tampoco convierte el formulario externo
 en autoridad sobre la lectura paleográfica local: permite saber qué información
@@ -128,14 +128,14 @@ solicitaba la pregunta, pero no corregir la respuesta manuscrita.
 
 El Interrogatorio de la letra A y las respuestas de cada población se relacionan
 sin confundirse. El primero ofrece la pauta externa común; las segundas son el
-texto local producido al aplicarla. La Edición Crítica 3.6 mantiene la autoridad
+texto local producido al aplicarla. La edición crítica mantiene la autoridad
 sobre ese texto local, incluidas sus remisiones, omisiones, discrepancias y
 formas documentales.
 
 Por eso la pregunta 40 puede hablar de fincas o rentas del rey mientras la copia
 local conserva su propia lectura, sin que el formulario sirva para enmendarla
 silenciosamente. La edición modernizada hace visible la relación colocando
-pregunta y respuesta en apartados distintos. El futuro capítulo 16 reunirá los
+pregunta y respuesta en apartados distintos. El capítulo 16 reúne los
 cuarenta pares completos; aquí basta con explicar la función del formulario.
 
 El capítulo siguiente estudiará el expediente concreto y sus participantes. El

@@ -9,10 +9,9 @@ nocite: |
 
 # Bibliografía {.unnumbered}
 
-Esta bibliografía se genera desde el registro único `references.bib`. Reúne
-las fuentes externas activas de las entradas E vigentes; las fuentes
+Esta bibliografía reúne las fuentes externas citadas por el libro. Las fuentes
 institucionales enlazadas solo como ayuda de consulta permanecen en su lugar de
-uso y no se duplican aquí como un sistema paralelo.
+uso y no se duplican aquí.
 
 ::: {#refs}
 :::

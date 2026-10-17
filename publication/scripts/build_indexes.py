@@ -22,6 +22,7 @@ from index_sources import (
     unit_locator,
 )
 from modernized_edition import ModernizedEdition, load_modernized_edition
+from reader_text import reader_facing_source_text
 
 
 UNITS_SOURCE = Path("project/00_CONTROL/unidades.yaml")
@@ -141,10 +142,9 @@ def _header(
 ) -> str:
     source_lines = "\n".join(f"  - {source}" for source in sources)
     ordering = (
-        "Las entradas se ordenan mediante una clave Unicode determinista: se aplican\n"
-        "`casefold` y descomposición NFKD, se omiten tildes y signos solo en la clave y\n"
-        "se conservan en pantalla la grafía canónica, las abreviaturas y las partículas\n"
-        "en su posición. Las variantes no duplican localizadores."
+        "Las entradas se ordenan alfabéticamente sin que tildes y signos alteren la\n"
+        "ordenación; las grafías, abreviaturas y partículas se conservan íntegramente.\n"
+        "Las variantes no duplican localizadores."
         if alphabetical
         else "Las entradas siguen el orden numérico validado del interrogatorio."
     )
@@ -218,7 +218,7 @@ def live_index_qmd(index: LiveIndex, specs: tuple[UnitSpec, ...]) -> str:
     entries: list[tuple[str, str, tuple[str, ...]]] = []
     for entry in index.entries:
         details = tuple(
-            f"**{visible}:** {entry.fields[field]}"
+            f"**{visible}:** {reader_facing_source_text(entry.fields[field])}"
             for field, visible in DISPLAY_FIELDS[index.index_id]
             if field in entry.fields
         )

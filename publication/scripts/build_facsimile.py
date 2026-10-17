@@ -187,7 +187,9 @@ lightbox: true
 Las imágenes reproducen, en su orden material, las 18 páginas completas del
 manuscrito autoritativo. Son derivados de publicación sin autoridad propia: no
 recortan unidades, no incorporan OCR ni sustituyen la transcripción paleográfica.
-""".format(file_id=checked.manuscript.file_id).rstrip()
+Las reproducciones se prepararon a {dpi} ppp para ofrecer una consulta legible
+en los dos formatos del libro.
+""".format(file_id=checked.manuscript.file_id, dpi=config.dpi).rstrip()
     ]
     for item in mapping:
         page = item.page
@@ -202,7 +204,7 @@ recortan unidades, no incorporan OCR ni sustituyen la transcripción paleográfi
 ![Página digital {page:02d} completa del manuscrito autoritativo, conservada con todos sus márgenes y elementos materiales.](assets/facsimile/{filename}){{#fig-pagina-digital-{page:02d} fig-alt="Página digital {page:02d} completa del manuscrito autoritativo, sin recorte de márgenes ni de contenido." fig-pos="H" width="{width}"}}
 :::
 
-Página {page} de {config.page_count}; rasterización completa a {config.dpi} dpi desde el PDF autoritativo verificado.
+Página {page} de {config.page_count}.
 
 ### Unidades transcritas en esta página
 

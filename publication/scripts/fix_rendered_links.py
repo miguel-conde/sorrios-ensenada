@@ -9,20 +9,7 @@ import re
 from pathlib import Path
 
 
-REPLACEMENTS = {
-    "../../generated/14-facsimil-prototipo.qmd#pagina-digital-12": (
-        "../../generated/14-facsimil.html#pagina-digital-12"
-    ),
-    "../../generated/15-transcripcion-prototipo.qmd#folio-315v": (
-        "../../generated/15-transcripcion.html#folio-315v"
-    ),
-    "../../generated/16-modernizada-prototipo.qmd#respuesta-17": (
-        "../../generated/16-edicion-modernizada.html#respuesta-17"
-    ),
-    "../../generated/aparato-molinos.qmd#matriz-molinera": (
-        "../../generated/matriz-evidencia.html#evidencia-hid-001"
-    ),
-}
+REPLACEMENTS: dict[str, str] = {}
 
 HEADING_RE = re.compile(r"<h[1-6]\b[^>]*>(.*?)</h[1-6]>", re.DOTALL)
 TABLE_RE = re.compile(r"<table\b([^>]*)>(.*?)</table>", re.DOTALL)

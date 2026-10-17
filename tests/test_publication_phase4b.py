@@ -221,7 +221,10 @@ def test_all_five_text_sections_are_explicitly_equivalent(canonical_units):
             actual = sections[name]
             if name == "Transcripción paleográfica":
                 actual = validator._decode_line_block(actual)
-            assert actual == canonical.sections[name], f"{canonical.spec.unit_id} / {name}"
+            expected = canonical.sections[name]
+            if name != "Transcripción paleográfica":
+                expected = transcription.reader_facing_source_text(expected)
+            assert actual == expected, f"{canonical.spec.unit_id} / {name}"
 
 
 def test_paleographic_lineation_including_croquis_blank_line_is_preserved(canonical_units):
@@ -324,18 +327,17 @@ def test_real_navigation_replaces_visible_prototype_and_preserves_regression_man
     assert quarto["project"]["post-render"] == "scripts/fix_rendered_links.py"
 
 
-def test_post_render_rewrites_only_legacy_prototype_links(tmp_path):
+def test_post_render_no_longer_rewrites_legacy_prototype_links(tmp_path):
     html = tmp_path / "chapter.html"
     html.write_text(
         '<a href="../../generated/14-facsimil-prototipo.qmd#pagina-digital-12">A</a>'
         '<a href="../../generated/15-transcripcion-prototipo.qmd#folio-315v">B</a>',
         encoding="utf-8",
     )
-    assert rendered_links.fix_rendered_links(tmp_path) == 2
+    assert rendered_links.fix_rendered_links(tmp_path) == 0
     updated = html.read_text(encoding="utf-8")
-    assert "14-facsimil.html#pagina-digital-12" in updated
-    assert "15-transcripcion.html#folio-315v" in updated
-    assert "-prototipo.qmd#" not in updated
+    assert "14-facsimil-prototipo.qmd#pagina-digital-12" in updated
+    assert "15-transcripcion-prototipo.qmd#folio-315v" in updated
 
 
 def test_binary_policy_keeps_generated_pngs_out_of_git():

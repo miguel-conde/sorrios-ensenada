@@ -24,6 +24,7 @@ from critical_edition import (
     published_unit_anchor,
 )
 from f3_model import F3ModelError, page_anchor, unit_image_markdown
+from reader_text import reader_facing_source_text
 
 
 TRANSCRIPTION_ASSET_ID = "critical-edition-unit-images"
@@ -212,9 +213,9 @@ sources:
 lightbox: true
 ---
 
-Este capítulo reproduce las 35 unidades de la edición crítica 3.6 en el orden
-material fijado por `unidades.yaml`. Las imágenes son derivados de lectura sin
-autoridad propia; la autoridad textual permanece en `Edicion_Critica.md`.
+Este capítulo reproduce las 35 unidades documentales en su orden material.
+Las imágenes son ayudas de lectura sin autoridad propia; la autoridad textual
+permanece en la edición crítica.
 """.format(file_id=checked.manuscript.file_id).rstrip()
     ]
     for index, unit in enumerate(units):
@@ -235,7 +236,7 @@ autoridad propia; la autoridad textual permanece en `Edicion_Critica.md`.
             content = (
                 line_block(unit.sections[name])
                 if name == "Transcripción paleográfica"
-                else unit.sections[name]
+                else reader_facing_source_text(unit.sections[name])
             )
             chunks.append(f"### {name}\n\n{content}")
         if index + 1 < len(units):

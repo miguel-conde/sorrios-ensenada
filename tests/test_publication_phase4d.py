@@ -233,7 +233,10 @@ def test_glossary_preserves_every_field_and_external_source(glossary, generated)
             ("Referencias", entry.references),
             ("Notas", entry.notes),
         ):
-            assert f"**{label}:** {value}" in block, (entry.term, label)
+            assert f"**{label}:** {builder.reader_facing_source_text(value)}" in block, (
+                entry.term,
+                label,
+            )
         assert "**Contexto histórico:**" not in block
     assert "https://www.mapa.gob.es/" in output
     assert "https://dle.rae.es/negrillo" in output
@@ -394,18 +397,18 @@ def test_matrix_preserves_all_register_fields_and_levels(register, generated):
     identifiers = re.findall(r"^### ([A-Z]+-\d{3}) \{#evidencia-", output, re.MULTILINE)
     assert identifiers == [entry.identifier for entry in register.entries]
     for entry in register.entries:
-        assert f"**Formulación canónica:** {entry.statement}" in output
+        assert f"**Formulación controlada:** {builder.reader_facing_source_text(entry.statement)}" in output
         assert f"**Nivel:** `{entry.level}`" in output
-        assert f"**Evidencia:** {entry.evidence}" in output
-        assert f"**Estado y cautela:** {entry.status_caution or '—'}" in output
+        assert f"**Evidencia:** {builder.reader_facing_source_text(entry.evidence)}" in output
+        assert f"**Estado y cautela:** {builder.reader_facing_source_text(entry.status_caution or '—')}" in output
 
 
 def test_matrix_keeps_problematic_canonical_entries_as_apparatus_not_narrative(generated):
     output = generated["matriz-evidencia.qmd"]
     assert "como 26 habitantes fiscales" in output
     assert "`Sorribas` no se trata como variante histórica" in output
-    assert "La matriz reproduce el Registro 1.3" in output
-    assert "no convierte sus formulaciones en prosa" in output
+    assert "La matriz reúne las formulaciones controladas" in output
+    assert "No las convierte en prosa narrativa" in output
 
 
 def test_matrix_usage_is_derived_from_existing_chapter_metadata(data, generated):

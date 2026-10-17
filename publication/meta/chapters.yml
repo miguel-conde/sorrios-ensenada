@@ -92,6 +92,9 @@ chapters:
   - chapter_id: como-citar
     path: content/06-aparatos/como-citar.qmd
     publication_status: development
+  - chapter_id: correcciones-contacto
+    path: content/06-aparatos/correcciones-contacto.qmd
+    publication_status: development
   - chapter_id: bibliografia
     path: content/06-aparatos/bibliografia.qmd
     publication_status: development

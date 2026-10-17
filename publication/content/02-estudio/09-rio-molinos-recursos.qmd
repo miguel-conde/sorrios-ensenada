@@ -122,10 +122,10 @@ segura entre carga y quartal. La separación evita fabricar un total homogéneo 
 partir de magnitudes no convertibles. [L: LIM-005]
 
 El caso puede contrastarse en cuatro capas que cumplen funciones diferentes:
-la [página digital 12](../../generated/14-facsimil-prototipo.qmd#pagina-digital-12),
-el [folio 315v con su transcripción](../../generated/15-transcripcion-prototipo.qmd#folio-315v),
-la [respuesta 17 modernizada](../../generated/16-modernizada-prototipo.qmd#respuesta-17)
-y el [aparato D/C/I/E/L](../../generated/aparato-molinos.qmd#matriz-molinera).
+la [página digital 12](../../generated/14-facsimil.qmd#pagina-digital-12),
+el [folio 315v con su transcripción](../../generated/15-transcripcion.qmd#folio-315v),
+la [respuesta 17 modernizada](../../generated/16-edicion-modernizada.qmd#respuesta-17)
+y la [matriz D/C/I/E/L](../../generated/matriz-evidencia.qmd#evidencia-hid-001).
 Estas vistas permiten contrastar el mismo caso en cuatro capas sin reducir a
 ellas el desarrollo histórico del capítulo.
 

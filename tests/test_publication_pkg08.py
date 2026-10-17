@@ -259,15 +259,17 @@ def test_intellectual_history_is_reader_facing_not_a_git_changelog():
     normalized = " ".join(page.split())
     for required in (
         "manuscrito de 1752",
-        "Edición Crítica 3.6",
-        "edición modernizada 1.3",
-        "Estudio Histórico 1.3",
-        "Registro 1.3",
-        "composición 0.6",
-        "edición Quarto",
+        "edición crítica",
+        "edición modernizada",
+        "estudio histórico",
+        "matriz D/C/I/E/L",
+        "navegación bidireccional",
     ):
         assert required in normalized
-    for forbidden in ("commit", "SHA", "rama", "pytest", "integración continua"):
+    for forbidden in (
+        "commit", "SHA", "rama", "pytest", "integración continua",
+        "Registro 1.3", "composición 0.6", "edición Quarto",
+    ):
         assert forbidden not in page
 
 

@@ -25,9 +25,9 @@ valores ya asignados.
 | Unidad | Localización documental | …, unidad [ID o etiqueta], orden [1–35], página/posición [localizador], [URL canónica pendiente]. |
 | Respuesta | Localización documental | …, «Edición modernizada», respuesta [1–40], folio(s) [localizador], [URL canónica pendiente]. |
 | Transcripción paleográfica | Transcripción | Conde de Simón, Miguel, ed. «Transcripción paleográfica», folio/unidad [localizador], en *Sorribos y Santibáñez de Ordás en 1752*, versión 1.0, 2026. [URL canónica pendiente]. |
-| Edición modernizada | Modernizada | Conde de Simón, Miguel, ed. «Edición modernizada», respuesta [n], fuente 1.3, en *Sorribos y Santibáñez de Ordás en 1752*, versión 1.0, 2026. [URL canónica pendiente]. |
+| Edición modernizada | Modernizada | Conde de Simón, Miguel, ed. «Edición modernizada», respuesta [n], en *Sorribos y Santibáñez de Ordás en 1752*, versión 1.0, 2026. [URL canónica pendiente]. |
 | Capítulo histórico | Estudio | Conde de Simón, Miguel. «[Título del capítulo]», cap. [5–13], en *Sorribos y Santibáñez de Ordás en 1752*, versión 1.0, 2026. [URL canónica pendiente]. |
-| Entrada D/C/I/E/L | Matriz | Conde de Simón, Miguel. «[ID canónico]», *Matriz de evidencia D/C/I/E/L*, Registro 1.3, en la versión 1.0 del volumen, 2026. [URL canónica pendiente]#evidencia-[id]. |
+| Entrada D/C/I/E/L | Matriz | Conde de Simón, Miguel. «[ID]», *Matriz de evidencia D/C/I/E/L*, en la versión 1.0 del volumen, 2026. [URL canónica pendiente]#evidencia-[id]. |
 | Fuente externa | Bibliográfica | Cítese con la referencia normalizada de la bibliografía y, cuando corresponda, con el ID E enlazado a la matriz. |
 
 Los localizadores estables —página, folio, unidad, respuesta, capítulo o ID—

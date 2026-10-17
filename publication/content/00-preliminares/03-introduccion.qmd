@@ -12,7 +12,7 @@ sources:
 
 # Introducción general {.unnumbered}
 
-Este libro reúne dos operaciones que conviene leer juntas sin confundirlas. La
+Este libro reúne dos líneas de trabajo que conviene leer juntas sin confundirlas. La
 primera estudia históricamente Sorribos y Santibáñez de Ordás a partir del
 expediente de 1752. La segunda publica el documento mediante imágenes,
 transcripción, edición crítica y versión modernizada. Sus seis partes conservan

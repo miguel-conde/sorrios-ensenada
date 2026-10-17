@@ -13,23 +13,22 @@ sources:
 # Historia intelectual y editorial {.unnumbered}
 
 Este libro nace de un manuscrito de 1752. La imagen conserva su materialidad;
-la transcripción paleográfica fija la lectura sin modernizarla; y la Edición
-Crítica 3.6 hace visibles decisiones, dudas, notas y relaciones entre sus 35
-unidades. Ninguna de esas capas atribuye al documento conclusiones que fueron
-elaboradas después.
+la transcripción paleográfica fija la lectura sin modernizarla; y la edición
+crítica hace visibles decisiones, dudas, notas y relaciones entre sus 35
+unidades. Ninguna de esas capas atribuye al documento conclusiones elaboradas
+después.
 
-La edición modernizada 1.3 ofrece las cuarenta respuestas en español actual
-sin convertir medidas antiguas ni completar silencios. A partir de esa base,
-el Estudio Histórico 1.3 organiza la investigación y el Registro 1.3 distingue
+La edición modernizada ofrece las cuarenta respuestas en español actual sin
+convertir medidas antiguas ni completar silencios. A partir de esa base, el
+estudio histórico organiza la investigación y la matriz D/C/I/E/L distingue
 datos, cálculos, interpretaciones, contextos externos y límites. La matriz
-D/C/I/E/L publicada permite volver desde la explicación a la formulación
-controlada y a su cautela.
+permite volver desde la explicación a la formulación controlada y a su cautela.
 
-La composición 0.6 reunió estas capas y sirvió como antecedente intelectual y
-visual, pero no es autoridad textual. La edición Quarto preparada para 1.0
-recompone una misma fuente para HTML y PDF, incorpora navegación bidireccional,
-bibliografía y aparatos, y mantiene separados fuente histórica, edición,
-interpretación y publicación.
+La preparación editorial fue reuniendo estas capas en una arquitectura común,
+con navegación bidireccional, bibliografía y aparatos de consulta. La presente
+edición mantiene separados fuente histórica, edición, interpretación y
+publicación, y ofrece una misma estructura documental en sus formatos de
+lectura.
 
 Durante esta evolución se rectificaron identificaciones cuando la evidencia lo
 exigió. El caso más visible es la lectura **Sorribas → Sorribos**: la forma

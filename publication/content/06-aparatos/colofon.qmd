@@ -55,4 +55,7 @@ de publicación fueron revisadas y validadas por **Miguel Conde de Simón**, que
 asume la responsabilidad intelectual y final de la obra.
 
 **Año editorial:** 2026. La fecha exacta de publicación y la URL canónica se
-fijarán en el release; no se anticipan en esta edición previa a candidata.
+incorporarán al publicarse la edición.
+
+Las correcciones documentadas pueden comunicarse por los canales indicados en
+[«Correcciones y contacto»](correcciones-contacto.qmd).

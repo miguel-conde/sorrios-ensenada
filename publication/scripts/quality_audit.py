@@ -43,6 +43,7 @@ NARRATIVE_APPARATUS = (
     "content/06-aparatos/cuestiones-abiertas.html",
     "content/06-aparatos/historia-intelectual-editorial.html",
     "content/06-aparatos/como-citar.html",
+    "content/06-aparatos/correcciones-contacto.html",
     "content/06-aparatos/bibliografia.html",
     "content/06-aparatos/colofon.html",
 )
@@ -321,12 +322,12 @@ def audit_configuration(publication_root: Path = PUBLICATION_ROOT) -> list[str]:
         path.replace(".html", ".qmd") for path in PRELIMINARIES
     )
     if (
-        len(paths) != 39
+        len(paths) != 40
         or tuple(paths[:5]) != ("index.qmd", *expected_preliminaries)
         or paths[-1] != "content/06-aparatos/colofon.qmd"
     ):
         errors.append(
-            "La composición debe contener 39 documentos públicos, comenzar "
+            "La composición debe contener 40 documentos públicos, comenzar "
             "por portada, créditos, prólogo, introducción y convenciones y "
             "terminar con el colofón"
         )
@@ -364,8 +365,8 @@ def _local_target(source: Path, href: str) -> tuple[Path, str] | None:
 def audit_html_book(book_root: Path = BOOK_ROOT) -> list[str]:
     errors: list[str] = []
     html_paths = sorted(book_root.rglob("*.html"))
-    if len(html_paths) != 39:
-        errors.append(f"Se esperaban 39 documentos HTML y existen {len(html_paths)}")
+    if len(html_paths) != 40:
+        errors.append(f"Se esperaban 40 documentos HTML y existen {len(html_paths)}")
     parsed = {path.resolve(): parse_html(path) for path in html_paths}
     titles: dict[str, Path] = {}
     ids = {path: set(parser.ids) for path, parser in parsed.items()}

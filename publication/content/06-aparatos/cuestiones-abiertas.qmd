@@ -12,9 +12,9 @@ sources:
 
 # Cuestiones abiertas {.unnumbered}
 
-Estas nueve preguntas no son lagunas que la edición rellene por analogía. Son
-los límites de investigación clasificados como QA1: el expediente permite
-formularlos con precisión, pero no resolverlos con la documentación utilizada.
+Estas nueve preguntas no son lagunas que la edición complete por analogía.
+Son límites que el expediente permite formular con precisión, pero no resolver
+con la documentación utilizada.
 
 ## Población y hogares {.unnumbered}
 

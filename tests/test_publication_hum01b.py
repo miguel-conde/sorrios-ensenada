@@ -67,14 +67,15 @@ def test_human_prologue_is_preserved_and_marked_final():
     assert body.rstrip().endswith("**Miguel Conde de Simón**<br>\nSorríos, 2026")
 
 
-def test_ai_declarations_match_the_approved_text_verbatim():
+def test_colophon_ai_declaration_is_preserved_and_credits_refer_to_it():
     credits = (
         PUBLICATION / "content/00-preliminares/01-creditos.qmd"
     ).read_text(encoding="utf-8")
     colophon = (
         PUBLICATION / "content/06-aparatos/colofon.qmd"
     ).read_text(encoding="utf-8")
-    assert credits.count(CREDITS_DECLARATION) == 1
+    assert CREDITS_DECLARATION not in credits
+    assert "se detallan en el [colofón]" in credits
     assert colophon.count(COLOPHON_DECLARATION) == 1
 
 

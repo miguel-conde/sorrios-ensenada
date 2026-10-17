@@ -277,7 +277,7 @@ def test_navigation_integrates_exactly_nine_indexes_after_phase4d():
     expected = [f"generated/indices/{name}" for name in builder.OUTPUT_NAMES]
     assert navigation[-10:-1] == expected
     assert navigation[-1] == "content/06-aparatos/colofon.qmd"
-    assert navigation[-15] == "generated/matriz-evidencia.qmd"
+    assert navigation[-16] == "generated/matriz-evidencia.qmd"
     chapters = yaml.safe_load(
         (PUBLICATION / "meta/chapters.yml").read_text(encoding="utf-8")
     )["chapters"]

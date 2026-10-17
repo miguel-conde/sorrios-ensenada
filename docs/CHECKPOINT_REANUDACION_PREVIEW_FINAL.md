@@ -10,6 +10,10 @@
 - La candidata 1.0 fue validada integralmente por PKG-11.
 - HUM-01B está completado: prólogo definitivo y declaración sobre
   IA/herramientas cerrados.
+- E1 — REV-LECTOR-01 está **COMPLETADA**.
+- E2 — LINK-01 está **COMPLETADA**.
+- E3 — REV-LECTOR-02 está **COMPLETADA** en rama aislada, pendiente de revisión
+  e integración.
 - La validación integral y los renders posteriores a HUM-01B están
   deliberadamente diferidos.
 - PKG-12 **NO** se ha iniciado.
@@ -17,6 +21,8 @@
 ## Línea principal editorial congelada
 
 ### E1 — REV-LECTOR-01
+
+**COMPLETADA.** Sus 23 hallazgos se aplicaron conjuntamente en E3.
 
 Auditoría editorial orientada al lector, previa a cualquier corrección. Debe
 cubrir:
@@ -34,12 +40,17 @@ cubrir:
 
 ### E2 — LINK-01
 
+**COMPLETADA.** Sus correcciones localizadas se aplicaron conjuntamente en E3.
+
 Auditoría de **todos** los enlaces externos e internos, bibliografía, anchors,
 facsímil ↔ transcripción y matriz/retornos. Debe comprobar expresamente
 `https://hdl.handle.net/10366/151409` y clasificar cada resultado como
 `válido`, `redirigido`, `roto` o `no verificable automáticamente`.
 
 ### E3 — REV-LECTOR-02
+
+**COMPLETADA EN RAMA AISLADA.** Resultado: `E3: APTO PARA REVISIÓN E
+INTEGRACIÓN`.
 
 Aplicación conjunta de las correcciones resultantes de E1 y E2. Debe incluir:
 
@@ -131,8 +142,8 @@ Nuevas observaciones humanas pueden incorporarse antes de REV-FINAL-PREVIEW.
 
 ## Reanudación
 
-- **Siguiente operación de la línea principal:**
-  `REV-LECTOR-01 — AUDITORÍA EDITORIAL ORIENTADA AL LECTOR`.
+- **Siguiente operación de la línea principal, tras revisar e integrar E3:**
+  `E4 — REV-FINAL-PREVIEW`.
 - **Siguiente operación posible de la línea paralela:**
   `R2 — DECISIONES HUMANAS DE PRIVACIDAD Y LICENCIAS`.
 
