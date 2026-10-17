@@ -5,7 +5,7 @@
   "author": {
     "name": "Miguel Conde"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "keywords": ["catastro-de-ensenada", "edicion-critica", "paleografia"],
   "skills": "./skills/",
   "interface": {

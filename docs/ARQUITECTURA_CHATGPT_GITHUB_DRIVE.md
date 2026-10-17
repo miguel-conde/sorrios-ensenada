@@ -442,7 +442,7 @@ Además `proyecto.yaml` cambia de schema 1 a schema 2.
 ## Web
 
 1. iniciar sesión en ChatGPT;
-2. disponer de conexión GitHub al repo privado;
+2. disponer de conexión GitHub al repositorio y de los permisos necesarios;
 3. disponer de conexión Drive al PDF;
 4. abrir Chat normal;
 5. pedir cargar `PROJECT.md`;

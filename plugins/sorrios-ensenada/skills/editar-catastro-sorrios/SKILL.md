@@ -7,7 +7,9 @@ description: Gestiona, consulta, audita y edita la edición crítica del Catastr
 
 Esta skill es autocontenida. No requiere `PROJECT.md`, Work, checkout local, Git local, Python local, WSL ni VS Code.
 
-El workspace canónico está en el repositorio privado `miguel-conde/sorrios-ensenada`, bajo `project/`. Google Drive conserva solo el PDF autoritativo y se usa en modo de solo lectura.
+El workspace canónico está en el repositorio `miguel-conde/sorrios-ensenada`,
+bajo `project/`, con la visibilidad y los permisos que estén vigentes. Google
+Drive conserva solo el PDF autoritativo y se usa en modo de solo lectura.
 
 ## Inicio
 

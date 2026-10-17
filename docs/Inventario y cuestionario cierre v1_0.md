@@ -35,7 +35,7 @@ La skill del Catastro se aplicó en modo consulta/auditoría: se respetó la jer
 | Prólogo | Personal, firmado, 900–1.500 palabras y situado después de créditos |
 | Herramientas | Uso técnico de ChatGPT, Copilot, Codex, Quarto, Python, Git, LaTeX, Poppler y otras herramientas documentado; no son autores |
 
-La composición 0.6 llevaba como autor PDF «Proyecto Sorríos - Catastro de Ensenada», pero la auditoría ya advierte que era una atribución colectiva de proyecto, no una autoría personal aprobada. La candidata Quarto tiene vacío el campo `Author` ([informe comparativo](/home/miguel/projects/sorrios-ensenada/docs/INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md:281)).
+La composición 0.6 llevaba como autor PDF «Proyecto Sorríos - Catastro de Ensenada», pero la auditoría ya advierte que era una atribución colectiva de proyecto, no una autoría personal aprobada. La candidata Quarto tiene vacío el campo `Author` ([informe comparativo](INFORME_COMPARATIVO_PDF_0_6_Y_QUARTO.md)).
 
 ## 3. DAT-001 — autor
 
@@ -47,7 +47,7 @@ No existe una propuesta explícita de nombre personal para el autor del libro.
 - `miguel-conde` es el propietario técnico del repositorio; constituye un indicio, no una atribución editorial.
 - La autoría de commits tampoco prueba autoría intelectual.
 - «Proyecto Sorríos - Catastro de Ensenada», usado en 0.6, identifica colectivamente el proyecto, no una persona.
-- Los documentos de cierre declaran expresamente pendiente el nombre del autor ([alcance aprobado](/home/miguel/projects/sorrios-ensenada/docs/ALCANCE_APROBADO_V1_0.md:107)).
+- Los documentos de cierre declaran expresamente pendiente el nombre del autor ([alcance aprobado](ALCANCE_APROBADO_V1_0.md)).
 
 ### Decisión necesaria
 
@@ -96,7 +96,7 @@ Recomendación: evitar acumular todos esos títulos. Una fórmula contenida podr
 
 Lo documentado es:
 
-- La [Edición Crítica 3.6](/home/miguel/projects/sorrios-ensenada/project/20_TRABAJO_EDITORIAL/Edicion_Critica.md:1) contiene una transcripción paleográfica semidiplomática completa de 35 unidades.
+- La [Edición Crítica 3.6](../project/20_TRABAJO_EDITORIAL/Edicion_Critica.md) contiene una transcripción paleográfica semidiplomática completa de 35 unidades.
 - Las operaciones registran lectura visual, ampliación y validación paleográfica; con frecuencia declaran expresamente que no se utilizó OCR.
 - El capítulo Quarto se genera automáticamente desde la Edición Crítica. Esa generación es una transformación técnica, no la creación intelectual de la transcripción.
 - La transcripción está validada, pero no consta el nombre de su responsable ni de un revisor humano individual.
@@ -110,7 +110,7 @@ Recomendación: acreditar a una persona como responsable solo si puede asumir la
 
 Lo documentado es:
 
-- Existe una [edición modernizada 1.3](/home/miguel/projects/sorrios-ensenada/project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md:1), íntegra y con cuarenta respuestas.
+- Existe una [edición modernizada 1.3](../project/30_RESULTADOS/EDICION_DIVULGATIVA/Catastro_Sorrios_1752_Version_Modernizada.md), íntegra y con cuarenta respuestas.
 - Declara su naturaleza, fuente textual y criterios generales.
 - Lleva la fecha interna «19 de septiembre de 2026», que corresponde a ese producto canónico, no a la fecha final del libro 1.0.
 - Su traslado a Quarto se ejecuta mediante un generador determinista; el programa no es responsable intelectual de las decisiones de modernización.

@@ -362,13 +362,17 @@ En el bootstrap técnico, HTML debe renderizar. Para PDF se exige ejecutar `quar
 
 ## 16. Publicación
 
-La publicación tendrá puerta editorial. Un cambio de `main` no debe alterar automáticamente la edición pública. La opción preferida para la primera puesta en escena es Netlify con preview de rama y repositorio privado; GitHub Pages sigue siendo alternativa. La decisión y la automatización se implementarán solo después del prototipo vertical y de validar HTML/PDF.
+La publicación tendrá puerta editorial. Un cambio de `main` no debe alterar
+automáticamente la edición pública. La primera puesta en escena usará una
+preview de rama con acceso controlado; Netlify y GitHub Pages siguen siendo
+alternativas sujetas a decisión explícita. La automatización se implementará
+solo después del prototipo vertical y de validar HTML/PDF.
 
 Flujo objetivo:
 
 ```text
 snapshot aprobado → generación → render HTML/PDF → validación
-→ preview privada → aceptación editorial → publicación 1.0
+→ preview controlada → aceptación editorial → publicación 1.0
 ```
 
 La edición 1.0 registrará commit de fuentes, versiones, hash del manuscrito, nombres, tamaños y hashes de salidas, informe de validación y etiqueta Git. Los derivados públicos no convierten el PDF manuscrito en archivo del repositorio.

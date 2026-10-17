@@ -1,6 +1,6 @@
 # Checkpoint de reanudación hasta PKG-12
 
-**Base registrada:** `feature/quarto-book@9d80c60bd338aae7d6bd966b55e36073717e11dc`
+**Base registrada:** `feature/quarto-book@73ed35830ca2cc3c36b531da4d8bde47efa73686`
 **Función:** congelar el orden de reanudación sin iniciar ninguna operación.
 
 ## Estado actual
@@ -12,8 +12,7 @@
   IA/herramientas cerrados.
 - E1 — REV-LECTOR-01 está **COMPLETADA**.
 - E2 — LINK-01 está **COMPLETADA**.
-- E3 — REV-LECTOR-02 está **COMPLETADA** en rama aislada, pendiente de revisión
-  e integración.
+- E3 — REV-LECTOR-02 está **COMPLETADA E INTEGRADA**.
 - La validación integral y los renders posteriores a HUM-01B están
   deliberadamente diferidos.
 - PKG-12 **NO** se ha iniciado.
@@ -49,8 +48,8 @@ facsímil ↔ transcripción y matriz/retornos. Debe comprobar expresamente
 
 ### E3 — REV-LECTOR-02
 
-**COMPLETADA EN RAMA AISLADA.** Resultado: `E3: APTO PARA REVISIÓN E
-INTEGRACIÓN`.
+**COMPLETADA E INTEGRADA.** Resultado incorporado a `feature/quarto-book` en
+`73ed35830ca2cc3c36b531da4d8bde47efa73686`.
 
 Aplicación conjunta de las correcciones resultantes de E1 y E2. Debe incluir:
 
@@ -91,19 +90,27 @@ Bloqueantes actuales:
 2. estructura de licencias.
 
 Otros asuntos: README raíz, NOTICE/atribuciones, correo de contacto, rutas
-locales, metadatos de correo Git, ramas temporales, Actions, referencias al
-repositorio privado y dependencia externa del manuscrito.
+locales, metadatos de correo Git, ramas temporales, Actions, referencias a la
+visibilidad del repositorio y dependencia externa del manuscrito.
 
-### R2 — Decisiones humanas de apertura
+### R2A — Decisiones humanas de privacidad
 
-Antes de modificar, decidir el tratamiento de los nombres de terceros y las
-licencias del contenido editorial, código, documentación y materiales de
-terceros. El email permanece como placeholder.
+**COMPLETADA.** Se conservan las menciones familiares del prólogo y el correo
+histórico del autor en Git; no se reescribe el historial. Antes de R5, las
+personas nombradas deberán haber podido revisar el prólogo y cualquier objeción
+deberá quedar resuelta.
+
+`REVISIÓN FAMILIAR DEL PRÓLOGO PENDIENTE`
+
+### R2B — Decisión humana de licencias
+
+**COMPLETADA.** Contenido y documentación originales: CC BY 4.0; software y
+herramientas: MIT; materiales de terceros y exclusiones: NOTICE.
 
 ### R3 — PUB-REPO-01
 
-Preparación controlada del repositorio público. **No** cambia todavía su
-visibilidad.
+**COMPLETADA EN RAMA AISLADA.** Preparación controlada del repositorio para su
+revisión. **No** cambia todavía su visibilidad.
 
 ### R4 — AUD-REPO-02
 
@@ -142,9 +149,9 @@ Nuevas observaciones humanas pueden incorporarse antes de REV-FINAL-PREVIEW.
 
 ## Reanudación
 
-- **Siguiente operación de la línea principal, tras revisar e integrar E3:**
-  `E4 — REV-FINAL-PREVIEW`.
+- **Siguiente operación de la línea principal:** `E4 — REV-FINAL-PREVIEW`
+  (**PENDIENTE** y deliberadamente diferida).
 - **Siguiente operación posible de la línea paralela:**
-  `R2 — DECISIONES HUMANAS DE PRIVACIDAD Y LICENCIAS`.
+  `R4 — AUD-REPO-02`.
 
 Ninguna de estas operaciones se inicia en este checkpoint.

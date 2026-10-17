@@ -9,7 +9,8 @@ No presupone Work, checkout local, Python, Git local, WSL, VS Code ni una skill 
 
 ## Inicio obligatorio
 
-1. Trabaja con el repositorio privado `miguel-conde/sorrios-ensenada`.
+1. Trabaja con el repositorio `miguel-conde/sorrios-ensenada`, respetando la
+   visibilidad y los permisos vigentes.
 2. Lee `project/00_CONTROL/proyecto.yaml` y `project/00_CONTROL/estado.yaml` desde la rama o commit que corresponda a la tarea.
 3. Lee `plugins/sorrios-ensenada/skills/editar-catastro-sorrios/references/task-modes.md` y determina el modo de tarea.
 4. Carga solo las referencias que ese modo necesite. Para editar, auditar o cambiar el método, incluye `workspace-contract.md`; añade `editorial-procedure.md`, `document-schemas.md`, `github-operations.md` y `pdf-access.md` cuando proceda.

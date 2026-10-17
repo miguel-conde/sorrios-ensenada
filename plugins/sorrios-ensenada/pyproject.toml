@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "sorrios-ensenada-tools"
 version = "2.0.2"
 description = "Development validation and rendering tools for the Sorríos Ensenada plugin"
+license = "MIT"
 requires-python = ">=3.10"
 dependencies = [
   "PyYAML>=6.0,<7",
