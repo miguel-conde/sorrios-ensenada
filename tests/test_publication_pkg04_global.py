@@ -140,14 +140,19 @@ def test_gf3_14_all_facsimile_targets_are_valid_unit_anchors(specs, facsimile_qm
     assert targets == expected
 
 
-def test_gf3_15_paleographic_and_apparatus_text_is_identical(units, transcription_qmd):
+def test_gf3_15_preserves_canonical_transcription_and_reader_facing_apparatus(
+    units, transcription_qmd
+):
     generated = validator._generated_transcription_units(transcription_qmd)
     for canonical, (_, _, sections) in zip(units, generated, strict=True):
         for name in critical.TEXT_SECTION_NAMES:
             actual = sections[name]
+            expected = canonical.sections[name]
             if name == "Transcripción paleográfica":
                 actual = validator._decode_line_block(actual)
-            assert actual == canonical.sections[name]
+            else:
+                expected = transcription.reader_facing_source_text(expected)
+            assert actual == expected
 
 
 def test_gf3_16_mapping_has_no_duplicates_or_orphans(specs, mapping):

@@ -25,7 +25,7 @@ La licencia no se extiende automáticamente al facsímil, las reproducciones
 documentales, la cartografía, las imágenes, las citas ni otros materiales de
 terceros, que conservan sus condiciones de uso, atribución y reproducción.
 
-### Herramientas digitales e inteligencia artificial
+## Herramientas digitales e inteligencia artificial
 
 En la elaboración de esta obra se utilizaron herramientas digitales y sistemas
 de inteligencia artificial como apoyo auxiliar en tareas de transcripción y

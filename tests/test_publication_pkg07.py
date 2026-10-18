@@ -17,6 +17,7 @@ import quality_audit as quality  # noqa: E402
 
 
 BASE_COMMIT = "b2700e58807dda7751c26155af42971f1f8a0c83"
+CHAPTER_FOUR_BASE_COMMIT = "73ed35830ca2cc3c36b531da4d8bde47efa73686"
 CHAPTER_THREE = PUBLICATION / "content/01-catastro/03-expediente-sorribos-santibanez.qmd"
 CHAPTER_FIVE = PUBLICATION / "content/02-estudio/05-lugar-senorio-concejo-ordas.qmd"
 CHAPTER_THIRTEEN = (
@@ -162,19 +163,18 @@ def test_visual_layout_is_responsive_and_not_dependent_on_colour_alone():
     assert "relación sin dirección causal" in diagram
 
 
-def test_pkg07_preserves_canonical_generated_and_content_not_owned_by_pkg09():
+def test_pkg07_preserves_canonical_generated_and_chapter_four():
     assert _git("diff", "--quiet", BASE_COMMIT, "--", "project/").returncode == 0
     assert _git(
         "diff", "--quiet", BASE_COMMIT, "--", "publication/generated/"
     ).returncode == 0
     assert _git("ls-files", "publication/_book", "publication/generated").stdout == ""
-    for relative in (
-        "publication/content/00-preliminares/02-prologo.qmd",
-        "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd",
-    ):
-        expected = _git("show", f"{BASE_COMMIT}:{relative}")
-        assert expected.returncode == 0
-        assert (ROOT / relative).read_text(encoding="utf-8") == expected.stdout
+    # El prólogo se excluye: HUM-01B autorizó su sustitución posterior.
+    # El capítulo 4 usa E3: REV-LECTOR-02 introdujo cambios reader-facing autorizados.
+    relative = "publication/content/01-catastro/04-manuscrito-volumen-actual.qmd"
+    expected = _git("show", f"{CHAPTER_FOUR_BASE_COMMIT}:{relative}")
+    assert expected.returncode == 0
+    assert (ROOT / relative).read_text(encoding="utf-8") == expected.stdout
 
 
 def test_pkg07_does_not_add_excluded_visuals_or_release_outputs():

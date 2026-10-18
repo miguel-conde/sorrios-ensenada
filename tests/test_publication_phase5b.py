@@ -42,7 +42,7 @@ def test_final_book_has_four_preliminaries_six_parts_sixteen_chapters_four_appar
     narrative = [
         path.replace(".html", ".qmd") for path in quality.NARRATIVE_APPARATUS
     ]
-    assert paths[25:29] == narrative[:-1]
+    assert paths[25:30] == narrative[:-1]
     assert paths[-10:-1] == [
         path.replace(".html", ".qmd") for path in quality.INDEXES
     ]
@@ -143,7 +143,7 @@ def test_generated_document_counts_and_accessible_alternatives():
 def test_four_apparatus_nine_indexes_and_levels_are_explicit():
     _, paths = _navigation()
     assert len([path for path in paths if path in {p.replace('.html', '.qmd') for p in quality.APPARATUS}]) == 4
-    assert len([path for path in paths if path in {p.replace('.html', '.qmd') for p in quality.NARRATIVE_APPARATUS}]) == 5
+    assert len([path for path in paths if path in {p.replace('.html', '.qmd') for p in quality.NARRATIVE_APPARATUS}]) == 6
     assert len([path for path in paths if path in {p.replace('.html', '.qmd') for p in quality.INDEXES}]) == 9
     matrix = (PUBLICATION / "generated/matriz-evidencia.qmd").read_text(encoding="utf-8")
     for level in "DCIEL":

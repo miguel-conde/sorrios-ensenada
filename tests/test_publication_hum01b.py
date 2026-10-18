@@ -19,7 +19,7 @@ fuentes utilizadas, las interpretaciones y las decisiones editoriales y de
 publicación fueron revisadas y validadas por Miguel Conde de Simón, que asume
 la responsabilidad intelectual y final de la obra."""
 
-COLOPHON_DECLARATION = """### Herramientas digitales e inteligencia artificial
+COLOPHON_DECLARATION = """## Herramientas digitales e inteligencia artificial
 
 En la elaboración de esta obra se utilizaron herramientas digitales y sistemas
 de inteligencia artificial como apoyo auxiliar en tareas de transcripción y
