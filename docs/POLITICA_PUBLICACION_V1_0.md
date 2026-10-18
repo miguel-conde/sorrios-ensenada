@@ -46,6 +46,11 @@ del nombre del site y la aprobación de la URL resultante. Si PKG-12 exige
 correcciones, el objeto que se publique deberá ser el nuevo artefacto corregido
 y aceptado, no el deploy anterior.
 
+El procedimiento condicionado a una eventual ratificación de Netlify se
+documenta en el
+[runbook de despliegue y actualización](./RUNBOOK_DESPLIEGUE_NETLIFY.md). El
+runbook no altera el estado pendiente de la recomendación.
+
 ## Política de URL
 
 > **La URL canónica debe estar fijada antes de E4.**
