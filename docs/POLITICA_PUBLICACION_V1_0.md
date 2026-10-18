@@ -1,16 +1,14 @@
 # Política de publicación de la versión 1.0
 
-**Estado:** registro normativo de decisiones cerradas, reglas vigentes y
-recomendaciones pendientes de ratificación humana<br>
-**Base:** `cadab208b5aec0a9620afc604c8383e1afc829f9`<br>
+**Estado:** política ratificada de publicación de la versión 1.0<br>
+**Base de ratificación:** `bce6b38747ec6bc0bc5a58577f6e269c307b04a5`<br>
 **Ámbito:** hosting, URL canónica, fecha de publicación y relación entre
 PKG-12 y PKG-13
 
 Este documento concreta la política posterior al
 [plan de ejecución](./PLAN_EJECUCION_V1_0.md) y al
 [checkpoint de reanudación](./CHECKPOINT_REANUDACION_PREVIEW_FINAL.md). No
-inicia E4, PKG-12 ni PKG-13 y no convierte una recomendación de proveedor en
-decisión humana definitiva.
+inicia E4, PKG-12 ni PKG-13.
 
 ## Decisiones cerradas
 
@@ -25,31 +23,55 @@ decisión humana definitiva.
 - Los derivados HTML y PDF no se incorporan a `main`.
 
 La URL pública del repositorio no equivale por sí sola a la URL canónica del
-libro, que continúa pendiente.
+libro.
 
-## Política recomendada pendiente de ratificación
+## NETLIFY — PROVEEDOR RATIFICADO
 
-Se recomienda **Netlify** como host de publicación con este contrato:
+**PROVEEDOR DE PUBLICACIÓN V1.0 = NETLIFY.** La decisión quedó ratificada tras
+la prueba empírica `NETLIFY-CAPABILITY-02`, realizada en la cuenta actual el
+18 de octubre de 2026.
+
+Parámetros actuales:
+
+| Parámetro | Valor |
+|---|---|
+| Team | `New generation blog` / `miguelco2000` |
+| Plan | Free (`nf_team_dev`) |
+| Site name | `sorribos-santibanez-1752` |
+| Site ID | `1539a52a-d500-426f-9995-7db9c01e6d45` |
+| URL canónica | <https://sorribos-santibanez-1752.netlify.app/> |
+| Integración Git | ninguna |
+| Build remoto | ninguno |
+| Año editorial | 2026 |
+| Fecha exacta | pendiente hasta la publicación real |
+
+El contrato de alojamiento es:
 
 - sin conexión Git;
 - sin continuous deployment;
 - sin builds remotos;
 - render local;
 - despliegue manual de artefactos ya construidos;
-- PKG-12 sobre un production deploy privado;
-- PKG-13 haciendo público el mismo deploy aceptado, siempre que no haya habido
-  correcciones.
+- PKG-12 sobre un **draft deploy** no productivo;
+- production no se modifica durante la revisión;
+- `DATE-FINAL-01` genera y valida el artefacto final fechado;
+- ese artefacto se sube como un nuevo draft final;
+- PKG-13 publica, mediante **Publish Deploy**, el mismo draft final aceptado.
 
-Esta configuración es una recomendación operativa, no una decisión humana
-definitiva. Permanecen pendientes la ratificación del proveedor, la elección
-del nombre del site y la aprobación de la URL resultante. Si PKG-12 exige
-correcciones, el objeto que se publique deberá ser el nuevo artefacto corregido
-y aceptado, no el deploy anterior.
+> **DRAFT ≠ PRIVADO.** La URL del draft no se publicita, pero puede ser
+> accesible por quien la conozca.
 
-El procedimiento condicionado a una eventual ratificación de Netlify se
-documenta en el
+La separación de responsabilidades queda fijada así: GitHub conserva fuentes,
+código, documentación y trazabilidad; el entorno local construye, renderiza,
+valida y calcula hashes; Netlify aloja artefactos preconstruidos. Netlify no
+ejecuta Quarto.
+
+Si PKG-12 exige correcciones, se corrigen las fuentes, se reconstruye y se crea
+otro draft. Nunca se publica un deploy rechazado o sustituido.
+
+El procedimiento operativo definitivo se documenta en el
 [runbook de despliegue y actualización](./RUNBOOK_DESPLIEGUE_NETLIFY.md). El
-runbook no altera el estado pendiente de la recomendación.
+site canónico permanece vacío hasta que la secuencia autorice el primer draft.
 
 ## Política de URL
 
@@ -62,14 +84,9 @@ La regla responde a cuatro motivos:
 - debe poder verificarse durante PKG-12;
 - cambiarla después invalidaría innecesariamente la candidata.
 
-Continúan pendientes:
-
-- el proveedor definitivo;
-- el nombre del site;
-- la URL canónica concreta.
-
-La incorporación de esa URL al libro será una operación focal posterior; no se
-realiza en este registro.
+Proveedor, nombre del site y URL canónica están cerrados. La incorporación de
+la URL al libro será la operación focal `META-FINAL-01`; no se realiza en este
+registro.
 
 ## Política de fecha
 
@@ -93,23 +110,23 @@ No se repetirá E4 completa salvo que aparezca cualquier otro cambio. Si el
 delta supera fecha o metadata de release, deja de aplicarse esta excepción y
 debe evaluarse el alcance real antes de continuar.
 
-## Secuencia normativa propuesta
+## Secuencia normativa vigente
 
 ```text
 R5B — completada
-→ decisión proveedor/site/URL
-→ incorporar URL canónica
+→ NETLIFY-CAPABILITY-02 — completada
+→ META-FINAL-01 — incorporar URL canónica y referencia pública
 → E4
 → GATE-03
 → PKG-12
 → GATE-04
-→ fijar fecha real
 → DATE-FINAL-01, cambio focal + rerender + delta validation
+→ draft final y revisión focal
 → GATE-05
-→ PKG-13
+→ PKG-13 — Publish Deploy del mismo draft final aceptado
 → v1.0
 ```
 
 E4, GATE-03, PKG-12, GATE-04, DATE-FINAL-01, GATE-05 y PKG-13 permanecen
-pendientes. Este documento no autoriza tags, releases, cambios de proveedor ni
-configuración externa.
+pendientes. La fecha exacta sigue pendiente. Este documento no autoriza el
+despliegue del libro, tags, releases ni cambios de proveedor.

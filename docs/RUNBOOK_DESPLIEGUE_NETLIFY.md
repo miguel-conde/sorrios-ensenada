@@ -1,6 +1,6 @@
 # Runbook de despliegue y actualización en Netlify
 
-**Estado del proveedor:** `PROPUESTA RECOMENDADA — PENDIENTE DE RATIFICACIÓN`
+**Estado del proveedor:** `NETLIFY — PROVEEDOR RATIFICADO`
 
 **Ámbito:** primera publicación de la versión 1.0, mantenimiento, nuevas
 versiones y rollback
@@ -8,10 +8,10 @@ versiones y rollback
 **Política rectora:**
 [POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md)
 
-Este runbook describe el procedimiento que se aplicará si Netlify es ratificado
-como proveedor. No constituye esa ratificación, no crea ni configura un site y
-no autoriza un despliegue. Las decisiones sobre proveedor, nombre del site y
-URL canónica siguen pendientes.
+Este es el procedimiento operativo definitivo para alojar en Netlify los
+artefactos construidos localmente. La ratificación del proveedor y la reserva
+del site canónico se realizaron mediante `NETLIFY-CAPABILITY-02`. El runbook no
+autoriza por sí solo un despliegue del libro.
 
 ## 1. Contrato operativo
 
@@ -28,6 +28,32 @@ El site no se conecta al repositorio Git, no usa continuous deployment ni
 ejecuta builds remotos de Quarto. Cada publicación debe poder relacionarse de
 forma verificable con una versión, un commit Git, los hashes o el manifiesto de
 los artefactos y el identificador del deploy de Netlify.
+
+### 1.1. Parámetros actuales del proyecto
+
+| Parámetro | Valor |
+|---|---|
+| Team | `New generation blog` / `miguelco2000` |
+| Plan | Free (`nf_team_dev`) |
+| Site name | `sorribos-santibanez-1752` |
+| Site ID | `1539a52a-d500-426f-9995-7db9c01e6d45` |
+| URL canónica | <https://sorribos-santibanez-1752.netlify.app/> |
+| Integración Git | ninguna |
+| Build command remoto | ninguno |
+| Deploys al ratificar | 0 |
+
+El site quedó reservado vacío: sin production deploy, draft deploy, dominio
+personalizado ni contenido del libro.
+
+### 1.2. Evidencia de capacidad
+
+`NETLIFY-CAPABILITY-02` validó empíricamente el 18 de octubre de 2026, en esta
+misma cuenta, el recorrido manual `draft → Publish Deploy`. El draft no alteró
+production; se publicó exactamente el mismo deploy ID; el número de deploys se
+mantuvo en uno; no hubo builds, Git integration ni CI; y el site temporal fue
+eliminado junto con sus URLs. La prueba no utilizó contenido del libro.
+
+**Resultado:** `DRAFT→PUBLISH SAME DEPLOY: PASS`.
 
 ## 2. Requisitos previos
 
@@ -47,43 +73,45 @@ La autenticación y los tokens de Netlify no se guardan en Git, en
 
 ## 3. Primera publicación de la versión 1.0
 
-La primera publicación tiene un recorrido especial porque todavía no existe
-un site público estable.
+La primera publicación usa el site canónico ya reservado, cuya production
+permanece vacía hasta PKG-13.
 
-### 3.1. Alta y preparación privada
+### 3.1. Site canónico reservado
 
-Después de ratificar Netlify:
+Antes de E4:
 
-1. crear un proyecto de Netlify sin conexión Git, CI ni build remoto;
-2. fijar el nombre del site y obtener la URL estable propuesta;
-3. aprobar e incorporar la URL canónica al libro antes de E4;
-4. mantener el proyecto y sus deploys bajo acceso privado durante la revisión;
-5. registrar el identificador del site sin guardar credenciales.
+1. conservar el site canónico sin conexión Git, CI ni build remoto;
+2. mantener estable el nombre, el site ID y la URL registrados;
+3. incorporar la URL canónica al libro mediante `META-FINAL-01` antes de E4;
+4. mantener production vacío o sin publicar hasta PKG-13;
+5. no guardar credenciales en el repositorio.
 
-La capacidad real de mantener privado el proyecto o deploy debe comprobarse
-en la cuenta elegida antes de avanzar. Si el acceso anónimo no queda impedido,
-la operación se detiene y la configuración debe decidirse de nuevo.
+No se exige privacidad al draft. Su URL no se publicita, pero puede ser
+accesible por quien la conozca.
 
 ### 3.2. Candidata, aceptación y salida pública
 
 La secuencia de la versión 1.0 es:
 
 1. ejecutar E4 localmente sobre las fuentes con la URL canónica ya fijada;
-2. subir el artefacto construido, sin build remoto, y promoverlo dentro del
-   site protegido como **production deploy privado**;
-3. ejecutar PKG-12 sobre ese production deploy privado;
+2. subir el artefacto construido como **draft deploy**, sin `--prod` ni build
+   remoto;
+3. ejecutar PKG-12 sobre la URL independiente del draft, sin modificar
+   production;
 4. si hay correcciones, volver a las fuentes y aplicar el ciclo de corrección
    descrito en este runbook;
 5. tras `GATE-04`, fijar la fecha real mediante `DATE-FINAL-01`;
 6. volver a renderizar, hacer la validación delta y subir el artefacto final
-   fechado como nuevo deploy privado;
-7. superar `GATE-05` y ejecutar PKG-13;
-8. publicar exactamente el deploy final aceptado y hacer público el site;
-9. verificar la URL canónica desde una sesión anónima.
+   fechado como un **nuevo draft final**;
+7. revisar focalmente ese draft final y registrar su deploy ID;
+8. superar `GATE-05` y ejecutar PKG-13;
+9. usar **Publish Deploy** sobre ese deploy ID aceptado, sin nuevo render ni
+   segundo upload de producción;
+10. verificar la URL canónica desde una sesión anónima.
 
-El deploy aceptado en PKG-12 no puede publicarse si fue sustituido por una
+El draft aceptado en PKG-12 no puede publicarse si fue sustituido por una
 corrección o por el artefacto fechado de `DATE-FINAL-01`. El registro final debe
-identificar inequívocamente cuál de ellos alcanzó producción.
+identificar inequívocamente el draft final que alcanzó production.
 
 ## 4. Despliegue de revisión
 
@@ -104,25 +132,23 @@ Sin `--prod`, Netlify crea un **draft deploy** con URL separada: permite revisar
 el artefacto sin reemplazar el site público. `--no-build` impide que Netlify
 reconstruya el proyecto y mantiene a Quarto como única capa de construcción.
 
-Durante la revisión nunca se usa `--prod`.
+> **DRAFT ≠ PRIVADO.** La URL del draft no se publicita ni se comparte fuera
+> de la revisión autorizada, pero puede ser accesible por quien la conozca.
+
+Durante PKG-12 y la revisión del draft final nunca se usa `--prod`. Production
+no se toca hasta PKG-13.
 
 ## 5. Promoción a producción
 
-El procedimiento preferido es seleccionar en Netlify el deploy ya revisado y
-usar **Publish Deploy**. Así, el objeto validado y el publicado es el mismo
-deploy atómico; no se genera deliberadamente un artefacto nuevo para
-producción.
+En PKG-13 se selecciona en Netlify el deploy final ya revisado y se usa
+**Publish Deploy**. Antes de confirmar, el deploy ID debe coincidir exactamente
+con el registrado en la aceptación. Así, el objeto validado y el publicado es
+el mismo deploy atómico; no se produce un nuevo render, upload ni build.
 
-Si Netlify deja de ofrecer esa promoción, el procedimiento alternativo es:
-
-1. conservar el artefacto local ya validado sin reconstruirlo;
-2. verificar su equivalencia con los hashes o el manifiesto aceptados;
-3. realizar un deploy de producción de ese mismo artefacto con `--no-build`;
-4. comprobar de nuevo en producción su identidad y comportamiento;
-5. registrar que se utilizó la vía alternativa y los identificadores de ambos
-   deploys.
-
-No se vuelve a renderizar deliberadamente para crear el deploy de producción.
+Si Netlify cambia su API o producto y deja de ofrecer esta promoción, se
+detiene la publicación y se decide un fallback explícito. No se sustituye
+silenciosamente por un segundo deploy de producción, porque ya no demostraría
+identidad de deploy.
 
 ## 6. Alternativa soportada de Quarto
 
@@ -152,8 +178,8 @@ fuentes
 → tag/release, cuando la operación lo autorice
 ```
 
-Nunca se reemplaza producción para obtener una preview. La revisión sucede en
-una URL de draft separada y solo el deploy aceptado se promueve.
+Nunca se reemplaza production para obtener una preview. La revisión sucede en
+una URL de draft separada y solo el draft final aceptado se promueve.
 
 La semántica de versionado se rige por la política editorial vigente y, si aún no existe, requiere una decisión separada.
 
@@ -230,6 +256,7 @@ siempre a las fuentes.
 - [ ] Existe autorización para publicar y los gates exigidos están en PASS.
 - [ ] El árbol Git está limpio y el SHA fuente está registrado.
 - [ ] El draft corresponde al manifiesto y a los hashes aceptados.
+- [ ] El deploy ID coincide exactamente con el draft final autorizado.
 - [ ] La URL canónica, la versión y la fecha aplicables son correctas.
 - [ ] La revisión humana identifica expresamente este deploy.
 - [ ] No hay secretos, rutas locales ni artefactos excluidos.
@@ -262,5 +289,5 @@ siempre a las fuentes.
 - No corregir producción al margen de las fuentes y del ciclo normal.
 - No cambiar la fecha bibliográfica por un redeploy técnico.
 - No crear tags o releases fuera del paquete que los autorice.
-- No presentar Netlify como proveedor ratificado mientras siga pendiente la
-  decisión humana.
+- No desplegar sobre otro site ni cambiar el nombre o la URL canónica sin una
+  decisión humana nueva.

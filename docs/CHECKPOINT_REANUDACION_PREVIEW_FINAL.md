@@ -1,6 +1,6 @@
 # Checkpoint de reanudación hasta PKG-12
 
-**Base registrada:** `feature/quarto-book@cadab208b5aec0a9620afc604c8383e1afc829f9`
+**Base de la operación vigente:** `feature/quarto-book@bce6b38747ec6bc0bc5a58577f6e269c307b04a5`
 **Función:** congelar el orden de reanudación sin iniciar ninguna operación.
 
 ## Estado actual
@@ -17,8 +17,19 @@
 - R5A — preparación final del remoto está **COMPLETADA**.
 - R5B — cambio controlado de visibilidad está **COMPLETADA**; el repositorio
   público fue verificado desde una perspectiva anónima.
-- La política posterior de hosting, URL y fecha está registrada en
+- PUB-POLICY-01 está **COMPLETADA**.
+- NETLIFY-RUNBOOK-01 está **COMPLETADA**.
+- NETLIFY-CAPABILITY-02 está **COMPLETADA**: el flujo
+  `draft → Publish Deploy` del mismo deploy quedó validado empíricamente,
+  Netlify fue ratificado y el site canónico fue reservado.
+- El proveedor, los parámetros operativos y la política de URL y fecha están
+  registrados en
   [POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md).
+- Site canónico: `sorribos-santibanez-1752`;
+  <https://sorribos-santibanez-1752.netlify.app/>.
+- La URL canónica está **FIJADA**; su incorporación al libro está pendiente de
+  `META-FINAL-01`.
+- La fecha exacta continúa **PENDIENTE** hasta `DATE-FINAL-01`.
 - La validación integral y los renders posteriores a HUM-01B están
   deliberadamente diferidos.
 - PKG-12 **NO** se ha iniciado.
@@ -139,7 +150,8 @@ del libro continúa pendiente y se rige por
 - La preparación del repositorio no sustituye ni reordena la línea editorial.
 - E1 y E2 pueden ejecutarse aunque R2 o R3 sigan pendientes.
 - E3 puede usar provisionalmente placeholders de email o repositorio.
-- La URL canónica del libro debe quedar fijada e incorporada antes de E4.
+- La URL canónica del libro está fijada y debe incorporarse mediante
+  `META-FINAL-01` antes de E4.
 - La apertura debe completarse antes del release si la edición final enlaza al
   repositorio.
 - PKG-12 no debe convertirse en una auditoría del repositorio.
@@ -163,10 +175,11 @@ Nuevas observaciones humanas pueden incorporarse antes de REV-FINAL-PREVIEW.
 ## Reanudación
 
 - **Siguiente operación de la línea principal:** `E4 — REV-FINAL-PREVIEW`
-  (**PENDIENTE** y bloqueada hasta cerrar proveedor, nombre del site y URL
-  canónica e incorporar esta última al libro).
-- **Siguiente paso previo a E4:** decidir proveedor/site/URL conforme a
-  [POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md).
-- `GATE-03`, `PKG-12` y `PKG-13` permanecen **PENDIENTES**.
+  (**PENDIENTE** y bloqueada únicamente hasta incorporar la URL canónica y la
+  referencia pública mediante `META-FINAL-01`).
+- **Siguiente paso previo a E4:**
+  `META-FINAL-01 — INCORPORACIÓN DE URL CANÓNICA Y REFERENCIA PÚBLICA PREVIA A E4`.
+- `GATE-03` y `GATE-04` permanecen **PENDIENTES**.
+- PKG-12 y PKG-13 permanecen **NO INICIADOS**.
 
 Ninguna de esas operaciones se inicia en este checkpoint.

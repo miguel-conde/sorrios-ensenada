@@ -381,14 +381,21 @@ revisión humana real. No crea tag.
 
 La política posterior que concreta hosting, URL canónica, fecha y la relación
 entre PKG-12 y PKG-13 se registra en
-[POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md). Su aplicación
-no reescribe la historia de este plan.
+[POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md), con su ejecución
+en [RUNBOOK_DESPLIEGUE_NETLIFY.md](./RUNBOOK_DESPLIEGUE_NETLIFY.md). La
+concreción posterior ratificada usa un draft deploy no productivo para PKG-12,
+sin modificar production. Su aplicación no reescribe la historia de este plan.
 
 ### PKG-13 — Fase 6B / release 1.0
 
 Solo se inicia después de GATE-04 y GATE-05. Debe fijar versión, snapshot,
 hashes, manifiesto, documentación final, commit de release, tag `v1.0` —o la
 convención que se apruebe— y publicación según la política autorizada.
+
+La política posterior sitúa `DATE-FINAL-01` entre GATE-04 y GATE-05: produce el
+artefacto fechado y un nuevo draft final. PKG-13 publica mediante **Publish
+Deploy** ese mismo draft final autorizado, conforme al runbook, sin un nuevo
+render ni upload de producción.
 
 El tag solo aparece en este paquete.
 
