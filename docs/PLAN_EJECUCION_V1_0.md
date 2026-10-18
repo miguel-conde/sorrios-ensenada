@@ -379,6 +379,11 @@ revisión humana real. No crea tag.
 
 **Salida:** aceptación humana explícita o lista acotada de correcciones.
 
+La política posterior que concreta hosting, URL canónica, fecha y la relación
+entre PKG-12 y PKG-13 se registra en
+[POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md). Su aplicación
+no reescribe la historia de este plan.
+
 ### PKG-13 — Fase 6B / release 1.0
 
 Solo se inicia después de GATE-04 y GATE-05. Debe fijar versión, snapshot,

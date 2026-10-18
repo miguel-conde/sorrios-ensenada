@@ -1,6 +1,6 @@
 # Checkpoint de reanudación hasta PKG-12
 
-**Base registrada:** `feature/quarto-book@73ed35830ca2cc3c36b531da4d8bde47efa73686`
+**Base registrada:** `feature/quarto-book@cadab208b5aec0a9620afc604c8383e1afc829f9`
 **Función:** congelar el orden de reanudación sin iniciar ninguna operación.
 
 ## Estado actual
@@ -14,8 +14,11 @@
 - E2 — LINK-01 está **COMPLETADA**.
 - E3 — REV-LECTOR-02 está **COMPLETADA E INTEGRADA**.
 - R4 — AUD-REPO-02 resultó **PASS** sobre `f41ad6a536fbda24696406723345e695fa531e3f`.
-- R5A — preparación final del remoto está **COMPLETADA**; R5B permanece
-  **PENDIENTE**.
+- R5A — preparación final del remoto está **COMPLETADA**.
+- R5B — cambio controlado de visibilidad está **COMPLETADA**; el repositorio
+  público fue verificado desde una perspectiva anónima.
+- La política posterior de hosting, URL y fecha está registrada en
+  [POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md).
 - La validación integral y los renders posteriores a HUM-01B están
   deliberadamente diferidos.
 - PKG-12 **NO** se ha iniciado.
@@ -126,16 +129,17 @@ revisión. **No** cambia todavía su visibilidad.
 
 ### R5B — Cambio de visibilidad
 
-**PENDIENTE.** Operación explícita, separada y únicamente con autorización
-humana.
+**COMPLETADA.** El repositorio
+<https://github.com/miguel-conde/sorrios-ensenada> es público. La URL canónica
+del libro continúa pendiente y se rige por
+[POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md).
 
 ## Relación entre líneas
 
 - La preparación del repositorio no sustituye ni reordena la línea editorial.
 - E1 y E2 pueden ejecutarse aunque R2 o R3 sigan pendientes.
 - E3 puede usar provisionalmente placeholders de email o repositorio.
-- Antes de cerrar la versión destinada a publicación debe existir una URL
-  pública válida del repositorio si el libro la presenta como pública.
+- La URL canónica del libro debe quedar fijada e incorporada antes de E4.
 - La apertura debe completarse antes del release si la edición final enlaza al
   repositorio.
 - PKG-12 no debe convertirse en una auditoría del repositorio.
@@ -159,8 +163,10 @@ Nuevas observaciones humanas pueden incorporarse antes de REV-FINAL-PREVIEW.
 ## Reanudación
 
 - **Siguiente operación de la línea principal:** `E4 — REV-FINAL-PREVIEW`
-  (**PENDIENTE** y deliberadamente diferida).
-- **Siguiente operación posible de la línea paralela:**
-  `R5B — cambio controlado de visibilidad a pública`.
+  (**PENDIENTE** y bloqueada hasta cerrar proveedor, nombre del site y URL
+  canónica e incorporar esta última al libro).
+- **Siguiente paso previo a E4:** decidir proveedor/site/URL conforme a
+  [POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md).
+- `GATE-03`, `PKG-12` y `PKG-13` permanecen **PENDIENTES**.
 
-Ninguna de estas operaciones se inicia en este checkpoint.
+Ninguna de esas operaciones se inicia en este checkpoint.
