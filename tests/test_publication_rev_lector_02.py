@@ -95,13 +95,13 @@ def test_link_corrections_use_only_destinations_verified_by_link_01():
     assert all(new in public_generated or new in bibliography for new in reader_text.PUBLIC_URL_REPLACEMENTS.values())
 
 
-def test_contact_section_is_localized_and_repository_remains_future_tense():
+def test_contact_section_links_the_public_repository_as_a_complementary_channel():
     contact = PUBLICATION / "content/06-aparatos/correcciones-contacto.qmd"
     body = _body(contact)
     assert "# Correcciones y contacto" in body
     assert "<miguelco2000@gmail.com>" in body
-    assert "Cuando el repositorio público esté disponible" in body
-    assert not re.search(r"https?://[^\s)]*github\.com", body)
+    assert "Cuando el repositorio público esté disponible" not in body
+    assert "https://github.com/miguel-conde/sorrios-ensenada/issues" in body
     quarto = yaml.safe_load((PUBLICATION / "_quarto.yml").read_text(encoding="utf-8"))
     part = next(
         item for item in quarto["book"]["chapters"]

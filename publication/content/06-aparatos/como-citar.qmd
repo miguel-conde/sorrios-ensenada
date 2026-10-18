@@ -9,27 +9,29 @@ number-sections: false
 
 La responsabilidad autoral es **Miguel Conde de Simón**; en una lista
 bibliográfica se ordena como **Conde de Simón, Miguel**. La edición corresponde
-a la versión 1.0 y su año editorial es 2026. La fecha exacta de publicación y
-la URL canónica se completarán cuando se publique la edición. Los marcadores
-entre corchetes deben sustituirse entonces por los datos finales; no representan
-valores ya asignados.
+a la versión 1.0 y su año editorial es 2026. Su URL canónica ya está fijada en
+<https://sorribos-santibanez-1752.netlify.app/>. La fecha exacta de publicación
+se incorporará cuando se publique definitivamente la edición. Los marcadores
+entre corchetes corresponden únicamente a localizadores que deben sustituirse
+al citar cada objeto.
 
 ## Siete familias para once objetos {.unnumbered}
 
 | Objeto citable | Familia | Modelo |
 |---|---|---|
-| Volumen completo | Volumen | Conde de Simón, Miguel. *Sorribos y Santibáñez de Ordás en 1752: Estudio histórico y edición integral del Catastro de Ensenada*. Versión 1.0, 2026. [URL canónica pendiente]. |
-| Facsímil | Localización documental | Conde de Simón, Miguel, ed. *Sorribos y Santibáñez de Ordás en 1752*, «Facsímil», [página digital], versión 1.0, 2026. [URL canónica pendiente]. |
-| Página del manuscrito | Localización documental | …, «Facsímil», página digital [1–18], [URL canónica pendiente]#pagina-digital-[nn]. |
-| Folio | Localización documental | …, «Transcripción paleográfica», folio [306r–321v], versión 1.0, 2026. [URL canónica pendiente]. |
-| Unidad | Localización documental | …, unidad [ID o etiqueta], orden [1–35], página/posición [localizador], [URL canónica pendiente]. |
-| Respuesta | Localización documental | …, «Edición modernizada», respuesta [1–40], folio(s) [localizador], [URL canónica pendiente]. |
-| Transcripción paleográfica | Transcripción | Conde de Simón, Miguel, ed. «Transcripción paleográfica», folio/unidad [localizador], en *Sorribos y Santibáñez de Ordás en 1752*, versión 1.0, 2026. [URL canónica pendiente]. |
-| Edición modernizada | Modernizada | Conde de Simón, Miguel, ed. «Edición modernizada», respuesta [n], en *Sorribos y Santibáñez de Ordás en 1752*, versión 1.0, 2026. [URL canónica pendiente]. |
-| Capítulo histórico | Estudio | Conde de Simón, Miguel. «[Título del capítulo]», cap. [5–13], en *Sorribos y Santibáñez de Ordás en 1752*, versión 1.0, 2026. [URL canónica pendiente]. |
-| Entrada D/C/I/E/L | Matriz | Conde de Simón, Miguel. «[ID]», *Matriz de evidencia D/C/I/E/L*, en la versión 1.0 del volumen, 2026. [URL canónica pendiente]#evidencia-[id]. |
-| Fuente externa | Bibliográfica | Cítese con la referencia normalizada de la bibliografía y, cuando corresponda, con el ID E enlazado a la matriz. |
+| Volumen completo | Volumen | Conde de Simón, Miguel. *Sorribos y Santibáñez de Ordás en 1752: Estudio histórico y edición integral del Catastro de Ensenada*. Versión 1.0, 2026. https://sorribos-santibanez-1752.netlify.app/. |
+| Facsímil | Localización documental | Conde de Simón, Miguel, ed. *Sorribos y Santibáñez de Ordás en 1752*, «Facsímil», [página digital], versión 1.0, 2026. https://sorribos-santibanez-1752.netlify.app/. |
+| Página del manuscrito | Localización documental | …, «Facsímil», página digital [1–18], https://sorribos-santibanez-1752.netlify.app/#pagina-digital-[nn]. |
+| Folio | Localización documental | …, «Transcripción paleográfica», folio [306r–321v], versión 1.0, 2026. https://sorribos-santibanez-1752.netlify.app/. |
+| Unidad | Localización documental | …, unidad [ID o etiqueta], orden [1–35], página/posición [localizador], https://sorribos-santibanez-1752.netlify.app/. |
+| Respuesta | Localización documental | …, «Edición modernizada», respuesta [1–40], folio(s) [localizador], https://sorribos-santibanez-1752.netlify.app/. |
+| Transcripción paleográfica | Transcripción | Conde de Simón, Miguel, ed. «Transcripción paleográfica», folio/unidad [localizador], en *Sorribos y Santibáñez de Ordás en 1752*, versión 1.0, 2026. https://sorribos-santibanez-1752.netlify.app/. |
+| Edición modernizada | Modernizada | Conde de Simón, Miguel, ed. «Edición modernizada», respuesta [n], en *Sorribos y Santibáñez de Ordás en 1752*, versión 1.0, 2026. https://sorribos-santibanez-1752.netlify.app/. |
+| Capítulo histórico | Estudio | Conde de Simón, Miguel. «[Título del capítulo]», cap. [5–13], en *Sorribos y Santibáñez de Ordás en 1752*, versión 1.0, 2026. https://sorribos-santibanez-1752.netlify.app/. |
+| Entrada D/C/I/E/L | Matriz | Conde de Simón, Miguel. «[ID]», *Matriz de evidencia D/C/I/E/L*, en la versión 1.0 del volumen, 2026. https://sorribos-santibanez-1752.netlify.app/#evidencia-[id]. |
+| Fuente externa | Bibliográfica | Cítese con la referencia normalizada de la bibliografía y, cuando corresponda, con el ID E enlazado a la matriz de esta edición: https://sorribos-santibanez-1752.netlify.app/. |
 
 Los localizadores estables —página, folio, unidad, respuesta, capítulo o ID—
 deben conservarse aunque una composición posterior cambie la paginación. No se
-añade ISBN ni se anticipan la fecha exacta de publicación o la URL canónica.
+añade ISBN ni se anticipa la fecha exacta de publicación. La URL canónica ya
+está resuelta y se mantiene estable.

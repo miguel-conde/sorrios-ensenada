@@ -10,6 +10,10 @@ book:
   title: "Sorribos y Santibáñez de Ordás en 1752"
   subtitle: "Estudio histórico y edición integral del Catastro de Ensenada"
   author: "Miguel Conde de Simón"
+  site-url: "https://sorribos-santibanez-1752.netlify.app/"
+  repo-url: "https://github.com/miguel-conde/sorrios-ensenada"
+  repo-branch: main
+  repo-subdir: publication
   date: "2026"
   date-format: "YYYY"
   output-file: "sorribos-santibanez-ordas-1752"
@@ -80,6 +84,7 @@ license: "Creative Commons Attribution 4.0 International (CC BY 4.0), aplicada s
 
 format:
   html:
+    canonical-url: true
     theme:
       - cosmo
       - styles/book.scss

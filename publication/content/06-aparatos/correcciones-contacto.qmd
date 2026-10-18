@@ -11,12 +11,12 @@ Se agradece el envío de correcciones documentadas relativas a erratas,
 transcripción paleográfica, referencias, datos o interpretaciones
 contrastables.
 
-**Correo electrónico:** <miguelco2000@gmail.com>
+**Canal principal — correo electrónico:** <miguelco2000@gmail.com>
 
-Cuando el repositorio público esté disponible, GitHub Issues podrá utilizarse
-como vía complementaria. Para facilitar la revisión, conviene indicar el
-capítulo o apartado, el pasaje afectado, la corrección propuesta y, cuando
-corresponda, la fuente que la respalda.
+[GitHub Issues](https://github.com/miguel-conde/sorrios-ensenada/issues) puede
+utilizarse como vía complementaria. Para facilitar la revisión, conviene
+indicar el capítulo o apartado, el pasaje afectado, la corrección propuesta y,
+cuando corresponda, la fuente que la respalda.
 
 Las observaciones recibidas serán revisadas antes de incorporarse a futuras
 versiones de la obra.

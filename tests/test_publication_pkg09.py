@@ -52,6 +52,11 @@ def test_identity_metadata_has_one_approved_human_author_and_year_only():
     assert "contenido original" in quarto["copyright"]
     assert "solo al contenido original" in quarto["license"]
     assert "terceros" in quarto["license"]
+    assert book["site-url"] == "https://sorribos-santibanez-1752.netlify.app/"
+    assert book["repo-url"] == "https://github.com/miguel-conde/sorrios-ensenada"
+    assert book["repo-branch"] == "main"
+    assert book["repo-subdir"] == "publication"
+    assert quarto["format"]["html"]["canonical-url"] is True
     assert "url" not in {key.casefold() for key in quarto}
     assert "isbn" not in {key.casefold() for key in quarto}
 
@@ -77,10 +82,11 @@ def test_publication_manifest_normalizes_identity_rights_and_deferrals():
         for component in ("facsímil", "reproducciones", "cartografía")
     )
     assert publication["pending"] == {
-        "at_release": ["fecha exacta de publicación", "URL canónica"],
+        "at_release": ["fecha exacta de publicación"],
         "non_blocking": ["ISBN solo si llega a existir"],
     }
-    assert "isbn" not in publication and "url" not in publication
+    assert publication["url"] == "https://sorribos-santibanez-1752.netlify.app/"
+    assert "isbn" not in publication
 
 
 def test_credits_are_exact_and_ai_tools_have_no_authorship():
@@ -123,6 +129,9 @@ def test_colophon_is_compact_complete_and_not_a_technical_changelog():
         "Quarto",
         "fecha exacta de publicación",
         "URL canónica",
+        "https://sorribos-santibanez-1752.netlify.app/",
+        "https://github.com/miguel-conde/sorrios-ensenada",
+        "no incluye ni redistribuye",
     ):
         assert value in normalized
     for residue in (
@@ -152,7 +161,10 @@ def test_citation_models_use_final_identity_and_only_controlled_placeholders():
     assert f"*{TITLE}: {SUBTITLE}*" in text
     assert "versión 1.0" in text.casefold() and "2026" in text
     assert "versión y fecha de publicación pendientes" not in text
-    assert "URL canónica pendiente" in text
+    rows = re.findall(r"^\| (?!Objeto citable)[^\n]+ \|$", text, re.MULTILINE)
+    assert len(rows) == 11
+    assert all("https://sorribos-santibanez-1752.netlify.app/" in row for row in rows)
+    assert "URL canónica pendiente" not in text
     assert "ISBN" in text and "No se\nañade ISBN" in text
 
 

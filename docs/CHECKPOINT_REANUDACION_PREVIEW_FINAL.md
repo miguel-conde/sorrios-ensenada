@@ -1,6 +1,6 @@
 # Checkpoint de reanudación hasta PKG-12
 
-**Base de la operación vigente:** `feature/quarto-book@bce6b38747ec6bc0bc5a58577f6e269c307b04a5`
+**Base de META-FINAL-01:** `feature/quarto-book@51fbfed6baf13e850bb141f34529bb3720e05158`
 **Función:** congelar el orden de reanudación sin iniciar ninguna operación.
 
 ## Estado actual
@@ -27,8 +27,13 @@
   [POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md).
 - Site canónico: `sorribos-santibanez-1752`;
   <https://sorribos-santibanez-1752.netlify.app/>.
-- La URL canónica está **FIJADA**; su incorporación al libro está pendiente de
-  `META-FINAL-01`.
+- META-FINAL-01 está **COMPLETADA**: la URL canónica y la referencia pública
+  del repositorio están incorporadas a la edición.
+- La URL canónica está **RESUELTA** y en estado
+  **RESERVADA / PREPUBLICACIÓN**. Production permanece sin el libro; un HTTP
+  404 es esperado hasta PKG-13. PKG-12 revisará una URL de draft distinta y
+  PKG-13 hará live el draft final autorizado en la URL canónica.
+- Repositorio, email y año editorial están **RESUELTOS**.
 - La fecha exacta continúa **PENDIENTE** hasta `DATE-FINAL-01`.
 - La validación integral y los renders posteriores a HUM-01B están
   deliberadamente diferidos.
@@ -142,7 +147,7 @@ revisión. **No** cambia todavía su visibilidad.
 
 **COMPLETADA.** El repositorio
 <https://github.com/miguel-conde/sorrios-ensenada> es público. La URL canónica
-del libro continúa pendiente y se rige por
+del libro está resuelta y se rige por
 [POLITICA_PUBLICACION_V1_0.md](./POLITICA_PUBLICACION_V1_0.md).
 
 ## Relación entre líneas
@@ -150,35 +155,24 @@ del libro continúa pendiente y se rige por
 - La preparación del repositorio no sustituye ni reordena la línea editorial.
 - E1 y E2 pueden ejecutarse aunque R2 o R3 sigan pendientes.
 - E3 puede usar provisionalmente placeholders de email o repositorio.
-- La URL canónica del libro está fijada y debe incorporarse mediante
+- La URL canónica y la referencia pública quedaron incorporadas mediante
   `META-FINAL-01` antes de E4.
 - La apertura debe completarse antes del release si la edición final enlaza al
   repositorio.
 - PKG-12 no debe convertirse en una auditoría del repositorio.
 
-## Observaciones editoriales conocidas
+## Cierre de observaciones previas a E4
 
-1. Simplificar Créditos.
-2. Cambiar «operaciones».
-3. Revisar el enlace GREDOS/handle.
-4. Revisar todos los enlaces.
-5. Retirar versiones internas visibles innecesarias.
-6. Retirar «Quarto» cuando sea jerga innecesaria.
-7. Eliminar rutas internas del discurso dirigido al lector.
-8. La declaración IA/herramientas ya fue revisada en HUM-01B.
-9. Añadir un canal para reportar errores.
-10. Añadir una referencia al repositorio público.
-11. Correo público resuelto como `miguelco2000@gmail.com` por decisión humana.
-
-Nuevas observaciones humanas pueden incorporarse antes de REV-FINAL-PREVIEW.
+E1–E3, HUM-01B y META-FINAL-01 han resuelto las observaciones editoriales
+conocidas: texto orientado al lector, enlaces, declaración IA/herramientas,
+canales de corrección, repositorio público y URL canónica. No quedan
+observaciones editoriales conocidas que bloqueen E4. La fecha exacta no es una
+observación abierta: está **DIFERIDA POR POLÍTICA** hasta `DATE-FINAL-01`.
 
 ## Reanudación
 
-- **Siguiente operación de la línea principal:** `E4 — REV-FINAL-PREVIEW`
-  (**PENDIENTE** y bloqueada únicamente hasta incorporar la URL canónica y la
-  referencia pública mediante `META-FINAL-01`).
-- **Siguiente paso previo a E4:**
-  `META-FINAL-01 — INCORPORACIÓN DE URL CANÓNICA Y REFERENCIA PÚBLICA PREVIA A E4`.
+- **Siguiente operación exclusiva:** `E4 — REV-FINAL-PREVIEW` (**PENDIENTE** y
+  habilitada).
 - `GATE-03` y `GATE-04` permanecen **PENDIENTES**.
 - PKG-12 y PKG-13 permanecen **NO INICIADOS**.
 

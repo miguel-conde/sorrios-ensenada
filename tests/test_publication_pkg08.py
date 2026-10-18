@@ -145,7 +145,9 @@ def test_bib_01_references_parse_with_the_native_pandoc_processor():
 
 def test_bib_02_to_03_every_cited_key_exists_and_active_keys_are_complete():
     keys = _bib_keys()
-    cited = set(re.findall(r"@([A-Za-z][A-Za-z0-9_-]+)", _qmd_texts()))
+    cited = set(
+        re.findall(r"(?<![A-Za-z0-9._%+-])@([A-Za-z][A-Za-z0-9_-]+)", _qmd_texts())
+    )
     cited = {key for key in cited if not key.startswith(("tbl-", "fig-", "sec-"))}
     assert cited <= keys
     assert keys == ACTIVE_KEYS
@@ -249,7 +251,8 @@ def test_citation_models_cover_all_eleven_objects_in_seven_families():
     assert "Miguel Conde de Simón" in page
     assert "Conde de Simón, Miguel" in page
     assert "ISBN" in page and "No se\nañade ISBN" in page
-    assert "URL canónica pendiente" in page
+    assert "URL canónica pendiente" not in page
+    assert page.count("https://sorribos-santibanez-1752.netlify.app/") >= 11
 
 
 def test_intellectual_history_is_reader_facing_not_a_git_changelog():

@@ -72,6 +72,11 @@ otro draft. Nunca se publica un deploy rechazado o sustituido.
 El procedimiento operativo definitivo se documenta en el
 [runbook de despliegue y actualización](./RUNBOOK_DESPLIEGUE_NETLIFY.md). El
 site canónico permanece vacío hasta que la secuencia autorice el primer draft.
+La URL está en estado **RESERVADA / PREPUBLICACIÓN**: mientras production no
+contenga el libro, un HTTP 404 es el resultado esperado y no constituye una
+excepción general a la validación de enlaces. PKG-12 revisará una URL de draft
+distinta; tras PKG-13, la URL canónica deberá responder HTTP 200 y servir el
+contenido correcto.
 
 ## Política de URL
 
@@ -84,9 +89,9 @@ La regla responde a cuatro motivos:
 - debe poder verificarse durante PKG-12;
 - cambiarla después invalidaría innecesariamente la candidata.
 
-Proveedor, nombre del site y URL canónica están cerrados. La incorporación de
-la URL al libro será la operación focal `META-FINAL-01`; no se realiza en este
-registro.
+Proveedor, nombre del site y URL canónica están cerrados. `META-FINAL-01`
+incorporó la URL canónica y la referencia al repositorio público en la edición;
+la fecha exacta sigue diferida.
 
 ## Política de fecha
 
@@ -115,7 +120,7 @@ debe evaluarse el alcance real antes de continuar.
 ```text
 R5B — completada
 → NETLIFY-CAPABILITY-02 — completada
-→ META-FINAL-01 — incorporar URL canónica y referencia pública
+→ META-FINAL-01 — completada
 → E4
 → GATE-03
 → PKG-12

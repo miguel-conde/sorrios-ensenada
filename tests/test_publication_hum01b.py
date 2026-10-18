@@ -90,9 +90,10 @@ def test_prologue_metadata_and_remaining_deferrals_are_synchronized():
         (PUBLICATION / "meta/publication.yml").read_text(encoding="utf-8")
     )["publication"]
     assert publication["pending"] == {
-        "at_release": ["fecha exacta de publicación", "URL canónica"],
+        "at_release": ["fecha exacta de publicación"],
         "non_blocking": ["ISBN solo si llega a existir"],
     }
+    assert publication["url"] == "https://sorribos-santibanez-1752.netlify.app/"
 
 
 def test_hum01b_dossier_records_deferred_integral_validation():

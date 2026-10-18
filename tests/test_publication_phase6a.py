@@ -50,12 +50,11 @@ def test_final_identity_metadata_preserves_controlled_release_deferrals():
     assert metadata["identity"]["year"] == 2026
     assert metadata["pending"]["at_release"] == [
         "fecha exacta de publicación",
-        "URL canónica",
     ]
     assert "before_candidate" not in metadata["pending"]
     assert publication["base"]["git_commit"] == CURRENT_CANONICAL_COMMIT
     assert "isbn" not in metadata
-    assert "url" not in metadata
+    assert metadata["url"] == "https://sorribos-santibanez-1752.netlify.app/"
 
 
 def test_candidate_freezes_the_exact_canonical_project_snapshot():
@@ -174,8 +173,8 @@ def test_roadmap_closes_pkg11_and_keeps_phase6b_forbidden():
         "| PKG-04 | completado e integrado |",
         "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` **CERRADAS CANÓNICAMENTE**",
-        "GATE-01 = PASS. GATE-02 = PASS. PKG-10 Y PKG-11 COMPLETADOS E "
-        "INTEGRADOS; HUM-01B COMPLETADO.",
+        "GATE-01 = PASS. GATE-02 = PASS. HUM-01B Y META-FINAL-01 "
+        "COMPLETADAS.",
         "la propagación editorial quedó completada por PKG-08",
         "| PKG-06 | completado e integrado |",
         "| PKG-07 | completado e integrado |",
@@ -183,10 +182,9 @@ def test_roadmap_closes_pkg11_and_keeps_phase6b_forbidden():
         "| PKG-09 | completado e integrado |",
         "su propagación obligatoria se asignó a PKG-08 y quedó completada",
         "PKG-10 y PKG-11 completados e integrados",
-        "SIGUIENTE PASO RECOMENDADO: resolver las observaciones editoriales "
-        "humanas restantes antes de iniciar PKG-12; la validación integral y "
-        "los renders siguen diferidos.",
+        "SIGUIENTE PASO: E4 — REV-FINAL-PREVIEW.",
         "| HUM-01B | completado |",
+        "| META-FINAL-01 | completado |",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
         "prohibida antes de la aceptación humana del preview |",
     ):
@@ -202,6 +200,7 @@ def test_roadmap_closes_pkg11_and_keeps_phase6b_forbidden():
     assert "| PKG-10 | completado e integrado |" in roadmap
     assert "| PKG-11 | completado e integrado |" in roadmap
     assert "PKG-12 no iniciado" in roadmap
+    assert "E4 habilitada" in roadmap
     gate02 = (ROOT / "docs/GATE_02_IMPLEMENTACION_1_0_ACEPTADA.md").read_text(
         encoding="utf-8"
     )

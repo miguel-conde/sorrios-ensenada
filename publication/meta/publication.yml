@@ -1,6 +1,7 @@
 publication:
   version: "1.0"
   status: prepublication
+  url: "https://sorribos-santibanez-1752.netlify.app/"
   identity:
     title: "Sorribos y Santibáñez de Ordás en 1752"
     subtitle: "Estudio histórico y edición integral del Catastro de Ensenada"
@@ -19,7 +20,6 @@ publication:
   pending:
     at_release:
       - fecha exacta de publicación
-      - URL canónica
     non_blocking:
       - ISBN solo si llega a existir
 

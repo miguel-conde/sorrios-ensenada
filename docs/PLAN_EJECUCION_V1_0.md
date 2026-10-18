@@ -5,8 +5,8 @@
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
 **Estado:** plan operativo; PKG-00–11 completados e integrados; CR-V1-001 e
 INC-BIB-001/002 cerradas; GATE-01 y GATE-02 en PASS; candidata 1.0 validada;
-HUM-01B ha cerrado el prólogo y la declaración sobre IA/herramientas; quedan
-observaciones editoriales humanas adicionales y PKG-12 no se inicia todavía
+HUM-01B y META-FINAL-01 completadas; E4 es la siguiente operación y PKG-12 no
+se inicia todavía
 
 Antes de PKG-12, la secuencia editorial y la preparación paralela del
 repositorio público se controlan mediante
@@ -53,12 +53,12 @@ Incluye:
 - DAT-008 licencia;
 - prólogo personal firmado de 900–1.500 palabras.
 
-DAT-001–DAT-008 y DAT-AI-01 están resueltos. DAT-009 tiene resuelto el modelo
-de fecha, con su valor final diferido hasta la publicación; DAT-010 está
-diferido hasta PKG-12/PKG-13. HUM-01B cerró el prólogo definitivo y la
-declaración pública sobre IA/herramientas. Permanecen pendientes otras
-observaciones editoriales humanas, la fecha exacta, la URL canónica y, solo si
-llega a existir, el ISBN no bloqueante.
+DAT-001–DAT-008, DAT-010 y DAT-AI-01 están resueltos. DAT-009 tiene resuelto el
+modelo de fecha, con su valor final diferido hasta la publicación. HUM-01B
+cerró el prólogo definitivo y la declaración pública sobre IA/herramientas;
+META-FINAL-01 cerró la URL canónica y el repositorio público. Permanece
+pendiente únicamente la fecha exacta y, solo si llega a existir, el ISBN no
+bloqueante.
 
 **Autoridad:** usuario.<br>
 **Escritura:** no modifica `project/`; no inventa datos.<br>
@@ -317,12 +317,11 @@ Cierra:
 - créditos definitivos;
 - colofón.
 
-No inventa ningún valor. El año editorial queda fijado en 2026; la fecha
-exacta y la URL canónica se conservan como diferimientos controlados para el
-release. El ISBN continúa sin ser requisito de 1.0 y solo se consignará si
-llega a existir. El prólogo definitivo permanece pendiente de redacción
-personal; por decisión humana expresa puede seguir como placeholder en esta
-fase y será sustituido antes del cierre/release de 1.0.
+No inventa ningún valor. En el cierre original de PKG-09, el año editorial
+quedó fijado en 2026 y la fecha exacta y la URL canónica quedaron como
+diferimientos controlados. HUM-01B cerró después el prólogo y META-FINAL-01
+resolvió la URL; solo la fecha exacta sigue diferida. El ISBN continúa sin ser
+requisito de 1.0 y solo se consignará si llega a existir.
 
 ### PKG-10 — Regeneración reproducible y candidata
 
@@ -385,6 +384,8 @@ entre PKG-12 y PKG-13 se registra en
 en [RUNBOOK_DESPLIEGUE_NETLIFY.md](./RUNBOOK_DESPLIEGUE_NETLIFY.md). La
 concreción posterior ratificada usa un draft deploy no productivo para PKG-12,
 sin modificar production. Su aplicación no reescribe la historia de este plan.
+`META-FINAL-01` ha incorporado la URL canónica y la referencia al repositorio
+público; la fecha exacta permanece diferida hasta `DATE-FINAL-01`.
 
 ### PKG-13 — Fase 6B / release 1.0
 
@@ -543,8 +544,10 @@ chore(release): publish version 1.0
 [GATE_02_IMPLEMENTACION_1_0_ACEPTADA.md](./GATE_02_IMPLEMENTACION_1_0_ACEPTADA.md).
 
 - PKG-06–09 integrados: PASS.
-- No quedan datos obligatorios sin resolver: PASS, con diferimientos previstos
-  de prólogo, fecha exacta y URL; ISBN no obligatorio.
+- No quedan datos obligatorios sin resolver: PASS. En GATE-02 se aceptaron los
+  diferimientos de prólogo, fecha exacta y URL; HUM-01B resolvió después el
+  prólogo y META-FINAL-01 la URL, por lo que solo la fecha exacta sigue
+  diferida. ISBN no obligatorio.
 - No quedan cambios canónicos parcheados en `publication/`: PASS.
 - El alcance coincide con `ALCANCE_APROBADO_V1_0.md`: PASS.
 
@@ -616,4 +619,4 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 
 **GATE-01 Y GATE-02 — PASS. PKG-10 Y PKG-11 COMPLETADOS E INTEGRADOS; CANDIDATA 1.0 VALIDADA.**
 
-**SIGUIENTE PASO RECOMENDADO: resolver las observaciones editoriales humanas restantes antes de iniciar PKG-12; el prólogo y la declaración sobre IA/herramientas ya están cerrados por HUM-01B.**
+**SIGUIENTE PASO: E4 — REV-FINAL-PREVIEW.**

@@ -119,11 +119,10 @@ formulación ejecutiva completa se conservan en
 | DAT-007 | Miguel Conde de Simón, limitado al contenido original | **RESUELTO PARA CONTENIDO ORIGINAL** | Aviso de copyright y colofón; materiales externos bajo régimen propio |
 | DAT-008 | CC BY 4.0, limitada al contenido original que el autor pueda licenciar | **RESUELTO PARA CONTENIDO ORIGINAL** | Distribución y reutilización; sin relicenciar materiales externos |
 | DAT-009 | Modelo F1: año efectivo de publicación visible y fecha completa en metadatos/colofón/release | **MODELO RESUELTO — VALOR FINAL DIFERIDO HASTA PUBLICACIÓN** | Publicación efectiva |
-| DAT-010 | No existe URL pública canónica aprobada | **DIFERIDO HASTA PKG-12/PKG-13** | Mecanismo real de publicación |
+| DAT-010 | URL canónica: `https://sorribos-santibanez-1752.netlify.app/` | **RESUELTO EN META-FINAL-01** | Metadata, modelos de cita, colofón y publicación |
 
-Recuento DAT: **10**. DAT-001–DAT-008 están resueltos; DAT-009 conserva solo el
-valor final diferido y DAT-010 se cierra con la publicación. Ningún valor se
-infiere.
+Recuento DAT: **10**. DAT-001–DAT-008 y DAT-010 están resueltos; DAT-009
+conserva solo el valor final diferido. Ningún valor se infiere.
 
 Diferimientos adicionales controlados de PKG-00: texto definitivo del prólogo,
 agradecimientos eventuales, nota final de derechos por componentes y asuntos

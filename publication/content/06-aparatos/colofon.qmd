@@ -54,8 +54,16 @@ de las fuentes, las interpretaciones históricas y las decisiones editoriales y
 de publicación fueron revisadas y validadas por **Miguel Conde de Simón**, que
 asume la responsabilidad intelectual y final de la obra.
 
-**Año editorial:** 2026. La fecha exacta de publicación y la URL canónica se
-incorporarán al publicarse la edición.
+**Año editorial:** 2026.<br>
+**URL canónica:** <https://sorribos-santibanez-1752.netlify.app/>.<br>
+La fecha exacta de publicación se incorporará en la edición definitiva
+conforme a la política vigente.
+
+La documentación técnica, los textos editoriales versionados y el código que
+permite reproducir la composición se conservan en el
+[repositorio público del proyecto](https://github.com/miguel-conde/sorrios-ensenada).
+El repositorio no incluye ni redistribuye el PDF del manuscrito autoritativo ni
+los derivados facsimilares generados para la publicación.
 
 Las correcciones documentadas pueden comunicarse por los canales indicados en
 [«Correcciones y contacto»](correcciones-contacto.qmd).

@@ -1,8 +1,8 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 17 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; HUM-01B cierra prólogo y declaración sobre IA/herramientas; validación integral diferida<br>
-**Fase actual:** Fase 6A — quedan observaciones editoriales humanas por resolver antes de iniciar PKG-12<br>
+**Actualizado:** 18 de octubre de 2026<br>
+**Estado global:** Fase 6 en curso; GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; HUM-01B y META-FINAL-01 completadas; E4 habilitada<br>
+**Fase actual:** Fase 6A — E4 es la siguiente operación; PKG-12 no iniciado<br>
 **Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
 **Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
 **Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
@@ -216,9 +216,10 @@ Una sesión nueva de Copilot debe leer, en este orden:
   de hash HTML y PDF quedaron demostradas como nondeterminismo técnico inocuo
   —orden de atributos; timestamps e IDs internos—.
 - HUM-01B cerró el prólogo personal y la declaración pública sobre
-  IA/herramientas. Quedan observaciones editoriales humanas adicionales; la
-  suite integral, los renders y una candidata actualizada se difieren hasta
-  resolverlas. PKG-12 no se ha iniciado.
+  IA/herramientas. META-FINAL-01 incorporó después la URL canónica y la
+  referencia al repositorio público. No quedan observaciones editoriales
+  conocidas previas a E4; la fecha exacta sigue diferida por política.
+  PKG-12 no se ha iniciado.
 - Candidata Quarto anterior: la candidata técnica de 334 páginas y SHA-256
   `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183` se conserva
   como `baseline pre-PKG-01 / no sincronizada con las fuentes canónicas
@@ -242,13 +243,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; HUM-01B completado; quedan observaciones editoriales humanas, PKG-12, aceptación del preview y PKG-13/Fase 6B |
+| 6. Preview y publicación 1.0 | en curso | GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11, HUM-01B y META-FINAL-01 completados; E4 habilitada; quedan PKG-12, aceptación del preview y PKG-13/Fase 6B |
 
 ## Siguiente tarea exacta
 
-`GATE-01 = PASS. GATE-02 = PASS. PKG-10 Y PKG-11 COMPLETADOS E INTEGRADOS; HUM-01B COMPLETADO.`
+`GATE-01 = PASS. GATE-02 = PASS. HUM-01B Y META-FINAL-01 COMPLETADAS.`
 
-`SIGUIENTE PASO RECOMENDADO: resolver las observaciones editoriales humanas restantes antes de iniciar PKG-12; la validación integral y los renders siguen diferidos.`
+`SIGUIENTE PASO: E4 — REV-FINAL-PREVIEW.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -270,7 +271,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; HUM-01B completado; validación integral diferida; PKG-12 no iniciado |
+| 6A | en curso | GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11, HUM-01B y META-FINAL-01 completados; E4 habilitada; PKG-12 no iniciado |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; DEC-012 y DEC-014 implementadas e integradas |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
@@ -293,7 +294,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | GATE-02 | PASS | evaluación formal sobre `3eda91015802928eca0ec919391986c08d52dbbc`; PKG-06–PKG-09 aceptados; PKG-10 habilitado y no iniciado |
 | PKG-10 | completado e integrado | commit `d02b9fbf0e17625f87d19ebe12bf36c1ce633c80`; 39 HTML; PDF 355 páginas / 71.020.397 bytes / SHA-256 `7361b491c8095f55a6bb6add3445924b52db6518f49610342cfbbf5a946f4771` |
 | PKG-11 | completado e integrado | commit `526304867e2bba16b745f3477fb63d44be49bd19`; candidata validada integralmente; `678 passed`; 0 bloqueantes; dos observaciones de nondeterminismo inocuo |
-| HUM-01B | completado | prólogo definitivo y declaración sobre IA/herramientas cerrados; otras observaciones humanas, validación integral y renders pendientes |
+| HUM-01B | completado | prólogo definitivo y declaración sobre IA/herramientas cerrados |
+| META-FINAL-01 | completado | URL canónica y repositorio público incorporados; fecha exacta diferida por política; E4 habilitada |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
 
 ### Cierre comprobado de 2A
@@ -885,4 +887,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/HUM_01B_CIERRE_INPUTS_EDITORIALES_HUMANOS.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Resuelve únicamente las observaciones editoriales humanas que el usuario formule antes de iniciar PKG-12; conserva diferidas la validación integral y los renders, sin iniciar Fase 6B y sin push, tag ni release.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CHECKPOINT_REANUDACION_PREVIEW_FINAL.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta exclusivamente `E4 — REV-FINAL-PREVIEW`; conserva diferida la fecha exacta y no inicies PKG-12, tag ni release.
