@@ -42,8 +42,16 @@
   `CANDIDATE_SOURCE_SHA = d073fd8711f9fa50705308c65fabea0a2fae0d29`.
 - Las huellas finales HTML/PDF constan en
   [E4_REV_FINAL_PREVIEW.md](./E4_REV_FINAL_PREVIEW.md).
+- GATE-03 está **PASS** y la candidata técnica construida desde
+  `d073fd8711f9fa50705308c65fabea0a2fae0d29` está **ACEPTADA PARA PKG-12**.
+  La decisión formal consta en
+  [GATE_03_CANDIDATA_TECNICA_ACEPTADA.md](./GATE_03_CANDIDATA_TECNICA_ACEPTADA.md).
+- Siguen vigentes el manifiesto web
+  `3748a882e2e5f43581cb01071895c6219d5008c3275f306818a47f1658166ef1`
+  y el PDF
+  `a00db79d7cbcec39c63f4b4d16a9c369a0eae4ab9c6c3d2d408c4d52171981f7`.
 - Netlify permanece con 0 deploys, 0 drafts y production vacío.
-- PKG-12 **NO** se ha iniciado.
+- PKG-12 es la **SIGUIENTE OPERACIÓN** y todavía **NO** se ha iniciado.
 
 ## Línea principal editorial congelada
 
@@ -108,7 +116,8 @@ El resultado es el objeto que debe evaluar GATE-03 antes de PKG-12.
 
 ### E5 — PKG-12
 
-Preview y aceptación humana. No se ejecutará antes de E4.
+**SIGUIENTE OPERACIÓN.** Preview y aceptación humana de la candidata técnica
+aceptada por GATE-03.
 
 ## Línea paralela — repositorio público
 
@@ -183,9 +192,11 @@ observación abierta: está **DIFERIDA POR POLÍTICA** hasta `DATE-FINAL-01`.
 
 ## Reanudación
 
-- **Siguiente operación exclusiva:** `GATE-03` (**PENDIENTE** y habilitada).
-- `GATE-04` permanece **PENDIENTE**.
-- PKG-12 y PKG-13 permanecen **NO INICIADOS**.
+- `GATE-03 = PASS`; candidata técnica **ACEPTADA**.
+- **Siguiente operación exclusiva:** `PKG-12 — Preview y aceptación humana`
+  (**NO INICIADO** y habilitado).
+- `GATE-04` y `GATE-05` permanecen **PENDIENTES**.
+- PKG-13 permanece **NO INICIADO**.
 - `DATE-FINAL-01` permanece **PENDIENTE**.
 
 Ninguna de esas operaciones se inicia en este checkpoint.
