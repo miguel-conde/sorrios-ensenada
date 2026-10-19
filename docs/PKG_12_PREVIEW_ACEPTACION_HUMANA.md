@@ -1,7 +1,7 @@
 # PKG-12 — Preview y aceptación humana
 
-**Veredicto técnico:** `PKG-12 PREVIEW DEPLOYED — HUMAN REVIEW REQUIRED`  
-**Revisión humana:** `PENDIENTE`  
+**Veredicto técnico:** `PKG-12 PREVIEW DEPLOYED — HUMAN REVIEW REQUIRED`
+**Revisión humana:** `PENDIENTE`
 **Fecha técnica del deploy:** `2026-10-19T16:47:10.561Z`
 
 ## Identidad de la candidata
@@ -113,4 +113,3 @@ La decisión humana posterior debe ser exactamente una de estas:
 
 - `PKG-12 ACEPTADA — PREVIEW APROBADA`;
 - `PKG-12 REQUIERE CORRECCIONES`.
-
