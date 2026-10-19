@@ -50,8 +50,13 @@
   `3748a882e2e5f43581cb01071895c6219d5008c3275f306818a47f1658166ef1`
   y el PDF
   `a00db79d7cbcec39c63f4b4d16a9c369a0eae4ab9c6c3d2d408c4d52171981f7`.
-- Netlify permanece con 0 deploys, 0 drafts y production vacío.
-- PKG-12 es la **SIGUIENTE OPERACIÓN** y todavía **NO** se ha iniciado.
+- PKG-12 tiene la **PREVIEW DESPLEGADA / REVISIÓN HUMANA PENDIENTE**. El
+  dossier es [PKG_12_PREVIEW_ACEPTACION_HUMANA.md](./PKG_12_PREVIEW_ACEPTACION_HUMANA.md).
+- Deploy ID: `6ad6498e223ba4f4bb20e6bd`.
+- Draft:
+  <https://6ad6498e223ba4f4bb20e6bd--sorribos-santibanez-1752.netlify.app>.
+- Production continúa vacío y sin servir el libro; el deploy es manual, no
+  productivo, sin build remoto y sin integración Git.
 
 ## Línea principal editorial congelada
 
@@ -116,8 +121,10 @@ El resultado es el objeto que debe evaluar GATE-03 antes de PKG-12.
 
 ### E5 — PKG-12
 
-**SIGUIENTE OPERACIÓN.** Preview y aceptación humana de la candidata técnica
-aceptada por GATE-03.
+**PREVIEW DESPLEGADA / REVISIÓN HUMANA PENDIENTE.** La candidata técnica
+aceptada por GATE-03 está disponible en el draft registrado en
+[PKG_12_PREVIEW_ACEPTACION_HUMANA.md](./PKG_12_PREVIEW_ACEPTACION_HUMANA.md).
+No puede declararse aceptada hasta recibir la decisión humana expresa.
 
 ## Línea paralela — repositorio público
 
@@ -193,8 +200,8 @@ observación abierta: está **DIFERIDA POR POLÍTICA** hasta `DATE-FINAL-01`.
 ## Reanudación
 
 - `GATE-03 = PASS`; candidata técnica **ACEPTADA**.
-- **Siguiente operación exclusiva:** `PKG-12 — Preview y aceptación humana`
-  (**NO INICIADO** y habilitado).
+- `PKG-12 = PREVIEW DESPLEGADA / REVISIÓN HUMANA PENDIENTE`.
+- **Siguiente acción exclusiva:** revisión humana del draft de PKG-12.
 - `GATE-04` y `GATE-05` permanecen **PENDIENTES**.
 - PKG-13 permanece **NO INICIADO**.
 - `DATE-FINAL-01` permanece **PENDIENTE**.
