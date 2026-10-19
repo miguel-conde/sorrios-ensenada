@@ -1,6 +1,6 @@
 # Checkpoint de reanudación hasta PKG-12
 
-**Base de META-FINAL-01:** `feature/quarto-book@51fbfed6baf13e850bb141f34529bb3720e05158`
+**Candidata validada por E4:** `d073fd8711f9fa50705308c65fabea0a2fae0d29`
 **Función:** congelar el orden de reanudación sin iniciar ninguna operación.
 
 ## Estado actual
@@ -35,8 +35,14 @@
   PKG-13 hará live el draft final autorizado en la URL canónica.
 - Repositorio, email y año editorial están **RESUELTOS**.
 - La fecha exacta continúa **PENDIENTE** hasta `DATE-FINAL-01`.
-- La validación integral y los renders posteriores a HUM-01B están
-  deliberadamente diferidos.
+- E4-FIX-01 está **PASS**. Los abortos operativos E4-R2 y E4-R3 quedaron
+  superados mediante el bootstrap previo y el `PATH` verificado de
+  `rsvg-convert`.
+- E4-R4 está **PASS** y E4 está **COMPLETADA** sobre
+  `CANDIDATE_SOURCE_SHA = d073fd8711f9fa50705308c65fabea0a2fae0d29`.
+- Las huellas finales HTML/PDF constan en
+  [E4_REV_FINAL_PREVIEW.md](./E4_REV_FINAL_PREVIEW.md).
+- Netlify permanece con 0 deploys, 0 drafts y production vacío.
 - PKG-12 **NO** se ha iniciado.
 
 ## Línea principal editorial congelada
@@ -85,14 +91,20 @@ ejecutará todavía la validación integral mientras sigan abiertas observacione
 
 ### E4 — REV-FINAL-PREVIEW
 
-Solo cuando estén cerradas **todas** las observaciones editoriales:
+**COMPLETADA.** E4-R4 terminó con el veredicto
+`E4 PASS — CANDIDATA VIGENTE APTA PARA GATE-03`. La evidencia integral y las
+huellas finales están registradas en
+[E4_REV_FINAL_PREVIEW.md](./E4_REV_FINAL_PREVIEW.md).
+
+La validación ejecutada, una vez cerradas todas las observaciones editoriales,
+incluyó:
 
 - ejecutar una vez la suite completa y los validadores integrales;
 - realizar un render HTML completo y un render PDF completo;
 - registrar los nuevos hashes;
 - completar una revisión final representativa.
 
-El resultado será el objeto que pase a PKG-12.
+El resultado es el objeto que debe evaluar GATE-03 antes de PKG-12.
 
 ### E5 — PKG-12
 
@@ -171,9 +183,9 @@ observación abierta: está **DIFERIDA POR POLÍTICA** hasta `DATE-FINAL-01`.
 
 ## Reanudación
 
-- **Siguiente operación exclusiva:** `E4 — REV-FINAL-PREVIEW` (**PENDIENTE** y
-  habilitada).
-- `GATE-03` y `GATE-04` permanecen **PENDIENTES**.
+- **Siguiente operación exclusiva:** `GATE-03` (**PENDIENTE** y habilitada).
+- `GATE-04` permanece **PENDIENTE**.
 - PKG-12 y PKG-13 permanecen **NO INICIADOS**.
+- `DATE-FINAL-01` permanece **PENDIENTE**.
 
 Ninguna de esas operaciones se inicia en este checkpoint.
