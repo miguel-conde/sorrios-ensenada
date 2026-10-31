@@ -1,8 +1,11 @@
 # PKG-12 — Preview y aceptación humana
 
-**Veredicto técnico:** `PKG-12 PREVIEW DEPLOYED — HUMAN REVIEW REQUIRED`
-**Revisión humana:** `PENDIENTE`
-**Fecha técnica del deploy:** `2026-10-19T16:47:10.561Z`
+**Veredicto técnico vigente:**
+`PKG-12-R2 PREVIEW DEPLOYED — FINAL HUMAN REVIEW REQUIRED`
+
+**Revisión humana final:** `PENDIENTE`
+
+**Fecha técnica del deploy vigente:** `2026-10-31T09:34:52.920Z`
 
 ## Identidad de la candidata
 
@@ -113,3 +116,68 @@ La decisión humana posterior debe ser exactamente una de estas:
 
 - `PKG-12 ACEPTADA — PREVIEW APROBADA`;
 - `PKG-12 REQUIERE CORRECCIONES`.
+
+## R2 — Preview corregida tras HUM-REVIEW-FIX-01
+
+La primera preview fue revisada por el autor y dio lugar a tres correcciones:
+ajuste mínimo de una frase del prólogo, sustitución de la etiqueta «Autor/a»
+por «Autor» y actualización integral del README público. También se cerró como
+decisión editorial que no se solicitará ISBN para la versión 1.0 no comercial.
+El cierre de esas correcciones consta en
+[HUM_REVIEW_01_CIERRE.md](./HUM_REVIEW_01_CIERRE.md).
+
+### Identidad de la candidata corregida
+
+- `HUM_REVIEW_FIX_TARGET`:
+  `cf34af15ea3f8b6b538ba4464fabe2dda3ee2e20`.
+- Árbol `project/`:
+  `a8ccb6d783e51aafb6493fed9791097d0a678086`.
+- Web: 40 documentos HTML; 120 archivos excluido el PDF; 74.657.270 bytes;
+  manifest SHA-256
+  `2e2eb284c7539647349c072f0262f04a8da334e37720181009924c99600bf4cd`.
+- PDF: 360 páginas; 71.028.364 bytes; SHA-256
+  `7d0a63e85329951ec4cf1f5e747f23cfa41e062d0b929d2a128dc52354c876d2`.
+
+La identidad local se recalculó antes del despliegue sin regenerar ningún
+artefacto y coincidió exactamente con HUM-REVIEW-FIX-01.
+
+### Nuevo deploy draft no productivo
+
+- Site: `sorribos-santibanez-1752`.
+- Site ID: `1539a52a-d500-426f-9995-7db9c01e6d45`.
+- Deploy ID: `6ae5b63c48bf70292280a8fb`.
+- Fecha técnica: `2026-10-31T09:34:52.920Z`.
+- URL del draft:
+  <https://6ae5b63c48bf70292280a8fb--sorribos-santibanez-1752.netlify.app>.
+- Contexto: `deploy-preview`; estado: `ready`.
+- `published_at = null`; `build_id = null`.
+
+El deploy se creó manualmente con los artefactos locales ya construidos. No se
+usó producción, conexión Git ni build remoto.
+
+### Verificación remota R2
+
+- Inventario Netlify: 121/121 rutas, tamaños y SHA-1 idénticos al inventario
+  local.
+- Los 40 HTML responden HTTP 200 y declaran la URL canónica correcta.
+- El PDF remoto coincide byte a byte con el local y conserva el SHA-256
+  registrado.
+- Muestras de CSS, JavaScript, SVG y PNG coinciden byte a byte.
+- El prólogo muestra «Cuando conocí Sorríos» y no la redacción anterior.
+- La portada HTML muestra «Autor»; «Autor/a» no aparece en la superficie HTML.
+- El ISBN no figura como pendiente y la fecha exacta continúa diferida.
+- Repositorio, GitHub Issues y correo público son correctos.
+- El README de `main` en GitHub coincide con el local y cubre proyecto, obra,
+  autoría, URL, estructura, reproducibilidad, licencias, ISBN y contacto.
+- Production continúa sin `published_deploy` y responde HTTP 404.
+- Los dos deploys existentes tienen `build_id = null` y `published_at = null`;
+  la integración Git sigue ausente.
+
+### Estado R2
+
+`REVISIÓN HUMANA FINAL PENDIENTE`
+
+- GATE-04: `PENDIENTE`.
+- DATE-FINAL-01: `PENDIENTE`.
+- GATE-05: `PENDIENTE`.
+- PKG-13: `NO INICIADO`.
