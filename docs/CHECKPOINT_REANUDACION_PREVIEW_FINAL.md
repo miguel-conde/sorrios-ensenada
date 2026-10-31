@@ -69,13 +69,23 @@
   candidata humana aprobada es
   `e0bba5379cf3277a47556e9627772ef03f7bb3a8`. La decisión formal consta en
   [GATE_04_ACEPTACION_HUMANA.md](./GATE_04_ACEPTACION_HUMANA.md).
-- La candidata final fechada está validada y documentada en
+- La candidata final fechada anterior está documentada en
   [DATE_FINAL_01.md](./DATE_FINAL_01.md). Su manifest web SHA-256 es
   `ab3bfbd19dc14f183c754b7b0d1408bfa05f7498a3b1d132f9c725f5d723c874`
   y el PDF tiene SHA-256
-  `a59a0029fb15f4e6bfae8bd2edd791a3889e4a6121a34072da755b2854f10bde`.
-- Draft final fechado **DISPONIBLE**: `6ae5ffeaa97b544ed057b110`;
+  `a59a0029fb15f4e6bfae8bd2edd791a3889e4a6121a34072da755b2854f10bde`;
+  esa candidata está **SUPERADA** por DATE-FINAL-01-FIX-01.
+- Draft fechado anterior **SUPERADO / NO USAR EN GATE-05**:
+  `6ae5ffeaa97b544ed057b110`;
   <https://6ae5ffeaa97b544ed057b110--sorribos-santibanez-1752.netlify.app>.
+- DATE-FINAL-01-FIX-01 está **PASS**. La nueva candidata para GATE-05 tiene
+  manifest web SHA-256
+  `67b1d03ae63d33886121daefda72f1479382227f25643eb52341aad6be59a29f`
+  y PDF SHA-256
+  `e6b00d65876a5c5a20f2327bde39d624ba1f6da82b1b40d18a57b055fd8de470`.
+  El dossier es [DATE_FINAL_01_FIX_01.md](./DATE_FINAL_01_FIX_01.md).
+- Nuevo draft final **CANDIDATO PARA GATE-05**: `6ae6435a5695ab37b483c758`;
+  <https://6ae6435a5695ab37b483c758--sorribos-santibanez-1752.netlify.app>.
 - Production continúa vacío y sin servir el libro; el deploy es manual, no
   productivo, sin build remoto y sin integración Git.
 
@@ -155,6 +165,15 @@ prólogo están incorporados. La candidata final fechada y su draft manual no
 productivo están validados y registrados en
 [DATE_FINAL_01.md](./DATE_FINAL_01.md). `GATE-05` es la siguiente operación;
 PKG-13 no se ha iniciado.
+
+### E7 — DATE-FINAL-01-FIX-01
+
+**PASS.** La corrección focal sustituyó únicamente los saltos HTML del bloque
+editorial del colofón por saltos Markdown/Pandoc, sin alterar su texto. HTML y
+PDF muestran año, fecha y URL en tres líneas separadas. La nueva candidata y
+el draft manual no productivo están registrados en
+[DATE_FINAL_01_FIX_01.md](./DATE_FINAL_01_FIX_01.md); sustituyen a la candidata
+y al deploy de DATE-FINAL-01 para GATE-05.
 
 ## Línea paralela — repositorio público
 
@@ -239,8 +258,11 @@ resuelta por DATE-FINAL-01 como `1 de noviembre de 2026`.
   `e0bba5379cf3277a47556e9627772ef03f7bb3a8`; draft aprobado:
   `6ae5efb49656d03ff46118df`.
 - Para v1.0, `ISBN = NO SE SOLICITA`.
-- `DATE-FINAL-01 = COMPLETADA`; fecha oficial: `1 de noviembre de 2026`;
-  candidata final fechada y draft `6ae5ffeaa97b544ed057b110` validados.
+- `DATE-FINAL-01 = PASS`; fecha oficial: `1 de noviembre de 2026`.
+- `DATE-FINAL-01-FIX-01 = PASS`; candidata anterior y draft
+  `6ae5ffeaa97b544ed057b110` **SUPERADOS**.
+- Nuevo draft final **CANDIDATO PARA GATE-05**:
+  `6ae6435a5695ab37b483c758`.
 - **Siguiente acción exclusiva:** `GATE-05`.
 - `GATE-05` permanece **PENDIENTE / HABILITADA**.
 - PKG-13 permanece **NO INICIADO**.
