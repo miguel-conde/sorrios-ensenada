@@ -1,6 +1,7 @@
 publication:
   version: "1.0"
   status: prepublication
+  date: "2026-11-01"
   url: "https://sorribos-santibanez-1752.netlify.app/"
   identity:
     title: "Sorribos y Santibáñez de Ordás en 1752"
@@ -18,8 +19,7 @@ publication:
     scope: "contenido original que el autor puede licenciar"
     third_party: "el facsímil, las reproducciones documentales, la cartografía, las imágenes, las citas y otros materiales de terceros conservan sus condiciones propias"
   pending:
-    at_release:
-      - fecha exacta de publicación
+    at_release: []
 
 base:
   git_commit: "a162fad1792aa9b3804a5499d348ab355e5ce574"

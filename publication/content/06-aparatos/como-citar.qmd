@@ -10,10 +10,9 @@ number-sections: false
 La responsabilidad autoral es **Miguel Conde de Simón**; en una lista
 bibliográfica se ordena como **Conde de Simón, Miguel**. La edición corresponde
 a la versión 1.0 y su año editorial es 2026. Su URL canónica ya está fijada en
-<https://sorribos-santibanez-1752.netlify.app/>. La fecha exacta de publicación
-se incorporará cuando se publique definitivamente la edición. Los marcadores
-entre corchetes corresponden únicamente a localizadores que deben sustituirse
-al citar cada objeto.
+<https://sorribos-santibanez-1752.netlify.app/>. La fecha oficial de publicación
+es el 1 de noviembre de 2026. Los marcadores entre corchetes corresponden
+únicamente a localizadores que deben sustituirse al citar cada objeto.
 
 ## Siete familias para once objetos {.unnumbered}
 
@@ -33,5 +32,4 @@ al citar cada objeto.
 
 Los localizadores estables —página, folio, unidad, respuesta, capítulo o ID—
 deben conservarse aunque una composición posterior cambie la paginación. No se
-añade ISBN ni se anticipa la fecha exacta de publicación. La URL canónica ya
-está resuelta y se mantiene estable.
+añade ISBN. La URL canónica ya está resuelta y se mantiene estable.

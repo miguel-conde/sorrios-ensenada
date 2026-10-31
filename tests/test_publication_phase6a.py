@@ -38,7 +38,7 @@ def _git(*arguments: str) -> str:
     ).stdout.strip()
 
 
-def test_final_identity_metadata_preserves_controlled_release_deferrals():
+def test_final_identity_metadata_records_the_approved_publication_date():
     publication = _yaml(PUBLICATION / "meta/publication.yml")
     metadata = publication["publication"]
     assert metadata["version"] == "1.0"
@@ -48,9 +48,8 @@ def test_final_identity_metadata_preserves_controlled_release_deferrals():
         "bibliographic": "Conde de Simón, Miguel",
     }
     assert metadata["identity"]["year"] == 2026
-    assert metadata["pending"]["at_release"] == [
-        "fecha exacta de publicación",
-    ]
+    assert metadata["date"] == "2026-11-01"
+    assert metadata["pending"]["at_release"] == []
     assert "before_candidate" not in metadata["pending"]
     assert publication["base"]["git_commit"] == CURRENT_CANONICAL_COMMIT
     assert "isbn" not in metadata

@@ -61,10 +61,12 @@ def test_human_prologue_is_preserved_and_marked_final():
     )
     assert metadata["publication-status"] == "prepublication"
     assert hashlib.sha256(body.encode()).hexdigest() == (
-        "3a4a14f4dfe5f1144b0bbfe087d834cdfcaf5e3dfffe47b96a39fcdbfa51f827"
+        "a10749fc526a6ead2b1c82f5a067c290e1196665c20a35448c4c5ff3358f2903"
     )
     assert body.lstrip().startswith("# Prólogo {.unnumbered}\n")
-    assert body.rstrip().endswith("**Miguel Conde de Simón**<br>\nSorríos, 2026")
+    assert body.rstrip().endswith(
+        "**Miguel Conde de Simón**<br>\nMadrid, octubre de 2026"
+    )
 
 
 def test_colophon_ai_declaration_is_preserved_and_credits_refer_to_it():
@@ -89,9 +91,8 @@ def test_prologue_metadata_and_remaining_deferrals_are_synchronized():
     publication = yaml.safe_load(
         (PUBLICATION / "meta/publication.yml").read_text(encoding="utf-8")
     )["publication"]
-    assert publication["pending"] == {
-        "at_release": ["fecha exacta de publicación"],
-    }
+    assert publication["date"] == "2026-11-01"
+    assert publication["pending"] == {"at_release": []}
     assert publication["url"] == "https://sorribos-santibanez-1752.netlify.app/"
 
 

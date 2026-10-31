@@ -96,7 +96,7 @@ def test_prologue_is_final_signed_human_text_without_placeholder_residue():
     metadata, body = _front_matter(PUBLICATION / PRELIMINARIES[1])
     assert metadata["publication-status"] == "prepublication"
     assert "# Prólogo {.unnumbered}" in body
-    assert "**Miguel Conde de Simón**<br>\nSorríos, 2026" in body
+    assert "**Miguel Conde de Simón**<br>\nMadrid, octubre de 2026" in body
     assert "PENDIENTE DE REDACCIÓN PERSONAL DEL AUTOR" not in body
     assert "callout-warning" not in body
     assert 900 <= len(body.split()) <= 1_500

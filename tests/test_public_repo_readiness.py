@@ -77,7 +77,8 @@ def test_public_readme_and_issue_templates_cover_reader_routes():
     assert "https://sorribos-santibanez-1752.netlify.app/" in readme
     assert "versión 1.0" in normalized and "año editorial 2026" in normalized
     assert "no se solicitará ISBN" in normalized
-    assert "fecha exacta se fija únicamente en el cierre de publicación" in normalized
+    assert "fecha oficial de publicación es el **1 de noviembre de 2026**" in normalized
+    assert "proyecto permanece en prepublicación" in normalized
     assert not re.search(r"\b(?:PKG|GATE)-\d+\b", readme)
 
     correction = (

@@ -45,7 +45,9 @@ def test_prologue_changes_only_the_authorized_human_review_passages():
     assert before_fix01.count(old) == 1
     assert before_fix02 == before_fix01.replace(old, new, 1)
     assert before_fix02.count(PREVIOUS_OPENING) == 1
-    assert current == before_fix02.replace(PREVIOUS_OPENING, APPROVED_OPENING, 1)
+    expected = before_fix02.replace(PREVIOUS_OPENING, APPROVED_OPENING, 1)
+    expected = expected.replace("Sorríos, 2026", "Madrid, octubre de 2026", 1)
+    assert current == expected
     assert old not in current
     assert new in current
     assert PREVIOUS_OPENING not in current
@@ -60,9 +62,8 @@ def test_author_label_override_is_narrow_and_isbn_is_not_pending():
     metadata = yaml.safe_load(
         (PUBLICATION / "meta/publication.yml").read_text(encoding="utf-8")
     )["publication"]
-    assert metadata["pending"] == {
-        "at_release": ["fecha exacta de publicación"],
-    }
+    assert metadata["date"] == "2026-11-01"
+    assert metadata["pending"] == {"at_release": []}
     assert "isbn" not in {key.casefold() for key in metadata}
 
 

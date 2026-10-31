@@ -1,4 +1,4 @@
-# Checkpoint de reanudación hasta PKG-12
+# Checkpoint de reanudación hasta GATE-05
 
 **Candidata validada por E4:** `d073fd8711f9fa50705308c65fabea0a2fae0d29`
 **Función:** congelar el orden de reanudación sin iniciar ninguna operación.
@@ -34,7 +34,9 @@
   404 es esperado hasta PKG-13. PKG-12 revisará una URL de draft distinta y
   PKG-13 hará live el draft final autorizado en la URL canónica.
 - Repositorio, email y año editorial están **RESUELTOS**.
-- La fecha exacta continúa **PENDIENTE** hasta `DATE-FINAL-01`.
+- DATE-FINAL-01 está **COMPLETADA**. La fecha oficial de v1.0 es
+  `1 de noviembre de 2026` (`2026-11-01`); el colofón registra la solemnidad de
+  Todos los Santos y la enmienda final del prólogo está **INCORPORADA**.
 - Para la edición v1.0 no comercial **NO SE SOLICITA ISBN**; no es un pendiente
   de publicación.
 - E4-FIX-01 está **PASS**. Los abortos operativos E4-R2 y E4-R3 quedaron
@@ -67,6 +69,13 @@
   candidata humana aprobada es
   `e0bba5379cf3277a47556e9627772ef03f7bb3a8`. La decisión formal consta en
   [GATE_04_ACEPTACION_HUMANA.md](./GATE_04_ACEPTACION_HUMANA.md).
+- La candidata final fechada está validada y documentada en
+  [DATE_FINAL_01.md](./DATE_FINAL_01.md). Su manifest web SHA-256 es
+  `ab3bfbd19dc14f183c754b7b0d1408bfa05f7498a3b1d132f9c725f5d723c874`
+  y el PDF tiene SHA-256
+  `a59a0029fb15f4e6bfae8bd2edd791a3889e4a6121a34072da755b2854f10bde`.
+- Draft final fechado **DISPONIBLE**: `6ae5ffeaa97b544ed057b110`;
+  <https://6ae5ffeaa97b544ed057b110--sorribos-santibanez-1752.netlify.app>.
 - Production continúa vacío y sin servir el libro; el deploy es manual, no
   productivo, sin build remoto y sin integración Git.
 
@@ -139,6 +148,14 @@ prólogo. `PKG-12-R3` desplegó exactamente esa candidata validada y la revisió
 humana final la aprobó. La evidencia del deploy y de su identidad está en
 [PKG_12_PREVIEW_ACEPTACION_HUMANA.md](./PKG_12_PREVIEW_ACEPTACION_HUMANA.md).
 
+### E6 — DATE-FINAL-01
+
+**COMPLETADA.** La fecha oficial, el colofón conmemorativo y la firma final del
+prólogo están incorporados. La candidata final fechada y su draft manual no
+productivo están validados y registrados en
+[DATE_FINAL_01.md](./DATE_FINAL_01.md). `GATE-05` es la siguiente operación;
+PKG-13 no se ha iniciado.
+
 ## Línea paralela — repositorio público
 
 ### R1 — AUD-REPO-01
@@ -207,8 +224,8 @@ del libro está resuelta y se rige por
 E1–E3, HUM-01B y META-FINAL-01 han resuelto las observaciones editoriales
 conocidas: texto orientado al lector, enlaces, declaración IA/herramientas,
 canales de corrección, repositorio público y URL canónica. No quedan
-observaciones editoriales conocidas que bloqueen E4. La fecha exacta no es una
-observación abierta: está **DIFERIDA POR POLÍTICA** hasta `DATE-FINAL-01`.
+observaciones editoriales conocidas que bloqueen E4. La fecha exacta fue
+resuelta por DATE-FINAL-01 como `1 de noviembre de 2026`.
 
 ## Reanudación
 
@@ -222,9 +239,10 @@ observación abierta: está **DIFERIDA POR POLÍTICA** hasta `DATE-FINAL-01`.
   `e0bba5379cf3277a47556e9627772ef03f7bb3a8`; draft aprobado:
   `6ae5efb49656d03ff46118df`.
 - Para v1.0, `ISBN = NO SE SOLICITA`.
-- **Siguiente acción exclusiva:** `DATE-FINAL-01`.
-- `GATE-05` permanece **PENDIENTE**.
+- `DATE-FINAL-01 = COMPLETADA`; fecha oficial: `1 de noviembre de 2026`;
+  candidata final fechada y draft `6ae5ffeaa97b544ed057b110` validados.
+- **Siguiente acción exclusiva:** `GATE-05`.
+- `GATE-05` permanece **PENDIENTE / HABILITADA**.
 - PKG-13 permanece **NO INICIADO**.
-- `DATE-FINAL-01` está **HABILITADA COMO SIGUIENTE OPERACIÓN**.
 
 Ninguna de esas operaciones se inicia en este checkpoint.

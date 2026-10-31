@@ -36,7 +36,7 @@ def _git(*arguments: str) -> subprocess.CompletedProcess[str]:
     )
 
 
-def test_identity_metadata_has_one_approved_human_author_and_year_only():
+def test_identity_metadata_has_one_approved_human_author_and_final_date():
     quarto = _yaml(PUBLICATION / "_quarto.yml")
     book = quarto["book"]
     assert (book["title"], book["subtitle"], book["author"]) == (
@@ -44,8 +44,8 @@ def test_identity_metadata_has_one_approved_human_author_and_year_only():
         SUBTITLE,
         AUTHOR,
     )
-    assert book["date"] == "2026"
-    assert book["date-format"] == "YYYY"
+    assert book["date"] == "2026-11-01"
+    assert book["date-format"] == "D [de] [noviembre] [de] YYYY"
     assert quarto["lang"] == "es"
     assert quarto["project-identity"] == PROJECT
     assert quarto["author-bibliographic"] == "Conde de Simón, Miguel"
@@ -78,6 +78,7 @@ def test_publication_manifest_normalizes_identity_rights_and_deferrals():
         "bibliographic": "Conde de Simón, Miguel",
     }
     assert identity["language"] == "es" and identity["year"] == 2026
+    assert publication["date"] == "2026-11-01"
     rights = publication["rights"]
     assert rights["copyright"] == f"© 2026 {AUTHOR}"
     assert "CC BY 4.0" in rights["license"]
@@ -86,9 +87,7 @@ def test_publication_manifest_normalizes_identity_rights_and_deferrals():
         component in rights["third_party"]
         for component in ("facsímil", "reproducciones", "cartografía")
     )
-    assert publication["pending"] == {
-        "at_release": ["fecha exacta de publicación"],
-    }
+    assert publication["pending"] == {"at_release": []}
     assert publication["url"] == "https://sorribos-santibanez-1752.netlify.app/"
     assert "isbn" not in publication
 
@@ -131,7 +130,8 @@ def test_colophon_is_compact_complete_and_not_a_technical_changelog():
         "GitHub Copilot",
         "Python",
         "Quarto",
-        "fecha exacta de publicación",
+        "1 de noviembre de 2026",
+        "solemnidad de Todos los Santos",
         "URL canónica",
         "https://sorribos-santibanez-1752.netlify.app/",
         "https://github.com/miguel-conde/sorrios-ensenada",
@@ -188,17 +188,16 @@ def test_colophon_is_last_and_registered_once():
     ]
 
 
-def test_year_only_html_metadata_does_not_invent_an_exact_date(tmp_path):
+def test_final_html_metadata_preserves_the_approved_exact_date(tmp_path):
     page = tmp_path / "index.html"
     page.write_text(
-        '<html><head><meta name="dcterms.date" content="2026-01-01">'
+        '<html><head><meta name="dcterms.date" content="2026-11-01">'
         '<title>Libro</title></head><body></body></html>',
         encoding="utf-8",
     )
     html_fixer.fix_rendered_links(tmp_path)
     rendered = page.read_text(encoding="utf-8")
-    assert 'name="dcterms.date" content="2026"' in rendered
-    assert "2026-01-01" not in rendered
+    assert 'name="dcterms.date" content="2026-11-01"' in rendered
 
 
 def test_project_and_prior_assets_remain_untouched_and_prologue_history_is_preserved():
@@ -221,7 +220,7 @@ def test_project_and_prior_assets_remain_untouched_and_prologue_history_is_prese
     ).read_text(encoding="utf-8")
     assert "publication-status: prepublication" in prologue
     assert "PENDIENTE DE REDACCIÓN PERSONAL DEL AUTOR" not in prologue
-    assert "**Miguel Conde de Simón**<br>\nSorríos, 2026" in prologue
+    assert "**Miguel Conde de Simón**<br>\nMadrid, octubre de 2026" in prologue
 
 
 def test_pkg09_does_not_publish_or_version_generated_outputs():

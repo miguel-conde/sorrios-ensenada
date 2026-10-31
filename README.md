@@ -15,8 +15,8 @@ La URL canónica de la obra es
 <https://sorribos-santibanez-1752.netlify.app/>. El repositorio corresponde a
 la versión 1.0 y al año editorial 2026; el estado operativo vigente se registra
 en [el checkpoint editorial](docs/CHECKPOINT_REANUDACION_PREVIEW_FINAL.md). La
-fecha exacta se fija únicamente en el cierre de publicación, nunca de forma
-anticipada.
+fecha oficial de publicación es el **1 de noviembre de 2026**. Mientras la URL
+canónica no sirva la edición, el proyecto permanece en prepublicación.
 
 La edición 1.0 es una publicación digital no comercial, de libre acceso en
 HTML y PDF. Por decisión editorial no se solicitará ISBN para esta versión. La

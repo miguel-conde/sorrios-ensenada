@@ -55,9 +55,8 @@ de publicación fueron revisadas y validadas por **Miguel Conde de Simón**, que
 asume la responsabilidad intelectual y final de la obra.
 
 **Año editorial:** 2026.<br>
+**Fecha de publicación:** 1 de noviembre de 2026, solemnidad de Todos los Santos.<br>
 **URL canónica:** <https://sorribos-santibanez-1752.netlify.app/>.<br>
-La fecha exacta de publicación se incorporará en la edición definitiva
-conforme a la política vigente.
 
 La documentación técnica, los textos editoriales versionados y el código que
 permite reproducir la composición se conservan en el

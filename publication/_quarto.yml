@@ -14,8 +14,8 @@ book:
   repo-url: "https://github.com/miguel-conde/sorrios-ensenada"
   repo-branch: main
   repo-subdir: publication
-  date: "2026"
-  date-format: "YYYY"
+  date: "2026-11-01"
+  date-format: "D [de] [noviembre] [de] YYYY"
   output-file: "sorribos-santibanez-ordas-1752"
   sidebar:
     collapse-level: 1

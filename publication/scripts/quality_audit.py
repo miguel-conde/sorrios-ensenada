@@ -306,8 +306,8 @@ def audit_configuration(publication_root: Path = PUBLICATION_ROOT) -> list[str]:
         ("title", "Sorribos y Santibáñez de Ordás en 1752"),
         ("subtitle", "Estudio histórico y edición integral del Catastro de Ensenada"),
         ("author", "Miguel Conde de Simón"),
-        ("date", "2026"),
-        ("date-format", "YYYY"),
+        ("date", "2026-11-01"),
+        ("date-format", "D [de] [noviembre] [de] YYYY"),
     ):
         if book.get(field) != expected:
             errors.append(f"Identidad editorial incorrecta en book.{field}")
