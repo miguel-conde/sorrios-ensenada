@@ -7,8 +7,8 @@ PKG-12 y PKG-13
 
 Este documento concreta la política posterior al
 [plan de ejecución](./PLAN_EJECUCION_V1_0.md) y al
-[checkpoint de reanudación](./CHECKPOINT_REANUDACION_PREVIEW_FINAL.md). No
-inicia E4, PKG-12 ni PKG-13.
+[checkpoint de reanudación](./CHECKPOINT_REANUDACION_PREVIEW_FINAL.md). La
+política no autoriza por sí sola GATE-05, PKG-13, production, tag ni release.
 
 ## Decisiones cerradas
 
@@ -43,7 +43,7 @@ Parámetros actuales:
 | Integración Git | ninguna |
 | Build remoto | ninguno |
 | Año editorial | 2026 |
-| Fecha exacta | pendiente hasta la publicación real |
+| Fecha exacta | `1 de noviembre de 2026` (`2026-11-01`) |
 
 El contrato de alojamiento es:
 
@@ -70,13 +70,12 @@ Si PKG-12 exige correcciones, se corrigen las fuentes, se reconstruye y se crea
 otro draft. Nunca se publica un deploy rechazado o sustituido.
 
 El procedimiento operativo definitivo se documenta en el
-[runbook de despliegue y actualización](./RUNBOOK_DESPLIEGUE_NETLIFY.md). El
-site canónico permanece vacío hasta que la secuencia autorice el primer draft.
-La URL está en estado **RESERVADA / PREPUBLICACIÓN**: mientras production no
-contenga el libro, un HTTP 404 es el resultado esperado y no constituye una
-excepción general a la validación de enlaces. PKG-12 revisará una URL de draft
-distinta; tras PKG-13, la URL canónica deberá responder HTTP 200 y servir el
-contenido correcto.
+[runbook de despliegue y actualización](./RUNBOOK_DESPLIEGUE_NETLIFY.md).
+Production permanece vacío hasta PKG-13. La URL está en estado
+**RESERVADA / PREPUBLICACIÓN**: mientras production no contenga el libro, un
+HTTP 404 es el resultado esperado y no constituye una excepción general a la
+validación de enlaces. PKG-12 revisó URLs de draft independientes; tras PKG-13,
+la URL canónica deberá responder HTTP 200 y servir el contenido correcto.
 
 ## Política de URL
 
@@ -91,15 +90,14 @@ La regla responde a cuatro motivos:
 
 Proveedor, nombre del site y URL canónica están cerrados. `META-FINAL-01`
 incorporó la URL canónica y la referencia al repositorio público en la edición;
-la fecha exacta sigue diferida.
+DATE-FINAL-01 fijó posteriormente la fecha exacta.
 
 ## Política de fecha
 
 - El año editorial queda fijado en **2026**.
-- No se anticipará una fecha exacta futura.
-- La fecha exacta recomendada será la fecha **real** de publicación de la
-  versión 1.0.
-- La fecha exacta se fijará después de GATE-04 y antes de GATE-05/PKG-13.
+- No se anticipó una fecha exacta futura.
+- La fecha oficial de publicación de v1.0 quedó fijada en
+  **1 de noviembre de 2026** después de GATE-04 y antes de GATE-05.
 
 La candidata revisada en PKG-12 podrá diferir del snapshot final únicamente por
 un delta de fecha o metadata de release expresamente autorizado. Ese delta
@@ -126,12 +124,14 @@ R5B — completada
 → PKG-12
 → GATE-04
 → DATE-FINAL-01, cambio focal + rerender + delta validation
-→ draft final y revisión focal
+→ DATE-FINAL-01-FIX-01, corrección focal de composición
+→ draft final corregido y revisión focal
 → GATE-05
 → PKG-13 — Publish Deploy del mismo draft final aceptado
 → v1.0
 ```
 
-E4, GATE-03, PKG-12, GATE-04, DATE-FINAL-01, GATE-05 y PKG-13 permanecen
-pendientes. La fecha exacta sigue pendiente. Este documento no autoriza el
-despliegue del libro, tags, releases ni cambios de proveedor.
+E4, GATE-03, PKG-12, GATE-04, DATE-FINAL-01 y DATE-FINAL-01-FIX-01 están
+completados. El draft corregido `6ae6435a5695ab37b483c758` es el candidato
+vigente; GATE-05 y PKG-13 permanecen pendientes. Este documento no autoriza el
+despliegue en production, tags, releases ni cambios de proveedor.

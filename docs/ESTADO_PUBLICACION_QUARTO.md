@@ -1,12 +1,14 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 18 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11 completados e integrados; HUM-01B y META-FINAL-01 completadas; E4 habilitada<br>
-**Fase actual:** Fase 6A — E4 es la siguiente operación; PKG-12 no iniciado<br>
-**Base de concurrencia de 6A:** `c1d0499340da92a28feeb9d3e121c68322190b38`<br>
-**Upstream inicial de 6A:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
-**Upstream comprobado antes del commit de candidata:** `e74ce3cb8bd27921f50db5a046a0851528297ced`<br>
-**Commit de candidata técnica:** `49ab2e1b1a58ca9201efab54b42a3125de7326f8`
+**Actualizado:** 31 de octubre de 2026<br>
+**Estado global:** Fase 6 en curso; GATE-01–GATE-04 en PASS; PKG-00–PKG-12,
+DATE-FINAL-01 y DATE-FINAL-01-FIX-01 completados; candidata final corregida
+preparada para GATE-05<br>
+**Fase actual:** Fase 6A — GATE-05 es la siguiente operación; PKG-13 no iniciado<br>
+**HEAD integrado:** `58f669d5c9aac9d2e8d960484f828506beb6ae71`<br>
+**Draft candidato para GATE-05:** `6ae6435a5695ab37b483c758`<br>
+**PDF candidato SHA-256:**
+`e6b00d65876a5c5a20f2327bde39d624ba1f6da82b1b40d18a57b055fd8de470`
 
 ## Lectura de entrada
 
@@ -217,16 +219,20 @@ Una sesión nueva de Copilot debe leer, en este orden:
   —orden de atributos; timestamps e IDs internos—.
 - HUM-01B cerró el prólogo personal y la declaración pública sobre
   IA/herramientas. META-FINAL-01 incorporó después la URL canónica y la
-  referencia al repositorio público. No quedan observaciones editoriales
-  conocidas previas a E4; la fecha exacta sigue diferida por política.
-  PKG-12 no se ha iniciado.
+  referencia al repositorio público. E4 y GATE-03 quedaron completados;
+  PKG-12 cerró la revisión humana en GATE-04. DATE-FINAL-01 fijó la fecha
+  oficial y DATE-FINAL-01-FIX-01 corrigió de forma focal la composición del
+  colofón. El draft `6ae6435a5695ab37b483c758` es la candidata vigente para
+  GATE-05; PKG-13 no se ha iniciado.
 - Candidata Quarto anterior: la candidata técnica de 334 páginas y SHA-256
   `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183` se conserva
   como `baseline pre-PKG-01 / no sincronizada con las fuentes canónicas
   actuales`. Su validación técnica histórica se mantiene, pero ha sido
   sustituida como referencia editorial por la candidata de PKG-10.
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
-- No hay migración de capítulos en bloque ni configuración de despliegue.
+- No hay migración de capítulos en bloque. El despliegue se realiza
+  manualmente en Netlify, sin integración Git ni builds remotos; production
+  permanece vacío hasta la autorización correspondiente.
 - El antiguo placeholder `references.bib` contiene ahora 24 registros activos.
   La bibliografía pública, CIT-B/C y las citas próximas están integradas. La
   publicación no fue regenerada durante PKG-02.
@@ -243,13 +249,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11, HUM-01B y META-FINAL-01 completados; E4 habilitada; quedan PKG-12, aceptación del preview y PKG-13/Fase 6B |
+| 6. Preview y publicación 1.0 | en curso | GATE-01–GATE-04 en PASS; PKG-10–PKG-12, HUM-01B, META-FINAL-01, DATE-FINAL-01 y DATE-FINAL-01-FIX-01 completados; GATE-05 es la siguiente operación y PKG-13/Fase 6B no se ha iniciado |
 
 ## Siguiente tarea exacta
 
-`GATE-01 = PASS. GATE-02 = PASS. HUM-01B Y META-FINAL-01 COMPLETADAS.`
+`GATE-01–GATE-04 = PASS. DATE-FINAL-01 Y DATE-FINAL-01-FIX-01 EN PASS.`
 
-`SIGUIENTE PASO: E4 — REV-FINAL-PREVIEW.`
+`SIGUIENTE PASO: GATE-05 — AUTORIZACIÓN EXPLÍCITA DE 6B/RELEASE.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -271,7 +277,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | GATE-01 y GATE-02 en PASS; PKG-10 y PKG-11, HUM-01B y META-FINAL-01 completados; E4 habilitada; PKG-12 no iniciado |
+| 6A | en curso | GATE-01–GATE-04 en PASS; PKG-10–PKG-12 y las operaciones de fecha completados; GATE-05 pendiente y habilitada |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; DEC-012 y DEC-014 implementadas e integradas |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
@@ -279,7 +285,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | Auditoría C | completada | 40 referencias/41 URL; 25 entradas E; REF0 3, REF1 9, REF2 5, REF3 3, REF4 2, REF5 3; QA0 2, QA1 9, QA2 1, QA3 1; alcance CIT/aparatos cerrado en 6A.3 |
 | 6A.3 | completada por el usuario | DEC-016–DEC-034 cerradas en `CIERRE_ALCANCE_V1_0.md`; ninguna decisión reabierta |
 | 6A.4 | completada documentalmente | contrato de alcance, backlog, exclusiones, PKG-00–13, GATE-00–05 y control `CR-V1-*` registrados; candidata intacta |
-| PKG-00 | completado | inventario, decisiones humanas y cierre documental completados; autoría y datos aplicables resueltos; diferimientos controlados |
+| PKG-00 | completado | inventario, decisiones humanas y cierre documental completados; los diferimientos posteriores quedaron resueltos y el ISBN no se solicita para v1.0 |
 | PKG-01 | completado e integrado | commit canónico `9ae4d1fd46d9f2d7bca685de861bff2a554a7a39`; sincronización técnica completada; presentación editorial y candidata pendientes |
 | PKG-02 | completado e integrado; incidencias canónicas cerradas; propagación completada por PKG-08 | commit bibliográfico `9dbc0f8e7147c5ffa637f819ba17cfad5d19309d` y resolución canónica `a162fad1792aa9b3804a5499d348ab355e5ce574`; 16/16 tratadas; 24 referencias activas integradas por PKG-08 |
 | PKG-03 | completado e integrado | commit `4d0210f5f127933ac7a059bb029cde04ecd6d28b`; mapas regional y local APTO, licenciados, accesibles y reproducibles; insertados sin modificación por PKG-07 |
@@ -287,16 +293,23 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | PKG-04 | completado e integrado | prototipo `7c6d687`; `F3-APROBAR`; despliegue global `61a5098`; 18/18 páginas, 35/35 unidades y suite completa en PASS |
 | PKG-05 | completado e integrado | commit `0be55e60cd25d1965eac9b4e421f5b8dda948650`; REV-023–026 y DEC-014 resueltas; A/B sin pérdida, 630 pruebas y validadores en PASS |
 | GATE-01 | PASS | evaluación formal sobre `9678856cff35d7cd2398a74590429180ef969bcc`; desincronización de publication aceptada como diferimiento contractual de PKG-08 |
-| PKG-06 | completado e integrado | commit `6040015edba077a530cd3dbbd63825faf7d90833`; preliminares y arquitectura editorial incorporados; prólogo como placeholder controlado pendiente de redacción personal |
+| PKG-06 | completado e integrado | commit `6040015edba077a530cd3dbbd63825faf7d90833`; preliminares y arquitectura editorial incorporados; el placeholder original del prólogo fue sustituido posteriormente y aprobado en GATE-04 |
 | PKG-07 | completado e integrado | commit `93e745b8d4ee733b6a3e33e60caca79d93b0ecd0`; cronología documental, diagrama económico y mapas aprobados, sin ampliación de evidencia histórica |
 | PKG-08 | completado e integrado | commit `c38bb87073362a8a100e7e91106b08f2a1592acb`; propagación canónica, fuentes, citas, bibliografía, provenance y aparatos integrados; candidata formal no regenerada |
-| PKG-09 | completado e integrado | commit `25fb7dcf9a477efe74c178d108d6f182d33a406e`; identidad final, metadatos, licencia y colofón consolidados; prólogo, fecha exacta y URL canónica diferidos de forma controlada |
+| PKG-09 | completado e integrado | commit `25fb7dcf9a477efe74c178d108d6f182d33a406e`; identidad final, metadatos, licencia y colofón consolidados; sus diferimientos originales quedaron resueltos en operaciones posteriores |
 | GATE-02 | PASS | evaluación formal sobre `3eda91015802928eca0ec919391986c08d52dbbc`; PKG-06–PKG-09 aceptados; PKG-10 habilitado y no iniciado |
 | PKG-10 | completado e integrado | commit `d02b9fbf0e17625f87d19ebe12bf36c1ce633c80`; 39 HTML; PDF 355 páginas / 71.020.397 bytes / SHA-256 `7361b491c8095f55a6bb6add3445924b52db6518f49610342cfbbf5a946f4771` |
 | PKG-11 | completado e integrado | commit `526304867e2bba16b745f3477fb63d44be49bd19`; candidata validada integralmente; `678 passed`; 0 bloqueantes; dos observaciones de nondeterminismo inocuo |
 | HUM-01B | completado | prólogo definitivo y declaración sobre IA/herramientas cerrados |
-| META-FINAL-01 | completado | URL canónica y repositorio público incorporados; fecha exacta diferida por política; E4 habilitada |
-| 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida antes de la aceptación humana del preview |
+| META-FINAL-01 | completado | URL canónica y repositorio público incorporados; E4 quedó habilitada y fue completada |
+| E4 | completada | candidata regenerada y validada integralmente; bloqueantes focales resueltos antes de GATE-03 |
+| GATE-03 | PASS | candidata técnica aceptada e integrada; PKG-12 habilitado |
+| PKG-12 | completado | preview corregida desplegada, verificada y sometida a revisión humana |
+| GATE-04 | PASS | preview aprobada por el autor; prólogo, autoría, README e ISBN cerrados; fecha habilitada |
+| DATE-FINAL-01 | PASS | fecha oficial `1 de noviembre de 2026` incorporada; candidata final regenerada y validada |
+| DATE-FINAL-01-FIX-01 | PASS | corrección focal de composición del prólogo; draft final `6ae6435a5695ab37b483c758` validado |
+| GATE-05 | pendiente / habilitada | debe autorizar expresamente la publicación 1.0 y el release sobre el draft final vigente |
+| 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida hasta GATE-05 |
 
 ### Cierre comprobado de 2A
 
@@ -887,4 +900,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CHECKPOINT_REANUDACION_PREVIEW_FINAL.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta exclusivamente `E4 — REV-FINAL-PREVIEW`; conserva diferida la fecha exacta y no inicies PKG-12, tag ni release.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CHECKPOINT_REANUDACION_PREVIEW_FINAL.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta exclusivamente `GATE-05 — AUTORIZACIÓN EXPLÍCITA DE 6B/RELEASE` sobre el draft `6ae6435a5695ab37b483c758`; no inicies PKG-13, production, tag ni release sin el PASS y la autorización expresa del gate.

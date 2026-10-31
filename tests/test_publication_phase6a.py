@@ -156,7 +156,7 @@ def test_candidate_report_manifests_snapshot_outputs_hashes_and_limitations():
     assert not re.search(r"(?:/home/|/tmp/|[A-Za-z]:\\\\)", report)
 
 
-def test_roadmap_closes_pkg11_and_keeps_phase6b_forbidden():
+def test_roadmap_tracks_gate05_and_keeps_phase6b_forbidden():
     roadmap = (ROOT / "docs/ESTADO_PUBLICACION_QUARTO.md").read_text(
         encoding="utf-8"
     )
@@ -172,20 +172,27 @@ def test_roadmap_closes_pkg11_and_keeps_phase6b_forbidden():
         "| PKG-04 | completado e integrado |",
         "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` **CERRADAS CANÓNICAMENTE**",
-        "GATE-01 = PASS. GATE-02 = PASS. HUM-01B Y META-FINAL-01 "
-        "COMPLETADAS.",
+        "GATE-01–GATE-04 = PASS. DATE-FINAL-01 Y DATE-FINAL-01-FIX-01 "
+        "EN PASS.",
         "la propagación editorial quedó completada por PKG-08",
         "| PKG-06 | completado e integrado |",
         "| PKG-07 | completado e integrado |",
         "| PKG-08 | completado e integrado |",
         "| PKG-09 | completado e integrado |",
         "su propagación obligatoria se asignó a PKG-08 y quedó completada",
-        "PKG-10 y PKG-11 completados e integrados",
-        "SIGUIENTE PASO: E4 — REV-FINAL-PREVIEW.",
+        "PKG-00–PKG-12,",
+        "SIGUIENTE PASO: GATE-05 — AUTORIZACIÓN EXPLÍCITA DE 6B/RELEASE.",
         "| HUM-01B | completado |",
         "| META-FINAL-01 | completado |",
+        "| E4 | completada |",
+        "| GATE-03 | PASS |",
+        "| PKG-12 | completado |",
+        "| GATE-04 | PASS |",
+        "| DATE-FINAL-01 | PASS |",
+        "| DATE-FINAL-01-FIX-01 | PASS |",
+        "| GATE-05 | pendiente / habilitada |",
         "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
-        "prohibida antes de la aceptación humana del preview |",
+        "prohibida hasta GATE-05 |",
     ):
         assert expectation in roadmap
     assert "| CR-V1-001 | ejecución pendiente |" not in roadmap
@@ -198,8 +205,8 @@ def test_roadmap_closes_pkg11_and_keeps_phase6b_forbidden():
     assert "| GATE-02 | PASS |" in roadmap
     assert "| PKG-10 | completado e integrado |" in roadmap
     assert "| PKG-11 | completado e integrado |" in roadmap
-    assert "PKG-12 no iniciado" in roadmap
-    assert "E4 habilitada" in roadmap
+    assert "PKG-12 no iniciado" not in roadmap
+    assert "E4 habilitada" not in roadmap
     gate02 = (ROOT / "docs/GATE_02_IMPLEMENTACION_1_0_ACEPTADA.md").read_text(
         encoding="utf-8"
     )

@@ -2,14 +2,16 @@
 
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
+**Última reconciliación de estado:** 31 de octubre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00–11 completados e integrados; CR-V1-001 e
-INC-BIB-001/002 cerradas; GATE-01 y GATE-02 en PASS; candidata 1.0 validada;
-HUM-01B y META-FINAL-01 completadas; E4 es la siguiente operación y PKG-12 no
-se inicia todavía
+**Estado:** plan operativo; PKG-00–12 completados; CR-V1-001 e
+INC-BIB-001/002 cerradas; GATE-01–GATE-04 en PASS; DATE-FINAL-01 y su
+corrección focal DATE-FINAL-01-FIX-01 en PASS; candidata final validada y
+desplegada como draft; GATE-05 es la siguiente operación y PKG-13 no se ha
+iniciado
 
-Antes de PKG-12, la secuencia editorial y la preparación paralela del
-repositorio público se controlan mediante
+La secuencia editorial hasta GATE-05 y el estado del repositorio público se
+controlan mediante
 [CHECKPOINT_REANUDACION_PREVIEW_FINAL.md](./CHECKPOINT_REANUDACION_PREVIEW_FINAL.md).
 
 ## 1. Reglas generales
@@ -53,12 +55,11 @@ Incluye:
 - DAT-008 licencia;
 - prólogo personal firmado de 900–1.500 palabras.
 
-DAT-001–DAT-008, DAT-010 y DAT-AI-01 están resueltos. DAT-009 tiene resuelto el
-modelo de fecha, con su valor final diferido hasta la publicación. HUM-01B
-cerró el prólogo definitivo y la declaración pública sobre IA/herramientas;
-META-FINAL-01 cerró la URL canónica y el repositorio público. Permanece
-pendiente únicamente la fecha exacta y, solo si llega a existir, el ISBN no
-bloqueante.
+DAT-001–DAT-010 y DAT-AI-01 están resueltos. HUM-01B cerró el prólogo
+definitivo y la declaración pública sobre IA/herramientas; META-FINAL-01 cerró
+la URL canónica y el repositorio público; DATE-FINAL-01 fijó la fecha oficial
+en `1 de noviembre de 2026`. Para v1.0 se decidió expresamente que
+`ISBN = NO SE SOLICITA`.
 
 **Autoridad:** usuario.<br>
 **Escritura:** no modifica `project/`; no inventa datos.<br>
@@ -252,10 +253,10 @@ Implementa, sin reabrirlas:
 - cierres conclusivos;
 - retirada de la identidad de desarrollo.
 
-**Salida:** apertura y arquitectura completas en `publication/`.
-El prólogo permanece como **PLACEHOLDER CONTROLADO PENDIENTE DE REDACCIÓN
-PERSONAL** por diferimiento humano expreso durante `GATE-02`; Miguel Conde de
-Simón lo sustituirá posteriormente y antes del cierre/release de 1.0.
+**Salida:** apertura y arquitectura completas en `publication/`. HUM-01B
+sustituyó posteriormente el placeholder por el prólogo definitivo; las dos
+correcciones humanas de preview y la firma `Madrid, octubre de 2026` están
+integradas y validadas.
 
 ### PKG-07 — Aparato visual interno
 
@@ -319,9 +320,9 @@ Cierra:
 
 No inventa ningún valor. En el cierre original de PKG-09, el año editorial
 quedó fijado en 2026 y la fecha exacta y la URL canónica quedaron como
-diferimientos controlados. HUM-01B cerró después el prólogo y META-FINAL-01
-resolvió la URL; solo la fecha exacta sigue diferida. El ISBN continúa sin ser
-requisito de 1.0 y solo se consignará si llega a existir.
+diferimientos controlados. HUM-01B cerró después el prólogo, META-FINAL-01
+resolvió la URL y DATE-FINAL-01 fijó la fecha oficial. Para v1.0 se decidió
+expresamente no solicitar ISBN.
 
 ### PKG-10 — Regeneración reproducible y candidata
 
@@ -373,8 +374,9 @@ mecanismo `CR-V1-*`.
 
 ### PKG-12 — Preview y aceptación humana
 
-Despliega una preview según la decisión posterior de proveedor y realiza una
-revisión humana real. No crea tag.
+**Estado:** **COMPLETADO**. PKG-12-R3 desplegó la candidata corregida y la
+revisión humana terminó con `PKG-12 ACEPTADA — PREVIEW APROBADA`. GATE-04
+registró formalmente la aceptación. No se creó tag ni se modificó production.
 
 **Salida:** aceptación humana explícita o lista acotada de correcciones.
 
@@ -384,8 +386,11 @@ entre PKG-12 y PKG-13 se registra en
 en [RUNBOOK_DESPLIEGUE_NETLIFY.md](./RUNBOOK_DESPLIEGUE_NETLIFY.md). La
 concreción posterior ratificada usa un draft deploy no productivo para PKG-12,
 sin modificar production. Su aplicación no reescribe la historia de este plan.
-`META-FINAL-01` ha incorporado la URL canónica y la referencia al repositorio
-público; la fecha exacta permanece diferida hasta `DATE-FINAL-01`.
+`META-FINAL-01` incorporó la URL canónica y la referencia al repositorio
+público. DATE-FINAL-01 fijó después la fecha oficial y
+DATE-FINAL-01-FIX-01 corrigió exclusivamente los saltos del colofón. El draft
+vigente para GATE-05 es `6ae6435a5695ab37b483c758`; el anterior queda
+superado.
 
 ### PKG-13 — Fase 6B / release 1.0
 
@@ -393,10 +398,11 @@ Solo se inicia después de GATE-04 y GATE-05. Debe fijar versión, snapshot,
 hashes, manifiesto, documentación final, commit de release, tag `v1.0` —o la
 convención que se apruebe— y publicación según la política autorizada.
 
-La política posterior sitúa `DATE-FINAL-01` entre GATE-04 y GATE-05: produce el
-artefacto fechado y un nuevo draft final. PKG-13 publica mediante **Publish
-Deploy** ese mismo draft final autorizado, conforme al runbook, sin un nuevo
-render ni upload de producción.
+La política posterior situó `DATE-FINAL-01` entre GATE-04 y GATE-05. El
+artefacto fechado recibió una corrección focal de composición y el nuevo draft
+`6ae6435a5695ab37b483c758` es el único candidato vigente para GATE-05. PKG-13
+publicará mediante **Publish Deploy** ese mismo draft si recibe autorización,
+conforme al runbook y sin un nuevo render ni upload de producción.
 
 El tag solo aparece en este paquete.
 
@@ -429,6 +435,8 @@ GATE-00
                                             PKG-12
                                                ↓
                                            GATE-04
+                                               ↓
+                                 DATE-FINAL-01 + FIX-01
                                                ↓
                                            GATE-05
                                                ↓
@@ -546,12 +554,16 @@ chore(release): publish version 1.0
 - PKG-06–09 integrados: PASS.
 - No quedan datos obligatorios sin resolver: PASS. En GATE-02 se aceptaron los
   diferimientos de prólogo, fecha exacta y URL; HUM-01B resolvió después el
-  prólogo y META-FINAL-01 la URL, por lo que solo la fecha exacta sigue
-  diferida. ISBN no obligatorio.
+  prólogo y META-FINAL-01 la URL. DATE-FINAL-01 resolvió posteriormente la
+  fecha exacta. ISBN no obligatorio y, para v1.0, no solicitado.
 - No quedan cambios canónicos parcheados en `publication/`: PASS.
 - El alcance coincide con `ALCANCE_APROBADO_V1_0.md`: PASS.
 
 ### GATE-03 — Nueva candidata validada técnicamente
+
+**Decisión:** `GATE-03 = PASS`; la candidata técnica fue aceptada para PKG-12.
+La evidencia consta en
+[GATE_03_CANDIDATA_TECNICA_ACEPTADA.md](./GATE_03_CANDIDATA_TECNICA_ACEPTADA.md).
 
 - PKG-10 reproducible.
 - PKG-11 en PASS.
@@ -560,12 +572,21 @@ chore(release): publish version 1.0
 
 ### GATE-04 — Preview aceptado por el usuario
 
+**Decisión:** `GATE-04 = PASS`; PKG-12 fue aceptada y la preview aprobada por
+el autor. La evidencia consta en
+[GATE_04_ACEPTACION_HUMANA.md](./GATE_04_ACEPTACION_HUMANA.md).
+
 - Preview real accesible por la vía autorizada.
 - Revisión humana completada.
 - Correcciones solicitadas resueltas y revalidadas.
 - Aceptación explícita registrada.
 
 ### GATE-05 — Autorización explícita de 6B/release
+
+**Estado:** **PENDIENTE / HABILITADA**. Debe evaluar exclusivamente el snapshot
+corregido documentado en
+[DATE_FINAL_01_FIX_01.md](./DATE_FINAL_01_FIX_01.md), con deploy
+`6ae6435a5695ab37b483c758`.
 
 - Snapshot, versión y política de publicación confirmados.
 - Autorización humana expresa para PKG-13.
@@ -574,7 +595,7 @@ chore(release): publish version 1.0
 ## 8. Definición de DONE de 1.0
 
 - [x] 1. Alcance aprobado.
-- [ ] 2. Inputs editoriales resueltos.
+- [x] 2. Inputs editoriales resueltos.
 - [x] 3. Glosario canónico actualizado.
 - [x] 4. Bibliografía verificada; dos incidencias de correspondencia cerradas
   canónicamente y propagación editorial asignada a PKG-08.
@@ -590,8 +611,8 @@ chore(release): publish version 1.0
 - [x] 12. Metadatos, licencia y copyright cerrados.
 - [x] 13. Salidas reproducibles.
 - [x] 14. Validación integral en PASS.
-- [ ] 15. Preview revisado.
-- [ ] 16. Aceptación humana registrada.
+- [x] 15. Preview revisado.
+- [x] 16. Aceptación humana registrada.
 - [ ] 17. Fase 6B completada.
 - [ ] 18. Tag 1.0 creado únicamente al final.
 
@@ -617,6 +638,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01 Y GATE-02 — PASS. PKG-10 Y PKG-11 COMPLETADOS E INTEGRADOS; CANDIDATA 1.0 VALIDADA.**
+**GATE-01–GATE-04 — PASS. PKG-12, DATE-FINAL-01 Y DATE-FINAL-01-FIX-01 COMPLETADOS; CANDIDATA FINAL VALIDADA.**
 
-**SIGUIENTE PASO: E4 — REV-FINAL-PREVIEW.**
+**SIGUIENTE PASO: GATE-05 — AUTORIZACIÓN EXPLÍCITA DE 6B/RELEASE.**
