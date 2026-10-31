@@ -58,10 +58,15 @@
   y PDF
   `00d25e78504597f0a9472f0df91e9f41f0b473c8d56dffb08529cf943e8a16e2`.
 - `PKG-12-R3` está **DESPLEGADA** y reproduce exactamente la candidata
-  FIX-02. La revisión humana final está **PENDIENTE**. El dossier completo es
+  FIX-02. La revisión humana final está **COMPLETADA** y la preview está
+  **APROBADA**. El dossier completo es
   [PKG_12_PREVIEW_ACEPTACION_HUMANA.md](./PKG_12_PREVIEW_ACEPTACION_HUMANA.md).
-- Deploy vigente para revisión humana final: `6ae5efb49656d03ff46118df`;
+- Deploy aprobado: `6ae5efb49656d03ff46118df`;
   <https://6ae5efb49656d03ff46118df--sorribos-santibanez-1752.netlify.app>.
+- `PKG-12 = COMPLETADA`, `PKG-12-R3 = APROBADA` y `GATE-04 = PASS`. La
+  candidata humana aprobada es
+  `e0bba5379cf3277a47556e9627772ef03f7bb3a8`. La decisión formal consta en
+  [GATE_04_ACEPTACION_HUMANA.md](./GATE_04_ACEPTACION_HUMANA.md).
 - Production continúa vacío y sin servir el libro; el deploy es manual, no
   productivo, sin build remoto y sin integración Git.
 
@@ -128,10 +133,10 @@ El resultado es el objeto que debe evaluar GATE-03 antes de PKG-12.
 
 ### E5 — PKG-12
 
-**PREVIEW R3 DESPLEGADA / REVISIÓN HUMANA FINAL PENDIENTE.**
+**COMPLETADA / PREVIEW R3 APROBADA.**
 HUM-REVIEW-FIX-02 incorporó el retoque final aprobado para el inicio del
-prólogo. `PKG-12-R3` desplegó exactamente esa candidata validada. La evidencia
-del deploy y de su identidad está en
+prólogo. `PKG-12-R3` desplegó exactamente esa candidata validada y la revisión
+humana final la aprobó. La evidencia del deploy y de su identidad está en
 [PKG_12_PREVIEW_ACEPTACION_HUMANA.md](./PKG_12_PREVIEW_ACEPTACION_HUMANA.md).
 
 ## Línea paralela — repositorio público
@@ -211,11 +216,15 @@ observación abierta: está **DIFERIDA POR POLÍTICA** hasta `DATE-FINAL-01`.
 - `PKG-12-R2 = PREVIEW REVISADA / RETOQUE FINAL SOLICITADO`.
 - `HUM-REVIEW-FIX-01 = PASS`.
 - `HUM-REVIEW-FIX-02 = PASS`; nueva candidata **VALIDADA TÉCNICAMENTE**.
-- `PKG-12-R3 = PREVIEW DESPLEGADA`; revisión humana final **PENDIENTE**.
-- **Siguiente acción exclusiva:** decisión humana sobre la preview R3.
-  GATE-04 no se inicia todavía.
-- `GATE-04` y `GATE-05` permanecen **PENDIENTES**.
+- `PKG-12 = COMPLETADA`; `PKG-12-R3 = APROBADA`; revisión humana final
+  **COMPLETADA**.
+- `GATE-04 = PASS`; candidata humana aprobada:
+  `e0bba5379cf3277a47556e9627772ef03f7bb3a8`; draft aprobado:
+  `6ae5efb49656d03ff46118df`.
+- Para v1.0, `ISBN = NO SE SOLICITA`.
+- **Siguiente acción exclusiva:** `DATE-FINAL-01`.
+- `GATE-05` permanece **PENDIENTE**.
 - PKG-13 permanece **NO INICIADO**.
-- `DATE-FINAL-01` permanece **PENDIENTE**.
+- `DATE-FINAL-01` está **HABILITADA COMO SIGUIENTE OPERACIÓN**.
 
 Ninguna de esas operaciones se inicia en este checkpoint.
