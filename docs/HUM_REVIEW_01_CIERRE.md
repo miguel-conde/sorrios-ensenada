@@ -70,3 +70,47 @@ técnicamente. No se realizó ningún despliegue en esta operación.
 - `PKG-12-R2` es la siguiente operación y deberá desplegar exactamente esta
   candidata corregida.
 - GATE-04, `DATE-FINAL-01`, GATE-05 y PKG-13 permanecen pendientes.
+
+## HUM-REVIEW-FIX-02 — Retoque final del inicio del prólogo
+
+### Estado
+
+`HUM-REVIEW-FIX-02 PASS — RETOQUE FINAL DEL PRÓLOGO INCORPORADO`
+
+La revisión humana de la preview R2 aprobó una nueva redacción para los tres
+primeros párrafos del prólogo. Esos tres párrafos se sustituyeron literalmente
+y el resto del prólogo permaneció idéntico. Las personas mencionadas han
+autorizado su aparición.
+
+### Validación
+
+- Tests focales de prólogo y HUM-01B: `8 passed`.
+- Suite integral: `701 passed`, `0 failed`, `0 errors`.
+- Preparación desde cero: `PREPARE_TOTAL = 2`; las huellas de
+  `publication/generated/` después del bootstrap y del pre-render coincidieron
+  en `e777ba39fc5781fd667265900760d2c58e02ef922e7f7022725a1c6c32904375`.
+- Render completo Quarto: PASS.
+- Validadores canónico, de fuentes, publicación estática y renderizada,
+  cartografía, enlaces, anchors y compilación Python: PASS.
+- Revisión visual focal del prólogo en HTML de escritorio, viewport estrecho y
+  PDF: PASS. La cursiva de *Sorribos*, la raya parentética, los nombres propios,
+  las comillas de «Los Cogurutines» y la paginación son correctos.
+
+### Artefactos de la candidata FIX-02
+
+- Web: 40 documentos HTML; 120 archivos excluido el PDF; 74.658.040 bytes;
+  manifest SHA-256
+  `84cfc5214a4da777fd407f2b93da4b1fe3b037a0e22426d96509bb50ccfbee61`.
+- PDF: 360 páginas; 71.028.850 bytes; SHA-256
+  `00d25e78504597f0a9472f0df91e9f41f0b473c8d56dffb08529cf943e8a16e2`.
+
+### Integridad y continuación
+
+- `project/`, el contenido histórico, la metadata, la bibliografía, F3 y los
+  índices permanecen intactos.
+- `publication/generated/` y `publication/_book/` siguen sin versionarse.
+- La nueva candidata queda validada localmente y no se desplegó en esta
+  operación.
+- `PKG-12-R3` es la siguiente operación y deberá desplegar exactamente esta
+  candidata para la comprobación humana final.
+- GATE-04, `DATE-FINAL-01`, GATE-05 y PKG-13 permanecen pendientes.

@@ -52,15 +52,16 @@
   **PASS**: las correcciones solicitadas fueron aplicadas y la nueva
   candidata quedó **VALIDADA TÉCNICAMENTE**. El cierre y sus nuevas huellas
   constan en [HUM_REVIEW_01_CIERRE.md](./HUM_REVIEW_01_CIERRE.md).
-- La nueva candidata tiene manifiesto web
-  `2e2eb284c7539647349c072f0262f04a8da334e37720181009924c99600bf4cd`
+- La preview de PKG-12-R2 fue revisada. HUM-REVIEW-FIX-02 está **PASS** y su
+  nueva candidata local quedó **VALIDADA TÉCNICAMENTE**, con manifiesto web
+  `84cfc5214a4da777fd407f2b93da4b1fe3b037a0e22426d96509bb50ccfbee61`
   y PDF
-  `7d0a63e85329951ec4cf1f5e747f23cfa41e062d0b929d2a128dc52354c876d2`.
-- `PKG-12-R2` tiene la **PREVIEW DESPLEGADA / REVISIÓN HUMANA FINAL
-  PENDIENTE**. El dossier de las dos previews es
+  `00d25e78504597f0a9472f0df91e9f41f0b473c8d56dffb08529cf943e8a16e2`.
+- `PKG-12-R3` es la **SIGUIENTE OPERACIÓN** y deberá desplegar exactamente la
+  candidata FIX-02. El dossier de las previews anteriores es
   [PKG_12_PREVIEW_ACEPTACION_HUMANA.md](./PKG_12_PREVIEW_ACEPTACION_HUMANA.md).
-- Deploy ID vigente: `6ae5b63c48bf70292280a8fb`.
-- Draft:
+- Último deploy revisado, sustituido por la candidata FIX-02 todavía local:
+  `6ae5b63c48bf70292280a8fb`;
   <https://6ae5b63c48bf70292280a8fb--sorribos-santibanez-1752.netlify.app>.
 - Production continúa vacío y sin servir el libro; el deploy es manual, no
   productivo, sin build remoto y sin integración Git.
@@ -128,11 +129,11 @@ El resultado es el objeto que debe evaluar GATE-03 antes de PKG-12.
 
 ### E5 — PKG-12
 
-**PREVIEW CORREGIDA DESPLEGADA / REVISIÓN HUMANA FINAL PENDIENTE.** La revisión
-de la primera preview está completada, HUM-REVIEW-FIX-01 incorporó sus
-correcciones y PKG-12-R2 desplegó exactamente la nueva candidata validada. La
-evidencia se documenta en
-[PKG_12_PREVIEW_ACEPTACION_HUMANA.md](./PKG_12_PREVIEW_ACEPTACION_HUMANA.md).
+**PREVIEW R2 REVISADA / NUEVA CANDIDATA FIX-02 VALIDADA.** HUM-REVIEW-FIX-02
+incorporó el retoque final aprobado para el inicio del prólogo. La nueva
+candidata está validada localmente y aún no se ha desplegado. `PKG-12-R3` debe
+desplegarla exactamente para la comprobación humana final. La evidencia local
+se documenta en [HUM_REVIEW_01_CIERRE.md](./HUM_REVIEW_01_CIERRE.md).
 
 ## Línea paralela — repositorio público
 
@@ -208,10 +209,11 @@ observación abierta: está **DIFERIDA POR POLÍTICA** hasta `DATE-FINAL-01`.
 ## Reanudación
 
 - `GATE-03 = PASS`; candidata técnica **ACEPTADA**.
-- `PKG-12-R2 = PREVIEW DESPLEGADA / REVISIÓN HUMANA FINAL PENDIENTE`.
+- `PKG-12-R2 = PREVIEW REVISADA / RETOQUE FINAL SOLICITADO`.
 - `HUM-REVIEW-FIX-01 = PASS`.
-- **Siguiente acción exclusiva:** revisión humana final focal de la preview
-  corregida. GATE-04 no se inicia hasta recibir la decisión expresa.
+- `HUM-REVIEW-FIX-02 = PASS`; nueva candidata **VALIDADA TÉCNICAMENTE**.
+- **Siguiente acción exclusiva:** `PKG-12-R3`, despliegue exacto de la nueva
+  candidata para su comprobación humana final. GATE-04 no se inicia todavía.
 - `GATE-04` y `GATE-05` permanecen **PENDIENTES**.
 - PKG-13 permanece **NO INICIADO**.
 - `DATE-FINAL-01` permanece **PENDIENTE**.

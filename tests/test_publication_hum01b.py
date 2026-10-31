@@ -61,7 +61,7 @@ def test_human_prologue_is_preserved_and_marked_final():
     )
     assert metadata["publication-status"] == "prepublication"
     assert hashlib.sha256(body.encode()).hexdigest() == (
-        "38def9dbd29e63a304267aff98c67d8098968f437f488ff6d62e21b6770c6f83"
+        "3a4a14f4dfe5f1144b0bbfe087d834cdfcaf5e3dfffe47b96a39fcdbfa51f827"
     )
     assert body.lstrip().startswith("# Prólogo {.unnumbered}\n")
     assert body.rstrip().endswith("**Miguel Conde de Simón**<br>\nSorríos, 2026")
