@@ -307,7 +307,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | PKG-12 | completado | preview corregida desplegada, verificada y sometida a revisión humana |
 | GATE-04 | PASS | preview aprobada por el autor; prólogo, autoría, README e ISBN cerrados; fecha habilitada |
 | DATE-FINAL-01 | PASS | fecha oficial `1 de noviembre de 2026` incorporada; candidata final regenerada y validada |
-| DATE-FINAL-01-FIX-01 | PASS | corrección focal de composición del prólogo; draft final `6ae6435a5695ab37b483c758` validado |
+| DATE-FINAL-01-FIX-01 | PASS | corrección focal de composición del colofón; draft final `6ae6435a5695ab37b483c758` validado |
 | GATE-05 | pendiente / habilitada | debe autorizar expresamente la publicación 1.0 y el release sobre el draft final vigente |
 | 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida hasta GATE-05 |
 
