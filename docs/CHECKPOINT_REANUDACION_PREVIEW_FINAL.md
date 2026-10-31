@@ -1,4 +1,4 @@
-# Checkpoint de reanudación hasta GATE-05
+# Checkpoint de reanudación hasta PKG-13
 
 **Candidata validada por E4:** `d073fd8711f9fa50705308c65fabea0a2fae0d29`
 **Función:** congelar el orden de reanudación sin iniciar ninguna operación.
@@ -78,14 +78,20 @@
 - Draft fechado anterior **SUPERADO / NO USAR EN GATE-05**:
   `6ae5ffeaa97b544ed057b110`;
   <https://6ae5ffeaa97b544ed057b110--sorribos-santibanez-1752.netlify.app>.
-- DATE-FINAL-01-FIX-01 está **PASS**. La nueva candidata para GATE-05 tiene
+- DATE-FINAL-01-FIX-01 está **PASS**. El snapshot final aprobado tiene
   manifest web SHA-256
   `67b1d03ae63d33886121daefda72f1479382227f25643eb52341aad6be59a29f`
   y PDF SHA-256
   `e6b00d65876a5c5a20f2327bde39d624ba1f6da82b1b40d18a57b055fd8de470`.
+  Su manifest completo SHA-256 es
+  `e49e1e50f0f5a43dbe0c78bfd15b131afd37e1e40cd51af7ad39ddd0c5c9333a`.
   El dossier es [DATE_FINAL_01_FIX_01.md](./DATE_FINAL_01_FIX_01.md).
-- Nuevo draft final **CANDIDATO PARA GATE-05**: `6ae6435a5695ab37b483c758`;
+- Snapshot final exacto **APROBADO EN GATE-05**: `6ae6435a5695ab37b483c758`;
   <https://6ae6435a5695ab37b483c758--sorribos-santibanez-1752.netlify.app>.
+- `GATE-05 = PASS`. La decisión humana y la regla de inmutabilidad constan en
+  [GATE_05_APROBACION_SNAPSHOT_FINAL.md](./GATE_05_APROBACION_SNAPSHOT_FINAL.md).
+- `PKG-13` es la **SIGUIENTE OPERACIÓN** y debe promover exactamente ese mismo
+  deploy, sin rebuild, rerender ni nueva subida.
 - Production continúa vacío y sin servir el libro; el deploy es manual, no
   productivo, sin build remoto y sin integración Git.
 
@@ -163,8 +169,8 @@ humana final la aprobó. La evidencia del deploy y de su identidad está en
 **COMPLETADA.** La fecha oficial, el colofón conmemorativo y la firma final del
 prólogo están incorporados. La candidata final fechada y su draft manual no
 productivo están validados y registrados en
-[DATE_FINAL_01.md](./DATE_FINAL_01.md). `GATE-05` es la siguiente operación;
-PKG-13 no se ha iniciado.
+[DATE_FINAL_01.md](./DATE_FINAL_01.md). GATE-05 aprobó después el snapshot
+corregido y PKG-13 es la siguiente operación.
 
 ### E7 — DATE-FINAL-01-FIX-01
 
@@ -173,7 +179,7 @@ editorial del colofón por saltos Markdown/Pandoc, sin alterar su texto. HTML y
 PDF muestran año, fecha y URL en tres líneas separadas. La nueva candidata y
 el draft manual no productivo están registrados en
 [DATE_FINAL_01_FIX_01.md](./DATE_FINAL_01_FIX_01.md); sustituyen a la candidata
-y al deploy de DATE-FINAL-01 para GATE-05.
+y al deploy de DATE-FINAL-01 y fueron aprobados por GATE-05.
 
 ## Línea paralela — repositorio público
 
@@ -261,10 +267,17 @@ resuelta por DATE-FINAL-01 como `1 de noviembre de 2026`.
 - `DATE-FINAL-01 = PASS`; fecha oficial: `1 de noviembre de 2026`.
 - `DATE-FINAL-01-FIX-01 = PASS`; candidata anterior y draft
   `6ae5ffeaa97b544ed057b110` **SUPERADOS**.
-- Nuevo draft final **CANDIDATO PARA GATE-05**:
+- Snapshot final exacto **APROBADO EN GATE-05**:
   `6ae6435a5695ab37b483c758`.
-- **Siguiente acción exclusiva:** `GATE-05`.
-- `GATE-05` permanece **PENDIENTE / HABILITADA**.
-- PKG-13 permanece **NO INICIADO**.
+- Manifest web:
+  `67b1d03ae63d33886121daefda72f1479382227f25643eb52341aad6be59a29f`.
+- Manifest completo:
+  `e49e1e50f0f5a43dbe0c78bfd15b131afd37e1e40cd51af7ad39ddd0c5c9333a`.
+- PDF SHA-256:
+  `e6b00d65876a5c5a20f2327bde39d624ba1f6da82b1b40d18a57b055fd8de470`.
+- `GATE-05 = PASS`; snapshot exacto **APROBADO**.
+- **Siguiente acción exclusiva:** `PKG-13`.
+- PKG-13 permanece **NO INICIADO / HABILITADO**.
+- Production permanece **NO PUBLICADA TODAVÍA**.
 
 Ninguna de esas operaciones se inicia en este checkpoint.
