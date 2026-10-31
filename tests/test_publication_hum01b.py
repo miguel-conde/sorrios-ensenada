@@ -61,7 +61,7 @@ def test_human_prologue_is_preserved_and_marked_final():
     )
     assert metadata["publication-status"] == "prepublication"
     assert hashlib.sha256(body.encode()).hexdigest() == (
-        "819746169d343d0eaaa62bdccbf3bb98f235c50949ef2cdfedb6a5e0a2aca410"
+        "38def9dbd29e63a304267aff98c67d8098968f437f488ff6d62e21b6770c6f83"
     )
     assert body.lstrip().startswith("# Prólogo {.unnumbered}\n")
     assert body.rstrip().endswith("**Miguel Conde de Simón**<br>\nSorríos, 2026")
@@ -91,7 +91,6 @@ def test_prologue_metadata_and_remaining_deferrals_are_synchronized():
     )["publication"]
     assert publication["pending"] == {
         "at_release": ["fecha exacta de publicación"],
-        "non_blocking": ["ISBN solo si llega a existir"],
     }
     assert publication["url"] == "https://sorribos-santibanez-1752.netlify.app/"
 

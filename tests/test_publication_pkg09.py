@@ -61,6 +61,11 @@ def test_identity_metadata_has_one_approved_human_author_and_year_only():
     assert "isbn" not in {key.casefold() for key in quarto}
 
 
+def test_spanish_title_block_uses_the_approved_author_label_only():
+    language = _yaml(PUBLICATION / "_language.yml")
+    assert language == {"title-block-author-single": "Autor"}
+
+
 def test_publication_manifest_normalizes_identity_rights_and_deferrals():
     publication = _yaml(PUBLICATION / "meta/publication.yml")["publication"]
     identity = publication["identity"]
@@ -83,7 +88,6 @@ def test_publication_manifest_normalizes_identity_rights_and_deferrals():
     )
     assert publication["pending"] == {
         "at_release": ["fecha exacta de publicación"],
-        "non_blocking": ["ISBN solo si llega a existir"],
     }
     assert publication["url"] == "https://sorribos-santibanez-1752.netlify.app/"
     assert "isbn" not in publication

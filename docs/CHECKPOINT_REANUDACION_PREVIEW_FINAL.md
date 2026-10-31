@@ -35,6 +35,8 @@
   PKG-13 hará live el draft final autorizado en la URL canónica.
 - Repositorio, email y año editorial están **RESUELTOS**.
 - La fecha exacta continúa **PENDIENTE** hasta `DATE-FINAL-01`.
+- Para la edición v1.0 no comercial **NO SE SOLICITA ISBN**; no es un pendiente
+  de publicación.
 - E4-FIX-01 está **PASS**. Los abortos operativos E4-R2 y E4-R3 quedaron
   superados mediante el bootstrap previo y el `PATH` verificado de
   `rsvg-convert`.
@@ -46,12 +48,17 @@
   `d073fd8711f9fa50705308c65fabea0a2fae0d29` está **ACEPTADA PARA PKG-12**.
   La decisión formal consta en
   [GATE_03_CANDIDATA_TECNICA_ACEPTADA.md](./GATE_03_CANDIDATA_TECNICA_ACEPTADA.md).
-- Siguen vigentes el manifiesto web
-  `3748a882e2e5f43581cb01071895c6219d5008c3275f306818a47f1658166ef1`
-  y el PDF
-  `a00db79d7cbcec39c63f4b4d16a9c369a0eae4ab9c6c3d2d408c4d52171981f7`.
-- PKG-12 tiene la **PREVIEW DESPLEGADA / REVISIÓN HUMANA PENDIENTE**. El
-  dossier es [PKG_12_PREVIEW_ACEPTACION_HUMANA.md](./PKG_12_PREVIEW_ACEPTACION_HUMANA.md).
+- La primera preview de PKG-12 está **REVISADA**. HUM-REVIEW-01 está
+  **COMPLETADA**: las correcciones solicitadas fueron aplicadas y la nueva
+  candidata quedó **VALIDADA TÉCNICAMENTE**. El cierre y sus nuevas huellas
+  constan en [HUM_REVIEW_01_CIERRE.md](./HUM_REVIEW_01_CIERRE.md).
+- La nueva candidata tiene manifiesto web
+  `2e2eb284c7539647349c072f0262f04a8da334e37720181009924c99600bf4cd`
+  y PDF
+  `7d0a63e85329951ec4cf1f5e747f23cfa41e062d0b929d2a128dc52354c876d2`.
+- `PKG-12-R2` es la **SIGUIENTE OPERACIÓN** y deberá desplegar exactamente la
+  candidata corregida. El dossier de la primera preview es
+  [PKG_12_PREVIEW_ACEPTACION_HUMANA.md](./PKG_12_PREVIEW_ACEPTACION_HUMANA.md).
 - Deploy ID: `6ad6498e223ba4f4bb20e6bd`.
 - Draft:
   <https://6ad6498e223ba4f4bb20e6bd--sorribos-santibanez-1752.netlify.app>.
@@ -121,10 +128,11 @@ El resultado es el objeto que debe evaluar GATE-03 antes de PKG-12.
 
 ### E5 — PKG-12
 
-**PREVIEW DESPLEGADA / REVISIÓN HUMANA PENDIENTE.** La candidata técnica
-aceptada por GATE-03 está disponible en el draft registrado en
-[PKG_12_PREVIEW_ACEPTACION_HUMANA.md](./PKG_12_PREVIEW_ACEPTACION_HUMANA.md).
-No puede declararse aceptada hasta recibir la decisión humana expresa.
+**PRIMERA PREVIEW REVISADA / CORRECCIONES VALIDADAS.** La revisión humana de
+la primera preview está completada y HUM-REVIEW-01 incorporó sus correcciones.
+La nueva candidata validada se documenta en
+[HUM_REVIEW_01_CIERRE.md](./HUM_REVIEW_01_CIERRE.md). `PKG-12-R2` debe desplegar
+exactamente esta candidata antes de continuar con la aceptación humana.
 
 ## Línea paralela — repositorio público
 
@@ -200,8 +208,10 @@ observación abierta: está **DIFERIDA POR POLÍTICA** hasta `DATE-FINAL-01`.
 ## Reanudación
 
 - `GATE-03 = PASS`; candidata técnica **ACEPTADA**.
-- `PKG-12 = PREVIEW DESPLEGADA / REVISIÓN HUMANA PENDIENTE`.
-- **Siguiente acción exclusiva:** revisión humana del draft de PKG-12.
+- `PKG-12 = PRIMERA PREVIEW REVISADA / CORRECCIONES VALIDADAS`.
+- `HUM-REVIEW-01 = COMPLETADA`.
+- **Siguiente acción exclusiva:** `PKG-12-R2`, despliegue exacto de la nueva
+  candidata corregida.
 - `GATE-04` y `GATE-05` permanecen **PENDIENTES**.
 - PKG-13 permanece **NO INICIADO**.
 - `DATE-FINAL-01` permanece **PENDIENTE**.
