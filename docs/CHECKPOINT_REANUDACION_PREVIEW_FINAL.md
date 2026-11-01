@@ -1,7 +1,7 @@
-# Checkpoint de reanudación hasta PKG-13
+# Checkpoint final de publicación v1.0
 
 **Candidata validada por E4:** `d073fd8711f9fa50705308c65fabea0a2fae0d29`
-**Función:** congelar el orden de reanudación sin iniciar ninguna operación.
+**Función:** registrar el cierre de la secuencia de publicación de v1.0.
 
 ## Estado actual
 
@@ -29,10 +29,8 @@
   <https://sorribos-santibanez-1752.netlify.app/>.
 - META-FINAL-01 está **COMPLETADA**: la URL canónica y la referencia pública
   del repositorio están incorporadas a la edición.
-- La URL canónica está **RESUELTA** y en estado
-  **RESERVADA / PREPUBLICACIÓN**. Production permanece sin el libro; un HTTP
-  404 es esperado hasta PKG-13. PKG-12 revisará una URL de draft distinta y
-  PKG-13 hará live el draft final autorizado en la URL canónica.
+- La URL canónica está **PUBLICADA** y responde HTTP 200 con la versión 1.0:
+  <https://sorribos-santibanez-1752.netlify.app/>.
 - Repositorio, email y año editorial están **RESUELTOS**.
 - DATE-FINAL-01 está **COMPLETADA**. La fecha oficial de v1.0 es
   `1 de noviembre de 2026` (`2026-11-01`); el colofón registra la solemnidad de
@@ -90,10 +88,12 @@
   <https://6ae6435a5695ab37b483c758--sorribos-santibanez-1752.netlify.app>.
 - `GATE-05 = PASS`. La decisión humana y la regla de inmutabilidad constan en
   [GATE_05_APROBACION_SNAPSHOT_FINAL.md](./GATE_05_APROBACION_SNAPSHOT_FINAL.md).
-- `PKG-13` es la **SIGUIENTE OPERACIÓN** y debe promover exactamente ese mismo
-  deploy, sin rebuild, rerender ni nueva subida.
-- Production continúa vacío y sin servir el libro; el deploy es manual, no
-  productivo, sin build remoto y sin integración Git.
+- `PKG-13 = COMPLETADA`; el dossier es
+  [PKG_13_PUBLICACION_V1_0.md](./PKG_13_PUBLICACION_V1_0.md).
+- Production publica exactamente `6ae6435a5695ab37b483c758`, sin rebuild,
+  rerender, nueva subida, build remoto ni integración Git.
+- `Fase 6B = COMPLETADA`; el tag anotado y la GitHub Release `v1.0` se crean y
+  verifican en PKG-13. No quedan operaciones pendientes para v1.0.
 
 ## Línea principal editorial congelada
 
@@ -170,7 +170,7 @@ humana final la aprobó. La evidencia del deploy y de su identidad está en
 prólogo están incorporados. La candidata final fechada y su draft manual no
 productivo están validados y registrados en
 [DATE_FINAL_01.md](./DATE_FINAL_01.md). GATE-05 aprobó después el snapshot
-corregido y PKG-13 es la siguiente operación.
+corregido y PKG-13 lo publicó sin alterar sus bytes.
 
 ### E7 — DATE-FINAL-01-FIX-01
 
@@ -275,9 +275,9 @@ resuelta por DATE-FINAL-01 como `1 de noviembre de 2026`.
   `e49e1e50f0f5a43dbe0c78bfd15b131afd37e1e40cd51af7ad39ddd0c5c9333a`.
 - PDF SHA-256:
   `e6b00d65876a5c5a20f2327bde39d624ba1f6da82b1b40d18a57b055fd8de470`.
-- `GATE-05 = PASS`; snapshot exacto **APROBADO**.
-- **Siguiente acción exclusiva:** `PKG-13`.
-- PKG-13 permanece **NO INICIADO / HABILITADO**.
-- Production permanece **NO PUBLICADA TODAVÍA**.
-
-Ninguna de esas operaciones se inicia en este checkpoint.
+- `GATE-05 = PASS`; snapshot exacto **APROBADO Y PUBLICADO**.
+- `PKG-13 = COMPLETADA`; `Fase 6B = COMPLETADA`.
+- Production sirve exactamente `6ae6435a5695ab37b483c758`.
+- `v1.0 = PUBLICADA` el 1 de noviembre de 2026.
+- Tag anotado y GitHub Release `v1.0`: **CREADOS Y VERIFICADOS EN PKG-13**.
+- No quedan operaciones pendientes para v1.0.

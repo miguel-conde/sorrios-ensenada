@@ -2,13 +2,10 @@
 
 **Fase de origen:** 6A.4<br>
 **Fecha:** 10 de octubre de 2026<br>
-**Última reconciliación de estado:** 31 de octubre de 2026<br>
+**Última reconciliación de estado:** 1 de noviembre de 2026<br>
 **Contrato de alcance:** [ALCANCE_APROBADO_V1_0.md](./ALCANCE_APROBADO_V1_0.md)<br>
-**Estado:** plan operativo; PKG-00–12 completados; CR-V1-001 e
-INC-BIB-001/002 cerradas; GATE-01–GATE-04 en PASS; DATE-FINAL-01 y su
-corrección focal DATE-FINAL-01-FIX-01 en PASS; candidata final validada y
-desplegada como draft; GATE-05 es la siguiente operación y PKG-13 no se ha
-iniciado
+**Estado:** **COMPLETADO**; PKG-00–PKG-13 y Fase 6B completados;
+GATE-01–GATE-05 en PASS; versión 1.0 publicada el 1 de noviembre de 2026
 
 La secuencia editorial hasta GATE-05 y el estado del repositorio público se
 controlan mediante
@@ -394,17 +391,17 @@ superado.
 
 ### PKG-13 — Fase 6B / release 1.0
 
-Solo se inicia después de GATE-04 y GATE-05. Debe fijar versión, snapshot,
-hashes, manifiesto, documentación final, commit de release, tag `v1.0` —o la
-convención que se apruebe— y publicación según la política autorizada.
+**Estado:** **COMPLETADO**. El 1 de noviembre de 2026, Publish Deploy promovió
+exactamente el deploy `6ae6435a5695ab37b483c758` aprobado en GATE-05. La
+publicación, sus hashes y la verificación pública constan en
+[PKG_13_PUBLICACION_V1_0.md](./PKG_13_PUBLICACION_V1_0.md).
 
 La política posterior situó `DATE-FINAL-01` entre GATE-04 y GATE-05. El
-artefacto fechado recibió una corrección focal de composición y el nuevo draft
-`6ae6435a5695ab37b483c758` es el único candidato vigente para GATE-05. PKG-13
-publicará mediante **Publish Deploy** ese mismo draft si recibe autorización,
-conforme al runbook y sin un nuevo render ni upload de producción.
+artefacto fechado recibió una corrección focal de composición y el draft
+`6ae6435a5695ab37b483c758` fue aprobado en GATE-05 y publicado mediante
+**Publish Deploy**, conforme al runbook y sin nuevo render ni upload.
 
-El tag solo aparece en este paquete.
+El tag anotado y la GitHub Release `v1.0` se crean y verifican en este paquete.
 
 ## 3. DAG textual
 
@@ -583,8 +580,7 @@ el autor. La evidencia consta en
 
 ### GATE-05 — Autorización explícita de 6B/release
 
-**Estado:** **PENDIENTE / HABILITADA**. Debe evaluar exclusivamente el snapshot
-corregido documentado en
+**Estado:** **PASS**. Aprobó exclusivamente el snapshot corregido documentado en
 [DATE_FINAL_01_FIX_01.md](./DATE_FINAL_01_FIX_01.md), con deploy
 `6ae6435a5695ab37b483c758`.
 
@@ -613,8 +609,8 @@ corregido documentado en
 - [x] 14. Validación integral en PASS.
 - [x] 15. Preview revisado.
 - [x] 16. Aceptación humana registrada.
-- [ ] 17. Fase 6B completada.
-- [ ] 18. Tag 1.0 creado únicamente al final.
+- [x] 17. Fase 6B completada.
+- [x] 18. Tag 1.0 creado únicamente al final.
 
 ## 9. Control de alcance durante la ejecución
 
@@ -638,6 +634,6 @@ procedimiento de cada cambio siguen siendo los de su paquete.
 - Resultado: bloqueo técnico eliminado; PKG-04 pudo ejecutarse y quedó
   aprobado e integrado posteriormente.
 
-**GATE-01–GATE-04 — PASS. PKG-12, DATE-FINAL-01 Y DATE-FINAL-01-FIX-01 COMPLETADOS; CANDIDATA FINAL VALIDADA.**
+**GATE-01–GATE-05 — PASS. PKG-00–PKG-13 Y FASE 6B COMPLETADOS.**
 
-**SIGUIENTE PASO: GATE-05 — AUTORIZACIÓN EXPLÍCITA DE 6B/RELEASE.**
+**VERSIÓN 1.0 PUBLICADA Y CERRADA; NO QUEDAN OPERACIONES PENDIENTES PARA v1.0.**

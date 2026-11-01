@@ -1,14 +1,14 @@
 # Política de publicación de la versión 1.0
 
-**Estado:** política ratificada de publicación de la versión 1.0<br>
+**Estado:** política ejecutada; versión 1.0 publicada y cerrada<br>
 **Base de ratificación:** `bce6b38747ec6bc0bc5a58577f6e269c307b04a5`<br>
 **Ámbito:** hosting, URL canónica, fecha de publicación y relación entre
 PKG-12 y PKG-13
 
 Este documento concreta la política posterior al
 [plan de ejecución](./PLAN_EJECUCION_V1_0.md) y al
-[checkpoint de reanudación](./CHECKPOINT_REANUDACION_PREVIEW_FINAL.md). La
-política no autoriza por sí sola GATE-05, PKG-13, production, tag ni release.
+[checkpoint de reanudación](./CHECKPOINT_REANUDACION_PREVIEW_FINAL.md).
+GATE-05 autorizó después la publicación y PKG-13 ejecutó esta política.
 
 ## Decisiones cerradas
 
@@ -71,11 +71,10 @@ otro draft. Nunca se publica un deploy rechazado o sustituido.
 
 El procedimiento operativo definitivo se documenta en el
 [runbook de despliegue y actualización](./RUNBOOK_DESPLIEGUE_NETLIFY.md).
-Production permanece vacío hasta PKG-13. La URL está en estado
-**RESERVADA / PREPUBLICACIÓN**: mientras production no contenga el libro, un
-HTTP 404 es el resultado esperado y no constituye una excepción general a la
-validación de enlaces. PKG-12 revisó URLs de draft independientes; tras PKG-13,
-la URL canónica deberá responder HTTP 200 y servir el contenido correcto.
+Production publica desde PKG-13 exactamente el deploy
+`6ae6435a5695ab37b483c758`. La URL canónica responde HTTP 200 y sirve el
+contenido aprobado. El paso de prepublicación a publicación se documenta en
+[PKG_13_PUBLICACION_V1_0.md](./PKG_13_PUBLICACION_V1_0.md).
 
 ## Política de URL
 
@@ -131,7 +130,7 @@ R5B — completada
 → v1.0
 ```
 
-E4, GATE-03, PKG-12, GATE-04, DATE-FINAL-01 y DATE-FINAL-01-FIX-01 están
-completados. El draft corregido `6ae6435a5695ab37b483c758` es el candidato
-vigente; GATE-05 y PKG-13 permanecen pendientes. Este documento no autoriza el
-despliegue en production, tags, releases ni cambios de proveedor.
+E4, GATE-03, PKG-12, GATE-04, DATE-FINAL-01, DATE-FINAL-01-FIX-01, GATE-05 y
+PKG-13 están completados. El deploy `6ae6435a5695ab37b483c758` es el publicado
+en production; el tag anotado y la GitHub Release `v1.0` se crean y verifican
+en PKG-13. No quedan operaciones pendientes para v1.0.

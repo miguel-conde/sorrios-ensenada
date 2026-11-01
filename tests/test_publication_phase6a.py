@@ -104,8 +104,11 @@ def test_no_preview_provider_or_deployment_has_been_chosen_by_phase6a():
     assert "netlify" not in workflows
 
 
-def test_phase6a_has_not_created_a_1_0_tag():
-    assert _git("tag", "--list", "*1.0*") == ""
+def test_release_tag_contract_uses_only_v1_0():
+    tags = _git("tag", "--list", "*1.0*").splitlines()
+    assert all(tag == "v1.0" for tag in tags)
+    plan = (ROOT / "docs/PLAN_EJECUCION_V1_0.md").read_text(encoding="utf-8")
+    assert "El tag anotado y la GitHub Release `v1.0`" in plan
 
 
 def test_release_security_audit_rejects_private_inputs_and_accepts_exact_download(
@@ -156,13 +159,13 @@ def test_candidate_report_manifests_snapshot_outputs_hashes_and_limitations():
     assert not re.search(r"(?:/home/|/tmp/|[A-Za-z]:\\\\)", report)
 
 
-def test_roadmap_tracks_gate05_and_keeps_phase6b_forbidden():
+def test_roadmap_records_the_completed_v1_0_release():
     roadmap = (ROOT / "docs/ESTADO_PUBLICACION_QUARTO.md").read_text(
         encoding="utf-8"
     )
     for expectation in (
-        "**Estado global:** Fase 6 en curso;",
-        "| 6A | en curso |",
+        "**Estado global:** **VERSIÓN 1.0 PUBLICADA**;",
+        "| 6A | completada |",
         "| PKG-00 | completado |",
         "| PKG-01 | completado e integrado |",
         "| PKG-02 | completado e integrado; incidencias canónicas cerradas; "
@@ -172,16 +175,15 @@ def test_roadmap_tracks_gate05_and_keeps_phase6b_forbidden():
         "| PKG-04 | completado e integrado |",
         "| PKG-05 | completado e integrado |",
         "`INC-BIB-001` y `INC-BIB-002` **CERRADAS CANÓNICAMENTE**",
-        "GATE-01–GATE-04 = PASS. DATE-FINAL-01 Y DATE-FINAL-01-FIX-01 "
-        "EN PASS.",
+        "GATE-01–GATE-05 = PASS. PKG-00–PKG-13 Y FASE 6B = COMPLETADOS.",
         "la propagación editorial quedó completada por PKG-08",
         "| PKG-06 | completado e integrado |",
         "| PKG-07 | completado e integrado |",
         "| PKG-08 | completado e integrado |",
         "| PKG-09 | completado e integrado |",
         "su propagación obligatoria se asignó a PKG-08 y quedó completada",
-        "PKG-00–PKG-12,",
-        "SIGUIENTE PASO: GATE-05 — AUTORIZACIÓN EXPLÍCITA DE 6B/RELEASE.",
+        "PKG-00–PKG-13 y Fase 6B completados",
+        "VERSIÓN 1.0 PUBLICADA; NO QUEDAN OPERACIONES PENDIENTES PARA v1.0.",
         "| HUM-01B | completado |",
         "| META-FINAL-01 | completado |",
         "| E4 | completada |",
@@ -190,9 +192,9 @@ def test_roadmap_tracks_gate05_and_keeps_phase6b_forbidden():
         "| GATE-04 | PASS |",
         "| DATE-FINAL-01 | PASS |",
         "| DATE-FINAL-01-FIX-01 | PASS |",
-        "| GATE-05 | pendiente / habilitada |",
-        "| 6B | pendiente | publicación 1.0, etiqueta y cierre; "
-        "prohibida hasta GATE-05 |",
+        "| GATE-05 | PASS |",
+        "| PKG-13 | completado |",
+        "| 6B | completada |",
     ):
         assert expectation in roadmap
     assert "| CR-V1-001 | ejecución pendiente |" not in roadmap

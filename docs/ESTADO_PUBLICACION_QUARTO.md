@@ -1,13 +1,12 @@
 # Estado y roadmap de la publicación Quarto
 
-**Actualizado:** 31 de octubre de 2026<br>
-**Estado global:** Fase 6 en curso; GATE-01–GATE-04 en PASS; PKG-00–PKG-12,
-DATE-FINAL-01 y DATE-FINAL-01-FIX-01 completados; candidata final corregida
-preparada para GATE-05<br>
-**Fase actual:** Fase 6A — GATE-05 es la siguiente operación; PKG-13 no iniciado<br>
-**HEAD integrado:** `58f669d5c9aac9d2e8d960484f828506beb6ae71`<br>
-**Draft candidato para GATE-05:** `6ae6435a5695ab37b483c758`<br>
-**PDF candidato SHA-256:**
+**Actualizado:** 1 de noviembre de 2026<br>
+**Estado global:** **VERSIÓN 1.0 PUBLICADA**; GATE-01–GATE-05 en PASS;
+PKG-00–PKG-13 y Fase 6B completados<br>
+**Fase actual:** Fase 6 cerrada; no quedan operaciones pendientes para v1.0<br>
+**Artifact source SHA:** `58f669d5c9aac9d2e8d960484f828506beb6ae71`<br>
+**Deploy publicado:** `6ae6435a5695ab37b483c758`<br>
+**PDF publicado SHA-256:**
 `e6b00d65876a5c5a20f2327bde39d624ba1f6da82b1b40d18a57b055fd8de470`
 
 ## Lectura de entrada
@@ -222,8 +221,8 @@ Una sesión nueva de Copilot debe leer, en este orden:
   referencia al repositorio público. E4 y GATE-03 quedaron completados;
   PKG-12 cerró la revisión humana en GATE-04. DATE-FINAL-01 fijó la fecha
   oficial y DATE-FINAL-01-FIX-01 corrigió de forma focal la composición del
-  colofón. El draft `6ae6435a5695ab37b483c758` es la candidata vigente para
-  GATE-05; PKG-13 no se ha iniciado.
+  colofón. GATE-05 aprobó el deploy `6ae6435a5695ab37b483c758` y PKG-13 lo
+  publicó sin alterar sus bytes.
 - Candidata Quarto anterior: la candidata técnica de 334 páginas y SHA-256
   `f1eee2f465f554d3bf2b506d23a622967d1b4f1013ac657a774868e525688183` se conserva
   como `baseline pre-PKG-01 / no sincronizada con las fuentes canónicas
@@ -232,7 +231,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 - HTML y PDF técnicos renderizados correctamente; ninguna salida de render está versionada.
 - No hay migración de capítulos en bloque. El despliegue se realiza
   manualmente en Netlify, sin integración Git ni builds remotos; production
-  permanece vacío hasta la autorización correspondiente.
+  sirve la versión 1.0 desde el deploy aprobado.
 - El antiguo placeholder `references.bib` contiene ahora 24 registros activos.
   La bibliografía pública, CIT-B/C y las citas próximas están integradas. La
   publicación no fue regenerada durante PKG-02.
@@ -249,13 +248,13 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | 3. Contenido editorial | completada | Fases 3A–3L completadas; capítulos 1–13 aceptados; Parte II cerrada |
 | 4. Generación documental | completada | capítulos 14–16 y los cuatro aparatos reproducibles de 4D cerrados y validados |
 | 5. Índices y calidad integral | completada | 5A y 5B cerradas: índices, calidad integral y accesibilidad básica validados |
-| 6. Preview y publicación 1.0 | en curso | GATE-01–GATE-04 en PASS; PKG-10–PKG-12, HUM-01B, META-FINAL-01, DATE-FINAL-01 y DATE-FINAL-01-FIX-01 completados; GATE-05 es la siguiente operación y PKG-13/Fase 6B no se ha iniciado |
+| 6. Preview y publicación 1.0 | completada | GATE-01–GATE-05 en PASS; PKG-10–PKG-13 y Fase 6B completados; v1.0 publicada |
 
-## Siguiente tarea exacta
+## Estado de cierre
 
-`GATE-01–GATE-04 = PASS. DATE-FINAL-01 Y DATE-FINAL-01-FIX-01 EN PASS.`
+`GATE-01–GATE-05 = PASS. PKG-00–PKG-13 Y FASE 6B = COMPLETADOS.`
 
-`SIGUIENTE PASO: GATE-05 — AUTORIZACIÓN EXPLÍCITA DE 6B/RELEASE.`
+`VERSIÓN 1.0 PUBLICADA; NO QUEDAN OPERACIONES PENDIENTES PARA v1.0.`
 
 ### Descomposición operativa de la Fase 4
 
@@ -277,7 +276,7 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 | Tarea | Estado | Alcance |
 |---|---|---|
-| 6A | en curso | GATE-01–GATE-04 en PASS; PKG-10–PKG-12 y las operaciones de fecha completados; GATE-05 pendiente y habilitada |
+| 6A | completada | GATE-01–GATE-05 en PASS; PKG-10–PKG-12 y las operaciones de fecha completados |
 | 6A.1 | consolidada | comparación 0.6, observaciones del usuario, 26 REV y orden de trabajo documentados; no modificó la candidata |
 | 6A.2 | completada documentalmente | DEC-001–DEC-015 registradas; DEC-012 y DEC-014 implementadas e integradas |
 | Auditoría A | completada | diagnóstico de 22 voces; G0 8, G1 7, G2 0, G3 4, G4 3; decisiones de alcance cerradas en 6A.3 |
@@ -308,8 +307,9 @@ Una sesión nueva de Copilot debe leer, en este orden:
 | GATE-04 | PASS | preview aprobada por el autor; prólogo, autoría, README e ISBN cerrados; fecha habilitada |
 | DATE-FINAL-01 | PASS | fecha oficial `1 de noviembre de 2026` incorporada; candidata final regenerada y validada |
 | DATE-FINAL-01-FIX-01 | PASS | corrección focal de composición del colofón; draft final `6ae6435a5695ab37b483c758` validado |
-| GATE-05 | pendiente / habilitada | debe autorizar expresamente la publicación 1.0 y el release sobre el draft final vigente |
-| 6B | pendiente | publicación 1.0, etiqueta y cierre; prohibida hasta GATE-05 |
+| GATE-05 | PASS | snapshot final exacto autorizado para publicación v1.0 |
+| PKG-13 | completado | Publish Deploy exacto, documentación final, tag anotado y GitHub Release `v1.0` |
+| 6B | completada | versión 1.0 publicada y cerrada el 1 de noviembre de 2026 |
 
 ### Cierre comprobado de 2A
 
@@ -900,4 +900,4 @@ Una sesión nueva de Copilot debe leer, en este orden:
 
 ## Prompt recomendado para la siguiente sesión
 
-> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CHECKPOINT_REANUDACION_PREVIEW_FINAL.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. Ejecuta exclusivamente `GATE-05 — AUTORIZACIÓN EXPLÍCITA DE 6B/RELEASE` sobre el draft `6ae6435a5695ab37b483c758`; no inicies PKG-13, production, tag ni release sin el PASS y la autorización expresa del gate.
+> Lee `PROJECT.md`, `.github/copilot-instructions.md`, `docs/PLAN_MAESTRO_PUBLICACION_QUARTO.md`, `docs/ESTADO_PUBLICACION_QUARTO.md`, `docs/PLAN_EJECUCION_V1_0.md`, `docs/CHECKPOINT_REANUDACION_PREVIEW_FINAL.md`, `docs/PKG_13_PUBLICACION_V1_0.md`, `.github/instructions/publication.instructions.md` y `publication/README.md`. La versión 1.0 está publicada y cerrada; cualquier trabajo posterior requiere una operación nueva y versionada, sin alterar silenciosamente el tag, la Release ni el deploy de v1.0.
